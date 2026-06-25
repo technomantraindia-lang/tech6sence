@@ -23,10 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 *.zip
-
-# Large media files
-*.mp4
-*.webm
-*.gif
-*.avi
-*.mov
