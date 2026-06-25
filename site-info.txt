@@ -1,0 +1,223 @@
+TECH6SENSE AI — WHAT THIS SITE IS ABOUT
+========================================
+
+Reference document only. Not part of the React application.
+
+
+COMPANY OVERVIEW
+----------------
+
+TECH6SENSE AI is an AI-powered technology company based at GIFT City,
+Gandhinagar, Gujarat.
+
+The website presents the company as a complete AI ecosystem — not a typical
+software agency.
+
+Tone: futuristic, deep-tech, startup-focused, enterprise-ready.
+
+
+1. AI SERVICES / INTELLIGENT SOLUTIONS
+--------------------------------------
+
+- AI product development
+- AI agents and AI copilots
+- AI automation
+- Generative AI
+- Custom AI model development
+- AI consulting
+- AI governance and AI integration
+- MLOps / AIOps
+- Data analytics
+- IoT intelligence
+- Computer vision and NLP
+- Blockchain, AR/VR
+- Enterprise software development
+
+
+2. DEEP-TECH AI PRODUCTS
+------------------------
+
+- AI smart glasses
+- AI exoskeletons
+- AI health wearables
+- AI earphones and AI smartwatches
+- Smart IoT devices
+- AI digital notepad
+- Medical AI devices
+
+
+3. VISIONARY FOUNDERS PROGRAM
+------------------------------
+
+Helps people start their own AI, IT, or tech company with support including:
+
+- Technical expertise
+- Legal structure
+- Client acquisition
+- Business setup
+- Growth ecosystem access
+
+
+4. BUSINESS BRAINS COMMUNITY
+----------------------------
+
+A network for entrepreneurs, investors, mentors, and startup collaboration.
+
+
+5. TARGET INDUSTRIES
+--------------------
+
+Healthcare, banking, manufacturing, retail, education, telecom, logistics,
+energy, government, pharma, automotive, agriculture, real estate, hospitality.
+
+
+6. CONTACT
+----------
+
+Location: GIFT City, Gandhinagar, Gujarat, India
+Email:    info@tech6senseai.com
+Phone:    +91 90817 66355
+
+
+IN SIMPLE WORDS
+---------------
+
+This website is for selling and presenting:
+
+- AI development services
+- AI automation
+- Deep-tech AI products
+- Founder / startup programs
+- Enterprise AI solutions
+- Community and ecosystem credibility
+
+All under one brand: TECH6SENSE AI.
+
+
+This effect is composed of a few modern web design and development patterns combined:
+
+1. Scrollytelling (Scroll-Driven Animation)
+The overall technique where the page layout remains locked/sticky in the viewport while scrolling triggers animations (elements fading, scaling, moving, or paths drawing) is widely known as Scrollytelling or Scroll-linked Animation.
+
+2. Sticky Animation Stage / Canvas
+The structural element is called a Sticky Stage. The CSS rules sticky top-0 h-screen keep the container locked in place on the screen while the page scrolls behind it, giving you a theatrical "canvas" to run the transition.
+
+3. Dynamic Coordinate/Path Tracking (Dynamic SVG Mapping)
+The specific effect where the lines follow the globe is called Dynamic SVG Coordinate Tracking (or Dynamic Path Interpolation). Instead of rendering static lines, the application:
+
+Tracks the globe's position dynamically based on the scroll progress.
+Recalculates the SVG Bézier curve end-coordinates (d path attribute) in real-time.
+Redraws the lines so the endpoints stay mathematically locked onto the perimeter of the moving globe.
+
+
+HOW TO IMPLEMENT DYNAMIC STICKY-SCROLL SVG CONNECTIONS
+======================================================
+
+To implement this effect, you break the solution down into three key pillars: Scroll Tracking, Sticky Layout, and Dynamic Geometry (Math). 
+
+Here is exactly how it is built step-by-step using React and SVG:
+
+1. Track Scroll Progress as a Normalized Value (0 to 1)
+--------------------------------------------------------
+First, you need a single source of truth that tracks how far the user has scrolled through the section. We translate the raw scroll pixels (window.scrollY) into a value between 0 (not scrolled) and 1 (fully scrolled).
+
+```javascript
+const [progress, setProgress] = useState(0);
+
+useEffect(() => {
+  const onScroll = () => {
+    // Total scrollable height of the parent container
+    const scrollable = scrollContainer.offsetHeight - window.innerHeight;
+    
+    // Normalize scroll position to 0.0 - 1.0 range
+    const currentProgress = window.scrollY / scrollable;
+    setProgress(Math.min(Math.max(currentProgress, 0), 1));
+  };
+  
+  window.addEventListener('scroll', onScroll);
+  return () => window.removeEventListener('scroll', onScroll);
+}, []);
+```
+
+2. Create the "Sticky Stage" (CSS)
+----------------------------------
+To make the content stay in place while scrolling, we put it inside a sticky wrapper.
+* Parent Section: Controls the length of the scroll track (e.g., height: 220vh).
+* Child Wrapper: Remains locked to the screen viewport (position: sticky; top: 0; height: 100vh).
+
+```html
+<!-- Scroll track: 220% of screen height -->
+<section class="relative h-[220vh]">
+  
+  <!-- Locked container: stays fixed on screen as page scrolls -->
+  <div class="sticky top-0 h-screen w-full overflow-hidden">
+     <!-- Globe, SVG Canvas, and Cards are placed here -->
+  </div>
+  
+</section>
+```
+
+3. Calculate the Moving Target Coordinates (The Math)
+-----------------------------------------------------
+As the user scrolls, the central globe moves down slightly to create a parallax shift. The connector paths must calculate where the globe’s perimeter points are in real-time.
+
+1) Calculate the globe center on the screen:
+   translateY = progress * (0.14 * viewportHeight)
+   centerY = InitialCenterY + translateY
+
+2) Calculate the outer points of the globe at a specific angle (theta) for connection:
+   endX = centerX + Radius * cos(theta)
+   endY = centerY + Radius * sin(theta)
+
+In the React code, it looks like this:
+```javascript
+const getConnectorPaths = (width, height, progress) => {
+  // 1. Locate the moving globe center
+  const translateY = progress * 0.14 * height;
+  const globeCenterY = InitialCenterY + translateY;
+  const globeCenterX = width / 2;
+  const globeRadius = 225; // half of 450px globe size
+
+  // 2. Define target angle on the globe's circumference (e.g. 155 degrees)
+  const angle = 155 * Math.PI / 180;
+
+  // 3. Pinpoint exact destination coordinates
+  const endX = globeCenterX + globeRadius * Math.cos(angle);
+  const endY = globeCenterY + globeRadius * Math.sin(angle);
+
+  return { startX, startY, endX, endY };
+};
+```
+
+4. Redraw the SVG Curves
+------------------------
+With React, any change to the state (progress) triggers a re-render. Since our SVG paths are bound to the calculated coordinates, the paths morph instantly.
+
+We use a cubic Bézier curve (C) to make the lines curve organically:
+```jsx
+const { startX, startY, endX, endY } = getConnectorPaths(winSize.w, winSize.h, progress);
+
+// Calculate control points for a smooth curve
+const cp1x = startX + (endX - startX) * 0.5;
+const cp1y = startY;
+const cp2x = endX - (endX - startX) * 0.2;
+const cp2y = endY;
+
+return (
+  <svg className="absolute inset-0 w-full h-full pointer-events-none">
+    {/* Dynamic Path */}
+    <path 
+      d={`M ${startX} ${startY} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${endX} ${endY}`} 
+      stroke="url(#line-grad)" 
+      strokeWidth="1.5" 
+      fill="none" 
+    />
+    
+    {/* Endpoint Dot: Stays glued on top of the globe's edge point */}
+    <circle cx={endX} cy={endY} r="3.5" fill="#d946ef" />
+  </svg>
+);
+```
+
+Why this looks so smooth:
+By using React state linked to browser scroll events, the browser re-evaluates the coordinate formulas on every frame. When combined with SVG gradients and CSS keyframe stroke-dashoffset pulses, the lines appear alive, organic, and perfectly attached to the moving sphere.
