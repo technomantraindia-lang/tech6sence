@@ -4,6 +4,14 @@ import IntelligenceStack from '../components/sections/IntelligenceStack'
 import HowWeWork from '../components/sections/HowWeWork'
 import SecondHeroPhase from '../components/sections/SecondHeroPhase'
 import SimpleTextSection from '../components/sections/SimpleTextSection'
+import AISolutionsOutcome from '../components/sections/AISolutionsOutcome'
+import DeepTechProducts from '../components/sections/DeepTechProducts'
+import IndustriesTransform from '../components/sections/IndustriesTransform'
+import EcosystemSection from '../components/sections/EcosystemSection'
+import WhyChooseTech6Sense from '../components/sections/WhyChooseTech6Sense'
+import InnovationStories from '../components/sections/InnovationStories'
+import FinalCTA from '../components/sections/FinalCTA'
+import Footer from '../components/sections/Footer'
 import heroRobot from '../assets/main-hero.png'
 import NetworkGlobe from '../components/NetworkGlobe'
 
@@ -695,6 +703,14 @@ const MemoAboutSection = memo(AboutSection);
 const MemoIntelligenceStack = memo(IntelligenceStack);
 const MemoHowWeWork = memo(HowWeWork);
 const MemoSimpleTextSection = memo(SimpleTextSection);
+const MemoAISolutionsOutcome = memo(AISolutionsOutcome);
+const MemoDeepTechProducts = memo(DeepTechProducts);
+const MemoIndustriesTransform = memo(IndustriesTransform);
+const MemoEcosystemSection = memo(EcosystemSection);
+const MemoWhyChoose = memo(WhyChooseTech6Sense);
+const MemoInnovationStories = memo(InnovationStories);
+const MemoFinalCTA = memo(FinalCTA);
+const MemoFooter = memo(Footer);
 
 
 export default function Home() {
@@ -706,6 +722,14 @@ export default function Home() {
       <MemoAboutSection />
       <MemoIntelligenceStack />
       <MemoHowWeWork />
+      <MemoAISolutionsOutcome />
+      <MemoDeepTechProducts />
+      <MemoIndustriesTransform />
+      <MemoEcosystemSection />
+      <MemoWhyChoose />
+      <MemoInnovationStories />
+      <MemoFinalCTA />
+      <MemoFooter />
     </main>
   )
 }

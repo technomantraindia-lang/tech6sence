@@ -218,6 +218,7 @@ export default function HowWeWork() {
         @keyframes hww-spin-reverse-kf { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
         @keyframes hww-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
         @keyframes hww-ping { 0% { transform: scale(1); opacity: 1; } 75%, 100% { transform: scale(2); opacity: 0; } }
+        @keyframes hww-card-enter-kf { 0% { opacity: 0; transform: translateY(12px); } 100% { opacity: 1; transform: translateY(0); } }
         
         .hww-flow-dash { animation: hww-flow-dash 2s linear infinite; }
         .hww-flow-dash-mid { animation: hww-flow-dash 2.5s linear infinite; }
@@ -233,6 +234,7 @@ export default function HowWeWork() {
         .hww-pulse-anim { animation: hww-pulse 2s ease-in-out infinite; }
         .hww-pulse-anim-delay-1 { animation: hww-pulse 2s ease-in-out infinite; animation-delay: 0.5s; }
         .hww-pulse-anim-delay-2 { animation: hww-pulse 2s ease-in-out infinite; animation-delay: 1s; }
+        .hww-card-enter { animation: hww-card-enter-kf 0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
       `}} />
 
       {/* Premium Animated Background */}
@@ -332,36 +334,27 @@ export default function HowWeWork() {
             </div>
 
             {/* RIGHT COLUMN: Unified Glassmorphic Display Card */}
-            <div className="relative flex items-center justify-center min-h-[460px]">
-              {STEPS.map((step, index) => {
-                const isActive = index === activeStep;
-                const c = COLORS[index];
+            <div className="relative flex items-center justify-center min-h-[480px]">
+              {(() => {
+                const step = STEPS[activeStep];
+                const c = COLORS[activeStep];
                 return (
                   <div
                     key={step.num}
-                    className="w-full transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
-                    style={{
-                      position: index === 0 ? 'relative' : 'absolute',
-                      inset: index === 0 ? undefined : 0,
-                      opacity: isActive ? 1 : 0,
-                      transform: isActive
-                        ? 'translateY(0) scale(1)'
-                        : index < activeStep ? 'translateY(-20px) scale(0.98)' : 'translateY(20px) scale(0.98)',
-                      pointerEvents: isActive ? 'auto' : 'none',
-                      zIndex: isActive ? 10 : 0,
-                    }}
+                    className="w-full hww-card-enter"
+                    style={{ position: 'relative', zIndex: 10 }}
                   >
                     {/* Unified glass dashboard card */}
                     <div
-                      className="w-full rounded-[2.5rem] overflow-hidden flex flex-row items-center relative backdrop-blur-xl bg-white/70 border border-white/80 p-8 lg:p-12 gap-8 lg:gap-12"
+                      className="w-full rounded-[2.5rem] flex flex-row items-stretch relative backdrop-blur-xl bg-white/70 border border-white/80 p-8 lg:p-12 gap-8 lg:gap-12"
                       style={{
                         boxShadow: `0 40px 80px -20px rgba(0,0,0,0.04), 0 0 0 1px rgba(255,255,255,0.7) inset, 0 0 40px ${c.glow}`,
                       }}
                     >
                       {/* Left half: Details */}
-                      <div className="flex-1 flex flex-col justify-center">
+                      <div className="flex-1 flex flex-col justify-center relative z-10">
                         {/* Badge pill */}
-                        <div className="mb-4">
+                        <div className="mb-5">
                           <span
                             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[0.65rem] font-bold tracking-widest uppercase border bg-white shadow-sm"
                             style={{
@@ -375,18 +368,18 @@ export default function HowWeWork() {
                         </div>
 
                         {/* Title */}
-                        <h3 className="font-display text-[2rem] lg:text-[2.4rem] font-extrabold tracking-tight text-slate-900 leading-tight mb-4">
+                        <h3 className="font-display text-[1.8rem] lg:text-[2.2rem] font-extrabold tracking-tight text-slate-900 leading-tight mb-5">
                           {step.title}
                         </h3>
 
                         {/* Description */}
-                        <p className="font-body text-[1rem] leading-relaxed text-slate-500 font-medium max-w-[90%]">
+                        <p className="font-body text-[0.95rem] leading-[1.7] text-slate-500 font-medium">
                           {step.description}
                         </p>
                       </div>
 
                       {/* Right half: SVG Animation Canvas */}
-                      <div className="w-[45%] lg:w-[48%] rounded-3xl relative overflow-hidden bg-white/50 border border-slate-100/80 shadow-[inset_0_2px_10px_rgba(0,0,0,0.01)] flex flex-col">
+                      <div className="w-[42%] lg:w-[45%] shrink-0 rounded-3xl relative overflow-hidden bg-white/50 border border-slate-100/80 shadow-[inset_0_2px_10px_rgba(0,0,0,0.01)] flex flex-col">
                         <div className="h-8 border-b border-slate-100 flex items-center px-4 gap-1.5 bg-white/40">
                           <div className="w-2.5 h-2.5 rounded-full bg-slate-200" />
                           <div className="w-2.5 h-2.5 rounded-full bg-slate-200" />
@@ -400,7 +393,7 @@ export default function HowWeWork() {
                     </div>
                   </div>
                 );
-              })}
+              })()}
             </div>
 
           </div>

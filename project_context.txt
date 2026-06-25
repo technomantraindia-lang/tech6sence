@@ -1,0 +1,39 @@
+# TECH6SENSE AI - Project Context & Research Guide
+# Provide this file to new agents to help them understand the project before making changes.
+
+## 1. Project Overview & Tech Stack
+- **Framework:** React.js with Vite.
+- **Styling:** Vanilla CSS (`src/index.css`) and Tailwind CSS. Heavy use of custom utility classes and inline styles for animations.
+- **Goal:** Corporate website for "TECH6SENSE AI", a global deep-tech and AI company.
+- **Git Repo:** `https://github.com/technomantraindia-lang/tech6sence` (branch: `main`).
+
+## 2. Design System & Aesthetics
+- **Core Theme:** Premium, clean, "Appinventiv-inspired", global tech feel.
+- **Colors:** 
+  - Backgrounds: Mostly light (off-white, very light lavender `#FAFAFA`, `#F5F3FF`) to keep a clean, readable UI.
+  - Accents: Subtle violet-to-fuchsia gradients (`#7c3aed` to `#d946ef`), with specific red/white accents for the main brand logo/hero text.
+  - Text: Dark navy/slate-900 for headings, muted slate-500/slate-400 for body text.
+- **Style Elements:** Glassmorphism (backdrop-blur), rounded corners (`rounded-2xl`, `rounded-3xl`), soft subtle shadows, thin borders, generous whitespace.
+- **Avoid:** Dark neon themes, overcrowded card grids, heavy or distracting animations that ruin readability.
+
+## 3. Key Components & Sections (Homepage Flow)
+The main page (`src/pages/Home.jsx`) consists of the following sections in order:
+1.  **Header (`src/components/Header.jsx`):** Sticky nav, glassmorphism that activates on scroll, animated scroll progress bar at the bottom, mobile hamburger menu.
+2.  **Hero (`src/components/sections/SimpleTextSection.jsx`):** Features massive typography (`font-black`), custom SVG for the letter "E" in the title, red grid overlay, and a looping background video (`public/background.webm`).
+3.  **Globe Section (`src/components/sections/SecondHeroPhase.jsx`):** Highly interactive. Features a sticky 220vh scroll stage, an animated SVG network globe, dynamic SVG connector lines tracking scroll, and sequentially revealed bento cards with 3D tilt and cursor spotlights.
+4.  **About Section (Inline in `Home.jsx`):** Scroll-triggered fade-in, gradient text highlights, ambient glow orbs.
+5.  **Intelligence Stack (`src/components/sections/IntelligenceStack.jsx`):** Drifting gradient orbs, card hover interactions, SVG icons.
+6.  **How We Work (`src/components/sections/HowWeWork.jsx`):** Process section. Left side: auto-rotating tabs with timer progress bars. Right side: single unified glassmorphic display card showing the active step, complete with custom animated SVG graphics (radar sweeps, pulsing dots, data flow dashes).
+7.  **AI Solutions (`src/components/sections/AISolutionsOutcome.jsx`):** Two-column layout. Left sticky intro. Right side has 5 interactive horizontal rows (not cards) featuring hover padding expansion, animated gradient border lines, and cursor-following spotlight glows.
+
+## 4. Animation Patterns
+- Use CSS keyframes defined in `<style>` blocks within components for complex SVG animations (e.g., `hww-flow-dash`, `hww-spin`).
+- Use Tailwind's `group-hover`, `transition-all`, and `duration-300` for standard interactive states.
+- Use React state (`onMouseMove`, `onMouseEnter`) to track cursor position for dynamic spotlight effects (radial-gradients).
+- Use `IntersectionObserver` for scroll-triggered reveal animations.
+
+## 5. Agent Research Steps Before Modifying
+1.  **Check `Home.jsx`:** Understand the overall page structure and component order.
+2.  **Review the specific Component:** E.g., if asked to modify the Globe, review `SecondHeroPhase.jsx` completely. Pay attention to scroll-linked state, absolute positioning, and z-indexes.
+3.  **Check existing animations:** Before adding new effects, see how similar effects are implemented in `HowWeWork.jsx` or `AISolutionsOutcome.jsx` to maintain consistency.
+4.  **Preserve existing behavior:** When modifying layout (like fixing text overflow), ensure complex logic like auto-rotation, scroll-tracking, or hover states are not broken.
