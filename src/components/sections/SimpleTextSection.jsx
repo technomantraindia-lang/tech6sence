@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 export default function SimpleTextSection() {
   return (
-    <section id="future-focus" className="relative w-full py-16 md:py-20 overflow-hidden bg-black">
+    <section id="future-focus" className="relative w-full min-h-[100svh] lg:min-h-screen py-24 md:py-32 overflow-hidden bg-black flex items-center">
       {/* Subtle decorative grid overlay for dark mode */}
       <div className="pointer-events-none absolute inset-0 z-0 opacity-20 [background-image:linear-gradient(rgba(239,68,68,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.06)_1px,transparent_1px)] [background-size:64px_64px]" />
       
       {/* Soft gradient background glow behind the text */}
       <div className="absolute top-1/4 left-[-10%] h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-red-500/10 via-rose-500/5 to-transparent blur-[120px] pointer-events-none" />
 
-      <div className="relative z-10 mx-auto max-w-[85rem] px-6">
+      <div className="relative z-10 mx-auto w-full max-w-[85rem] px-6">
         <div className="grid gap-12 md:grid-cols-2 items-center">
           
           {/* Left Column: Premium Text Content */}
