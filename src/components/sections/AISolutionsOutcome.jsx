@@ -211,7 +211,7 @@ export default function AISolutionsOutcome() {
     <section
       ref={sectionRef}
       id="ai-solutions"
-      className="relative w-full py-24 md:py-32 overflow-hidden"
+      className="relative w-full pt-24 md:pt-32 pb-12 md:pb-16 overflow-hidden"
       style={{ background: 'linear-gradient(180deg, #FAFAFA 0%, #F5F3FF 50%, #FAFAFA 100%)' }}
     >
       {/* Soft corner glows */}

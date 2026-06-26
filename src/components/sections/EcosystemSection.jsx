@@ -27,7 +27,7 @@ function PointItem({ point, accent }) {
           <path strokeLinecap="round" strokeLinejoin="round" d={point.icon} />
         </svg>
       </div>
-      <span className="font-body text-[0.88rem] text-slate-650 font-medium leading-snug">{point.text}</span>
+      <span className="font-body text-[0.88rem] text-slate-700 font-medium leading-snug">{point.text}</span>
     </div>
   );
 }
@@ -74,7 +74,7 @@ export default function EcosystemSection() {
     <section
       ref={sectionRef}
       id="ecosystem"
-      className="relative w-full py-24 md:py-32 overflow-hidden"
+      className="relative w-full py-16 md:py-20 overflow-hidden"
       style={{ background: 'linear-gradient(180deg, #FAFAFA 0%, #F6F5FF 50%, #FAFAFA 100%)' }}
     >
       <style dangerouslySetInnerHTML={{ __html: `

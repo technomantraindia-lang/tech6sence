@@ -72,7 +72,7 @@ const CARDS_DATA = [
 
 export default function IntelligenceStack() {
   return (
-    <section className="relative w-full bg-[#0B0B14] overflow-hidden py-24 md:py-32 z-25">
+    <section className="relative w-full bg-[#0B0B14] overflow-hidden py-16 md:py-20 z-25">
       {/* Dark subtle backgrounds blobs */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[40vh] bg-indigo-500/20 rounded-full blur-[120px] opacity-60" />

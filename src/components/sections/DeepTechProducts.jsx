@@ -313,7 +313,7 @@ export default function DeepTechProducts() {
       {/* Sticky Grid Container on Desktop */}
       <div
         className={`mx-auto max-w-[85rem] px-6 transition-all duration-1000 ease-out ${
-          isMobile ? 'relative' : 'sticky top-28 py-20'
+          isMobile ? 'relative py-12' : 'sticky top-28 pt-8 pb-20'
         }`}
         style={{
           opacity: isVisible ? 1 : 0,

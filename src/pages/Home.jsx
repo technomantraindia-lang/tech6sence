@@ -618,7 +618,7 @@ function BentoCard({ title, description, icon, isFuchsia = false }) {
 
 function AboutSection() {
   return (
-    <section id="about" className="relative w-full py-32 px-6 overflow-hidden" style={{ background: 'linear-gradient(180deg, #FAF9FF 0%, #f5f1ff 100%)' }}>
+    <section id="about" className="relative w-full py-16 md:py-20 px-6 overflow-hidden" style={{ background: 'linear-gradient(180deg, #FAF9FF 0%, #f5f1ff 100%)' }}>
       {/* Subtle grid */}
       <div className="pointer-events-none absolute inset-0 z-0 opacity-30 [background-image:linear-gradient(rgba(124,58,237,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.06)_1px,transparent_1px)] [background-size:64px_64px]" />
       

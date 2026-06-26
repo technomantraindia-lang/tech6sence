@@ -300,7 +300,7 @@ export default function IndustriesTransform() {
       ref={sectionRef}
       id="industries"
       className={`relative w-full overflow-visible bg-gradient-to-b from-[#FAFAFA] via-[#F7F6FF] to-[#FAFAFA] ${
-        isMobile ? 'py-24' : 'h-[255vh]'
+        isMobile ? 'py-16' : 'h-[255vh]'
       }`}
     >
       <style dangerouslySetInnerHTML={{ __html: `
@@ -321,7 +321,7 @@ export default function IndustriesTransform() {
       {/* Sticky Grid Container on Desktop */}
       <div
         className={`mx-auto max-w-[85rem] px-6 transition-all duration-1000 ease-out ${
-          isMobile ? 'relative' : 'sticky top-28 py-20'
+          isMobile ? 'relative py-12' : 'sticky top-28 pt-8 pb-20'
         }`}
         style={{
           opacity: isVisible ? 1 : 0,

@@ -83,7 +83,7 @@ export default function InnovationStories() {
     <section
       ref={sectionRef}
       id="innovation-stories"
-      className="relative w-full py-24 md:py-32 overflow-hidden border-b border-slate-100/80 bg-white"
+      className="relative w-full py-16 md:py-20 overflow-hidden border-b border-slate-100/80 bg-white"
       style={{
         background: 'linear-gradient(180deg, #FCFCFD 0%, #FEFEFE 50%, #FCFCFD 100%)',
         opacity: isVisible ? 1 : 0,

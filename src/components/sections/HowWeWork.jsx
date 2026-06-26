@@ -207,7 +207,7 @@ export default function HowWeWork() {
   };
 
   return (
-    <section id="how-we-work" className="relative w-full py-24 md:py-32 overflow-x-clip bg-[#FAFAFA]">
+    <section id="how-we-work" className="relative w-full py-16 md:py-20 overflow-x-clip bg-[#FAFAFA]">
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes hww-flow-dash { to { stroke-dashoffset: -24; } }
         @keyframes hww-scale-ring-1 { 0% { transform: scale(0.5); opacity: 1; stroke-width: 2; } 100% { transform: scale(3.25); opacity: 0; stroke-width: 0.5; } }

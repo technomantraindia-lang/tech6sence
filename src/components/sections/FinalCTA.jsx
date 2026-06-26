@@ -23,7 +23,7 @@ export default function FinalCTA() {
   return (
     <section 
       ref={containerRef}
-      className="relative w-full py-20 md:py-28 px-4 sm:px-6 md:px-8 overflow-hidden bg-[#FBFBFF]"
+      className="relative w-full py-12 md:py-16 px-4 sm:px-6 md:px-8 overflow-hidden bg-[#FBFBFF]"
     >
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes cta-glow-drift {
@@ -83,7 +83,7 @@ export default function FinalCTA() {
 
       {/* Main Wide CTA Container */}
       <div 
-        className={`relative max-w-6xl mx-auto rounded-[2rem] md:rounded-[2.5rem] border border-slate-100 bg-white/70 backdrop-blur-md overflow-hidden py-16 px-6 sm:px-12 md:py-24 md:px-20 shadow-[0_20px_50px_rgba(0,0,0,0.02)] transition-all duration-1000 ease-out ${
+        className={`relative max-w-6xl mx-auto rounded-[2rem] md:rounded-[2.5rem] border border-slate-100 bg-white/70 backdrop-blur-md overflow-hidden py-12 px-6 sm:px-12 md:py-16 md:px-20 shadow-[0_20px_50px_rgba(0,0,0,0.02)] transition-all duration-1000 ease-out ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
         }`}
       >

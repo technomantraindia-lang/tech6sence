@@ -66,7 +66,7 @@ export default function WhyChooseTech6Sense() {
     <section
       ref={sectionRef}
       id="why-tech6sense"
-      className="relative w-full py-24 md:py-32 overflow-hidden"
+      className="relative w-full py-16 md:py-20 overflow-hidden"
       style={{ background: 'linear-gradient(180deg, #FAFAFA 0%, #FEFEFE 50%, #FAFAFA 100%)' }}
     >
       <style dangerouslySetInnerHTML={{ __html: `
