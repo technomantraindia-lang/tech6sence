@@ -10,7 +10,7 @@ const PRODUCTS = [
     tags: ['Voice AI', 'Sensor Data', 'BLE 5.0', 'Edge ML'],
     accent: '#7c3aed',
     graphic: () => (
-      <svg viewBox="0 0 240 180" className="w-full h-full">
+      <svg viewBox="0 0 24 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
         <defs>
           <linearGradient id="dtp-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#7c3aed" stopOpacity="0.15" />
@@ -44,7 +44,7 @@ const PRODUCTS = [
     tags: ['Vitals AI', 'HIPAA Ready', 'Diagnostics', 'IoMT'],
     accent: '#06b6d4',
     graphic: () => (
-      <svg viewBox="0 0 240 180" className="w-full h-full">
+      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
         <defs>
           <linearGradient id="dtp-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.12" />
@@ -75,7 +75,7 @@ const PRODUCTS = [
     tags: ['MQTT', 'Edge Compute', 'Cloud Sync', 'OTA Updates'],
     accent: '#8b5cf6',
     graphic: () => (
-      <svg viewBox="0 0 240 180" className="w-full h-full">
+      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
         <defs>
           <linearGradient id="dtp-grad-3" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.12" />
@@ -113,7 +113,7 @@ const PRODUCTS = [
     tags: ['Exoskeleton', 'Motion AI', 'Safety+', 'Haptic FB'],
     accent: '#ec4899',
     graphic: () => (
-      <svg viewBox="0 0 240 180" className="w-full h-full">
+      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
         <defs>
           <linearGradient id="dtp-grad-4" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#ec4899" stopOpacity="0.12" />
@@ -152,7 +152,7 @@ const PRODUCTS = [
     tags: ['NLP Engine', 'Whisper AI', 'Sync+', 'Smart Ink'],
     accent: '#f59e0b',
     graphic: () => (
-      <svg viewBox="0 0 240 180" className="w-full h-full">
+      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
         <defs>
           <linearGradient id="dtp-grad-5" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.12" />
@@ -185,7 +185,7 @@ const PRODUCTS = [
 function FloatingTag({ text, x, y, delay }) {
   return (
     <span
-      className="absolute px-2.5 py-1 rounded-full text-[0.55rem] font-bold tracking-wider uppercase border border-slate-200/60 bg-white/80 text-slate-400 shadow-sm pointer-events-none select-none dtp-float-tag"
+      className="absolute px-2.5 py-1 rounded-full text-[0.55rem] font-bold tracking-wider uppercase border border-slate-200/60 bg-white/80 text-slate-450 shadow-sm pointer-events-none select-none dtp-float-tag"
       style={{ left: x, top: y, animationDelay: `${delay}s` }}
     >
       {text}
@@ -198,6 +198,16 @@ export default function DeepTechProducts() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -213,14 +223,50 @@ export default function DeepTechProducts() {
     return () => observer.disconnect();
   }, []);
 
+  const clickLockRef = useRef(false);
   const handleTabClick = useCallback((index) => {
     if (index === activeTab || transitioning) return;
+    clickLockRef.current = true;
     setTransitioning(true);
+    setActiveTab(index);
     setTimeout(() => {
-      setActiveTab(index);
       setTransitioning(false);
     }, 250);
+    setTimeout(() => {
+      clickLockRef.current = false;
+    }, 1200);
   }, [activeTab, transitioning]);
+
+  useEffect(() => {
+    if (isMobile) return;
+
+    const handleScroll = () => {
+      if (clickLockRef.current) return;
+      const section = sectionRef.current;
+      if (!section) return;
+
+      const rect = section.getBoundingClientRect();
+      const sectionHeight = rect.height;
+      const scrolledIntoSection = -rect.top;
+
+      if (scrolledIntoSection >= 0 && scrolledIntoSection <= sectionHeight - window.innerHeight) {
+        const scrollableDistance = sectionHeight - window.innerHeight;
+        const progress = scrolledIntoSection / scrollableDistance;
+
+        const tabIndex = Math.min(
+          Math.floor(progress * PRODUCTS.length),
+          PRODUCTS.length - 1
+        );
+
+        if (tabIndex !== activeTab && !transitioning) {
+          setActiveTab(tabIndex);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [activeTab, transitioning, isMobile]);
 
   const product = PRODUCTS[activeTab];
   const tagPositions = [
@@ -234,8 +280,9 @@ export default function DeepTechProducts() {
     <section
       ref={sectionRef}
       id="deep-tech-products"
-      className="relative w-full py-24 md:py-32 overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #FAFAFA 0%, #F8F7FF 50%, #FAFAFA 100%)' }}
+      className={`relative w-full overflow-visible bg-gradient-to-b from-[#FAFAFA] via-[#F8F7FF] to-[#FAFAFA] ${
+        isMobile ? 'py-24' : 'h-[230vh]'
+      }`}
     >
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes dtp-dash { to { stroke-dashoffset: -24; } }
@@ -243,10 +290,10 @@ export default function DeepTechProducts() {
         @keyframes dtp-pulse-delay-kf { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
         @keyframes dtp-spin-kf { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         @keyframes dtp-spin-rev-kf { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
-        @keyframes dtp-float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-6px); } }
-        @keyframes dtp-float-tag-kf { 0%, 100% { transform: translateY(0px); opacity: 0.7; } 50% { transform: translateY(-4px); opacity: 1; } }
+        @keyframes dtp-float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-5px); } }
+        @keyframes dtp-float-tag-kf { 0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.75; } 50% { transform: translateY(-4px) rotate(0.5deg); opacity: 1; } }
         @keyframes dtp-ecg { from { stroke-dashoffset: 300; } to { stroke-dashoffset: 0; } }
-        @keyframes dtp-card-in { 0% { opacity: 0; transform: translateY(10px); } 100% { opacity: 1; transform: translateY(0); } }
+        @keyframes dtp-card-in { 0% { opacity: 0; transform: translateY(12px) scale(0.99); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
         
         .dtp-dash-anim { animation: dtp-dash 2s linear infinite; }
         .dtp-pulse { animation: dtp-pulse-kf 2.5s ease-in-out infinite; }
@@ -254,17 +301,20 @@ export default function DeepTechProducts() {
         .dtp-spin { transform-origin: center; transform-box: fill-box; animation: dtp-spin-kf 25s linear infinite; }
         .dtp-spin-reverse { transform-origin: center; transform-box: fill-box; animation: dtp-spin-rev-kf 18s linear infinite; }
         .dtp-float-panel { animation: dtp-float 6s ease-in-out infinite; }
-        .dtp-float-tag { animation: dtp-float-tag-kf 4s ease-in-out infinite; }
+        .dtp-float-tag { animation: dtp-float-tag-kf 5s ease-in-out infinite; }
         .dtp-ecg-anim { stroke-dasharray: 300; animation: dtp-ecg 2.5s linear infinite; }
-        .dtp-card-enter { animation: dtp-card-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) both; }
+        .dtp-card-enter { animation: dtp-card-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) both; }
       `}} />
 
       {/* Soft ambient glows */}
       <div className="absolute top-[-5%] left-[-5%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-violet-100/40 to-transparent blur-[140px] pointer-events-none" />
       <div className="absolute bottom-[-5%] right-[-5%] w-[450px] h-[450px] rounded-full bg-gradient-to-tl from-fuchsia-100/30 to-transparent blur-[120px] pointer-events-none" />
 
+      {/* Sticky Grid Container on Desktop */}
       <div
-        className="relative z-10 mx-auto max-w-[85rem] px-6 transition-all duration-1000 ease-out"
+        className={`mx-auto max-w-[85rem] px-6 transition-all duration-1000 ease-out ${
+          isMobile ? 'relative' : 'sticky top-28 py-20'
+        }`}
         style={{
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
@@ -273,8 +323,8 @@ export default function DeepTechProducts() {
         {/* Two-column layout */}
         <div className="grid md:grid-cols-[1fr_1.6fr] gap-12 md:gap-14 lg:gap-20 items-start">
 
-          {/* LEFT COLUMN: Sticky intro */}
-          <div className="md:sticky md:top-32 flex flex-col">
+          {/* LEFT COLUMN: Intro content */}
+          <div className="flex flex-col">
             {/* Label */}
             <div className="mb-6 flex items-center gap-3">
               <span className="h-[2px] w-10 bg-gradient-to-r from-violet-500 to-fuchsia-500" />
@@ -414,8 +464,10 @@ export default function DeepTechProducts() {
                       />
                     ))}
 
-                    {/* SVG graphic */}
-                    <div className="relative z-10 w-full max-w-[200px] mx-auto">
+                    {/* SVG graphic with morph scale/rotate transition */}
+                    <div className={`relative z-10 w-full max-w-[200px] mx-auto transition-all duration-500 ease-out transform ${
+                      transitioning ? 'opacity-0 scale-95 rotate-[-3deg]' : 'opacity-100 scale-100 rotate-0'
+                    }`}>
                       {product.graphic()}
                     </div>
                   </div>

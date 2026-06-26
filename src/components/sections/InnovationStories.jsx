@@ -200,6 +200,12 @@ export default function InnovationStories() {
                         ? 'bg-white border-slate-100 shadow-sm shadow-slate-100/50'
                         : 'bg-transparent border-transparent hover:bg-violet-50/20 hover:border-violet-50/30'
                     }`}
+                    style={{
+                      opacity: isVisible ? 1 : 0,
+                      transform: isVisible ? 'translateY(0)' : 'translateY(15px)',
+                      transition: 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+                      transitionDelay: `${i * 120}ms`
+                    }}
                   >
                     {/* Active State progress line indicator */}
                     {isActive && (
@@ -233,11 +239,16 @@ export default function InnovationStories() {
             </div>
           </div>
 
-          {/* CENTER ZONE: Large Active Story Panel */}
           <div 
             className="relative flex flex-col"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
+              transition: 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
+              transitionDelay: '400ms'
+            }}
           >
             <div
               key={activeStory}
@@ -339,6 +350,12 @@ export default function InnovationStories() {
               <div
                 key={i}
                 className={`animate-float-${i} relative px-5 py-4 rounded-2xl bg-white/40 border border-slate-100/60 backdrop-blur-sm shadow-sm shadow-slate-100/10 hover:bg-white/80 hover:border-violet-100/80 hover:shadow-md hover:shadow-violet-500/[0.02] transition-all duration-300 cursor-default`}
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(15px)',
+                  transition: 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+                  transitionDelay: `${650 + i * 120}ms`
+                }}
               >
                 {/* Thin top accent glow */}
                 <div className="absolute top-0 left-6 right-6 h-[1.5px] bg-gradient-to-r from-violet-300 to-fuchsia-300 opacity-20" />

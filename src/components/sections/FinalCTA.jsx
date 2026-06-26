@@ -69,14 +69,15 @@ export default function FinalCTA() {
       {/* Background Elements */}
       {/* Soft AI Grid pattern */}
       <div 
-        className="absolute inset-0 pointer-events-none opacity-[0.35] mix-blend-multiply" 
+        className="absolute inset-0 pointer-events-none mix-blend-multiply transition-opacity duration-1000" 
         style={{
           backgroundImage: `
             linear-gradient(to right, rgba(124, 58, 237, 0.05) 1px, transparent 1px),
             linear-gradient(to bottom, rgba(124, 58, 237, 0.05) 1px, transparent 1px)
           `,
           backgroundSize: '40px 40px',
-          backgroundPosition: 'center'
+          backgroundPosition: 'center',
+          opacity: isVisible ? 0.35 : 0
         }}
       />
 
@@ -88,19 +89,33 @@ export default function FinalCTA() {
       >
         {/* Animated Gradient Top Border Line */}
         <div 
-          className="absolute top-0 inset-x-0 h-[2.5px] bg-gradient-to-r from-violet-500 via-fuchsia-500 to-violet-500 bg-[size:200%_auto] animate-border-flow" 
+          className="absolute top-0 inset-x-0 h-[2.5px] bg-gradient-to-r from-violet-500 via-fuchsia-500 to-violet-500 bg-[size:200%_auto] animate-border-flow transition-transform duration-1000 ease-out" 
+          style={{
+            transform: isVisible ? 'scaleX(1)' : 'scaleX(0)',
+            transformOrigin: 'left'
+          }}
         />
 
         {/* Floating Gradient Glow Orb Behind Heading */}
         <div 
-          className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] rounded-full bg-gradient-to-tr from-violet-200/40 via-fuchsia-200/35 to-transparent blur-[80px] sm:blur-[110px] pointer-events-none z-0 animate-glow-drift"
+          className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] rounded-full bg-gradient-to-tr from-violet-200/40 via-fuchsia-200/35 to-transparent blur-[80px] sm:blur-[110px] pointer-events-none z-0 animate-glow-drift transition-all duration-1000 ease-out"
+          style={{
+            transform: `translate(-50%, -50%) scale(${isVisible ? 1 : 0.6})`,
+            opacity: isVisible ? 1 : 0
+          }}
         />
 
         {/* Content Block (Centered) */}
         <div className="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto">
           
           {/* Small Uppercase Label */}
-          <div className="mb-4 flex items-center gap-2">
+          <div 
+            className="mb-4 flex items-center gap-2 transition-all duration-700 ease-out"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(10px)'
+            }}
+          >
             <span className="h-1.5 w-1.5 rounded-full bg-violet-600 animate-pulse" />
             <span className="font-mono text-xs font-bold tracking-[0.25em] text-violet-600 uppercase">
               READY TO BUILD WITH AI?
@@ -109,18 +124,39 @@ export default function FinalCTA() {
           </div>
 
           {/* Heading */}
-          <h2 className="mb-6 font-display text-[clamp(1.85rem,4.2vw,3rem)] leading-[1.15] font-extrabold text-[#0B0527] tracking-tight">
+          <h2 
+            className="mb-6 font-display text-[clamp(1.85rem,4.2vw,3rem)] leading-[1.15] font-extrabold text-[#0B0527] tracking-tight transition-all duration-700 ease-out"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(15px)',
+              transitionDelay: '150ms'
+            }}
+          >
             Ready to Build Your Next <br />
             <span className="text-shimmer font-black">AI Advantage?</span>
           </h2>
 
           {/* Paragraph */}
-          <p className="mb-10 font-body text-[0.95rem] sm:text-[1.02rem] leading-relaxed text-slate-500 max-w-2xl font-medium">
+          <p 
+            className="mb-10 font-body text-[0.95rem] sm:text-[1.02rem] leading-relaxed text-slate-500 max-w-2xl font-medium transition-all duration-700 ease-out"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(15px)',
+              transitionDelay: '300ms'
+            }}
+          >
             From intelligent automation and deep-tech products to founder ecosystem support, TECH6SENSE AI helps businesses and entrepreneurs turn bold ideas into scalable AI execution.
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full mb-10">
+          <div 
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full mb-10 transition-all duration-700 ease-out"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(15px)',
+              transitionDelay: '450ms'
+            }}
+          >
             {/* Primary Button */}
             <a
               href="#contact"

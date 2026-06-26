@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import companyLogo from '../assets/compney logo.png'
 
 const NAV_LINKS = [
-  { label: 'Home', href: '#home', num: '01' },
-  { label: 'About', href: '#about', num: '02' },
-  { label: 'Products', href: '#products', num: '03' },
-  { label: 'Industries', href: '#industries', num: '04' },
-  { label: 'Resources', href: '#resources', num: '05' },
+  { label: 'About Us', href: '/about', num: '01' },
+  { label: 'AI Agents & Automation', href: '/ai-agents', num: '02' },
+  { label: 'Generative AI & Copilots', href: '/gen-ai', num: '03' },
+  { label: 'Computer Vision', href: '/computer-vision', num: '04' },
+  { label: 'Data Intelligence', href: '/data-intelligence', num: '05' },
+  { label: 'Enterprise AI Integration', href: '/enterprise-ai', num: '06' },
 ]
 
 export default function Header() {
@@ -56,50 +58,39 @@ export default function Header() {
         <div className={`flex items-center justify-between gap-4 transition-all duration-300 ${
           scrolled ? 'py-3.5' : 'py-5'
         }`}>
-          {/* Logo & Online Badge */}
+          {/* Logo */}
           <div className="flex items-center gap-5">
-            <a href="#" className="group relative flex shrink-0 items-center no-underline">
+            <Link to="/" className="group relative flex shrink-0 items-center no-underline">
               <div className="absolute -inset-2 rounded-lg bg-violet-400/0 blur-md transition-all group-hover:bg-violet-400/10" />
               <img
                 src={companyLogo}
                 alt="TECH6SENSE AI"
                 className="relative h-8 w-auto object-contain md:h-9"
               />
-            </a>
-            
-            {/* Sleek Vertical Divider */}
-            <div className="hidden h-5 w-[1px] bg-violet-500/25 sm:block" />
-
-            {/* AI Systems Online Badge */}
-            <div className="hidden items-center gap-2 rounded-full border border-violet-500/20 bg-violet-950/45 px-3.5 py-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:flex">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981]" />
-              <span className="font-mono text-[0.58rem] tracking-[0.25em] text-violet-400 uppercase font-semibold">
-                Systems Online
-              </span>
-            </div>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden items-center gap-1.5 lg:flex">
+          <nav className="hidden flex-1 items-center justify-center gap-1 lg:flex overflow-x-auto flex-nowrap [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden px-2">
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
-                className="group relative flex items-center rounded-lg px-3.5 py-2 no-underline transition-all hover:bg-violet-950/40"
+                to={link.href}
+                className="group relative flex items-center rounded-lg px-2.5 xl:px-3.5 py-2 no-underline transition-all hover:bg-violet-950/40 whitespace-nowrap shrink-0"
               >
-                <span className="font-body text-sm font-medium text-slate-300 transition-colors group-hover:text-white">
+                <span className="font-body text-[0.75rem] xl:text-sm font-medium text-slate-300 transition-colors group-hover:text-white">
                   {link.label}
                 </span>
                 <span className="absolute bottom-1 left-3.5 right-3.5 h-px origin-left scale-x-0 bg-gradient-to-r from-violet-450 to-fuchsia-400 transition-transform duration-300 group-hover:scale-x-100" />
-              </a>
+              </Link>
             ))}
           </nav>
 
           {/* Right Actions */}
           <div className="flex items-center gap-3">
             <div className="hidden shrink-0 lg:block">
-              <a
-                href="#contact"
+              <Link
+                to="#contact"
                 className="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-6 py-2.5 font-body text-xs font-bold tracking-widest text-white no-underline shadow-[0_4px_15px_rgba(124,58,237,0.25)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_25px_rgba(124,58,237,0.4)] active:scale-[0.98]"
               >
                 {/* Hover overlay gradient */}
@@ -112,7 +103,7 @@ export default function Header() {
                     </svg>
                   </span>
                 </span>
-              </a>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -149,18 +140,11 @@ export default function Header() {
         }`}
       >
         <div className="px-6 py-4">
-          <div className="mb-4 flex items-center gap-2 sm:hidden">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981] animate-pulse" />
-            <span className="font-mono text-[0.6rem] tracking-[0.25em] text-violet-400 uppercase font-semibold">
-              Systems Online
-            </span>
-          </div>
-
           <nav className="flex flex-col gap-1">
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
+                to={link.href}
                 onClick={() => setOpen(false)}
                 className="group flex items-center gap-4 rounded-xl border-l-2 border-transparent px-4 py-3 no-underline transition-all hover:border-violet-450 hover:bg-violet-950/40"
               >
@@ -170,25 +154,25 @@ export default function Header() {
                 <span className="font-body text-sm font-medium text-slate-300 group-hover:text-white">
                   {link.label}
                 </span>
-              </a>
+              </Link>
             ))}
           </nav>
 
           <div className="mt-4 flex flex-col gap-2.5 pb-2">
-            <a
-              href="#contact"
+            <Link
+              to="#contact"
               onClick={() => setOpen(false)}
               className="rounded-xl border border-violet-500/30 py-3 text-center font-body text-sm font-medium text-slate-300 no-underline transition-all hover:bg-violet-950/40 hover:text-white"
             >
               Contact
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              to="#contact"
               onClick={() => setOpen(false)}
               className="rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-500 py-3 text-center font-body text-sm font-semibold text-white no-underline shadow-[0_4px_16px_rgba(124,58,237,0.35)] transition-all hover:opacity-90"
             >
               Get Started →
-            </a>
+            </Link>
           </div>
         </div>
       </div>

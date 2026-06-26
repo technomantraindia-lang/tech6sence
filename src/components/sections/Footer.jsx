@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import companyLogo from '../../assets/compney logo.png';
 
 export default function Footer() {
@@ -50,13 +51,13 @@ export default function Footer() {
           
           {/* Column 1: Brand block */}
           <div className="md:col-span-2 lg:col-span-4 flex flex-col justify-start">
-            <a href="#" className="flex items-center no-underline mb-5 group">
+            <Link to="/" className="flex items-center no-underline mb-5 group">
               <img
                 src={companyLogo}
                 alt="TECH6SENSE AI"
                 className="h-8 w-auto object-contain"
               />
-            </a>
+            </Link>
             <p className="font-body text-[0.88rem] leading-relaxed text-slate-500 mb-6 max-w-sm">
               Transforming vision into intelligence through AI solutions, deep-tech products, and future-ready business ecosystems.
             </p>
@@ -93,13 +94,13 @@ export default function Footer() {
                 { label: 'Contact', href: '#contact' },
               ].map((link) => (
                 <li key={link.label}>
-                  <a 
-                    href={link.href}
+                  <Link 
+                    to={link.href}
                     className="font-body text-[0.88rem] text-slate-500 hover:text-violet-600 transition-colors relative inline-block group"
                   >
                     {link.label}
                     <span className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-violet-500 to-fuchsia-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -119,13 +120,13 @@ export default function Footer() {
                 { label: 'Enterprise AI Integration', href: '#solutions' },
               ].map((link) => (
                 <li key={link.label}>
-                  <a 
-                    href={link.href}
+                  <Link 
+                    to={link.href}
                     className="font-body text-[0.88rem] text-slate-500 hover:text-violet-600 transition-colors relative inline-block group"
                   >
                     {link.label}
                     <span className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-violet-500 to-fuchsia-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -165,12 +166,12 @@ export default function Footer() {
               <p className="font-body text-[0.82rem] leading-relaxed text-slate-500 mb-4 font-medium">
                 Connect with TECH6SENSE AI to explore intelligent automation, product innovation, or founder support.
               </p>
-              <a
-                href="#contact"
+              <Link
+                to="#contact"
                 className="inline-flex w-full justify-center px-4 py-2.5 rounded-lg text-white font-semibold text-xs bg-gradient-to-r from-violet-600 to-fuchsia-600 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(139,92,246,0.35)] shadow-sm"
               >
                 Schedule Consultation
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -188,12 +189,12 @@ export default function Footer() {
           {/* Right Side */}
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
             <div className="flex items-center gap-4 sm:gap-6">
-              <a href="#privacy" className="hover:text-violet-400 transition-colors">
+              <Link to="#privacy" className="hover:text-violet-400 transition-colors">
                 Privacy Policy
-              </a>
-              <a href="#terms" className="hover:text-violet-400 transition-colors">
+              </Link>
+              <Link to="#terms" className="hover:text-violet-400 transition-colors">
                 Terms
-              </a>
+              </Link>
             </div>
 
             {/* Social Icons */}

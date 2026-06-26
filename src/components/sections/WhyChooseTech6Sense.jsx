@@ -126,7 +126,13 @@ export default function WhyChooseTech6Sense() {
           )}
 
           {/* LEFT: Large Statement Block */}
-          <div className="relative group/main z-10">
+          <div 
+            className="relative group/main z-10 transition-all duration-1000 ease-out"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
+            }}
+          >
             {/* Subtle glow behind */}
             <div className="absolute -inset-6 rounded-[3rem] bg-gradient-to-br from-violet-50/40 via-fuchsia-50/10 to-transparent blur-[40px] opacity-60 group-hover/main:opacity-100 group-hover/main:scale-[1.03] transition-all duration-500 pointer-events-none" />
 
@@ -171,7 +177,8 @@ export default function WhyChooseTech6Sense() {
                     style={{
                       opacity: isVisible ? 1 : 0,
                       transform: isVisible ? 'translateX(0)' : 'translateX(-10px)',
-                      transitionDelay: `${400 + i * 150}ms`,
+                      transition: 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+                      transitionDelay: `${350 + i * 120}ms`,
                     }}
                   >
                     {/* Small dot/icon transitions grey-to-gradient */}
@@ -200,7 +207,8 @@ export default function WhyChooseTech6Sense() {
                   boxShadow: '0 8px 24px -8px rgba(0,0,0,0.02)',
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(15px)',
-                  transitionDelay: `${300 + i * 180}ms`,
+                  transition: 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
+                  transitionDelay: `${450 + i * 150}ms`,
                 }}
               >
                 {/* Thin left border animation fill from top to bottom */}
@@ -262,7 +270,13 @@ export default function WhyChooseTech6Sense() {
               <div
                 key={i}
                 className="group relative py-6 md:py-7 px-4 md:px-6 text-center border-b md:border-b-0 border-r border-slate-100/60 last:border-r-0 cursor-default transition-all duration-300 hover:bg-violet-50/10 hover:border-slate-200/80"
-                style={{ borderRightColor: i === 3 ? 'transparent' : undefined }}
+                style={{ 
+                  borderRightColor: i === 3 ? 'transparent' : undefined,
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+                  transition: 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+                  transitionDelay: `${900 + i * 120}ms`
+                }}
               >
                 {/* Text translates upward and has dot icon hover highlight */}
                 <div className="flex items-center justify-center gap-1.5 transition-transform duration-300 group-hover:-translate-y-0.5">

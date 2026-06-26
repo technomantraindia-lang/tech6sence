@@ -27,7 +27,7 @@ function PointItem({ point, accent }) {
           <path strokeLinecap="round" strokeLinejoin="round" d={point.icon} />
         </svg>
       </div>
-      <span className="font-body text-[0.88rem] text-slate-600 font-medium leading-snug">{point.text}</span>
+      <span className="font-body text-[0.88rem] text-slate-650 font-medium leading-snug">{point.text}</span>
     </div>
   );
 }
@@ -35,6 +35,7 @@ function PointItem({ point, accent }) {
 export default function EcosystemSection() {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [step, setStep] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -49,6 +50,25 @@ export default function EcosystemSection() {
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+    
+    // Trigger progressive storytelling reveals
+    const timer1 = setTimeout(() => setStep(1), 100);  // Reveal Left Panel
+    const timer2 = setTimeout(() => setStep(2), 650);  // Draw Left connecting line
+    const timer3 = setTimeout(() => setStep(3), 1150); // Reveal Center Ecosystem Hub
+    const timer4 = setTimeout(() => setStep(4), 1650); // Draw Right connecting line
+    const timer5 = setTimeout(() => setStep(5), 2150); // Reveal Right Panel
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+      clearTimeout(timer4);
+      clearTimeout(timer5);
+    };
+  }, [isVisible]);
 
   return (
     <section
@@ -74,15 +94,15 @@ export default function EcosystemSection() {
       <div className="absolute top-[-5%] left-[-5%] w-[450px] h-[450px] rounded-full bg-gradient-to-br from-violet-100/40 to-transparent blur-[130px] pointer-events-none" />
       <div className="absolute bottom-[-5%] right-[-5%] w-[400px] h-[400px] rounded-full bg-gradient-to-tl from-fuchsia-100/30 to-transparent blur-[110px] pointer-events-none" />
 
-      <div
-        className="relative z-10 mx-auto max-w-[85rem] px-6 transition-all duration-1000 ease-out"
-        style={{
-          opacity: isVisible ? 1 : 0,
-          transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-        }}
-      >
+      <div className="relative z-10 mx-auto max-w-[85rem] px-6">
         {/* Top heading area */}
-        <div className="mb-10 md:mb-14 max-w-3xl mx-auto text-center">
+        <div 
+          className="mb-10 md:mb-14 max-w-3xl mx-auto text-center transition-all duration-700 ease-out"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(20px)'
+          }}
+        >
           <div className="mb-5 flex items-center justify-center gap-3">
             <span className="h-[2px] w-10 bg-gradient-to-r from-violet-500 to-fuchsia-500" />
             <span className="font-mono text-[0.65rem] font-bold tracking-[0.35em] uppercase text-violet-500">
@@ -105,7 +125,13 @@ export default function EcosystemSection() {
         <div className="relative flex flex-col md:flex-row items-stretch gap-6 md:gap-0">
 
           {/* LEFT PANEL: Visionary Founders */}
-          <div className="flex-1 group">
+          <div 
+            className="flex-1 group transition-all duration-700 ease-out"
+            style={{
+              opacity: step >= 1 ? 1 : 0,
+              transform: step >= 1 ? 'translateY(0)' : 'translateY(24px)'
+            }}
+          >
             <div className="h-full rounded-[2rem] border border-white/80 bg-white/70 backdrop-blur-xl p-7 md:p-9 lg:p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-15px_rgba(124,58,237,0.08)]"
               style={{ boxShadow: '0 20px 50px -15px rgba(0,0,0,0.04), 0 0 0 1px rgba(255,255,255,0.6) inset' }}
             >
@@ -153,16 +179,33 @@ export default function EcosystemSection() {
           <div className="hidden md:flex flex-col items-center justify-center relative w-[120px] shrink-0">
             {/* Left connecting line */}
             <div
-              className="absolute top-1/2 left-0 right-1/2 h-[2px] eco-line-flow"
-              style={{ background: 'linear-gradient(90deg, transparent, #7c3aed, #d946ef, transparent)', backgroundSize: '200% 100%' }}
+              className="absolute top-1/2 left-0 right-1/2 h-[2px] eco-line-flow transition-transform duration-500 ease-out"
+              style={{ 
+                background: 'linear-gradient(90deg, transparent, #7c3aed, #d946ef, transparent)', 
+                backgroundSize: '200% 100%',
+                transform: step >= 2 ? 'scaleX(1)' : 'scaleX(0)',
+                transformOrigin: 'left'
+              }}
             />
             {/* Right connecting line */}
             <div
-              className="absolute top-1/2 left-1/2 right-0 h-[2px] eco-line-flow"
-              style={{ background: 'linear-gradient(90deg, transparent, #d946ef, #7c3aed, transparent)', backgroundSize: '200% 100%', animationDelay: '1.5s' }}
+              className="absolute top-1/2 left-1/2 right-0 h-[2px] eco-line-flow transition-transform duration-500 ease-out"
+              style={{ 
+                background: 'linear-gradient(90deg, transparent, #d946ef, #7c3aed, transparent)', 
+                backgroundSize: '200% 100%', 
+                animationDelay: '1.5s',
+                transform: step >= 4 ? 'scaleX(1)' : 'scaleX(0)',
+                transformOrigin: 'left'
+              }}
             />
             {/* Center node */}
-            <div className="relative z-10 eco-node-glow w-[90px] h-[90px] rounded-full bg-white border border-violet-200/60 flex flex-col items-center justify-center gap-0.5">
+            <div 
+              className={`relative z-10 w-[90px] h-[90px] rounded-full bg-white border border-violet-200/60 flex flex-col items-center justify-center gap-0.5 transition-all duration-550 ease-out ${step >= 3 ? 'eco-node-glow' : ''}`}
+              style={{
+                opacity: step >= 3 ? 1 : 0,
+                transform: step >= 3 ? 'scale(1)' : 'scale(0.8)'
+              }}
+            >
               <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 mb-0.5" stroke="#7c3aed" strokeWidth="1.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
               </svg>
@@ -175,9 +218,23 @@ export default function EcosystemSection() {
           {/* CENTER NODE (Mobile) */}
           <div className="flex md:hidden flex-col items-center py-2">
             {/* Top line */}
-            <div className="w-[2px] h-8 eco-line-flow" style={{ background: 'linear-gradient(180deg, transparent, #7c3aed, #d946ef)', backgroundSize: '100% 200%' }} />
+            <div 
+              className="w-[2px] h-8 eco-line-flow transition-transform duration-500 ease-out" 
+              style={{ 
+                background: 'linear-gradient(180deg, transparent, #7c3aed, #d946ef)', 
+                backgroundSize: '100% 200%',
+                transform: step >= 2 ? 'scaleY(1)' : 'scaleY(0)',
+                transformOrigin: 'top'
+              }} 
+            />
             {/* Node */}
-            <div className="eco-node-glow w-[80px] h-[80px] rounded-full bg-white border border-violet-200/60 flex flex-col items-center justify-center gap-0.5 my-2">
+            <div 
+              className={`w-[80px] h-[80px] rounded-full bg-white border border-violet-200/60 flex flex-col items-center justify-center gap-0.5 my-2 transition-all duration-550 ease-out ${step >= 3 ? 'eco-node-glow' : ''}`}
+              style={{
+                opacity: step >= 3 ? 1 : 0,
+                transform: step >= 3 ? 'scale(1)' : 'scale(0.8)'
+              }}
+            >
               <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 mb-0.5" stroke="#7c3aed" strokeWidth="1.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
               </svg>
@@ -186,11 +243,25 @@ export default function EcosystemSection() {
               </span>
             </div>
             {/* Bottom line */}
-            <div className="w-[2px] h-8 eco-line-flow" style={{ background: 'linear-gradient(180deg, #d946ef, #7c3aed, transparent)', backgroundSize: '100% 200%' }} />
+            <div 
+              className="w-[2px] h-8 eco-line-flow transition-transform duration-500 ease-out" 
+              style={{ 
+                background: 'linear-gradient(180deg, #d946ef, #7c3aed, transparent)', 
+                backgroundSize: '100% 200%',
+                transform: step >= 4 ? 'scaleY(1)' : 'scaleY(0)',
+                transformOrigin: 'top'
+              }} 
+            />
           </div>
 
           {/* RIGHT PANEL: Business Brains */}
-          <div className="flex-1 group">
+          <div 
+            className="flex-1 group transition-all duration-700 ease-out"
+            style={{
+              opacity: step >= 5 ? 1 : 0,
+              transform: step >= 5 ? 'translateY(0)' : 'translateY(24px)'
+            }}
+          >
             <div className="h-full rounded-[2rem] border border-white/80 bg-white/70 backdrop-blur-xl p-7 md:p-9 lg:p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-15px_rgba(217,70,239,0.08)]"
               style={{ boxShadow: '0 20px 50px -15px rgba(0,0,0,0.04), 0 0 0 1px rgba(255,255,255,0.6) inset' }}
             >

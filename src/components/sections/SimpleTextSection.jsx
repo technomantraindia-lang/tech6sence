@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function SimpleTextSection() {
   return (
@@ -26,13 +27,13 @@ export default function SimpleTextSection() {
 
 
             <div className="flex flex-wrap gap-5">
-              <a href="#consultation" className="group relative flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-red-600 to-rose-600 px-8 py-3.5 font-display text-sm font-bold tracking-widest text-white shadow-[0_4px_15px_rgba(220,38,38,0.25)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_25px_rgba(220,38,38,0.4)] active:scale-[0.98]">
+              <Link to="#consultation" className="group relative flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-red-600 to-rose-600 px-8 py-3.5 font-display text-sm font-bold tracking-widest text-white shadow-[0_4px_15px_rgba(220,38,38,0.25)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_25px_rgba(220,38,38,0.4)] active:scale-[0.98]">
                 <span className="absolute inset-0 bg-gradient-to-r from-rose-600 to-red-600 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <span className="relative z-10">SCHEDULE CONSULTATION</span>
-              </a>
-              <a href="#founders" className="group relative flex items-center justify-center overflow-hidden rounded-full border border-red-500/30 bg-red-950/40 px-8 py-3.5 font-display text-sm font-bold tracking-widest text-white backdrop-blur-md transition-all duration-300 hover:border-red-500/60 hover:bg-red-900/40 hover:text-white active:scale-[0.98]">
+              </Link>
+              <Link to="#founders" className="group relative flex items-center justify-center overflow-hidden rounded-full border border-red-500/30 bg-red-950/40 px-8 py-3.5 font-display text-sm font-bold tracking-widest text-white backdrop-blur-md transition-all duration-300 hover:border-red-500/60 hover:bg-red-900/40 hover:text-white active:scale-[0.98]">
                 <span className="relative z-10">JOIN VISIONARY FOUNDERS</span>
-              </a>
+              </Link>
             </div>
 
           </div>

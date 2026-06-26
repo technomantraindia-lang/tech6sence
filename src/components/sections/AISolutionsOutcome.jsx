@@ -50,27 +50,36 @@ const SOLUTIONS = [
   },
 ];
 
-function SolutionRow({ solution, index }) {
-  const rowRef = useRef(null);
+function SolutionRow({ solution, index, isActive, rowRef, isVisible }) {
   const [isHovered, setIsHovered] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = useCallback((e) => {
-    if (!rowRef.current) return;
-    const rect = rowRef.current.getBoundingClientRect();
+    if (!rowRef) return;
+    const el = document.getElementById(`sol-row-${index}`);
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
     setMousePos({
       x: e.clientX - rect.left,
       y: e.clientY - rect.top,
     });
-  }, []);
+  }, [index, rowRef]);
+
+  const activeOrHovered = isHovered || isActive;
 
   return (
     <div
       ref={rowRef}
+      id={`sol-row-${index}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onMouseMove={handleMouseMove}
-      className="group relative cursor-pointer select-none"
+      className="group relative cursor-pointer select-none transition-all duration-700 ease-out"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
+        transitionDelay: `${index * 120}ms`
+      }}
     >
       {/* Subtle cursor spotlight */}
       {isHovered && (
@@ -82,13 +91,17 @@ function SolutionRow({ solution, index }) {
         />
       )}
 
-      <div className="relative z-10 flex items-center gap-5 md:gap-6 py-6 md:py-7 px-4 md:px-6 rounded-2xl transition-all duration-300 group-hover:bg-white/60 group-hover:py-8 md:group-hover:py-9">
+      <div className={`relative z-10 flex items-center gap-5 md:gap-6 px-4 md:px-6 rounded-2xl transition-all duration-500 ease-out ${
+        activeOrHovered 
+          ? 'bg-white/70 py-8 md:py-9 shadow-[0_15px_35px_rgba(124,58,237,0.03)]' 
+          : 'bg-transparent py-6 md:py-7'
+      }`}>
         {/* Icon */}
         <div
-          className="w-12 h-12 shrink-0 rounded-2xl flex items-center justify-center border transition-all duration-300 bg-white shadow-sm group-hover:shadow-md"
+          className="w-12 h-12 shrink-0 rounded-2xl flex items-center justify-center border transition-all duration-300 bg-white shadow-sm"
           style={{
-            borderColor: isHovered ? 'rgba(139, 92, 246, 0.3)' : 'rgba(226, 232, 240, 0.8)',
-            color: isHovered ? '#7c3aed' : '#64748b',
+            borderColor: activeOrHovered ? 'rgba(139, 92, 246, 0.4)' : 'rgba(226, 232, 240, 0.8)',
+            color: activeOrHovered ? '#7c3aed' : '#64748b',
           }}
         >
           {solution.icon}
@@ -96,17 +109,19 @@ function SolutionRow({ solution, index }) {
 
         {/* Content */}
         <div className="flex-1 min-w-0">
-          <h4 className="font-display text-[1.1rem] md:text-[1.2rem] font-bold text-slate-800 tracking-tight transition-colors duration-300 group-hover:text-slate-900">
+          <h4 className="font-display text-[1.1rem] md:text-[1.2rem] font-bold text-slate-800 tracking-tight transition-colors duration-300">
             {solution.title}
           </h4>
-          <p className="mt-1 font-body text-[0.85rem] md:text-[0.9rem] text-slate-400 leading-relaxed font-medium transition-colors duration-300 group-hover:text-slate-500">
+          <p className="mt-1 font-body text-[0.85rem] md:text-[0.9rem] text-slate-450 leading-relaxed font-medium transition-colors duration-300">
             {solution.description}
           </p>
         </div>
 
         {/* Arrow */}
-        <div className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 group-hover:translate-x-1.5 group-hover:bg-violet-50">
-          <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 transition-colors duration-300" stroke={isHovered ? '#7c3aed' : '#94a3b8'} strokeWidth="2">
+        <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+          activeOrHovered ? 'translate-x-1.5 bg-violet-50' : ''
+        }`}>
+          <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 transition-colors duration-300" stroke={activeOrHovered ? '#7c3aed' : '#94a3b8'} strokeWidth="2">
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
           </svg>
         </div>
@@ -114,12 +129,12 @@ function SolutionRow({ solution, index }) {
 
       {/* Bottom border line — gradient on hover */}
       <div className="mx-4 md:mx-6 h-[1px] relative overflow-hidden">
-        <div className="absolute inset-0 bg-slate-100 transition-opacity duration-300" style={{ opacity: isHovered ? 0 : 1 }} />
+        <div className="absolute inset-0 bg-slate-100 transition-opacity duration-300" style={{ opacity: activeOrHovered ? 0 : 1 }} />
         <div
           className="absolute inset-0 bg-gradient-to-r from-violet-500 via-fuchsia-500 to-violet-400 transition-all duration-500"
           style={{
-            opacity: isHovered ? 1 : 0,
-            transform: isHovered ? 'scaleX(1)' : 'scaleX(0)',
+            opacity: activeOrHovered ? 1 : 0,
+            transform: activeOrHovered ? 'scaleX(1)' : 'scaleX(0)',
             transformOrigin: 'left',
           }}
         />
@@ -130,7 +145,19 @@ function SolutionRow({ solution, index }) {
 
 export default function AISolutionsOutcome() {
   const sectionRef = useRef(null);
+  const rowsRef = useRef([]);
   const [isVisible, setIsVisible] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -146,6 +173,40 @@ export default function AISolutionsOutcome() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (isMobile) return;
+
+    const handleScroll = () => {
+      const viewportHeight = window.innerHeight;
+      const triggerY = viewportHeight * 0.45;
+      
+      let closestIdx = -1;
+      let minDistance = Infinity;
+
+      rowsRef.current.forEach((el, idx) => {
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const rowCenterY = rect.top + rect.height / 2;
+        const dist = Math.abs(rowCenterY - triggerY);
+        
+        if (rect.top < viewportHeight && rect.bottom > 0) {
+          if (dist < minDistance) {
+            minDistance = dist;
+            closestIdx = idx;
+          }
+        }
+      });
+      
+      if (closestIdx !== -1) {
+        setActiveIndex(closestIdx);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isMobile]);
+
   return (
     <section
       ref={sectionRef}
@@ -157,18 +218,18 @@ export default function AISolutionsOutcome() {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-gradient-to-bl from-violet-100/50 to-transparent blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-fuchsia-100/40 to-transparent blur-[100px] pointer-events-none" />
 
-      <div
-        className="relative z-10 mx-auto max-w-[85rem] px-6 transition-all duration-1000 ease-out"
-        style={{
-          opacity: isVisible ? 1 : 0,
-          transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-        }}
-      >
+      <div className="relative z-10 mx-auto max-w-[85rem] px-6">
         {/* Two-column layout */}
         <div className="grid md:grid-cols-[1fr_1.4fr] gap-12 md:gap-16 lg:gap-20 items-start">
 
           {/* LEFT COLUMN: Sticky intro */}
-          <div className="md:sticky md:top-32 flex flex-col">
+          <div 
+            className="md:sticky md:top-32 flex flex-col transition-all duration-1000 ease-out"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+            }}
+          >
             {/* Label */}
             <div className="mb-6 flex items-center gap-3">
               <span className="h-[2px] w-10 bg-gradient-to-r from-violet-500 to-fuchsia-500" />
@@ -210,9 +271,28 @@ export default function AISolutionsOutcome() {
           </div>
 
           {/* RIGHT COLUMN: Solution rows */}
-          <div className="flex flex-col">
+          <div className="flex flex-col relative pl-4 sm:pl-8">
+            {/* Vertical Progress Line */}
+            <div className="absolute left-0 top-6 bottom-6 w-[1.5px] bg-slate-100/80 rounded-full hidden sm:block">
+              {/* Dynamic indicator segment */}
+              <div 
+                className="absolute w-[1.5px] bg-gradient-to-b from-violet-500 to-fuchsia-500 rounded-full transition-all duration-500 ease-out"
+                style={{
+                  height: `${100 / SOLUTIONS.length}%`,
+                  top: `${(activeIndex >= 0 ? activeIndex : 0) * (100 / SOLUTIONS.length)}%`
+                }}
+              />
+            </div>
+
             {SOLUTIONS.map((solution, index) => (
-              <SolutionRow key={index} solution={solution} index={index} />
+              <SolutionRow 
+                key={index} 
+                solution={solution} 
+                index={index} 
+                isActive={activeIndex === index}
+                rowRef={el => rowsRef.current[index] = el}
+                isVisible={isVisible}
+              />
             ))}
           </div>
 

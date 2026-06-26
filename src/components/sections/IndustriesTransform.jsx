@@ -163,7 +163,7 @@ const INDUSTRIES = [
   },
 ];
 
-function IndustryVisual({ industry }) {
+function IndustryVisual({ industry, transitioning }) {
   const nodes = industry.nodes;
   const center = { cx: 112, cy: 88 };
   return (
@@ -180,11 +180,11 @@ function IndustryVisual({ industry }) {
       {/* Connection lines from center to each node */}
       {nodes.map((node, i) => (
         <line key={i} x1={center.cx} y1={center.cy} x2={node.cx} y2={node.cy}
-          stroke={industry.accent} strokeWidth="1" opacity="0.15" strokeDasharray="3 5" className="ind-dash" />
+          stroke={industry.accent} strokeWidth="1" opacity={transitioning ? 0 : 0.15} strokeDasharray="3 5" className="ind-dash" style={{ transition: 'opacity 0.3s ease' }} />
       ))}
       {/* Nodes */}
       {nodes.map((node, i) => (
-        <g key={i}>
+        <g key={i} className={`transition-all duration-500 transform ${transitioning ? 'opacity-0 scale-90' : 'opacity-100 scale-100'}`} style={{ transitionDelay: `${i * 50}ms` }}>
           <circle cx={node.cx} cy={node.cy} r="18" fill="white" stroke={industry.accent} strokeWidth="1" opacity="0.8" />
           <text x={node.cx} y={node.cy + 1} textAnchor="middle" dominantBaseline="middle"
             fontSize="6" fill="#64748b" fontFamily="system-ui, sans-serif" fontWeight="600">
@@ -205,9 +205,21 @@ function IndustryVisual({ industry }) {
 
 export default function IndustriesTransform() {
   const sectionRef = useRef(null);
+  const navContainerRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [indicatorStyle, setIndicatorStyle] = useState({ top: 0, height: 0 });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -223,14 +235,63 @@ export default function IndustriesTransform() {
     return () => observer.disconnect();
   }, []);
 
+  const clickLockRef = useRef(false);
   const handleSelect = useCallback((index) => {
     if (index === activeIndex || transitioning) return;
+    clickLockRef.current = true;
     setTransitioning(true);
+    setActiveIndex(index);
     setTimeout(() => {
-      setActiveIndex(index);
       setTransitioning(false);
     }, 200);
+    setTimeout(() => {
+      clickLockRef.current = false;
+    }, 1200);
   }, [activeIndex, transitioning]);
+
+  useEffect(() => {
+    if (isMobile) return;
+
+    const handleScroll = () => {
+      if (clickLockRef.current) return;
+      const section = sectionRef.current;
+      if (!section) return;
+
+      const rect = section.getBoundingClientRect();
+      const sectionHeight = rect.height;
+      const scrolledIntoSection = -rect.top;
+
+      if (scrolledIntoSection >= 0 && scrolledIntoSection <= sectionHeight - window.innerHeight) {
+        const scrollableDistance = sectionHeight - window.innerHeight;
+        const progress = scrolledIntoSection / scrollableDistance;
+
+        const index = Math.min(
+          Math.floor(progress * INDUSTRIES.length),
+          INDUSTRIES.length - 1
+        );
+
+        if (index !== activeIndex && !transitioning) {
+          setActiveIndex(index);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [activeIndex, transitioning, isMobile]);
+
+  useEffect(() => {
+    if (!navContainerRef.current) return;
+    const container = navContainerRef.current;
+    const buttons = container.querySelectorAll('button');
+    const activeBtn = buttons[activeIndex];
+    if (activeBtn) {
+      setIndicatorStyle({
+        top: activeBtn.offsetTop + 12,
+        height: activeBtn.offsetHeight - 24,
+      });
+    }
+  }, [activeIndex]);
 
   const active = INDUSTRIES[activeIndex];
 
@@ -238,8 +299,9 @@ export default function IndustriesTransform() {
     <section
       ref={sectionRef}
       id="industries"
-      className="relative w-full py-24 md:py-32 overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #FAFAFA 0%, #F7F6FF 50%, #FAFAFA 100%)' }}
+      className={`relative w-full overflow-visible bg-gradient-to-b from-[#FAFAFA] via-[#F7F6FF] to-[#FAFAFA] ${
+        isMobile ? 'py-24' : 'h-[255vh]'
+      }`}
     >
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes ind-spin-kf { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
@@ -249,15 +311,18 @@ export default function IndustriesTransform() {
         .ind-spin { transform-origin: center; transform-box: fill-box; animation: ind-spin-kf 30s linear infinite; }
         .ind-dash { animation: ind-dash-kf 2s linear infinite; }
         .ind-pulse { transform-origin: center; transform-box: fill-box; animation: ind-pulse-kf 3s ease-in-out infinite; }
-        .ind-card-enter { animation: ind-card-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) both; }
+        .ind-card-enter { animation: ind-card-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) both; }
       `}} />
 
       {/* Ambient glows */}
       <div className="absolute top-0 right-[-5%] w-[450px] h-[450px] rounded-full bg-gradient-to-bl from-violet-100/40 to-transparent blur-[130px] pointer-events-none" />
       <div className="absolute bottom-0 left-[-5%] w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-fuchsia-100/30 to-transparent blur-[110px] pointer-events-none" />
 
+      {/* Sticky Grid Container on Desktop */}
       <div
-        className="relative z-10 mx-auto max-w-[85rem] px-6 transition-all duration-1000 ease-out"
+        className={`mx-auto max-w-[85rem] px-6 transition-all duration-1000 ease-out ${
+          isMobile ? 'relative' : 'sticky top-28 py-20'
+        }`}
         style={{
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
@@ -286,7 +351,16 @@ export default function IndustriesTransform() {
         <div className="grid md:grid-cols-[1fr_1.5fr] gap-8 md:gap-10 lg:gap-14 items-start">
 
           {/* LEFT: Industry Navigator */}
-          <div className="flex flex-col gap-1">
+          <div ref={navContainerRef} className="flex flex-col gap-1 relative pl-3 border-l border-slate-100/80">
+            {/* The thin moving violet-to-fuchsia active line */}
+            <div 
+              className="absolute left-0 w-[3px] rounded-full bg-gradient-to-b from-violet-500 to-fuchsia-500 transition-all duration-300 ease-out hidden md:block"
+              style={{
+                top: `${indicatorStyle.top}px`,
+                height: `${indicatorStyle.height}px`
+              }}
+            />
+
             {INDUSTRIES.map((ind, i) => {
               const isActive = i === activeIndex;
               return (
@@ -300,11 +374,10 @@ export default function IndustriesTransform() {
                     boxShadow: isActive ? `0 8px 24px -8px rgba(0,0,0,0.04), 0 0 0 1px rgba(255,255,255,0.7) inset` : 'none',
                   }}
                 >
-                  {/* Active accent line */}
+                  {/* Mobile-only active line */}
                   {isActive && (
                     <div
-                      className="absolute left-0 top-3 bottom-3 w-[3px] rounded-full"
-                      style={{ background: `linear-gradient(to bottom, ${ind.accent}, #d946ef)` }}
+                      className="absolute left-0 top-3 bottom-3 w-[3px] rounded-full bg-gradient-to-b from-violet-500 to-fuchsia-500 md:hidden"
                     />
                   )}
 
@@ -396,7 +469,7 @@ export default function IndustriesTransform() {
                               <path strokeLinecap="round" strokeLinejoin="round" d="M3 8.5l3.5 3.5L13 4" />
                             </svg>
                           </div>
-                          <span className="font-body text-[0.85rem] text-slate-600 font-medium">{app}</span>
+                          <span className="font-body text-[0.85rem] text-slate-650 font-medium">{app}</span>
                         </div>
                       ))}
                     </div>
@@ -417,7 +490,7 @@ export default function IndustriesTransform() {
 
                 {/* Visual area */}
                 <div className="rounded-2xl bg-slate-50/60 border border-slate-100/60 min-h-[220px] md:min-h-[260px] flex items-center justify-center p-4 relative overflow-hidden">
-                  <IndustryVisual industry={active} />
+                  <IndustryVisual industry={active} transitioning={transitioning} />
                 </div>
               </div>
             </div>
