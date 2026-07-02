@@ -448,3 +448,112 @@
     border-radius: 16px;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   DEBUG MARKER LABELS — Only visible when MARKER_DEBUG_MODE = true
+   ═══════════════════════════════════════════════════════════════ */
+
+/* The debug label container is inline-styled in GlobeMarkers.jsx.
+   These rules provide fallback and mobile-hiding behavior. */
+@media (max-width: 640px) {
+  /* Hide debug labels on very small screens — dots still show */
+  .th-debug-label {
+    display: none !important;
+  }
+}
+
+/* Optional: debug mode indicator banner (can be added manually for testing) */
+.th-debug-banner {
+  position: fixed;
+  top: 80px;
+  right: 16px;
+  z-index: 9999;
+  background: rgba(237, 190, 85, 0.15);
+  border: 1px solid rgba(237, 190, 85, 0.45);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #EDBE55;
+  letter-spacing: 0.08em;
+  font-family: 'Inter', monospace;
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   VISUAL SERVICE BUBBLES KEYFRAMES & RESPONSIVE STYLES
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes bubblePulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes bubbleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.bubble-anchor.anchor-active {
+  animation: bubbleFloat 3.8s ease-in-out infinite;
+}
+
+/* Tablet / Laptop optimization */
+@media (max-width: 1024px) {
+  .notification-card {
+    width: 190px !important;
+    padding: 8px 10px !important;
+  }
+  .flag-marker {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 18px !important;
+    top: -19px !important;
+    left: -19px !important;
+  }
+}
+
+/* Mobile optimization: hide inactive, center active at the bottom of the globe container */
+@media (max-width: 640px) {
+  .anchor-inactive {
+    display: none !important;
+  }
+
+  .bubble-anchor.anchor-active {
+    left: 50% !important;
+    top: auto !important;
+    bottom: 25px !important;
+    transform: translate(-50%, 0) !important;
+    animation: none !important; /* Disable vertical floating on mobile to keep layout stable */
+  }
+
+  .bubble-anchor.anchor-active .flag-marker {
+    display: none !important; /* Hide flag icon on mobile to save space */
+  }
+
+  .bubble-anchor.anchor-active .notification-card {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 250px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    margin: 0 auto !important;
+  }
+}
+
+
+

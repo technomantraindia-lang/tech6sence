@@ -1,110 +1,318 @@
-import { useRef, useMemo } from 'react';
-import { useFrame } from '@react-three/fiber';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { useFrame, useThree } from '@react-three/fiber';
 import { Html } from '@react-three/drei';
-import { keyLocations, EARTH_MARKER_CONFIG, latLngToVector3 } from './heroData';
+import * as THREE from 'three';
+import {
+  globalServicePoints,
+  EARTH_GEO_CONFIG,
+  getMarkerPosition
+} from './heroData';
 
-// Icon helper function returning SVG components
-function getIconSvg(icon) {
-  if (icon === 'agent') return <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>;
-  if (icon === 'enterprise') return <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="8" rx="2.18" ry="2.18"></rect><rect x="2" y="14" width="20" height="8" rx="2.18" ry="2.18"></rect><line x1="6" y1="10" x2="6" y2="14"></line><line x1="18" y1="10" x2="18" y2="14"></line></svg>;
-  if (icon === 'automation') return <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>;
-  if (icon === 'genai') return <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>;
-  if (icon === 'ai-service') return <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 10h-1.25A3.75 3.75 0 0 0 13 6.25V5M6 14h1.25A3.75 3.75 0 0 0 11 17.75V19"></path><circle cx="12" cy="12" r="10"></circle></svg>;
-  if (icon === 'copilot') return <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>;
-  if (icon === 'consulting') return <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>;
-  return <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="12 8 8 12 12 16 16 12 12 8"></polygon></svg>;
-}
+// Import custom flag WebP images from src/assets/flags/
+import usaFlag from '../../assets/flags/usa.webp';
+import ukFlag from '../../assets/flags/uk.webp';
+import canadaFlag from '../../assets/flags/canada.webp';
+import euFlag from '../../assets/flags/eu.webp';
+import uaeFlag from '../../assets/flags/uae.webp';
+import indiaFlag from '../../assets/flags/india.webp';
+import singaporeFlag from '../../assets/flags/singapore.webp';
+import australiaFlag from '../../assets/flags/australia.webp';
 
-// Subtle pulsing shell component for active markers
-function SoftPulse({ position, color }) {
-  const meshRef = useRef();
 
-  useFrame(({ clock }) => {
-    if (!meshRef.current) return;
-    const t = (clock.getElapsedTime() * 0.9) % 1.0;
-    const scale = 1.0 + t * 1.6;
-    const opacity = 0.55 * (1.0 - t);
-    meshRef.current.scale.set(scale, scale, scale);
-    meshRef.current.material.opacity = opacity;
+const flagImages = {
+  usa: usaFlag,
+  uk: ukFlag,
+  canada: canadaFlag,
+  eu: euFlag,
+  uae: uaeFlag,
+  india: indiaFlag,
+  singapore: singaporeFlag,
+  australia: australiaFlag
+};
+
+
+// Map groupIds to visual points
+const visualGroups = {
+  1: ["usa", "uk"],
+  2: ["canada", "eu"],
+  3: ["uae", "india"],
+  4: ["singapore", "australia"]
+};
+
+export default function GlobeMarkers() {
+  const { camera } = useThree();
+  const [isMobile, setIsMobile] = useState(false);
+  const [activeGroupId, setActiveGroupId] = useState(1);
+  const [activeMobileIndex, setActiveMobileIndex] = useState(0);
+
+  // DOM Refs to mutate opacity directly in useFrame (for 60fps culling without state lag)
+  const markerRefs = useRef([]);
+
+  // Detect mobile
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 640);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Cycling loop (3.8 seconds)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (isMobile) {
+        setActiveMobileIndex((prev) => (prev + 1) % globalServicePoints.length);
+      } else {
+        setActiveGroupId((prev) => (prev % 4) + 1);
+      }
+    }, 3800);
+    return () => clearInterval(interval);
+  }, [isMobile]);
+
+  // Pre-calculate 3D vector positions
+  const markersWithPositions = useMemo(() => {
+    return globalServicePoints.map((pt, idx) => {
+      // Find matching visual point to get direction and groupId
+      // We will map visual data:
+      const direction = (pt.id === "india" || pt.id === "singapore" || pt.id === "australia") ? "left" : "right";
+      
+      let groupId = 1;
+      if (pt.id === "usa" || pt.id === "uk") groupId = 1;
+      else if (pt.id === "canada" || pt.id === "eu") groupId = 2;
+      else if (pt.id === "uae" || pt.id === "india") groupId = 3;
+      else if (pt.id === "singapore" || pt.id === "australia") groupId = 4;
+
+      return {
+        ...pt,
+        direction,
+        groupId,
+        position: getMarkerPosition(pt.lat, pt.lng, EARTH_GEO_CONFIG),
+        index: idx
+      };
+    });
+  }, []);
+
+  // Pre-allocated vectors for useFrame to prevent garbage collection stutters (Zero-allocation loop)
+  const tempPos = useRef(new THREE.Vector3());
+  const tempNormal = useRef(new THREE.Vector3());
+  const tempToCamera = useRef(new THREE.Vector3());
+  const upAxis = useMemo(() => new THREE.Vector3(0, 1, 0), []);
+
+  // Backside culling: check if marker faces camera.
+  // Mutates DOM opacity directly to avoid React re-render overhead on every frame.
+  useFrame((state) => {
+    if (!camera) return;
+
+    // Calculate current total Y rotation matching RealisticGlobe.jsx Y rotation + rotationOffset.y + auto-rotation
+    const GLB_Y_ROTATION = -Math.PI / 1.7;
+    const rotationOffsetY = EARTH_GEO_CONFIG.rotationOffset.y || 0;
+    const earthRotationY = state.clock.getElapsedTime() * 0.12;
+    const totalY = GLB_Y_ROTATION + rotationOffsetY + earthRotationY;
+
+    // Normalize camera position vector once per frame instead of inside loop
+    tempToCamera.current.copy(camera.position).normalize();
+
+    markersWithPositions.forEach((pt, idx) => {
+      const el = markerRefs.current[idx];
+      if (!el) return;
+
+      // Copy local position in-place
+      tempPos.current.copy(pt.position);
+      
+      // Rotate in-place around Y axis
+      tempPos.current.applyAxisAngle(upAxis, totalY);
+
+      // Normal vector points outward from center
+      tempNormal.current.copy(tempPos.current).normalize();
+
+      // Dot product to check facing direction
+      const dot = tempNormal.current.dot(tempToCamera.current);
+
+      // Determine active state for opacity boundary
+      const isActive = isMobile 
+        ? idx === activeMobileIndex 
+        : pt.groupId === activeGroupId;
+
+      if (dot < 0.15) {
+        // Behind the horizon -> Hide completely
+        el.style.opacity = '0';
+        el.style.pointerEvents = 'none';
+      } else {
+        // Front face -> Show with active/inactive opacity
+        el.style.opacity = isActive ? '1' : '0.25';
+        el.style.pointerEvents = isActive ? 'auto' : 'none';
+      }
+    });
   });
 
   return (
-    <mesh position={position} ref={meshRef}>
-      <sphereGeometry args={[0.045, 16, 16]} />
-      <meshBasicMaterial color={color} transparent opacity={0.5} depthWrite={false} />
-    </mesh>
-  );
-}
-
-export default function GlobeMarkers({ activeIndex, occludeRef }) {
-  // Pre-calculate positions to prevent performance overhead
-  const points = useMemo(() => {
-    return keyLocations.map((loc) => ({
-      ...loc,
-      vector: latLngToVector3(loc.lat, loc.lng, EARTH_MARKER_CONFIG.radius)
-    }));
-  }, []);
-
-  const prevIdx = (activeIndex - 1 + 8) % 8;
-  const nextIdx = (activeIndex + 1) % 8;
-
-  return (
     <group>
-      {points.map((loc, idx) => {
-        const isActive = idx === activeIndex;
-        const isPrev = idx === prevIdx;
-        const isNext = idx === nextIdx;
-        const isVisible = isActive || isPrev || isNext;
-
-        // Visibility classes for transitions
-        let className = 'th-globe-bubble-wrapper';
-        if (isActive) className += ' active';
-        else if (isPrev) className += ' prev visible';
-        else if (isNext) className += ' next visible';
+      {markersWithPositions.map((pt, idx) => {
+        const isActive = isMobile 
+          ? idx === activeMobileIndex 
+          : pt.groupId === activeGroupId;
 
         return (
-          <group key={loc.id}>
-            {/* Soft pulsing ring for the active/visible marker */}
-            {isActive && (
-              <SoftPulse position={loc.vector} color={loc.color} />
-            )}
-
-            {/* Glowing Core Dot (White center + colored glow) */}
-            <mesh position={loc.vector}>
-              <sphereGeometry args={[isActive ? 0.024 : 0.015, 16, 16]} />
-              <meshBasicMaterial color="#ffffff" toneMapped={false} />
-            </mesh>
-            <mesh position={loc.vector}>
-              <sphereGeometry args={[isActive ? 0.035 : 0.022, 16, 16]} />
-              <meshBasicMaterial color={loc.color} transparent opacity={isActive ? 0.65 : 0.25} depthWrite={false} />
-            </mesh>
-
-            {/* Premium compact glassmorphism service notification card */}
-            {isVisible && (
-              <Html
-                position={loc.vector}
-                center
-                distanceFactor={6.2}
-                occlude={occludeRef ? [occludeRef] : true}
-                className={className}
-                style={{ pointerEvents: 'auto' }}
+          <Html
+            key={pt.id}
+            position={pt.position}
+            center
+            distanceFactor={6.5} // Scales UI elements based on camera zoom/distance
+            style={{
+              position: 'relative',
+              width: 0,
+              height: 0,
+              pointerEvents: 'none',
+              transition: 'opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1)'
+            }}
+          >
+            {/* Direct DOM ref container for useFrame manipulation */}
+            <div
+              ref={(el) => (markerRefs.current[idx] = el)}
+              className={`bubble-anchor ${isActive ? 'anchor-active' : 'anchor-inactive'}`}
+              style={{
+                position: 'absolute',
+                width: 0,
+                height: 0,
+                transition: 'opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1)'
+              }}
+            >
+              {/* ── Circular Flag Marker ── */}
+              <div
+                className={`flag-marker ${isActive ? 'flag-marker-active' : ''}`}
+                style={{
+                  position: 'absolute',
+                  top: '-24px',
+                  left: '-24px',
+                  width: '48px',
+                  height: '48px',
+                  borderRadius: '50%',
+                  background: isActive 
+                    ? 'rgba(25, 32, 50, 0.96)' 
+                    : 'rgba(25, 32, 50, 0.70)',
+                  border: isActive
+                    ? '1.5px solid rgba(255, 255, 255, 0.35)'
+                    : '1px solid rgba(255, 255, 255, 0.08)',
+                  boxShadow: isActive
+                    ? '0 0 20px rgba(61, 235, 255, 0.35)'
+                    : 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'all 0.75s cubic-bezier(0.22, 1, 0.36, 1)',
+                  transform: isActive ? 'scale(1.06)' : 'scale(0.8)',
+                  userSelect: 'none',
+                  overflow: 'hidden'
+                }}
               >
-                <div className="th-bubble-inner" style={{ borderColor: `${loc.color}40`, boxShadow: `0 0 12px ${loc.color}15` }}>
-                  <div className="th-bubble-icon" style={{ backgroundColor: `${loc.color}25`, color: loc.color, borderColor: `${loc.color}40` }}>
-                    {getIconSvg(loc.icon)}
+                {flagImages[pt.id] ? (
+                  <img 
+                    src={flagImages[pt.id]} 
+                    alt={pt.country} 
+                    style={{ 
+                      width: '30px', 
+                      height: '30px', 
+                      borderRadius: '50%', 
+                      objectFit: 'cover',
+                      display: 'block'
+                    }} 
+                  />
+                ) : (
+                  <span style={{ fontSize: '20px' }}>{pt.flag}</span>
+                )}
+
+                {/* Glowing Pulse Ring for Active Markers */}
+                {isActive && (
+                  <div 
+                    className="marker-pulse-ring"
+                    style={{
+                      position: 'absolute',
+                      inset: '-4px',
+                      borderRadius: '50%',
+                      border: '1px solid rgba(61, 235, 255, 0.45)',
+                      animation: 'bubblePulse 2s cubic-bezier(0.22, 1, 0.36, 1) infinite',
+                      pointerEvents: 'none'
+                    }}
+                  />
+                )}
+              </div>
+
+              {/* ── Compact Notification Card ── */}
+              <div
+                className={`notification-card ${isActive ? 'card-active' : 'card-inactive'}`}
+                style={{
+                  position: 'absolute',
+                  top: '0',
+                  left: pt.direction === 'right' ? '28px' : 'auto',
+                  right: pt.direction === 'left' ? '28px' : 'auto',
+                  
+                  transform: `translateY(-50%) scale(${isActive ? 1 : 0.96}) translateX(${
+                    isActive ? '0px' : pt.direction === 'right' ? '-6px' : '6px'
+                  })`,
+                  opacity: isActive ? 1 : 0,
+                  visibility: isActive ? 'visible' : 'hidden',
+                  pointerEvents: isActive ? 'auto' : 'none',
+                  transition: 'opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.75s',
+                  
+                  // Highly optimized premium solid dark glass (no GPU-heavy backdrop-filter blur)
+                  width: '235px',
+                  height: '62px',
+                  padding: '10px 14px',
+                  borderRadius: '16px',
+                  background: 'rgba(25, 32, 50, 0.96)',
+                  border: '1px solid rgba(255, 255, 255, 0.16)',
+                  boxShadow: '0 12px 34px rgba(0, 0, 0, 0.28)',
+                  
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  boxSizing: 'border-box'
+                }}
+              >
+                <div style={{ flex: 1, minWidth: 0, textAlign: 'left' }}>
+                  <div 
+                    style={{ 
+                      fontSize: '9px', 
+                      fontWeight: 700, 
+                      color: 'rgba(170, 230, 255, 0.95)', 
+                      letterSpacing: '0.12em',
+                      textTransform: 'uppercase',
+                      marginBottom: '1px',
+                      fontFamily: 'Inter, sans-serif'
+                    }}
+                  >
+                    {pt.country}
                   </div>
-                  <div className="th-bubble-content">
-                    <div className="th-bubble-country">{loc.name}</div>
-                    <div className="th-bubble-service">{loc.service}</div>
-                    <div className="th-bubble-sub">Global AI Service</div>
-                  </div>
-                  <div className="th-bubble-status">
-                    <span className="th-status-dot" style={{ backgroundColor: loc.color, boxShadow: `0 0 8px ${loc.color}` }}></span>
+                  <div 
+                    style={{ 
+                      fontSize: '11px', 
+                      fontWeight: 700, 
+                      color: '#ffffff', 
+                      lineHeight: '1.25',
+                      fontFamily: 'Inter, sans-serif',
+                      whiteSpace: 'normal',
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis'
+                    }}
+                  >
+                    {pt.service}
                   </div>
                 </div>
-              </Html>
-            )}
-          </group>
+
+                <div 
+                  style={{ 
+                    width: '6px', 
+                    height: '6px', 
+                    borderRadius: '50%', 
+                    background: '#3debff', 
+                    boxShadow: '0 0 8px #3debff',
+                    flexShrink: 0
+                  }} 
+                />
+              </div>
+            </div>
+          </Html>
         );
       })}
     </group>

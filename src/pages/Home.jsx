@@ -1,20 +1,21 @@
-import { useEffect, useRef, useState, memo } from 'react'
+import { useEffect, useRef, useState, memo, Suspense, lazy } from 'react'
 import Header from '../components/Header'
-import IntelligenceStack from '../components/sections/IntelligenceStack'
-import HowWeWork from '../components/sections/HowWeWork'
-import SecondHeroPhase from '../components/sections/SecondHeroPhase'
-import SimpleTextSection from '../components/sections/SimpleTextSection'
 import TechHero from '../components/hero/TechHero'
-import AISolutionsOutcome from '../components/sections/AISolutionsOutcome'
-import DeepTechProducts from '../components/sections/DeepTechProducts'
-import IndustriesTransform from '../components/sections/IndustriesTransform'
-import EcosystemSection from '../components/sections/EcosystemSection'
-import WhyChooseTech6Sense from '../components/sections/WhyChooseTech6Sense'
-import InnovationStories from '../components/sections/InnovationStories'
-import FinalCTA from '../components/sections/FinalCTA'
-import Footer from '../components/sections/Footer'
-import heroRobot from '../assets/main-hero.png'
-import NetworkGlobe from '../components/NetworkGlobe'
+
+// Lazy load below-the-fold sections to optimize initial page loading speed
+const IntelligenceStack = lazy(() => import('../components/sections/IntelligenceStack'))
+const HowWeWork = lazy(() => import('../components/sections/HowWeWork'))
+const SecondHeroPhase = lazy(() => import('../components/sections/SecondHeroPhase'))
+const SimpleTextSection = lazy(() => import('../components/sections/SimpleTextSection'))
+const AISolutionsOutcome = lazy(() => import('../components/sections/AISolutionsOutcome'))
+const DeepTechProducts = lazy(() => import('../components/sections/DeepTechProducts'))
+const IndustriesTransform = lazy(() => import('../components/sections/IndustriesTransform'))
+const EcosystemSection = lazy(() => import('../components/sections/EcosystemSection'))
+const WhyChooseTech6Sense = lazy(() => import('../components/sections/WhyChooseTech6Sense'))
+const InnovationStories = lazy(() => import('../components/sections/InnovationStories'))
+const FinalCTA = lazy(() => import('../components/sections/FinalCTA'))
+const Footer = lazy(() => import('../components/sections/Footer'))
+
 
 const TORCH_RADIUS = 150
 
@@ -719,19 +720,21 @@ export default function Home() {
     <main className="bg-bg">
       <MemoHeader />
       <TechHero />
-      {/* <MemoSimpleTextSection /> */}
-      {/* <SecondHeroPhase /> */}
-      <MemoAboutSection />
-      <MemoIntelligenceStack />
-      <MemoHowWeWork />
-      <MemoAISolutionsOutcome />
-      <MemoDeepTechProducts />
-      <MemoIndustriesTransform />
-      <MemoEcosystemSection />
-      <MemoWhyChoose />
-      <MemoInnovationStories />
-      <MemoFinalCTA />
-      <MemoFooter />
+      <Suspense fallback={null}>
+        {/* <MemoSimpleTextSection /> */}
+        {/* <SecondHeroPhase /> */}
+        <MemoAboutSection />
+        <MemoIntelligenceStack />
+        <MemoHowWeWork />
+        <MemoAISolutionsOutcome />
+        <MemoDeepTechProducts />
+        <MemoIndustriesTransform />
+        <MemoEcosystemSection />
+        <MemoWhyChoose />
+        <MemoInnovationStories />
+        <MemoFinalCTA />
+        <MemoFooter />
+      </Suspense>
     </main>
   )
 }

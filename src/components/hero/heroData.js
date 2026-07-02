@@ -1,26 +1,224 @@
 // src/components/hero/heroData.js
+// ================================================================
+//  SINGLE SOURCE OF TRUTH — markers, calibration, and globe data
+// ================================================================
 import * as THREE from 'three';
 
-export const EARTH_MARKER_CONFIG = {
-  radius: 2.02, // slightly above the 1.8 Earth radius
+// ----------------------------------------------------------------
+//  DEBUG MODE
+//  When true  → Earth rotation PAUSED, all 8 labels always visible,
+//               connector lines HIDDEN, simple debug labels shown.
+//  When false → Normal rotation, only active/prev/next labels visible.
+// ----------------------------------------------------------------
+export const MARKER_DEBUG_MODE = false;
+
+
+// ----------------------------------------------------------------
+//  EARTH GEOMETRY CALIBRATION CONFIG
+//
+//  radius         → sphere radius for lat/lng → 3D conversion.
+//                   Increase if markers sink INTO Earth.
+//                   Decrease if markers float too far above.
+//
+//  markerAltitude → extra altitude above sphere surface.
+//
+//  lngOffset      → add degrees to ALL longitudes.
+//                   Increase if all markers shift WEST of correct pos.
+//                   Decrease if all markers shift EAST.
+//
+//  latOffset      → add degrees to ALL latitudes (rarely needed).
+//
+//  invertLng      → true if east/west is MIRRORED
+//                   (USA appears on Asia side, etc.)
+//
+//  invertLat      → true if north/south is MIRRORED
+//                   (Australia appears near Arctic, etc.)
+//
+//  rotationOffset → group rotation in radians matching the GLB offset.
+//                   rotationOffset.y is the main knob.
+//
+//  CALIBRATION CHECKLIST:
+//   1. USA       → Washington DC (east coast)
+//   2. UK        → London (top-left of Europe)
+//   3. Canada    → Ottawa (north of USA east coast)
+//   4. EU        → Germany / Frankfurt (central Europe)
+//   5. UAE       → Dubai / Arabian Peninsula
+//   6. India     → Gujarat / GIFT City
+//   7. Singapore → Tip of Malay Peninsula
+//   8. Australia → Sydney (southeast Australia)
+//
+//  All shift EAST? → increase lngOffset
+//  All shift WEST? → decrease lngOffset
+//  East/west mirrored? → invertLng: true
+//  North/south mirrored? → invertLat: true
+// ----------------------------------------------------------------
+export const EARTH_GEO_CONFIG = {
+  radius: 1.80,
+  markerAltitude: 0.02,
+  lngOffset: 0,
+  latOffset: 0,
+  invertLng: false,
+  invertLat: false,
   rotationOffset: {
     x: 0,
-    y: Math.PI / 1.18, // Calibrated rotation offset to align markers on correct countries on the NASA Earth GLB
+    // Original calibrated Y rotation offset to align markers on correct countries on the NASA Earth GLB
+    y: Math.PI / 1.18,
     z: 0
   }
 };
 
-// Helper: Convert Lat/Lng to 3D Cartesian coordinates on sphere based on user's exact formula
+// Backward-compatible alias — keeps GlobeNetworkRoutes.jsx working without import changes
+export const EARTH_MARKER_CONFIG = {
+  radius: EARTH_GEO_CONFIG.radius,
+  rotationOffset: EARTH_GEO_CONFIG.rotationOffset
+};
+
+
+// ----------------------------------------------------------------
+//  COORDINATE HELPERS
+// ----------------------------------------------------------------
+
+/**
+ * Apply calibration offsets to raw lat/lng before 3D conversion.
+ */
+export function getCalibratedLatLng(lat, lng, config) {
+  const finalLat = config.invertLat ? -lat : lat;
+  const finalLng = config.invertLng ? -lng : lng;
+  return {
+    lat: finalLat + (config.latOffset || 0),
+    lng: finalLng + (config.lngOffset || 0)
+  };
+}
+
+/**
+ * Convert lat/lng degrees to a THREE.Vector3 on a sphere of given radius.
+ * Uses standard spherical coordinates (phi = polar angle from north pole).
+ */
 export function latLngToVector3(lat, lng, radius) {
-  const phi = (95 - lat) * (Math.PI / 180);
+  const phi   = (90 - lat)  * (Math.PI / 180); // 90, NOT 95
   const theta = (lng + 180) * (Math.PI / 180);
-
   const x = -radius * Math.sin(phi) * Math.cos(theta);
-  const z = radius * Math.sin(phi) * Math.sin(theta);
-  const y = radius * Math.cos(phi);
-
+  const z =  radius * Math.sin(phi) * Math.sin(theta);
+  const y =  radius * Math.cos(phi);
   return new THREE.Vector3(x, y, z);
 }
+
+/**
+ * Full pipeline: raw lat/lng → calibrated → Vector3 slightly above surface.
+ * This is the SINGLE function all markers should use.
+ */
+export function getMarkerPosition(lat, lng, config) {
+  const { lat: cLat, lng: cLng } = getCalibratedLatLng(lat, lng, config);
+  const totalRadius = (config.radius || 2.02) + (config.markerAltitude || 0.035);
+  return latLngToVector3(cLat, cLng, totalRadius);
+}
+
+// ----------------------------------------------------------------
+//  GLOBAL SERVICE POINTS (canonical 8-location data)
+//  This is the primary data array. keyLocations is an alias below.
+// ----------------------------------------------------------------
+export const globalServicePoints = [
+  {
+    id: "uk",
+    country: "UK",
+    name: "UK",
+    city: "United Kingdom",
+    service: "AI Agents & Agentic AI",
+    lat: 51.5074,
+    lng: -0.1278,
+    color: "#8B5CF6",
+    icon: "agent"
+  },
+  {
+    id: "usa",
+    country: "USA",
+    name: "USA",
+    city: "United States",
+    service: "Enterprise AI",
+    lat: 38.9072,
+    lng: -77.0369,
+    color: "#3DEBFF",
+    icon: "enterprise"
+  },
+  {
+    id: "australia",
+    country: "Australia",
+    name: "Australia",
+    city: "Australia",
+    service: "AI Automation",
+    lat: -33.8688,
+    lng: 151.2093,
+    color: "#3DEBFF",
+    icon: "automation"
+  },
+  {
+    id: "uae",
+    country: "UAE",
+    name: "UAE",
+    city: "Dubai / UAE",
+    service: "Generative AI",
+    lat: 25.2048,
+    lng: 55.2708,
+    color: "#EDBE55",
+    icon: "genai"
+  },
+  {
+    id: "eu",
+    country: "European Union",
+    name: "European Union",
+    city: "European Union",
+    service: "AI-as-a-Service (AIaaS)",
+    lat: 50.1109,
+    lng: 8.6821,
+    color: "#8B5CF6",
+    icon: "ai-service"
+  },
+  {
+    id: "canada",
+    country: "Canada",
+    name: "Canada",
+    city: "Canada",
+    service: "Smart AI Copilot",
+    lat: 45.4215,
+    lng: -75.6972,
+    color: "#3DEBFF",
+    icon: "copilot"
+  },
+  {
+    id: "india",
+    country: "India",
+    name: "India",
+    city: "GIFT City / India",
+    service: "AI Consulting & Corporate Training",
+    lat: 23.1669,
+    lng: 72.6833,
+    color: "#EDBE55",
+    icon: "consulting"
+  },
+  {
+    id: "singapore",
+    country: "Singapore",
+    name: "Singapore",
+    city: "Singapore",
+    service: "AI Products",
+    lat: 1.3521,
+    lng: 103.8198,
+    color: "#3DEBFF",
+    icon: "product"
+  }
+];
+
+// Short debug labels map
+export const DEBUG_LABELS = {
+  uk: "UK",
+  usa: "USA",
+  australia: "Australia",
+  uae: "UAE",
+  eu: "EU",
+  canada: "Canada",
+  india: "India",
+  singapore: "Singapore"
+};
 
 export const heroData = {
   eyebrow: "GLOBAL AI • ENTERPRISE TECH • DEEP-TECH INNOVATION",
@@ -52,89 +250,9 @@ export const heroData = {
   ]
 };
 
-// Key Locations ordered exactly by sequence: UK → USA → Canada → European Union → UAE → India → Singapore → Australia
-export const keyLocations = [
-  {
-    id: "uk",
-    name: "UK",
-    city: "United Kingdom",
-    lat: 51.5074,
-    lng: -0.1278,
-    color: "#8B5CF6",
-    service: "AI Agents & Agentic AI",
-    icon: "agent"
-  },
-  {
-    id: "usa",
-    name: "USA",
-    city: "United States",
-    lat: 38.9072,
-    lng: -77.0369,
-    color: "#3DEBFF",
-    service: "Enterprise AI",
-    icon: "enterprise"
-  },
-  {
-    id: "canada",
-    name: "Canada",
-    city: "Canada",
-    lat: 45.4215,
-    lng: -75.6972,
-    color: "#3DEBFF",
-    service: "Smart AI Copilot",
-    icon: "copilot"
-  },
-  {
-    id: "eu",
-    name: "European Union",
-    city: "European Union",
-    lat: 50.1109,
-    lng: 8.6821,
-    color: "#8B5CF6",
-    service: "AI-as-a-Service (AIaaS)",
-    icon: "ai-service"
-  },
-  {
-    id: "uae",
-    name: "UAE",
-    city: "Dubai / UAE",
-    lat: 25.2048,
-    lng: 55.2708,
-    color: "#EDBE55",
-    service: "Generative AI",
-    icon: "genai"
-  },
-  {
-    id: "india",
-    name: "India",
-    city: "GIFT City / India",
-    lat: 23.1669,
-    lng: 72.6833,
-    color: "#EDBE55",
-    service: "AI Consulting & Corporate Training",
-    icon: "consulting"
-  },
-  {
-    id: "singapore",
-    name: "Singapore",
-    city: "Singapore",
-    lat: 1.3521,
-    lng: 103.8198,
-    color: "#3DEBFF",
-    service: "AI Products",
-    icon: "product"
-  },
-  {
-    id: "australia",
-    name: "Australia",
-    city: "Australia",
-    lat: -33.8688,
-    lng: 151.2093,
-    color: "#3DEBFF",
-    service: "AI Automation",
-    icon: "automation"
-  }
-];
+// Backward-compatible alias — points to globalServicePoints (single source of truth)
+export const keyLocations = globalServicePoints;
+
 
 // Balanced global routes for curved connecting lines
 export const globalNetworkRoutes = [
@@ -151,6 +269,10 @@ export const globalNetworkRoutes = [
   { from: "uae", to: "australia" },
   { from: "canada", to: "eu" }
 ];
+
+// Alias used by DetailedGlobe.jsx
+export const globalRoutes = globalNetworkRoutes;
+
 
 // Callouts ordered exactly by sequence: UK → USA → Canada → European Union → UAE → India → Singapore → Australia
 export const globalServiceCallouts = [
@@ -291,3 +413,87 @@ export const globalServiceCallouts = [
     icon: "automation"
   }
 ];
+
+export const visualServicePoints = [
+  {
+    id: "usa",
+    country: "USA",
+    flag: "🇺🇸",
+    service: "Enterprise AI",
+    x: 24,
+    y: 46,
+    direction: "right",
+    groupId: 1
+  },
+  {
+    id: "uk",
+    country: "UK",
+    flag: "🇬🇧",
+    service: "AI Agents & Agentic AI",
+    x: 48,
+    y: 30,
+    direction: "right",
+    groupId: 1
+  },
+  {
+    id: "canada",
+    country: "Canada",
+    flag: "🇨🇦",
+    service: "Smart AI Copilot",
+    x: 31,
+    y: 36,
+    direction: "right",
+    groupId: 2
+  },
+  {
+    id: "eu",
+    country: "European Union",
+    flag: "🇪🇺",
+    service: "AI-as-a-Service (AIaaS)",
+    x: 56,
+    y: 38,
+    direction: "right",
+    groupId: 2
+  },
+  {
+    id: "uae",
+    country: "UAE",
+    flag: "🇦🇪",
+    service: "Generative AI",
+    x: 64,
+    y: 50,
+    direction: "right",
+    groupId: 3
+  },
+  {
+    id: "india",
+    country: "India",
+    flag: "🇮🇳",
+    service: "AI Consulting & Corporate Training",
+    x: 68,
+    y: 58,
+    direction: "left",
+    groupId: 3
+  },
+  {
+    id: "singapore",
+    country: "Singapore",
+    flag: "🇸🇬",
+    service: "AI Products",
+    x: 76,
+    y: 66,
+    direction: "left",
+    groupId: 4
+  },
+  {
+    id: "australia",
+    country: "Australia",
+    flag: "🇦🇺",
+    service: "AI Automation",
+    x: 82,
+    y: 76,
+    direction: "left",
+    groupId: 4
+  }
+];
+

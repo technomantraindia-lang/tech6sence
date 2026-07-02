@@ -1,7 +1,12 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import BasicGlobe from './BasicGlobe';
-import RealisticGlobe from './RealisticGlobe';
+
+
+// Lazy load Three.js components so they don't block the main site load
+const BasicGlobe = React.lazy(() => import('./BasicGlobe'));
+const RealisticGlobe = React.lazy(() => import('./RealisticGlobe'));
+
+
 
 // React Error Boundary to handle fallback if WebGL or react-globe.gl crashes
 class GlobeErrorBoundary extends React.Component {
@@ -26,12 +31,12 @@ class GlobeErrorBoundary extends React.Component {
   }
 }
 
-export default function HeroGlobeStage({ activeIndex }) {
+export default function HeroGlobeStage() {
   const basicGlobeFallback = (
     <Canvas
-      dpr={[1, 1.5]}
+      dpr={1}
       camera={{ position: [0, 0, 6.8], fov: 45 }}
-      gl={{ antialias: true, alpha: true }}
+      gl={{ antialias: false, alpha: true, powerPreference: "high-performance" }}
       style={{ width: '100%', height: '100%', background: 'transparent' }}
     >
       <Suspense fallback={null}>
@@ -42,16 +47,20 @@ export default function HeroGlobeStage({ activeIndex }) {
 
   const realisticGlobeCanvas = (
     <Canvas
-      dpr={[1, 1.5]}
+      dpr={1}
       camera={{ position: [0, 0, 6.8], fov: 45 }}
-      gl={{ antialias: true, alpha: true }}
+      gl={{ antialias: false, alpha: true, powerPreference: "high-performance" }}
       style={{ width: '100%', height: '100%', background: 'transparent' }}
     >
       <Suspense fallback={null}>
-        <RealisticGlobe activeIndex={activeIndex} />
+        <RealisticGlobe />
       </Suspense>
     </Canvas>
   );
+
+
+
+
 
   return (
     <div className="tech-hero-visual">
