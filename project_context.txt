@@ -37,3 +37,12 @@ The main page (`src/pages/Home.jsx`) consists of the following sections in order
 2.  **Review the specific Component:** E.g., if asked to modify the Globe, review `SecondHeroPhase.jsx` completely. Pay attention to scroll-linked state, absolute positioning, and z-indexes.
 3.  **Check existing animations:** Before adding new effects, see how similar effects are implemented in `HowWeWork.jsx` or `AISolutionsOutcome.jsx` to maintain consistency.
 4.  **Preserve existing behavior:** When modifying layout (like fixing text overflow), ensure complex logic like auto-rotation, scroll-tracking, or hover states are not broken.
+
+## 6. 3D Globe Hero Preparation
+- **Date:** 2026-06-29.
+- **Package manager detected:** npm, confirmed by `package-lock.json`.
+- **Project type:** React/Vite. Existing UI and page files were not changed during this setup.
+- **Installed packages for the future premium cinematic 3D globe hero:** `three`, `@react-three/fiber`, `@react-three/drei`, `react-globe.gl`, `three-globe`, `world-atlas`, `topojson-client`, `gsap`, `@gsap/react`, and `motion`.
+- **Purpose of setup:** Prepare for a real 3D globe with country outlines, global connection arcs, glowing country markers such as India, USA, UK, UAE, and Singapore, animated particles, and a cinematic opening animation where the globe appears centered before moving into its final hero position.
+- **Verification completed:** `package.json` and `package-lock.json` were updated, `npm ls --depth=0` confirmed the requested packages, `npm install` reported 0 vulnerabilities, `npm run build` passed, and a Vite dev-server smoke test returned HTTP 200.
+- **Important note:** No final hero section was created yet. The project is only prepared for building the 3D globe hero step by step.

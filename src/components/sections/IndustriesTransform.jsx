@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 const INDUSTRIES = [
   {
@@ -209,17 +209,7 @@ export default function IndustriesTransform() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
   const [indicatorStyle, setIndicatorStyle] = useState({ top: 0, height: 0 });
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -235,50 +225,14 @@ export default function IndustriesTransform() {
     return () => observer.disconnect();
   }, []);
 
-  const clickLockRef = useRef(false);
   const handleSelect = useCallback((index) => {
     if (index === activeIndex || transitioning) return;
-    clickLockRef.current = true;
     setTransitioning(true);
     setActiveIndex(index);
     setTimeout(() => {
       setTransitioning(false);
     }, 200);
-    setTimeout(() => {
-      clickLockRef.current = false;
-    }, 1200);
   }, [activeIndex, transitioning]);
-
-  useEffect(() => {
-    if (isMobile) return;
-
-    const handleScroll = () => {
-      if (clickLockRef.current) return;
-      const section = sectionRef.current;
-      if (!section) return;
-
-      const rect = section.getBoundingClientRect();
-      const sectionHeight = rect.height;
-      const scrolledIntoSection = -rect.top;
-
-      if (scrolledIntoSection >= 0 && scrolledIntoSection <= sectionHeight - window.innerHeight) {
-        const scrollableDistance = sectionHeight - window.innerHeight;
-        const progress = scrolledIntoSection / scrollableDistance;
-
-        const index = Math.min(
-          Math.floor(progress * INDUSTRIES.length),
-          INDUSTRIES.length - 1
-        );
-
-        if (index !== activeIndex && !transitioning) {
-          setActiveIndex(index);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeIndex, transitioning, isMobile]);
 
   useEffect(() => {
     if (!navContainerRef.current) return;
@@ -299,9 +253,7 @@ export default function IndustriesTransform() {
     <section
       ref={sectionRef}
       id="industries"
-      className={`relative w-full overflow-visible bg-gradient-to-b from-[#FAFAFA] via-[#F7F6FF] to-[#FAFAFA] ${
-        isMobile ? 'py-16' : 'h-[255vh]'
-      }`}
+      className="relative w-full overflow-visible bg-gradient-to-b from-[#FAFAFA] via-[#F7F6FF] to-[#FAFAFA] py-16 md:py-24"
     >
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes ind-spin-kf { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
@@ -318,11 +270,9 @@ export default function IndustriesTransform() {
       <div className="absolute top-0 right-[-5%] w-[450px] h-[450px] rounded-full bg-gradient-to-bl from-violet-100/40 to-transparent blur-[130px] pointer-events-none" />
       <div className="absolute bottom-0 left-[-5%] w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-fuchsia-100/30 to-transparent blur-[110px] pointer-events-none" />
 
-      {/* Sticky Grid Container on Desktop */}
+      {/* Grid Container */}
       <div
-        className={`mx-auto max-w-[85rem] px-6 transition-all duration-1000 ease-out ${
-          isMobile ? 'relative py-12' : 'sticky top-28 pt-8 pb-20'
-        }`}
+        className="mx-auto max-w-[85rem] px-6 transition-all duration-1000 ease-out relative py-12"
         style={{
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? 'translateY(0)' : 'translateY(30px)',

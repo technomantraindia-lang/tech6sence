@@ -4,6 +4,7 @@ import IntelligenceStack from '../components/sections/IntelligenceStack'
 import HowWeWork from '../components/sections/HowWeWork'
 import SecondHeroPhase from '../components/sections/SecondHeroPhase'
 import SimpleTextSection from '../components/sections/SimpleTextSection'
+import TechHero from '../components/hero/TechHero'
 import AISolutionsOutcome from '../components/sections/AISolutionsOutcome'
 import DeepTechProducts from '../components/sections/DeepTechProducts'
 import IndustriesTransform from '../components/sections/IndustriesTransform'
@@ -717,8 +718,9 @@ export default function Home() {
   return (
     <main className="bg-bg">
       <MemoHeader />
-      <MemoSimpleTextSection />
-      <SecondHeroPhase />
+      <TechHero />
+      {/* <MemoSimpleTextSection /> */}
+      {/* <SecondHeroPhase /> */}
       <MemoAboutSection />
       <MemoIntelligenceStack />
       <MemoHowWeWork />

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 const PRODUCTS = [
   {
@@ -198,16 +198,7 @@ export default function DeepTechProducts() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -223,50 +214,21 @@ export default function DeepTechProducts() {
     return () => observer.disconnect();
   }, []);
 
-  const clickLockRef = useRef(false);
   const handleTabClick = useCallback((index) => {
     if (index === activeTab || transitioning) return;
-    clickLockRef.current = true;
     setTransitioning(true);
     setActiveTab(index);
     setTimeout(() => {
       setTransitioning(false);
     }, 250);
-    setTimeout(() => {
-      clickLockRef.current = false;
-    }, 1200);
   }, [activeTab, transitioning]);
 
   useEffect(() => {
-    if (isMobile) return;
-
-    const handleScroll = () => {
-      if (clickLockRef.current) return;
-      const section = sectionRef.current;
-      if (!section) return;
-
-      const rect = section.getBoundingClientRect();
-      const sectionHeight = rect.height;
-      const scrolledIntoSection = -rect.top;
-
-      if (scrolledIntoSection >= 0 && scrolledIntoSection <= sectionHeight - window.innerHeight) {
-        const scrollableDistance = sectionHeight - window.innerHeight;
-        const progress = scrolledIntoSection / scrollableDistance;
-
-        const tabIndex = Math.min(
-          Math.floor(progress * PRODUCTS.length),
-          PRODUCTS.length - 1
-        );
-
-        if (tabIndex !== activeTab && !transitioning) {
-          setActiveTab(tabIndex);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeTab, transitioning, isMobile]);
+    const interval = setInterval(() => {
+      handleTabClick((activeTab + 1) % PRODUCTS.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [activeTab, handleTabClick]);
 
   const product = PRODUCTS[activeTab];
   const tagPositions = [
@@ -280,9 +242,7 @@ export default function DeepTechProducts() {
     <section
       ref={sectionRef}
       id="deep-tech-products"
-      className={`relative w-full overflow-visible bg-gradient-to-b from-[#FAFAFA] via-[#F8F7FF] to-[#FAFAFA] ${
-        isMobile ? 'py-24' : 'h-[230vh]'
-      }`}
+      className="relative w-full overflow-visible bg-gradient-to-b from-[#FAFAFA] via-[#F8F7FF] to-[#FAFAFA] py-24"
     >
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes dtp-dash { to { stroke-dashoffset: -24; } }
@@ -310,11 +270,9 @@ export default function DeepTechProducts() {
       <div className="absolute top-[-5%] left-[-5%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-violet-100/40 to-transparent blur-[140px] pointer-events-none" />
       <div className="absolute bottom-[-5%] right-[-5%] w-[450px] h-[450px] rounded-full bg-gradient-to-tl from-fuchsia-100/30 to-transparent blur-[120px] pointer-events-none" />
 
-      {/* Sticky Grid Container on Desktop */}
+      {/* Grid Container */}
       <div
-        className={`mx-auto max-w-[85rem] px-6 transition-all duration-1000 ease-out ${
-          isMobile ? 'relative py-12' : 'sticky top-28 pt-8 pb-20'
-        }`}
+        className="mx-auto max-w-[85rem] px-6 transition-all duration-1000 ease-out relative py-12"
         style={{
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
