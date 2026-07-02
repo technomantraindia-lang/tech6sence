@@ -124,8 +124,8 @@ export const globalServicePoints = [
     name: "UK",
     city: "United Kingdom",
     service: "AI Agents & Agentic AI",
-    lat: 51.5074,
-    lng: -0.1278,
+    lat: 54.0,
+    lng: -2.0, // Shifted slightly NW
     color: "#8B5CF6",
     icon: "agent"
   },
@@ -135,8 +135,8 @@ export const globalServicePoints = [
     name: "USA",
     city: "United States",
     service: "Enterprise AI",
-    lat: 38.9072,
-    lng: -77.0369,
+    lat: 34.0,
+    lng: -98.0, // Shifted SW (centered in US, away from Canada)
     color: "#3DEBFF",
     icon: "enterprise"
   },
@@ -146,8 +146,8 @@ export const globalServicePoints = [
     name: "Australia",
     city: "Australia",
     service: "AI Automation",
-    lat: -33.8688,
-    lng: 151.2093,
+    lat: -25.0,
+    lng: 133.0, // Centered in Australia
     color: "#3DEBFF",
     icon: "automation"
   },
@@ -157,8 +157,8 @@ export const globalServicePoints = [
     name: "UAE",
     city: "Dubai / UAE",
     service: "Generative AI",
-    lat: 25.2048,
-    lng: 55.2708,
+    lat: 26.0,
+    lng: 48.0, // Shifted slightly West (away from India)
     color: "#EDBE55",
     icon: "genai"
   },
@@ -168,8 +168,8 @@ export const globalServicePoints = [
     name: "European Union",
     city: "European Union",
     service: "AI-as-a-Service (AIaaS)",
-    lat: 50.1109,
-    lng: 8.6821,
+    lat: 47.0,
+    lng: 18.0, // Shifted East (Central/Eastern Europe, away from UK)
     color: "#8B5CF6",
     icon: "ai-service"
   },
@@ -179,8 +179,8 @@ export const globalServicePoints = [
     name: "Canada",
     city: "Canada",
     service: "Smart AI Copilot",
-    lat: 45.4215,
-    lng: -75.6972,
+    lat: 56.0,
+    lng: -70.0, // Shifted North-East (away from USA)
     color: "#3DEBFF",
     icon: "copilot"
   },
@@ -190,8 +190,8 @@ export const globalServicePoints = [
     name: "India",
     city: "GIFT City / India",
     service: "AI Consulting & Corporate Training",
-    lat: 23.1669,
-    lng: 72.6833,
+    lat: 20.0,
+    lng: 79.0, // Shifted South-East (Southern/Central India, away from UAE)
     color: "#EDBE55",
     icon: "consulting"
   },

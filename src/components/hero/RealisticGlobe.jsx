@@ -26,13 +26,13 @@ const RealisticGlobe = memo(function RealisticGlobe() {
     return cloned;
   }, [scene]);
 
-  const currentY = useRef(-4.5);
+  const currentY = useRef(-3.0);
 
   useFrame((state) => {
     if (!globeGroupRef.current) return;
     
-    // Smooth, fast rise-from-bottom entrance effect
-    currentY.current += (0 - currentY.current) * 0.18;
+    // Smooth, responsive rise-from-bottom entrance effect
+    currentY.current += (0 - currentY.current) * 0.22;
     globeGroupRef.current.position.y = currentY.current;
 
     globeGroupRef.current.rotation.y = state.clock.getElapsedTime() * 0.12;
@@ -49,7 +49,7 @@ const RealisticGlobe = memo(function RealisticGlobe() {
       {/* Set initial values to prevent single-frame flashing on mount */}
       <group 
         ref={globeGroupRef} 
-        position={[0, -4.5, 0]}
+        position={[0, -3.0, 0]}
       >
         <primitive
           object={earthModel}

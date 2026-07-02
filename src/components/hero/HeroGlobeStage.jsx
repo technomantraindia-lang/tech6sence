@@ -2,9 +2,8 @@ import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 
 
-// Lazy load Three.js components so they don't block the main site load
-const BasicGlobe = React.lazy(() => import('./BasicGlobe'));
-const RealisticGlobe = React.lazy(() => import('./RealisticGlobe'));
+import BasicGlobe from './BasicGlobe';
+import RealisticGlobe from './RealisticGlobe';
 
 
 

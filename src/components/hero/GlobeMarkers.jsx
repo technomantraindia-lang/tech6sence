@@ -41,34 +41,18 @@ const visualGroups = {
 
 export default function GlobeMarkers() {
   const { camera } = useThree();
-  const [isMobile, setIsMobile] = useState(false);
-  const [activeGroupId, setActiveGroupId] = useState(1);
-  const [activeMobileIndex, setActiveMobileIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   // DOM Refs to mutate opacity directly in useFrame (for 60fps culling without state lag)
   const markerRefs = useRef([]);
 
-  // Detect mobile
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 640);
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  // Cycling loop (3.8 seconds)
+  // Cycling loop (3.8 seconds) - unified to one marker at a time
   useEffect(() => {
     const interval = setInterval(() => {
-      if (isMobile) {
-        setActiveMobileIndex((prev) => (prev + 1) % globalServicePoints.length);
-      } else {
-        setActiveGroupId((prev) => (prev % 4) + 1);
-      }
+      setActiveIndex((prev) => (prev + 1) % globalServicePoints.length);
     }, 3800);
     return () => clearInterval(interval);
-  }, [isMobile]);
+  }, []);
 
   // Pre-calculate 3D vector positions
   const markersWithPositions = useMemo(() => {
@@ -130,9 +114,7 @@ export default function GlobeMarkers() {
       const dot = tempNormal.current.dot(tempToCamera.current);
 
       // Determine active state for opacity boundary
-      const isActive = isMobile 
-        ? idx === activeMobileIndex 
-        : pt.groupId === activeGroupId;
+      const isActive = idx === activeIndex;
 
       if (dot < 0.15) {
         // Behind the horizon -> Hide completely
@@ -149,9 +131,7 @@ export default function GlobeMarkers() {
   return (
     <group>
       {markersWithPositions.map((pt, idx) => {
-        const isActive = isMobile 
-          ? idx === activeMobileIndex 
-          : pt.groupId === activeGroupId;
+        const isActive = idx === activeIndex;
 
         return (
           <Html

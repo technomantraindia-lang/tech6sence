@@ -13,6 +13,7 @@ import DeepTechProducts from './pages/DeepTechProducts'
 import Industries from './pages/Industries'
 import Ecosystem from './pages/Ecosystem'
 import LetsConnect from './pages/LetsConnect'
+import GoToTop from './components/GoToTop'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -30,6 +31,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/ecosystem" element={<Ecosystem />} />
         <Route path="/lets-connect" element={<LetsConnect />} />
       </Routes>
+      <GoToTop />
     </BrowserRouter>
   </StrictMode>,
 )
