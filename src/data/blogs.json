@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "The Future of Agentic AI: Moving Beyond Chatbots",
+    "slug": "future-of-agentic-ai",
+    "category": "AI Development",
+    "date": "March 15, 2026",
+    "author": "Tech6Sense AI Team",
+    "image": "https://tech6senseai.com/wp-content/uploads/2026/02/agentic-ai-concept.jpg",
+    "excerpt": "Discover how Agentic AI is transforming the way businesses operate by moving beyond simple conversational interfaces to autonomous decision-making systems.",
+    "content": "Full content goes here..."
+  },
+  {
+    "id": 2,
+    "title": "Why Enterprise Governance is Critical for AI Adoption",
+    "slug": "enterprise-governance-ai-adoption",
+    "category": "AI Governance",
+    "date": "February 28, 2026",
+    "author": "Tech6Sense AI Team",
+    "image": "https://tech6senseai.com/wp-content/uploads/2026/02/ai-governance.jpg",
+    "excerpt": "As AI systems become more integrated into core business processes, establishing robust governance frameworks is no longer optional. Learn how to secure your AI assets.",
+    "content": "Full content goes here..."
+  },
+  {
+    "id": 3,
+    "title": "Unlocking Business Intelligence with Custom ML Models",
+    "slug": "unlocking-bi-with-custom-ml",
+    "category": "Data Intelligence",
+    "date": "February 10, 2026",
+    "author": "Tech6Sense AI Team",
+    "image": "https://tech6senseai.com/wp-content/uploads/2026/02/ml-models.jpg",
+    "excerpt": "Off-the-shelf analytics tools can only take you so far. Explore the ROI of developing custom Machine Learning models tailored to your specific data ecosystem.",
+    "content": "Full content goes here..."
+  },
+  {
+    "id": 4,
+    "title": "The Rise of Specialized LLMs in Deep-Tech",
+    "slug": "rise-of-specialized-llms",
+    "category": "Deep-Tech Products",
+    "date": "January 22, 2026",
+    "author": "Tech6Sense AI Team",
+    "image": "https://tech6senseai.com/wp-content/uploads/2026/02/specialized-llms.jpg",
+    "excerpt": "General-purpose language models are powerful, but specialized, domain-specific LLMs are driving the next wave of deep-tech innovation. Here is why.",
+    "content": "Full content goes here..."
+  },
+  {
+    "id": 5,
+    "title": "Automating the Un-Automatable: RPA Meets Generative AI",
+    "slug": "rpa-meets-generative-ai",
+    "category": "Automation & Copilots",
+    "date": "January 05, 2026",
+    "author": "Tech6Sense AI Team",
+    "image": "https://tech6senseai.com/wp-content/uploads/2026/02/rpa-genai.jpg",
+    "excerpt": "Robotic Process Automation (RPA) was once limited to structured data. See how Generative AI is unlocking the ability to automate complex, unstructured workflows.",
+    "content": "Full content goes here..."
+  },
+  {
+    "id": 6,
+    "title": "Scaling Computer Vision for Manufacturing Quality Control",
+    "slug": "scaling-cv-manufacturing",
+    "category": "Computer Vision",
+    "date": "December 18, 2025",
+    "author": "Tech6Sense AI Team",
+    "image": "https://tech6senseai.com/wp-content/uploads/2026/02/computer-vision-mfg.jpg",
+    "excerpt": "How modern computer vision algorithms are dramatically reducing defect rates and improving throughput in high-volume manufacturing environments.",
+    "content": "Full content goes here..."
+  }
+]

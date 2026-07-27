@@ -1,0 +1,171 @@
+/* ===== CSS 3D Orbit Ring ===== */
+
+.orbit-ring-container {
+  position: absolute;
+  /* Align center of orbit with the visual center of the Earth */
+  top: 68%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 130vw;
+  height: 130vw;
+  max-width: 1500px;
+  max-height: 1500px;
+  z-index: 5;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.orbit-ring-scene {
+  width: 100%;
+  height: 100%;
+  perspective: 1200px;
+  perspective-origin: 50% 38%;
+  position: relative;
+}
+
+.orbit-ring-track {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  /* Synced with Earth: 2π / 0.18 = 34.9s */
+  animation: orbit-spin 34.9s linear infinite;
+}
+
+.orbit-card-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  margin-left: -80px;
+  margin-top: -22px;
+  width: 160px;
+  height: 44px;
+}
+
+/* ===== Card Design: Frosted Badge ===== */
+.orbit-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(12, 15, 35, 0.92), rgba(8, 10, 28, 0.88));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  white-space: nowrap;
+  pointer-events: auto;
+  cursor: default;
+  backface-visibility: hidden;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.orbit-card:hover {
+  transform: scale(1.06);
+  box-shadow:
+    0 6px 28px rgba(0, 0, 0, 0.6),
+    0 0 20px color-mix(in srgb, var(--card-color) 15%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* Accent top edge glow */
+.orbit-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 10%, var(--card-color) 50%, transparent 90%);
+  opacity: 0.6;
+}
+
+/* Flag section */
+.orbit-card-flag-wrap {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.orbit-card-flag {
+  width: 22px;
+  height: 16px;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Text section */
+.orbit-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 12px 6px 10px;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.orbit-card-country {
+  font-family: var(--font-display, 'Space Grotesk', system-ui, sans-serif);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1;
+}
+
+.orbit-card-service {
+  font-family: var(--font-body, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 0.46rem;
+  font-weight: 500;
+  color: rgba(148, 163, 184, 0.7);
+  letter-spacing: 0.02em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.1;
+}
+
+/* Synced with Earth rotation */
+@keyframes orbit-spin {
+  from { transform: rotateX(14deg) rotateY(0deg); }
+  to   { transform: rotateX(14deg) rotateY(360deg); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .orbit-ring-container {
+    width: 110vw;
+    height: 110vw;
+  }
+  .orbit-card-flag-wrap {
+    width: 36px;
+    height: 36px;
+  }
+  .orbit-card-flag {
+    width: 18px;
+    height: 13px;
+  }
+  .orbit-card-info {
+    padding: 5px 10px 5px 8px;
+  }
+  .orbit-card-country { font-size: 0.5rem; }
+  .orbit-card-service { font-size: 0.42rem; }
+}
+
+@media (max-width: 768px) {
+  .orbit-ring-container {
+    display: none;
+  }
+}

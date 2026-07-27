@@ -1,0 +1,592 @@
+// servicesContent.js
+// Data registry for all service detail pages
+// Used by src/pages/ServiceDetail.jsx via useParams(:serviceId)
+
+export const servicesContent = {
+
+  // ─── SYS-01: AI Development ───────────────────────────────────────────────
+
+  "ai-product-development": {
+    title: "AI Product Development",
+    category: "AI DEVELOPMENT // SYS-01",
+    tagline: "End-to-end AI product planning, design, development, and deployment.",
+    description: "We architect, engineer, and ship AI-powered products from ground zero. From ideation and prototyping to model selection, UX design, and cloud deployment — we handle every stage of the product lifecycle so you can focus on market adoption.",
+    accent: "#7c3aed",
+    accentRgb: "124, 58, 237",
+    metrics: [
+      { label: "Average Time to MVP", value: "6–10 Wks" },
+      { label: "Product Success Rate", value: "94%" },
+      { label: "Supported Platforms", value: "12+" },
+    ],
+    features: [
+      { title: "Concept to Prototype", desc: "We translate business ideas into tangible AI product prototypes with rapid iteration cycles." },
+      { title: "Model Selection & Fine-Tuning", desc: "Identify the right foundation model and fine-tune it on your domain-specific data." },
+      { title: "Full-Stack AI Engineering", desc: "Backend APIs, data pipelines, and frontend interfaces built to production standards." },
+      { title: "UX Design for AI Products", desc: "Human-centered interface design optimized for AI-powered workflows and interactions." },
+      { title: "Cloud Deployment & Scaling", desc: "Launch on AWS, GCP, or Azure with auto-scaling, monitoring, and CI/CD pipelines." },
+      { title: "Post-Launch Support", desc: "Ongoing model retraining, performance monitoring, and feature expansion support." },
+    ],
+    techStack: ["Python", "FastAPI", "React", "PyTorch", "HuggingFace", "LangChain", "Docker", "Kubernetes", "AWS", "GCP"],
+  },
+
+  "ai-software-development": {
+    title: "AI Software Development",
+    category: "AI DEVELOPMENT // SYS-01",
+    tagline: "Custom AI-powered software systems built around business workflows.",
+    description: "We build custom software that embeds AI at its core — not as an afterthought. Our engineering teams design scalable, maintainable codebases with intelligence baked into every layer, from data ingestion to decision outputs.",
+    accent: "#7c3aed",
+    accentRgb: "124, 58, 237",
+    metrics: [
+      { label: "Code Quality Score", value: "98%" },
+      { label: "Avg. Delivery Speed", value: "2× Faster" },
+      { label: "Enterprise Clients", value: "50+" },
+    ],
+    features: [
+      { title: "Requirements Engineering", desc: "We deeply analyze your workflow to identify where AI adds maximum value." },
+      { title: "Modular AI Architecture", desc: "Loosely coupled services designed for growth, maintainability, and easy AI updates." },
+      { title: "Data Pipeline Integration", desc: "Automated ETL pipelines that feed clean, structured data into AI modules in real time." },
+      { title: "API-First Design", desc: "RESTful and GraphQL APIs enabling seamless integration with existing systems." },
+      { title: "Testing & QA", desc: "Comprehensive unit, integration, and AI model testing to ensure reliability." },
+      { title: "Ongoing Maintenance", desc: "Proactive bug fixes, performance tuning, and model version management." },
+    ],
+    techStack: ["Python", "Node.js", "TypeScript", "PostgreSQL", "Redis", "FastAPI", "Docker", "GitHub Actions", "Terraform"],
+  },
+
+  "custom-ai-model-development": {
+    title: "Custom AI Model Development",
+    category: "AI DEVELOPMENT // SYS-01",
+    tagline: "Tailored machine learning and AI models for specific business needs.",
+    description: "Off-the-shelf models rarely fit complex business problems perfectly. We build custom AI models from scratch or fine-tune state-of-the-art foundations on your proprietary data, delivering accuracy and performance that generic solutions cannot match.",
+    accent: "#7c3aed",
+    accentRgb: "124, 58, 237",
+    metrics: [
+      { label: "Model Accuracy Uplift", value: "+38%" },
+      { label: "Training Pipelines Built", value: "80+" },
+      { label: "Inference Latency", value: "<50ms" },
+    ],
+    features: [
+      { title: "Data Collection & Labeling", desc: "Structured data acquisition, cleaning, and annotation tailored to your model objective." },
+      { title: "Architecture Design", desc: "Custom neural network or ML architecture selection based on task complexity and constraints." },
+      { title: "Training & Validation", desc: "Rigorous training cycles with hyperparameter optimization and cross-validation." },
+      { title: "Fine-Tuning Foundation Models", desc: "Adapt LLMs, vision transformers, and other foundations to your domain vocabulary." },
+      { title: "Model Compression", desc: "Quantization and pruning techniques to reduce size without compromising performance." },
+      { title: "Deployment-Ready Artifacts", desc: "ONNX, TensorRT, and cloud-native model exports ready for production inference." },
+    ],
+    techStack: ["Python", "PyTorch", "TensorFlow", "Scikit-learn", "HuggingFace", "Weights & Biases", "ONNX", "TensorRT", "MLflow"],
+  },
+
+  "ai-agents-development": {
+    title: "AI Agents Development",
+    category: "AI DEVELOPMENT // SYS-01",
+    tagline: "Autonomous digital agents that execute tasks and support workflows.",
+    description: "We design and deploy autonomous AI agents capable of perceiving their environment, reasoning through objectives, and taking multi-step actions — all without constant human oversight. From customer-facing bots to internal ops agents, we build them all.",
+    accent: "#7c3aed",
+    accentRgb: "124, 58, 237",
+    metrics: [
+      { label: "Task Automation Rate", value: "87%" },
+      { label: "Agent Response Time", value: "<2s" },
+      { label: "Supported Integrations", value: "40+" },
+    ],
+    features: [
+      { title: "Goal-Driven Reasoning", desc: "Agents that decompose high-level goals into sub-tasks and execute them systematically." },
+      { title: "Tool & API Integration", desc: "Agents connected to databases, APIs, browsers, and enterprise tools for real-world action." },
+      { title: "Memory & Context Management", desc: "Short-term and long-term memory systems enabling coherent multi-session interactions." },
+      { title: "Human-in-the-Loop Controls", desc: "Configurable approval gates and escalation paths to keep humans in critical decisions." },
+      { title: "Multi-Agent Coordination", desc: "Orchestrate fleets of specialized agents working in parallel on complex workflows." },
+      { title: "Audit Trails & Logging", desc: "Full action logs for compliance, debugging, and continuous agent improvement." },
+    ],
+    techStack: ["LangChain", "LangGraph", "OpenAI", "Anthropic", "AutoGen", "Python", "FastAPI", "Redis", "PostgreSQL", "Docker"],
+  },
+
+  "agentic-ai-solutions": {
+    title: "Agentic AI Solutions",
+    category: "AI DEVELOPMENT // SYS-01",
+    tagline: "Multi-step AI systems that reason, act, and coordinate across processes.",
+    description: "Agentic AI goes beyond simple chatbots — these systems plan, iterate, and adapt to complex, multi-step objectives across your entire business ecosystem. We build agentic architectures that make intelligent decisions at scale.",
+    accent: "#7c3aed",
+    accentRgb: "124, 58, 237",
+    metrics: [
+      { label: "Process Steps Automated", value: "15+ Steps" },
+      { label: "Decision Accuracy", value: "91%" },
+      { label: "ROI on Deployment", value: "3.2×" },
+    ],
+    features: [
+      { title: "Agentic Pipeline Design", desc: "End-to-end system design for autonomous multi-step AI pipelines." },
+      { title: "Planner-Executor Architecture", desc: "Separate planning and execution modules for reliable, auditable AI reasoning." },
+      { title: "Dynamic Tool Calling", desc: "Agents that dynamically select and invoke the right tools based on task context." },
+      { title: "Feedback & Self-Correction", desc: "Built-in reflection loops that allow agents to detect and correct their own errors." },
+      { title: "Enterprise System Connectivity", desc: "Native connectors to CRMs, ERPs, databases, and communication platforms." },
+      { title: "Scalable Agent Orchestration", desc: "Kubernetes-based orchestration for running thousands of agent instances simultaneously." },
+    ],
+    techStack: ["LangGraph", "CrewAI", "AutoGen", "OpenAI", "Python", "FastAPI", "Kubernetes", "Apache Kafka", "Pinecone"],
+  },
+
+  // ─── SYS-02: Automation & Copilots ───────────────────────────────────────
+
+  "ai-automation-for-businesses": {
+    title: "AI Automation for Businesses",
+    category: "AUTOMATION & COPILOTS // SYS-02",
+    tagline: "Workflow automation that reduces manual effort and speeds up operations.",
+    description: "We identify, design, and deploy AI-powered automation that removes bottlenecks from your business operations. From document processing to approval workflows, our automation solutions free your team to focus on high-value work.",
+    accent: "#d946ef",
+    accentRgb: "217, 70, 239",
+    metrics: [
+      { label: "Manual Work Reduced", value: "70%" },
+      { label: "Process Speed Increase", value: "4× Faster" },
+      { label: "Error Rate Reduction", value: "95%" },
+    ],
+    features: [
+      { title: "Process Discovery & Mapping", desc: "Audit your current workflows to identify the highest-value automation opportunities." },
+      { title: "Intelligent Document Processing", desc: "AI that reads, extracts, and routes data from PDFs, emails, and forms automatically." },
+      { title: "Approval Workflow Automation", desc: "Multi-stage approval chains with AI-assisted prioritization and routing." },
+      { title: "Notification & Trigger Systems", desc: "Event-driven automation that responds to business signals in real time." },
+      { title: "Integration with Existing Tools", desc: "Connect automation with Slack, Jira, Salesforce, SAP, and hundreds of other tools." },
+      { title: "Analytics & ROI Tracking", desc: "Dashboards measuring hours saved, error rates, and automation ROI." },
+    ],
+    techStack: ["Python", "Zapier", "n8n", "Apache Airflow", "LangChain", "Tesseract OCR", "AWS Lambda", "PostgreSQL", "REST APIs"],
+  },
+
+  "robotic-process-automation": {
+    title: "Robotic Process Automation",
+    category: "AUTOMATION & COPILOTS // SYS-02",
+    tagline: "Rule-based and AI-assisted automation for repetitive digital tasks.",
+    description: "We deploy software robots that mimic human interaction with digital systems — clicking, typing, copying, and submitting — at machine speed and without errors. Combined with AI, these bots handle exceptions and adapt to changing interfaces.",
+    accent: "#d946ef",
+    accentRgb: "217, 70, 239",
+    metrics: [
+      { label: "Bots Deployed", value: "200+" },
+      { label: "Uptime Guarantee", value: "99.9%" },
+      { label: "Processing Speed", value: "10× Human" },
+    ],
+    features: [
+      { title: "Bot Development & Configuration", desc: "Custom RPA bots built for your exact software environment and task sequences." },
+      { title: "AI-Augmented Exception Handling", desc: "ML classifiers handle edge cases and exceptions that pure rule-based bots cannot." },
+      { title: "Screen Scraping & UI Interaction", desc: "Bots that interact with any web or desktop interface, even without APIs." },
+      { title: "Scheduled & Triggered Execution", desc: "Run bots on schedule or trigger them based on emails, file arrivals, or system events." },
+      { title: "Bot Monitoring & Alerting", desc: "Real-time dashboards with alerts for bot failures, slowdowns, or anomalies." },
+      { title: "Security & Compliance", desc: "Encrypted credential vaults and audit logs for regulated industry deployments." },
+    ],
+    techStack: ["UiPath", "Automation Anywhere", "Power Automate", "Python", "Selenium", "Playwright", "SAP", "Oracle", "MS Office APIs"],
+  },
+
+  "ai-copilot-development": {
+    title: "AI Copilot Development",
+    category: "AUTOMATION & COPILOTS // SYS-02",
+    tagline: "Custom copilots that assist teams with knowledge, tasks, and decisions.",
+    description: "We build AI copilots embedded directly into your team's daily tools — giving every employee an intelligent assistant that knows your business, your documents, and your processes. From code copilots to sales copilots, we create them all.",
+    accent: "#d946ef",
+    accentRgb: "217, 70, 239",
+    metrics: [
+      { label: "Productivity Boost", value: "+45%" },
+      { label: "Query Resolution Time", value: "<3s" },
+      { label: "Knowledge Sources Indexed", value: "Unlimited" },
+    ],
+    features: [
+      { title: "Domain Knowledge Ingestion", desc: "Index your documents, wikis, SOPs, and databases into the copilot's knowledge base." },
+      { title: "Natural Language Interface", desc: "Chat and voice interfaces that understand business terminology and context." },
+      { title: "Action Execution", desc: "Copilots that don't just answer — they draft emails, update records, and trigger tasks." },
+      { title: "Role-Based Access Control", desc: "Context-aware permissions so each employee sees only what they're authorized to access." },
+      { title: "Multi-Platform Deployment", desc: "Deploy as Slack bot, Teams extension, web widget, or embedded in your own app." },
+      { title: "Continuous Learning", desc: "Feedback loops that help the copilot improve from user interactions over time." },
+    ],
+    techStack: ["OpenAI GPT-4o", "LangChain", "RAG", "Pinecone", "Weaviate", "Slack API", "Teams SDK", "Python", "React", "Node.js"],
+  },
+
+  "generative-ai-solutions": {
+    title: "Generative AI Solutions",
+    category: "AUTOMATION & COPILOTS // SYS-02",
+    tagline: "AI systems for content, knowledge, creativity, and business productivity.",
+    description: "We harness the power of large language models, diffusion models, and generative AI to create content engines, creative tools, and knowledge systems that multiply your team's output while maintaining brand consistency and quality.",
+    accent: "#d946ef",
+    accentRgb: "217, 70, 239",
+    metrics: [
+      { label: "Content Output Speed", value: "20× Faster" },
+      { label: "Brand Consistency Score", value: "96%" },
+      { label: "Cost per Content Unit", value: "↓ 80%" },
+    ],
+    features: [
+      { title: "LLM Integration & Orchestration", desc: "Connect GPT-4o, Claude, Gemini, and open-source models into unified generation pipelines." },
+      { title: "Custom Prompt Engineering", desc: "Battle-tested prompt systems tuned for your specific content types and quality standards." },
+      { title: "RAG-Powered Knowledge Systems", desc: "Retrieval-augmented generation that grounds outputs in your real business data." },
+      { title: "Image & Media Generation", desc: "AI image, video, and design generation integrated into your creative workflows." },
+      { title: "Content Quality Guardrails", desc: "Automated fact-checking, tone control, and brand voice enforcement layers." },
+      { title: "Batch & Real-Time Generation", desc: "Scale from single-request to high-throughput batch generation pipelines." },
+    ],
+    techStack: ["OpenAI", "Anthropic", "Google Gemini", "Stability AI", "LangChain", "Pinecone", "Python", "FastAPI", "AWS Bedrock"],
+  },
+
+  "nlp-conversational-ai": {
+    title: "NLP & Conversational AI",
+    category: "AUTOMATION & COPILOTS // SYS-02",
+    tagline: "Language-based AI systems for chat, support, search, and interaction.",
+    description: "We build sophisticated NLP systems and conversational AI that understand language the way humans do — with context, intent, and nuance. From multilingual chatbots to semantic search engines, our solutions transform how users interact with your business.",
+    accent: "#d946ef",
+    accentRgb: "217, 70, 239",
+    metrics: [
+      { label: "Intent Recognition Accuracy", value: "97%" },
+      { label: "Languages Supported", value: "40+" },
+      { label: "Support Ticket Deflection", value: "65%" },
+    ],
+    features: [
+      { title: "Intent Classification", desc: "ML models that accurately identify what users want from natural language queries." },
+      { title: "Entity Recognition & Extraction", desc: "Named entity recognition for people, places, dates, products, and custom entities." },
+      { title: "Conversational Flow Design", desc: "Multi-turn dialogue management that maintains context across long conversations." },
+      { title: "Sentiment & Emotion Analysis", desc: "Real-time sentiment detection to route, escalate, or personalize responses." },
+      { title: "Multilingual Support", desc: "Native multilingual models and translation layers for global user bases." },
+      { title: "Voice & Speech Integration", desc: "Speech-to-text and text-to-speech pipelines for voice-first AI applications." },
+    ],
+    techStack: ["spaCy", "HuggingFace Transformers", "Rasa", "Dialogflow", "OpenAI", "Whisper", "FastAPI", "WebSockets", "Elasticsearch"],
+  },
+
+  // ─── SYS-03: Data & Visual Intelligence ──────────────────────────────────
+
+  "data-analytics-business-intelligence": {
+    title: "Data Analytics & Business Intelligence",
+    category: "DATA & VISUAL INTELLIGENCE // SYS-03",
+    tagline: "Dashboards, reports, and insights for smarter business decisions.",
+    description: "We transform raw business data into clear, actionable intelligence. Our BI solutions connect your data sources, build automated reporting pipelines, and deliver executive dashboards that make the right information visible at the right time.",
+    accent: "#06b6d4",
+    accentRgb: "6, 182, 212",
+    metrics: [
+      { label: "Data Sources Connected", value: "30+" },
+      { label: "Report Generation Time", value: "<5s" },
+      { label: "Decision Accuracy Uplift", value: "+52%" },
+    ],
+    features: [
+      { title: "Data Warehouse Design", desc: "Scalable data warehouse architecture that centralizes all your business data sources." },
+      { title: "ETL Pipeline Engineering", desc: "Automated Extract-Transform-Load pipelines for clean, reliable data flow." },
+      { title: "Interactive Dashboards", desc: "Real-time dashboards with drill-down, filtering, and custom KPI tracking." },
+      { title: "Predictive Analytics Layers", desc: "ML-powered trend forecasting and anomaly detection built into your BI stack." },
+      { title: "Self-Service Analytics", desc: "Empower business teams to explore data independently without SQL knowledge." },
+      { title: "Automated Reporting", desc: "Scheduled reports delivered via email, Slack, or embedded in business tools." },
+    ],
+    techStack: ["Python", "dbt", "Apache Spark", "Snowflake", "BigQuery", "Tableau", "Power BI", "Looker", "Airflow", "PostgreSQL"],
+  },
+
+  "machine-learning-development": {
+    title: "Machine Learning Development",
+    category: "DATA & VISUAL INTELLIGENCE // SYS-03",
+    tagline: "ML systems for prediction, classification, optimization, and automation.",
+    description: "We build, train, and deploy production-grade machine learning systems that learn from your data and improve over time. Our ML engineers handle everything from feature engineering to model serving at enterprise scale.",
+    accent: "#06b6d4",
+    accentRgb: "6, 182, 212",
+    metrics: [
+      { label: "Model Deployment Success", value: "99%" },
+      { label: "Avg. Accuracy Improvement", value: "+41%" },
+      { label: "Models in Production", value: "150+" },
+    ],
+    features: [
+      { title: "Feature Engineering", desc: "Transform raw data into high-signal features that maximize model performance." },
+      { title: "Algorithm Selection", desc: "Choose from classical ML, ensemble methods, or deep learning based on your data profile." },
+      { title: "Automated ML (AutoML)", desc: "Rapid model selection and tuning with automated machine learning pipelines." },
+      { title: "MLOps & Model Lifecycle", desc: "Version control, experiment tracking, and automated retraining pipelines." },
+      { title: "Model Interpretability", desc: "SHAP values, LIME, and other explainability tools for transparent AI decisions." },
+      { title: "Real-Time Inference APIs", desc: "Low-latency REST APIs serving model predictions to production applications." },
+    ],
+    techStack: ["Python", "Scikit-learn", "XGBoost", "LightGBM", "TensorFlow", "PyTorch", "MLflow", "Kubeflow", "AWS SageMaker", "Feast"],
+  },
+
+  "predictive-modeling-analytics": {
+    title: "Predictive Modeling & Analytics",
+    category: "DATA & VISUAL INTELLIGENCE // SYS-03",
+    tagline: "Forecasting and intelligence systems for future-ready decisions.",
+    description: "We build predictive models that look ahead — forecasting demand, predicting churn, identifying risks before they materialize. Our analytics systems give your business a decisive competitive advantage through data-driven foresight.",
+    accent: "#06b6d4",
+    accentRgb: "6, 182, 212",
+    metrics: [
+      { label: "Forecast Accuracy", value: "93%" },
+      { label: "Churn Prediction Precision", value: "89%" },
+      { label: "Revenue Impact", value: "+28% Avg." },
+    ],
+    features: [
+      { title: "Demand Forecasting", desc: "Time-series models that predict demand, inventory needs, and seasonal trends." },
+      { title: "Churn Prediction", desc: "Customer retention models that flag at-risk users before they leave." },
+      { title: "Risk Scoring", desc: "Credit, fraud, and operational risk models with interpretable score outputs." },
+      { title: "Revenue Forecasting", desc: "Financial projection models that integrate market signals and internal KPIs." },
+      { title: "Scenario Simulation", desc: "What-if modeling tools to evaluate business decisions before implementation." },
+      { title: "Real-Time Scoring APIs", desc: "Live prediction endpoints that score customers, transactions, or events in milliseconds." },
+    ],
+    techStack: ["Python", "Prophet", "ARIMA", "Statsmodels", "XGBoost", "TensorFlow", "Databricks", "Snowflake", "Tableau", "FastAPI"],
+  },
+
+  "computer-vision-development": {
+    title: "Computer Vision Development",
+    category: "DATA & VISUAL INTELLIGENCE // SYS-03",
+    tagline: "Image, video, object, and pattern recognition for real-world use cases.",
+    description: "We give machines the ability to see and understand the visual world. Our computer vision systems detect, classify, segment, and track objects in images and video — enabling automation in manufacturing, retail, healthcare, and security.",
+    accent: "#06b6d4",
+    accentRgb: "6, 182, 212",
+    metrics: [
+      { label: "Detection Accuracy", value: "98.5%" },
+      { label: "Real-Time FPS", value: "60 FPS" },
+      { label: "Edge Deployment Ready", value: "Yes" },
+    ],
+    features: [
+      { title: "Object Detection & Tracking", desc: "Real-time detection and tracking of objects, people, and vehicles in video streams." },
+      { title: "Image Classification", desc: "Deep learning classifiers that categorize images with high precision." },
+      { title: "Semantic Segmentation", desc: "Pixel-level scene understanding for medical imaging, autonomous systems, and more." },
+      { title: "Facial Recognition & Analysis", desc: "Face detection, recognition, age/emotion estimation with privacy compliance." },
+      { title: "Optical Character Recognition", desc: "Extract text from images, documents, and forms with high accuracy." },
+      { title: "Edge AI Deployment", desc: "Optimized models for Jetson, Raspberry Pi, and mobile edge devices." },
+    ],
+    techStack: ["Python", "OpenCV", "PyTorch", "YOLOv9", "TensorRT", "ONNX", "Roboflow", "AWS Rekognition", "NVIDIA Jetson", "MediaPipe"],
+  },
+
+  // ─── SYS-04: Enterprise AI & Cloud ───────────────────────────────────────
+
+  "ai-integration-cloud-services": {
+    title: "AI Integration & Cloud Services",
+    category: "ENTERPRISE AI & CLOUD // SYS-04",
+    tagline: "AI integration with cloud platforms, APIs, tools, and business systems.",
+    description: "We connect AI capabilities to your existing enterprise stack — CRMs, ERPs, data warehouses, and cloud services. Our integration specialists ensure AI works within your current systems without disruption or data silos.",
+    accent: "#4f46e5",
+    accentRgb: "79, 70, 229",
+    metrics: [
+      { label: "Integration Success Rate", value: "99.5%" },
+      { label: "Avg. Integration Time", value: "3 Weeks" },
+      { label: "Systems Connected", value: "80+" },
+    ],
+    features: [
+      { title: "Cloud AI Platform Setup", desc: "Configure AWS, GCP, or Azure AI services tailored to your workloads." },
+      { title: "Enterprise API Gateway", desc: "Centralized API management layer for secure, governed AI service access." },
+      { title: "CRM & ERP Integration", desc: "Native connectors to Salesforce, HubSpot, SAP, and other enterprise platforms." },
+      { title: "Data Lake & Warehouse Sync", desc: "Real-time and batch data synchronization between AI systems and data stores." },
+      { title: "Event-Driven Architecture", desc: "Kafka and message-queue-based systems for real-time AI event processing." },
+      { title: "Monitoring & Observability", desc: "End-to-end monitoring for all integrated AI services and data pipelines." },
+    ],
+    techStack: ["AWS", "GCP", "Azure", "Terraform", "Pulumi", "Apache Kafka", "Salesforce API", "SAP BAPI", "REST/GraphQL", "Datadog"],
+  },
+
+  "ai-as-a-service": {
+    title: "AI-as-a-Service",
+    category: "ENTERPRISE AI & CLOUD // SYS-04",
+    tagline: "Scalable AI capabilities delivered as flexible service-based solutions.",
+    description: "Not every company needs to build AI from scratch. Our AI-as-a-Service model gives you access to pre-built, customizable AI capabilities on a subscription or usage basis — with enterprise SLAs, support, and seamless API access.",
+    accent: "#4f46e5",
+    accentRgb: "79, 70, 229",
+    metrics: [
+      { label: "Onboarding Time", value: "<1 Week" },
+      { label: "Uptime SLA", value: "99.99%" },
+      { label: "Cost vs. In-House Build", value: "↓ 60%" },
+    ],
+    features: [
+      { title: "Pre-Built AI APIs", desc: "Plug-and-play APIs for NLP, vision, forecasting, and recommendation use cases." },
+      { title: "Custom Model Hosting", desc: "Host your proprietary models on our secure, managed infrastructure." },
+      { title: "Usage-Based Pricing", desc: "Pay only for what you use — no upfront infrastructure investment required." },
+      { title: "Enterprise SLAs", desc: "Guaranteed availability, latency, and support response time contracts." },
+      { title: "White-Label Options", desc: "Rebrand our AI services under your own product umbrella." },
+      { title: "Dedicated Support", desc: "Technical account managers and engineering support for critical deployments." },
+    ],
+    techStack: ["FastAPI", "Kubernetes", "Docker", "AWS", "GCP", "Prometheus", "Grafana", "Nginx", "Cloudflare", "PostgreSQL"],
+  },
+
+  "aiops-mlops": {
+    title: "AIOps & MLOps",
+    category: "ENTERPRISE AI & CLOUD // SYS-04",
+    tagline: "AI model deployment, monitoring, optimization, and lifecycle management.",
+    description: "We implement robust MLOps and AIOps frameworks that automate the entire AI model lifecycle — from training and validation to deployment, monitoring, and automated retraining. Your models stay accurate, current, and reliable in production.",
+    accent: "#4f46e5",
+    accentRgb: "79, 70, 229",
+    metrics: [
+      { label: "Deployment Frequency", value: "Daily" },
+      { label: "Model Drift Detection", value: "Real-Time" },
+      { label: "Incident Resolution Time", value: "<15 Min" },
+    ],
+    features: [
+      { title: "CI/CD for ML Pipelines", desc: "Automated testing and deployment pipelines for machine learning models." },
+      { title: "Model Registry & Versioning", desc: "Centralized registry for tracking model versions, lineage, and metadata." },
+      { title: "Data & Model Drift Detection", desc: "Statistical monitoring that alerts when input distributions or model performance degrade." },
+      { title: "Automated Retraining", desc: "Trigger-based retraining pipelines that keep models current with new data." },
+      { title: "A/B Testing & Canary Releases", desc: "Safe model rollouts with traffic splitting and performance comparison." },
+      { title: "Cost Optimization", desc: "Inference cost analysis and optimization through batching, caching, and hardware selection." },
+    ],
+    techStack: ["MLflow", "Kubeflow", "Apache Airflow", "Seldon Core", "BentoML", "Prometheus", "Grafana", "Kubernetes", "ArgoCD", "DVC"],
+  },
+
+  "ai-security": {
+    title: "AI Security",
+    category: "ENTERPRISE AI & CLOUD // SYS-04",
+    tagline: "Secure AI architecture, data protection, and risk-aware implementation.",
+    description: "AI introduces unique security risks — prompt injection, model theft, data poisoning, and adversarial attacks. We build security into every layer of your AI system so your models, data, and outputs remain trustworthy and protected.",
+    accent: "#4f46e5",
+    accentRgb: "79, 70, 229",
+    metrics: [
+      { label: "Vulnerabilities Blocked", value: "99.7%" },
+      { label: "Security Audit Coverage", value: "100%" },
+      { label: "Compliance Frameworks", value: "GDPR, HIPAA, SOC2" },
+    ],
+    features: [
+      { title: "Prompt Injection Defense", desc: "Input sanitization and guardrail layers that block adversarial prompt manipulation." },
+      { title: "Model Access Controls", desc: "Role-based access to AI models and inference endpoints with full audit trails." },
+      { title: "Data Encryption at Rest & Transit", desc: "End-to-end encryption for all AI training data and model artifacts." },
+      { title: "Adversarial Robustness Testing", desc: "Systematic red-teaming and adversarial attack simulation for deployed models." },
+      { title: "PII Detection & Redaction", desc: "Automated detection and removal of personally identifiable information in AI pipelines." },
+      { title: "Security Monitoring & SIEM", desc: "Real-time security event monitoring integrated with your SIEM platform." },
+    ],
+    techStack: ["AWS KMS", "Azure Key Vault", "Vault by HashiCorp", "OWASP", "Guardrails AI", "Presidio", "Datadog Security", "Falco", "OPA"],
+  },
+
+  "ai-governance-consulting": {
+    title: "AI Governance Consulting",
+    category: "ENTERPRISE AI & CLOUD // SYS-04",
+    tagline: "Responsible AI planning, compliance awareness, and ethical usage guidance.",
+    description: "We help organizations build AI governance frameworks that balance innovation with responsibility. From policy design to compliance mapping and bias auditing, we ensure your AI deployments meet regulatory requirements and ethical standards.",
+    accent: "#4f46e5",
+    accentRgb: "79, 70, 229",
+    metrics: [
+      { label: "Compliance Frameworks Covered", value: "15+" },
+      { label: "Governance Policies Created", value: "50+" },
+      { label: "Bias Audit Accuracy", value: "97%" },
+    ],
+    features: [
+      { title: "AI Risk Assessment", desc: "Comprehensive risk analysis of your AI systems across technical, legal, and ethical dimensions." },
+      { title: "Regulatory Compliance Mapping", desc: "Map your AI use cases to GDPR, EU AI Act, HIPAA, and sector-specific regulations." },
+      { title: "Bias Detection & Fairness Audits", desc: "Statistical analysis of model outputs for discriminatory patterns across protected groups." },
+      { title: "AI Policy & Playbook Design", desc: "Internal AI usage policies, procurement guidelines, and governance playbooks." },
+      { title: "Model Card Documentation", desc: "Standardized model cards documenting intended use, limitations, and performance metrics." },
+      { title: "Board & Stakeholder Briefings", desc: "Executive-level AI governance education and strategic advisory sessions." },
+    ],
+    techStack: ["IBM OpenScale", "Microsoft Responsible AI", "Google PAIR", "Fairlearn", "Aequitas", "SHAP", "Python", "Confluence"],
+  },
+
+  "ai-consulting-corporate-training": {
+    title: "AI Consulting & Corporate Training",
+    category: "ENTERPRISE AI & CLOUD // SYS-04",
+    tagline: "Strategic AI advisory, implementation guidance, and corporate training programs.",
+    description: "We bridge the gap between AI potential and business reality. Our consultants help you develop AI strategy, select the right technologies, and upskill your teams — ensuring your organization is AI-ready from leadership to engineering.",
+    accent: "#4f46e5",
+    accentRgb: "79, 70, 229",
+    metrics: [
+      { label: "Clients Advised", value: "100+" },
+      { label: "Training Completion Rate", value: "96%" },
+      { label: "Strategy ROI", value: "5× Avg." },
+    ],
+    features: [
+      { title: "AI Readiness Assessment", desc: "Evaluate your organization's data, talent, and infrastructure maturity for AI adoption." },
+      { title: "Technology Roadmap Design", desc: "Multi-year AI strategy roadmap aligned with your business goals and budget." },
+      { title: "Vendor & Tool Selection", desc: "Unbiased guidance on AI platforms, vendors, and open-source tools." },
+      { title: "Executive AI Workshops", desc: "Leadership workshops on AI opportunity identification, risk, and investment decisions." },
+      { title: "Technical Team Training", desc: "Hands-on training programs for engineering, data science, and product teams." },
+      { title: "POC Design & Validation", desc: "Rapid proof-of-concept design and evaluation to de-risk AI investment decisions." },
+    ],
+    techStack: ["Python", "Jupyter", "TensorFlow", "OpenAI API", "AWS", "GCP", "Snowflake", "Tableau", "LangChain", "Miro"],
+  },
+
+  // ─── SYS-05: Advanced Tech & Software ────────────────────────────────────
+
+  "internet-of-things-development": {
+    title: "Internet of Things Development",
+    category: "ADVANCED TECH & SOFTWARE // SYS-05",
+    tagline: "Connected device systems using sensors, automation, and intelligence.",
+    description: "We design and build IoT ecosystems that connect physical devices to intelligent cloud systems. From sensor hardware selection to edge AI processing and cloud dashboards, our IoT solutions turn the physical world into actionable digital data.",
+    accent: "#f59e0b",
+    accentRgb: "245, 158, 11",
+    metrics: [
+      { label: "Devices Managed", value: "10K+" },
+      { label: "Data Latency", value: "<100ms" },
+      { label: "Edge AI Ready", value: "Yes" },
+    ],
+    features: [
+      { title: "IoT Architecture Design", desc: "End-to-end system design from device firmware to cloud data pipelines." },
+      { title: "Sensor & Hardware Integration", desc: "Connect temperature, motion, vision, and environmental sensors to your platform." },
+      { title: "Edge AI Processing", desc: "On-device ML inference for real-time decisions without cloud round-trips." },
+      { title: "Device Management Platform", desc: "OTA updates, health monitoring, and remote configuration for device fleets." },
+      { title: "Real-Time Data Dashboards", desc: "Live visualization of IoT data streams with alerts and analytics." },
+      { title: "Predictive Maintenance", desc: "ML models that predict equipment failure before it occurs." },
+    ],
+    techStack: ["AWS IoT Core", "Azure IoT Hub", "MQTT", "Python", "TensorFlow Lite", "Raspberry Pi", "Arduino", "InfluxDB", "Grafana", "NVIDIA Jetson"],
+  },
+
+  "blockchain-development": {
+    title: "Blockchain Development",
+    category: "ADVANCED TECH & SOFTWARE // SYS-05",
+    tagline: "Secure decentralized applications, smart contracts, and digital systems.",
+    description: "We build blockchain solutions that bring transparency, immutability, and decentralized trust to business processes. From smart contract development to DeFi protocols and enterprise blockchain networks, we engineer for security and scale.",
+    accent: "#f59e0b",
+    accentRgb: "245, 158, 11",
+    metrics: [
+      { label: "Smart Contracts Deployed", value: "200+" },
+      { label: "Transaction Finality", value: "<3s" },
+      { label: "Security Audits Passed", value: "100%" },
+    ],
+    features: [
+      { title: "Smart Contract Development", desc: "Audited, gas-optimized smart contracts on Ethereum, Solana, and other chains." },
+      { title: "DApp Development", desc: "Full-stack decentralized application development with Web3 wallet integration." },
+      { title: "Enterprise Blockchain Networks", desc: "Private and consortium blockchain networks on Hyperledger Fabric and Besu." },
+      { title: "Token & NFT Engineering", desc: "ERC-20, ERC-721, and custom token standards for digital assets." },
+      { title: "Security Auditing", desc: "Comprehensive smart contract security audits to prevent vulnerabilities and exploits." },
+      { title: "Blockchain Integration", desc: "Connect blockchain systems to existing enterprise databases and applications." },
+    ],
+    techStack: ["Solidity", "Rust", "Ethereum", "Solana", "Hardhat", "Foundry", "OpenZeppelin", "IPFS", "Ethers.js", "Hyperledger Fabric"],
+  },
+
+  "ar-vr-development": {
+    title: "AR/VR Development",
+    category: "ADVANCED TECH & SOFTWARE // SYS-05",
+    tagline: "Immersive digital experiences for training, visualization, and engagement.",
+    description: "We create augmented and virtual reality experiences that transform how people learn, work, and interact. From industrial training simulations to retail AR try-ons and architectural visualization, we build for impact and immersion.",
+    accent: "#f59e0b",
+    accentRgb: "245, 158, 11",
+    metrics: [
+      { label: "Training Retention Increase", value: "+75%" },
+      { label: "Supported Headsets", value: "15+" },
+      { label: "Frame Rate Target", value: "90 FPS" },
+    ],
+    features: [
+      { title: "VR Training Simulations", desc: "Safe, repeatable virtual training environments for high-stakes procedures." },
+      { title: "AR Product Visualization", desc: "Place products in the real world via mobile AR for retail and e-commerce." },
+      { title: "3D Asset Development", desc: "Photorealistic 3D models, animations, and environments for immersive experiences." },
+      { title: "Spatial Computing Integration", desc: "Build for Apple Vision Pro, Meta Quest, HoloLens, and WebXR platforms." },
+      { title: "Multi-User Collaboration", desc: "Shared virtual spaces for remote teams, meetings, and collaborative design." },
+      { title: "Analytics & Engagement Tracking", desc: "Track user gaze, interactions, and behavior inside XR environments." },
+    ],
+    techStack: ["Unity", "Unreal Engine", "WebXR", "ARKit", "ARCore", "Meta SDK", "HoloLens SDK", "Blender", "WebGL", "Three.js"],
+  },
+
+  "ai-design": {
+    title: "AI Design",
+    category: "ADVANCED TECH & SOFTWARE // SYS-05",
+    tagline: "Human-centered AI interface design, product flows, and smart UX systems.",
+    description: "Designing for AI requires a new design language. We create interfaces, interaction patterns, and UX flows that make AI feel intuitive, trustworthy, and delightful. From conversational UI to AI dashboards and generative design tools.",
+    accent: "#f59e0b",
+    accentRgb: "245, 158, 11",
+    metrics: [
+      { label: "User Satisfaction Score", value: "4.8/5" },
+      { label: "Onboarding Drop-off Reduction", value: "55%" },
+      { label: "Accessibility Compliance", value: "WCAG 2.1 AA" },
+    ],
+    features: [
+      { title: "AI UX Research", desc: "User research focused on how people interact with and trust AI systems." },
+      { title: "Conversational Interface Design", desc: "Chat, voice, and multimodal interface design for AI-first products." },
+      { title: "AI Dashboard Design", desc: "Data-dense, scannable dashboard layouts for AI analytics and monitoring products." },
+      { title: "Design System Creation", desc: "Scalable component libraries and design tokens for AI product teams." },
+      { title: "Prototyping & Usability Testing", desc: "Interactive prototypes and user testing to validate AI interaction patterns." },
+      { title: "Generative Design Tools", desc: "AI-powered design generation and iteration tools for faster creative workflows." },
+    ],
+    techStack: ["Figma", "Framer", "Adobe XD", "Protopie", "Lottie", "React", "Tailwind CSS", "Storybook", "UserTesting", "Maze"],
+  },
+
+  "enterprise-software-development": {
+    title: "Enterprise Software Development",
+    category: "ADVANCED TECH & SOFTWARE // SYS-05",
+    tagline: "Custom enterprise-grade software platforms for scalable business operations.",
+    description: "We build robust, scalable enterprise software that powers mission-critical business operations. From internal tools and workflow platforms to customer-facing SaaS products, our engineering delivers software that enterprises rely on.",
+    accent: "#f59e0b",
+    accentRgb: "245, 158, 11",
+    metrics: [
+      { label: "System Uptime", value: "99.99%" },
+      { label: "Users Supported", value: "10K+" },
+      { label: "Avg. Build Timeline", value: "12–20 Wks" },
+    ],
+    features: [
+      { title: "Requirements & Architecture", desc: "Deep discovery, system architecture design, and technical specification documentation." },
+      { title: "Microservices Development", desc: "Independently deployable services that scale and update without system-wide downtime." },
+      { title: "Database Architecture", desc: "Relational, NoSQL, and time-series database design optimized for enterprise workloads." },
+      { title: "Security & Compliance", desc: "SOC2, ISO 27001, and GDPR-compliant architecture and coding practices." },
+      { title: "Performance Optimization", desc: "Load testing, caching strategies, and infrastructure tuning for high-traffic systems." },
+      { title: "Legacy System Migration", desc: "Modernize legacy monoliths into scalable, maintainable cloud-native architectures." },
+    ],
+    techStack: ["React", "Next.js", "Node.js", "Python", "Go", "PostgreSQL", "MongoDB", "Redis", "Kubernetes", "AWS", "Terraform", "GitHub Actions"],
+  },
+
+};
