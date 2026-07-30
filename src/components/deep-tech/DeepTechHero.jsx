@@ -1,85 +1,84 @@
-import React, { useEffect, useState } from 'react';
-import videoBg from '../../assets/deep-tech-product.mp4';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import heroBgVideo from '../../assets/deep-tech-product.mp4';
 
 export default function DeepTechHero() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   return (
-    <section className="relative w-full overflow-hidden bg-slate-950 min-h-screen flex items-center pt-24 pb-16">
+    <section className="relative w-full h-screen flex items-center justify-center bg-slate-950 text-white overflow-hidden pt-28 pb-16">
+      
       {/* Background Video */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 opacity-75">
         <video 
           autoPlay 
           loop 
           muted 
-          playsInline 
-          className="w-full h-full object-cover object-center animate-[fade-in_1.5s_ease-out]"
+          playsInline
+          className="w-full h-full object-cover object-center"
         >
-          <source src={videoBg} type="video/mp4" />
+          <source src={heroBgVideo} type="video/mp4" />
         </video>
+        {/* Soft overlay gradient to ensure text readability */}
+        <div className="absolute inset-0 bg-slate-950/40 bg-gradient-to-b from-slate-950/70 via-slate-950/20 to-slate-950/80" />
       </div>
 
-      <div className="mx-auto max-w-[85rem] px-6 relative z-10 w-full">
-        <div className="max-w-2xl transition-all duration-1000 ease-out">
+      {/* Cyber Grid Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.008)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.008)_1px,transparent_1px)] bg-[size:45px_45px] pointer-events-none z-10" />
+      
+      {/* Ambient Halos */}
+      <div className="absolute top-10 left-10 w-[350px] h-[350px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none z-10" />
+      <div className="absolute bottom-10 right-10 w-[350px] h-[350px] bg-emerald-500/5 rounded-full blur-[100px] pointer-events-none z-10" />
+
+      <div className="w-full px-8 md:px-16 lg:px-24 relative z-20 flex flex-col items-start text-left">
+        
+        {/* Inner wrapper to restrict content to half of the page */}
+        <div className="w-full lg:max-w-[50%] flex flex-col items-start gap-1">
           
-          {/* Tagline / Badge */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse shadow-[0_0_8px_rgba(167,139,250,0.8)]" />
-            <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-200">
-              Deep-Tech & Product Lab
+          {/* Upper Brand Badge */}
+          <div className="inline-flex items-center gap-3 mb-8 px-5 py-2 rounded-full border border-blue-500/20 bg-blue-950/60 backdrop-blur-xl">
+            <span className="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse" />
+            <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-blue-300">
+              Deep-Tech Products
             </span>
           </div>
 
-          {/* Heading */}
-          <h1 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.1] font-bold tracking-tight text-white mb-6">
-            AI-Powered <br />
-            Smart <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400 font-extrabold drop-shadow-[0_2px_15px_rgba(167,139,250,0.3)]">Hardware & IP</span>
+          {/* Headline */}
+          <h1 className="font-display text-[clamp(2.5rem,5.5vw,4.8rem)] leading-none font-black tracking-tight text-white mb-6">
+            Building the World's Next Generation of AI-Powered Deep-Tech Products
           </h1>
 
-          {/* Paragraph */}
-          <p className="font-body text-slate-300 text-base md:text-lg font-light tracking-wide leading-relaxed mb-10 max-w-xl">
-            We engineer custom intelligent ecosystems—bridging advanced machine learning, smart IoT devices, health diagnostic tools, and edge technology.
+          {/* Sub-headline */}
+          <p className="font-body text-slate-300 text-lg md:text-xl font-medium mb-4 leading-relaxed">
+            TECH6SENSE AI is your global partner for AI-powered product development. From initial blueprint to a complete business ecosystem, we empower you to launch and scale your own next-generation tech product company.
           </p>
 
-          {/* Telemetry Indicator */}
-          <div className="flex items-center gap-8 mb-10 text-xs font-mono">
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-slate-400 uppercase tracking-wider">Lab Status:</span>
-              <span className="text-emerald-400 font-bold">Active</span>
-            </div>
-            <div className="w-px h-4 bg-white/15" />
-            <div className="flex items-center gap-2">
-              <span className="text-slate-400 uppercase tracking-wider">Release:</span>
-              <span className="text-slate-200 font-bold">v1.8 optimized</span>
-            </div>
-          </div>
+          {/* Premium Value Statement */}
+          <p className="font-display text-base md:text-lg font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-emerald-300 italic mb-10">
+            "From Concept to Global Commercialization — We Build the Future of Intelligent Hardware"
+          </p>
 
-          {/* Buttons */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-            <a 
-              href="#categories" 
-              className="group relative w-full sm:w-auto inline-flex justify-center items-center gap-2.5 rounded-full bg-gradient-to-r from-violet-600 via-fuchsia-600 to-pink-600 px-8 py-4 font-body text-sm font-semibold text-white transition-all hover:shadow-[0_0_35px_rgba(124,58,237,0.5)] hover:scale-[1.02]"
-            >
-              Explore Categories
-              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-            <a 
-              href="#discuss" 
-              className="group relative w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-sm px-8 py-4 font-body text-sm font-medium text-white transition-all hover:bg-white/10 hover:border-white/20"
-            >
-              Discuss Innovation
-            </a>
-          </div>
-            
-          </div>
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row items-center sm:items-start justify-start gap-5 w-full">
+          <Link
+            to="/lets-connect?inquiry=Launch%20Product%20Brand"
+            className="group w-full sm:w-auto relative inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 px-9 py-4 font-body text-sm font-bold text-white shadow-[0_4px_25px_rgba(37,99,235,0.25)] transition-all hover:scale-[1.03] hover:shadow-[0_8px_35px_rgba(37,99,235,0.45)]"
+          >
+            Launch Your AI Product Brand
+            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </Link>
+
+          <a
+            href="#portfolio"
+            className="group w-full sm:w-auto relative inline-flex items-center justify-center gap-2 rounded-full border border-slate-700 bg-slate-900/80 backdrop-blur-md px-9 py-4 font-body text-sm font-bold text-slate-200 hover:border-emerald-500 hover:text-white transition-all shadow-sm"
+          >
+            Explore Deep-Tech Innovations
+          </a>
         </div>
+        
+        </div>
+
+      </div>
     </section>
   );
 }

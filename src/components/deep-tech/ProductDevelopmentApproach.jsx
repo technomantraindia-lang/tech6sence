@@ -1,122 +1,81 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 
 export default function ProductDevelopmentApproach() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setIsVisible(true);
-        observer.disconnect();
-      }
-    }, { threshold: 0.15 });
-    
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   const steps = [
     {
-      title: "Concept & Use-Case Strategy",
-      desc: "Define the product purpose, users, business value, and technical direction."
+      num: "01",
+      title: "Ideation & Architecture",
+      desc: "You bring the vision. Our AI and hardware architects map out the feasibility, component sourcing, and edge-AI requirements.",
+      badgeBg: "bg-blue-100 text-blue-700",
+      cardBg: "bg-blue-50/40 hover:bg-blue-50/70"
     },
     {
-      title: "AI & Data Layer Planning",
-      desc: "Plan intelligence models, data flow, sensors, and decision logic."
+      num: "02",
+      title: "Prototyping & Firmware",
+      desc: "We build the physical alpha units alongside custom, highly secure firmware and companion mobile applications.",
+      badgeBg: "bg-emerald-100 text-emerald-700",
+      cardBg: "bg-emerald-50/40 hover:bg-emerald-50/70"
     },
     {
-      title: "Prototype & Interface Design",
-      desc: "Design product experience, user interface, connected app, or dashboard layer."
+      num: "03",
+      title: "Testing & Certification",
+      desc: "Rigorous global compliance testing (FCC, CE, RoHS, FDA) to ensure your product is legally and technically ready for a global rollout.",
+      badgeBg: "bg-blue-100 text-blue-700",
+      cardBg: "bg-blue-50/40 hover:bg-blue-50/70"
     },
     {
-      title: "Hardware-Software Integration",
-      desc: "Connect AI models, devices, cloud systems, APIs, and product workflows."
-    },
-    {
-      title: "Testing & Scale Readiness",
-      desc: "Validate usability, performance, reliability, and real-world deployment readiness."
+      num: "04",
+      title: "Mass Production & Fulfillment",
+      desc: "We spin up our world-class manufacturing lines, delivering packaged, retail-ready deep-tech products directly to your distribution hubs.",
+      badgeBg: "bg-emerald-100 text-emerald-700",
+      cardBg: "bg-emerald-50/40 hover:bg-emerald-50/70"
     }
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 lg:py-32 bg-slate-50 border-t border-slate-100">
-      <div className="mx-auto max-w-[85rem] px-6">
+    <section className="relative w-full py-20 lg:py-28 bg-slate-50 border-b border-slate-200/80 overflow-hidden">
+      {/* Background ambient accents */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[150px] bg-blue-100/5 blur-[100px] rounded-full pointer-events-none" />
+
+      <div className="mx-auto max-w-[85rem] px-6 relative z-10">
         
         {/* Header */}
-        <div className={`text-center max-w-3xl mx-auto mb-20 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-3 mb-6">
-            <span className="w-8 h-[2px] bg-gradient-to-r from-violet-400 to-fuchsia-400 rounded-full" />
-            <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-slate-500">
-              DEVELOPMENT APPROACH
+            <span className="w-8 h-[2px] bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full" />
+            <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-blue-600">
+              THE INNOVATION ENGINE
             </span>
-            <span className="w-8 h-[2px] bg-gradient-to-r from-fuchsia-400 to-violet-400 rounded-full" />
+            <span className="w-8 h-[2px] bg-gradient-to-r from-emerald-500 to-blue-600 rounded-full" />
           </div>
-          
-          <h2 className="font-display text-[clamp(1.75rem,3.5vw,3rem)] leading-tight font-extrabold text-slate-900 mb-6 tracking-tight">
-            How We Build AI-Enabled Products
+          <h2 className="font-display text-[clamp(2rem,4vw,3.2rem)] leading-tight font-extrabold text-slate-900 mb-6 tracking-tight">
+            How We Work
           </h2>
-          
-          <p className="font-body text-slate-600 text-lg leading-relaxed">
-            Deep-tech product development requires clear use cases, AI planning, interface design, hardware-software integration, and real-world testing.
+          <p className="font-body text-slate-600 text-base md:text-lg leading-relaxed font-medium">
+            From Vision to Global Launch in 4 Steps
           </p>
         </div>
 
-        {/* Timeline Layout */}
-        <div className="relative mt-12 md:mt-24 w-full max-w-6xl mx-auto">
-          
-          {/* Desktop Horizontal Progress Line */}
-          <div className="hidden lg:block absolute top-[28px] left-10 right-10 h-[2px] bg-slate-200">
+        {/* 4-Step Process Timeline - Frameless cards styled with themed Royal Blue and Embedded Green background tints */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((st, i) => (
             <div 
-              className="h-full bg-gradient-to-r from-violet-500 to-fuchsia-500 transition-all duration-[2000ms] ease-out"
-              style={{ width: isVisible ? '100%' : '0%' }}
-            />
-          </div>
-          
-          {/* Mobile Vertical Progress Line */}
-          <div className="lg:hidden absolute top-10 bottom-10 left-[28px] w-[2px] bg-slate-200">
-             <div 
-              className="w-full bg-gradient-to-b from-violet-500 to-fuchsia-500 transition-all duration-[2000ms] ease-out"
-              style={{ height: isVisible ? '100%' : '0%' }}
-            />
-          </div>
-
-          {/* Timeline Nodes */}
-          <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-6">
-            {steps.map((step, i) => (
-              <div 
-                key={i} 
-                className={`relative flex flex-row lg:flex-col items-start lg:items-center gap-6 lg:gap-8 flex-1 transition-all duration-700 ease-out ${
-                  isVisible ? 'opacity-100 translate-y-0 translate-x-0' : 'opacity-0 translate-y-8 lg:translate-y-12'
-                }`}
-                style={{ transitionDelay: `${400 + (i * 200)}ms` }}
-              >
-                {/* Number Node */}
-                <div className="relative shrink-0 w-14 h-14 rounded-full bg-white border-2 border-slate-200 shadow-sm flex items-center justify-center z-10 group-hover:border-violet-400 transition-colors duration-500">
-                  <div className="w-6 h-6 rounded-full bg-violet-50 text-[11px] font-bold text-violet-700 flex items-center justify-center">
-                    0{i + 1}
-                  </div>
-                  {/* Subtle active glow */}
-                  {isVisible && (
-                    <div 
-                      className="absolute inset-0 rounded-full border border-violet-400 animate-ping opacity-20"
-                      style={{ animationDelay: `${i * 0.2}s` }}
-                    />
-                  )}
-                </div>
-                
-                {/* Content */}
-                <div className="lg:text-center flex-1 pt-1 lg:pt-0">
-                  <h3 className="font-display text-base md:text-lg font-bold text-slate-900 mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="font-body text-sm text-slate-600 leading-relaxed">
-                    {step.desc}
-                  </p>
-                </div>
+              key={i} 
+              className={`p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 relative flex flex-col justify-between border-0 ${st.cardBg}`}
+            >
+              <div>
+                <span className={`font-mono text-xs font-extrabold px-3 py-1 rounded-full inline-block mb-4 ${st.badgeBg}`}>
+                  STEP {st.num}
+                </span>
+                <h3 className="font-display text-lg font-extrabold text-slate-900 mb-3">
+                  {st.title}
+                </h3>
+                <p className="font-body text-xs md:text-sm text-slate-600 leading-relaxed font-medium">
+                  {st.desc}
+                </p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
       </div>
