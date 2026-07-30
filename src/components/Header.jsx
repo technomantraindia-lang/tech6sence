@@ -28,6 +28,7 @@ const NAV_LINKS = [
           { label: 'AI Copilot Development', href: '/services/ai-copilot-development' },
           { label: 'Generative AI Solutions', href: '/services/generative-ai-solutions' },
           { label: 'NLP & Conversational AI', href: '/services/nlp-conversational-ai' },
+          { label: 'Retrieval-Augmented Generation (RAG)', href: '/services/retrieval-augmented-generation' },
         ]
       },
       {
