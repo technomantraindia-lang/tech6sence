@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const categories = [
   {
@@ -314,6 +314,28 @@ export default function IntelligentSolutionsEcosystem() {
   const [activeTab, setActiveTab] = useState(0);
   const [activeAccordion, setActiveAccordion] = useState(0);
   const tabsRef = useRef(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const tabParam = params.get('tab');
+    if (tabParam !== null) {
+      const tabIdx = parseInt(tabParam, 10);
+      if (!isNaN(tabIdx) && tabIdx >= 0 && tabIdx < categories.length) {
+        setActiveTab(tabIdx);
+        setActiveAccordion(tabIdx);
+      }
+    }
+
+    if (location.hash === '#ecosystem') {
+      setTimeout(() => {
+        const el = document.getElementById('ecosystem');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [location]);
 
   const activeCategory = categories[activeTab];
 

@@ -129,19 +129,19 @@ export default function Header() {
     <header 
       className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 border-b ${
         scrolled 
-          ? 'border-violet-500/15 bg-[#0a031d]/80 backdrop-blur-2xl shadow-[0_4px_30px_rgba(0,0,0,0.4)]' 
-          : 'border-violet-500/10 bg-[#0a031d]/45 backdrop-blur-xl'
+          ? 'border-white/10 bg-[#060214]/90 backdrop-blur-2xl shadow-[0_4px_30px_rgba(0,0,0,0.6)]' 
+          : 'border-white/5 bg-[#060214]/65 backdrop-blur-xl'
       }`}
     >
       {/* Scroll Progress Bar */}
       <div 
         ref={progressBarRef}
-        className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-violet-600 via-fuchsia-500 to-violet-600 transition-all duration-75 z-50"
+        className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-blue-600 via-emerald-500 to-blue-600 transition-all duration-75 z-50"
         style={{ width: '0%' }}
       />
       {/* Top Glow Ambient Flare */}
       <div
-        className="pointer-events-none absolute -top-12 left-1/4 h-24 w-1/2 rounded-full bg-violet-400/8 blur-3xl"
+        className="pointer-events-none absolute -top-12 left-1/4 h-24 w-1/2 rounded-full bg-blue-400/5 blur-3xl"
         aria-hidden="true"
       />
       
@@ -170,18 +170,18 @@ export default function Header() {
                 <div key={link.href} className={link.isMega ? "group static" : "group relative"}>
                   <Link
                     to={link.href}
-                    className="relative flex items-center gap-0.5 2xl:gap-1 rounded-lg px-1.5 2xl:px-3 py-2 no-underline transition-all hover:bg-violet-950/40"
+                    className="relative flex items-center gap-0.5 2xl:gap-1 rounded-lg px-1.5 2xl:px-3 py-2 no-underline transition-all hover:bg-white/5"
                   >
-                    <span className={`font-body text-[0.7rem] 2xl:text-sm font-medium transition-colors whitespace-nowrap ${active ? 'text-violet-300' : 'text-slate-300 group-hover:text-white'}`}>
+                    <span className={`font-body text-[0.75rem] 2xl:text-sm font-bold transition-colors whitespace-nowrap ${active ? 'text-blue-400' : 'text-slate-300 group-hover:text-white'}`}>
                       {link.label}
                     </span>
                     {(link.isMega || link.isDropdown) && (
-                      <svg className={`w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180 ${active ? 'text-violet-400' : 'text-slate-400'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className={`w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180 ${active ? 'text-blue-400' : 'text-slate-400'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
                     )}
                     {/* Active/Hover Line */}
-                    <span className={`absolute bottom-1 left-3.5 right-3.5 h-px origin-left transition-transform duration-300 bg-gradient-to-r from-violet-450 to-fuchsia-400 ${active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+                    <span className={`absolute bottom-1 left-3.5 right-3.5 h-px origin-left transition-transform duration-300 bg-gradient-to-r from-blue-400 to-emerald-400 ${active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
                   </Link>
 
                   {/* Desktop Mega Menu */}
@@ -249,9 +249,9 @@ export default function Header() {
             <div className="hidden shrink-0 lg:block">
               <Link
                 to="/lets-connect"
-                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 p-2 2xl:px-6 2xl:py-2.5 font-body text-[0.65rem] 2xl:text-xs font-bold tracking-widest text-white no-underline shadow-[0_4px_15px_rgba(124,58,237,0.25)] transition-all duration-500 hover:px-5 2xl:hover:px-6 hover:shadow-[0_8px_25px_rgba(124,58,237,0.4)] whitespace-nowrap"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 p-2 2xl:px-6 2xl:py-2.5 font-body text-[0.65rem] 2xl:text-xs font-bold tracking-widest text-white no-underline shadow-[0_4px_15px_rgba(37,99,235,0.25)] transition-all duration-500 hover:px-5 2xl:hover:px-6 hover:shadow-[0_8px_25px_rgba(37,99,235,0.4)] whitespace-nowrap"
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-fuchsia-600 to-violet-600 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <span className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-blue-600 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <span className="relative z-10 flex items-center">
                   <span className="max-w-0 2xl:max-w-[120px] opacity-0 2xl:opacity-100 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.2,1,0.2,1)] group-hover:max-w-[120px] group-hover:opacity-100">
                     <span className="pr-2.5">Let's Connect</span>
@@ -268,15 +268,15 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               type="button"
-              className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-violet-500/20 bg-violet-950/30 text-violet-400 hover:border-violet-500/40 hover:bg-violet-950/50 transition-all lg:hidden z-50"
+              className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-slate-650 hover:border-slate-300 hover:bg-slate-100 transition-all lg:hidden z-50 animate-fade-in"
               aria-label="Toggle menu"
               aria-expanded={open}
               onClick={() => setOpen(!open)}
             >
               <div className="flex w-5 flex-col items-end gap-1.5">
-                <span className={`block h-0.5 rounded-full bg-violet-400 transition-all ${open ? 'w-5 translate-y-2 rotate-45' : 'w-5'}`} />
-                <span className={`block h-0.5 rounded-full bg-violet-400 transition-all ${open ? 'w-0 opacity-0' : 'w-3.5'}`} />
-                <span className={`block h-0.5 rounded-full bg-violet-400 transition-all ${open ? 'w-5 -translate-y-2 -rotate-45' : 'w-5'}`} />
+                <span className={`block h-0.5 rounded-full bg-slate-650 transition-all ${open ? 'w-5 translate-y-2 rotate-45' : 'w-5'}`} />
+                <span className={`block h-0.5 rounded-full bg-slate-650 transition-all ${open ? 'w-0 opacity-0' : 'w-3.5'}`} />
+                <span className={`block h-0.5 rounded-full bg-slate-650 transition-all ${open ? 'w-5 -translate-y-2 -rotate-45' : 'w-5'}`} />
               </div>
             </button>
           </div>

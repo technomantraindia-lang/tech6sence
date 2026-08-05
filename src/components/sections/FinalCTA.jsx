@@ -72,8 +72,8 @@ export default function FinalCTA() {
         className="absolute inset-0 pointer-events-none mix-blend-multiply transition-opacity duration-1000" 
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(124, 58, 237, 0.05) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(124, 58, 237, 0.05) 1px, transparent 1px)
+            linear-gradient(to right, rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(37, 99, 235, 0.05) 1px, transparent 1px)
           `,
           backgroundSize: '40px 40px',
           backgroundPosition: 'center',
@@ -89,7 +89,7 @@ export default function FinalCTA() {
       >
         {/* Animated Gradient Top Border Line */}
         <div 
-          className="absolute top-0 inset-x-0 h-[2.5px] bg-gradient-to-r from-violet-500 via-fuchsia-500 to-violet-500 bg-[size:200%_auto] animate-border-flow transition-transform duration-1000 ease-out" 
+          className="absolute top-0 inset-x-0 h-[2.5px] bg-gradient-to-r from-blue-500 via-emerald-500 to-blue-500 bg-[size:200%_auto] animate-border-flow transition-transform duration-1000 ease-out" 
           style={{
             transform: isVisible ? 'scaleX(1)' : 'scaleX(0)',
             transformOrigin: 'left'
@@ -98,7 +98,7 @@ export default function FinalCTA() {
 
         {/* Floating Gradient Glow Orb Behind Heading */}
         <div 
-          className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] rounded-full bg-gradient-to-tr from-violet-200/40 via-fuchsia-200/35 to-transparent blur-[80px] sm:blur-[110px] pointer-events-none z-0 animate-glow-drift transition-all duration-1000 ease-out"
+          className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] rounded-full bg-gradient-to-tr from-blue-200/40 via-emerald-200/35 to-transparent blur-[80px] sm:blur-[110px] pointer-events-none z-0 animate-glow-drift transition-all duration-1000 ease-out"
           style={{
             transform: `translate(-50%, -50%) scale(${isVisible ? 1 : 0.6})`,
             opacity: isVisible ? 1 : 0
@@ -116,11 +116,11 @@ export default function FinalCTA() {
               transform: isVisible ? 'translateY(0)' : 'translateY(10px)'
             }}
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-violet-600 animate-pulse" />
-            <span className="font-mono text-xs font-bold tracking-[0.25em] text-violet-600 uppercase">
+            <span className="h-1.5 w-1.5 rounded-full bg-blue-600 animate-pulse" />
+            <span className="font-mono text-xs font-bold tracking-[0.25em] text-blue-600 uppercase">
               READY TO BUILD WITH AI?
             </span>
-            <span className="h-1.5 w-1.5 rounded-full bg-fuchsia-500 animate-pulse" style={{ animationDelay: '0.5s' }} />
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" style={{ animationDelay: '0.5s' }} />
           </div>
 
           {/* Heading */}
@@ -133,7 +133,7 @@ export default function FinalCTA() {
             }}
           >
             Ready to Build Your Next <br />
-            <span className="text-shimmer font-black">AI Advantage?</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-500 font-black">AI Advantage?</span>
           </h2>
 
           {/* Paragraph */}
@@ -160,7 +160,7 @@ export default function FinalCTA() {
             {/* Primary Button */}
             <a
               href="#contact"
-              className="w-full sm:w-auto relative group px-8 py-4 rounded-xl text-white font-semibold text-[0.95rem] overflow-hidden bg-gradient-to-r from-violet-600 to-fuchsia-600 transition-all duration-300 hover:-translate-y-0.5 shadow-md shadow-violet-500/10 hover:shadow-lg hover:shadow-violet-500/25 flex items-center justify-center gap-2"
+              className="w-full sm:w-auto relative group px-8 py-4 rounded-xl text-white font-semibold text-[0.95rem] overflow-hidden bg-gradient-to-r from-blue-600 to-emerald-500 transition-all duration-300 hover:-translate-y-0.5 shadow-md shadow-blue-500/10 hover:shadow-lg hover:shadow-blue-500/25 flex items-center justify-center gap-2"
             >
               <span className="cta-btn-shine-effect" />
               Schedule Consultation
@@ -172,7 +172,7 @@ export default function FinalCTA() {
               className="w-full sm:w-auto group px-8 py-4 rounded-xl text-[#0B0527] font-semibold text-[0.95rem] border border-slate-200/80 bg-white/40 hover:bg-white/80 hover:border-slate-350 transition-all duration-300 flex items-center justify-center gap-2"
             >
               Explore TECH6SENSE Ecosystem
-              <span className="transition-transform duration-300 ease-out group-hover:translate-x-1 text-violet-600 font-bold">
+              <span className="transition-transform duration-300 ease-out group-hover:translate-x-1 text-blue-600 font-bold">
                 →
               </span>
             </a>
@@ -181,9 +181,9 @@ export default function FinalCTA() {
           {/* Trust Line */}
           <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-4 text-xs font-semibold text-slate-400 tracking-wider uppercase">
             <span>AI solutions</span>
-            <span className="text-violet-400">•</span>
+            <span className="text-blue-400">•</span>
             <span>Deep-tech products</span>
-            <span className="text-fuchsia-400">•</span>
+            <span className="text-emerald-400">•</span>
             <span>Founder ecosystem support</span>
           </div>
 

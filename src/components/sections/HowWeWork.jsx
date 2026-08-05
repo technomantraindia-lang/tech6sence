@@ -153,10 +153,10 @@ const STEPS = [
 ];
 
 const COLORS = [
-  { accent: '#7c3aed', glow: 'rgba(124,58,237,0.15)' },
-  { accent: '#d946ef', glow: 'rgba(217,70,239,0.15)' },
-  { accent: '#6366f1', glow: 'rgba(99,102,241,0.15)' },
-  { accent: '#a855f7', glow: 'rgba(168,85,247,0.15)' },
+  { accent: '#2563eb', glow: 'rgba(37,99,235,0.15)' }, // Royal Blue
+  { accent: '#10b981', glow: 'rgba(16,185,129,0.15)' }, // Emerald Green
+  { accent: '#3b82f6', glow: 'rgba(59,130,246,0.15)' }, // Light Blue
+  { accent: '#059669', glow: 'rgba(5,150,105,0.15)' }, // Dark Emerald
 ];
 
 // 4-point star SVG for timeline markers
@@ -254,7 +254,7 @@ export default function HowWeWork() {
             <span className="h-[2px] w-12 bg-gradient-to-l from-transparent to-slate-200" />
           </div>
           <h2 className="mb-8 font-display text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05] font-extrabold text-slate-900 tracking-[-0.03em]">
-            How We <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-fuchsia-600 to-indigo-600">Work</span>
+            How We <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-emerald-500 to-blue-600">Work</span>
           </h2>
           <p className="max-w-2xl font-body text-[1.1rem] leading-relaxed text-slate-500 font-medium">
             A structured, deep-tech engineering process designed to transform your ambitious visions into robust, scalable, and intelligent realities.
@@ -323,7 +323,7 @@ export default function HowWeWork() {
                           className="h-full rounded-full transition-[width] duration-100 ease-linear"
                           style={{
                             width: `${progress}%`,
-                            background: `linear-gradient(to right, ${c.accent}, #d946ef)`,
+                            background: `linear-gradient(to right, ${c.accent}, #10b981)`,
                           }}
                         />
                       </div>

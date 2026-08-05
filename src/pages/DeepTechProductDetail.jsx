@@ -5,6 +5,33 @@ import Header from '../components/Header';
 import Footer from '../components/sections/Footer';
 import deepTechData from '../data/deepTechData.json';
 
+// Explored Product Images
+import imgGlasses from '../assets/productimages/ai-smartglasses-explored_view.png';
+import imgExoskeleton from '../assets/productimages/AI-Powered Next-Generation Exoskeleton-explored view.png';
+import imgEarphones from '../assets/productimages/AI Earphones-explored view.png';
+import imgSmartwatch from '../assets/productimages/AI Smart Watch-exploredview.png';
+import imgFitnessBand from '../assets/productimages/AI Fitness & Health Band-exploredview.png';
+import imgAssistant from '../assets/productimages/Wearable AI-Powered Personal Assistants-exploredview.png';
+import imgSmartRing from '../assets/productimages/AI Smart Ring-exploredview.png';
+import imgHealthDevice from '../assets/productimages/Wearable AI Personal Health Device-exploredview.png';
+import imgMedical from '../assets/productimages/Healthcare & Medical AI Devices.png';
+import imgIoT from '../assets/productimages/Smart IoT Devices.png';
+import imgNotepad from '../assets/productimages/AI Digital Notepad-exploredview.png';
+
+const EXPLORED_IMAGES = {
+  "ai-smart-glasses": imgGlasses,
+  "ai-powered-next-generation-exoskeleton": imgExoskeleton,
+  "ai-earphones": imgEarphones,
+  "ai-smartwatch": imgSmartwatch,
+  "ai-fitness-health-band": imgFitnessBand,
+  "wearable-ai-personal-assistant": imgAssistant,
+  "ai-smart-ring": imgSmartRing,
+  "wearable-ai-personal-health-device": imgHealthDevice,
+  "healthcare-medical-ai-devices": imgMedical,
+  "smart-iot-devices": imgIoT,
+  "ai-digital-notepad": imgNotepad
+};
+
 // Helper to convert text to URL slug
 const slugify = (text) => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
@@ -637,8 +664,26 @@ export default function DeepTechProductDetail() {
               </div>
             </div>
 
-            {/* Highlights Marquee/Bento Box */}
-            <div className="lg:col-span-5">
+            {/* Product Image & Key Capabilities */}
+            <div className="lg:col-span-5 flex flex-col gap-8">
+              {/* Premium Floating Product Image Card */}
+              {(() => {
+                const titleSlug = slugify(product.title);
+                const matchedImage = EXPLORED_IMAGES[productId] || EXPLORED_IMAGES[titleSlug];
+                if (!matchedImage) return null;
+                return (
+                  <div className="relative p-6 rounded-3xl border border-slate-100 bg-[#0d0d10] shadow-[0_20px_50px_rgba(0,0,0,0.15)] flex items-center justify-center overflow-hidden h-[340px] md:h-[400px] group">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.12),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                    <img
+                      src={matchedImage}
+                      alt={`${product.title} explored view`}
+                      className="w-full h-full object-contain max-h-[350px] transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                );
+              })()}
+
+              {/* Highlights Bento Box */}
               <div className="relative p-8 rounded-3xl border border-slate-100 bg-slate-50/50 backdrop-blur-md shadow-sm">
                 <h3 className="font-mono text-xs font-bold text-slate-400 uppercase tracking-widest mb-6 pb-3 border-b border-slate-200/50">
                   PRODUCT KEY CAPABILITIES

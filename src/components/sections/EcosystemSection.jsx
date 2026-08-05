@@ -82,14 +82,14 @@ export default function EcosystemSection() {
         >
           <div className="max-w-3xl">
             <div className="mb-6 flex items-center gap-4">
-              <div className="w-1.5 h-1.5 rounded-full bg-violet-600 animate-pulse" />
+              <div className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
               <span className="font-mono text-[0.7rem] font-bold tracking-[0.3em] uppercase text-slate-400">
                 Network & Ecosystem
               </span>
             </div>
             <h2 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05] font-black text-slate-900 tracking-[-0.03em]">
               The Global <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-500">
                 Intelligence Network.
               </span>
             </h2>
@@ -108,19 +108,19 @@ export default function EcosystemSection() {
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(40px)' }}
           >
             {/* Solid white card with subtle inner borders and strong shadow */}
-            <div className="relative bg-white rounded-[2rem] p-8 md:p-12 shadow-[0_20px_60px_-15px_rgba(124,58,237,0.15)] border border-slate-100 overflow-hidden group h-full flex flex-col">
+            <div className="relative bg-white rounded-[2rem] p-8 md:p-12 shadow-[0_20px_60px_-15px_rgba(37,99,235,0.12)] border border-slate-100 overflow-hidden group h-full flex flex-col">
               {/* Top Accent Line */}
-              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-violet-500 to-indigo-500" />
+              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-500 to-emerald-500" />
               
               {/* Background Icon Watermark */}
-              <svg viewBox="0 0 24 24" fill="none" className="absolute -bottom-10 -right-10 w-64 h-64 text-violet-50/50 -rotate-12 transition-transform duration-700 group-hover:rotate-0 group-hover:scale-110 pointer-events-none" stroke="currentColor" strokeWidth="0.5">
+              <svg viewBox="0 0 24 24" fill="none" className="absolute -bottom-10 -right-10 w-64 h-64 text-blue-50/50 -rotate-12 transition-transform duration-700 group-hover:rotate-0 group-hover:scale-110 pointer-events-none" stroke="currentColor" strokeWidth="0.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84" />
               </svg>
-
+ 
               <div className="relative z-10">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-violet-100 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-violet-600" stroke="currentColor" strokeWidth="2">
+                  <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-blue-600" stroke="currentColor" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84" />
                     </svg>
                   </div>
@@ -133,11 +133,11 @@ export default function EcosystemSection() {
 
                 <div className="flex flex-col mb-10 flex-1">
                   {FOUNDERS_POINTS.map((point, i) => (
-                    <EcoListItem key={i} index={i} point={point} color="#7c3aed" />
+                    <EcoListItem key={i} index={i} point={point} color="#2563eb" />
                   ))}
                 </div>
 
-                <a href="#founders" className="inline-flex items-center justify-center gap-3 w-full py-4 rounded-xl bg-slate-900 text-white font-display font-bold tracking-wide transition-all hover:bg-violet-600 hover:shadow-[0_8px_20px_rgba(124,58,237,0.3)] mt-auto">
+                <a href="#founders" className="inline-flex items-center justify-center gap-3 w-full py-4 rounded-xl bg-slate-900 text-white font-display font-bold tracking-wide transition-all hover:bg-blue-600 hover:shadow-[0_8px_20px_rgba(37,99,235,0.3)] mt-auto">
                   Explore Founder Program
                   <svg viewBox="0 0 20 20" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 10h10m-4-4l4 4-4 4" />
@@ -152,20 +152,20 @@ export default function EcosystemSection() {
             className="relative transition-all duration-1000 delay-500 ease-out h-full"
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(40px)' }}
           >
-            {/* Slightly different style, fuchsia themed */}
-            <div className="relative bg-white rounded-[2rem] p-8 md:p-12 shadow-[0_20px_60px_-15px_rgba(217,70,239,0.12)] border border-slate-100 overflow-hidden group h-full flex flex-col">
+            {/* Slightly different style, emerald themed */}
+            <div className="relative bg-white rounded-[2rem] p-8 md:p-12 shadow-[0_20px_60px_-15px_rgba(16,185,129,0.12)] border border-slate-100 overflow-hidden group h-full flex flex-col">
               {/* Top Accent Line */}
-              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-fuchsia-500 to-pink-500" />
+              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-emerald-500 to-emerald-500" />
               
               {/* Background Icon Watermark */}
-              <svg viewBox="0 0 24 24" fill="none" className="absolute -bottom-10 -right-10 w-64 h-64 text-fuchsia-50/50 rotate-12 transition-transform duration-700 group-hover:rotate-0 group-hover:scale-110 pointer-events-none" stroke="currentColor" strokeWidth="0.5">
+              <svg viewBox="0 0 24 24" fill="none" className="absolute -bottom-10 -right-10 w-64 h-64 text-emerald-50/50 rotate-12 transition-transform duration-700 group-hover:rotate-0 group-hover:scale-110 pointer-events-none" stroke="currentColor" strokeWidth="0.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
               </svg>
-
+ 
               <div className="relative z-10">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-fuchsia-100 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-fuchsia-600" stroke="currentColor" strokeWidth="2">
+                  <div className="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-emerald-600" stroke="currentColor" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
                     </svg>
                   </div>
@@ -178,11 +178,11 @@ export default function EcosystemSection() {
 
                 <div className="flex flex-col mb-10 flex-1">
                   {BRAINS_POINTS.map((point, i) => (
-                    <EcoListItem key={i} index={i} point={point} color="#d946ef" />
+                    <EcoListItem key={i} index={i} point={point} color="#10b981" />
                   ))}
                 </div>
 
-                <a href="#business-brains" className="inline-flex items-center justify-center gap-3 w-full py-4 rounded-xl bg-slate-900 text-white font-display font-bold tracking-wide transition-all hover:bg-fuchsia-600 hover:shadow-[0_8px_20px_rgba(217,70,239,0.3)] mt-auto">
+                <a href="#business-brains" className="inline-flex items-center justify-center gap-3 w-full py-4 rounded-xl bg-slate-900 text-white font-display font-bold tracking-wide transition-all hover:bg-emerald-600 hover:shadow-[0_8px_20px_rgba(16,185,129,0.3)] mt-auto">
                   Join Business Brains
                   <svg viewBox="0 0 20 20" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 10h10m-4-4l4 4-4 4" />

@@ -171,7 +171,7 @@ const IndustryVisual = memo(({ industry }) => {
       <defs>
         <linearGradient id={`ind-grad-${industry.id}`} x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor={industry.accent} stopOpacity="0.15" />
-          <stop offset="100%" stopColor="#d946ef" stopOpacity="0.05" />
+          <stop offset="100%" stopColor="#10b981" stopOpacity="0.05" />
         </linearGradient>
       </defs>
       {/* Soft background circle */}
@@ -295,9 +295,9 @@ export default function IndustriesTransform() {
         }
       `}} />
 
-      {/* Ambient glows */}
-      <div className="absolute top-0 right-[-5%] w-[450px] h-[450px] rounded-full bg-gradient-to-bl from-violet-100/40 to-transparent blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-0 left-[-5%] w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-fuchsia-100/30 to-transparent blur-[110px] pointer-events-none" />
+      {/* Dynamic ambient backgrounds */}
+      <div className="absolute top-[10%] right-[-5%] w-[450px] h-[450px] rounded-full bg-gradient-to-bl from-blue-100/40 to-transparent blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-[-5%] w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-emerald-100/30 to-transparent blur-[110px] pointer-events-none" />
 
       {/* Grid Container */}
       <div
@@ -314,14 +314,14 @@ export default function IndustriesTransform() {
           <div className="industries-left-sticky flex flex-col gap-6">
             <div className="max-w-xl">
               <div className="mb-4 flex items-center gap-3">
-                <span className="h-[2px] w-10 bg-gradient-to-r from-violet-500 to-fuchsia-500" />
-                <span className="font-mono text-[0.65rem] font-bold tracking-[0.35em] uppercase text-violet-500">
+                <span className="h-[2px] w-10 bg-gradient-to-r from-blue-500 to-emerald-500" />
+                <span className="font-mono text-[0.65rem] font-bold tracking-[0.35em] uppercase text-blue-650">
                   Industries
                 </span>
               </div>
               <h2 className="mb-5 font-display text-[clamp(2rem,3.5vw,2.8rem)] leading-[1.15] font-extrabold text-slate-900 tracking-[-0.02em]">
                 AI Innovation Across{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-fuchsia-600 to-violet-600">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-emerald-500 to-blue-600">
                   High-Impact Industries
                 </span>
               </h2>

@@ -1,4 +1,18 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { Link } from 'react-router-dom';
+
+// Product image imports
+import imgGlasses from '../../assets/productimages/ai-smartglasses.png';
+import imgExoskeleton from '../../assets/productimages/AI-Powered Next-Generation Exoskeleton.png';
+import imgEarphones from '../../assets/productimages/AI Earphones.png';
+import imgSmartwatch from '../../assets/productimages/AI Smart Watch.png';
+import imgFitnessBand from '../../assets/productimages/AI Fitness & Health Band.png';
+import imgAssistant from '../../assets/productimages/Wearable AI-Powered Personal Assistants.png';
+import imgSmartRing from '../../assets/productimages/AI Smart Ring.png';
+import imgHealthDevice from '../../assets/productimages/Wearable AI Personal Health Device.png';
+import imgMedical from '../../assets/productimages/Healthcare & Medical AI Devices.png';
+import imgIoT from '../../assets/productimages/Smart IoT Devices.png';
+import imgNotepad from '../../assets/productimages/AI Digital Notepad.png';
 
 const PRODUCTS = [
   {
@@ -9,22 +23,7 @@ const PRODUCTS = [
     features: ['Real-time translation HUD', 'Computer vision scene analysis', 'Voice-controlled AR interface'],
     tags: ['AR HUD', 'Realtime Translation', 'Voice AI', 'BLE 5.2'],
     accent: '#7c3aed',
-    graphic: () => (
-      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
-        <defs>
-          <linearGradient id="dtp-grad-glasses" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#7c3aed" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#d946ef" stopOpacity="0.08" />
-          </linearGradient>
-        </defs>
-        <rect x="50" y="60" width="60" height="40" rx="10" fill="url(#dtp-grad-glasses)" stroke="#7c3aed" strokeWidth="1.5" />
-        <rect x="130" y="60" width="60" height="40" rx="10" fill="url(#dtp-grad-glasses)" stroke="#7c3aed" strokeWidth="1.5" />
-        <line x1="110" y1="70" x2="130" y2="70" stroke="#7c3aed" strokeWidth="2" />
-        <path d="M30 70 L50 70 M190 70 L210 70" stroke="#7c3aed" strokeWidth="1.5" strokeDasharray="3 3" />
-        <circle cx="80" cy="80" r="10" fill="none" stroke="#d946ef" strokeWidth="1.5" className="dtp-pulse" />
-        <circle cx="160" cy="80" r="10" fill="none" stroke="#d946ef" strokeWidth="1.5" className="dtp-pulse" />
-      </svg>
-    ),
+    image: imgGlasses,
   },
   {
     id: 'exoskeleton',
@@ -34,24 +33,7 @@ const PRODUCTS = [
     features: ['Active motion assistance', 'Intelligent feedback loops', 'Ergonomic weight distribution'],
     tags: ['Robotics', 'Motion AI', 'Haptic FB', 'Safety+'],
     accent: '#ec4899',
-    graphic: () => (
-      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
-        <defs>
-          <linearGradient id="dtp-grad-exo" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#ec4899" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#7c3aed" stopOpacity="0.08" />
-          </linearGradient>
-        </defs>
-        <circle cx="120" cy="35" r="12" fill="none" stroke="#94a3b8" strokeWidth="1.5" />
-        <line x1="120" y1="47" x2="120" y2="100" stroke="#94a3b8" strokeWidth="1.5" />
-        <line x1="120" y1="60" x2="90" y2="85" stroke="#94a3b8" strokeWidth="1.5" />
-        <line x1="120" y1="60" x2="150" y2="85" stroke="#94a3b8" strokeWidth="1.5" />
-        <line x1="120" y1="100" x2="95" y2="140" stroke="#94a3b8" strokeWidth="1.5" />
-        <line x1="120" y1="100" x2="145" y2="140" stroke="#94a3b8" strokeWidth="1.5" />
-        <path d="M115 48 L115 100 L93 140" fill="none" stroke="#ec4899" strokeWidth="2.5" opacity="0.6" strokeLinecap="round" className="dtp-pulse" />
-        <path d="M125 48 L125 100 L147 140" fill="none" stroke="#ec4899" strokeWidth="2.5" opacity="0.6" strokeLinecap="round" className="dtp-pulse-delay" />
-      </svg>
-    ),
+    image: imgExoskeleton,
   },
   {
     id: 'earphones',
@@ -61,23 +43,7 @@ const PRODUCTS = [
     features: ['Active noise isolation', 'On-the-go audio translation', 'Health vital monitoring'],
     tags: ['ANC', 'Biometrics', 'NLP', 'Spatial Audio'],
     accent: '#0ea5e9',
-    graphic: () => (
-      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
-        <defs>
-          <linearGradient id="dtp-grad-buds" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#0ea5e9" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#2563eb" stopOpacity="0.08" />
-          </linearGradient>
-        </defs>
-        <circle cx="80" cy="90" r="25" fill="url(#dtp-grad-buds)" stroke="#0ea5e9" strokeWidth="1.5" />
-        <circle cx="160" cy="90" r="25" fill="url(#dtp-grad-buds)" stroke="#0ea5e9" strokeWidth="1.5" />
-        <path d="M80 65 C85 55, 155 55, 160 65" fill="none" stroke="#0ea5e9" strokeWidth="1.5" strokeDasharray="3 3" />
-        <circle cx="80" cy="90" r="10" fill="white" stroke="#2563eb" strokeWidth="1.5" />
-        <circle cx="160" cy="90" r="10" fill="white" stroke="#2563eb" strokeWidth="1.5" />
-        <circle cx="80" cy="90" r="4" fill="#0ea5e9" className="dtp-pulse" />
-        <circle cx="160" cy="90" r="4" fill="#0ea5e9" className="dtp-pulse" />
-      </svg>
-    ),
+    image: imgEarphones,
   },
   {
     id: 'smartwatch',
@@ -87,21 +53,7 @@ const PRODUCTS = [
     features: ['Enterprise calendar sync', 'Safety alerts & fall detection', 'Dynamic health telemetry'],
     tags: ['Heart Rate', 'LTE', 'NFC', 'Secure OS'],
     accent: '#10b981',
-    graphic: () => (
-      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
-        <defs>
-          <linearGradient id="dtp-grad-watch" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#10b981" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#059669" stopOpacity="0.08" />
-          </linearGradient>
-        </defs>
-        <rect x="80" y="30" width="80" height="100" rx="20" fill="url(#dtp-grad-watch)" stroke="#10b981" strokeWidth="1.5" />
-        <rect x="88" y="40" width="64" height="72" rx="12" fill="white" stroke="#e2e8f0" strokeWidth="1" />
-        <circle cx="120" cy="76" r="20" fill="none" stroke="#10b981" strokeWidth="1" strokeDasharray="3 3" />
-        <path d="M120 62 L120 76 L130 82" fill="none" stroke="#10b981" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="120" cy="76" r="3" fill="#059669" />
-      </svg>
-    ),
+    image: imgSmartwatch,
   },
   {
     id: 'fitness-band',
@@ -111,19 +63,7 @@ const PRODUCTS = [
     features: ['Personalized AI coaching', 'Precise sleep phase tracking', 'Continuous vitals detection'],
     tags: ['Coaching', 'Sleep Tracking', 'SpO2', 'Vitals'],
     accent: '#6366f1',
-    graphic: () => (
-      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
-        <defs>
-          <linearGradient id="dtp-grad-band" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#6366f1" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#4f46e5" stopOpacity="0.08" />
-          </linearGradient>
-        </defs>
-        <rect x="95" y="20" width="50" height="130" rx="25" fill="none" stroke="#6366f1" strokeWidth="2" />
-        <rect x="100" y="40" width="40" height="90" rx="20" fill="url(#dtp-grad-band)" stroke="#6366f1" strokeWidth="1.5" />
-        <polyline points="105,85 112,85 116,75 120,95 124,80 128,90 135,85" fill="none" stroke="#6366f1" strokeWidth="1.5" />
-      </svg>
-    ),
+    image: imgFitnessBand,
   },
   {
     id: 'assistant',
@@ -133,20 +73,7 @@ const PRODUCTS = [
     features: ['Conversational tracking', 'Proactive work shortcuts', 'Automated agenda builders'],
     tags: ['Voice Agent', 'Task Sync', 'NLP Engine', 'Contextual'],
     accent: '#f59e0b',
-    graphic: () => (
-      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
-        <defs>
-          <linearGradient id="dtp-grad-asst" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#d97706" stopOpacity="0.08" />
-          </linearGradient>
-        </defs>
-        <circle cx="120" cy="90" r="35" fill="url(#dtp-grad-asst)" stroke="#f59e0b" strokeWidth="1.5" />
-        <circle cx="120" cy="90" r="25" fill="white" stroke="#f59e0b" strokeWidth="1" />
-        <path d="M105 90 H135 M120 75 V105" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="120" cy="90" r="5" fill="#d97706" className="dtp-pulse" />
-      </svg>
-    ),
+    image: imgAssistant,
   },
   {
     id: 'smart-ring',
@@ -156,19 +83,7 @@ const PRODUCTS = [
     features: ['Contactless NFC interactions', 'Minimal size biometric scans', 'Sleep and wellness scoring'],
     tags: ['NFC Pay', 'Biometric', 'Wellness', 'NFC Auth'],
     accent: '#8b5cf6',
-    graphic: () => (
-      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
-        <defs>
-          <linearGradient id="dtp-grad-ring" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#7c3aed" stopOpacity="0.08" />
-          </linearGradient>
-        </defs>
-        <ellipse cx="120" cy="90" rx="45" ry="25" fill="url(#dtp-grad-ring)" stroke="#8b5cf6" strokeWidth="2" />
-        <ellipse cx="120" cy="90" rx="30" ry="15" fill="white" stroke="#8b5cf6" strokeWidth="1.5" />
-        <circle cx="120" cy="70" r="5" fill="#7c3aed" className="dtp-pulse" />
-      </svg>
-    ),
+    image: imgSmartRing,
   },
   {
     id: 'health-device',
@@ -178,18 +93,7 @@ const PRODUCTS = [
     features: ['Chronic care auto-alerts', 'Remote diagnostics pipeline', 'Clinical vital signs logging'],
     tags: ['Clinical Vitals', 'Diagnostics', 'IoMT', '24/7 Monitoring'],
     accent: '#ef4444',
-    graphic: () => (
-      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
-        <defs>
-          <linearGradient id="dtp-grad-hdev" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#ef4444" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#dc2626" stopOpacity="0.08" />
-          </linearGradient>
-        </defs>
-        <rect x="70" y="45" width="100" height="90" rx="15" fill="url(#dtp-grad-hdev)" stroke="#ef4444" strokeWidth="1.5" />
-        <path d="M100 90 L110 80 L120 100 L130 75 L140 90" fill="none" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
+    image: imgHealthDevice,
   },
   {
     id: 'medical-devices',
@@ -199,19 +103,7 @@ const PRODUCTS = [
     features: ['FDA compliant data layers', 'Telemedicine sync & pipelines', 'Hospital system integrations'],
     tags: ['FDA Compliant', 'Hospital Tech', 'Telemed', 'ML Vitals'],
     accent: '#06b6d4',
-    graphic: () => (
-      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
-        <defs>
-          <linearGradient id="dtp-grad-med" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#0891b2" stopOpacity="0.08" />
-          </linearGradient>
-        </defs>
-        <rect x="50" y="40" width="140" height="100" rx="16" fill="url(#dtp-grad-med)" stroke="#06b6d4" strokeWidth="1.5" />
-        <rect x="60" y="50" width="120" height="80" rx="10" fill="white" stroke="#e2e8f0" strokeWidth="1" />
-        <path d="M120 65 V115 M95 90 H145" stroke="#06b6d4" strokeWidth="4" strokeLinecap="round" />
-      </svg>
-    ),
+    image: imgMedical,
   },
   {
     id: 'iot-devices',
@@ -221,19 +113,7 @@ const PRODUCTS = [
     features: ['MQTT fast data transport', 'Dynamic edge computation', 'Secure OTA code updates'],
     tags: ['Edge Compute', 'MQTT', 'OTA Updates', 'Cloud Sync'],
     accent: '#3b82f6',
-    graphic: () => (
-      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
-        <defs>
-          <linearGradient id="dtp-grad-iotdev" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#2563eb" stopOpacity="0.08" />
-          </linearGradient>
-        </defs>
-        <rect x="65" y="45" width="110" height="90" rx="12" fill="url(#dtp-grad-iotdev)" stroke="#3b82f6" strokeWidth="1.5" />
-        <circle cx="120" cy="90" r="15" fill="white" stroke="#3b82f6" strokeWidth="1.5" />
-        <circle cx="120" cy="90" r="6" fill="#2563eb" className="dtp-pulse" />
-      </svg>
-    ),
+    image: imgIoT,
   },
   {
     id: 'digital-notepad',
@@ -243,19 +123,7 @@ const PRODUCTS = [
     features: ['Live handwriting recognition', 'Meeting summary generation', 'Omni-device note sync'],
     tags: ['Smart Ink', 'OCR Engine', 'Notepad Sync', 'NLP Summary'],
     accent: '#14b8a6',
-    graphic: () => (
-      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
-        <defs>
-          <linearGradient id="dtp-grad-np" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#14b8a6" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#0d9488" stopOpacity="0.08" />
-          </linearGradient>
-        </defs>
-        <rect x="60" y="25" width="120" height="130" rx="12" fill="url(#dtp-grad-np)" stroke="#14b8a6" strokeWidth="1.5" />
-        <rect x="70" y="35" width="100" height="108" rx="8" fill="white" stroke="#e2e8f0" strokeWidth="1" />
-        <path d="M85 55 H135 M85 75 H155 M85 95 H125" stroke="#14b8a6" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
+    image: imgNotepad,
   }
 ];
 
@@ -354,24 +222,27 @@ export default function DeepTechProducts() {
       `}} />
       <style dangerouslySetInnerHTML={{ __html: `
         .dtp-tabs-scroll {
-          scrollbar-width: thin;
-          scrollbar-color: rgba(124, 58, 237, 0.35) transparent;
+          scrollbar-width: auto;
+          scrollbar-color: rgba(37, 99, 235, 0.45) transparent;
         }
         .dtp-tabs-scroll::-webkit-scrollbar {
-          width: 3px;
-          height: 3px;
+          width: 8px;
+          height: 8px;
         }
         .dtp-tabs-scroll::-webkit-scrollbar-track {
-          background: transparent;
+          background: rgba(0, 0, 0, 0.03);
           border-radius: 999px;
         }
         .dtp-tabs-scroll::-webkit-scrollbar-thumb {
-          background: linear-gradient(180deg, #7c3aed55, #06b6d455);
+          background: linear-gradient(180deg, #2563ed88, #10b98188);
           border-radius: 999px;
-          transition: background 0.3s ease;
+          border: 1.5px solid transparent;
+          background-clip: padding-box;
+          transition: all 0.3s ease;
         }
         .dtp-tabs-scroll::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(180deg, #7c3aed, #06b6d4);
+          background: linear-gradient(180deg, #2563ed, #10b981);
+          background-clip: padding-box;
         }
       `}} />
 
@@ -388,7 +259,7 @@ export default function DeepTechProducts() {
         {/* Header Section */}
         <div className="mb-16 md:mb-24 flex flex-col items-center text-center max-w-3xl mx-auto">
           <div className="mb-6 flex items-center gap-4">
-            <div className="w-1.5 h-1.5 rounded-full bg-violet-600 animate-pulse" />
+            <div className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
             <span className="font-mono text-[0.7rem] font-bold tracking-[0.3em] uppercase text-slate-400">
               Deep-Tech Products
             </span>
@@ -396,7 +267,7 @@ export default function DeepTechProducts() {
           
           <h2 className="mb-6 font-display text-[clamp(2.5rem,5vw,4.2rem)] leading-[1.05] font-black text-slate-900 tracking-[-0.03em]">
             Hardware Built for the{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-500">
               Future
             </span>
           </h2>
@@ -433,7 +304,7 @@ export default function DeepTechProducts() {
                 />
 
                 <span 
-                  className={`font-mono text-[0.8rem] font-bold tracking-widest uppercase transition-colors duration-500 relative z-10 ${i === activeTab ? 'text-slate-900' : 'text-slate-400'}`}
+                  className={`font-mono text-[0.8rem] font-bold tracking-widest uppercase transition-colors duration-500 relative z-10 ${i === activeTab ? 'text-slate-900' : 'text-slate-500 group-hover:text-slate-700'}`}
                 >
                   {p.tab}
                 </span>
@@ -449,15 +320,15 @@ export default function DeepTechProducts() {
               style={{ background: `radial-gradient(ellipse at center, ${product.accent}, transparent 70%)` }}
             />
 
-            <div className={`relative bg-white rounded-3xl border border-slate-100 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] grid md:grid-cols-[1fr_1.2fr] gap-10 items-center p-8 md:p-12 transition-all duration-500 ${transitioning ? 'opacity-0 scale-[0.98]' : 'opacity-100 scale-100'}`}>
+            <div className={`relative rounded-3xl border shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] grid md:grid-cols-[1fr_1.2fr] gap-10 items-center p-8 md:p-12 transition-all duration-500 ${transitioning ? 'opacity-0 scale-[0.98]' : 'opacity-100 scale-100'}`} style={{ background: '#0d0d10', borderColor: `${product.accent}25` }}>
               
               {/* Product Text Details */}
               <div className="flex flex-col z-10">
-                <h3 className="font-display text-[2.2rem] md:text-[2.8rem] font-black text-slate-900 tracking-tight leading-[1.1] mb-6">
+                <h3 className="font-display text-[2.2rem] md:text-[2.8rem] font-black text-white tracking-tight leading-[1.1] mb-6">
                   {product.title}
                 </h3>
                 
-                <p className="font-body text-[1.05rem] leading-relaxed text-slate-600 mb-8 font-medium">
+                <p className="font-body text-[1.05rem] leading-relaxed text-slate-300 mb-8 font-medium">
                   {product.description}
                 </p>
 
@@ -465,13 +336,13 @@ export default function DeepTechProducts() {
                   {product.features.map((feat, i) => (
                     <div key={i} className="flex items-center gap-4">
                       <div className="w-1.5 h-1.5 rounded-full" style={{ background: product.accent }} />
-                      <span className="font-body text-[0.95rem] font-semibold text-slate-700">{feat}</span>
+                      <span className="font-body text-[0.95rem] font-semibold text-slate-200">{feat}</span>
                     </div>
                   ))}
                 </div>
 
-                <a
-                  href="#products"
+                <Link
+                  to={`/deep-tech-products/${product.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
                   className="group inline-flex items-center gap-4 w-fit border-b-2 pb-1 font-display text-[0.9rem] font-bold tracking-widest uppercase transition-colors duration-300"
                   style={{ borderColor: product.accent, color: product.accent }}
                 >
@@ -479,24 +350,17 @@ export default function DeepTechProducts() {
                   <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" stroke="currentColor" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
-                </a>
+                </Link>
               </div>
 
               {/* Product Visual Area */}
-              <div className="relative h-[300px] md:h-[400px] flex items-center justify-center">
-                {/* Floating Tags */}
-                {product.tags.map((tag, i) => (
-                  <FloatingTag
-                    key={tag}
-                    text={tag}
-                    x={tagPositions[i]?.x || '10%'}
-                    y={tagPositions[i]?.y || '10%'}
-                    delay={i * 0.8}
+              <div className="relative h-[380px] md:h-[480px] flex items-center justify-center">
+                <div className="relative z-10 w-full max-w-[460px] flex items-center justify-center">
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="w-full h-auto object-contain max-h-[440px] transition-all duration-700"
                   />
-                ))}
-
-                <div className="relative z-10 w-full max-w-[280px] drop-shadow-2xl">
-                  {product.graphic()}
                 </div>
               </div>
 
