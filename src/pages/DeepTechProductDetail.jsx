@@ -229,13 +229,129 @@ export default function DeepTechProductDetail() {
   const useCases = getSectionLines("ENTERPRISE USE CASES");
   const consumerApps = getSectionLines("CONSUMER APPLICATIONS");
 
-  const specsLines = getSectionLines("TECHNICAL SPECIFICATIONS");
-  const specsRaw = specsLines.length > 0 ? specsLines : getSectionLines("PRODUCT ARCHITECTURE");
-  const specTitleRaw = getCleanSectionTitle("TECHNICAL SPECIFICATIONS");
-  const specTitle = specTitleRaw !== "TECHNICAL SPECIFICATIONS" ? specTitleRaw : getCleanSectionTitle("PRODUCT ARCHITECTURE");
+  const monitoringRaw = getSectionLines("ADVANCED HEALTH MONITORING CAPABILITIES");
+  const monitoringTitleRaw = getCleanSectionTitle("ADVANCED HEALTH MONITORING CAPABILITIES");
+  const monitoringTitle = monitoringTitleRaw.replace(/\s*\(.*?\)\s*/g, '').trim();
 
-  const softwarePlatform = getSectionLines("SOFTWARE PLATFORM");
-  const integrations = getSectionLines("ENTERPRISE INTEGRATIONS");
+  const specsRaw = getSectionLines("TECHNICAL SPECIFICATIONS");
+  const specTitleRaw = getCleanSectionTitle("TECHNICAL SPECIFICATIONS");
+  const specTitle = specTitleRaw.replace(/\s*\(.*?\)\s*/g, '').trim();
+
+  const architectureRaw = getSectionLines("PRODUCT ARCHITECTURE");
+  const architectureTitleRaw = getCleanSectionTitle("PRODUCT ARCHITECTURE");
+  const architectureTitle = architectureTitleRaw.replace(/\s*\(.*?\)\s*/g, '').trim();
+
+  const sensorSuiteLines = getSectionLines("ADVANCED SENSOR SUITE");
+  const sensorSuite = sensorSuiteLines.length > 0 
+    ? sensorSuiteLines 
+    : (getSectionLines("ADVANCED SENSOR PLATFORM").length > 0 
+        ? getSectionLines("ADVANCED SENSOR PLATFORM") 
+        : getSectionLines("ADVANCED BIOSENSOR PLATFORM"));
+  const sensorSuiteTitleRaw = getCleanSectionTitle("ADVANCED SENSOR SUITE") !== "ADVANCED SENSOR SUITE"
+    ? getCleanSectionTitle("ADVANCED SENSOR SUITE")
+    : (getCleanSectionTitle("ADVANCED SENSOR PLATFORM") !== "ADVANCED SENSOR PLATFORM"
+        ? getCleanSectionTitle("ADVANCED SENSOR PLATFORM")
+        : getCleanSectionTitle("ADVANCED BIOSENSOR PLATFORM"));
+  const sensorSuiteTitle = sensorSuiteTitleRaw.replace(/\s*\(.*?\)\s*/g, '').trim();
+
+  const formFactors = getSectionLines("PRODUCT FORM FACTORS");
+  const formFactorsTitleRaw = getCleanSectionTitle("PRODUCT FORM FACTORS");
+  const formFactorsTitle = formFactorsTitleRaw.replace(/\s*\(.*?\)\s*/g, '').trim();
+
+  // Parse features by splitting on empty lines to keep correct grouping
+  const parseFeatures = (featureLines) => {
+    const blocks = [];
+    let currentBlock = [];
+
+    featureLines.forEach(line => {
+      const trimmed = line.trim();
+      if (trimmed === "") {
+        if (currentBlock.length > 0) {
+          blocks.push(currentBlock);
+          currentBlock = [];
+        }
+      } else {
+        currentBlock.push(trimmed);
+      }
+    });
+
+    if (currentBlock.length > 0) {
+      blocks.push(currentBlock);
+    }
+
+    return blocks.map(block => {
+      const title = block[0];
+      let subTitle = "";
+      let items = [];
+      if (block.length > 2 && block[1].endsWith(":")) {
+        subTitle = block[1];
+        items = block.slice(2);
+      } else {
+        items = block.slice(1);
+      }
+      return { title, subTitle, items };
+    });
+  };
+
+  // Generic parser to split arrays into dynamic blocks on empty lines
+  const parseBlocks = (lines) => {
+    const blocks = [];
+    let currentBlock = [];
+
+    lines.forEach(line => {
+      const trimmed = line.trim();
+      if (trimmed === "") {
+        if (currentBlock.length > 0) {
+          blocks.push(currentBlock);
+          currentBlock = [];
+        }
+      } else {
+        currentBlock.push(trimmed);
+      }
+    });
+
+    if (currentBlock.length > 0) {
+      blocks.push(currentBlock);
+    }
+
+    return blocks.map(block => {
+      const title = block[0].replace(/:$/, '').trim();
+      let subHeader = "";
+      let items = [];
+      let footerText = "";
+
+      const remaining = block.slice(1);
+      
+      if (remaining.length > 0) {
+        if (remaining[0].endsWith(":") || (remaining[0].includes(" ") && !remaining[0].includes("  ") && remaining[0].length > 40)) {
+          subHeader = remaining[0];
+          
+          const lastLine = remaining[remaining.length - 1];
+          if (lastLine && !lastLine.endsWith(":") && lastLine.includes(" ") && lastLine.length > 50) {
+            footerText = lastLine;
+            items = remaining.slice(1, -1);
+          } else {
+            items = remaining.slice(1);
+          }
+        } else {
+          const lastLine = remaining[remaining.length - 1];
+          if (lastLine && !lastLine.endsWith(":") && lastLine.includes(" ") && lastLine.length > 50) {
+            footerText = lastLine;
+            items = remaining.slice(0, -1);
+          } else {
+            items = remaining;
+          }
+        }
+      }
+
+      return { title, subHeader, items, footerText };
+    }).filter(b => b.title && b.items.length > 0);
+  };
+
+  const softwarePlatformRaw = getSectionLines("SOFTWARE PLATFORM");
+  const parsedSoftwarePlatform = parseBlocks(softwarePlatformRaw);
+  const integrationsRaw = getSectionLines("ENTERPRISE INTEGRATIONS");
+  const parsedIntegrations = parseBlocks(integrationsRaw);
 
   const compliance = getSectionLines("GLOBAL CERTIFICATIONS");
   const complianceTitleRaw = getCleanSectionTitle("GLOBAL CERTIFICATIONS");
@@ -285,9 +401,14 @@ export default function DeepTechProductDetail() {
         }
         currentCategory.items.push(trimmed);
       } else {
-        // Line does not contain certification acronyms -> It is a category header!
-        currentCategory = { name: trimmed, items: [] };
-        categories.push(currentCategory);
+        // Line does not contain certification acronyms -> Check if it is a long descriptive sentence
+        if (trimmed.length > 40 && currentCategory) {
+          currentCategory.description = trimmed;
+        } else {
+          // It is a short category header!
+          currentCategory = { name: trimmed, items: [] };
+          categories.push(currentCategory);
+        }
       }
     });
 
@@ -319,9 +440,40 @@ export default function DeepTechProductDetail() {
   const roadmap = getSectionLines("FUTURE ROADMAP");
 
   const whyChooseUsLines = getSectionLines("WHY CHOOSE OUR");
-  const whyChooseUs = whyChooseUsLines.length > 0 ? whyChooseUsLines : getSectionLines("WHY CHOOSE TECH6SENSE");
+  const whyChooseUs = whyChooseUsLines.length > 0 
+    ? whyChooseUsLines 
+    : (getSectionLines("WHY CHOOSE TECH6SENSE").length > 0 
+        ? getSectionLines("WHY CHOOSE TECH6SENSE") 
+        : (getSectionLines("WHY HEALTHCARE & MEDICAL AI DEVICES").length > 0
+            ? getSectionLines("WHY HEALTHCARE & MEDICAL AI DEVICES")
+            : (getSectionLines("WHY SMART IoT DEVICES").length > 0
+                ? getSectionLines("WHY SMART IoT DEVICES")
+                : getSectionLines("WHY AI DIGITAL NOTEPAD"))));
   const whyChooseTitleRaw = getCleanSectionTitle("WHY CHOOSE OUR");
-  const whyChooseTitle = whyChooseTitleRaw !== "WHY CHOOSE OUR" ? whyChooseTitleRaw : getCleanSectionTitle("WHY CHOOSE TECH6SENSE");
+  const whyChooseTitle = whyChooseTitleRaw !== "WHY CHOOSE OUR" 
+    ? whyChooseTitleRaw 
+    : (getCleanSectionTitle("WHY CHOOSE TECH6SENSE") !== "WHY CHOOSE TECH6SENSE" 
+        ? getCleanSectionTitle("WHY CHOOSE TECH6SENSE") 
+        : (getCleanSectionTitle("WHY HEALTHCARE & MEDICAL AI DEVICES") !== "WHY HEALTHCARE & MEDICAL AI DEVICES"
+            ? getCleanSectionTitle("WHY HEALTHCARE & MEDICAL AI DEVICES")
+            : (getCleanSectionTitle("WHY SMART IoT DEVICES") !== "WHY SMART IoT DEVICES"
+                ? getCleanSectionTitle("WHY SMART IoT DEVICES")
+                : getCleanSectionTitle("WHY AI DIGITAL NOTEPAD"))));
+
+  const portfolioLines = getSectionLines("HEALTHCARE AI DEVICE PORTFOLIO");
+  const portfolioRaw = portfolioLines.length > 0 
+    ? portfolioLines 
+    : (getSectionLines("SMART IoT DEVICE PORTFOLIO").length > 0 
+        ? getSectionLines("SMART IoT DEVICE PORTFOLIO") 
+        : getSectionLines("PRODUCT PORTFOLIO"));
+  const portfolioTitleRaw = getCleanSectionTitle("HEALTHCARE AI DEVICE PORTFOLIO") !== "HEALTHCARE AI DEVICE PORTFOLIO"
+    ? getCleanSectionTitle("HEALTHCARE AI DEVICE PORTFOLIO")
+    : (getCleanSectionTitle("SMART IoT DEVICE PORTFOLIO") !== "SMART IoT DEVICE PORTFOLIO"
+        ? getCleanSectionTitle("SMART IoT DEVICE PORTFOLIO")
+        : getCleanSectionTitle("PRODUCT PORTFOLIO"));
+  const portfolioTitle = portfolioTitleRaw.replace(/\s*\(.*?\)\s*/g, '').trim();
+  const portfolioIntro = portfolioRaw.length > 0 ? portfolioRaw[0] : "";
+  const parsedPortfolio = parseFeatures(portfolioRaw.slice(1));
 
   const finalCTA = getSectionLines("FINAL CALL TO ACTION");
 
@@ -390,12 +542,15 @@ export default function DeepTechProductDetail() {
   const dynamicBenefits = parseDynamicBenefits(benefits);
   const benefitTabs = Object.keys(dynamicBenefits);
 
-  // Parse features by splitting on empty lines to keep correct grouping
-  const parseFeatures = (featureLines) => {
+  const parsedFeatures = parseFeatures(features);
+  const parsedMonitoring = parseFeatures(monitoringRaw);
+
+  // Use Cases Grouping - block-based by empty lines
+  const parseUseCases = (lines) => {
     const blocks = [];
     let currentBlock = [];
 
-    featureLines.forEach(line => {
+    lines.forEach(line => {
       const trimmed = line.trim();
       if (trimmed === "") {
         if (currentBlock.length > 0) {
@@ -411,44 +566,16 @@ export default function DeepTechProductDetail() {
       blocks.push(currentBlock);
     }
 
-    return blocks.map(block => {
-      const title = block[0];
-      let subTitle = "";
-      let items = [];
-      if (block.length > 2 && block[1].endsWith(":")) {
-        subTitle = block[1];
-        items = block.slice(2);
-      } else {
-        items = block.slice(1);
-      }
-      return { title, subTitle, items };
-    });
+    return blocks.map(block => ({
+      sector: block[0].replace(/:$/, '').trim(),
+      items: block.slice(1)
+    })).filter(uc => uc.sector && uc.items.length > 0);
   };
 
-  const parsedFeatures = parseFeatures(features);
+  const architectureIntro = architectureRaw.length > 0 && !architectureRaw[0].includes(":") && architectureRaw[0].length > 40 ? architectureRaw[0] : "";
+  const parsedArchitecture = parseFeatures(architectureIntro ? architectureRaw.slice(1) : architectureRaw);
 
-  // Use Cases Grouping
-  const parsedUseCases = [];
-  let currentSector = null;
-  let currentSectorItems = [];
-  useCases.forEach(line => {
-    const l = line.trim();
-    if (!l) return;
-    // Check if it is a header sector
-    const sectors = ["Manufacturing", "Healthcare", "Logistics", "Retail", "Construction", "Energy", "Corporate Meetings", "Education", "Legal", "Engineering", "Research", "Government"];
-    if (sectors.includes(l)) {
-      if (currentSector) {
-        parsedUseCases.push({ sector: currentSector, items: currentSectorItems });
-      }
-      currentSector = l;
-      currentSectorItems = [];
-    } else if (currentSector) {
-      currentSectorItems.push(l);
-    }
-  });
-  if (currentSector) {
-    parsedUseCases.push({ sector: currentSector, items: currentSectorItems });
-  }
+  const parsedUseCases = parseUseCases(useCases);
 
   return (
     <div className="min-h-screen flex flex-col font-body bg-[#FAFAFA] text-slate-800 overflow-x-hidden">
@@ -483,8 +610,13 @@ export default function DeepTechProductDetail() {
               </p>
               
               {/* Highlight Paragraph if in Hero */}
-              {heroLines.slice(2, 4).map((para, pIdx) => (
-                <p key={pIdx} className="text-slate-600 text-base md:text-lg mb-6 leading-relaxed">
+              {heroLines.slice(2).filter(line => {
+                const l = line.trim();
+                return l !== "Primary CTA" && 
+                       !l.toLowerCase().includes("consultation") && 
+                       !l.toLowerCase().includes("cta");
+              }).map((para, pIdx) => (
+                <p key={pIdx} className="text-slate-600 text-sm md:text-base mb-4 leading-relaxed font-semibold text-justify">
                   {para}
                 </p>
               ))}
@@ -664,7 +796,49 @@ export default function DeepTechProductDetail() {
           </section>
         );
       })()}
+      {/* Healthcare AI Device Portfolio */}
+      {parsedPortfolio.length > 0 && (
+        <section className="relative w-full py-20 lg:py-28 bg-[#FAFAFA] border-b border-slate-200/80">
+          <div className="mx-auto max-w-[1400px] px-6">
+            <div className="text-center max-w-3xl mx-auto mb-20">
+              <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-600 block mb-4">
+                PRODUCT PORTFOLIO
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+                {portfolioTitle}
+              </h2>
+              {portfolioIntro && (
+                <p className="text-sm text-slate-500 font-semibold mt-4">
+                  {portfolioIntro}
+                </p>
+              )}
+            </div>
 
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {parsedPortfolio.map((block, idx) => (
+                <div 
+                  key={idx}
+                  className="p-8 rounded-3xl border border-slate-100 bg-white hover:bg-slate-50 transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md"
+                >
+                  <div>
+                    <h3 className="font-display text-lg font-bold text-slate-900 mb-4 pb-3 border-b border-slate-200/50">
+                      {block.title}
+                    </h3>
+                    <ul className="space-y-2">
+                      {block.items.map((item, iIdx) => (
+                        <li key={iIdx} className="flex items-start gap-2.5 text-xs text-slate-600 font-semibold leading-relaxed">
+                          <span className="w-1.5 h-1.5 rounded-full bg-violet-600 mt-1.5 flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
       {/* Core Technology Innovations */}
       <section className="relative w-full py-20 lg:py-28 bg-[#FAFAFA] border-b border-slate-200/80">
         <div className="mx-auto max-w-[85rem] px-6">
@@ -760,6 +934,50 @@ export default function DeepTechProductDetail() {
           </div>
         </div>
       </section>
+
+      {/* Advanced Health Monitoring Capabilities */}
+      {parsedMonitoring.length > 0 && (
+        <section className="relative w-full py-20 lg:py-28 bg-[#FAFAFA] border-b border-slate-200/80">
+          <div className="mx-auto max-w-[1400px] px-6">
+            <div className="text-center max-w-3xl mx-auto mb-20">
+              <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-violet-600 block mb-4">
+                SENSING ENGINE
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+                {monitoringTitle}
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {parsedMonitoring.map((feat, idx) => (
+                <div 
+                  key={idx}
+                  className="p-8 rounded-3xl border border-slate-100 bg-white hover:bg-slate-50 transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md"
+                >
+                  <div>
+                    <h3 className="font-display text-lg font-bold text-slate-900 mb-2 pb-3 border-b border-slate-200/50">
+                      {feat.title}
+                    </h3>
+                    {feat.subTitle && (
+                      <p className="text-xs font-mono font-bold text-slate-400 mb-3 uppercase tracking-wider">
+                        {feat.subTitle}
+                      </p>
+                    )}
+                    <ul className="space-y-2">
+                      {feat.items.map((item, iIdx) => (
+                        <li key={iIdx} className="flex items-start gap-2.5 text-xs text-slate-600 font-semibold leading-relaxed">
+                          <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Benefits Section with Custom Tabs */}
       <section className="relative w-full py-20 lg:py-28 bg-[#FAFAFA] border-b border-slate-200/80">
@@ -859,7 +1077,8 @@ export default function DeepTechProductDetail() {
         const categoryIcons = { 
           "Productivity": "🗂️", "Education": "🎓", "Travel": "✈️", 
           "Fitness": "💪", "Entertainment": "🎮",
-          "Elderly Care": "👵", "Sports Training": "🏃", "Home Healthcare": "🏡"
+          "Elderly Care": "👵", "Sports Training": "🏃", "Home Healthcare": "🏡",
+          "Personal Wellness": "🌱", "Smart Home": "🏠"
         };
         
         const blocks = [];
@@ -881,11 +1100,21 @@ export default function DeepTechProductDetail() {
           blocks.push(currentBlock);
         }
 
-        // Map blocks to group format: first line = category name, rest = items
-        const groups = blocks.map(block => ({
-          name: block[0].replace(/:$/, '').trim(),
-          items: block.slice(1)
-        })).filter(g => g.name && g.items.length > 0);
+        // Map blocks to group format: first line = category name, rest = items (filtering out lines ending in colons)
+        const groups = blocks.map(block => {
+          const name = block[0].replace(/:$/, '').trim();
+          const rawItems = block.slice(1);
+          // Check if the first item is a subheader ending with a colon
+          let subHeader = "";
+          let items = [];
+          if (rawItems.length > 0 && rawItems[0].trim().endsWith(":")) {
+            subHeader = rawItems[0].trim();
+            items = rawItems.slice(1);
+          } else {
+            items = rawItems;
+          }
+          return { name, subHeader, items };
+        }).filter(g => g.name && g.items.length > 0);
 
         return (
           <section className="relative w-full py-20 lg:py-28 bg-[#FAFAFA] border-b border-slate-200/80">
@@ -902,18 +1131,28 @@ export default function DeepTechProductDetail() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {/* Force HMR reload - update layout to 5 columns on desktop for glasses */}
+              <div className={product.title.toLowerCase().includes("glasses")
+                ? "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl mx-auto"
+                : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"}>
                 {groups.map((group, idx) => (
                   <SpotlightCard
                     key={idx}
-                    className="flex flex-col p-8 rounded-3xl border border-slate-100 bg-white shadow-sm hover:shadow-md transition-all duration-300"
+                    className={product.title.toLowerCase().includes("glasses")
+                      ? "flex flex-col p-6 rounded-3xl border border-slate-100/80 bg-white/60 backdrop-blur-sm shadow-sm hover:shadow-xl hover:border-violet-200 transition-all duration-500 hover:-translate-y-1 flex-1"
+                      : "flex flex-col p-8 rounded-3xl border border-slate-100 bg-white shadow-sm hover:shadow-md transition-all duration-300"}
                   >
                     <div className="flex items-center gap-3 mb-6">
                       <span className="text-2xl">{categoryIcons[group.name] || "✨"}</span>
-                      <h3 className="font-display text-lg md:text-xl font-bold text-slate-900">
+                      <h3 className="font-display text-base md:text-lg font-extrabold text-slate-900">
                         {group.name}
                       </h3>
                     </div>
+                    {group.subHeader && (
+                      <p className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider mb-3 pl-1">
+                        {group.subHeader}
+                      </p>
+                    )}
                     <ul className="space-y-2 flex-1">
                       {group.items.map((item, iIdx) => (
                         <li key={iIdx} className="flex items-center gap-3 text-slate-600 text-sm font-medium">
@@ -938,7 +1177,7 @@ export default function DeepTechProductDetail() {
           <div className="mx-auto max-w-[1400px] px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-600 block mb-4">
-                PRODUCT ARCHITECTURE
+                PRODUCT VARIANTS
               </span>
               <h2 className="font-display text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
                 {customTitle}
@@ -1016,6 +1255,60 @@ export default function DeepTechProductDetail() {
       )}
 
       {/* Specifications Section */}
+      {/* Product Architecture Section */}
+      {parsedArchitecture.length > 0 && (
+        <section className="relative w-full py-20 lg:py-28 bg-slate-950 text-white border-b border-slate-900 overflow-hidden">
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
+          
+          <div className="mx-auto max-w-[1400px] px-6 relative z-10">
+            <div className="text-center max-w-3xl mx-auto mb-20">
+              <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-400 block mb-4">
+                SYSTEM TOPOLOGY
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+                {architectureTitle}
+              </h2>
+              {architectureIntro && (
+                <p className="text-sm text-slate-400 font-semibold mt-4">
+                  {architectureIntro}
+                </p>
+              )}
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {parsedArchitecture.map((block, idx) => (
+                <div 
+                  key={idx}
+                  className="p-8 rounded-3xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between"
+                >
+                  <div>
+                    <span className="w-8 h-8 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center font-mono text-xs font-bold mb-6">
+                      L0{idx + 1}
+                    </span>
+                    <h3 className="font-display text-lg font-bold text-white mb-4 pb-3 border-b border-white/10">
+                      {block.title}
+                    </h3>
+                    {block.subTitle && (
+                      <p className="text-xs font-mono font-bold text-blue-400 mb-3 uppercase tracking-wider">
+                        {block.subTitle}
+                      </p>
+                    )}
+                    <ul className="space-y-2.5">
+                      {block.items.map((item, iIdx) => (
+                        <li key={iIdx} className="flex items-start gap-2.5 text-xs text-slate-300 font-semibold leading-relaxed">
+                          <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {specs.length > 0 && (
         <section id="specs" className="relative w-full py-20 lg:py-28 bg-[#FAFAFA] border-b border-slate-200/80">
           <div className="mx-auto max-w-[1400px] px-6">
@@ -1050,93 +1343,219 @@ export default function DeepTechProductDetail() {
         </section>
       )}
 
+      {/* Advanced Sensor Suite Section */}
+      {sensorSuite.length > 0 && (() => {
+        const title = sensorSuiteTitle;
+        let subHeader = "";
+        let items = [];
+
+        if (sensorSuite.length > 0) {
+          const firstLine = sensorSuite[0].trim();
+          if (firstLine.endsWith(":")) {
+            subHeader = firstLine;
+            items = sensorSuite.slice(1);
+          } else {
+            items = sensorSuite;
+          }
+        }
+
+        return (
+          <section className="relative w-full py-20 lg:py-28 bg-white border-b border-slate-200/80">
+            <div className="mx-auto max-w-[1400px] px-6">
+              <div className="text-center max-w-3xl mx-auto mb-16">
+                <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-600 block mb-4">
+                  BIOMETRIC HARDWARE
+                </span>
+                <h2 className="font-display text-3xl font-extrabold text-slate-900 tracking-tight">
+                  {title}
+                </h2>
+                {subHeader && (
+                  <p className="text-sm text-slate-500 font-semibold mt-4">
+                    {subHeader}
+                  </p>
+                )}
+              </div>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+                {items.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="p-5 rounded-2xl border border-slate-100 bg-slate-50/20 hover:bg-slate-50 hover:border-blue-300 hover:shadow-[0_4px_20px_rgba(37,99,235,0.05)] transition-all duration-300 flex items-center gap-3 cursor-default"
+                  >
+                    <span className="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-sm">
+                      📡
+                    </span>
+                    <span className="text-xs md:text-sm font-bold text-slate-700 leading-relaxed">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
+
+      {/* Product Form Factors Section */}
+      {formFactors.length > 0 && (() => {
+        const title = formFactorsTitle;
+        let subHeader = "";
+        let items = [];
+
+        if (formFactors.length > 0) {
+          const firstLine = formFactors[0].trim();
+          if (firstLine.endsWith(":")) {
+            subHeader = firstLine;
+            items = formFactors.slice(1);
+          } else {
+            items = formFactors;
+          }
+        }
+
+        return (
+          <section className="relative w-full py-20 lg:py-28 bg-[#FAFAFA] border-b border-slate-200/80">
+            <div className="mx-auto max-w-[1400px] px-6">
+              <div className="text-center max-w-3xl mx-auto mb-16">
+                <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-violet-600 block mb-4">
+                  HARDWARE DEPLOYMENT
+                </span>
+                <h2 className="font-display text-3xl font-extrabold text-slate-900 tracking-tight">
+                  {title}
+                </h2>
+                {subHeader && (
+                  <p className="text-sm text-slate-500 font-semibold mt-4">
+                    {subHeader}
+                  </p>
+                )}
+              </div>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+                {items.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="p-5 rounded-2xl border border-slate-100 bg-white hover:bg-slate-50 hover:border-violet-300 hover:shadow-[0_4px_20px_rgba(139,92,246,0.05)] transition-all duration-300 flex items-center gap-3 cursor-default"
+                  >
+                    <span className="w-8 h-8 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center font-bold text-sm">
+                      ⚙️
+                    </span>
+                    <span className="text-xs md:text-sm font-bold text-slate-700 leading-relaxed">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
+
       {/* Software Platform & Integrations */}
-      {(softwarePlatform.length > 0 || integrations.length > 0) && (
+      {(parsedSoftwarePlatform.length > 0 || parsedIntegrations.length > 0) && (
         <section className="relative w-full py-20 lg:py-28 bg-white border-b border-slate-200/80">
           <div className="mx-auto max-w-[1400px] px-6">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-violet-600 block mb-4">
+                PLATFORM ECOLOGY
+              </span>
+              <h2 className="font-display text-3xl font-extrabold text-slate-900 tracking-tight">
+                Software Platform & Ecosystem
+              </h2>
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-              
-              {/* Software Platform */}
-              {softwarePlatform.length > 0 && (() => {
-                const title = softwarePlatform[0];
-                let subHeader = "";
-                let items = [];
+              {/* Dynamic Software Platform Blocks */}
+              {parsedSoftwarePlatform.map((block, bIdx) => {
+                const totalBlocks = parsedSoftwarePlatform.length + parsedIntegrations.length;
+                const isLastOdd = totalBlocks % 2 !== 0 && bIdx === parsedSoftwarePlatform.length - 1 && parsedIntegrations.length === 0;
                 
-                if (softwarePlatform.length > 1) {
-                  const secondLine = softwarePlatform[1].trim();
-                  if (secondLine.endsWith(":")) {
-                    subHeader = secondLine;
-                    items = softwarePlatform.slice(2);
-                  } else {
-                    items = softwarePlatform.slice(1);
-                  }
-                }
-
                 return (
-                  <div className="p-8 rounded-3xl border border-slate-100 bg-slate-50/40">
-                    <h3 className="font-display text-xl font-bold text-slate-900 mb-2 pb-3 border-b border-slate-200/50 flex items-center justify-between">
-                      {title}
-                      <span className="text-[10px] font-mono font-bold text-slate-400 bg-slate-100 px-2.5 py-0.5 rounded">
-                        CORE PLATFORM
-                      </span>
-                    </h3>
-                    {subHeader && (
-                      <p className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider mb-4">
-                        {subHeader}
-                      </p>
-                    )}
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {items.map((item, idx) => (
-                        <li key={idx} className="p-4 rounded-xl border border-slate-100 bg-white shadow-sm flex items-center gap-3 text-xs font-semibold text-slate-700">
-                          <span className="w-2 h-2 rounded-full bg-violet-600 flex-shrink-0" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                );
-              })()}
-
-              {/* Enterprise Integrations */}
-              {integrations.length > 0 && (() => {
-                const title = "Enterprise Integrations";
-                let subHeader = "";
-                let items = [];
-
-                if (integrations.length > 0) {
-                  const firstLine = integrations[0].trim();
-                  if (firstLine.endsWith(":")) {
-                    subHeader = firstLine;
-                    items = integrations.slice(1);
-                  } else {
-                    items = integrations;
-                  }
-                }
-
-                return (
-                  <div className="p-8 rounded-3xl border border-slate-100 bg-slate-50/40">
-                    <h3 className="font-display text-xl font-bold text-slate-900 mb-2 pb-3 border-b border-slate-200/50 flex items-center justify-between">
-                      {title}
-                      <span className="text-[10px] font-mono font-bold text-slate-400 bg-slate-100 px-2.5 py-0.5 rounded">
-                        COMPATIBLE APIs
-                      </span>
-                    </h3>
-                    {subHeader && (
-                      <p className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider mb-4">
-                        {subHeader}
-                      </p>
-                    )}
-                    <div className="flex flex-wrap gap-2">
-                      {items.map((item, idx) => (
-                        <span key={idx} className="px-3 py-1.5 rounded-lg bg-white border border-slate-100 shadow-sm text-xs font-semibold text-slate-600 hover:border-blue-400 transition cursor-default">
-                          {item}
+                  <div 
+                    key={bIdx} 
+                    className={`p-8 rounded-3xl border border-slate-100 bg-slate-50/40 flex flex-col justify-between ${isLastOdd ? "lg:col-span-2" : ""}`}
+                  >
+                    <div>
+                      <h3 className="font-display text-xl font-bold text-slate-900 mb-2 pb-3 border-b border-slate-200/50 flex items-center justify-between">
+                        {block.title}
+                        <span className="text-[10px] font-mono font-bold text-slate-400 bg-slate-100 px-2.5 py-0.5 rounded">
+                          MODULE 0{bIdx + 1}
                         </span>
-                      ))}
+                      </h3>
+                      {block.subHeader && (
+                        <p className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider mb-4 leading-relaxed">
+                          {block.subHeader}
+                        </p>
+                      )}
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+                        {block.items.map((item, idx) => (
+                          <li key={idx} className="p-3.5 rounded-xl border border-slate-100 bg-white shadow-sm flex items-center gap-3 text-xs font-semibold text-slate-700">
+                            <span className="w-1.5 h-1.5 rounded-full bg-violet-600 flex-shrink-0" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
+                    {block.footerText && (
+                      <p className="text-[10px] font-mono font-bold text-slate-400 border-t border-slate-100 pt-4 leading-relaxed mt-4">
+                        ℹ️ {block.footerText}
+                      </p>
+                    )}
                   </div>
                 );
-              })()}
+              })}
 
+              {parsedIntegrations.map((block, bIdx) => {
+                const totalBlocks = parsedSoftwarePlatform.length + parsedIntegrations.length;
+                const isLastOdd = totalBlocks % 2 !== 0 && bIdx === parsedIntegrations.length - 1;
+                const isPillBlock = block.title.toLowerCase().includes("integration") || 
+                                    block.title.toLowerCase().includes("compatible") || 
+                                    block.title.toLowerCase().includes("interoperability") || 
+                                    block.title.toLowerCase().includes("api");
+                
+                return (
+                  <div 
+                    key={`int-${bIdx}`} 
+                    className={`p-8 rounded-3xl border border-slate-100 bg-slate-50/40 flex flex-col justify-between ${isLastOdd ? "lg:col-span-2" : ""}`}
+                  >
+                    <div>
+                      <h3 className="font-display text-xl font-bold text-slate-900 mb-2 pb-3 border-b border-slate-200/50 flex items-center justify-between">
+                        {block.title}
+                        <span className="text-[10px] font-mono font-bold text-slate-400 bg-slate-100 px-2.5 py-0.5 rounded">
+                          ECOSYSTEM 0{bIdx + 1}
+                        </span>
+                      </h3>
+                      {block.subHeader && (
+                        <p className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider mb-4 leading-relaxed">
+                          {block.subHeader}
+                        </p>
+                      )}
+                      
+                      {isPillBlock ? (
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {block.items.map((item, idx) => (
+                            <span key={idx} className="px-3 py-1.5 rounded-lg bg-white border border-slate-100 shadow-sm text-xs font-semibold text-slate-600 hover:border-blue-400 transition cursor-default">
+                              {item}
+                            </span>
+                          ))}
+                        </div>
+                      ) : (
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+                          {block.items.map((item, idx) => (
+                            <li key={idx} className="p-3.5 rounded-xl border border-slate-100 bg-white shadow-sm flex items-center gap-3 text-xs font-semibold text-slate-700">
+                              <span className="w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                    {block.footerText && (
+                      <p className="text-[10px] font-mono font-bold text-slate-400 border-t border-slate-100 pt-4 leading-relaxed mt-4">
+                        ℹ️ {block.footerText}
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -1206,14 +1625,20 @@ export default function DeepTechProductDetail() {
                         <span className="w-1.5 h-1.5 rounded-full bg-violet-600" />
                         {cat.name}
                       </h4>
-                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                        {cat.items.map((item, iIdx) => (
-                          <div key={iIdx} className="flex items-start gap-2.5 p-3 rounded-xl bg-white border border-slate-100 hover:border-violet-300 hover:shadow-[0_4px_20px_rgba(139,92,246,0.05)] transition-all duration-300 text-xs md:text-sm text-slate-700 font-semibold">
-                            <span className="text-emerald-500 font-extrabold mt-0.5">•</span>
-                            <span>{item}</span>
-                          </div>
-                        ))}
-                      </div>
+                      {cat.description ? (
+                        <p className="text-xs md:text-sm font-semibold text-slate-500 bg-slate-50/50 p-4 rounded-xl border border-slate-100 leading-relaxed max-w-3xl">
+                          {cat.description}
+                        </p>
+                      ) : (
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                          {cat.items.map((item, iIdx) => (
+                            <div key={iIdx} className="flex items-start gap-2.5 p-3 rounded-xl bg-white border border-slate-100 hover:border-violet-300 hover:shadow-[0_4px_20px_rgba(139,92,246,0.05)] transition-all duration-300 text-xs md:text-sm text-slate-700 font-semibold">
+                              <span className="text-emerald-500 font-extrabold mt-0.5">•</span>
+                              <span>{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>

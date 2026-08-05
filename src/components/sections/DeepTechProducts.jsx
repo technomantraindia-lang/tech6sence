@@ -2,110 +2,44 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 
 const PRODUCTS = [
   {
-    id: 'wearables',
-    tab: 'AI Wearables',
-    title: 'AI Wearables',
-    description: 'Smart glasses, AI watches, earphones, and connected wearable devices that bring intelligent assistance closer to users in real time.',
-    features: ['Real-time AI assistance', 'Voice and sensor interaction', 'Connected user experiences'],
-    tags: ['Voice AI', 'Sensor Data', 'BLE 5.0', 'Edge ML'],
+    id: 'glasses',
+    tab: 'AI Smart Glasses',
+    title: 'AI Smart Glasses',
+    description: 'Intelligent wearable glasses combining AI assistants, augmented information, real-time translation, computer vision, voice interaction, navigation, recording, and productivity.',
+    features: ['Real-time translation HUD', 'Computer vision scene analysis', 'Voice-controlled AR interface'],
+    tags: ['AR HUD', 'Realtime Translation', 'Voice AI', 'BLE 5.2'],
     accent: '#7c3aed',
     graphic: () => (
       <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
         <defs>
-          <linearGradient id="dtp-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient id="dtp-grad-glasses" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#7c3aed" stopOpacity="0.15" />
             <stop offset="100%" stopColor="#d946ef" stopOpacity="0.08" />
           </linearGradient>
         </defs>
-        <rect x="80" y="30" width="80" height="100" rx="20" fill="url(#dtp-grad-1)" stroke="#7c3aed" strokeWidth="1.5" />
-        <rect x="88" y="40" width="64" height="72" rx="12" fill="white" stroke="#e2e8f0" strokeWidth="1" />
-        <rect x="95" y="10" width="50" height="24" rx="6" fill="none" stroke="#7c3aed" strokeWidth="1" strokeDasharray="3 3" className="dtp-dash-anim" />
-        <rect x="95" y="126" width="50" height="24" rx="6" fill="none" stroke="#7c3aed" strokeWidth="1" strokeDasharray="3 3" className="dtp-dash-anim" />
-        <circle cx="120" cy="64" r="10" fill="none" stroke="#7c3aed" strokeWidth="1.5" className="dtp-pulse" />
-        <circle cx="120" cy="64" r="5" fill="#7c3aed" opacity="0.3" className="dtp-pulse-delay" />
-        <rect x="100" y="82" width="40" height="3" rx="1.5" fill="#e2e8f0" />
-        <rect x="106" y="90" width="28" height="3" rx="1.5" fill="#e2e8f0" />
-        <rect x="110" y="98" width="20" height="3" rx="1.5" fill="#d946ef" opacity="0.4" />
-        <path d="M170 55 Q180 50, 185 55" fill="none" stroke="#7c3aed" strokeWidth="1" opacity="0.4" className="dtp-pulse" />
-        <path d="M175 50 Q188 42, 195 50" fill="none" stroke="#d946ef" strokeWidth="1" opacity="0.3" className="dtp-pulse-delay" />
+        <rect x="50" y="60" width="60" height="40" rx="10" fill="url(#dtp-grad-glasses)" stroke="#7c3aed" strokeWidth="1.5" />
+        <rect x="130" y="60" width="60" height="40" rx="10" fill="url(#dtp-grad-glasses)" stroke="#7c3aed" strokeWidth="1.5" />
+        <line x1="110" y1="70" x2="130" y2="70" stroke="#7c3aed" strokeWidth="2" />
+        <path d="M30 70 L50 70 M190 70 L210 70" stroke="#7c3aed" strokeWidth="1.5" strokeDasharray="3 3" />
+        <circle cx="80" cy="80" r="10" fill="none" stroke="#d946ef" strokeWidth="1.5" className="dtp-pulse" />
+        <circle cx="160" cy="80" r="10" fill="none" stroke="#d946ef" strokeWidth="1.5" className="dtp-pulse" />
       </svg>
     ),
   },
   {
-    id: 'healthcare',
-    tab: 'Healthcare AI',
-    title: 'Healthcare AI Devices',
-    description: 'AI-enabled health devices designed to support monitoring, early insights, diagnostics assistance, and smarter patient-focused care.',
-    features: ['Health data monitoring', 'AI-supported insights', 'Smart clinical workflows'],
-    tags: ['Vitals AI', 'HIPAA Ready', 'Diagnostics', 'IoMT'],
-    accent: '#06b6d4',
-    graphic: () => (
-      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
-        <defs>
-          <linearGradient id="dtp-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.12" />
-            <stop offset="100%" stopColor="#7c3aed" stopOpacity="0.06" />
-          </linearGradient>
-        </defs>
-        <rect x="40" y="40" width="160" height="100" rx="16" fill="url(#dtp-grad-2)" stroke="#06b6d4" strokeWidth="1.5" />
-        <rect x="50" y="50" width="140" height="60" rx="10" fill="white" stroke="#e2e8f0" strokeWidth="1" />
-        <polyline points="55,80 75,80 82,65 90,95 98,70 106,85 115,80 140,80 148,60 156,100 164,75 172,80 185,80" fill="none" stroke="#06b6d4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="dtp-ecg-anim" />
-        <circle cx="120" cy="130" r="5" fill="#06b6d4" opacity="0.5" className="dtp-pulse" />
-        <text x="132" y="133" fill="#64748b" fontSize="8" fontFamily="monospace">72 BPM</text>
-        <circle cx="60" cy="120" r="2.5" fill="#06b6d4" opacity="0.4" className="dtp-pulse-delay" />
-        <circle cx="75" cy="125" r="2" fill="#7c3aed" opacity="0.3" className="dtp-pulse" />
-        <circle cx="170" cy="122" r="2.5" fill="#d946ef" opacity="0.3" className="dtp-pulse-delay" />
-      </svg>
-    ),
-  },
-  {
-    id: 'iot',
-    tab: 'Smart IoT',
-    title: 'Smart IoT Devices',
-    description: 'Connected intelligent devices built with sensors, automation, cloud integration, and AI-driven decision systems.',
-    features: ['Sensor-based intelligence', 'Cloud-connected devices', 'Automation-ready systems'],
-    tags: ['MQTT', 'Edge Compute', 'Cloud Sync', 'OTA Updates'],
-    accent: '#8b5cf6',
-    graphic: () => (
-      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
-        <defs>
-          <linearGradient id="dtp-grad-3" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.12" />
-            <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.06" />
-          </linearGradient>
-        </defs>
-        <circle cx="120" cy="90" r="22" fill="url(#dtp-grad-3)" stroke="#8b5cf6" strokeWidth="1.5" />
-        <circle cx="120" cy="90" r="10" fill="white" stroke="#8b5cf6" strokeWidth="1.5" />
-        <circle cx="120" cy="90" r="4" fill="#8b5cf6" opacity="0.5" className="dtp-pulse" />
-        <circle cx="120" cy="90" r="50" fill="none" stroke="#8b5cf6" strokeWidth="1" strokeDasharray="6 8" opacity="0.3" className="dtp-spin" />
-        <circle cx="120" cy="90" r="72" fill="none" stroke="#d946ef" strokeWidth="0.8" strokeDasharray="4 12" opacity="0.2" className="dtp-spin-reverse" />
-        <circle cx="55" cy="55" r="8" fill="white" stroke="#8b5cf6" strokeWidth="1.5" />
-        <line x1="63" y1="60" x2="100" y2="78" stroke="#8b5cf6" strokeWidth="1" opacity="0.3" strokeDasharray="3 3" className="dtp-dash-anim" />
-        <circle cx="185" cy="60" r="8" fill="white" stroke="#d946ef" strokeWidth="1.5" />
-        <line x1="177" y1="65" x2="140" y2="80" stroke="#d946ef" strokeWidth="1" opacity="0.3" strokeDasharray="3 3" className="dtp-dash-anim" />
-        <circle cx="60" cy="140" r="8" fill="white" stroke="#06b6d4" strokeWidth="1.5" />
-        <line x1="67" y1="135" x2="103" y2="103" stroke="#06b6d4" strokeWidth="1" opacity="0.3" strokeDasharray="3 3" className="dtp-dash-anim" />
-        <circle cx="180" cy="135" r="8" fill="white" stroke="#7c3aed" strokeWidth="1.5" />
-        <line x1="173" y1="130" x2="137" y2="102" stroke="#7c3aed" strokeWidth="1" opacity="0.3" strokeDasharray="3 3" className="dtp-dash-anim" />
-        <rect x="51" y="52" width="8" height="6" rx="1" fill="none" stroke="#8b5cf6" strokeWidth="1" />
-        <rect x="181" y="57" width="8" height="6" rx="1" fill="none" stroke="#d946ef" strokeWidth="1" />
-      </svg>
-    ),
-  },
-  {
-    id: 'augmentation',
-    tab: 'Augmentation',
-    title: 'Human Augmentation',
-    description: 'AI exoskeletons and assistive systems designed to improve human movement, safety, endurance, and industrial performance.',
-    features: ['Assistive mobility systems', 'AI movement support', 'Industrial safety enhancement'],
-    tags: ['Exoskeleton', 'Motion AI', 'Safety+', 'Haptic FB'],
+    id: 'exoskeleton',
+    tab: 'AI Exoskeleton',
+    title: 'AI-Powered Exoskeleton',
+    description: 'Advanced AI-assisted wearable robotic system enhancing human mobility, rehabilitation, industrial productivity, and defense capabilities.',
+    features: ['Active motion assistance', 'Intelligent feedback loops', 'Ergonomic weight distribution'],
+    tags: ['Robotics', 'Motion AI', 'Haptic FB', 'Safety+'],
     accent: '#ec4899',
     graphic: () => (
       <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
         <defs>
-          <linearGradient id="dtp-grad-4" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#ec4899" stopOpacity="0.12" />
-            <stop offset="100%" stopColor="#7c3aed" stopOpacity="0.06" />
+          <linearGradient id="dtp-grad-exo" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#ec4899" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#7c3aed" stopOpacity="0.08" />
           </linearGradient>
         </defs>
         <circle cx="120" cy="35" r="12" fill="none" stroke="#94a3b8" strokeWidth="1.5" />
@@ -116,49 +50,213 @@ const PRODUCTS = [
         <line x1="120" y1="100" x2="145" y2="140" stroke="#94a3b8" strokeWidth="1.5" />
         <path d="M115 48 L115 100 L93 140" fill="none" stroke="#ec4899" strokeWidth="2.5" opacity="0.6" strokeLinecap="round" className="dtp-pulse" />
         <path d="M125 48 L125 100 L147 140" fill="none" stroke="#ec4899" strokeWidth="2.5" opacity="0.6" strokeLinecap="round" className="dtp-pulse-delay" />
-        <circle cx="115" cy="60" r="4" fill="white" stroke="#ec4899" strokeWidth="1.5" />
-        <circle cx="125" cy="60" r="4" fill="white" stroke="#ec4899" strokeWidth="1.5" />
-        <circle cx="115" cy="100" r="4" fill="white" stroke="#ec4899" strokeWidth="1.5" />
-        <circle cx="125" cy="100" r="4" fill="white" stroke="#ec4899" strokeWidth="1.5" />
-        <rect x="60" y="60" width="18" height="28" rx="3" fill="url(#dtp-grad-4)" stroke="#ec4899" strokeWidth="1" />
-        <rect x="63" y="63" width="12" height="6" rx="1" fill="#ec4899" opacity="0.4" className="dtp-pulse" />
-        <rect x="63" y="72" width="12" height="6" rx="1" fill="#ec4899" opacity="0.25" />
-        <rect x="63" y="81" width="12" height="4" rx="1" fill="#ec4899" opacity="0.15" />
       </svg>
     ),
   },
   {
-    id: 'digital-tools',
-    tab: 'Digital Tools',
-    title: 'AI Digital Tools',
-    description: 'AI-powered digital notepads, smart earphones, and productivity devices that improve everyday work, learning, and communication.',
-    features: ['Productivity intelligence', 'Voice-enabled interaction', 'Smart personal devices'],
-    tags: ['NLP Engine', 'Whisper AI', 'Sync+', 'Smart Ink'],
+    id: 'earphones',
+    tab: 'AI Earphones',
+    title: 'AI Earphones',
+    description: 'Next-generation intelligent audio powered by AI noise cancellation, language translation, health sensing, voice assistant, and contextual awareness.',
+    features: ['Active noise isolation', 'On-the-go audio translation', 'Health vital monitoring'],
+    tags: ['ANC', 'Biometrics', 'NLP', 'Spatial Audio'],
+    accent: '#0ea5e9',
+    graphic: () => (
+      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
+        <defs>
+          <linearGradient id="dtp-grad-buds" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#0ea5e9" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#2563eb" stopOpacity="0.08" />
+          </linearGradient>
+        </defs>
+        <circle cx="80" cy="90" r="25" fill="url(#dtp-grad-buds)" stroke="#0ea5e9" strokeWidth="1.5" />
+        <circle cx="160" cy="90" r="25" fill="url(#dtp-grad-buds)" stroke="#0ea5e9" strokeWidth="1.5" />
+        <path d="M80 65 C85 55, 155 55, 160 65" fill="none" stroke="#0ea5e9" strokeWidth="1.5" strokeDasharray="3 3" />
+        <circle cx="80" cy="90" r="10" fill="white" stroke="#2563eb" strokeWidth="1.5" />
+        <circle cx="160" cy="90" r="10" fill="white" stroke="#2563eb" strokeWidth="1.5" />
+        <circle cx="80" cy="90" r="4" fill="#0ea5e9" className="dtp-pulse" />
+        <circle cx="160" cy="90" r="4" fill="#0ea5e9" className="dtp-pulse" />
+      </svg>
+    ),
+  },
+  {
+    id: 'smartwatch',
+    tab: 'AI Smartwatch',
+    title: 'AI Smartwatch',
+    description: 'Enterprise-grade intelligent smartwatch integrating AI health monitoring, productivity, communication, navigation, safety, and fitness analytics.',
+    features: ['Enterprise calendar sync', 'Safety alerts & fall detection', 'Dynamic health telemetry'],
+    tags: ['Heart Rate', 'LTE', 'NFC', 'Secure OS'],
+    accent: '#10b981',
+    graphic: () => (
+      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
+        <defs>
+          <linearGradient id="dtp-grad-watch" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#10b981" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#059669" stopOpacity="0.08" />
+          </linearGradient>
+        </defs>
+        <rect x="80" y="30" width="80" height="100" rx="20" fill="url(#dtp-grad-watch)" stroke="#10b981" strokeWidth="1.5" />
+        <rect x="88" y="40" width="64" height="72" rx="12" fill="white" stroke="#e2e8f0" strokeWidth="1" />
+        <circle cx="120" cy="76" r="20" fill="none" stroke="#10b981" strokeWidth="1" strokeDasharray="3 3" />
+        <path d="M120 62 L120 76 L130 82" fill="none" stroke="#10b981" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="120" cy="76" r="3" fill="#059669" />
+      </svg>
+    ),
+  },
+  {
+    id: 'fitness-band',
+    tab: 'AI Fitness Band',
+    title: 'AI Fitness Health Band',
+    description: 'Professional-grade AI fitness tracker providing continuous health analytics, recovery insights, performance optimization, sleep intelligence, and personalized coaching.',
+    features: ['Personalized AI coaching', 'Precise sleep phase tracking', 'Continuous vitals detection'],
+    tags: ['Coaching', 'Sleep Tracking', 'SpO2', 'Vitals'],
+    accent: '#6366f1',
+    graphic: () => (
+      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
+        <defs>
+          <linearGradient id="dtp-grad-band" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#6366f1" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#4f46e5" stopOpacity="0.08" />
+          </linearGradient>
+        </defs>
+        <rect x="95" y="20" width="50" height="130" rx="25" fill="none" stroke="#6366f1" strokeWidth="2" />
+        <rect x="100" y="40" width="40" height="90" rx="20" fill="url(#dtp-grad-band)" stroke="#6366f1" strokeWidth="1.5" />
+        <polyline points="105,85 112,85 116,75 120,95 124,80 128,90 135,85" fill="none" stroke="#6366f1" strokeWidth="1.5" />
+      </svg>
+    ),
+  },
+  {
+    id: 'assistant',
+    tab: 'AI Assistant',
+    title: 'Wearable AI Assistant',
+    description: 'A wearable companion capable of understanding conversations, scheduling tasks, answering questions, managing workflows, and providing proactive intelligence.',
+    features: ['Conversational tracking', 'Proactive work shortcuts', 'Automated agenda builders'],
+    tags: ['Voice Agent', 'Task Sync', 'NLP Engine', 'Contextual'],
     accent: '#f59e0b',
     graphic: () => (
       <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
         <defs>
-          <linearGradient id="dtp-grad-5" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.12" />
-            <stop offset="100%" stopColor="#7c3aed" stopOpacity="0.06" />
+          <linearGradient id="dtp-grad-asst" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#d97706" stopOpacity="0.08" />
           </linearGradient>
         </defs>
-        <rect x="60" y="25" width="120" height="130" rx="12" fill="url(#dtp-grad-5)" stroke="#f59e0b" strokeWidth="1.5" />
-        <rect x="70" y="35" width="100" height="108" rx="8" fill="white" stroke="#e2e8f0" strokeWidth="1" />
-        <rect x="80" y="48" width="60" height="4" rx="2" fill="#e2e8f0" />
-        <rect x="80" y="58" width="45" height="4" rx="2" fill="#e2e8f0" />
-        <rect x="80" y="68" width="70" height="4" rx="2" fill="#f59e0b" opacity="0.35" />
-        <rect x="80" y="78" width="55" height="4" rx="2" fill="#e2e8f0" />
-        <rect x="80" y="88" width="65" height="4" rx="2" fill="#e2e8f0" />
-        <circle cx="155" cy="48" r="6" fill="none" stroke="#f59e0b" strokeWidth="1.5" className="dtp-pulse" />
-        <circle cx="155" cy="48" r="2.5" fill="#f59e0b" opacity="0.5" />
-        <line x1="175" y1="100" x2="195" y2="50" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="195" cy="50" r="2.5" fill="#f59e0b" opacity="0.6" />
-        <path d="M40 80 Q35 75, 30 80" fill="none" stroke="#7c3aed" strokeWidth="1" opacity="0.4" className="dtp-pulse" />
-        <path d="M42 72 Q33 65, 25 72" fill="none" stroke="#7c3aed" strokeWidth="1" opacity="0.3" className="dtp-pulse-delay" />
+        <circle cx="120" cy="90" r="35" fill="url(#dtp-grad-asst)" stroke="#f59e0b" strokeWidth="1.5" />
+        <circle cx="120" cy="90" r="25" fill="white" stroke="#f59e0b" strokeWidth="1" />
+        <path d="M105 90 H135 M120 75 V105" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="120" cy="90" r="5" fill="#d97706" className="dtp-pulse" />
       </svg>
     ),
   },
+  {
+    id: 'smart-ring',
+    tab: 'AI Smart Ring',
+    title: 'AI Smart Ring',
+    description: 'Continuous biometric monitoring, secure authentication, contactless experiences, wellness intelligence, and AI-driven lifestyle optimization in a minimal design.',
+    features: ['Contactless NFC interactions', 'Minimal size biometric scans', 'Sleep and wellness scoring'],
+    tags: ['NFC Pay', 'Biometric', 'Wellness', 'NFC Auth'],
+    accent: '#8b5cf6',
+    graphic: () => (
+      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
+        <defs>
+          <linearGradient id="dtp-grad-ring" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#7c3aed" stopOpacity="0.08" />
+          </linearGradient>
+        </defs>
+        <ellipse cx="120" cy="90" rx="45" ry="25" fill="url(#dtp-grad-ring)" stroke="#8b5cf6" strokeWidth="2" />
+        <ellipse cx="120" cy="90" rx="30" ry="15" fill="white" stroke="#8b5cf6" strokeWidth="1.5" />
+        <circle cx="120" cy="70" r="5" fill="#7c3aed" className="dtp-pulse" />
+      </svg>
+    ),
+  },
+  {
+    id: 'health-device',
+    tab: 'AI Health Device',
+    title: 'Wearable Personal Health',
+    description: 'Advanced healthcare wearable designed for preventive healthcare, chronic disease management, continuous diagnostics, and remote patient monitoring.',
+    features: ['Chronic care auto-alerts', 'Remote diagnostics pipeline', 'Clinical vital signs logging'],
+    tags: ['Clinical Vitals', 'Diagnostics', 'IoMT', '24/7 Monitoring'],
+    accent: '#ef4444',
+    graphic: () => (
+      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
+        <defs>
+          <linearGradient id="dtp-grad-hdev" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#ef4444" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#dc2626" stopOpacity="0.08" />
+          </linearGradient>
+        </defs>
+        <rect x="70" y="45" width="100" height="90" rx="15" fill="url(#dtp-grad-hdev)" stroke="#ef4444" strokeWidth="1.5" />
+        <path d="M100 90 L110 80 L120 100 L130 75 L140 90" fill="none" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    id: 'medical-devices',
+    tab: 'Medical Devices',
+    title: 'Healthcare AI Devices',
+    description: 'Medical-grade intelligent devices supporting hospitals, clinics, diagnostics, patient monitoring, telemedicine, and healthcare automation.',
+    features: ['FDA compliant data layers', 'Telemedicine sync & pipelines', 'Hospital system integrations'],
+    tags: ['FDA Compliant', 'Hospital Tech', 'Telemed', 'ML Vitals'],
+    accent: '#06b6d4',
+    graphic: () => (
+      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
+        <defs>
+          <linearGradient id="dtp-grad-med" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#0891b2" stopOpacity="0.08" />
+          </linearGradient>
+        </defs>
+        <rect x="50" y="40" width="140" height="100" rx="16" fill="url(#dtp-grad-med)" stroke="#06b6d4" strokeWidth="1.5" />
+        <rect x="60" y="50" width="120" height="80" rx="10" fill="white" stroke="#e2e8f0" strokeWidth="1" />
+        <path d="M120 65 V115 M95 90 H145" stroke="#06b6d4" strokeWidth="4" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    id: 'iot-devices',
+    tab: 'Smart IoT',
+    title: 'Smart IoT Devices',
+    description: 'AI-enabled connected devices powering homes, industries, factories, agriculture, smart cities, logistics, and infrastructure.',
+    features: ['MQTT fast data transport', 'Dynamic edge computation', 'Secure OTA code updates'],
+    tags: ['Edge Compute', 'MQTT', 'OTA Updates', 'Cloud Sync'],
+    accent: '#3b82f6',
+    graphic: () => (
+      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
+        <defs>
+          <linearGradient id="dtp-grad-iotdev" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#2563eb" stopOpacity="0.08" />
+          </linearGradient>
+        </defs>
+        <rect x="65" y="45" width="110" height="90" rx="12" fill="url(#dtp-grad-iotdev)" stroke="#3b82f6" strokeWidth="1.5" />
+        <circle cx="120" cy="90" r="15" fill="white" stroke="#3b82f6" strokeWidth="1.5" />
+        <circle cx="120" cy="90" r="6" fill="#2563eb" className="dtp-pulse" />
+      </svg>
+    ),
+  },
+  {
+    id: 'digital-notepad',
+    tab: 'Digital Notepad',
+    title: 'AI Digital Notepad',
+    description: 'The intelligent notebook that understands handwriting, summarizes meetings, generates tasks, translates content, and synchronizes seamlessly across devices.',
+    features: ['Live handwriting recognition', 'Meeting summary generation', 'Omni-device note sync'],
+    tags: ['Smart Ink', 'OCR Engine', 'Notepad Sync', 'NLP Summary'],
+    accent: '#14b8a6',
+    graphic: () => (
+      <svg viewBox="0 0 240 180" className="w-full h-full" style={{ maxHeight: '160px' }}>
+        <defs>
+          <linearGradient id="dtp-grad-np" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#14b8a6" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#0d9488" stopOpacity="0.08" />
+          </linearGradient>
+        </defs>
+        <rect x="60" y="25" width="120" height="130" rx="12" fill="url(#dtp-grad-np)" stroke="#14b8a6" strokeWidth="1.5" />
+        <rect x="70" y="35" width="100" height="108" rx="8" fill="white" stroke="#e2e8f0" strokeWidth="1" />
+        <path d="M85 55 H135 M85 75 H155 M85 95 H125" stroke="#14b8a6" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+    ),
+  }
 ];
 
 function FloatingTag({ text, x, y, delay }) {
@@ -174,9 +272,21 @@ function FloatingTag({ text, x, y, delay }) {
 
 export default function DeepTechProducts() {
   const sectionRef = useRef(null);
+  const tabsRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
+
+  useEffect(() => {
+    const el = tabsRef.current;
+    if (!el) return;
+    const onWheel = (e) => {
+      e.preventDefault(); // always block page scroll
+      el.scrollBy({ top: e.deltaY * 1.2, behavior: 'smooth' });
+    };
+    el.addEventListener('wheel', onWheel, { passive: false });
+    return () => el.removeEventListener('wheel', onWheel);
+  }, []);
 
 
   useEffect(() => {
@@ -242,6 +352,28 @@ export default function DeepTechProducts() {
         .dtp-float-tag { animation: dtp-float-tag-kf 5s ease-in-out infinite; }
         .dtp-ecg-anim { stroke-dasharray: 300; animation: dtp-ecg 2.5s linear infinite; }
       `}} />
+      <style dangerouslySetInnerHTML={{ __html: `
+        .dtp-tabs-scroll {
+          scrollbar-width: thin;
+          scrollbar-color: rgba(124, 58, 237, 0.35) transparent;
+        }
+        .dtp-tabs-scroll::-webkit-scrollbar {
+          width: 3px;
+          height: 3px;
+        }
+        .dtp-tabs-scroll::-webkit-scrollbar-track {
+          background: transparent;
+          border-radius: 999px;
+        }
+        .dtp-tabs-scroll::-webkit-scrollbar-thumb {
+          background: linear-gradient(180deg, #7c3aed55, #06b6d455);
+          border-radius: 999px;
+          transition: background 0.3s ease;
+        }
+        .dtp-tabs-scroll::-webkit-scrollbar-thumb:hover {
+          background: linear-gradient(180deg, #7c3aed, #06b6d4);
+        }
+      `}} />
 
       {/* Decorative Grid Background */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
@@ -278,7 +410,10 @@ export default function DeepTechProducts() {
         <div className="grid lg:grid-cols-[1fr_2.5fr] gap-12 lg:gap-16 items-center">
           
           {/* LEFT: Command Center Tabs */}
-          <div className="flex flex-row lg:flex-col gap-3 overflow-x-auto pb-4 lg:pb-0 scrollbar-hide hide-scroll-bar">
+          <div
+            ref={tabsRef}
+            className="flex flex-row lg:flex-col gap-3 overflow-x-auto lg:overflow-y-auto lg:max-h-[480px] pb-4 lg:pb-0 dtp-tabs-scroll pr-2"
+          >
             {PRODUCTS.map((p, i) => (
               <button
                 key={p.id}

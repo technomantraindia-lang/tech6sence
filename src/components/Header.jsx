@@ -145,7 +145,7 @@ export default function Header() {
         aria-hidden="true"
       />
       
-      <div className="relative mx-auto max-w-[96%] w-full px-2 sm:px-4 transition-all duration-300">
+      <div className="relative mx-auto max-w-[1400px] w-full px-2 sm:px-4 transition-all duration-300">
         <div className={`flex items-center justify-between gap-4 transition-all duration-300 ${
           scrolled ? 'py-3.5' : 'py-5'
         }`}>

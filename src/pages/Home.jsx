@@ -538,9 +538,11 @@ function HeroRing({ opacity, scale }) {
     </div>
   )
 }
-function BentoCard({ title, description, icon, isFuchsia = false }) {
+function BentoCard({ title, description, icon, color = "blue" }) {
   const cardRef = useRef(null)
   const [isHovered, setIsHovered] = useState(false)
+
+  const isBlue = color === "blue";
 
   const handleMouseMove = (e) => {
     const card = cardRef.current
@@ -553,7 +555,7 @@ function BentoCard({ title, description, icon, isFuchsia = false }) {
 
     card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-4px)`
     card.style.setProperty('--spotlight-bg', `radial-gradient(circle 220px at ${x}px ${y}px, ${
-      isFuchsia ? 'rgba(217,70,239,0.07)' : 'rgba(124,58,237,0.07)'
+      isBlue ? 'rgba(37,99,235,0.07)' : 'rgba(16,185,129,0.07)'
     }, transparent 80%)`)
   }
 
@@ -574,9 +576,9 @@ function BentoCard({ title, description, icon, isFuchsia = false }) {
       className="bento-card group flex-1 min-h-[260px] rounded-[20px] p-8 transition-all duration-300 ease-out"
       style={{
         boxShadow: isHovered
-          ? isFuchsia
-            ? '0 20px 40px rgba(217,70,239,0.12), 0 8px 16px rgba(0,0,0,0.03)'
-            : '0 20px 40px rgba(124,58,237,0.12), 0 8px 16px rgba(0,0,0,0.03)'
+          ? isBlue
+            ? '0 20px 40px rgba(37,99,235,0.12), 0 8px 16px rgba(0,0,0,0.03)'
+            : '0 20px 40px rgba(16,185,129,0.12), 0 8px 16px rgba(0,0,0,0.03)'
           : '0 4px 20px rgba(0,0,0,0.01), 0 1px 2px rgba(0,0,0,0.02)',
       }}
     >
@@ -592,9 +594,9 @@ function BentoCard({ title, description, icon, isFuchsia = false }) {
       <div 
         className="pointer-events-none absolute -right-6 -top-6 h-[260px] w-[260px] opacity-0 transition-opacity duration-700 group-hover:opacity-100 z-0"
         style={{
-          background: isFuchsia
-            ? 'radial-gradient(circle, rgba(217,70,239,0.2) 0%, rgba(244,114,182,0.08) 50%, transparent 70%)'
-            : 'radial-gradient(circle, rgba(124,58,237,0.2) 0%, rgba(99,102,241,0.08) 50%, transparent 70%)',
+          background: isBlue
+            ? 'radial-gradient(circle, rgba(37,99,235,0.15) 0%, rgba(37,99,235,0.05) 50%, transparent 70%)'
+            : 'radial-gradient(circle, rgba(16,185,129,0.15) 0%, rgba(16,185,129,0.05) 50%, transparent 70%)',
           filter: 'blur(35px)',
         }}
       />
@@ -602,12 +604,12 @@ function BentoCard({ title, description, icon, isFuchsia = false }) {
       <div className="relative z-10 flex h-full flex-col justify-between">
         <div 
           className={`icon-soft-glow flex h-12 w-12 items-center justify-center rounded-xl border ${
-            isFuchsia 
-              ? 'border-fuchsia-200 bg-fuchsia-50 text-fuchsia-600' 
-              : 'border-violet-200 bg-violet-50 text-violet-600'
+            isBlue 
+              ? 'border-blue-200 bg-blue-50 text-blue-600' 
+              : 'border-emerald-200 bg-emerald-50 text-emerald-600'
           }`}
           style={{
-            animationDelay: isFuchsia ? '1.5s' : '0s'
+            animationDelay: isBlue ? '1.5s' : '0s'
           }}
         >
           {icon}
@@ -638,13 +640,13 @@ function AboutSection() {
       <div className="relative z-10 mx-auto max-w-[85rem]">
         {/* Section Header */}
         <div className="mb-16 flex items-center gap-3">
-          <span className="icon-soft-glow flex h-8 w-8 items-center justify-center rounded-lg border border-violet-300 bg-violet-100 text-violet-600">
+          <span className="icon-soft-glow flex h-8 w-8 items-center justify-center rounded-lg border border-blue-200 bg-blue-50 text-blue-600">
             <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" stroke="currentColor" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </span>
-          <span className="h-px w-16 bg-gradient-to-r from-violet-500 via-fuchsia-400 to-transparent" />
-          <h2 className="font-body text-xs font-bold tracking-[0.3em] text-violet-600 uppercase">
+          <span className="h-px w-16 bg-gradient-to-r from-blue-500 via-emerald-400 to-transparent" />
+          <h2 className="font-body text-xs font-bold tracking-[0.3em] text-blue-600 uppercase">
             WHO WE ARE
           </h2>
         </div>
@@ -661,18 +663,18 @@ function AboutSection() {
             {/* Animated gradient border card */}
             <div className="animated-gradient-border group relative rounded-2xl px-8 py-8">
               <p className="mb-6 font-body text-base leading-relaxed text-slate-600 md:text-lg relative z-10">
-                Welcome to TECH6SENSE AI, where cutting-edge artificial intelligence research converges with real-world business transformation. Founded by <strong className="text-slate-800">Dr. Chintan Patel</strong>, a distinguished AI researcher and innovator, we're pioneering the next generation of intelligent solutions that redefine what's possible in technology and business.
+                Welcome to TECH6SENSE AI, where cutting-edge artificial intelligence research converges with real-world business transformation. Founded by <strong className="text-slate-800 font-bold">Dr. Chintan Patel</strong>, a distinguished AI researcher and innovator, we're pioneering the next generation of intelligent solutions that redefine what's possible in technology and business.
               </p>
               
               <p className="font-body text-base leading-relaxed text-slate-600 md:text-lg relative z-10">
-                Operating from the prestigious <strong className="text-violet-600 font-bold">GIFT City</strong> – India's premier financial and technology hub – we serve global enterprises, ambitious startups, and visionary founders ready to harness the transformative power of artificial intelligence.
+                Operating from the prestigious <strong className="text-blue-600 font-bold">GIFT City</strong> – India's premier financial and technology hub – we serve global enterprises, ambitious startups, and visionary founders ready to harness the transformative power of artificial intelligence.
               </p>
 
               {/* Decorative dots */}
               <div className="absolute bottom-4 right-4 flex gap-2 opacity-60 z-10">
-                <div className="h-2 w-2 rounded-full bg-gradient-to-br from-violet-400 to-purple-500" />
-                <div className="h-2 w-2 rounded-full bg-gradient-to-br from-fuchsia-400 to-pink-500" />
-                <div className="h-2 w-2 rounded-full bg-gradient-to-br from-indigo-400 to-violet-500" />
+                <div className="h-2 w-2 rounded-full bg-gradient-to-br from-blue-400 to-emerald-500" />
+                <div className="h-2 w-2 rounded-full bg-gradient-to-br from-cyan-400 to-teal-500" />
+                <div className="h-2 w-2 rounded-full bg-gradient-to-br from-indigo-400 to-blue-500" />
               </div>
             </div>
           </div>
@@ -687,6 +689,7 @@ function AboutSection() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
                 </svg>
               }
+              color="blue"
             />
 
             <BentoCard
@@ -697,7 +700,7 @@ function AboutSection() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.433 4.433 0 002.771 2.771 4.902 4.902 0 003.123-.06 4.5 4.5 0 002.515-2.515c.14-.36.214-.75.214-1.146a4.48 4.48 0 00-1.146-3.003c-.26-.29-.553-.55-.867-.775M8.5 13l-4 4 2 2 4-4" />
                 </svg>
               }
-              isFuchsia={true}
+              color="emerald"
             />
           </div>
         </div>
