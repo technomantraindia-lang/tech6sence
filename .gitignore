@@ -24,3 +24,8 @@ dist-ssr
 *.sln
 *.sw?
 *.zip
+Final Industries Impact.txt
+check_encoding.py
+fix_json.cjs
+fix_json.js
+inspect_json.py
