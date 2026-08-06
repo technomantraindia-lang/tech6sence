@@ -21,7 +21,7 @@ export default function IndustriesFinalCTA() {
     <section ref={sectionRef} className="py-20 lg:py-32 bg-white relative overflow-hidden">
       
       {/* Dynamic Background Glow */}
-      <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-violet-50/80 rounded-full blur-[100px] pointer-events-none transition-all duration-[2000ms] ease-in-out ${
+      <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-50/80 rounded-full blur-[100px] pointer-events-none transition-all duration-[2000ms] ease-in-out ${
         isVisible ? 'scale-100 opacity-100' : 'scale-50 opacity-0'
       }`} />
       
@@ -31,7 +31,7 @@ export default function IndustriesFinalCTA() {
       {/* Top Gradient Line Reveal */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-slate-100">
         <div 
-          className="h-full bg-gradient-to-r from-violet-500 to-fuchsia-500 transition-all duration-[2000ms] ease-out origin-left"
+          className="h-full bg-gradient-to-r from-blue-500 to-emerald-500 transition-all duration-[2000ms] ease-out origin-left"
           style={{ transform: isVisible ? 'scaleX(1)' : 'scaleX(0)' }}
         />
       </div>
@@ -42,7 +42,7 @@ export default function IndustriesFinalCTA() {
         }`}>
           
           <div className="inline-flex items-center gap-3 mb-6">
-            <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-violet-600 bg-white shadow-sm px-5 py-2 rounded-full border border-violet-100">
+            <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-blue-600 bg-white shadow-sm px-5 py-2 rounded-full border border-blue-100">
               INDUSTRY AI CONSULTATION
             </span>
           </div>
@@ -56,7 +56,7 @@ export default function IndustriesFinalCTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <Link to="#discuss" className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-8 py-3.5 font-body text-sm font-bold text-white shadow-[0_4px_15px_rgba(124,58,237,0.3)] transition-all hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(124,58,237,0.4)]">
+            <Link to="#discuss" className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-blue-600 to-emerald-600 px-8 py-3.5 font-body text-sm font-bold text-white shadow-[0_4px_15px_rgba(59,130,246,0.3)] transition-all hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(59,130,246,0.4)]">
               <span className="relative z-10 flex items-center gap-2">
                 Discuss Your Industry Use Case
                 <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -65,7 +65,7 @@ export default function IndustriesFinalCTA() {
               </span>
             </Link>
             
-            <Link to="#explore" className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border-2 border-slate-200 font-body text-sm font-bold text-slate-700 bg-white hover:border-violet-200 hover:bg-violet-50 hover:text-violet-700 transition-all">
+            <Link to="#explore" className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border-2 border-slate-200 font-body text-sm font-bold text-slate-700 bg-white hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 transition-all">
               Explore Intelligent Solutions
             </Link>
           </div>

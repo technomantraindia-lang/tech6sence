@@ -16,6 +16,7 @@ const EnterpriseAI = lazy(() => import('./pages/EnterpriseAI'))
 const DeepTechProducts = lazy(() => import('./pages/DeepTechProducts'))
 const DeepTechProductDetail = lazy(() => import('./pages/DeepTechProductDetail'))
 const Industries = lazy(() => import('./pages/Industries'))
+const IndustryInnerPage = lazy(() => import('./pages/IndustryInnerPage'))
 const SuccessStories = lazy(() => import('./pages/SuccessStories'))
 const Ecosystem = lazy(() => import('./pages/Ecosystem'))
 const LetsConnect = lazy(() => import('./pages/LetsConnect'))
@@ -126,6 +127,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/deep-tech-products" element={<DeepTechProducts />} />
           <Route path="/deep-tech-products/:productId" element={<DeepTechProductDetail />} />
           <Route path="/industries" element={<Industries />} />
+          <Route path="/industries/:industryId" element={<IndustryInnerPage />} />
           <Route path="/success-stories" element={<SuccessStories />} />
           <Route path="/ecosystem" element={<Ecosystem />} />
           <Route path="/lets-connect" element={<LetsConnect />} />

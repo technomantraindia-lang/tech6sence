@@ -948,5 +948,77 @@ export const industriesImpactData = [
         impact: "Increase lead conversion by 35%, reduce time-on-market by 20%, improve agent productivity by 50%, enhance buyer experience."
       }
     ]
+  },
+  {
+    id: "logistics",
+    title: "Logistics & Supply Chain",
+    challenges: [{ title: "Detailed insights coming soon", description: "We are currently preparing deep-dive insights for this industry. Check back later for complete details." }],
+    solutions: [{ title: "AI Solutions Platform", technology: ["Predictive Analytics", "Route Optimization", "Demand Forecasting"], impact: "Transforming supply chain operations." }]
+  },
+  {
+    id: "agriculture",
+    title: "Agriculture",
+    challenges: [{ title: "Detailed insights coming soon", description: "We are currently preparing deep-dive insights for this industry. Check back later for complete details." }],
+    solutions: [{ title: "AI Solutions Platform", technology: ["Precision Farming", "Yield Prediction", "Automated Monitoring"], impact: "Transforming agricultural operations." }]
+  },
+  {
+    id: "energy",
+    title: "Energy & Utilities",
+    challenges: [{ title: "Detailed insights coming soon", description: "We are currently preparing deep-dive insights for this industry. Check back later for complete details." }],
+    solutions: [{ title: "AI Solutions Platform", technology: ["Smart Grid Management", "Predictive Maintenance", "Load Forecasting"], impact: "Transforming energy operations." }]
+  },
+  {
+    id: "automotive",
+    title: "Automotive & Mobility",
+    challenges: [{ title: "Detailed insights coming soon", description: "We are currently preparing deep-dive insights for this industry. Check back later for complete details." }],
+    solutions: [{ title: "AI Solutions Platform", technology: ["Autonomous Navigation", "Manufacturing Automation", "Predictive Maintenance"], impact: "Transforming mobility solutions." }]
+  },
+  {
+    id: "pharma",
+    title: "Pharmaceuticals & Biotechnology",
+    challenges: [{ title: "Detailed insights coming soon", description: "We are currently preparing deep-dive insights for this industry. Check back later for complete details." }],
+    solutions: [{ title: "AI Solutions Platform", technology: ["Drug Discovery", "Clinical Trial Optimization", "Genomic Analysis"], impact: "Transforming pharmaceutical research." }]
+  },
+  {
+    id: "travel",
+    title: "Travel, Tourism & Hospitality",
+    challenges: [{ title: "Detailed insights coming soon", description: "We are currently preparing deep-dive insights for this industry. Check back later for complete details." }],
+    solutions: [{ title: "AI Solutions Platform", technology: ["Personalized Recommendations", "Dynamic Pricing", "Customer Sentiment Analysis"], impact: "Transforming travel experiences." }]
+  },
+  {
+    id: "media",
+    title: "Media, Entertainment & Marketing",
+    challenges: [{ title: "Detailed insights coming soon", description: "We are currently preparing deep-dive insights for this industry. Check back later for complete details." }],
+    solutions: [{ title: "AI Solutions Platform", technology: ["Content Generation", "Audience Analytics", "Personalized Marketing"], impact: "Transforming media consumption." }]
+  },
+  {
+    id: "legal",
+    title: "Legal Services",
+    challenges: [{ title: "Detailed insights coming soon", description: "We are currently preparing deep-dive insights for this industry. Check back later for complete details." }],
+    solutions: [{ title: "AI Solutions Platform", technology: ["Document Review Automation", "Case Prediction", "Contract Analysis"], impact: "Transforming legal workflows." }]
+  },
+  {
+    id: "government",
+    title: "Government & Public Sector",
+    challenges: [{ title: "Detailed insights coming soon", description: "We are currently preparing deep-dive insights for this industry. Check back later for complete details." }],
+    solutions: [{ title: "AI Solutions Platform", technology: ["Public Service Automation", "Fraud Detection", "Policy Analysis"], impact: "Transforming public administration." }]
+  },
+  {
+    id: "hr",
+    title: "Human Resources & Talent Management",
+    challenges: [{ title: "Detailed insights coming soon", description: "We are currently preparing deep-dive insights for this industry. Check back later for complete details." }],
+    solutions: [{ title: "AI Solutions Platform", technology: ["Candidate Screening", "Employee Retention Modeling", "Skills Gap Analysis"], impact: "Transforming talent acquisition." }]
+  },
+  {
+    id: "cybersecurity",
+    title: "Cybersecurity",
+    challenges: [{ title: "Detailed insights coming soon", description: "We are currently preparing deep-dive insights for this industry. Check back later for complete details." }],
+    solutions: [{ title: "AI Solutions Platform", technology: ["Threat Detection", "Automated Response", "Anomaly Detection"], impact: "Transforming digital defense." }]
+  },
+  {
+    id: "smartcities",
+    title: "Government, Smart Cities & Public Infrastructure",
+    challenges: [{ title: "Detailed insights coming soon", description: "We are currently preparing deep-dive insights for this industry. Check back later for complete details." }],
+    solutions: [{ title: "AI Solutions Platform", technology: ["Traffic Optimization", "Infrastructure Monitoring", "Public Safety Analytics"], impact: "Transforming urban environments." }]
   }
 ];

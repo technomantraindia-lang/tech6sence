@@ -18,15 +18,15 @@ export default function IndustrySectors() {
 
   const sectors = [
     { title: "Healthcare & Life Sciences", tagline: "AI for smarter care, monitoring, and clinical workflows.", span: "lg:col-span-3" },
-    { title: "Manufacturing & Industrial AI", tagline: "Intelligence for operations, quality, and predictive maintenance.", span: "lg:col-span-3" },
-    { title: "Finance & Insurance", tagline: "Risk intelligence, automation, fraud insights, and decision support.", span: "lg:col-span-3" },
+    { title: "Manufacturing", tagline: "Intelligence for operations, quality, and predictive maintenance.", span: "lg:col-span-3" },
+    { title: "Banking & Financial Services", tagline: "Risk intelligence, automation, fraud insights, and decision support.", span: "lg:col-span-3" },
     { title: "Retail & E-Commerce", tagline: "Personalization, demand forecasting, and customer intelligence.", span: "lg:col-span-3" },
-    { title: "Education & Learning", tagline: "AI tutors, learning analytics, and personalized education systems.", span: "lg:col-span-4" },
-    { title: "Smart Cities & IoT", tagline: "Connected infrastructure, monitoring systems, and urban intelligence.", span: "lg:col-span-4" },
+    { title: "Education & EdTech", tagline: "AI tutors, learning analytics, and personalized education systems.", span: "lg:col-span-4" },
+    { title: "Government, Smart Cities & Public Infrastructure", tagline: "Connected infrastructure, monitoring systems, and urban intelligence.", span: "lg:col-span-4" },
     { title: "Logistics & Supply Chain", tagline: "Predictive movement, routing, tracking, and operational visibility.", span: "lg:col-span-4" },
-    { title: "Startups & Digital Businesses", tagline: "AI-first product development and scalable digital platforms.", span: "lg:col-span-4" },
-    { title: "Enterprise Operations", tagline: "Workflow automation, reporting systems, and intelligent productivity.", span: "lg:col-span-4" },
-    { title: "Consumer Technology", tagline: "Smart devices, AI apps, personal tools, and connected experiences.", span: "lg:col-span-4" }
+    { title: "Cybersecurity", tagline: "Threat detection, autonomous response, and digital perimeter defense.", span: "lg:col-span-4" },
+    { title: "Telecommunications", tagline: "Network optimization, predictive maintenance, and intelligent routing.", span: "lg:col-span-4" },
+    { title: "Energy & Utilities", tagline: "Smart grid management, consumption forecasting, and resource optimization.", span: "lg:col-span-4" }
   ];
 
   return (

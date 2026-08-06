@@ -8,11 +8,11 @@ export default function IntelligentIndustries() {
       bulletColor: "bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.6)]",
       underlineColor: "bg-blue-500",
       items: [
-        "Banking, Financial Services & Insurance",
+        "Banking & Financial Services",
+        "Insurance",
         "Retail & E-Commerce",
-        "Legal & Professional Services",
-        "Human Resources & Workforce Management",
-        "Hospitality & Travel"
+        "Legal Services",
+        "Human Resources & Talent Management"
       ]
     },
     {
@@ -21,11 +21,11 @@ export default function IntelligentIndustries() {
       bulletColor: "bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]",
       underlineColor: "bg-emerald-500",
       items: [
-        "Manufacturing & Industry 4.0",
+        "Manufacturing",
         "Logistics & Supply Chain",
         "Energy & Utilities",
-        "Smart Cities & Infrastructure",
-        "Telecommunications"
+        "Telecommunications",
+        "Government, Smart Cities & Public Infrastructure"
       ]
     },
     {
@@ -36,9 +36,9 @@ export default function IntelligentIndustries() {
       items: [
         "Healthcare & Life Sciences",
         "Pharmaceuticals & Biotechnology",
-        "Aerospace & Defense",
+        "Cybersecurity",
         "Automotive & Mobility",
-        "Agriculture & Smart Farming"
+        "Agriculture"
       ]
     },
     {
@@ -49,8 +49,8 @@ export default function IntelligentIndustries() {
       items: [
         "Government & Public Sector",
         "Education & EdTech",
-        "Media & Entertainment",
-        "Startups, Scale-ups & Technology Companies",
+        "Media, Entertainment & Marketing",
+        "Travel, Tourism & Hospitality",
         "Real Estate & Construction"
       ]
     }
