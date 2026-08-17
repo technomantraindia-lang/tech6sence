@@ -76,7 +76,7 @@ export default function ProductInnovationShowcase() {
       {/* Background Soft Grids */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(37,99,235,0.005)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.005)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
-      <div className="mx-auto max-w-[85rem] px-6 relative z-10">
+      <div className="mx-auto max-w-[1400px] px-6 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">

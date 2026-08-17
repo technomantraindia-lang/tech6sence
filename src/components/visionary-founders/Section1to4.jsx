@@ -4,8 +4,8 @@ export function ProgramPromise() {
   return (
     <section className="py-20 md:py-28 bg-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10 text-center">
-        <span className="font-mono text-xs font-bold text-violet-600 uppercase tracking-widest mb-4 block">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10 text-center">
+        <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
           Program Promise
         </span>
         <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 font-display">
@@ -25,8 +25,8 @@ export function ProgramPromise() {
             "End-to-end support until revenue generation",
             "Global expansion pathways included"
           ].map((item, i) => (
-            <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-violet-50 border border-violet-100">
-              <svg className="w-6 h-6 text-violet-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-[#1746D2]/10 border border-[#1746D2]/20">
+              <svg className="w-6 h-6 text-[#1746D2] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
               <span className="text-slate-700 font-medium">{item}</span>
@@ -40,23 +40,26 @@ export function ProgramPromise() {
 
 export function ProblemWeSolve() {
   return (
-    <section className="py-20 md:py-28 bg-slate-900 text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-violet-900/40 to-slate-900 z-0"></div>
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+    <section className="py-20 md:py-28 bg-slate-50 border-t border-slate-200/80 text-slate-900 relative overflow-hidden">
+      {/* Ambient background glows */}
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] rounded-full bg-gradient-to-br from-blue-100/40 to-transparent blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-gradient-to-tl from-emerald-100/40 to-transparent blur-[100px] pointer-events-none" />
+
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div>
-            <span className="font-mono text-xs font-bold text-violet-400 uppercase tracking-widest mb-4 block">
+            <span className="font-mono text-xs font-extrabold text-[#1746D2] uppercase tracking-[0.25em] mb-4 block">
               THE BIG PROBLEM
             </span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 font-display">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 font-display tracking-tight leading-tight">
               The Hard Truth About Tech Startups
             </h2>
-            <p className="text-slate-300 leading-relaxed mb-6 font-medium">
+            <p className="text-slate-600 text-base leading-relaxed mb-6 font-medium">
               Building a successful AI or Tech company requires wearing a hundred different hats. You need elite developers, cross-border legal frameworks, aggressive marketing, institutional funding, and a world-class CTO. Finding these independently takes years and costs millions in trial and error.
             </p>
-            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm mt-8">
-              <h3 className="text-xl font-bold text-violet-300 mb-4 font-display">Why Most AI Start-ups Never Scale</h3>
-              <p className="text-sm text-slate-300 leading-relaxed font-medium">
+            <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm mt-8">
+              <h3 className="text-xl font-bold text-[#1746D2] mb-3 font-display">Why Most AI Start-ups Never Scale</h3>
+              <p className="text-sm text-slate-600 leading-relaxed font-medium">
                 Many founders possess excellent ideas but struggle to build sustainable companies because they lack one or more critical components:
               </p>
             </div>
@@ -74,17 +77,20 @@ export function ProblemWeSolve() {
                 "Access to specialized talent",
                 "Scalable delivery frameworks"
               ].map((problem, i) => (
-                <div key={i} className="flex items-center gap-3 p-4 rounded-xl border border-slate-700/50 bg-slate-850/50 hover:bg-slate-800 hover:border-violet-500/50 transition-all duration-300">
-                  <div className="w-8 h-8 rounded-full bg-slate-750 flex items-center justify-center shrink-0 border border-slate-700">
-                    <svg className="w-4 h-4 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                <div 
+                  key={i} 
+                  className="flex items-center gap-3 p-4 rounded-xl border border-slate-200/80 bg-white shadow-sm hover:border-[#1746D2]/40 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-300"
+                >
+                  <div className="w-8 h-8 rounded-full bg-rose-50 border border-rose-100 flex items-center justify-center shrink-0">
+                    <svg className="w-4 h-4 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </div>
-                  <span className="text-slate-200 text-xs sm:text-sm font-medium">{problem}</span>
+                  <span className="text-slate-800 text-xs sm:text-sm font-bold">{problem}</span>
                 </div>
               ))}
             </div>
-            <p className="text-violet-300 text-sm italic font-semibold pl-2">
+            <p className="text-[#1746D2] text-sm md:text-base italic font-semibold leading-relaxed pl-2 mt-2">
               The Visionary Founders addresses these areas through an integrated combination of education, mentorship, and business support.
             </p>
           </div>
@@ -104,7 +110,7 @@ export function StatsSection() {
 
   return (
     <section className="py-16 bg-blue-700 border-y border-blue-800 relative z-20 shadow-xl">
-      <div className="max-w-[85rem] mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 divide-x divide-blue-500/50">
           {stats.map((stat, i) => (
             <div key={i} className="text-center px-4">
@@ -125,7 +131,7 @@ export function StatsSection() {
 export function RealityVsSolution() {
   return (
     <section className="py-20 md:py-28 bg-slate-50 relative">
-      <div className="max-w-[85rem] mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
           <div className="p-8 md:p-12 rounded-[2rem] bg-white border border-slate-200 shadow-sm relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full opacity-70 transition-transform group-hover:scale-110"></div>

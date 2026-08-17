@@ -1,51 +1,229 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 const STORIES = [
   {
-    tagline: 'Smarter operations',
-    title: 'Intelligent Business Automation',
-    problem: 'Manual workflows slow down teams and create operational gaps.',
-    approach: 'AI agents, automation pipelines, and decision-support systems help teams execute repetitive tasks faster and more intelligently.',
-    impact: 'Improved productivity, reduced manual effort, and smarter business operations.',
+    id: 1,
+    suit: '♠',
+    suitColor: 'text-[#1746D2]',
+    tagline: 'Healthcare & Life Sciences — USA',
+    title: 'AI Clinical Intelligence Platform',
+    client: 'Dr. Michael Anderson',
+    role: 'Chief Medical Officer',
+    location: 'USA',
+    quote: 'TECH6SENSE AI successfully delivered our AI-powered clinical intelligence platform that streamlined patient data analysis and automated medical documentation. Their team’s expertise in Generative AI and healthcare workflows helped us significantly improve operational efficiency while maintaining enterprise-grade security. They are a trusted long-term technology partner.',
+    accent: '#1746D2',
   },
   {
-    tagline: 'From concept to MVP',
-    title: 'AI Product Prototype',
-    problem: 'Founders and businesses often have AI product ideas but lack the right technical direction.',
-    approach: 'TECH6SENSE AI helps shape concepts into AI MVPs using product strategy, model planning, interface design, and scalable development architecture.',
-    impact: 'Clearer product direction, faster prototype development, and stronger investor or client presentation.',
+    id: 2,
+    suit: '♥',
+    suitColor: 'text-[#00A86B]',
+    tagline: 'Banking & Financial Services — USA',
+    title: 'AI Banking Copilot & Compliance Automation',
+    client: 'Jennifer Collins',
+    role: 'VP – Digital Transformation',
+    location: 'USA',
+    quote: 'The AI Banking Copilot developed by TECH6SENSE AI transformed our customer service, automated compliance workflows, and accelerated financial document processing. Their technical excellence and project management exceeded every expectation.',
+    accent: '#00A86B',
   },
   {
-    tagline: 'Visual intelligence',
-    title: 'Computer Vision Workflow',
-    problem: 'Industries need faster and more accurate visual inspection, monitoring, and detection systems.',
-    approach: 'Computer vision models analyze images, video, patterns, and objects to support real-world monitoring and automation.',
-    impact: 'Better visibility, improved quality checks, and intelligent monitoring workflows.',
+    id: 3,
+    suit: '♦',
+    suitColor: 'text-[#D4AF37]',
+    tagline: 'Manufacturing — United Kingdom',
+    title: 'Predictive Maintenance & AI Quality Inspection',
+    client: 'James Richardson',
+    role: 'Operations Director',
+    location: 'UK',
+    quote: 'TECH6SENSE AI built a predictive maintenance and AI quality inspection platform that dramatically improved production efficiency while reducing equipment downtime. Their engineers demonstrated exceptional professionalism throughout the engagement.',
+    accent: '#D4AF37',
   },
   {
-    tagline: 'Business ecosystem support',
-    title: 'Founder-to-Company Journey',
-    problem: 'New founders need support beyond technology to build a complete AI or IT business.',
-    approach: 'Visionary Founders support helps entrepreneurs with company setup guidance, branding, technology team planning, CTO direction, and growth strategy.',
-    impact: 'A stronger launch foundation, better execution clarity, and access to an AI-focused business ecosystem.',
+    id: 4,
+    suit: '♣',
+    suitColor: 'text-[#1746D2]',
+    tagline: 'Retail & E-Commerce — Canada',
+    title: 'AI Recommendation Engine & Customer Analytics',
+    client: 'Sarah Mitchell',
+    role: 'Chief Digital Officer',
+    location: 'Canada',
+    quote: 'Our AI recommendation engine and intelligent customer analytics platform delivered measurable improvements in customer engagement and sales performance. TECH6SENSE AI provided outstanding technical expertise from planning through deployment.',
+    accent: '#1746D2',
   },
-];
-
-const OUTCOMES = [
-  { text: 'Faster decision-making', desc: 'Real-time telemetry' },
-  { text: 'Reduced manual workflows', desc: 'Up to 70% automated pipelines' },
-  { text: 'Scalable AI architecture', desc: 'Built for enterprise volume' },
-  { text: 'Product-ready intelligence', desc: 'Production-ready code' },
+  {
+    id: 5,
+    suit: '♠',
+    suitColor: 'text-[#00A86B]',
+    tagline: 'Logistics & Supply Chain — Australia',
+    title: 'AI Logistics Optimization & Fleet Analytics',
+    client: 'Daniel Carter',
+    role: 'Head of Supply Chain',
+    location: 'Australia',
+    quote: 'The AI-powered logistics optimization platform significantly improved fleet efficiency, delivery planning, and warehouse operations. TECH6SENSE AI delivered a scalable enterprise solution that created immediate business value.',
+    accent: '#00A86B',
+  },
+  {
+    id: 6,
+    suit: '♥',
+    suitColor: 'text-[#D4AF37]',
+    tagline: 'Education & EdTech — India',
+    title: 'Personalized AI Tutors & Learning Analytics',
+    client: 'Ronak Shah',
+    role: 'Founder & CEO',
+    location: 'India',
+    quote: 'TECH6SENSE AI transformed our digital learning platform with personalized AI tutors, intelligent assessments, and automated content generation. Their innovation and commitment to quality have been outstanding.',
+    accent: '#D4AF37',
+  },
+  {
+    id: 7,
+    suit: '♦',
+    suitColor: 'text-[#1746D2]',
+    tagline: 'Insurance — USA',
+    title: 'AI Claims Automation & Risk Analytics',
+    client: 'Robert Williams',
+    role: 'Chief Technology Officer',
+    location: 'USA',
+    quote: 'Our AI claims automation platform reduced processing times and improved customer satisfaction. TECH6SENSE AI combined deep AI expertise with excellent communication and execution.',
+    accent: '#1746D2',
+  },
+  {
+    id: 8,
+    suit: '♣',
+    suitColor: 'text-[#00A86B]',
+    tagline: 'Real Estate & Construction — UAE',
+    title: 'Intelligent Property Management & Analytics',
+    client: 'Ahmed Al Mansoori',
+    role: 'Managing Director',
+    location: 'UAE',
+    quote: 'The intelligent property management solution modernized our operations through AI-driven analytics and automation. TECH6SENSE AI delivered a world-class enterprise platform tailored to our business.',
+    accent: '#00A86B',
+  },
+  {
+    id: 9,
+    suit: '♠',
+    suitColor: 'text-[#D4AF37]',
+    tagline: 'Agriculture — India',
+    title: 'AI Agriculture & Crop Monitoring Platform',
+    client: 'Parag Sharma',
+    role: 'Director',
+    location: 'India',
+    quote: 'The AI agriculture platform provided actionable insights for crop monitoring, irrigation planning, and predictive analytics. TECH6SENSE AI delivered an innovative solution that exceeded our expectations.',
+    accent: '#D4AF37',
+  },
+  {
+    id: 10,
+    suit: '♥',
+    suitColor: 'text-[#1746D2]',
+    tagline: 'Energy & Utilities — Australia',
+    title: 'Smart Energy & Predictive Maintenance Platform',
+    client: 'Olivia Thompson',
+    role: 'Engineering Director',
+    location: 'Australia',
+    quote: 'The predictive maintenance and smart energy analytics platform improved operational efficiency and infrastructure reliability. TECH6SENSE AI demonstrated exceptional technical capabilities.',
+    accent: '#1746D2',
+  },
+  {
+    id: 11,
+    suit: '♦',
+    suitColor: 'text-[#00A86B]',
+    tagline: 'Telecommunications — Hong Kong',
+    title: 'Intelligent Network Monitoring & Issue Detection',
+    client: 'Kevin Wong',
+    role: 'CTO',
+    location: 'Hong Kong',
+    quote: 'TECH6SENSE AI developed an intelligent network monitoring platform that improved service reliability and automated issue detection. Their AI expertise is truly impressive.',
+    accent: '#00A86B',
+  },
+  {
+    id: 12,
+    suit: '♣',
+    suitColor: 'text-[#D4AF37]',
+    tagline: 'Automotive & Mobility — Germany (EU)',
+    title: 'Manufacturing Analytics & Predictive Operations',
+    client: 'Lukas Schneider',
+    role: 'Innovation Director',
+    location: 'Germany',
+    quote: 'Their AI-driven manufacturing analytics and predictive maintenance platform accelerated our digital transformation journey. We highly recommend TECH6SENSE AI for enterprise AI initiatives.',
+    accent: '#D4AF37',
+  },
+  {
+    id: 13,
+    suit: '♠',
+    suitColor: 'text-[#1746D2]',
+    tagline: 'Pharma & Biotechnology — Singapore',
+    title: 'AI Research Automation & Lab Intelligence',
+    client: 'Dr. Wei Tan',
+    role: 'Head of Innovation',
+    location: 'Singapore',
+    quote: 'TECH6SENSE AI successfully implemented AI-powered research automation and laboratory intelligence solutions that significantly improved our research productivity.',
+    accent: '#1746D2',
+  },
+  {
+    id: 14,
+    suit: '♥',
+    suitColor: 'text-[#00A86B]',
+    tagline: 'Travel & Hospitality — UAE',
+    title: 'AI Concierge & Multilingual Guest Assistant',
+    client: 'Fatima Al Nuaimi',
+    role: 'COO',
+    location: 'UAE',
+    quote: 'Our AI concierge platform and multilingual customer assistant enhanced guest experiences while streamlining hotel operations. TECH6SENSE AI delivered exceptional results.',
+    accent: '#00A86B',
+  },
+  {
+    id: 15,
+    suit: '♦',
+    suitColor: 'text-[#D4AF37]',
+    tagline: 'Media & Marketing — United Kingdom',
+    title: 'Generative AI Content & Media Studio',
+    client: 'Emma Roberts',
+    role: 'Creative Director',
+    location: 'UK',
+    quote: 'Generative AI solutions developed by TECH6SENSE AI revolutionized our content production workflow and dramatically improved creative productivity.',
+    accent: '#D4AF37',
+  },
+  {
+    id: 16,
+    suit: '♣',
+    suitColor: 'text-[#1746D2]',
+    tagline: 'Legal Services — Canada',
+    title: 'AI Legal Research Assistant & Document Review',
+    client: 'David Morgan',
+    role: 'Managing Partner',
+    location: 'Canada',
+    quote: 'The AI legal research assistant reduced document review time and improved accuracy across our legal operations. TECH6SENSE AI consistently delivered outstanding work.',
+    accent: '#1746D2',
+  },
+  {
+    id: 17,
+    suit: '♠',
+    suitColor: 'text-[#00A86B]',
+    tagline: 'Human Resources & Talent — Singapore',
+    title: 'AI Recruitment & Talent Matching Platform',
+    client: 'Grace Lim',
+    role: 'HR Director',
+    location: 'Singapore',
+    quote: 'The AI recruitment platform accelerated hiring, improved candidate matching, and automated repetitive HR tasks. TECH6SENSE AI became a trusted strategic technology partner.',
+    accent: '#00A86B',
+  },
+  {
+    id: 18,
+    suit: '♥',
+    suitColor: 'text-[#D4AF37]',
+    tagline: 'Cybersecurity — USA',
+    title: 'AI Threat Detection & Incident Response',
+    client: 'Christopher Evans',
+    role: 'Chief Information Security Officer',
+    location: 'USA',
+    quote: 'TECH6SENSE AI delivered an AI-powered cybersecurity platform that enhanced threat detection, automated incident response, and strengthened our security operations.',
+    accent: '#D4AF37',
+  },
 ];
 
 export default function InnovationStories() {
   const sectionRef = useRef(null);
-  const gridRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [activeStory, setActiveStory] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const [gridHovered, setGridHovered] = useState(false);
-  const [gridMousePos, setGridMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -61,323 +239,199 @@ export default function InnovationStories() {
     return () => observer.disconnect();
   }, []);
 
-  // Auto-advance logic: rotates cases every 3 seconds, resets when activeStory changes, pauses on hover
+  const handleNext = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % STORIES.length);
+  }, []);
+
+  const handlePrev = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + STORIES.length) % STORIES.length);
+  }, []);
+
+  // Auto-slide every 4 seconds unless hovered
   useEffect(() => {
     if (isPaused || !isVisible) return;
     const interval = setInterval(() => {
-      setActiveStory((prev) => (prev + 1) % STORIES.length);
-    }, 3000);
+      handleNext();
+    }, 4000);
     return () => clearInterval(interval);
-  }, [isVisible, isPaused, activeStory]);
-
-  const handleGridMouseMove = (e) => {
-    if (!gridRef.current) return;
-    const rect = gridRef.current.getBoundingClientRect();
-    setGridMousePos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
-  };
+  }, [isVisible, isPaused, handleNext]);
 
   return (
     <section
       ref={sectionRef}
-      id="innovation-stories"
-      className="relative w-full py-16 md:py-20 overflow-hidden border-b border-slate-100/80 bg-white"
-      style={{
-        background: 'linear-gradient(180deg, #FCFCFD 0%, #FEFEFE 50%, #FCFCFD 100%)',
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(35px)',
-        transition: 'all 1s cubic-bezier(0.16, 1, 0.3, 1)',
-      }}
+      id="testimonials"
+      className="relative w-full py-20 md:py-28 overflow-hidden bg-[#FAFAFA] border-t border-slate-200/80"
     >
-      {/* Background Style Injection */}
-      <style dangerouslySetInnerHTML={{ __html: `
-        .bg-grid-subtle {
-          background-size: 50px 50px;
-          background-image: 
-            linear-gradient(to right, rgba(139, 92, 246, 0.015) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(139, 92, 246, 0.015) 1px, transparent 1px);
-        }
-        @keyframes story-fade-in {
-          from { opacity: 0; transform: translateY(12px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .story-fade-in {
-          animation: story-fade-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        @keyframes active-line-grow {
-          0% { height: 0%; }
-          100% { height: 60%; }
-        }
-        .active-line-grow {
-          animation: active-line-grow 3s linear forwards;
-        }
-        .active-line-grow.paused {
-          animation-play-state: paused;
-        }
-        @keyframes float-slow-0 {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-5px) rotate(0.5deg); }
-        }
-        @keyframes float-slow-1 {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-7px) rotate(-0.5deg); }
-        }
-        @keyframes float-slow-2 {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-4px) rotate(0.3deg); }
-        }
-        @keyframes float-slow-3 {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-6px) rotate(-0.3deg); }
-        }
-        .animate-float-0 { animation: float-slow-0 5s ease-in-out infinite; }
-        .animate-float-1 { animation: float-slow-1 6s ease-in-out infinite; }
-        .animate-float-2 { animation: float-slow-2 4.8s ease-in-out infinite; }
-        .animate-float-3 { animation: float-slow-3 5.5s ease-in-out infinite; }
-      `}} />
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-gradient-to-tr from-blue-100/50 via-emerald-100/30 to-transparent blur-[140px] pointer-events-none" />
 
-      {/* Subtle Grid Background */}
-      <div className="absolute inset-0 bg-grid-subtle pointer-events-none opacity-80" />
-
-      {/* Subtle Corner Ambient Glows */}
-      <div className="absolute top-[20%] right-[-10%] w-[350px] h-[350px] rounded-full bg-gradient-to-br from-blue-50/50 to-transparent blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[10%] left-[-8%] w-[400px] h-[400px] rounded-full bg-gradient-to-br from-emerald-50/30 to-transparent blur-[120px] pointer-events-none" />
-
-      <div className="relative z-10 mx-auto max-w-[85rem] px-6">
-        {/* Top Heading Area */}
-        <div className="mb-14 md:mb-20 max-w-3xl">
-          <div className="mb-5 flex items-center gap-3">
-            <span className="h-[2px] w-10 bg-gradient-to-r from-blue-500 to-emerald-500" />
-            <span className="font-mono text-[0.65rem] font-bold tracking-[0.35em] uppercase text-blue-600">
-              Innovation Stories
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6">
+        {/* Header (Centered) */}
+        <div 
+          className={`flex flex-col items-center text-center max-w-3xl mx-auto mb-14 md:mb-20 transition-all duration-1000 ease-out ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <span className="h-[2px] w-10 bg-gradient-to-r from-[#1746D2] to-[#00A86B]" />
+            <span className="font-mono text-xs font-extrabold tracking-[0.25em] uppercase text-[#1746D2]">
+              CLIENT TESTIMONIALS
             </span>
+            <span className="h-[2px] w-10 bg-gradient-to-r from-[#00A86B] to-[#1746D2]" />
           </div>
-          <h2 className="mb-5 font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.08] font-extrabold text-slate-900 tracking-[-0.03em]">
-            From Ideas to{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-emerald-500 to-blue-600 font-extrabold">
-              Intelligent AI Outcomes
+
+          <h2 className="font-display text-[clamp(2.1rem,4.2vw,3.4rem)] leading-[1.12] font-extrabold text-slate-900 tracking-tight mb-4">
+            Trusted by Leaders Across{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1746D2] via-[#00A86B] to-[#1746D2]">
+              Global Markets.
             </span>
           </h2>
-          <p className="font-body text-[1rem] md:text-[1.05rem] leading-[1.75] text-slate-500 font-medium max-w-2xl">
-            Explore how TECH6SENSE AI applies intelligent automation, product engineering, and deep-tech thinking to solve real business and innovation challenges.
+
+          <p className="font-body text-[0.98rem] md:text-[1.05rem] text-slate-600 font-medium leading-relaxed max-w-2xl">
+            Real enterprise clients, real business results, and AI engineering excellence delivered worldwide.
           </p>
         </div>
 
-        {/* Case Study Board Layout */}
-        <div className="grid lg:grid-cols-[1.1fr_2fr_1fr] gap-8 md:gap-10 xl:gap-12 items-stretch">
-          
-          {/* LEFT ZONE: Slim Story Selector */}
-          <div className="lg:border-r lg:border-slate-100/80 lg:pr-6 xl:pr-8 flex flex-col justify-start">
-            {/* Mobile / Tablet Horizontal Scroll pills */}
-            <div className="flex lg:hidden overflow-x-auto pb-4 gap-3 scrollbar-none -mx-6 px-6">
-              {STORIES.map((story, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActiveStory(i)}
-                  className={`flex-none px-5 py-2.5 rounded-full border font-display text-[0.82rem] font-semibold tracking-tight transition-all duration-300 ${
-                    activeStory === i
-                      ? 'bg-gradient-to-r from-blue-600 to-emerald-500 text-white border-transparent shadow-sm shadow-blue-500/10'
-                      : 'bg-white text-slate-500 border-slate-100 hover:border-blue-250 hover:text-slate-750'
+        {/* 3D PLAYING CARD HAND-FAN SLIDER */}
+        <div 
+          className="relative w-full max-w-5xl mx-auto min-h-[460px] md:min-h-[500px] flex items-center justify-center py-6"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          {/* Card Container */}
+          <div className="relative w-full max-w-[580px] h-[400px] md:h-[440px] flex items-center justify-center">
+            {STORIES.map((story, index) => {
+              // Calculate offset relative to active index (-2, -1, 0, 1, 2)
+              let offset = index - currentIndex;
+              const total = STORIES.length;
+
+              // Handle wrap-around math for smooth infinite hand-fan loop
+              if (offset > total / 2) offset -= total;
+              if (offset < -total / 2) offset += total;
+
+              const isActive = offset === 0;
+              const isVisibleCard = Math.abs(offset) <= 2;
+
+              if (!isVisibleCard) return null;
+
+              // Transform calculations for Hand-Fan playing card effect
+              const translateX = offset * 110; // Horizontal shift
+              const rotate = offset * 8; // Fan rotation angle
+              const scale = isActive ? 1.05 : 0.9 - Math.abs(offset) * 0.05;
+              const opacity = isActive ? 1 : 0.42 - Math.abs(offset) * 0.08;
+              const zIndex = 30 - Math.abs(offset) * 5;
+
+              return (
+                <div
+                  key={story.id}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`absolute top-0 w-full rounded-[2.2rem] p-7 md:p-9 border transition-all duration-700 cubic-bezier(0.16,1,0.3,1) cursor-pointer select-none bg-white ${
+                    isActive
+                      ? 'border-[#1746D2]/40 shadow-[6px_6px_0px_0px_rgba(23,70,210,0.4)] ring-2 ring-[#1746D2]/20'
+                      : 'border-slate-200/80 shadow-[4px_4px_0px_0px_rgba(23,70,210,0.15)] hover:opacity-75'
                   }`}
+                  style={{
+                    transform: `translateX(${translateX}px) rotate(${rotate}deg) scale(${scale})`,
+                    opacity: opacity,
+                    zIndex: zIndex,
+                    transformOrigin: 'bottom center',
+                    filter: isActive ? 'none' : 'brightness(0.94)',
+                  }}
                 >
-                  {story.title}
-                </button>
-              ))}
-            </div>
-
-            {/* Desktop Vertical Selector list */}
-            <div className="hidden lg:flex flex-col gap-3">
-              {STORIES.map((story, i) => {
-                const isActive = activeStory === i;
-                return (
-                  <button
-                    key={i}
-                    onClick={() => setActiveStory(i)}
-                    className={`group relative text-left p-5 rounded-2xl transition-all duration-300 border ${
-                      isActive
-                        ? 'bg-white border-slate-100 shadow-sm shadow-slate-100/50'
-                        : 'bg-transparent border-transparent hover:bg-blue-50/20 hover:border-blue-50/30'
-                    }`}
-                    style={{
-                      opacity: isVisible ? 1 : 0,
-                      transform: isVisible ? 'translateY(0)' : 'translateY(15px)',
-                      transition: 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
-                      transitionDelay: `${i * 120}ms`
-                    }}
-                  >
-                    {/* Active State progress line indicator */}
-                    {isActive && (
-                      <div 
-                        className={`absolute left-0 top-1/2 -translate-y-1/2 w-[3.5px] rounded-r bg-gradient-to-b from-blue-550 to-emerald-500 active-line-grow ${
-                          isPaused ? 'paused' : ''
-                        }`} 
-                      />
-                    )}
-
-                    <div className={`transition-transform duration-300 ${isActive ? 'translate-x-1.5' : 'group-hover:translate-x-1'}`}>
-                      <span className={`block font-mono text-[0.68rem] font-bold tracking-wider mb-1 ${
-                        isActive ? 'text-blue-600' : 'text-slate-400'
-                      }`}>
-                        USE CASE 0{i + 1}
+                  {/* Playing Card Top Bar: Rank & Suit */}
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-5">
+                    <div className="flex items-center gap-2">
+                      <span className={`font-mono text-xl font-extrabold ${story.suitColor}`}>
+                        {story.suit}
                       </span>
-                      <h4 className={`font-display text-[1rem] font-extrabold tracking-tight mb-1.5 transition-colors duration-300 ${
-                        isActive ? 'text-slate-900' : 'text-slate-500 group-hover:text-slate-800'
-                      }`}>
-                        {story.title}
-                      </h4>
-                      <p className={`font-body text-[0.78rem] font-semibold transition-colors duration-300 ${
-                        isActive ? 'text-slate-400' : 'text-slate-400/70 group-hover:text-slate-400'
-                      }`}>
-                        {story.tagline}
-                      </p>
+                      <span className="font-mono text-xs font-bold uppercase tracking-widest text-slate-400">
+                        CARD {story.id.toString().padStart(2, '0')} / {STORIES.length.toString().padStart(2, '0')}
+                      </span>
                     </div>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
 
-          <div 
-            className="relative flex flex-col"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
-              transition: 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
-              transitionDelay: '400ms'
-            }}
+                    <div className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-mono text-[0.72rem] font-extrabold uppercase tracking-wider">
+                      {story.location}
+                    </div>
+                  </div>
+
+                  {/* Category Tagline */}
+                  <div className="font-mono text-[0.7rem] md:text-xs font-bold uppercase tracking-wider text-[#1746D2] mb-2">
+                    {story.tagline}
+                  </div>
+
+                  {/* Story Title */}
+                  <h3 className="font-display text-[1.15rem] md:text-[1.35rem] font-bold text-slate-900 leading-snug mb-4">
+                    {story.title}
+                  </h3>
+
+                  {/* Quote */}
+                  <blockquote className="font-body text-[0.86rem] md:text-[0.92rem] text-slate-600 italic font-medium leading-relaxed mb-6 line-clamp-4">
+                    "{story.quote}"
+                  </blockquote>
+
+                  {/* Client Info */}
+                  <div className="flex items-center justify-between border-t border-slate-100 pt-4 mt-auto">
+                    <div>
+                      <div className="font-display text-sm font-extrabold text-slate-900">
+                        {story.client}
+                      </div>
+                      <div className="font-body text-xs text-slate-500 font-semibold">
+                        {story.role}
+                      </div>
+                    </div>
+
+                    {/* Bottom Suit Emblem */}
+                    <div className={`font-mono text-2xl font-black ${story.suitColor} opacity-30`}>
+                      {story.suit}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Navigation & Controls */}
+        <div className="flex items-center justify-center gap-6 mt-8">
+          {/* Previous Button */}
+          <button
+            onClick={handlePrev}
+            aria-label="Previous Testimonial"
+            className="w-12 h-12 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-700 hover:text-[#1746D2] hover:border-[#1746D2]/40 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-300 active:scale-95 cursor-pointer"
           >
-            <div
-              key={activeStory}
-              className="story-fade-in relative flex-1 rounded-[2rem] border border-slate-100/80 bg-white/90 backdrop-blur-sm p-8 md:p-10 xl:p-12 overflow-hidden flex flex-col justify-between"
-              style={{
-                boxShadow: '0 25px 60px -20px rgba(0,0,0,0.03), 0 0 0 1px rgba(255,255,255,0.6) inset',
-              }}
-            >
-              {/* Subtle corner gradient glow within the card */}
-              <div className="absolute top-0 right-0 w-[180px] h-[180px] rounded-full bg-gradient-to-br from-blue-500/[0.03] to-transparent blur-[40px] pointer-events-none" />
+            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" stroke="currentColor" strokeWidth="2.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>
+          </button>
 
-              <div>
-                {/* Story header metadata */}
-                <div className="mb-8 flex items-center gap-3.5">
-                  <span className="font-mono text-[0.72rem] font-bold tracking-[0.2em] text-blue-600 bg-blue-50 px-3 py-1 rounded-md border border-blue-100/50">
-                    Case 0{activeStory + 1}
-                  </span>
-                  <span className="text-slate-300 text-[1.2rem] font-light">/</span>
-                  <span className="font-display text-[0.8rem] font-bold text-slate-400 tracking-tight">
-                    {STORIES[activeStory].tagline}
-                  </span>
-                </div>
-
-                <h3 className="font-display text-[1.5rem] md:text-[1.8rem] lg:text-[2rem] font-extrabold text-slate-900 tracking-tight leading-[1.2] mb-10">
-                  {STORIES[activeStory].title}
-                </h3>
-
-                {/* Editorial Content Breakdown */}
-                <div className="flex flex-col gap-7 md:gap-8 max-w-2xl">
-                  {/* Problem */}
-                  <div className="grid md:grid-cols-[120px_1fr] gap-2 md:gap-6 items-start">
-                    <span className="font-mono text-[0.75rem] font-bold tracking-wider text-slate-400 uppercase pt-1">
-                      Problem
-                    </span>
-                    <p className="font-body text-[0.92rem] leading-[1.65] text-slate-600 font-semibold tracking-tight">
-                      {STORIES[activeStory].problem}
-                    </p>
-                  </div>
-
-                  {/* AI Approach */}
-                  <div className="grid md:grid-cols-[120px_1fr] gap-2 md:gap-6 items-start">
-                    <span className="font-mono text-[0.75rem] font-bold tracking-wider text-slate-400 uppercase pt-1">
-                      AI Approach
-                    </span>
-                    <p className="font-body text-[0.92rem] leading-[1.65] text-slate-600 font-semibold tracking-tight">
-                      {STORIES[activeStory].approach}
-                    </p>
-                  </div>
-
-                  {/* Expected Impact */}
-                  <div className="grid md:grid-cols-[120px_1fr] gap-2 md:gap-6 items-start">
-                    <span className="font-mono text-[0.75rem] font-bold tracking-wider text-slate-400 uppercase pt-1">
-                      Impact
-                    </span>
-                    <p className="font-body text-[0.92rem] leading-[1.65] text-slate-600 font-semibold tracking-tight">
-                      {STORIES[activeStory].impact}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Read Full Story Button/CTA */}
-              <div className="mt-12 pt-8 border-t border-slate-100/80 flex items-center justify-between">
-                <a
-                  href="#contact"
-                  className="group/cta flex items-center gap-3.5 py-3 px-6 rounded-full border border-slate-200/80 bg-white hover:border-blue-300 hover:bg-blue-50/10 shadow-sm transition-all duration-300 font-display text-[0.88rem] font-bold text-slate-800"
-                >
-                  <span>Connect to Implement Use-Case</span>
-                  <svg
-                    viewBox="0 0 20 20"
-                    className="w-4 h-4 text-blue-600 transition-transform duration-300 group-hover/cta:translate-x-1"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h14m-6-6l6 6-6 6" />
-                  </svg>
-                </a>
-
-                <span className="hidden md:inline-block font-mono text-[0.65rem] font-bold text-slate-400 tracking-widest uppercase">
-                  Tech6Sense Sandbox
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* RIGHT ZONE: Outcome Notes Stack */}
-          <div className="flex flex-col gap-4 justify-center md:grid md:grid-cols-2 lg:flex lg:flex-col">
-            <div className="lg:mb-3">
-              <span className="font-mono text-[0.68rem] font-bold tracking-[0.25em] text-slate-400 uppercase block mb-1">
-                OUTCOME LAB
-              </span>
-              <h5 className="font-display text-[0.95rem] font-extrabold text-slate-900 tracking-tight leading-tight">
-                Designed for Performance
-              </h5>
-            </div>
-
-            {OUTCOMES.map((item, i) => (
-              <div
-                key={i}
-                className={`animate-float-${i} relative px-5 py-4 rounded-2xl bg-white/40 border border-slate-100/60 backdrop-blur-sm shadow-sm shadow-slate-100/10 hover:bg-white/80 hover:border-blue-100/80 hover:shadow-md hover:shadow-blue-500/[0.02] transition-all duration-300 cursor-default`}
-                style={{
-                  opacity: isVisible ? 1 : 0,
-                  transform: isVisible ? 'translateY(0)' : 'translateY(15px)',
-                  transition: 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
-                  transitionDelay: `${650 + i * 120}ms`
-                }}
-              >
-                {/* Thin top accent glow */}
-                <div className="absolute top-0 left-6 right-6 h-[1.5px] bg-gradient-to-r from-blue-300 to-emerald-300 opacity-20" />
-
-                <div className="flex items-start gap-3">
-                  {/* Small minimal color bullet */}
-                  <span className="w-1.5 h-1.5 rounded-full mt-2 shrink-0 bg-gradient-to-r from-blue-500 to-emerald-500" />
-                  
-                  <div>
-                    <span className="block font-display text-[0.88rem] font-extrabold text-slate-800 tracking-tight mb-0.5">
-                      {item.text}
-                    </span>
-                    <span className="block font-body text-[0.72rem] font-medium text-slate-400 leading-none">
-                      {item.desc}
-                    </span>
-                  </div>
-                </div>
-              </div>
+          {/* Dots Indicator */}
+          <div className="flex items-center gap-2 max-w-[280px] overflow-x-auto py-2 px-3 custom-scrollbar">
+            {STORIES.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+                className={`h-2.5 rounded-full transition-all duration-500 cursor-pointer ${
+                  currentIndex === idx
+                    ? 'w-8 bg-gradient-to-r from-[#1746D2] to-[#00A86B]'
+                    : 'w-2.5 bg-slate-300 hover:bg-slate-400'
+                }`}
+              />
             ))}
           </div>
 
+          {/* Next Button */}
+          <button
+            onClick={handleNext}
+            aria-label="Next Testimonial"
+            className="w-12 h-12 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-700 hover:text-[#1746D2] hover:border-[#1746D2]/40 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-300 active:scale-95 cursor-pointer"
+          >
+            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" stroke="currentColor" strokeWidth="2.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+          </button>
         </div>
+
       </div>
     </section>
   );

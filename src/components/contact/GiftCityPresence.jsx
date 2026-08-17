@@ -37,13 +37,13 @@ export default function GiftCityPresence() {
 
   return (
     <section ref={sectionRef} className="py-20 lg:py-32 bg-white relative overflow-hidden border-t border-slate-100">
-      <div className="mx-auto max-w-[85rem] px-6">
+      <div className="mx-auto max-w-[1400px] px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
           
           {/* Left Side: Content */}
           <div className={`lg:col-span-5 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
             <div className="inline-flex items-center gap-3 mb-6">
-              <span className="w-8 h-[2px] bg-gradient-to-r from-violet-400 to-fuchsia-400 rounded-full" />
+              <span className="w-8 h-[2px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] rounded-full" />
               <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-slate-500">
                 GLOBAL PRESENCE
               </span>
@@ -63,7 +63,7 @@ export default function GiftCityPresence() {
                   key={i} 
                   className={`flex gap-4 transition-all duration-700 delay-${i * 100} ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 >
-                  <div className="w-1.5 h-1.5 rounded-full bg-violet-500 mt-2 shrink-0" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#1746D2] mt-2 shrink-0" />
                   <div>
                     <h4 className="font-display text-base font-bold text-slate-900 mb-1">{point.title}</h4>
                     <p className="font-body text-sm text-slate-600 leading-relaxed">{point.desc}</p>
@@ -82,7 +82,7 @@ export default function GiftCityPresence() {
               <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+CjxyZWN0IHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0ibm9uZSIvPgo8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIwLjUiIGZpbGw9IiM4YjVjZjYiIGZpbGwtb3BhY2l0eT0iMC4zIi8+Cjwvc3ZnPg==')] opacity-60 rounded-full [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]" />
 
               {/* Connecting Map Lines */}
-              <svg className="absolute inset-0 w-full h-full text-violet-200" viewBox="0 0 600 600">
+              <svg className="absolute inset-0 w-full h-full text-[#1746D2]/40" viewBox="0 0 600 600">
                 {isVisible && (
                   <>
                     <path d="M300,300 Q450,150 550,200" fill="none" stroke="url(#map-grad)" strokeWidth="2" strokeDasharray="4 4" className="animate-[drawLine_2s_ease-out_forwards]" strokeDashoffset="500" />
@@ -100,21 +100,21 @@ export default function GiftCityPresence() {
               </svg>
 
               {/* Rings */}
-              <div className="absolute inset-12 border border-violet-100 rounded-full animate-[spin_60s_linear_infinite]" />
+              <div className="absolute inset-12 border border-[#1746D2]/10 rounded-full animate-[spin_60s_linear_infinite]" />
               <div className="absolute inset-24 border border-fuchsia-50 rounded-full animate-[spin_40s_linear_infinite_reverse]" />
 
               {/* Center Marker (GIFT City) */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 flex items-center justify-center z-30">
-                <div className="absolute inset-0 bg-violet-400 rounded-full blur-xl opacity-40 animate-pulse" />
-                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-violet-600 to-fuchsia-600 flex items-center justify-center shadow-lg border-2 border-white relative z-10">
+                <div className="absolute inset-0 bg-[#1746D2] rounded-full blur-xl opacity-40 animate-pulse" />
+                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#1746D2] to-[#00A86B] flex items-center justify-center shadow-lg border-2 border-white relative z-10">
                   <div className="w-2 h-2 bg-white rounded-full" />
                 </div>
               </div>
 
               {/* Floating Location Card */}
               <div className="absolute top-[35%] right-[25%] bg-white p-3 pr-4 rounded-xl border border-slate-200 shadow-[0_10px_30px_rgba(15,23,42,0.08)] z-40 flex items-center gap-3 animate-float" style={{ animationDelay: '0.5s' }}>
-                <div className="w-8 h-8 rounded-full bg-violet-50 flex items-center justify-center">
-                  <svg className="w-4 h-4 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="w-8 h-8 rounded-full bg-[#1746D2]/10 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-[#1746D2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
@@ -127,17 +127,17 @@ export default function GiftCityPresence() {
 
               {/* Floating Labels */}
               <div className="absolute top-[15%] left-[20%] bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-sm z-30 flex items-center gap-2 animate-float" style={{ animationDelay: '1.2s' }}>
-                <span className="w-1.5 h-1.5 rounded-full bg-fuchsia-500" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00A86B]" />
                 <span className="font-mono text-[0.6rem] font-bold text-slate-700 uppercase tracking-wider">Global AI Vision</span>
               </div>
               
               <div className="absolute bottom-[20%] right-[10%] bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-sm z-30 flex items-center gap-2 animate-float" style={{ animationDelay: '2.1s' }}>
-                <span className="w-1.5 h-1.5 rounded-full bg-violet-500" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#1746D2]" />
                 <span className="font-mono text-[0.6rem] font-bold text-slate-700 uppercase tracking-wider">Innovation Base</span>
               </div>
 
               <div className="absolute bottom-[10%] left-[25%] bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-sm z-30 flex items-center gap-2 animate-float" style={{ animationDelay: '0.8s' }}>
-                <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#1746D2]" />
                 <span className="font-mono text-[0.6rem] font-bold text-slate-700 uppercase tracking-wider">India</span>
               </div>
               

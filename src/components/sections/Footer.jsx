@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import companyLogo from '../../assets/compney logo.png';
+import companyLogo from '../../assets/new logo/TECH6SENSE Main Logo Transparent bg.svg';
 import footerVideo from '../../assets/footer.mp4';
 
 export default function Footer() {

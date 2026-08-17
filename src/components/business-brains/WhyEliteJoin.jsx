@@ -27,7 +27,7 @@ export default function WhyEliteJoin() {
         "Enterprise AI integration"
       ],
       icon: (
-        <svg className="w-7 h-7 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-7 h-7 text-[#1746D2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       )
@@ -55,7 +55,7 @@ export default function WhyEliteJoin() {
       {/* Light Gridlines */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(124,58,237,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.015)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 
@@ -84,7 +84,7 @@ export default function WhyEliteJoin() {
           {pillars.map((pillar, idx) => (
             <div 
               key={idx}
-              className="p-8 md:p-10 rounded-3xl bg-white border border-slate-200 hover:border-cyan-500/40 transition-all duration-500 hover:-translate-y-1 shadow-[0_2px_8px_rgba(15,23,42,0.02)] hover:shadow-lg flex flex-col justify-between group"
+              className="p-8 md:p-10 rounded-3xl bg-white border border-slate-200 hover:border-cyan-500/40 transition-all duration-500 hover:-translate-y-1 shadow-[0_2px_8px_rgba(15,23,42,0.02)] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] flex flex-col justify-between group"
             >
               <div>
                 <div className="flex items-center justify-between mb-8">

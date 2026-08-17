@@ -22,7 +22,7 @@ const PRODUCTS = [
     description: 'Intelligent wearable glasses combining AI assistants, augmented information, real-time translation, computer vision, voice interaction, navigation, recording, and productivity.',
     features: ['Real-time translation HUD', 'Computer vision scene analysis', 'Voice-controlled AR interface'],
     tags: ['AR HUD', 'Realtime Translation', 'Voice AI', 'BLE 5.2'],
-    accent: '#7c3aed',
+    accent: '#1746D2',
     image: imgGlasses,
   },
   {
@@ -32,7 +32,7 @@ const PRODUCTS = [
     description: 'Advanced AI-assisted wearable robotic system enhancing human mobility, rehabilitation, industrial productivity, and defense capabilities.',
     features: ['Active motion assistance', 'Intelligent feedback loops', 'Ergonomic weight distribution'],
     tags: ['Robotics', 'Motion AI', 'Haptic FB', 'Safety+'],
-    accent: '#ec4899',
+    accent: '#D4AF37',
     image: imgExoskeleton,
   },
   {
@@ -62,7 +62,7 @@ const PRODUCTS = [
     description: 'Professional-grade AI fitness tracker providing continuous health analytics, recovery insights, performance optimization, sleep intelligence, and personalized coaching.',
     features: ['Personalized AI coaching', 'Precise sleep phase tracking', 'Continuous vitals detection'],
     tags: ['Coaching', 'Sleep Tracking', 'SpO2', 'Vitals'],
-    accent: '#6366f1',
+    accent: '#1746D2',
     image: imgFitnessBand,
   },
   {
@@ -82,7 +82,7 @@ const PRODUCTS = [
     description: 'Continuous biometric monitoring, secure authentication, contactless experiences, wellness intelligence, and AI-driven lifestyle optimization in a minimal design.',
     features: ['Contactless NFC interactions', 'Minimal size biometric scans', 'Sleep and wellness scoring'],
     tags: ['NFC Pay', 'Biometric', 'Wellness', 'NFC Auth'],
-    accent: '#8b5cf6',
+    accent: '#1746D2',
     image: imgSmartRing,
   },
   {
@@ -250,7 +250,7 @@ export default function DeepTechProducts() {
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
       <div
-        className="mx-auto max-w-[85rem] px-6 transition-all duration-1000 ease-out relative z-10"
+        className="mx-auto max-w-[1400px] px-6 transition-all duration-1000 ease-out relative z-10"
         style={{
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
@@ -360,6 +360,7 @@ export default function DeepTechProducts() {
                     src={product.image}
                     alt={product.title}
                     className="w-full h-auto object-contain max-h-[440px] transition-all duration-700"
+                    style={{ mixBlendMode: 'lighten' }}
                   />
                 </div>
               </div>

@@ -21,7 +21,7 @@ export default function EcosystemFinalCTA() {
     <section ref={sectionRef} className="py-20 lg:py-32 bg-white relative overflow-hidden">
       
       {/* Dynamic Background Glow */}
-      <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-violet-100/40 rounded-full blur-[100px] pointer-events-none transition-all duration-[2000ms] ease-in-out ${
+      <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-[#1746D2]/10/40 rounded-full blur-[100px] pointer-events-none transition-all duration-[2000ms] ease-in-out ${
         isVisible ? 'scale-100 opacity-100' : 'scale-50 opacity-0'
       }`} />
       
@@ -31,18 +31,18 @@ export default function EcosystemFinalCTA() {
       {/* Top Gradient Line Reveal */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-slate-100">
         <div 
-          className="h-full bg-gradient-to-r from-violet-500 to-fuchsia-500 transition-all duration-[2000ms] ease-out origin-left"
+          className="h-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] transition-all duration-[2000ms] ease-out origin-left"
           style={{ transform: isVisible ? 'scaleX(1)' : 'scaleX(0)' }}
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[85rem] px-6 text-center">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6 text-center">
         <div className={`max-w-4xl mx-auto transition-all duration-1000 ease-out ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
         }`}>
           
           <div className="inline-flex items-center gap-3 mb-6">
-            <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-violet-600 bg-white shadow-sm px-5 py-2 rounded-full border border-violet-100">
+            <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-[#1746D2] bg-white shadow-sm px-5 py-2 rounded-full border border-[#1746D2]/10">
               AI ECOSYSTEM
             </span>
           </div>
@@ -56,7 +56,7 @@ export default function EcosystemFinalCTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <Link to="#connect" className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-8 py-3.5 font-body text-sm font-bold text-white shadow-[0_4px_15px_rgba(124,58,237,0.3)] transition-all hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(124,58,237,0.4)]">
+            <Link to="#connect" className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] px-8 py-3.5 font-body text-sm font-bold text-white shadow-[0_4px_15px_rgba(124,58,237,0.3)] transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]">
               <span className="relative z-10 flex items-center gap-2">
                 Connect with TECH6SENSE
                 <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -65,7 +65,7 @@ export default function EcosystemFinalCTA() {
               </span>
             </Link>
             
-            <Link to="#explore" className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border-2 border-slate-200 font-body text-sm font-bold text-slate-700 bg-white hover:border-violet-200 hover:bg-violet-50 hover:text-violet-700 transition-all">
+            <Link to="#explore" className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border-2 border-slate-200 font-body text-sm font-bold text-slate-700 bg-white hover:border-[#1746D2]/40 hover:bg-[#1746D2]/10 hover:text-[#1746D2] transition-all">
               Explore Intelligent Solutions
             </Link>
           </div>

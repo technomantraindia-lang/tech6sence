@@ -29,7 +29,7 @@ export default function BusinessBrainsPromise() {
       {/* Constellation Glow Background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] bg-gradient-to-tr from-cyan-950/20 via-violet-950/20 to-blue-950/20 rounded-full blur-[180px] pointer-events-none" />
 
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         {/* Header Block & Navigation Controls */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
@@ -88,7 +88,7 @@ export default function BusinessBrainsPromise() {
           {promiseItems.map((item, idx) => (
             <div 
               key={idx}
-              className="snap-start shrink-0 w-[300px] sm:w-[340px] md:w-[380px] p-7 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-cyan-400/60 backdrop-blur-md transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.25)] group hover:-translate-y-1.5 flex flex-col justify-between"
+              className="snap-start shrink-0 w-[300px] sm:w-[340px] md:w-[380px] p-7 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-cyan-400/60 backdrop-blur-md transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] group hover:-translate-y-1.5 flex flex-col justify-between"
             >
               <div>
                 {/* Value Tag & Icon Header */}

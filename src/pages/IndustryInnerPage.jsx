@@ -249,7 +249,7 @@ export default function IndustryInnerPage() {
           <div className="text-center">
             <h1 className="text-3xl font-bold text-slate-900 mb-4">Industry Not Found</h1>
             <p className="text-slate-600 mb-8">We couldn't find the deep-dive insights for this industry.</p>
-            <Link to="/industries" className="px-6 py-3 bg-violet-600 text-white font-bold rounded-full hover:bg-violet-700 transition-colors">
+            <Link to="/industries" className="px-6 py-3 bg-[#1746D2] text-white font-bold rounded-full hover:bg-[#1746D2] transition-colors">
               Return to Industries
             </Link>
           </div>
@@ -285,7 +285,7 @@ export default function IndustryInnerPage() {
             </>
           )}
           
-          <div className="relative z-10 max-w-[85rem] mx-auto px-6">
+          <div className="relative z-10 max-w-[1400px] mx-auto px-6">
             <Link to="/industries" className="inline-flex items-center gap-2 text-sm font-semibold text-slate-400 hover:text-white mb-8 transition-colors group">
               <svg className="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -300,7 +300,7 @@ export default function IndustryInnerPage() {
         </div>
 
         {/* Content Layout */}
-        <div className="max-w-[85rem] mx-auto px-6 flex flex-col lg:flex-row gap-12 lg:gap-20 mb-20">
+        <div className="max-w-[1400px] mx-auto px-6 flex flex-col lg:flex-row gap-12 lg:gap-20 mb-20">
           
           {/* Main Document Content */}
           <div className="lg:w-2/3 lg:pr-8">

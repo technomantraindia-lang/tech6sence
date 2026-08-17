@@ -69,7 +69,7 @@ export default function WhatHappensInside() {
       {/* Light Gridlines */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(124,58,237,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.015)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         {/* Header Block & Slider Controls */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
@@ -121,7 +121,7 @@ export default function WhatHappensInside() {
           {items.map((item, idx) => (
             <div 
               key={idx}
-              className="snap-start shrink-0 w-[300px] sm:w-[340px] md:w-[380px] p-7 rounded-3xl bg-white border border-slate-200 hover:border-cyan-500/50 transition-all duration-300 shadow-[0_4px_20px_rgba(15,23,42,0.03)] hover:shadow-xl group hover:-translate-y-1.5 flex flex-col justify-between"
+              className="snap-start shrink-0 w-[300px] sm:w-[340px] md:w-[380px] p-7 rounded-3xl bg-white border border-slate-200 hover:border-cyan-500/50 transition-all duration-300 shadow-[0_4px_20px_rgba(15,23,42,0.03)] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] group hover:-translate-y-1.5 flex flex-col justify-between"
             >
               <div>
                 {/* Header Row */}

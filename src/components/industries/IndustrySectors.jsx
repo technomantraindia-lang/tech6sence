@@ -31,12 +31,12 @@ export default function IndustrySectors() {
 
   return (
     <section ref={sectionRef} className="py-20 lg:py-32 bg-slate-50 border-t border-slate-100">
-      <div className="mx-auto max-w-[85rem] px-6">
+      <div className="mx-auto max-w-[1400px] px-6">
         
         {/* Header */}
         <div className={`max-w-3xl mb-16 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="inline-flex items-center gap-3 mb-6">
-            <span className="w-8 h-[2px] bg-gradient-to-r from-violet-400 to-fuchsia-400 rounded-full" />
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] rounded-full" />
             <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-slate-500">
               INDUSTRY SECTORS
             </span>
@@ -56,20 +56,20 @@ export default function IndustrySectors() {
           {sectors.map((sector, i) => (
             <div 
               key={i} 
-              className={`group relative p-8 bg-white border border-slate-200 rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-[0_8px_30px_rgba(15,23,42,0.06)] hover:border-violet-200 md:col-span-1 ${sector.span} ${
+              className={`group relative p-8 bg-white border border-slate-200 rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:border-[#1746D2]/40 md:col-span-1 ${sector.span} ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
               style={{ transitionDelay: `${200 + (i * 50)}ms` }}
             >
               {/* Hover Accent */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-violet-100 to-fuchsia-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-full pointer-events-none" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#1746D2]/10 to-fuchsia-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-full pointer-events-none" />
               
               <div className="relative z-10 flex flex-col h-full">
-                <div className="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center mb-6 group-hover:bg-violet-50 transition-colors">
-                  <div className="w-3 h-3 rounded-full bg-violet-400 group-hover:scale-125 transition-transform" />
+                <div className="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center mb-6 group-hover:bg-[#1746D2]/10 transition-colors">
+                  <div className="w-3 h-3 rounded-full bg-[#1746D2] group-hover:scale-125 transition-transform" />
                 </div>
                 
-                <h3 className="font-display text-lg font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">
+                <h3 className="font-display text-lg font-bold text-slate-900 mb-3 group-hover:text-[#1746D2] transition-colors">
                   {sector.title}
                 </h3>
                 

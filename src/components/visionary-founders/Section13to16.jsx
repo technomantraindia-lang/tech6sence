@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import companyLogo from '../../assets/new logo/TECH6SENSE Main Logo Transparent bg.svg';
 
 export function ApplicationProcess() {
   const criteria = [
@@ -10,9 +11,9 @@ export function ApplicationProcess() {
 
   return (
     <section className="py-20 md:py-28 bg-white relative">
-      <div className="max-w-[85rem] mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="font-mono text-xs font-bold text-violet-600 uppercase tracking-widest mb-4 block">
+          <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
             Application Process
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 font-display">
@@ -26,7 +27,7 @@ export function ApplicationProcess() {
         <div className="space-y-12 max-w-4xl mx-auto">
           {/* Step 1 */}
           <div className="flex gap-6 items-start">
-            <div className="w-12 h-12 rounded-full bg-violet-600 text-white flex items-center justify-center font-bold font-mono text-lg shrink-0">1</div>
+            <div className="w-12 h-12 rounded-full bg-[#1746D2] text-white flex items-center justify-center font-bold font-mono text-lg shrink-0">1</div>
             <div>
               <h4 className="font-display font-bold text-slate-900 text-lg mb-2">Step 1 — Submit Your Application</h4>
               <p className="text-slate-600 text-sm leading-relaxed">Complete the application form with your idea, target market, industry, and which tier you believe fits — National or Global. This takes most founders 10–15 minutes.</p>
@@ -35,7 +36,7 @@ export function ApplicationProcess() {
 
           {/* Step 2 */}
           <div className="flex gap-6 items-start">
-            <div className="w-12 h-12 rounded-full bg-violet-600 text-white flex items-center justify-center font-bold font-mono text-lg shrink-0">2</div>
+            <div className="w-12 h-12 rounded-full bg-[#1746D2] text-white flex items-center justify-center font-bold font-mono text-lg shrink-0">2</div>
             <div className="w-full">
               <h4 className="font-display font-bold text-slate-900 text-lg mb-2">Step 2 — Application Review</h4>
               <p className="text-slate-600 text-sm leading-relaxed mb-6">Our team reviews every application against four criteria:</p>
@@ -62,7 +63,7 @@ export function ApplicationProcess() {
 
           {/* Step 3 */}
           <div className="flex gap-6 items-start">
-            <div className="w-12 h-12 rounded-full bg-violet-600 text-white flex items-center justify-center font-bold font-mono text-lg shrink-0">3</div>
+            <div className="w-12 h-12 rounded-full bg-[#1746D2] text-white flex items-center justify-center font-bold font-mono text-lg shrink-0">3</div>
             <div>
               <h4 className="font-display font-bold text-slate-900 text-lg mb-2">Step 3 — Founder Strategy Call</h4>
               <p className="text-slate-600 text-sm leading-relaxed">
@@ -79,7 +80,7 @@ export function ApplicationProcess() {
 
           {/* Step 4 */}
           <div className="flex gap-6 items-start">
-            <div className="w-12 h-12 rounded-full bg-violet-600 text-white flex items-center justify-center font-bold font-mono text-lg shrink-0">4</div>
+            <div className="w-12 h-12 rounded-full bg-[#1746D2] text-white flex items-center justify-center font-bold font-mono text-lg shrink-0">4</div>
             <div>
               <h4 className="font-display font-bold text-slate-900 text-lg mb-2">Step 4 — Tier Confirmation & Offer</h4>
               <p className="text-slate-600 text-sm leading-relaxed">
@@ -96,7 +97,7 @@ export function ApplicationProcess() {
 
           {/* Step 5 */}
           <div className="flex gap-6 items-start">
-            <div className="w-12 h-12 rounded-full bg-violet-600 text-white flex items-center justify-center font-bold font-mono text-lg shrink-0">5</div>
+            <div className="w-12 h-12 rounded-full bg-[#1746D2] text-white flex items-center justify-center font-bold font-mono text-lg shrink-0">5</div>
             <div>
               <h4 className="font-display font-bold text-slate-900 text-lg mb-2">Step 5 — Agreement & Onboarding Kickoff</h4>
               <p className="text-slate-600 text-sm leading-relaxed">
@@ -114,7 +115,7 @@ export function ApplicationProcess() {
 
           {/* Step 6 */}
           <div className="flex gap-6 items-start">
-            <div className="w-12 h-12 rounded-full bg-violet-600 text-white flex items-center justify-center font-bold font-mono text-lg shrink-0">6</div>
+            <div className="w-12 h-12 rounded-full bg-[#1746D2] text-white flex items-center justify-center font-bold font-mono text-lg shrink-0">6</div>
             <div>
               <h4 className="font-display font-bold text-slate-900 text-lg mb-2">Step 6 — Build Phase Begins</h4>
               <p className="text-slate-600 text-sm leading-relaxed">Legal registration, branding, website, and product development begin in parallel, coordinated by your Project Manager. You'll receive regular milestone updates rather than a single "check back later" black box.</p>
@@ -123,14 +124,14 @@ export function ApplicationProcess() {
 
           {/* Step 7 */}
           <div className="flex gap-6 items-start">
-            <div className="w-12 h-12 rounded-full bg-violet-600 text-white flex items-center justify-center font-bold font-mono text-lg shrink-0">7</div>
+            <div className="w-12 h-12 rounded-full bg-[#1746D2] text-white flex items-center justify-center font-bold font-mono text-lg shrink-0">7</div>
             <div>
               <h4 className="font-display font-bold text-slate-900 text-lg mb-2">Step 7 — Launch & Client Acquisition</h4>
               <p className="text-slate-600 text-sm leading-relaxed font-medium">Once your company, brand, and product are live, your Client Success Manager and acquisition training take over — supporting you through outreach, pitching, and closing your first clients, with continued support until that milestone is hit.</p>
               
               {/* Timeline Overview Table */}
               <div className="mt-8">
-                <span className="font-mono text-[10px] font-bold text-violet-600 uppercase tracking-widest mb-3 block">
+                <span className="font-mono text-[10px] font-bold text-[#1746D2] uppercase tracking-widest mb-3 block">
                   TIMELINE OVERVIEW
                 </span>
                 <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm bg-white">
@@ -260,7 +261,7 @@ export function FAQSection() {
     <section className="py-20 md:py-28 bg-slate-50 relative">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="font-mono text-xs font-bold text-violet-600 uppercase tracking-widest mb-4 block">
+          <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
             Frequently Asked Questions
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display">
@@ -276,7 +277,7 @@ export function FAQSection() {
                 className="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
               >
                 <span className="font-bold text-slate-900 pr-4 text-sm md:text-base">({i + 1}) {faq.q}</span>
-                <span className={`text-violet-600 transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`}>
+                <span className={`text-[#1746D2] transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`}>
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
                   </svg>
@@ -388,29 +389,29 @@ export function ApplicationForm() {
           {step === 1 && (
             <div className="space-y-6">
               <div className="border-b border-slate-200 pb-4 mb-4">
-                <span className="text-xs font-bold text-violet-600 uppercase tracking-widest block font-mono">Step 1 of 5</span>
+                <span className="text-xs font-bold text-[#1746D2] uppercase tracking-widest block font-mono">Step 1 of 5</span>
                 <h3 className="text-xl font-bold text-slate-900 font-display mt-1">STEP 1 — Your Details</h3>
                 <p className="text-xs text-slate-500 italic mt-1">"Tell us who you are — so an Ecosystem Advisor knows who they're speaking with."</p>
               </div>
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Full Legal Name *</label>
-                <input type="text" name="fullName" value={formData.fullName} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 transition-all outline-none" required />
+                <input type="text" name="fullName" value={formData.fullName} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none" required />
               </div>
               
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Primary Email *</label>
-                <input type="email" name="email" value={formData.email} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 transition-all outline-none" required />
+                <input type="email" name="email" value={formData.email} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none" required />
               </div>
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Phone / WhatsApp *</label>
-                <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 transition-all outline-none" required />
+                <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none" required />
               </div>
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Current country *</label>
-                <input type="text" name="country" value={formData.country} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 transition-all outline-none" required />
+                <input type="text" name="country" value={formData.country} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none" required />
               </div>
             </div>
           )}
@@ -419,14 +420,14 @@ export function ApplicationForm() {
           {step === 2 && (
             <div className="space-y-6">
               <div className="border-b border-slate-200 pb-4 mb-4">
-                <span className="text-xs font-bold text-violet-600 uppercase tracking-widest block font-mono">Step 2 of 5</span>
+                <span className="text-xs font-bold text-[#1746D2] uppercase tracking-widest block font-mono">Step 2 of 5</span>
                 <h3 className="text-xl font-bold text-slate-900 font-display mt-1">STEP 2 — Founder Profile</h3>
                 <p className="text-xs text-slate-500 italic mt-1">"Your founder profile — helps us understand where you're starting from."</p>
               </div>
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">What best describes you? *</label>
-                <select name="describeYou" value={formData.describeYou} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 transition-all outline-none bg-white" required>
+                <select name="describeYou" value={formData.describeYou} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white" required>
                   <option value="">Select option</option>
                   <option value="Aspiring first-time founder">Aspiring first-time founder</option>
                   <option value="Working professional planning to start a company">Working professional planning to start a company</option>
@@ -439,7 +440,7 @@ export function ApplicationForm() {
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Do you have prior business experience? *</label>
-                <select name="priorExperience" value={formData.priorExperience} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 transition-all outline-none bg-white" required>
+                <select name="priorExperience" value={formData.priorExperience} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white" required>
                   <option value="">Select option</option>
                   <option value="Yes, I have run a business before">Yes, I have run a business before</option>
                   <option value="Yes, but not as the primary owner">Yes, but not as the primary owner</option>
@@ -450,7 +451,7 @@ export function ApplicationForm() {
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">What type of company do you want to build? *</label>
-                <select name="companyType" value={formData.companyType} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 transition-all outline-none bg-white" required>
+                <select name="companyType" value={formData.companyType} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white" required>
                   <option value="">Select option</option>
                   <option value="AI Product">AI Product</option>
                   <option value="AI-SaaS Company">AI-SaaS Company</option>
@@ -464,7 +465,7 @@ export function ApplicationForm() {
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Do you already have a business idea? *</label>
-                <select name="ideaStatus" value={formData.ideaStatus} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 transition-all outline-none bg-white" required>
+                <select name="ideaStatus" value={formData.ideaStatus} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white" required>
                   <option value="">Select option</option>
                   <option value="Yes, fully defined">Yes, fully defined</option>
                   <option value="Yes, but still shaping it">Yes, but still shaping it</option>
@@ -479,14 +480,14 @@ export function ApplicationForm() {
           {step === 3 && (
             <div className="space-y-6">
               <div className="border-b border-slate-200 pb-4 mb-4">
-                <span className="text-xs font-bold text-violet-600 uppercase tracking-widest block font-mono">Step 3 of 5</span>
+                <span className="text-xs font-bold text-[#1746D2] uppercase tracking-widest block font-mono">Step 3 of 5</span>
                 <h3 className="text-xl font-bold text-slate-900 font-display mt-1">STEP 3 — Timeline & Goals</h3>
                 <p className="text-xs text-slate-500 italic mt-1">"Your timeline and goals — this shapes how your onboarding is paced."</p>
               </div>
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">When do you want to start your company? *</label>
-                <select name="startTimeline" value={formData.startTimeline} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 transition-all outline-none bg-white" required>
+                <select name="startTimeline" value={formData.startTimeline} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white" required>
                   <option value="">Select option</option>
                   <option value="Immediately">Immediately</option>
                   <option value="Within 1–3 months">Within 1–3 months</option>
@@ -498,7 +499,7 @@ export function ApplicationForm() {
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Are you willing to invest time and resources to build your company seriously? *</label>
-                <select name="commitment" value={formData.commitment} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 transition-all outline-none bg-white" required>
+                <select name="commitment" value={formData.commitment} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white" required>
                   <option value="">Select option</option>
                   <option value="Yes, fully committed">Yes, fully committed</option>
                   <option value="Yes, but part-time initially">Yes, but part-time initially</option>
@@ -509,7 +510,7 @@ export function ApplicationForm() {
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">What is your primary goal? *</label>
-                <select name="primaryGoal" value={formData.primaryGoal} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 transition-all outline-none bg-white" required>
+                <select name="primaryGoal" value={formData.primaryGoal} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white" required>
                   <option value="">Select option</option>
                   <option value="Build and scale a company in my home market">Build and scale a company in my home market</option>
                   <option value="Build a company that operates internationally">Build a company that operates internationally</option>
@@ -525,27 +526,27 @@ export function ApplicationForm() {
           {step === 4 && (
             <div className="space-y-6">
               <div className="border-b border-slate-200 pb-4 mb-4">
-                <span className="text-xs font-bold text-violet-600 uppercase tracking-widest block font-mono">Step 4 of 5</span>
+                <span className="text-xs font-bold text-[#1746D2] uppercase tracking-widest block font-mono">Step 4 of 5</span>
                 <h3 className="text-xl font-bold text-slate-900 font-display mt-1">STEP 4 — Tier & Investment Readiness</h3>
                 <p className="text-xs text-slate-500 italic mt-1">"Which tier fits your ambition? Not sure? Pick your best guess — we'll confirm the right fit together on your Founder Strategy Call."</p>
               </div>
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Preferred tier *</label>
-                <select name="preferredTier" value={formData.preferredTier} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 transition-all outline-none bg-white" required>
+                <select name="preferredTier" value={formData.preferredTier} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white" required>
                   <option value="">Select option</option>
                   <option value="National">National — "Launch and dominate your home market first"</option>
                   <option value="Global">Global — "Build a company engineered to operate globally from day one"</option>
                 </select>
               </div>
 
-              <div className="p-4 rounded-xl bg-violet-50 border border-violet-100 text-violet-900 text-xs font-medium leading-relaxed">
+              <div className="p-4 rounded-xl bg-[#1746D2]/10 border border-[#1746D2]/20 text-[#0d162a] text-xs font-medium leading-relaxed">
                 "Visionary Founders is a premium ecosystem with infrastructure, a dedicated tech team, branding & Marketing, and client acquisition support built in. It's a serious business investment, not a course or a subscription."
               </div>
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Are you ready for a serious business investment? *</label>
-                <select name="investmentReady" value={formData.investmentReady} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 transition-all outline-none bg-white" required>
+                <select name="investmentReady" value={formData.investmentReady} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white" required>
                   <option value="">Select option</option>
                   <option value="Yes, I understand and I'm ready">Yes, I understand and I'm ready</option>
                   <option value="I need more information first">I need more information first</option>
@@ -555,7 +556,7 @@ export function ApplicationForm() {
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">How did you hear about us? *</label>
-                <select name="howHeard" value={formData.howHeard} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 transition-all outline-none bg-white" required>
+                <select name="howHeard" value={formData.howHeard} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white" required>
                   <option value="">Select option</option>
                   <option value="Google Search">Google Search</option>
                   <option value="Instagram">Instagram</option>
@@ -575,7 +576,7 @@ export function ApplicationForm() {
           {step === 5 && (
             <div className="space-y-6">
               <div className="border-b border-slate-200 pb-4 mb-4">
-                <span className="text-xs font-bold text-violet-600 uppercase tracking-widest block font-mono">Step 5 of 5</span>
+                <span className="text-xs font-bold text-[#1746D2] uppercase tracking-widest block font-mono">Step 5 of 5</span>
                 <h3 className="text-xl font-bold text-slate-900 font-display mt-1">STEP 5 — Review & Consent</h3>
                 <p className="text-xs text-slate-500 italic mt-1">Review your details and check the consent statements before final submission.</p>
               </div>
@@ -623,11 +624,11 @@ export function ApplicationForm() {
             )}
             
             {step < 5 ? (
-              <button type="button" onClick={nextStep} className="px-6 py-3 bg-violet-600 hover:bg-violet-700 text-white font-bold rounded-xl text-sm ml-auto transition-colors">
+              <button type="button" onClick={nextStep} className="px-6 py-3 bg-[#1746D2] hover:bg-[#1233A0] text-white font-bold rounded-xl text-sm ml-auto transition-colors">
                 Next Step
               </button>
             ) : (
-              <button type="submit" className="px-8 py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white font-bold uppercase tracking-widest rounded-xl text-sm ml-auto transition-transform hover:-translate-y-0.5 shadow-md">
+              <button type="submit" className="px-8 py-4 bg-gradient-to-r from-[#1746D2] to-[#00A86B] hover:from-[#1746D2] hover:to-[#00A86B] text-white font-bold uppercase tracking-widest rounded-xl text-sm ml-auto transition-transform hover:-translate-y-0.5 shadow-md">
                 Submit Founder Application
               </button>
             )}
@@ -645,9 +646,9 @@ export function ApplicationForm() {
 export function FinalCTA() {
   return (
     <section className="py-24 bg-slate-900 text-white relative overflow-hidden text-center">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-violet-900/50 via-slate-900 to-slate-900 z-0"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#0d162a]/50 via-slate-900 to-slate-900 z-0"></div>
       <div className="max-w-4xl mx-auto px-6 relative z-10">
-        <img src="https://tech6senseai.com/wp-content/uploads/2026/02/FullLogo_Transparent_NoBuffer-1.png" alt="TECH6SENSE AI Logo" className="h-12 md:h-16 mx-auto mb-12 opacity-80" />
+        <img src={companyLogo} alt="TECH6SENSE AI Logo" className="h-12 md:h-16 mx-auto mb-12 opacity-80 object-contain" />
         
         <h2 className="text-3xl md:text-5xl font-extrabold mb-6 font-display leading-tight">
           The Next Generation of Global AI Companies Will Be Built by Visionary Founders.
@@ -669,7 +670,7 @@ export function FinalCTA() {
         </div>
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <button onClick={() => document.getElementById('founder-form')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 bg-white text-violet-900 font-bold rounded-full hover:bg-violet-50 transition-colors shadow-xl w-full sm:w-auto text-sm uppercase tracking-wide">
+          <button onClick={() => document.getElementById('founder-form')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 bg-white text-[#0d162a] font-bold rounded-full hover:bg-[#1746D2]/10 transition-colors shadow-xl w-full sm:w-auto text-sm uppercase tracking-wide">
             Apply to Become a Visionary Founder
           </button>
           <button onClick={() => document.getElementById('founder-form')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 bg-transparent border-2 border-white/20 text-white font-bold rounded-full hover:bg-white/10 transition-colors w-full sm:w-auto text-sm uppercase tracking-wide">

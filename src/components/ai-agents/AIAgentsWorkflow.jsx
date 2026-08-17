@@ -26,16 +26,16 @@ export default function AIAgentsWorkflow() {
 
   return (
     <section ref={sectionRef} className="py-20 lg:py-32 bg-white border-t border-slate-100">
-      <div className="mx-auto max-w-[85rem] px-6">
+      <div className="mx-auto max-w-[1400px] px-6">
         
         {/* Header */}
         <div className={`text-center max-w-3xl mx-auto mb-20 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="inline-flex items-center gap-3 mb-6">
-            <span className="w-8 h-[2px] bg-gradient-to-r from-violet-400 to-fuchsia-400 rounded-full" />
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] rounded-full" />
             <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-slate-500">
               Workflow
             </span>
-            <span className="w-8 h-[2px] bg-gradient-to-r from-fuchsia-400 to-violet-400 rounded-full" />
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#00A86B] to-[#1746D2] rounded-full" />
           </div>
           <h2 className="font-display text-[clamp(1.75rem,3.5vw,3rem)] leading-tight font-extrabold text-slate-900 mb-6 tracking-tight">
             How an AI Agent Workflow Comes Together
@@ -51,7 +51,7 @@ export default function AIAgentsWorkflow() {
           {/* Desktop Horizontal Line */}
           <div className="hidden lg:block absolute top-[28px] left-8 right-8 h-[2px] bg-slate-100">
             <div 
-              className="h-full bg-gradient-to-r from-violet-500 to-fuchsia-500 transition-all duration-[2000ms] ease-out"
+              className="h-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] transition-all duration-[2000ms] ease-out"
               style={{ width: isVisible ? '100%' : '0%' }}
             />
           </div>
@@ -59,7 +59,7 @@ export default function AIAgentsWorkflow() {
           {/* Mobile Vertical Line */}
           <div className="lg:hidden absolute top-8 bottom-8 left-[28px] w-[2px] bg-slate-100">
              <div 
-              className="w-full bg-gradient-to-b from-violet-500 to-fuchsia-500 transition-all duration-[2000ms] ease-out"
+              className="w-full bg-gradient-to-b from-[#1746D2] to-[#00A86B] transition-all duration-[2000ms] ease-out"
               style={{ height: isVisible ? '100%' : '0%' }}
             />
           </div>
@@ -75,14 +75,14 @@ export default function AIAgentsWorkflow() {
                 style={{ transitionDelay: `${400 + (i * 200)}ms` }}
               >
                 {/* Node */}
-                <div className="relative shrink-0 w-14 h-14 rounded-full bg-white border-2 border-slate-200 shadow-sm flex items-center justify-center z-10 transition-colors duration-500 hover:border-violet-400">
-                  <div className="w-4 h-4 rounded-full bg-violet-100 text-[10px] font-bold text-violet-600 flex items-center justify-center">
+                <div className="relative shrink-0 w-14 h-14 rounded-full bg-white border-2 border-slate-200 shadow-sm flex items-center justify-center z-10 transition-colors duration-500 hover:border-[#1746D2]/60">
+                  <div className="w-4 h-4 rounded-full bg-[#1746D2]/10 text-[10px] font-bold text-[#1746D2] flex items-center justify-center">
                     {i + 1}
                   </div>
                   {/* Subtle active glow */}
                   {isVisible && (
                     <div 
-                      className="absolute inset-0 rounded-full border border-violet-400 animate-ping opacity-20"
+                      className="absolute inset-0 rounded-full border border-[#1746D2]/60 animate-ping opacity-20"
                       style={{ animationDelay: `${i * 0.2}s` }}
                     />
                   )}

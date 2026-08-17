@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import founderImg from '../../assets/founder.png';
+import globalInfraImg from '../../assets/why_tech6sense_ai_bg.jpg';
 
 export function GlobalAIOpportunity() {
   const [isVisible, setIsVisible] = useState(false);
@@ -32,19 +33,19 @@ export function GlobalAIOpportunity() {
     <section ref={sectionRef} className="py-20 md:py-28 bg-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
       
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           
           {/* Left Column: Eyebrow, Main Opportunity Text & 2x2 Stats Grid */}
           <div className={`flex flex-col gap-6 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
             <div>
-              <span className="font-mono text-xs font-bold text-violet-600 uppercase tracking-widest mb-4 block">
+              <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
                 GLOBAL STATISTICS
               </span>
               <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 font-display leading-[1.1]">
                 Artificial Intelligence is creating the biggest business opportunity of this century.
               </h2>
-              <h3 className="text-lg font-bold text-violet-600 mb-4 font-display">
+              <h3 className="text-lg font-bold text-[#1746D2] mb-4 font-display">
                 Artificial Intelligence Is Reshaping Every Industry
               </h3>
               <p className="text-slate-600 text-sm md:text-base mb-4 leading-relaxed font-medium">
@@ -60,7 +61,7 @@ export function GlobalAIOpportunity() {
               {/* Stat Card 1 */}
               <div className="bg-slate-50 border border-slate-200/60 p-5 rounded-2xl shadow-sm hover:border-violet-305 transition-all duration-300 flex flex-col justify-between">
                 <div>
-                  <span className="text-[9px] font-bold text-violet-600 uppercase tracking-widest font-mono block mb-1">Market Potential</span>
+                  <span className="text-[9px] font-bold text-[#1746D2] uppercase tracking-widest font-mono block mb-1">Market Potential</span>
                   <div className="text-3xl font-extrabold text-slate-900 font-display">$15.7T</div>
                 </div>
                 <p className="text-[11px] text-slate-500 mt-2 font-medium">Estimated global economic impact of AI by 2030 (PwC).</p>
@@ -69,7 +70,7 @@ export function GlobalAIOpportunity() {
               {/* Stat Card 2 */}
               <div className="bg-slate-50 border border-slate-200/60 p-5 rounded-2xl shadow-sm hover:border-violet-305 transition-all duration-300 flex flex-col justify-between">
                 <div>
-                  <span className="text-[9px] font-bold text-violet-600 uppercase tracking-widest font-mono block mb-1">Enterprise Demand</span>
+                  <span className="text-[9px] font-bold text-[#1746D2] uppercase tracking-widest font-mono block mb-1">Enterprise Demand</span>
                   <div className="text-3xl font-extrabold text-slate-900 font-display">84% YoY</div>
                 </div>
                 <p className="text-[11px] text-slate-500 mt-2 font-medium">Increase in active enterprise requests for AI business services.</p>
@@ -78,7 +79,7 @@ export function GlobalAIOpportunity() {
               {/* Stat Card 3 */}
               <div className="bg-slate-50 border border-slate-200/60 p-5 rounded-2xl shadow-sm hover:border-violet-305 transition-all duration-300 flex flex-col justify-between">
                 <div>
-                  <span className="text-[9px] font-bold text-violet-600 uppercase tracking-widest font-mono block mb-1">Global Reach</span>
+                  <span className="text-[9px] font-bold text-[#1746D2] uppercase tracking-widest font-mono block mb-1">Global Reach</span>
                   <div className="text-3xl font-extrabold text-slate-900 font-display">Hubs</div>
                 </div>
                 <p className="text-[11px] text-slate-500 mt-2 font-medium">Serving founders and enterprises across USA, UK, UAE, SG & IND.</p>
@@ -87,7 +88,7 @@ export function GlobalAIOpportunity() {
               {/* Stat Card 4 */}
               <div className="bg-slate-50 border border-slate-200/60 p-5 rounded-2xl shadow-sm hover:border-violet-305 transition-all duration-300 flex flex-col justify-between">
                 <div>
-                  <span className="text-[9px] font-bold text-violet-600 uppercase tracking-widest font-mono block mb-1">Ecosystem Focus</span>
+                  <span className="text-[9px] font-bold text-[#1746D2] uppercase tracking-widest font-mono block mb-1">Ecosystem Focus</span>
                   <div className="text-3xl font-extrabold text-slate-900 font-display">25+</div>
                 </div>
                 <p className="text-[11px] text-slate-500 mt-2 font-medium">Core AI and deep-tech business capabilities delivered.</p>
@@ -101,19 +102,19 @@ export function GlobalAIOpportunity() {
               <h4 className="font-display font-bold text-slate-900 text-xl md:text-2xl mb-4 leading-tight">The Future Doesn't Need More Employees. It Needs More AI Founders.</h4>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs md:text-sm font-semibold text-slate-800">
                 <li className="flex items-center gap-2">
-                  <span className="w-5 h-5 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center text-xs shrink-0">✓</span>
+                  <span className="w-5 h-5 rounded-full bg-[#1746D2]/20 text-[#1746D2] flex items-center justify-center text-xs shrink-0">✓</span>
                   <span>Every company is becoming an AI company.</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-5 h-5 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center text-xs shrink-0">✓</span>
+                  <span className="w-5 h-5 rounded-full bg-[#1746D2]/20 text-[#1746D2] flex items-center justify-center text-xs shrink-0">✓</span>
                   <span>Every industry needs AI.</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-5 h-5 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center text-xs shrink-0">✓</span>
+                  <span className="w-5 h-5 rounded-full bg-[#1746D2]/20 text-[#1746D2] flex items-center justify-center text-xs shrink-0">✓</span>
                   <span>Every government is investing in AI.</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-5 h-5 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center text-xs shrink-0">✓</span>
+                  <span className="w-5 h-5 rounded-full bg-[#1746D2]/20 text-[#1746D2] flex items-center justify-center text-xs shrink-0">✓</span>
                   <span>Every enterprise is looking for AI partners.</span>
                 </li>
               </ul>
@@ -124,13 +125,13 @@ export function GlobalAIOpportunity() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                 {lacks.map((item, i) => (
                   <div key={i} className="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-slate-50 p-2.5 rounded-xl border border-slate-200/60 hover:bg-slate-100 transition-colors">
-                    <span className="w-1.5 h-1.5 rounded-full bg-violet-600 shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#1746D2] shrink-0" />
                     <span>{item}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="p-5 rounded-2xl bg-violet-50 border border-violet-100/50 text-xs md:text-sm text-violet-950 leading-relaxed font-medium">
+              <div className="p-5 rounded-2xl bg-[#1746D2]/10 border border-[#1746D2]/20/50 text-xs md:text-sm text-[#050c1e] leading-relaxed font-medium">
                 <strong>That's where VISIONARY FOUNDERS changes everything.</strong> Instead of spending years trying to build everything yourself... You gain access to an entire Global AI business ecosystem that works alongside you.
               </div>
             </div>
@@ -171,10 +172,10 @@ export function EliteAdvantage() {
 
   return (
     <section ref={sectionRef} className="py-20 md:py-28 bg-slate-50 relative overflow-hidden border-y border-slate-200/50">
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <span className="font-mono text-xs font-bold text-violet-600 uppercase tracking-widest mb-4 block">
+          <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
             The Elite Advantage
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display mb-4">
@@ -188,7 +189,7 @@ export function EliteAdvantage() {
             <thead>
               <tr className="bg-slate-900 text-white font-mono text-xs font-bold uppercase tracking-wider">
                 <th className="p-6 w-1/3">Without Visionary Founders</th>
-                <th className="p-6 w-1/3 bg-violet-900/40 border-x border-white/10">With Visionary Founders</th>
+                <th className="p-6 w-1/3 bg-[#0d162a]/40 border-x border-white/10">With Visionary Founders</th>
                 <th className="p-6 w-1/3">The Outcome</th>
               </tr>
             </thead>
@@ -196,7 +197,7 @@ export function EliteAdvantage() {
               {comparisons.map((row, i) => (
                 <tr key={i} className="hover:bg-slate-50/50 transition-colors">
                   <td className="p-6 text-slate-500">{row.without}</td>
-                  <td className="p-6 bg-violet-50/20 text-slate-900 font-semibold border-x border-violet-100/50">{row.with}</td>
+                  <td className="p-6 bg-[#1746D2]/10/20 text-slate-900 font-semibold border-x border-[#1746D2]/20/50">{row.with}</td>
                   <td className="p-6 text-emerald-700 font-bold">{row.outcome}</td>
                 </tr>
               ))}
@@ -213,7 +214,7 @@ export function EliteAdvantage() {
                 <p className="text-xs text-slate-500 font-medium">{row.without}</p>
               </div>
               <div className="border-t border-slate-100 pt-3">
-                <span className="block text-[10px] font-bold text-violet-600 uppercase tracking-widest mb-1">With Visionary Founders</span>
+                <span className="block text-[10px] font-bold text-[#1746D2] uppercase tracking-widest mb-1">With Visionary Founders</span>
                 <p className="text-xs text-slate-900 font-semibold">{row.with}</p>
               </div>
               <div className="border-t border-slate-100 pt-3">
@@ -241,16 +242,18 @@ export function WhatYouWalkAwayWith() {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-slate-900 text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-violet-900/40 via-slate-900 to-slate-900 z-0"></div>
+    <section className="py-20 md:py-28 bg-slate-50 border-t border-slate-200/80 text-slate-900 relative overflow-hidden">
+      {/* Background Soft Glow */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-gradient-to-bl from-blue-100/50 to-transparent blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-emerald-100/40 to-transparent blur-[100px] pointer-events-none" />
       
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <span className="font-mono text-xs font-bold text-violet-400 uppercase tracking-widest mb-4 block">
+          <span className="font-mono text-xs font-extrabold text-[#1746D2] uppercase tracking-[0.25em] mb-4 block">
             What You Walk Away With
           </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white font-display mb-4">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display mb-4 tracking-tight">
             Tangible Deliverables & Core Assets
           </h2>
         </div>
@@ -259,23 +262,23 @@ export function WhatYouWalkAwayWith() {
           {deliverables.map((item, i) => (
             <div 
               key={i} 
-              className="p-8 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-violet-500/50 hover:-translate-y-1 transition-all duration-300 flex flex-col group"
+              className="p-8 rounded-[2rem] bg-white border border-slate-200/80 shadow-sm hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:border-[#1746D2]/40 hover:-translate-y-1 transition-all duration-300 flex flex-col group"
             >
-              <div className="w-10 h-10 rounded-xl bg-violet-600/30 border border-violet-500/40 text-violet-400 flex items-center justify-center mb-6">
+              <div className="w-10 h-10 rounded-xl bg-[#1746D2]/10 border border-[#1746D2]/20 text-[#1746D2] flex items-center justify-center mb-6">
                 <span className="font-mono font-bold text-sm">0{i + 1}</span>
               </div>
-              <h4 className="text-lg font-bold font-display text-white mb-3 group-hover:text-violet-300 transition-colors">
+              <h4 className="text-lg font-bold font-display text-slate-900 mb-3 group-hover:text-[#1746D2] transition-colors">
                 {item.title}
               </h4>
-              <p className="text-slate-350 text-xs md:text-sm leading-relaxed font-medium">
+              <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-medium">
                 {item.desc}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 text-center max-w-2xl mx-auto border-t border-white/10 pt-8">
-          <p className="text-sm md:text-base text-violet-300 font-semibold italic">
+        <div className="mt-16 text-center max-w-3xl mx-auto border-t border-slate-200/80 pt-8">
+          <p className="text-sm md:text-base text-[#1746D2] font-semibold italic leading-relaxed">
             "This isn't a certificate program. It's an operating company, built with you, engineered to compete globally from the first day it exists."
           </p>
         </div>
@@ -295,26 +298,30 @@ export function WhyTech6SenseAI() {
 
   return (
     <section className="pt-20 md:pt-28 pb-0 bg-white relative overflow-hidden border-t border-slate-200">
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         {/* Top Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-16">
-          {/* Left: Large image placeholder */}
+          {/* Left: High-Tech Global Machine Infrastructure Image */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-md aspect-[4/3] bg-slate-100 rounded-3xl border border-slate-200 shadow-md overflow-hidden flex items-center justify-center p-8">
-              <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-indigo-500/10" />
-              <div className="relative z-10 text-center">
-                <svg className="w-16 h-16 text-slate-400 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                </svg>
-                <div className="font-mono text-xs font-bold text-slate-500 uppercase tracking-widest">Global Machine Infrastructure</div>
+            <div className="relative w-full max-w-lg aspect-[4/3] rounded-3xl border border-slate-200/80 shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] overflow-hidden group">
+              <img
+                src={globalInfraImg}
+                alt="Global AI Machine Infrastructure"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-80" />
+              <div className="absolute bottom-4 left-4 right-4 z-10">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#1746D2]/80 backdrop-blur-md border border-white/20 text-white font-mono text-[0.68rem] font-bold uppercase tracking-wider shadow-md">
+                  GLOBAL MACHINE INFRASTRUCTURE
+                </span>
               </div>
             </div>
           </div>
 
           {/* Right: Copy */}
           <div className="lg:col-span-7">
-            <span className="font-mono text-xs font-bold text-violet-600 uppercase tracking-widest mb-4 block">
+            <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
               WHY TECH6SENSE AI
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 font-display leading-[1.1]">
@@ -328,7 +335,7 @@ export function WhyTech6SenseAI() {
             </p>
           </div>
         </div>
-      </div> {/* Close max-w-[85rem] container */}
+      </div> {/* Close max-w-[1400px] container */}
 
       {/* Full Width Capability Strip - Infinite Marquee Ticker */}
       <div className="w-full overflow-hidden bg-slate-950 border-y border-white/5 py-6 mt-16 select-none shadow-lg relative">
@@ -354,7 +361,7 @@ export function WhyTech6SenseAI() {
           {/* Double list for smooth circular scrolling */}
           {[...capabilities, ...capabilities].map((cap, i) => (
             <span key={i} className="text-xs md:text-sm font-bold text-white/90 flex items-center gap-3 whitespace-nowrap tracking-wide font-mono uppercase">
-              <span className="w-2 h-2 rounded-full bg-violet-500 shadow-md shadow-violet-500/50 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[#1746D2] shadow-md shadow-[#1746D2]/50 animate-pulse" />
               {cap}
             </span>
           ))}
@@ -393,10 +400,10 @@ export function TimelineOverview() {
 
   return (
     <section ref={sectionRef} className="py-20 md:py-28 bg-slate-50 relative overflow-hidden border-b border-slate-200">
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <span className="font-mono text-xs font-bold text-violet-600 uppercase tracking-widest mb-4 block">
+          <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
             TIMELINE OVERVIEW
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display mb-4">
@@ -404,7 +411,7 @@ export function TimelineOverview() {
           </h2>
         </div>
 
-        <div className="max-w-3xl mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-xl bg-white mb-8">
+        <div className="w-full mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-xl bg-white mb-8">
           <table className="w-full border-collapse text-left">
             <thead>
               <tr className="bg-slate-950 text-white font-mono text-xs font-bold uppercase tracking-wider">
@@ -454,10 +461,10 @@ export function NationalVsGlobalComparison() {
 
   return (
     <section className="py-20 md:py-28 bg-white relative overflow-hidden border-b border-slate-200">
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="font-mono text-xs font-bold text-violet-600 uppercase tracking-widest mb-4 block">
+          <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
             Ecosystem Structure & Your Investment
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display mb-4">
@@ -478,7 +485,7 @@ export function NationalVsGlobalComparison() {
               <tr className="bg-slate-950 text-white font-mono text-xs font-bold uppercase tracking-wider">
                 <th className="p-5 w-1/4">Feature / Resources</th>
                 <th className="p-5 w-3/8">NATIONAL (Launch & Dominate Your Home Market)</th>
-                <th className="p-5 w-3/8 bg-violet-900/40 border-l border-white/10">GLOBAL (Build a Company That Operates Globally)</th>
+                <th className="p-5 w-3/8 bg-[#0d162a]/40 border-l border-white/10">GLOBAL (Build a Company That Operates Globally)</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 font-medium text-xs md:text-sm text-slate-700">
@@ -486,7 +493,7 @@ export function NationalVsGlobalComparison() {
                 <tr key={i} className="hover:bg-slate-50/50 transition-colors">
                   <td className="p-5 font-bold text-slate-900">{feat.title}</td>
                   <td className="p-5 text-slate-500 leading-relaxed">{feat.local}</td>
-                  <td className="p-5 bg-violet-50/20 text-slate-900 font-semibold border-l border-violet-100/50 leading-relaxed">{feat.global}</td>
+                  <td className="p-5 bg-[#1746D2]/10/20 text-slate-900 font-semibold border-l border-[#1746D2]/20/50 leading-relaxed">{feat.global}</td>
                 </tr>
               ))}
             </tbody>
@@ -502,7 +509,7 @@ export function NationalVsGlobalComparison() {
                 className="w-full p-5 text-left flex justify-between items-center bg-slate-50/50 focus:outline-none"
               >
                 <span className="font-bold text-slate-900 text-xs md:text-sm">{feat.title}</span>
-                <span className={`text-violet-600 transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`}>
+                <span className={`text-[#1746D2] transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`}>
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
                   </svg>
@@ -516,7 +523,7 @@ export function NationalVsGlobalComparison() {
                     <p className="text-xs text-slate-500 font-medium leading-relaxed">{feat.local}</p>
                   </div>
                   <div>
-                    <span className="block text-[9px] font-bold text-violet-600 uppercase tracking-widest mb-1">Global Track</span>
+                    <span className="block text-[9px] font-bold text-[#1746D2] uppercase tracking-widest mb-1">Global Track</span>
                     <p className="text-xs text-slate-900 font-semibold leading-relaxed">{feat.global}</p>
                   </div>
                 </div>
@@ -541,10 +548,10 @@ export function FounderSelectionCriteria() {
 
   return (
     <section className="py-20 md:py-28 bg-slate-50 relative overflow-hidden border-b border-slate-200">
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <span className="font-mono text-xs font-bold text-violet-600 uppercase tracking-widest mb-4 block">
+          <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
             WHO WE'RE LOOKING FOR
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display mb-4">
@@ -558,7 +565,7 @@ export function FounderSelectionCriteria() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {criteria.map((crit, i) => (
             <div key={i} className="p-8 rounded-[2rem] bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col">
-              <div className="w-10 h-10 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center font-mono font-bold text-sm mb-6 border border-violet-100">
+              <div className="w-10 h-10 rounded-xl bg-[#1746D2]/10 text-[#1746D2] flex items-center justify-center font-mono font-bold text-sm mb-6 border border-[#1746D2]/20">
                 0{i + 1}
               </div>
               <h4 className="font-display font-bold text-slate-900 text-lg mb-3">{crit.title}</h4>
@@ -570,12 +577,12 @@ export function FounderSelectionCriteria() {
         <div className="mt-16 text-center">
           <button 
             onClick={() => document.getElementById('founder-form')?.scrollIntoView({ behavior: 'smooth' })}
-            className="rounded-full bg-violet-600 hover:bg-violet-700 px-8 py-4 text-sm font-bold tracking-widest text-white shadow-md transition-all uppercase"
+            className="rounded-full bg-[#1746D2] hover:bg-[#1233A0] px-8 py-4 text-sm font-bold tracking-widest text-white shadow-md transition-all uppercase"
           >
             Start Your Application
           </button>
           <div className="text-xs text-slate-500 font-mono mt-4">
-            Or email us at <a href="mailto:visionaryfounders@tech6senseai.com" className="text-violet-600 font-bold hover:underline">visionaryfounders@tech6senseai.com</a>
+            Or email us at <a href="mailto:visionaryfounders@tech6senseai.com" className="text-[#1746D2] font-bold hover:underline">visionaryfounders@tech6senseai.com</a>
           </div>
         </div>
 
@@ -628,10 +635,10 @@ export function ApplicationJourney() {
 
   return (
     <section className="py-20 md:py-28 bg-white relative overflow-hidden border-b border-slate-200">
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="font-mono text-xs font-bold text-violet-600 uppercase tracking-widest mb-4 block">
+          <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
             APPLICATION JOURNEY
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display mb-4">
@@ -651,7 +658,7 @@ export function ApplicationJourney() {
               {steps.map((step, i) => (
                 <div 
                   key={i} 
-                  className="flex-shrink-0 bg-slate-50 border border-slate-200/60 rounded-3xl p-6 md:p-8 hover:shadow-lg hover:border-violet-200/80 transition-all duration-300 flex flex-col items-center text-center select-none"
+                  className="flex-shrink-0 bg-slate-50 border border-slate-200/60 rounded-3xl p-6 md:p-8 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:border-[#1746D2]/40/80 transition-all duration-300 flex flex-col items-center text-center select-none"
                   style={{ width: `calc((100% - ${(itemsPerView - 1) * 24}px) / ${itemsPerView})` }}
                 >
                   <div className="w-12 h-12 rounded-full bg-slate-900 text-white font-mono text-sm font-bold flex items-center justify-center mb-6 shadow-md">
@@ -668,7 +675,7 @@ export function ApplicationJourney() {
           {currentIndex > 0 && (
             <button 
               onClick={prevSlide}
-              className="absolute -left-2 sm:-left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-violet-600 text-white hover:bg-violet-500 flex items-center justify-center shadow-lg shadow-violet-500/20 z-30 transition-all hover:scale-105 active:scale-95 cursor-pointer border border-violet-500/30"
+              className="absolute -left-2 sm:-left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-[#1746D2] text-white hover:bg-[#1746D2] flex items-center justify-center shadow-lg shadow-[#1746D2]/20 z-30 transition-all hover:scale-105 active:scale-95 cursor-pointer border border-[#1746D2]/30"
               aria-label="Previous slide"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
@@ -680,7 +687,7 @@ export function ApplicationJourney() {
           {currentIndex < steps.length - itemsPerView && (
             <button 
               onClick={nextSlide}
-              className="absolute -right-2 sm:-right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-violet-600 text-white hover:bg-violet-500 flex items-center justify-center shadow-lg shadow-violet-500/20 z-30 transition-all hover:scale-105 active:scale-95 cursor-pointer border border-violet-500/30"
+              className="absolute -right-2 sm:-right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-[#1746D2] text-white hover:bg-[#1746D2] flex items-center justify-center shadow-lg shadow-[#1746D2]/20 z-30 transition-all hover:scale-105 active:scale-95 cursor-pointer border border-[#1746D2]/30"
               aria-label="Next slide"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
@@ -697,7 +704,7 @@ export function ApplicationJourney() {
             <button
               key={idx}
               onClick={() => setCurrentIndex(idx)}
-              className={`w-2 h-2 rounded-full transition-all ${currentIndex === idx ? 'bg-violet-600 w-4' : 'bg-slate-200 hover:bg-slate-350'}`}
+              className={`w-2 h-2 rounded-full transition-all ${currentIndex === idx ? 'bg-[#1746D2] w-4' : 'bg-slate-200 hover:bg-slate-350'}`}
             />
           ))}
         </div>
@@ -711,11 +718,11 @@ export function ApplicationJourney() {
 export function FounderMessage() {
   return (
     <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-violet-900/40 via-slate-900 to-slate-900 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0d162a]/40 via-slate-900 to-slate-900 z-0"></div>
       
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         <div className="p-8 md:p-16 bg-white/5 border border-white/10 backdrop-blur-sm rounded-[3rem] shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-violet-500/10 rounded-bl-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#1746D2]/10 rounded-bl-full blur-3xl pointer-events-none" />
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
@@ -733,7 +740,7 @@ export function FounderMessage() {
 
             {/* Quote Column */}
             <div className="lg:col-span-8">
-              <span className="text-7xl font-serif text-violet-500 leading-none block mb-6">“</span>
+              <span className="text-7xl font-serif text-[#1746D2] leading-none block mb-6">“</span>
               
               <blockquote className="text-lg md:text-2xl font-extrabold font-display leading-snug mb-8 text-white">
                 "The AI and Tech landscape is moving faster than ever. Having a great idea is no longer enough; you need the infrastructure, the talent, and the global reach to execute it rapidly. I built TECH6SENSE AI on a foundation of global excellence, and with VISIONARY FOUNDERS, we are opening our doors to the next generation of tech leaders. We aren't just giving you advice—we are giving you our entire business ecosystem. If you have the drive, we have the engine. Let's build the future together."
@@ -743,7 +750,7 @@ export function FounderMessage() {
 
               <div>
                 <div className="font-display text-2xl font-bold text-white tracking-wide">Chintan</div>
-                <div className="font-mono text-xs text-violet-400 uppercase tracking-widest mt-1">Founder of TECH6SENSE AI</div>
+                <div className="font-mono text-xs text-[#1746D2] uppercase tracking-widest mt-1">Founder of TECH6SENSE AI</div>
               </div>
             </div>
 

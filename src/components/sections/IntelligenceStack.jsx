@@ -1,133 +1,279 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
+import logoSymbol from '../../assets/new logo/TECH6SENSE Logo Symbol (1).png';
+import logoText from '../../assets/new logo/TECH6SENSE Main Logo text.png';
 
-const CARDS_DATA = [
+const ECOSYSTEM_CARDS = [
   {
-    title: 'AI Agents',
-    description: 'Autonomous assistants that manage complex tasks, execute workflows, and drive intelligent decision-making at scale.',
-    span: 'md:col-span-2',
-    gradient: 'from-indigo-500/10 to-violet-500/10',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-indigo-400" stroke="currentColor" strokeWidth="1.5">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
-      </svg>
-    ),
+    id: 1,
+    num: '1',
+    title: 'SENSE INTELLIGENCE',
+    short: 'AI development, machine learning, smart automation.',
+    full: 'Advanced AI Development & Custom Enterprise Solutions. We design and build the AI products enterprises actually ship — not research demos. Custom model architecture, retrieval-augmented systems, and the full product engineering layer built to hold up under real usage.',
+    textColor: 'text-emerald-600',
+    dotBg: 'bg-emerald-600',
+    alignOffset: 'translate-x-6 xl:translate-x-10',
+    cardBg: 'bg-emerald-50/35 hover:bg-emerald-50/70',
+    shadowStyle: 'hover:shadow-[4px_4px_0px_0px_rgba(0,168,107,0.35)]',
+    glowColor: 'rgba(0, 168, 107, 0.09)'
   },
   {
-    title: 'Computer Vision',
-    description: 'Advanced image, video, and pattern recognition systems designed for precision in real-world environments.',
-    span: 'md:col-span-1',
-    gradient: 'from-teal-500/10 to-emerald-500/10',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-teal-400" stroke="currentColor" strokeWidth="1.5">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
+    id: 2,
+    num: '2',
+    title: 'SENSE INNOVATION',
+    short: 'Deep-tech products, invention, advanced hardware/software.',
+    full: 'Next Generation of AI-Powered Deep-Tech Products. Turn Your Tech Vision Into a Global Brand. Software and strategy are only half the picture — TECH6SENSE AI designs and engineers the physical devices that carry intelligence into the real world.',
+    textColor: 'text-emerald-600',
+    dotBg: 'bg-emerald-600',
+    alignOffset: '-translate-x-6 xl:-translate-x-10',
+    cardBg: 'bg-emerald-50/35 hover:bg-emerald-50/70',
+    shadowStyle: 'hover:shadow-[4px_4px_0px_0px_rgba(0,168,107,0.35)]',
+    glowColor: 'rgba(0, 168, 107, 0.09)'
   },
   {
-    title: 'AI Automation',
-    description: 'Intelligent automation systems that seamlessly connect disparate processes, reducing manual friction.',
-    span: 'md:col-span-1',
-    gradient: 'from-purple-500/10 to-fuchsia-500/10',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-purple-400" stroke="currentColor" strokeWidth="1.5">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-      </svg>
-    ),
+    id: 4,
+    num: '4',
+    title: 'SENSE COMMUNITY',
+    short: 'Business brains network, collaboration, ecosystem.',
+    full: 'Business Brains — Most Exclusive Private Global Network for Elite Investors, Entrepreneurs & Industry Leaders. An invitation-only global syndicate operating at the absolute pinnacle of global commerce, capital, and artificial intelligence.',
+    textColor: 'text-blue-600',
+    dotBg: 'bg-blue-600',
+    alignOffset: '-translate-x-4 xl:-translate-x-6',
+    cardBg: 'bg-blue-50/45 hover:bg-blue-50/80',
+    shadowStyle: 'hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]',
+    glowColor: 'rgba(23, 70, 210, 0.09)'
   },
   {
-    title: 'Generative AI',
-    description: 'Bespoke models for generating content, synthesizing data, and powering intelligent knowledge systems.',
-    span: 'md:col-span-1',
-    gradient: 'from-pink-500/10 to-rose-500/10',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-pink-400" stroke="currentColor" strokeWidth="1.5">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" />
-      </svg>
-    ),
+    id: 3,
+    num: '3',
+    title: 'SENSE GROWTH',
+    short: 'Visionary founders, startup acceleration, strategic growth.',
+    full: 'Visionary Founders Business Ecosystem — The Global AI Founder Ecosystem. Build Your AI Empire Globally. We transform ambitious entrepreneurs and innovators into owners of globally competitive AI and technology companies.',
+    textColor: 'text-blue-600',
+    dotBg: 'bg-blue-600',
+    alignOffset: 'translate-x-4 xl:translate-x-6',
+    cardBg: 'bg-blue-50/45 hover:bg-blue-50/80',
+    shadowStyle: 'hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]',
+    glowColor: 'rgba(23, 70, 210, 0.09)'
   },
   {
-    title: 'IoT Intelligence',
-    description: 'Transforming sensor data into actionable insights through embedded intelligence and real-time processing.',
-    span: 'md:col-span-1',
-    gradient: 'from-amber-500/10 to-orange-500/10',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-amber-400" stroke="currentColor" strokeWidth="1.5">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z" />
-      </svg>
-    ),
+    id: 5,
+    num: '5',
+    title: 'SENSE INTEGRATION',
+    short: 'Technology deployment, cloud, system integration.',
+    full: 'Integrating Intelligence across the Enterprise — Seamless Technology Deployment. AI is only as strong as the infrastructure underneath it. We provide full-stack IT services engineered specifically to support AI workloads at global scale.',
+    textColor: 'text-emerald-600',
+    dotBg: 'bg-emerald-600',
+    alignOffset: 'translate-x-6 xl:translate-x-10',
+    cardBg: 'bg-emerald-50/35 hover:bg-emerald-50/70',
+    shadowStyle: 'hover:shadow-[4px_4px_0px_0px_rgba(0,168,107,0.35)]',
+    glowColor: 'rgba(0, 168, 107, 0.09)'
   },
   {
-    title: 'Enterprise AI Software',
-    description: 'Highly scalable, deeply integrated AI platforms designed from the ground up for measurable business transformation.',
-    span: 'md:col-span-3',
-    gradient: 'from-cyan-500/10 to-blue-500/10',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-cyan-400" stroke="currentColor" strokeWidth="1.5">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
-      </svg>
-    ),
+    id: 6,
+    num: '6',
+    title: 'SENSE FUTURE',
+    short: 'Research, training, evolution, future readiness.',
+    full: 'Creating What the World Will Need Next — Continuous Research & Evolution. TECH6SENSE AI — The Sixth Sense of Intelligent Innovation. We invest in long-horizon research and continuously evolve our capabilities so your competitive advantage compounds rather than decays.',
+    textColor: 'text-amber-600',
+    dotBg: 'bg-amber-500',
+    alignOffset: '-translate-x-6 xl:-translate-x-10',
+    cardBg: 'bg-amber-50/35 hover:bg-amber-50/70',
+    shadowStyle: 'hover:shadow-[4px_4px_0px_0px_rgba(212,175,55,0.35)]',
+    glowColor: 'rgba(212, 175, 55, 0.09)'
   }
 ];
 
-export default function IntelligenceStack() {
+function CardComponent({ card, activeCard, setActiveCard }) {
+  const cardRef = useRef(null);
+  const isHovered = activeCard?.id === card.id;
+
+  const handleMouseMove = (e) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    cardRef.current.style.setProperty('--mx', `${x}px`);
+    cardRef.current.style.setProperty('--my', `${y}px`);
+  };
+
   return (
-    <section className="relative w-full bg-[#0B0B14] overflow-hidden py-16 md:py-20 z-25">
-      {/* Dark subtle backgrounds blobs */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[40vh] bg-indigo-500/20 rounded-full blur-[120px] opacity-60" />
+    <div 
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setActiveCard(card)}
+      onMouseLeave={() => setActiveCard(null)}
+      className={`group relative p-6 md:p-7 rounded-3xl transition-all duration-300 border border-slate-100 flex flex-col justify-between shadow-sm cursor-pointer z-20 ${
+        card.cardBg
+      } ${card.shadowStyle} ${card.alignOffset || ''} ${isHovered ? '-translate-y-1 z-50' : ''}`}
+    >
+      {/* Spotlight Glow Overlay */}
+      <div
+        className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden"
+        style={{
+          background: `radial-gradient(circle 180px at var(--mx, -99px) var(--my, -99px), ${card.glowColor}, transparent 70%)`
+        }}
+      />
+
+      {/* Card Content */}
+      <div className="relative z-10 flex-1 min-w-0">
+        <h3 className={`font-display font-extrabold text-base md:text-lg mb-1.5 tracking-tight ${card.textColor}`}>
+          {card.num}. {card.title}
+        </h3>
+        <p className="font-body text-slate-600 text-xs md:text-sm leading-relaxed font-medium">
+          {card.short}
+        </p>
       </div>
+
+      {/* Hover Pop-up Tooltip Modal (Floats cleanly above the card) */}
+      {isHovered && (
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-3 w-80 md:w-96 p-5 bg-slate-900/95 text-white rounded-2xl shadow-2xl backdrop-blur-xl border border-white/10 z-[100] animate-in fade-in zoom-in-95 duration-200 pointer-events-none">
+          <div className="flex items-center gap-2 mb-2">
+            <span className={`w-2 h-2 rounded-full ${card.dotBg}`} />
+            <span className={`font-mono text-xs font-bold uppercase tracking-wider ${card.textColor}`}>
+              {card.title}
+            </span>
+          </div>
+          <p className="font-body text-xs md:text-sm text-slate-200 leading-relaxed font-normal">
+            {card.full}
+          </p>
+          <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-8 border-transparent border-t-slate-900/95" />
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default function IntelligenceStack() {
+  const [activeCard, setActiveCard] = useState(null);
+
+  const card1 = ECOSYSTEM_CARDS.find(c => c.id === 1);
+  const card2 = ECOSYSTEM_CARDS.find(c => c.id === 2);
+  const card4 = ECOSYSTEM_CARDS.find(c => c.id === 4);
+  const card3 = ECOSYSTEM_CARDS.find(c => c.id === 3);
+  const card5 = ECOSYSTEM_CARDS.find(c => c.id === 5);
+  const card6 = ECOSYSTEM_CARDS.find(c => c.id === 6);
+
+  return (
+    <section className="relative w-full bg-[#FFFFFF] overflow-hidden py-16 md:py-24 z-20 font-body">
+      {/* Subtle Grid Background */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-30 z-0"
+        style={{
+          backgroundImage: `radial-gradient(rgba(37, 99, 235, 0.08) 1.5px, transparent 1.5px), radial-gradient(rgba(16, 185, 129, 0.06) 1.5px, transparent 1.5px)`,
+          backgroundSize: '36px 36px',
+          backgroundPosition: '0 0, 18px 18px'
+        }}
+      />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         
         {/* Title Section */}
-        <div className="max-w-2xl mb-20">
-          <div className="mb-6 flex items-center gap-3">
-            <span className="h-px w-10 bg-gradient-to-r from-transparent to-violet-500" />
-            <span className="font-body text-xs font-bold tracking-[0.3em] text-violet-400 uppercase">
-              CAPABILITIES
-            </span>
-          </div>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-white tracking-tight">
-            The Intelligence Stack
+        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+          <h2 className="font-display text-3xl md:text-5xl font-extrabold text-[#1746D2] tracking-tight mb-3">
+            THE TECH6SENSE ECOSYSTEM
           </h2>
-          <p className="font-body text-slate-400 mt-6 text-lg leading-relaxed">
-            Every layer of AI, automation, and deep-tech innovation elegantly connected into a single, cohesive enterprise ecosystem.
+          <p className="font-body text-slate-600 text-base md:text-lg font-medium">
+            Six Dimensions of AI-Powered Transformation
           </p>
         </div>
 
-        {/* Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(280px,auto)]">
-          {CARDS_DATA.map((card, index) => (
-            <div 
-              key={index}
-              className={`group relative overflow-hidden rounded-3xl bg-white/[0.02] border border-white/[0.05] p-8 md:p-10 transition-all duration-500 hover:bg-white/[0.04] hover:border-white/[0.1] hover:shadow-[0_20px_40px_rgba(124,58,237,0.06)] hover:-translate-y-1.5 ${card.span} flex flex-col justify-between`}
-            >
-              {/* Soft abstract background gradient for each card */}
-              <div className={`absolute -bottom-32 -right-32 w-64 h-64 bg-gradient-to-br ${card.gradient} rounded-full blur-[80px] transition-transform duration-700 group-hover:scale-150 group-hover:opacity-100 opacity-60 pointer-events-none`} />
+        {/* ── Desktop Diagram Layout ── */}
+        <div className="hidden lg:grid grid-cols-12 gap-8 items-center relative">
+          
+          {/* Left Column (Cards 1, 4, 5) */}
+          <div className="col-span-4 flex flex-col gap-10 z-20">
+            <CardComponent card={card1} activeCard={activeCard} setActiveCard={setActiveCard} />
+            <CardComponent card={card4} activeCard={activeCard} setActiveCard={setActiveCard} />
+            <CardComponent card={card5} activeCard={activeCard} setActiveCard={setActiveCard} />
+          </div>
 
-              {/* Content */}
-              <div className="relative z-10">
-                {/* Icon wrapper */}
-                <div className="w-12 h-12 rounded-2xl bg-white/[0.03] border border-white/[0.05] flex items-center justify-center shadow-sm mb-8 transition-all duration-500 group-hover:scale-105 group-hover:bg-violet-500/10 group-hover:border-violet-500/20">
-                  {card.icon}
-                </div>
-                
-                <h3 className="font-display text-2xl font-bold text-white mb-4 tracking-tight">
-                  {card.title}
-                </h3>
-                <p className="font-body text-slate-400 leading-relaxed max-w-md text-[0.95rem]">
-                  {card.description}
-                </p>
-              </div>
+          {/* Center Column (Pure Hexagon Diagram) */}
+          <div className="col-span-4 flex flex-col items-center justify-center relative min-h-[520px] z-10">
+            
+            {/* SVG Lines & Diagram Geometry */}
+            <svg viewBox="0 0 400 450" className="w-full h-full absolute inset-0 overflow-visible pointer-events-none">
+              
+              {/* Main Flat-top Hexagon Outline */}
+              <polygon 
+                points="130,80 270,80 360,225 270,370 130,370 40,225" 
+                fill="none" 
+                stroke="#e2e8f0" 
+                strokeWidth="2"
+              />
 
-              {/* Minimal aesthetic line or 'learn more' accent */}
-              <div className="relative z-10 mt-12 flex items-center gap-3 opacity-0 translate-y-3 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
-                <span className="w-8 h-px bg-violet-400/50" />
-                <span className="font-mono text-[0.65rem] font-bold uppercase tracking-widest text-violet-400">System Ready</span>
-              </div>
+              {/* ── Stepped Connector Lines to Cards ── */}
+              {/* Top-Left: Card 1 -> Vertex (130, 80) */}
+              <path d="M 30,48 L 95,48 L 130,80" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              
+              {/* Top-Right: Card 2 -> Vertex (270, 80) */}
+              <path d="M 370,48 L 305,48 L 270,80" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+
+              {/* Middle-Left: Card 4 -> Vertex (40, 225) */}
+              <line x1="-30" y1="225" x2="40" y2="225" stroke="#2563eb" strokeWidth="2.5" strokeLinecap="round" />
+              
+              {/* Middle-Right: Card 3 -> Vertex (360, 225) */}
+              <line x1="430" y1="225" x2="360" y2="225" stroke="#2563eb" strokeWidth="2.5" strokeLinecap="round" />
+
+              {/* Bottom-Left: Card 5 -> Vertex (130, 370) */}
+              <path d="M 30,402 L 95,402 L 130,370" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+
+              {/* Bottom-Right: Card 6 -> Vertex (270, 370) */}
+              <path d="M 370,402 L 305,402 L 270,370" fill="none" stroke="#d97706" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+
+              {/* ── 6 Node Dots Exactly on the 6 Hexagon Vertices ── */}
+              <circle cx="130" cy="80" r="7.5" fill="#059669" />
+              <circle cx="270" cy="80" r="7.5" fill="#059669" />
+              <circle cx="360" cy="225" r="7.5" fill="#2563eb" />
+              <circle cx="270" cy="370" r="7.5" fill="#d97706" />
+              <circle cx="130" cy="370" r="7.5" fill="#059669" />
+              <circle cx="40" cy="225" r="7.5" fill="#2563eb" />
+            </svg>
+
+            {/* Central Brand Emblem Node */}
+            <div className="relative z-20 flex flex-col items-center justify-center">
+              <img 
+                src={logoSymbol} 
+                alt="TECH6SENSE Logo Symbol" 
+                className="h-24 w-auto object-contain mb-3 drop-shadow-md transition-transform duration-300 hover:scale-105"
+              />
+              <img 
+                src={logoText} 
+                alt="TECH6SENSE Text" 
+                className="h-7 w-auto object-contain"
+              />
             </div>
-          ))}
+
+          </div>
+
+          {/* Right Column (Cards 2, 3, 6) */}
+          <div className="col-span-4 flex flex-col gap-10 z-20">
+            <CardComponent card={card2} activeCard={activeCard} setActiveCard={setActiveCard} />
+            <CardComponent card={card3} activeCard={activeCard} setActiveCard={setActiveCard} />
+            <CardComponent card={card6} activeCard={activeCard} setActiveCard={setActiveCard} />
+          </div>
+
+        </div>
+
+        {/* ── Mobile Layout ── */}
+        <div className="lg:hidden flex flex-col gap-6">
+          <div className="flex flex-col items-center justify-center p-6 bg-white rounded-3xl shadow-sm border border-slate-100 mb-4">
+            <img 
+              src={logoSymbol} 
+              alt="TECH6SENSE Logo Symbol" 
+              className="h-16 w-auto object-contain mb-2"
+            />
+            <img 
+              src={logoText} 
+              alt="TECH6SENSE Text" 
+              className="h-5 w-auto object-contain"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {ECOSYSTEM_CARDS.map((card) => (
+              <CardComponent key={card.id} card={card} activeCard={activeCard} setActiveCard={setActiveCard} />
+            ))}
+          </div>
         </div>
 
       </div>

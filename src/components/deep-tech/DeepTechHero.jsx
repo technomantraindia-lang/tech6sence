@@ -60,7 +60,7 @@ export default function DeepTechHero() {
           <div className="flex flex-col sm:flex-row items-center sm:items-start justify-start gap-5 w-full">
           <Link
             to="/lets-connect?inquiry=Launch%20Product%20Brand"
-            className="group w-full sm:w-auto relative inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 px-9 py-4 font-body text-sm font-bold text-white shadow-[0_4px_25px_rgba(37,99,235,0.25)] transition-all hover:scale-[1.03] hover:shadow-[0_8px_35px_rgba(37,99,235,0.45)]"
+            className="group w-full sm:w-auto relative inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 px-9 py-4 font-body text-sm font-bold text-white shadow-[0_4px_25px_rgba(37,99,235,0.25)] transition-all hover:scale-[1.03] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]"
           >
             Launch Your AI Product Brand
             <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

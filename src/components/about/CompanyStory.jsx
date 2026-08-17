@@ -33,9 +33,9 @@ export default function CompanyStory() {
     <section ref={sectionRef} className="relative w-full py-20 md:py-32 bg-white overflow-hidden">
       {/* Soft Decorative Background */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(124,58,237,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.02)_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
-      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-violet-100/40 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-[#1746D2]/10/40 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/2 pointer-events-none" />
       
-      <div className="mx-auto max-w-[85rem] px-6 relative z-10">
+      <div className="mx-auto max-w-[1400px] px-6 relative z-10">
         
         {/* Top Header Area */}
         <div 
@@ -44,7 +44,7 @@ export default function CompanyStory() {
           }`}
         >
           <div className="inline-flex items-center gap-2 mb-6">
-            <span className="h-px w-8 bg-violet-300"></span>
+            <span className="h-px w-8 bg-[#1746D2]/80"></span>
             <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-slate-500">
               Our Story
             </span>
@@ -62,7 +62,7 @@ export default function CompanyStory() {
           <div className="flex-1 relative pl-6 md:pl-10">
             {/* Animated Vertical Line */}
             <div 
-              className={`absolute left-0 top-0 w-[3px] bg-gradient-to-b from-violet-500 to-fuchsia-500 transition-all duration-1000 ease-out origin-top ${
+              className={`absolute left-0 top-0 w-[3px] bg-gradient-to-b from-[#1746D2] to-[#00A86B] transition-all duration-1000 ease-out origin-top ${
                 isVisible ? 'scale-y-100' : 'scale-y-0'
               }`} 
               style={{ height: '100%' }}
@@ -94,7 +94,7 @@ export default function CompanyStory() {
         <div className="mt-20 md:mt-32 relative pt-8 border-t border-slate-100">
           {/* Animated Horizontal Divider */}
           <div 
-            className={`absolute top-[-1px] left-0 h-[2px] bg-gradient-to-r from-violet-500 via-fuchsia-500 to-transparent transition-all duration-1500 ease-out ${
+            className={`absolute top-[-1px] left-0 h-[2px] bg-gradient-to-r from-[#1746D2] via-fuchsia-500 to-transparent transition-all duration-1500 ease-out ${
               isVisible ? 'w-full opacity-100' : 'w-0 opacity-0'
             }`}
           />
@@ -112,7 +112,7 @@ export default function CompanyStory() {
                   {point}
                 </span>
                 {/* Hover Underline Effect */}
-                <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-violet-500 to-fuchsia-500 transition-all duration-300 group-hover:w-full" />
+                <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-[#1746D2] to-[#00A86B] transition-all duration-300 group-hover:w-full" />
               </div>
             ))}
           </div>

@@ -36,9 +36,9 @@ export function HowItWorks() {
 
   return (
     <section className="py-20 md:py-28 bg-slate-50 relative border-b border-slate-200">
-      <div className="max-w-[85rem] mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="font-mono text-xs font-bold text-violet-600 uppercase tracking-widest mb-4 block">
+          <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
             THE SIX-PHASE FOUNDER JOURNEY
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display">
@@ -49,9 +49,9 @@ export function HowItWorks() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {steps.map((step, i) => (
             <div key={i} className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-violet-50 rounded-bl-[100px] -z-0 transition-transform group-hover:scale-125"></div>
+              <div className="absolute top-0 right-0 w-24 h-24 bg-[#1746D2]/10 rounded-bl-[100px] -z-0 transition-transform group-hover:scale-125"></div>
               <div className="relative z-10">
-                <span className="font-mono text-xs font-bold text-violet-600 block mb-4 uppercase tracking-widest">
+                <span className="font-mono text-xs font-bold text-[#1746D2] block mb-4 uppercase tracking-widest">
                   {step.num}
                 </span>
                 <h4 className="font-display text-xl font-bold text-slate-900 mb-3">{step.title}</h4>
@@ -268,7 +268,7 @@ export function SuccessStories() {
 
   return (
     <section className="py-20 md:py-28 bg-slate-50 relative overflow-hidden">
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div className="max-w-2xl">
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display">
             Visionary Founders – Success Stories
@@ -315,11 +315,11 @@ export function SuccessStories() {
               onClick={() => setSelectedStory(story)}
               className="min-w-[310px] w-[80vw] md:min-w-[420px] md:w-[420px] shrink-0 snap-center md:snap-start bg-white rounded-[2.5rem] p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group relative overflow-hidden cursor-pointer"
             >
-              <div className="absolute top-0 right-0 w-24 h-24 bg-violet-500/5 rounded-bl-full pointer-events-none" />
+              <div className="absolute top-0 right-0 w-24 h-24 bg-[#1746D2]/5 rounded-bl-full pointer-events-none" />
               
               <div>
                 <div className="flex items-center justify-between gap-4 mb-4">
-                  <span className="px-3 py-1 rounded-full bg-violet-50 text-violet-600 font-mono text-[10px] font-bold uppercase tracking-wider">
+                  <span className="px-3 py-1 rounded-full bg-[#1746D2]/10 text-[#1746D2] font-mono text-[10px] font-bold uppercase tracking-wider">
                     Case #{story.id}
                   </span>
                   <div className="text-xs font-semibold text-slate-500">
@@ -327,12 +327,12 @@ export function SuccessStories() {
                   </div>
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-extrabold text-slate-900 font-display mb-3 leading-snug group-hover:text-violet-600 transition-colors min-h-[56px] flex items-center">
+                <h3 className="text-xl md:text-2xl font-extrabold text-slate-900 font-display mb-3 leading-snug group-hover:text-[#1746D2] transition-colors min-h-[56px] flex items-center">
                   {story.title}
                 </h3>
                 
                 <div className="text-sm font-bold text-slate-800 mb-6">
-                  Founder: <span className="text-violet-600 font-extrabold">{story.founder}</span>
+                  Founder: <span className="text-[#1746D2] font-extrabold">{story.founder}</span>
                 </div>
 
                 <div className="space-y-4 mb-6">
@@ -346,14 +346,14 @@ export function SuccessStories() {
                   
                   <div className="space-y-1">
                     <h4 className="font-bold text-slate-700 text-xs uppercase tracking-wider flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-violet-500" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#1746D2]" />
                       Ecosystem Execution
                     </h4>
                     <p className="text-sm text-slate-655 leading-relaxed font-medium pl-3 line-clamp-4">{story.execution}</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-1.5 text-xs font-extrabold text-violet-600 group-hover:text-violet-800 transition-colors mt-4 pl-3">
+                <div className="flex items-center gap-1.5 text-xs font-extrabold text-[#1746D2] group-hover:text-[#1233A0] transition-colors mt-4 pl-3">
                   <span>Read Full Case Study</span>
                   <svg className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -368,9 +368,9 @@ export function SuccessStories() {
                 </div>
 
                 {story.takeaway && (
-                  <div className="p-3.5 rounded-2xl bg-violet-50/50 border border-violet-100/50">
-                    <h4 className="font-bold text-violet-800 text-[10px] uppercase tracking-wider mb-1">Key Takeaway</h4>
-                    <p className="text-xs text-violet-700 font-medium leading-relaxed">{story.takeaway}</p>
+                  <div className="p-3.5 rounded-2xl bg-[#1746D2]/10/50 border border-[#1746D2]/20/50">
+                    <h4 className="font-bold text-[#1233A0] text-[10px] uppercase tracking-wider mb-1">Key Takeaway</h4>
+                    <p className="text-xs text-[#1233A0] font-medium leading-relaxed">{story.takeaway}</p>
                   </div>
                 )}
               </div>
@@ -402,7 +402,7 @@ export function SuccessStories() {
             </button>
 
             <div className="flex items-center justify-between gap-4 mb-4 mt-2">
-              <span className="px-3.5 py-1 rounded-full bg-violet-100 text-violet-700 font-mono text-xs font-bold uppercase tracking-wider">
+              <span className="px-3.5 py-1 rounded-full bg-[#1746D2]/20 text-[#1233A0] font-mono text-xs font-bold uppercase tracking-wider">
                 Case #{selectedStory.id}
               </span>
               <div className="text-xs font-bold text-slate-500">
@@ -415,7 +415,7 @@ export function SuccessStories() {
             </h3>
 
             <div className="text-sm font-extrabold text-slate-800 border-b border-slate-100 pb-4 mb-6">
-              Founder: <span className="text-violet-600 font-black text-base">{selectedStory.founder}</span>
+              Founder: <span className="text-[#1746D2] font-black text-base">{selectedStory.founder}</span>
             </div>
 
             <div className="space-y-6 mb-8">
@@ -429,7 +429,7 @@ export function SuccessStories() {
 
               <div className="space-y-2">
                 <h4 className="font-bold text-slate-850 text-sm uppercase tracking-widest flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-violet-600 shadow-md shadow-violet-600/50" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#1746D2] shadow-md shadow-[#1746D2]/50" />
                   Ecosystem Execution
                 </h4>
                 <p className="text-sm md:text-base text-slate-600 leading-relaxed font-medium pl-4">{selectedStory.execution}</p>
@@ -443,9 +443,9 @@ export function SuccessStories() {
               </div>
 
               {selectedStory.takeaway && (
-                <div className="p-5 rounded-2xl bg-violet-50 border border-violet-100/60 shadow-sm">
-                  <h4 className="font-bold text-violet-900 text-xs uppercase tracking-widest mb-1.5">Key Takeaway</h4>
-                  <p className="text-sm md:text-base text-violet-800 font-semibold leading-relaxed">{selectedStory.takeaway}</p>
+                <div className="p-5 rounded-2xl bg-[#1746D2]/10 border border-[#1746D2]/20/60 shadow-sm">
+                  <h4 className="font-bold text-[#0d162a] text-xs uppercase tracking-widest mb-1.5">Key Takeaway</h4>
+                  <p className="text-sm md:text-base text-[#1233A0] font-semibold leading-relaxed">{selectedStory.takeaway}</p>
                 </div>
               )}
             </div>

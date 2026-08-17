@@ -24,12 +24,12 @@ export default function ContactFormSection() {
 
   return (
     <section id="form" ref={sectionRef} className="py-20 lg:py-32 bg-slate-50 border-t border-slate-100 overflow-hidden relative">
-      <div className="mx-auto max-w-[85rem] px-6">
+      <div className="mx-auto max-w-[1400px] px-6">
         
         {/* Header */}
         <div className={`mb-16 lg:mb-20 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="inline-flex items-center gap-3 mb-6">
-            <span className="w-8 h-[2px] bg-gradient-to-r from-violet-400 to-fuchsia-400 rounded-full" />
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] rounded-full" />
             <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-slate-500">
               CONTACT FORM
             </span>
@@ -58,7 +58,7 @@ export default function ContactFormSection() {
                 </div>
                 <h3 className="font-display text-2xl font-bold text-slate-900 mb-4">Thank you!</h3>
                 <p className="font-body text-slate-600">Your enquiry has been received. Our team will connect with you soon.</p>
-                <button onClick={() => setSubmitted(false)} className="mt-8 text-sm font-bold text-violet-600 hover:text-violet-700 transition-colors">
+                <button onClick={() => setSubmitted(false)} className="mt-8 text-sm font-bold text-[#1746D2] hover:text-[#1746D2] transition-colors">
                   Submit another message
                 </button>
               </div>
@@ -74,7 +74,7 @@ export default function ContactFormSection() {
                       id="name" 
                       required
                       placeholder="Enter your full name" 
-                      className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-violet-400 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm"
+                      className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#1746D2]/60 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm"
                     />
                   </div>
                   {/* Email */}
@@ -85,7 +85,7 @@ export default function ContactFormSection() {
                       id="email" 
                       required
                       placeholder="Enter your email address" 
-                      className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-violet-400 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm"
+                      className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#1746D2]/60 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm"
                     />
                   </div>
                 </div>
@@ -98,7 +98,7 @@ export default function ContactFormSection() {
                       type="tel" 
                       id="phone" 
                       placeholder="Enter your phone number" 
-                      className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-violet-400 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm"
+                      className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#1746D2]/60 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm"
                     />
                   </div>
                   {/* Company */}
@@ -108,7 +108,7 @@ export default function ContactFormSection() {
                       type="text" 
                       id="company" 
                       placeholder="Enter your company name" 
-                      className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-violet-400 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm"
+                      className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#1746D2]/60 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm"
                     />
                   </div>
                 </div>
@@ -119,7 +119,7 @@ export default function ContactFormSection() {
                     <label htmlFor="interest" className="block text-sm font-bold text-slate-700">Interest Type</label>
                     <select 
                       id="interest" 
-                      className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:border-violet-400 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm appearance-none"
+                      className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:border-[#1746D2]/60 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm appearance-none"
                       style={{ backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`, backgroundPosition: 'right 1rem center', backgroundRepeat: 'no-repeat', backgroundSize: '1.5em 1.5em' }}
                     >
                       <option value="">Select an option</option>
@@ -140,7 +140,7 @@ export default function ContactFormSection() {
                     <label htmlFor="stage" className="block text-sm font-bold text-slate-700">Project Stage</label>
                     <select 
                       id="stage" 
-                      className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:border-violet-400 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm appearance-none"
+                      className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:border-[#1746D2]/60 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm appearance-none"
                       style={{ backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`, backgroundPosition: 'right 1rem center', backgroundRepeat: 'no-repeat', backgroundSize: '1.5em 1.5em' }}
                     >
                       <option value="">Select an option</option>
@@ -162,14 +162,14 @@ export default function ContactFormSection() {
                     rows="4"
                     required
                     placeholder="Tell us about your idea, requirement, or business challenge" 
-                    className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-violet-400 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm resize-none"
+                    className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#1746D2]/60 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm resize-none"
                   ></textarea>
                 </div>
 
                 <div className="pt-2">
                   <button 
                     type="submit" 
-                    className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-8 py-4 font-body text-sm font-bold text-white shadow-[0_4px_15px_rgba(124,58,237,0.3)] transition-all hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(124,58,237,0.4)]"
+                    className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-xl bg-gradient-to-r from-[#1746D2] to-[#00A86B] px-8 py-4 font-body text-sm font-bold text-white shadow-[0_4px_15px_rgba(124,58,237,0.3)] transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]"
                   >
                     Submit Enquiry
                   </button>
@@ -181,7 +181,7 @@ export default function ContactFormSection() {
           {/* Right Side: Guidance Panel */}
           <div className={`lg:col-span-4 transition-all duration-1000 delay-400 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
             <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-violet-50 to-white rounded-bl-full pointer-events-none" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#1746D2]/10 to-white rounded-bl-full pointer-events-none" />
               
               <h3 className="font-display text-xl font-bold text-slate-900 mb-6 relative z-10">
                 What Can You Discuss With Us?
@@ -189,28 +189,28 @@ export default function ContactFormSection() {
               
               <ul className="space-y-4 mb-8 relative z-10">
                 <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-violet-500 mt-2 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1746D2] mt-2 shrink-0" />
                   <span className="font-body text-sm text-slate-700 leading-relaxed">AI strategy and consultation</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-violet-500 mt-2 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1746D2] mt-2 shrink-0" />
                   <span className="font-body text-sm text-slate-700 leading-relaxed">Custom AI product development</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-violet-500 mt-2 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1746D2] mt-2 shrink-0" />
                   <span className="font-body text-sm text-slate-700 leading-relaxed">Business automation and AI agents</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-violet-500 mt-2 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1746D2] mt-2 shrink-0" />
                   <span className="font-body text-sm text-slate-700 leading-relaxed">Deep-tech and smart product ideas</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-violet-500 mt-2 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1746D2] mt-2 shrink-0" />
                   <span className="font-body text-sm text-slate-700 leading-relaxed">Founder ecosystem and partnership opportunities</span>
                 </li>
               </ul>
 
-              <div className="p-4 bg-violet-50/50 rounded-xl border border-violet-100 relative z-10">
+              <div className="p-4 bg-[#1746D2]/10/50 rounded-xl border border-[#1746D2]/10 relative z-10">
                 <p className="font-body text-xs text-slate-600 leading-relaxed">
                   We usually begin by understanding your goals, current challenges, project stage, and expected business outcome.
                 </p>

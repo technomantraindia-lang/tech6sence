@@ -119,9 +119,9 @@ export default function MemberBenefits() {
       {/* Light Gridlines & Glows */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(124,58,237,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.015)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
       <div className="absolute top-1/2 left-[-10%] w-[500px] h-[500px] bg-cyan-100/60 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-[-5%] w-[450px] h-[450px] bg-violet-100/50 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-0 right-[-5%] w-[450px] h-[450px] bg-[#1746D2]/10/50 rounded-full blur-[130px] pointer-events-none" />
 
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span 

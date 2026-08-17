@@ -280,9 +280,9 @@ export default function QuantumCore() {
           <div className="col-span-1 lg:col-span-6 flex flex-col items-start gap-8 z-20">
             
             {/* Pulsating badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-violet-950/40 border border-violet-500/20 backdrop-blur-md">
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#040916]/40 border border-[#1746D2]/20 backdrop-blur-md">
               <span className="w-2.5 h-2.5 rounded-full bg-[#ff3bd4] animate-pulse shadow-[0_0_12px_#ff3bd4]" />
-              <span className="font-mono text-[0.62rem] text-violet-300 tracking-[0.25em] uppercase font-bold">
+              <span className="font-mono text-[0.62rem] text-[#1746D2]/80 tracking-[0.25em] uppercase font-bold">
                 Quantum Reactor Active
               </span>
             </div>
@@ -290,7 +290,7 @@ export default function QuantumCore() {
             {/* Title */}
             <h2 className="font-display text-[clamp(2.2rem,4.5vw,4.2rem)] leading-[1.1] font-extrabold text-white tracking-tight">
               Powering Vision With <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 via-purple-500 to-indigo-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00A86B] via-purple-500 to-indigo-400">
                 Quantum Intelligence
               </span>
             </h2>
@@ -319,7 +319,7 @@ export default function QuantumCore() {
 
               <div>
                 <span className="block font-mono text-[0.55rem] tracking-wider text-slate-500 uppercase">Neural Connections</span>
-                <span className="font-display text-xl font-bold text-violet-400 tracking-wider">12.4K ACTIVE</span>
+                <span className="font-display text-xl font-bold text-[#1746D2] tracking-wider">12.4K ACTIVE</span>
               </div>
             </div>
 

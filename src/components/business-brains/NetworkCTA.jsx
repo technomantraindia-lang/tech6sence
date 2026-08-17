@@ -7,7 +7,7 @@ export default function NetworkCTA() {
       {/* Light Glow Effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-cyan-500/10 to-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10 text-center">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10 text-center">
         
         <span 
           className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-3 block"
@@ -37,7 +37,7 @@ export default function NetworkCTA() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-12">
           <a 
             href="#application-entry"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-500 hover:to-blue-600 text-white font-bold text-sm tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-500 hover:to-blue-600 text-white font-bold text-sm tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:-translate-y-0.5"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             REQUEST BOARD REVIEW

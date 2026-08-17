@@ -163,7 +163,7 @@ export default function BrandLogo({
               animate={isComplete ? { y: 0 } : { y: '100%' }}
               transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
             >
-              TECH<span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-500">6</span>SENSE
+              TECH<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1746D2] to-[#00A86B]">6</span>SENSE
             </motion.span>
           </span>
         </motion.div>

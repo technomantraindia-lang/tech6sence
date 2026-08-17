@@ -38,7 +38,7 @@ export default function IndustriesImpactContent() {
 
   return (
     <div className="bg-slate-50 font-body py-20 md:py-32 relative">
-      <div className="max-w-[85rem] mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6">
         
         {/* Intro */}
         <div className="max-w-4xl mx-auto text-center mb-20">
@@ -68,7 +68,7 @@ export default function IndustriesImpactContent() {
               <div 
                 key={industry.id} 
                 onClick={() => navigate(`/industries/${industry.id}`)}
-                className="group flex flex-col lg:flex-row bg-white border border-slate-200 rounded-3xl overflow-hidden hover:shadow-[0_20px_50px_rgba(15,23,42,0.08)] hover:border-blue-300 transition-all duration-500 cursor-pointer"
+                className="group flex flex-col lg:flex-row bg-white border border-slate-200 rounded-3xl overflow-hidden hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:border-blue-300 transition-all duration-500 cursor-pointer"
                 style={{ animationDelay: `${idx * 50}ms` }}
               >
                 {/* Image (Left) */}

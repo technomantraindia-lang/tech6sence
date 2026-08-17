@@ -90,7 +90,7 @@ export default function InfluenceWithoutBorders() {
             Influence Without Borders
           </h2>
 
-          <div className="text-base sm:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400 font-mono uppercase tracking-wide">
+          <div className="text-base sm:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-[#1746D2] font-mono uppercase tracking-wide">
             True power is not localized.
           </div>
 
@@ -280,22 +280,22 @@ export default function InfluenceWithoutBorders() {
                     onMouseLeave={() => setHoveredCard(null)}
                     className={`p-5 rounded-2xl backdrop-blur-md transition-all duration-300 border flex flex-col justify-between group cursor-pointer ${
                       isHovered 
-                        ? 'bg-violet-950/70 border-violet-400 shadow-[0_0_30px_rgba(139,92,246,0.35)] -translate-y-1' 
-                        : 'bg-white/[0.03] border-white/10 hover:border-violet-500/40'
+                        ? 'bg-[#040916]/70 border-[#1746D2]/60 shadow-[0_0_30px_rgba(139,92,246,0.35)] -translate-y-1' 
+                        : 'bg-white/[0.03] border-white/10 hover:border-[#1746D2]/40'
                     }`}
                   >
                     <div>
                       <div className="flex items-center justify-between mb-2">
-                        <span className="font-mono text-[11px] font-bold text-violet-400 uppercase tracking-wider">
+                        <span className="font-mono text-[11px] font-bold text-[#1746D2] uppercase tracking-wider">
                           {reg.zone}
                         </span>
-                        <span className="px-2.5 py-0.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-[10px] font-mono text-violet-300 font-bold">
+                        <span className="px-2.5 py-0.5 rounded-full bg-[#1746D2]/10 border border-[#1746D2]/20 text-[10px] font-mono text-[#1746D2]/80 font-bold">
                           Active Node
                         </span>
                       </div>
 
                       <h3 
-                        className="text-xl font-bold text-white mb-1 group-hover:text-violet-300 transition-colors"
+                        className="text-xl font-bold text-white mb-1 group-hover:text-[#1746D2]/80 transition-colors"
                         style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                       >
                         {reg.name}
@@ -309,7 +309,7 @@ export default function InfluenceWithoutBorders() {
                         {reg.countries.map((c, cIdx) => (
                           <div key={cIdx} className="flex items-center justify-between text-xs py-1 px-2.5 rounded-lg bg-white/[0.02] border border-white/5">
                             <span className="font-semibold text-slate-200">{c.name}</span>
-                            <span className="text-[10px] font-mono text-violet-400">📍 {c.city}</span>
+                            <span className="text-[10px] font-mono text-[#1746D2]">📍 {c.city}</span>
                           </div>
                         ))}
                       </div>

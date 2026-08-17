@@ -25,7 +25,7 @@ export default function AIAgentsHero() {
         <div className="absolute inset-0 bg-slate-950/20 bg-gradient-to-r from-slate-950/60 via-transparent to-transparent" />
       </div>
 
-      <div className="mx-auto max-w-[85rem] px-6 relative z-10 w-full">
+      <div className="mx-auto max-w-[1400px] px-6 relative z-10 w-full">
         <div className="max-w-3xl">
           
           {/* Floating Text Container */}
@@ -35,7 +35,7 @@ export default function AIAgentsHero() {
             }`}
           >
             {/* Massive Ambient Glow Behind Text */}
-            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[150%] h-[150%] bg-violet-900/20 blur-[120px] pointer-events-none rounded-full" />
+            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[150%] h-[150%] bg-[#0b1329]/20 blur-[120px] pointer-events-none rounded-full" />
 
             {/* Small Label with Status dot */}
             <div className="inline-flex items-center gap-3 mb-8 relative z-10">
@@ -49,7 +49,7 @@ export default function AIAgentsHero() {
             <h1 className="font-display text-[clamp(2.5rem,5vw,5.5rem)] leading-[1.05] font-black tracking-[-0.04em] text-white mb-8 relative z-10 drop-shadow-2xl">
               <span className="whitespace-nowrap md:whitespace-normal">Where Intelligence</span> <br /> 
               Meets <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500">Automation</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-[#1746D2]">Automation</span>
             </h1>
 
             {/* Paragraph */}
@@ -61,7 +61,7 @@ export default function AIAgentsHero() {
             <div className="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto relative z-10">
               <a 
                 href="#consultation" 
-                className="group relative w-full sm:w-auto inline-flex justify-center items-center gap-3 rounded-full bg-white px-10 py-4 font-body text-base font-bold text-slate-950 transition-all hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]"
+                className="group relative w-full sm:w-auto inline-flex justify-center items-center gap-3 rounded-full bg-white px-10 py-4 font-body text-base font-bold text-slate-950 transition-all hover:scale-[1.03] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]"
               >
                 Schedule Consultation
                 <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

@@ -27,7 +27,7 @@ export default function AboutFinalCTA() {
       
       {/* Animated Top Border Line */}
       <div 
-        className="absolute top-0 left-0 h-[2px] bg-gradient-to-r from-violet-500 via-fuchsia-500 to-violet-500 transition-all duration-[1500ms] ease-out" 
+        className="absolute top-0 left-0 h-[2px] bg-gradient-to-r from-[#1746D2] via-fuchsia-500 to-[#1746D2] transition-all duration-[1500ms] ease-out" 
         style={{ width: isVisible ? '100%' : '0%' }} 
       />
 
@@ -36,7 +36,7 @@ export default function AboutFinalCTA() {
       
       {/* Expanding Soft Glow Behind Heading */}
       <div 
-        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[400px] bg-violet-100/70 rounded-full blur-[100px] pointer-events-none transition-all duration-[2000ms] ease-out ${
+        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[400px] bg-[#1746D2]/10/70 rounded-full blur-[100px] pointer-events-none transition-all duration-[2000ms] ease-out ${
           isVisible ? 'scale-125 opacity-100' : 'scale-50 opacity-0'
         }`} 
       />
@@ -45,12 +45,12 @@ export default function AboutFinalCTA() {
         
         {/* Small Label */}
         <div 
-          className={`inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-white border border-violet-100 shadow-sm transition-all duration-700 ease-out ${
+          className={`inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-white border border-[#1746D2]/10 shadow-sm transition-all duration-700 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <div className="w-1.5 h-1.5 rounded-full bg-violet-500 animate-pulse" />
-          <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-violet-700">
+          <div className="w-1.5 h-1.5 rounded-full bg-[#1746D2] animate-pulse" />
+          <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-[#1746D2]">
             Let’s Build With AI
           </span>
         </div>
@@ -82,7 +82,7 @@ export default function AboutFinalCTA() {
           {/* Primary Button */}
           <a 
             href="#contact" 
-            className="group relative w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-8 py-4 font-body text-sm font-bold text-white transition-all hover:scale-105 hover:shadow-[0_10px_30px_rgba(124,58,237,0.25)]"
+            className="group relative w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] px-8 py-4 font-body text-sm font-bold text-white transition-all hover:scale-105 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]"
           >
             <span>Schedule Consultation</span>
             <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center transition-transform group-hover:rotate-45">
@@ -95,7 +95,7 @@ export default function AboutFinalCTA() {
           {/* Secondary Button */}
           <a 
             href="#solutions" 
-            className="group relative w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-white border border-slate-200 px-8 py-4 font-body text-sm font-bold text-slate-700 transition-all hover:border-violet-300 hover:text-violet-700 hover:shadow-[0_8px_20px_rgba(124,58,237,0.08)]"
+            className="group relative w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-white border border-slate-200 px-8 py-4 font-body text-sm font-bold text-slate-700 transition-all hover:border-[#1746D2]/40 hover:text-[#1746D2] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]"
           >
             <span>Explore AI Solutions</span>
             <svg 

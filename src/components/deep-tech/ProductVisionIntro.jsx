@@ -39,7 +39,7 @@ export default function ProductVisionIntro() {
       {/* Background Soft Grids */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(37,99,235,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.01)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
-      <div className="mx-auto max-w-[85rem] px-6 relative z-10">
+      <div className="mx-auto max-w-[1400px] px-6 relative z-10">
         
         {/* Header Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-20">

@@ -45,12 +45,12 @@ export default function AIAgentsCapabilities() {
 
   return (
     <section ref={sectionRef} className="py-20 lg:py-32 bg-white">
-      <div className="mx-auto max-w-[85rem] px-6">
+      <div className="mx-auto max-w-[1400px] px-6">
         
         {/* Header */}
         <div className={`max-w-3xl mb-16 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="inline-flex items-center gap-3 mb-6">
-            <span className="w-8 h-[2px] bg-gradient-to-r from-violet-400 to-fuchsia-400 rounded-full" />
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] rounded-full" />
             <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-slate-500">
               Capabilities
             </span>
@@ -68,18 +68,18 @@ export default function AIAgentsCapabilities() {
           {capabilities.map((cap, i) => (
             <div 
               key={i} 
-              className={`group relative p-8 md:p-10 border-r border-b border-slate-200 bg-white transition-all duration-500 hover:bg-violet-50/30 overflow-hidden ${
+              className={`group relative p-8 md:p-10 border-r border-b border-slate-200 bg-white transition-all duration-500 hover:bg-[#1746D2]/10/30 overflow-hidden ${
                 isVisible ? 'opacity-100' : 'opacity-0'
               }`}
               style={{ transitionDelay: `${300 + (i * 100)}ms` }}
             >
               {/* Top Accent Line on Hover */}
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-violet-500 to-fuchsia-500 -translate-x-full transition-transform duration-500 group-hover:translate-x-0" />
+              <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] -translate-x-full transition-transform duration-500 group-hover:translate-x-0" />
               
-              <div className="text-violet-300 font-mono text-sm font-bold mb-6">
+              <div className="text-[#1746D2]/80 font-mono text-sm font-bold mb-6">
                 {(i + 1).toString().padStart(2, '0')}
               </div>
-              <h3 className="font-display text-xl font-bold text-slate-900 mb-4 group-hover:text-violet-900 transition-colors">
+              <h3 className="font-display text-xl font-bold text-slate-900 mb-4 group-hover:text-slate-900 transition-colors">
                 {cap.title}
               </h3>
               <p className="font-body text-sm text-slate-600 leading-relaxed">
@@ -88,7 +88,7 @@ export default function AIAgentsCapabilities() {
               
               {/* Subtle Arrow */}
               <div className="mt-8 flex items-center justify-start opacity-0 -translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0">
-                <svg className="w-5 h-5 text-violet-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-5 h-5 text-[#1746D2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </div>

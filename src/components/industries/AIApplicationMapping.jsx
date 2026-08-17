@@ -54,16 +54,16 @@ export default function AIApplicationMapping() {
 
   return (
     <section ref={sectionRef} className="py-20 lg:py-32 bg-white">
-      <div className="mx-auto max-w-[85rem] px-6">
+      <div className="mx-auto max-w-[1400px] px-6">
         
         {/* Header */}
         <div className={`text-center max-w-3xl mx-auto mb-16 lg:mb-24 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="inline-flex items-center gap-3 mb-6">
-            <span className="w-8 h-[2px] bg-gradient-to-r from-violet-400 to-fuchsia-400 rounded-full" />
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] rounded-full" />
             <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-slate-500">
               AI APPLICATION MAP
             </span>
-            <span className="w-8 h-[2px] bg-gradient-to-r from-fuchsia-400 to-violet-400 rounded-full" />
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#00A86B] to-[#1746D2] rounded-full" />
           </div>
           
           <h2 className="font-display text-[clamp(1.75rem,3.5vw,3rem)] leading-tight font-extrabold text-slate-900 mb-6 tracking-tight">
@@ -99,7 +99,7 @@ export default function AIApplicationMapping() {
                 {rows.map((row, i) => (
                   <div key={i} className="grid grid-cols-7 group hover:bg-slate-50/80 transition-colors">
                     {/* Capability Name */}
-                    <div className="col-span-1 p-6 flex items-center font-display font-bold text-slate-900 text-sm group-hover:text-violet-700 transition-colors border-r border-slate-100/50">
+                    <div className="col-span-1 p-6 flex items-center font-display font-bold text-slate-900 text-sm group-hover:text-[#1746D2] transition-colors border-r border-slate-100/50">
                       {row.capability}
                     </div>
                     
@@ -109,9 +109,9 @@ export default function AIApplicationMapping() {
                       return (
                         <div key={j} className="col-span-1 p-6 flex items-center justify-center border-r border-slate-100/50 last:border-r-0">
                           {isActive ? (
-                            <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-violet-50 group-hover:bg-violet-100 transition-colors">
-                              <div className="absolute inset-0 bg-violet-400 rounded-full blur opacity-20" />
-                              <div className="w-2.5 h-2.5 bg-violet-600 rounded-full relative z-10" />
+                            <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-[#1746D2]/10 group-hover:bg-[#1746D2]/10 transition-colors">
+                              <div className="absolute inset-0 bg-[#1746D2] rounded-full blur opacity-20" />
+                              <div className="w-2.5 h-2.5 bg-[#1746D2] rounded-full relative z-10" />
                             </div>
                           ) : (
                             <div className="w-1.5 h-1.5 bg-slate-200 rounded-full" />

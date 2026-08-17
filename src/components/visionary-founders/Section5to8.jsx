@@ -17,22 +17,22 @@ export function IntroducingProgram() {
 
   return (
     <section className="py-20 md:py-28 bg-white relative overflow-hidden">
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
-        <span className="font-mono text-xs font-bold text-violet-600 uppercase tracking-widest mb-4 block text-center">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+        <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block text-center">
           THE SOLUTION
         </span>
-        <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 font-display max-w-4xl mx-auto text-center leading-tight">
+        <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 font-display max-w-5xl mx-auto text-center leading-tight">
           Visionary Founders By TECH6SENSE AI
         </h2>
-        <h3 className="text-xl md:text-2xl font-bold text-violet-600 mb-8 font-display text-center">
+        <h3 className="text-xl md:text-2xl font-bold text-[#1746D2] mb-8 font-display text-center">
           One Global Ecosystem. Every Pillar of Your Company Handled.
         </h3>
         
-        <p className="text-slate-650 max-w-3xl mx-auto text-base md:text-lg leading-relaxed mb-12 text-center font-medium">
+        <p className="text-slate-650 max-w-4xl mx-auto text-base md:text-lg leading-relaxed mb-12 text-center font-medium">
           Visionary Founders isn't a course. It isn't a mentorship group. It isn't an incubator that gives you advice and wishes you luck. It's a complete operating ecosystem — the legal foundation, technology team, brand engine, sales machine, and expansion pathway of a mature company, made available to you from the moment you join. You focus on vision, strategy, and clients. We power everything behind you — engineered from day one for founders who intend to operate internationally, not just locally.
         </p>
 
-        <div className="max-w-4xl mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-xl bg-white mt-12">
+        <div className="w-full mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-xl bg-white mt-12">
           <div className="p-6 bg-slate-900 text-white font-display font-bold text-lg text-center">
             When you join, you don't get a course. You get a working business infrastructure:
           </div>
@@ -305,11 +305,11 @@ export function EcosystemComponents() {
 
   return (
     <section className="py-20 md:py-28 bg-slate-900 text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-violet-900/40 via-slate-900 to-slate-900 z-0"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#0d162a]/40 via-slate-900 to-slate-900 z-0"></div>
       
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div className="max-w-2xl">
-          <span className="font-mono text-xs font-bold text-violet-400 uppercase tracking-widest mb-4 block">
+          <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
             Complete Ecosystem Components
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 font-display">
@@ -354,11 +354,11 @@ export function EcosystemComponents() {
           {components.map((comp, idx) => (
             <div 
               key={idx}
-              className="min-w-[320px] w-[85vw] md:min-w-[450px] md:w-[450px] shrink-0 snap-center md:snap-start bg-slate-800/40 backdrop-blur-md rounded-[2.5rem] p-8 border border-slate-700/50 hover:border-violet-500/50 hover:-translate-y-2 transition-all duration-300 flex flex-col group relative overflow-hidden shadow-2xl"
+              className="min-w-[320px] w-[85vw] md:min-w-[450px] md:w-[450px] shrink-0 snap-center md:snap-start bg-slate-800/40 backdrop-blur-md rounded-[2.5rem] p-8 border border-slate-700/50 hover:border-[#1746D2]/50 hover:-translate-y-2 transition-all duration-300 flex flex-col group relative overflow-hidden shadow-2xl"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-violet-500/10 rounded-bl-full blur-xl group-hover:bg-violet-500/20 transition-colors"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#1746D2]/10 rounded-bl-full blur-xl group-hover:bg-[#1746D2]/20 transition-colors"></div>
               
-              <span className="font-mono text-5xl font-extrabold text-slate-700/50 mb-6 block group-hover:text-violet-500/30 transition-colors">
+              <span className="font-mono text-5xl font-extrabold text-slate-700/50 mb-6 block group-hover:text-[#1746D2]/30 transition-colors">
                 {comp.num}
               </span>
               
@@ -366,7 +366,7 @@ export function EcosystemComponents() {
                 {comp.title}
               </h3>
               
-              <h4 className="text-violet-400 font-bold mb-4 text-sm uppercase tracking-wide">
+              <h4 className="text-[#00A86B] font-bold mb-4 text-sm uppercase tracking-wide">
                 {comp.subtitle}
               </h4>
               
@@ -374,9 +374,9 @@ export function EcosystemComponents() {
                 {comp.desc}
               </p>
               
-              <div className="flex-grow overflow-y-auto max-h-[220px] hide-scrollbar mb-6 border-t border-white/5 pt-4">
+              <div className="flex-1 mb-8 overflow-y-auto max-h-[220px] pr-2 custom-scrollbar">
                 {comp.services ? (
-                  <ul className="space-y-2">
+                  <ul className="space-y-2.5">
                     {comp.services.map((service, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-slate-300 text-xs font-medium">
                         <svg className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -390,7 +390,7 @@ export function EcosystemComponents() {
                   <div className="space-y-4">
                     {comp.sections.map((sect, i) => (
                       <div key={i}>
-                        <h5 className="text-[10px] font-bold uppercase tracking-wider text-violet-300 mb-2">{sect.heading}</h5>
+                        <h5 className="text-[10px] font-bold uppercase tracking-wider text-[#00A86B] mb-2">{sect.heading}</h5>
                         <ul className="space-y-2">
                           {sect.items.map((item, j) => (
                             <li key={j} className="flex items-start gap-2.5 text-slate-300 text-xs font-medium">
@@ -408,8 +408,8 @@ export function EcosystemComponents() {
               </div>
               
               <div className="p-5 rounded-2xl bg-white/5 border border-white/10 mt-auto">
-                <h6 className="font-bold text-violet-300 text-[10px] mb-2 uppercase tracking-widest">Your Benefit</h6>
-                <p className="text-violet-100 font-medium text-xs leading-snug">{comp.benefit}</p>
+                <h6 className="font-bold text-[#00A86B] text-[0.7rem] mb-1.5 uppercase tracking-widest">Your Benefit</h6>
+                <p className="text-slate-200 font-medium text-xs md:text-sm leading-relaxed">{comp.benefit}</p>
               </div>
             </div>
           ))}
@@ -442,8 +442,8 @@ export function WhoIsThisFor() {
 
   return (
     <section className="py-20 md:py-28 bg-white relative">
-      <div className="max-w-[85rem] mx-auto px-6 text-center">
-        <span className="font-mono text-xs font-bold text-violet-600 uppercase tracking-widest mb-4 block">
+      <div className="max-w-[1400px] mx-auto px-6 text-center">
+        <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
           WHO THIS IS FOR
         </span>
         <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-12 font-display">
@@ -485,11 +485,11 @@ export function WhatYouWillAchieve() {
 
   return (
     <section className="py-20 md:py-28 bg-slate-900 text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-violet-900/40 to-slate-900 z-0"></div>
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0d162a]/40 to-slate-900 z-0"></div>
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
-            <span className="font-mono text-xs font-bold text-violet-400 uppercase tracking-widest mb-4 block">
+            <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
               What You Will Achieve
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-8 font-display">
@@ -498,7 +498,7 @@ export function WhatYouWillAchieve() {
             <div className="flex flex-col gap-4">
               {achievements.map((item, i) => (
                 <div key={i} className="flex items-center gap-4 bg-white/5 border border-white/10 p-4 rounded-xl hover:bg-white/10 transition-colors">
-                  <div className="w-8 h-8 rounded-full bg-violet-600 flex items-center justify-center shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-[#1746D2] flex items-center justify-center shrink-0">
                     <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
                     </svg>
@@ -507,7 +507,7 @@ export function WhatYouWillAchieve() {
                 </div>
               ))}
             </div>
-            <p className="text-violet-300 text-sm mt-8 italic font-medium pl-2 leading-relaxed">
+            <p className="text-[#1746D2]/80 text-sm mt-8 italic font-medium pl-2 leading-relaxed">
               This isn't a certificate program. It's an operating company, built with you, engineered to compete globally from the first day it exists.
             </p>
           </div>

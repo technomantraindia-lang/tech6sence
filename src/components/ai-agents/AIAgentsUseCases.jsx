@@ -47,16 +47,16 @@ export default function AIAgentsUseCases() {
 
   return (
     <section ref={sectionRef} className="py-20 lg:py-32 bg-slate-50 border-t border-slate-100">
-      <div className="mx-auto max-w-[85rem] px-6">
+      <div className="mx-auto max-w-[1400px] px-6">
         
         {/* Header */}
         <div className={`text-center max-w-3xl mx-auto mb-16 lg:mb-20 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="inline-flex items-center gap-3 mb-6">
-            <span className="w-8 h-[2px] bg-gradient-to-r from-violet-400 to-fuchsia-400 rounded-full" />
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] rounded-full" />
             <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-slate-500">
               Use Cases
             </span>
-            <span className="w-8 h-[2px] bg-gradient-to-r from-fuchsia-400 to-violet-400 rounded-full" />
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#00A86B] to-[#1746D2] rounded-full" />
           </div>
           <h2 className="font-display text-[clamp(1.75rem,3.5vw,3rem)] leading-tight font-extrabold text-slate-900 mb-6 tracking-tight">
             Where AI Agents Can Work Inside Your Business
@@ -77,14 +77,14 @@ export default function AIAgentsUseCases() {
                 onClick={() => setActiveTab(idx)}
                 className={`flex-shrink-0 relative px-6 py-3 rounded-full font-body text-sm font-semibold transition-all duration-300 border ${
                   activeTab === idx 
-                  ? 'bg-violet-600 text-white border-violet-600 shadow-md' 
-                  : 'bg-white text-slate-600 border-slate-200 hover:border-violet-300 hover:bg-violet-50'
+                  ? 'bg-[#1746D2] text-white border-[#1746D2] shadow-md' 
+                  : 'bg-white text-slate-600 border-slate-200 hover:border-[#1746D2]/40 hover:bg-[#1746D2]/10'
                 }`}
               >
                 {useCase.title}
                 {/* Thin active line indicator */}
                 {activeTab === idx && (
-                  <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-violet-600 md:hidden" />
+                  <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#1746D2] md:hidden" />
                 )}
               </button>
             ))}
@@ -94,7 +94,7 @@ export default function AIAgentsUseCases() {
           <div className="mt-8 md:mt-12 mx-auto max-w-4xl bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden relative min-h-[220px] flex items-center">
             
             {/* Background accent */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-violet-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#1746D2]/10/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none" />
 
             <div className="relative z-10 p-8 md:p-12 w-full">
               {useCases.map((useCase, idx) => (
@@ -107,8 +107,8 @@ export default function AIAgentsUseCases() {
                   }`}
                 >
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-10 h-10 rounded-full bg-violet-100 flex items-center justify-center shrink-0">
-                      <svg className="w-5 h-5 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-10 h-10 rounded-full bg-[#1746D2]/10 flex items-center justify-center shrink-0">
+                      <svg className="w-5 h-5 text-[#1746D2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                       </svg>
                     </div>

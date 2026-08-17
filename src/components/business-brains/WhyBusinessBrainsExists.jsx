@@ -15,7 +15,7 @@ export default function WhyBusinessBrainsExists() {
       title: "Market Intelligence",
       desc: "Proprietary cross-border market research, sector evolution trends, and regulatory analysis shared under strict Chatham House confidentiality.",
       icon: (
-        <svg className="w-6 h-6 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-6 h-6 text-[#1746D2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
         </svg>
       )
@@ -33,7 +33,7 @@ export default function WhyBusinessBrainsExists() {
       title: "The Top 1% of Global Minds",
       desc: "Secure private collaboration bringing together visionaries, capital allocators, and industry titans to drive high-yield exits and international execution.",
       icon: (
-        <svg className="w-6 h-6 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-6 h-6 text-[#1746D2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h1.5a2.5 2.5 0 002.5-2.5V11a2 2 0 012-2h1.055M11 20.055V18a2 2 0 012-2h2.5a2 2 0 002-2v-1.5a2.5 2.5 0 00-2.5-2.5H14" />
         </svg>
       )
@@ -46,7 +46,7 @@ export default function WhyBusinessBrainsExists() {
       {/* Glow Effects */}
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-cyan-900/15 rounded-full blur-[150px] pointer-events-none" />
 
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           

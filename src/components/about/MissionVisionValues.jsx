@@ -45,19 +45,19 @@ export default function MissionVisionValues() {
 
   return (
     <section className="w-full py-20 md:py-28 bg-white text-slate-800 border-t border-slate-100">
-      <div className="mx-auto max-w-[85rem] px-6">
+      <div className="mx-auto max-w-[1400px] px-6">
         
         {/* ─── 1. MISSION & VISION (MINIMAL SPLIT) ─── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-24 pb-20 border-b border-slate-100/80">
           {/* Mission */}
           <div>
-            <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-violet-600">Our Mission</span>
+            <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-[#1746D2]">Our Mission</span>
             <h3 className="font-display text-2xl md:text-3xl font-extrabold text-slate-900 mt-3 mb-8">
               Democratize advanced AI and build a thriving ecosystem.
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {missionItems.map((item, idx) => (
-                <div key={idx} className="border-l-[3px] border-violet-500/30 pl-5 py-1">
+                <div key={idx} className="border-l-[3px] border-[#1746D2]/30 pl-5 py-1">
                   <h4 className="text-sm md:text-base font-bold text-slate-900">{item.title}</h4>
                   <p className="text-xs md:text-sm text-slate-500 leading-relaxed mt-2">{item.desc}</p>
                 </div>
@@ -67,13 +67,13 @@ export default function MissionVisionValues() {
 
           {/* Vision */}
           <div>
-            <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-fuchsia-600">Our Vision</span>
+            <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-[#00A86B]">Our Vision</span>
             <h3 className="font-display text-2xl md:text-3xl font-extrabold text-slate-900 mt-3 mb-8">
               Establish India as a hub for global AI IP and products.
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {visionItems.map((item, idx) => (
-                <div key={idx} className="border-l-[3px] border-fuchsia-500/30 pl-5 py-1">
+                <div key={idx} className="border-l-[3px] border-[#00A86B]/30 pl-5 py-1">
                   <h4 className="text-sm md:text-base font-bold text-slate-900">{item.title}</h4>
                   <p className="text-xs md:text-sm text-slate-500 leading-relaxed mt-2">{item.desc}</p>
                 </div>
@@ -93,7 +93,7 @@ export default function MissionVisionValues() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {differentiators.map((diff, idx) => (
               <div key={idx} className="group">
-                <span className="text-xs md:text-sm font-bold text-violet-600 tracking-wider">0{idx + 1}.</span>
+                <span className="text-xs md:text-sm font-bold text-[#1746D2] tracking-wider">0{idx + 1}.</span>
                 <h3 className="font-display text-lg md:text-xl font-bold text-slate-900 mt-3 mb-4">{diff.title}</h3>
                 <p className="text-sm md:text-base text-slate-500 leading-relaxed">{diff.desc}</p>
               </div>
@@ -113,7 +113,7 @@ export default function MissionVisionValues() {
             {values.map((v, idx) => (
               <div key={idx} className="p-6 md:p-8 rounded-3xl border border-slate-100 bg-slate-50/30 hover:bg-slate-50/80 transition-colors duration-250">
                 <h4 className="text-sm md:text-base font-bold text-slate-900 flex items-center gap-2.5">
-                  <span className="w-2 h-2 rounded-full bg-violet-600" />
+                  <span className="w-2 h-2 rounded-full bg-[#1746D2]" />
                   {v.title}
                 </h4>
                 <p className="text-xs md:text-sm text-slate-500 leading-relaxed mt-3">{v.desc}</p>

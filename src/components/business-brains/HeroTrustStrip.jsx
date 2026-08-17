@@ -25,7 +25,7 @@ export default function HeroTrustStrip() {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(124,58,237,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.03)_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none z-0" />
 
       {/* MAIN HERO CONTENT - PREMIUM TWO-COLUMN GRID */}
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10 w-full my-auto py-12 md:py-16">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10 w-full my-auto py-12 md:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center text-left">
           
           {/* Left Column: Copy & CTAs */}
@@ -49,7 +49,7 @@ export default function HeroTrustStrip() {
             </div>
 
             {/* Highlight Ribbon */}
-            <div className="text-base sm:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400 font-mono uppercase tracking-wide">
+            <div className="text-base sm:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-[#1746D2] font-mono uppercase tracking-wide">
               Stop Networking. Start Unlocking Millions.
             </div>
 
@@ -93,7 +93,7 @@ export default function HeroTrustStrip() {
           <div className="lg:col-span-5 flex flex-col gap-6 w-full">
             {/* Sleek Logo Presentation */}
             <div className="relative inline-block mx-auto lg:mx-0 group w-fit">
-              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 to-violet-600/30 rounded-2xl blur-lg opacity-50 group-hover:opacity-80 transition-opacity" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 to-[#1746D2]/30 rounded-2xl blur-lg opacity-50 group-hover:opacity-80 transition-opacity" />
               <div className="relative bg-white/95 backdrop-blur-xl border border-white/30 px-8 py-3 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.4)] flex items-center justify-center">
                 <img 
                   src="https://tech6senseai.com/wp-content/uploads/2026/02/Business-Brain-Logo-PNG.png" 
@@ -109,11 +109,11 @@ export default function HeroTrustStrip() {
               
               <div className="text-xs md:text-sm font-mono text-cyan-300/90 uppercase tracking-widest space-y-3.5 border-b border-white/10 pb-5">
                 <div className="flex items-start gap-2.5">
-                  <span className="text-violet-400 text-sm font-bold">✓</span>
+                  <span className="text-[#1746D2] text-sm font-bold">✓</span>
                   <span>Not a community. Not a platform. A Circle — and very few are Admitted.</span>
                 </div>
                 <div className="flex items-start gap-2.5">
-                  <span className="text-violet-400 text-sm font-bold">✓</span>
+                  <span className="text-[#1746D2] text-sm font-bold">✓</span>
                   <span className="font-extrabold text-white">Access is Not Granted. It is Earned.</span>
                 </div>
               </div>

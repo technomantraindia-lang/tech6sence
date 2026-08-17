@@ -15,9 +15,9 @@ export default function PhilosophySection() {
       
       {/* Glowing backdrop */}
       <div className="absolute top-1/2 left-[-10%] w-[500px] h-[500px] bg-cyan-100/60 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-[-5%] w-[450px] h-[450px] bg-violet-100/50 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-0 right-[-5%] w-[450px] h-[450px] bg-[#1746D2]/10/50 rounded-full blur-[130px] pointer-events-none" />
 
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         {/* Eyebrow */}
         <span 

@@ -25,7 +25,7 @@ export default function IntelligentIntroPrinciples() {
       {/* Background Soft Grids */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(37,99,235,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.01)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
-      <div className="mx-auto max-w-[85rem] px-6 relative z-10">
+      <div className="mx-auto max-w-[1400px] px-6 relative z-10">
         
         {/* Intro & Mandate Header Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-20">
@@ -90,7 +90,7 @@ export default function IntelligentIntroPrinciples() {
             {principles.map((pr, idx) => (
               <div 
                 key={idx}
-                className="p-6 rounded-2xl border border-slate-200/80 bg-slate-50/40 hover:bg-white hover:border-emerald-500/50 hover:shadow-[0_10px_30px_rgba(16,185,129,0.05)] transition-all duration-300 flex flex-col justify-between group"
+                className="p-6 rounded-2xl border border-slate-200/80 bg-slate-50/40 hover:bg-white hover:border-emerald-500/50 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   {/* Corrected Alignment Circle: removed inline-block, kept clean flex center alignment, styled in Royal Blue & Embedded Green */}

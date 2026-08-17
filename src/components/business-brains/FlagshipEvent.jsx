@@ -13,10 +13,10 @@ export default function FlagshipEvent() {
       
       {/* Background Styling */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-cyan-900/20 to-violet-900/20 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-cyan-900/20 to-[#0b1329]/20 rounded-full blur-[140px] pointer-events-none" />
       </div>
 
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="flex flex-col items-center text-center">
           

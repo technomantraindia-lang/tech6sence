@@ -611,7 +611,7 @@ export default function DeepTechProductDetail() {
       {/* Hero Section */}
       <section className="relative w-full pt-32 pb-20 lg:pt-40 lg:pb-32 bg-white border-b border-slate-200/80 overflow-hidden">
         {/* Ambient background glow orbs */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-violet-200/20 to-fuchsia-200/20 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-[#1746D2]/40/20 to-fuchsia-200/20 blur-[120px] rounded-full pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-blue-200/10 to-indigo-200/10 blur-[100px] rounded-full pointer-events-none" />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(37,99,235,0.003)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.003)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
@@ -626,7 +626,7 @@ export default function DeepTechProductDetail() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Title & Description */}
             <div className="lg:col-span-7">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-50 border border-violet-100 text-xs font-mono font-bold uppercase text-violet-700 tracking-wider mb-6">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1746D2]/10 border border-[#1746D2]/10 text-xs font-mono font-bold uppercase text-[#1746D2] tracking-wider mb-6">
                 Premium Hardware // SYS-DT
               </span>
               <h1 className="font-display text-[clamp(2.2rem,5vw,4rem)] leading-[1.1] font-black text-slate-900 mb-6 tracking-tight">
@@ -651,7 +651,7 @@ export default function DeepTechProductDetail() {
               <div className="flex flex-wrap gap-4 mt-8">
                 <Link
                   to={`/lets-connect?inquiry=${encodeURIComponent(product.title)}`}
-                  className="px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300 text-sm md:text-base"
+                  className="px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-300 text-sm md:text-base"
                 >
                   Book Enterprise Consultation
                 </Link>
@@ -752,9 +752,9 @@ export default function DeepTechProductDetail() {
             </SpotlightCard>
 
             {/* Vision & Value */}
-            <SpotlightCard className="bg-gradient-to-br from-violet-50/50 to-fuchsia-50/20 flex flex-col justify-between">
+            <SpotlightCard className="bg-gradient-to-br from-[#1746D2]/10/50 to-fuchsia-50/20 flex flex-col justify-between">
               <div>
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-violet-600 mb-4 block">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#1746D2] mb-4 block">
                   Product Vision
                 </span>
                 <h2 className="font-display text-2xl md:text-3xl font-extrabold text-slate-900 mb-6 tracking-tight">
@@ -769,7 +769,7 @@ export default function DeepTechProductDetail() {
 
               {/* Value prompt */}
               <div className="mt-8 p-4 rounded-2xl bg-white border border-slate-100 flex items-center gap-4">
-                <span className="w-10 h-10 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center font-display font-black">
+                <span className="w-10 h-10 rounded-xl bg-[#1746D2]/10 text-[#1746D2] flex items-center justify-center font-display font-black">
                   6S
                 </span>
                 <div>
@@ -872,7 +872,7 @@ export default function DeepTechProductDetail() {
                     <ul className="space-y-2">
                       {block.items.map((item, iIdx) => (
                         <li key={iIdx} className="flex items-start gap-2.5 text-xs text-slate-600 font-semibold leading-relaxed">
-                          <span className="w-1.5 h-1.5 rounded-full bg-violet-600 mt-1.5 flex-shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#1746D2] mt-1.5 flex-shrink-0" />
                           {item}
                         </li>
                       ))}
@@ -886,7 +886,7 @@ export default function DeepTechProductDetail() {
       )}
       {/* Core Technology Innovations */}
       <section className="relative w-full py-20 lg:py-28 bg-[#FAFAFA] border-b border-slate-200/80">
-        <div className="mx-auto max-w-[85rem] px-6">
+        <div className="mx-auto max-w-[1400px] px-6">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-600 block mb-4">
               ARCHITECTURAL PILLARS
@@ -923,7 +923,7 @@ export default function DeepTechProductDetail() {
                   <ul className="space-y-2">
                     {tech.bullets.map((bullet, bIdx) => (
                       <li key={bIdx} className="flex items-center gap-2 text-xs font-semibold text-slate-600">
-                        <span className="w-1.5 h-1.5 rounded-full bg-violet-500" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#1746D2]" />
                         {bullet}
                       </li>
                     ))}
@@ -942,7 +942,7 @@ export default function DeepTechProductDetail() {
       <section className="relative w-full py-20 lg:py-28 bg-white border-b border-slate-200/80">
         <div className="mx-auto max-w-[1400px] px-6">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-violet-600 block mb-4">
+            <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#1746D2] block mb-4">
               PRODUCT MATRIX
             </span>
             <h2 className="font-display text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -985,7 +985,7 @@ export default function DeepTechProductDetail() {
         <section className="relative w-full py-20 lg:py-28 bg-[#FAFAFA] border-b border-slate-200/80">
           <div className="mx-auto max-w-[1400px] px-6">
             <div className="text-center max-w-3xl mx-auto mb-20">
-              <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-violet-600 block mb-4">
+              <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#1746D2] block mb-4">
                 SENSING ENGINE
               </span>
               <h2 className="font-display text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -1084,7 +1084,7 @@ export default function DeepTechProductDetail() {
         <section className="relative w-full py-20 lg:py-28 bg-white border-b border-slate-200/80">
           <div className="mx-auto max-w-[1400px] px-6">
             <div className="text-center max-w-3xl mx-auto mb-20">
-              <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-violet-600 block mb-4">
+              <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#1746D2] block mb-4">
                 REAL-WORLD APPLICATION
               </span>
               <h2 className="font-display text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -1165,7 +1165,7 @@ export default function DeepTechProductDetail() {
           <section className="relative w-full py-20 lg:py-28 bg-[#FAFAFA] border-b border-slate-200/80">
             <div className="mx-auto max-w-[1400px] px-6">
               <div className="text-center max-w-3xl mx-auto mb-16">
-                <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-violet-600 block mb-4">
+                <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#1746D2] block mb-4">
                   B2C DEPLOYMENT
                 </span>
                 <h2 className="font-display text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -1184,7 +1184,7 @@ export default function DeepTechProductDetail() {
                   <SpotlightCard
                     key={idx}
                     className={product.title.toLowerCase().includes("glasses")
-                      ? "flex flex-col p-6 rounded-3xl border border-slate-100/80 bg-white/60 backdrop-blur-sm shadow-sm hover:shadow-xl hover:border-violet-200 transition-all duration-500 hover:-translate-y-1 flex-1"
+                      ? "flex flex-col p-6 rounded-3xl border border-slate-100/80 bg-white/60 backdrop-blur-sm shadow-sm hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:border-[#1746D2]/40 transition-all duration-500 hover:-translate-y-1 flex-1"
                       : "flex flex-col p-8 rounded-3xl border border-slate-100 bg-white shadow-sm hover:shadow-md transition-all duration-300"}
                   >
                     <div className="flex items-center gap-3 mb-6">
@@ -1201,7 +1201,7 @@ export default function DeepTechProductDetail() {
                     <ul className="space-y-2 flex-1">
                       {group.items.map((item, iIdx) => (
                         <li key={iIdx} className="flex items-center gap-3 text-slate-600 text-sm font-medium">
-                          <span className="w-5 h-5 rounded-full bg-violet-50 border border-violet-200 text-violet-600 flex items-center justify-center text-[0.6rem] font-bold flex-shrink-0">
+                          <span className="w-5 h-5 rounded-full bg-[#1746D2]/10 border border-[#1746D2]/20 text-[#1746D2] flex items-center justify-center text-[0.6rem] font-bold flex-shrink-0">
                             ✓
                           </span>
                           {item}
@@ -1288,9 +1288,9 @@ export default function DeepTechProductDetail() {
                   whileHover={{ scale: 1.05, y: -2 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: idx * 0.02 }}
-                  className="px-5 py-3 rounded-2xl bg-slate-50 border border-slate-200/60 hover:border-violet-300 hover:bg-violet-50/20 text-slate-700 hover:text-violet-700 font-semibold text-xs md:text-sm shadow-sm transition-all duration-300 flex items-center gap-2 cursor-default"
+                  className="px-5 py-3 rounded-2xl bg-slate-50 border border-slate-200/60 hover:border-[#1746D2]/40 hover:bg-[#1746D2]/10/20 text-slate-700 hover:text-[#1746D2] font-semibold text-xs md:text-sm shadow-sm transition-all duration-300 flex items-center gap-2 cursor-default"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-violet-600 animate-pulse" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1746D2] animate-pulse" />
                   {ind}
                 </motion.div>
               ))}
@@ -1425,7 +1425,7 @@ export default function DeepTechProductDetail() {
                 {items.map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-5 rounded-2xl border border-slate-100 bg-slate-50/20 hover:bg-slate-50 hover:border-blue-300 hover:shadow-[0_4px_20px_rgba(37,99,235,0.05)] transition-all duration-300 flex items-center gap-3 cursor-default"
+                    className="p-5 rounded-2xl border border-slate-100 bg-slate-50/20 hover:bg-slate-50 hover:border-blue-300 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-300 flex items-center gap-3 cursor-default"
                   >
                     <span className="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-sm">
                       📡
@@ -1461,7 +1461,7 @@ export default function DeepTechProductDetail() {
           <section className="relative w-full py-20 lg:py-28 bg-[#FAFAFA] border-b border-slate-200/80">
             <div className="mx-auto max-w-[1400px] px-6">
               <div className="text-center max-w-3xl mx-auto mb-16">
-                <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-violet-600 block mb-4">
+                <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#1746D2] block mb-4">
                   HARDWARE DEPLOYMENT
                 </span>
                 <h2 className="font-display text-3xl font-extrabold text-slate-900 tracking-tight">
@@ -1478,9 +1478,9 @@ export default function DeepTechProductDetail() {
                 {items.map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-5 rounded-2xl border border-slate-100 bg-white hover:bg-slate-50 hover:border-violet-300 hover:shadow-[0_4px_20px_rgba(139,92,246,0.05)] transition-all duration-300 flex items-center gap-3 cursor-default"
+                    className="p-5 rounded-2xl border border-slate-100 bg-white hover:bg-slate-50 hover:border-[#1746D2]/40 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-300 flex items-center gap-3 cursor-default"
                   >
-                    <span className="w-8 h-8 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center font-bold text-sm">
+                    <span className="w-8 h-8 rounded-xl bg-[#1746D2]/10 text-[#1746D2] flex items-center justify-center font-bold text-sm">
                       ⚙️
                     </span>
                     <span className="text-xs md:text-sm font-bold text-slate-700 leading-relaxed">
@@ -1499,7 +1499,7 @@ export default function DeepTechProductDetail() {
         <section className="relative w-full py-20 lg:py-28 bg-white border-b border-slate-200/80">
           <div className="mx-auto max-w-[1400px] px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-violet-600 block mb-4">
+              <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#1746D2] block mb-4">
                 PLATFORM ECOLOGY
               </span>
               <h2 className="font-display text-3xl font-extrabold text-slate-900 tracking-tight">
@@ -1533,7 +1533,7 @@ export default function DeepTechProductDetail() {
                       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
                         {block.items.map((item, idx) => (
                           <li key={idx} className="p-3.5 rounded-xl border border-slate-100 bg-white shadow-sm flex items-center gap-3 text-xs font-semibold text-slate-700">
-                            <span className="w-1.5 h-1.5 rounded-full bg-violet-600 flex-shrink-0" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#1746D2] flex-shrink-0" />
                             {item}
                           </li>
                         ))}
@@ -1620,7 +1620,7 @@ export default function DeepTechProductDetail() {
 
           <div className="flex flex-col gap-10 max-w-[1400px] mx-auto">
             {/* Security Capabilities */}
-            <div className="relative overflow-hidden p-8 lg:p-10 rounded-3xl border border-slate-200/60 bg-gradient-to-br from-white via-slate-50/50 to-blue-50/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-sm transition-all duration-300 hover:shadow-[0_15px_35px_rgb(0,0,0,0.06)] hover:border-blue-200/50 group">
+            <div className="relative overflow-hidden p-8 lg:p-10 rounded-3xl border border-slate-200/60 bg-gradient-to-br from-white via-slate-50/50 to-blue-50/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-sm transition-all duration-300 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:border-blue-200/50 group">
               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-400/5 rounded-full blur-3xl pointer-events-none transition-all duration-500 group-hover:bg-blue-400/10" />
               <div>
                 <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
@@ -1646,15 +1646,15 @@ export default function DeepTechProductDetail() {
             </div>
 
             {/* Compliance Certifications */}
-            <div className="relative overflow-hidden p-8 lg:p-10 rounded-3xl border border-slate-200/60 bg-gradient-to-br from-white via-slate-50/50 to-violet-50/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-sm transition-all duration-300 hover:shadow-[0_15px_35px_rgb(0,0,0,0.06)] hover:border-violet-200/50 group">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-violet-400/5 rounded-full blur-3xl pointer-events-none transition-all duration-500 group-hover:bg-violet-400/10" />
+            <div className="relative overflow-hidden p-8 lg:p-10 rounded-3xl border border-slate-200/60 bg-gradient-to-br from-white via-slate-50/50 to-[#1746D2]/10/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-sm transition-all duration-300 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:border-[#1746D2]/40/50 group">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#1746D2]/5 rounded-full blur-3xl pointer-events-none transition-all duration-500 group-hover:bg-[#1746D2]/10" />
               <div>
                 <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
                   <h3 className="font-display text-xl md:text-2xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-lg bg-violet-600/10 text-violet-600 flex items-center justify-center text-base">🌐</span>
+                    <span className="w-8 h-8 rounded-lg bg-[#1746D2]/10 text-[#1746D2] flex items-center justify-center text-base">🌐</span>
                     {complianceTitle}
                   </h3>
-                  <span className="text-[10px] font-mono font-bold text-violet-600 bg-violet-50 px-3 py-1 rounded-full uppercase tracking-wider">
+                  <span className="text-[10px] font-mono font-bold text-[#1746D2] bg-[#1746D2]/10 px-3 py-1 rounded-full uppercase tracking-wider">
                     GLOBAL COMPLIANCE
                   </span>
                 </div>
@@ -1667,7 +1667,7 @@ export default function DeepTechProductDetail() {
                   {parsedCertifications.categories.map((cat, idx) => (
                     <div key={idx} className="pb-6 border-b border-slate-100 last:border-0 pb-4 last:pb-0">
                       <h4 className="text-xs font-mono font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-violet-600" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#1746D2]" />
                         {cat.name}
                       </h4>
                       {cat.description ? (
@@ -1677,7 +1677,7 @@ export default function DeepTechProductDetail() {
                       ) : (
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
                           {cat.items.map((item, iIdx) => (
-                            <div key={iIdx} className="flex items-start gap-2.5 p-3 rounded-xl bg-white border border-slate-100 hover:border-violet-300 hover:shadow-[0_4px_20px_rgba(139,92,246,0.05)] transition-all duration-300 text-xs md:text-sm text-slate-700 font-semibold">
+                            <div key={iIdx} className="flex items-start gap-2.5 p-3 rounded-xl bg-white border border-slate-100 hover:border-[#1746D2]/40 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-300 text-xs md:text-sm text-slate-700 font-semibold">
                               <span className="text-emerald-500 font-extrabold mt-0.5">•</span>
                               <span>{item}</span>
                             </div>
@@ -1698,7 +1698,7 @@ export default function DeepTechProductDetail() {
         <section className="relative w-full py-20 lg:py-28 bg-[#FAFAFA] border-b border-slate-200/80">
           <div className="mx-auto max-w-[1400px] px-6">
             <div className="text-center mb-16">
-              <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-violet-600 block mb-4">
+              <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#1746D2] block mb-4">
                 CAPABILITIES & PARTNERSHIP
               </span>
               <h2 className="font-display text-3xl font-extrabold text-slate-900 tracking-tight">
@@ -1714,7 +1714,7 @@ export default function DeepTechProductDetail() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {lifecycle.slice(1).map((item, idx) => (
                 <div key={idx} className="p-5 rounded-2xl border border-slate-200/60 bg-white shadow-sm flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center font-mono text-xs font-bold">
+                  <span className="w-8 h-8 rounded-xl bg-[#1746D2]/10 text-[#1746D2] flex items-center justify-center font-mono text-xs font-bold">
                     {String(idx + 1).padStart(2, '0')}
                   </span>
                   <span className="text-xs md:text-sm font-bold text-slate-700">{item}</span>
@@ -1730,7 +1730,7 @@ export default function DeepTechProductDetail() {
         <section className="relative w-full py-20 lg:py-28 bg-white border-b border-slate-200/80 overflow-hidden">
           <div className="mx-auto max-w-[1400px] px-6">
             <div className="text-center max-w-3xl mx-auto mb-20">
-              <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-violet-600 block mb-4">
+              <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#1746D2] block mb-4">
                 DEVELOPMENT CYCLE
               </span>
               <h2 className="font-display text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -1753,12 +1753,12 @@ export default function DeepTechProductDetail() {
                       }`}
                     >
                       {/* Timeline Dot */}
-                      <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-violet-600 border-4 border-white shadow-sm z-20 hidden lg:block" />
+                      <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#1746D2] border-4 border-white shadow-sm z-20 hidden lg:block" />
 
                       {/* Content Card */}
                       <div className="w-full lg:w-1/2">
                         <div className="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 backdrop-blur-md shadow-sm">
-                          <span className="font-mono text-[10px] font-bold text-violet-600 bg-violet-50 border border-violet-100 px-2 py-0.5 rounded block w-fit mb-3">
+                          <span className="font-mono text-[10px] font-bold text-[#1746D2] bg-[#1746D2]/10 border border-[#1746D2]/10 px-2 py-0.5 rounded block w-fit mb-3">
                             PHASE {idx + 1}
                           </span>
                           <p className="text-sm font-bold text-slate-800 leading-relaxed">
@@ -1794,7 +1794,7 @@ export default function DeepTechProductDetail() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {whyChooseUs.slice(1).map((item, idx) => (
                 <div key={idx} className="p-6 rounded-2xl border border-slate-200/80 bg-white shadow-sm flex items-start gap-4">
-                  <span className="w-6 h-6 rounded-full bg-violet-50 border border-violet-100 text-violet-600 flex items-center justify-center text-xs font-bold flex-shrink-0">
+                  <span className="w-6 h-6 rounded-full bg-[#1746D2]/10 border border-[#1746D2]/10 text-[#1746D2] flex items-center justify-center text-xs font-bold flex-shrink-0">
                     ✓
                   </span>
                   <span className="font-semibold text-slate-700 text-sm md:text-base leading-relaxed">
@@ -1809,7 +1809,7 @@ export default function DeepTechProductDetail() {
 
       {/* Explore Other Products Section */}
       <section className="relative w-full py-20 lg:py-28 bg-white border-b border-slate-200/80 overflow-hidden">
-        <div className="mx-auto max-w-[85rem] px-6">
+        <div className="mx-auto max-w-[1400px] px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-600 block mb-4">
               PRODUCT NAVIGATION

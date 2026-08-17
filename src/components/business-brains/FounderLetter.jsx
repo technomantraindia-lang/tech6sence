@@ -6,9 +6,9 @@ export default function FounderLetter() {
     <section className="relative bg-[#020617] text-white py-24 md:py-32 border-b border-slate-800/80 overflow-hidden">
       
       {/* Background Glow */}
-      <div className="absolute top-1/2 right-[-5%] w-[450px] h-[450px] bg-violet-900/15 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 right-[-5%] w-[450px] h-[450px] bg-[#0b1329]/15 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <span 
           className="font-mono text-xs font-bold text-cyan-400 uppercase tracking-[0.25em] mb-4 block"

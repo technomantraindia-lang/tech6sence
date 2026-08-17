@@ -726,7 +726,7 @@ function JsonBlockLayout({ pageData, serviceId, category, isVisible }) {
                 ) : (
                   <Link
                     to={`/lets-connect?inquiry=${encodeURIComponent(pageTitle)}`}
-                    className="bg-gradient-to-r from-blue-600 to-emerald-500 text-white inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-body text-xs font-bold tracking-widest uppercase hover:scale-[1.03] hover:shadow-lg transition-all"
+                    className="bg-gradient-to-r from-blue-600 to-emerald-500 text-white inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-body text-xs font-bold tracking-widest uppercase hover:scale-[1.03] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all"
                   >
                     Schedule Consultation
                     <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" stroke="currentColor" strokeWidth="2.5">
@@ -837,7 +837,7 @@ function JsonBlockLayout({ pageData, serviceId, category, isVisible }) {
         </section>
 
         {/* ── CTA FOOTER ── */}
-        <section className="mx-auto max-w-[85rem] px-6 py-12 md:py-20">
+        <section className="mx-auto max-w-[1400px] px-6 py-12 md:py-20">
           <div className="relative rounded-[2.5rem] border border-blue-100 bg-slate-50/80 backdrop-blur-md p-10 md:p-16 text-center shadow-md overflow-hidden">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-blue-100/30 blur-[130px] pointer-events-none" />
 
@@ -851,7 +851,7 @@ function JsonBlockLayout({ pageData, serviceId, category, isVisible }) {
 
             <Link
               to={`/lets-connect?inquiry=${encodeURIComponent(pageTitle)}`}
-              className="relative z-10 inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 px-8 py-4 font-body text-xs font-bold tracking-widest text-white shadow-md hover:scale-[1.03] hover:shadow-lg active:scale-[0.98]"
+              className="relative z-10 inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 px-8 py-4 font-body text-xs font-bold tracking-widest text-white shadow-md hover:scale-[1.03] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] active:scale-[0.98]"
             >
               Schedule Engineering Consultation
               <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" stroke="currentColor" strokeWidth="2.5">
@@ -914,7 +914,7 @@ export default function ServiceDetail() {
         <Header />
         <main className="flex-grow flex flex-col items-center justify-center pt-32 px-6 pb-20 text-center relative overflow-hidden">
           {/* Ambient Glows */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-violet-600/10 blur-[120px] pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#1746D2]/10 blur-[120px] pointer-events-none" />
 
           <div className="relative z-10 max-w-lg">
             <span className="font-mono text-xs font-bold text-fuchsia-400 uppercase tracking-[0.25em] mb-4 block">
@@ -924,18 +924,18 @@ export default function ServiceDetail() {
               Solution File Not Found
             </h1>
             <p className="text-slate-600 mb-10 leading-relaxed">
-              We couldn't retrieve the intelligent solution blueprint for ID <code className="text-violet-700 font-mono bg-violet-100 px-1.5 py-0.5 rounded">"{serviceId}"</code>. It may have been relocated or updated.
+              We couldn't retrieve the intelligent solution blueprint for ID <code className="text-[#1746D2] font-mono bg-[#1746D2]/10 px-1.5 py-0.5 rounded">"{serviceId}"</code>. It may have been relocated or updated.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 to="/ai-agents"
-                className="group relative inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-6 py-3 font-body text-xs font-bold tracking-widest text-white shadow-md hover:scale-[1.03] transition-all"
+                className="group relative inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] px-6 py-3 font-body text-xs font-bold tracking-widest text-white shadow-md hover:scale-[1.03] transition-all"
               >
                 Go to Ecosystem
               </Link>
               <Link
                 to="/"
-                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 font-body text-xs font-bold tracking-widest text-slate-600 hover:border-violet-300 hover:text-violet-700 transition-all shadow-sm"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 font-body text-xs font-bold tracking-widest text-slate-600 hover:border-[#1746D2]/40 hover:text-[#1746D2] transition-all shadow-sm"
               >
                 Return Home
               </Link>
@@ -966,7 +966,7 @@ export default function ServiceDetail() {
       <main className="flex-grow pt-28 md:pt-36">
 
         {/* HERO SECTION */}
-        <section className="mx-auto max-w-[85rem] px-6 pb-20 md:pb-28 relative z-10 border-b border-violet-500/10">
+        <section className="mx-auto max-w-[1400px] px-6 pb-20 md:pb-28 relative z-10 border-b border-[#1746D2]/10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
             {/* Left side info */}
@@ -974,15 +974,15 @@ export default function ServiceDetail() {
 
               {/* Breadcrumbs Navigation */}
               <nav className="flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-400 mb-8 font-body">
-                <Link to="/" className="hover:text-violet-600 transition-colors">Home</Link>
+                <Link to="/" className="hover:text-[#1746D2] transition-colors">Home</Link>
                 <span className="text-slate-600 font-normal">/</span>
-                <Link to="/ai-agents" className="hover:text-violet-600 transition-colors">Intelligent Solutions</Link>
+                <Link to="/ai-agents" className="hover:text-[#1746D2] transition-colors">Intelligent Solutions</Link>
                 <span className="text-slate-600 font-normal">/</span>
                 <span className="text-slate-900 font-bold">{service.title}</span>
               </nav>
 
               <div
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-violet-200 bg-white shadow-sm mb-6 font-mono text-[0.65rem] font-bold tracking-widest uppercase"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#1746D2]/20 bg-white shadow-sm mb-6 font-mono text-[0.65rem] font-bold tracking-widest uppercase"
                 style={{ color: service.accent }}
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
@@ -1004,7 +1004,7 @@ export default function ServiceDetail() {
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <Link
                   to={`/lets-connect?inquiry=${encodeURIComponent(service.title)}`}
-                  className="group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-8 py-4 font-body text-xs font-bold tracking-widest text-white transition-all hover:scale-[1.02] hover:shadow-[0_8px_25px_rgba(124,58,237,0.3)] active:scale-[0.98]"
+                  className="group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] px-8 py-4 font-body text-xs font-bold tracking-widest text-white transition-all hover:scale-[1.02] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] active:scale-[0.98]"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     Request Solution Deploy
@@ -1015,7 +1015,7 @@ export default function ServiceDetail() {
                 </Link>
                 <button
                   onClick={() => techSectionRef.current?.scrollIntoView({ behavior: 'smooth' })}
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-8 py-4 font-body text-xs font-bold tracking-widest text-slate-600 hover:border-violet-300 hover:text-violet-700 transition-all shadow-sm"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-8 py-4 font-body text-xs font-bold tracking-widest text-slate-600 hover:border-[#1746D2]/40 hover:text-[#1746D2] transition-all shadow-sm"
                 >
                   Explore Tech Stack
                 </button>
@@ -1056,7 +1056,7 @@ export default function ServiceDetail() {
         </section>
 
         {/* FEATURES BENTO GRID SECTION */}
-        <section className="mx-auto max-w-[85rem] px-6 py-20 md:py-28 relative z-10 border-b border-violet-500/10">
+        <section className="mx-auto max-w-[1400px] px-6 py-20 md:py-28 relative z-10 border-b border-[#1746D2]/10">
           <div className="max-w-3xl mb-16">
             <span className="font-mono text-xs font-bold text-fuchsia-400 uppercase tracking-widest mb-3 block">
               CAPABILITIES & WORKFLOWS
@@ -1080,7 +1080,7 @@ export default function ServiceDetail() {
         </section>
 
         {/* TECH STACKS SECTION */}
-        <section ref={techSectionRef} className="mx-auto max-w-[85rem] px-6 py-20 md:py-28 relative z-10">
+        <section ref={techSectionRef} className="mx-auto max-w-[1400px] px-6 py-20 md:py-28 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
             <div className="col-span-1 lg:col-span-6">
@@ -1098,7 +1098,7 @@ export default function ServiceDetail() {
                 {service.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="font-mono text-xs font-bold px-4 py-2 rounded-full border border-slate-200 bg-slate-50 text-violet-700 shadow-sm"
+                    className="font-mono text-xs font-bold px-4 py-2 rounded-full border border-slate-200 bg-slate-50 text-[#1746D2] shadow-sm"
                   >
                     {tech}
                   </span>
@@ -1108,13 +1108,13 @@ export default function ServiceDetail() {
 
             <div className="col-span-1 lg:col-span-6">
               <div className="border border-slate-200 bg-white p-8 rounded-3xl relative overflow-hidden shadow-xl">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-violet-100 rounded-full blur-2xl" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#1746D2]/10 rounded-full blur-2xl" />
                 <h4 className="font-display text-base font-bold text-slate-900 mb-4">Enterprise Compliance & Security</h4>
                 <p className="font-body text-sm text-slate-600 leading-relaxed mb-6">
                   Our integration frameworks support GDPR, HIPAA, and custom auditing regulations. We deploy prompt injection firewalls and secure weight encryptions to block vulnerabilities.
                 </p>
                 <div className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-violet-50 text-violet-600">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1746D2]/10 text-[#1746D2]">
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                     </svg>
@@ -1130,21 +1130,21 @@ export default function ServiceDetail() {
         </section>
 
         {/* BOTTOM FINAL CTA */}
-        <section className="mx-auto max-w-[85rem] px-6 py-16 md:py-24 relative z-10">
-          <div className="relative rounded-[2.5rem] border border-violet-500/20 bg-gradient-to-r from-violet-900 to-indigo-950 p-10 md:p-16 text-center shadow-lg overflow-hidden group">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-violet-500/10 blur-[130px] pointer-events-none" />
+        <section className="mx-auto max-w-[1400px] px-6 py-16 md:py-24 relative z-10">
+          <div className="relative rounded-[2.5rem] border border-[#1746D2]/20 bg-gradient-to-r from-[#0b1329] to-indigo-950 p-10 md:p-16 text-center shadow-lg overflow-hidden group">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#1746D2]/10 blur-[130px] pointer-events-none" />
 
             <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4 relative z-10">
               Ready to Integrate {service.title}?
             </h2>
 
-            <p className="text-sm md:text-base text-violet-200 leading-relaxed mb-10 max-w-2xl mx-auto relative z-10">
+            <p className="text-sm md:text-base text-[#1746D2]/40 leading-relaxed mb-10 max-w-2xl mx-auto relative z-10">
               Connect with our engineering leads to schedule a complete architectural evaluation. We will map out data pipelines, model configurations, and compute costs built around your workspace operational scopes.
             </p>
 
             <Link
               to={`/lets-connect?inquiry=${encodeURIComponent(service.title)}`}
-              className="relative z-10 inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full bg-white px-8 py-4 font-body text-xs font-bold tracking-widest text-violet-800 transition-all hover:scale-[1.03] hover:shadow-lg active:scale-[0.98]"
+              className="relative z-10 inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full bg-white px-8 py-4 font-body text-xs font-bold tracking-widest text-[#1233A0] transition-all hover:scale-[1.03] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] active:scale-[0.98]"
             >
               Schedule Engineering Audit
               <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" stroke="currentColor" strokeWidth="2.5">

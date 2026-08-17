@@ -41,7 +41,7 @@ export default function DeepTechCategories() {
       <div className="absolute top-1/4 left-[-10%] w-[350px] h-[350px] rounded-full bg-blue-100/10 blur-[100px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-[-10%] w-[350px] h-[350px] rounded-full bg-emerald-100/10 blur-[100px] pointer-events-none" />
 
-      <div className="mx-auto max-w-[85rem] px-6 relative z-10">
+      <div className="mx-auto max-w-[1400px] px-6 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -109,7 +109,7 @@ export default function DeepTechCategories() {
         <div className="text-center mt-14">
           <Link
             to="/lets-connect?inquiry=Start%20Tech%20Company"
-            className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 px-8 py-3.5 font-body text-sm font-bold text-white shadow-md hover:shadow-lg transition-transform hover:scale-[1.03]"
+            className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 px-8 py-3.5 font-body text-sm font-bold text-white shadow-md hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-transform hover:scale-[1.03]"
           >
             Start Your Tech Company Today
             <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

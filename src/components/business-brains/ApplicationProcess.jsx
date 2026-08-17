@@ -46,7 +46,7 @@ export default function ApplicationProcess() {
 
   return (
     <section className="bg-white text-slate-900 py-24 md:py-32 border-b border-slate-200">
-      <div className="max-w-[85rem] mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 

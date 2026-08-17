@@ -306,9 +306,9 @@ export default function SecondHeroPhase({ scrollY }) {
                transition: 'opacity 0.1s ease-out, transform 0.1s ease-out'
              }}
         >
-          <div className="pointer-events-auto border border-violet-500/10 bg-violet-950/30 px-6 py-2 backdrop-blur-md rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.3)] flex items-center justify-center">
+          <div className="pointer-events-auto border border-[#1746D2]/10 bg-[#040916]/30 px-6 py-2 backdrop-blur-md rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.3)] flex items-center justify-center">
             <p className="m-0 font-body text-[0.62rem] tracking-[0.25em] font-semibold text-slate-300 uppercase flex items-center justify-center">
-              AI <span className="text-violet-400 font-bold px-2">•</span> AUTOMATION <span className="text-fuchsia-400 font-bold px-2">•</span> DEEP-TECH <span className="text-indigo-400 font-bold px-2">•</span> INNOVATION
+              AI <span className="text-[#1746D2] font-bold px-2">•</span> AUTOMATION <span className="text-fuchsia-400 font-bold px-2">•</span> DEEP-TECH <span className="text-indigo-400 font-bold px-2">•</span> INNOVATION
             </p>
           </div>
         </div>
@@ -368,7 +368,7 @@ export default function SecondHeroPhase({ scrollY }) {
               >
                 <div className="flex flex-col gap-2">
                   <div className="flex items-center gap-2">
-                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-violet-500/10 text-violet-400">
+                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-[#1746D2]/10 text-[#1746D2]">
                       {card.icon}
                     </div>
                     <p className="m-0 truncate font-display text-[0.6rem] font-bold tracking-wider text-slate-100">
@@ -387,7 +387,7 @@ export default function SecondHeroPhase({ scrollY }) {
         {/* Bottom right action button */}
         <a
           href="#about"
-          className="group absolute bottom-10 right-[5%] xl:right-[8%] z-[30] hidden items-center gap-3 overflow-hidden rounded-full bg-violet-600/20 border border-violet-500/30 px-6 py-2.5 font-display text-[0.65rem] font-bold tracking-widest text-white no-underline backdrop-blur-md transition-all duration-300 hover:bg-violet-600/40 hover:border-violet-400/50 hover:shadow-[0_0_20px_rgba(124,58,237,0.3)] active:scale-[0.98] lg:flex"
+          className="group absolute bottom-10 right-[5%] xl:right-[8%] z-[30] hidden items-center gap-3 overflow-hidden rounded-full bg-[#1746D2]/20 border border-[#1746D2]/30 px-6 py-2.5 font-display text-[0.65rem] font-bold tracking-widest text-white no-underline backdrop-blur-md transition-all duration-300 hover:bg-[#1746D2]/40 hover:border-[#1746D2]/60/50 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] active:scale-[0.98] lg:flex"
           style={{
             opacity: cardsReveal,
             transform: `translateY(${(1 - cardsReveal) * 15}px)`,

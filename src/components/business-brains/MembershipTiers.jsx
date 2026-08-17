@@ -54,7 +54,7 @@ export default function MembershipTiers() {
       {/* Light Gridlines */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(124,58,237,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.015)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
             <svg aria-hidden="true" className="w-5 h-5 text-cyan-500" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
@@ -65,7 +65,7 @@ export default function MembershipTiers() {
             </span>
           </div>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Choose Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-violet-600">Path</span>
+            Choose Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-[#1746D2]">Path</span>
           </h2>
           <p className="text-slate-500 text-base md:text-lg max-w-2xl mx-auto" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
             Select the membership level that aligns with your goals and commitment

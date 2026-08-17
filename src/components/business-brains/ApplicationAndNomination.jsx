@@ -98,7 +98,7 @@ export default function ApplicationAndNomination() {
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-cyan-900/10 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         {/* ENTRY SELECTOR HEADER */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -177,12 +177,12 @@ export default function ApplicationAndNomination() {
             onClick={() => { setActivePath('nominate'); setNomSubmitted(false); }}
             className={`p-8 rounded-3xl cursor-pointer transition-all duration-300 backdrop-blur-md flex flex-col justify-between border ${
               activePath === 'nominate' 
-                ? 'bg-violet-950/40 border-violet-400 shadow-[0_0_30px_rgba(139,92,246,0.2)]' 
-                : 'bg-white/[0.02] border-white/10 hover:border-violet-500/40 hover:-translate-y-1'
+                ? 'bg-[#040916]/40 border-[#1746D2]/60 shadow-[0_0_30px_rgba(139,92,246,0.2)]' 
+                : 'bg-white/[0.02] border-white/10 hover:border-[#1746D2]/40 hover:-translate-y-1'
             }`}
           >
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-violet-400">
+              <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-[#1746D2]">
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
                 </svg>
@@ -204,7 +204,7 @@ export default function ApplicationAndNomination() {
             <button 
               className={`w-full py-4 rounded-full font-bold text-sm transition-all duration-300 ${
                 activePath === 'nominate' 
-                  ? 'bg-violet-500 text-white shadow-[0_0_20px_rgba(139,92,246,0.4)]' 
+                  ? 'bg-[#1746D2] text-white shadow-[0_0_20px_rgba(139,92,246,0.4)]' 
                   : 'bg-white/10 hover:bg-white/20 text-white'
               }`}
               style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
@@ -652,11 +652,11 @@ export default function ApplicationAndNomination() {
 
         {/* NOMINATION FORM */}
         {activePath === 'nominate' && (
-          <div className="max-w-4xl mx-auto p-8 md:p-12 rounded-3xl bg-white/[0.02] border border-violet-500/30 backdrop-blur-md transition-all duration-500">
+          <div className="max-w-4xl mx-auto p-8 md:p-12 rounded-3xl bg-white/[0.02] border border-[#1746D2]/30 backdrop-blur-md transition-all duration-500">
             
             {nomSubmitted ? (
               <div className="text-center py-12 space-y-6">
-                <div className="w-16 h-16 rounded-full bg-violet-500/20 border border-violet-400 text-violet-400 flex items-center justify-center mx-auto text-2xl font-bold">
+                <div className="w-16 h-16 rounded-full bg-[#1746D2]/20 border border-[#1746D2]/60 text-[#1746D2] flex items-center justify-center mx-auto text-2xl font-bold">
                   ✓
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -690,7 +690,7 @@ export default function ApplicationAndNomination() {
                       value={nomForm.nominatorEmail}
                       onChange={handleNomChange}
                       placeholder="Enter your email"
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-violet-400"
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-[#1746D2]/60"
                       required 
                     />
                   </div>
@@ -702,7 +702,7 @@ export default function ApplicationAndNomination() {
                       value={nomForm.nomineeName}
                       onChange={handleNomChange}
                       placeholder="Full name of nominee"
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-violet-400"
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-[#1746D2]/60"
                       required 
                     />
                   </div>
@@ -714,7 +714,7 @@ export default function ApplicationAndNomination() {
                       value={nomForm.nomineeEmail}
                       onChange={handleNomChange}
                       placeholder="Email of nominee"
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-violet-400"
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-[#1746D2]/60"
                       required 
                     />
                   </div>
@@ -726,7 +726,7 @@ export default function ApplicationAndNomination() {
                       value={nomForm.nomineeCompanyRole}
                       onChange={handleNomChange}
                       placeholder="Company Name and Role"
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-violet-400"
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-[#1746D2]/60"
                     />
                   </div>
                   <div>
@@ -735,7 +735,7 @@ export default function ApplicationAndNomination() {
                       name="nomineeCategory"
                       value={nomForm.nomineeCategory}
                       onChange={handleNomChange}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-violet-500/40 text-white text-sm focus:outline-none"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-[#1746D2]/40 text-white text-sm focus:outline-none"
                     >
                       <option value="Investor">Investor</option>
                       <option value="Entrepreneur">Entrepreneur / Founder</option>
@@ -765,7 +765,7 @@ export default function ApplicationAndNomination() {
                     value={nomForm.relationship}
                     onChange={handleNomChange}
                     placeholder="Professional relationship or personal association"
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-violet-400"
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-[#1746D2]/60"
                   />
                 </div>
 
@@ -776,7 +776,7 @@ export default function ApplicationAndNomination() {
                     value={nomForm.nominationStatement}
                     onChange={handleNomChange}
                     placeholder="Describe their achievements, leadership stature, and alignment with Circle standards."
-                    className="w-full p-4 rounded-xl bg-white/5 border border-white/10 text-white text-sm h-32 focus:outline-none focus:border-violet-400"
+                    className="w-full p-4 rounded-xl bg-white/5 border border-white/10 text-white text-sm h-32 focus:outline-none focus:border-[#1746D2]/60"
                   />
                 </div>
 
@@ -787,7 +787,7 @@ export default function ApplicationAndNomination() {
                     name="consent"
                     checked={nomForm.consent}
                     onChange={handleNomChange}
-                    className="w-4 h-4 rounded bg-white/10 border-white/20 text-violet-500"
+                    className="w-4 h-4 rounded bg-white/10 border-white/20 text-[#1746D2]"
                     required 
                   />
                   <label htmlFor="nomConsent" className="text-xs text-slate-300 font-mono">
@@ -798,7 +798,7 @@ export default function ApplicationAndNomination() {
                 <div className="pt-4 border-t border-white/10 flex flex-col items-end gap-2">
                   <button 
                     type="submit"
-                    className="px-8 py-3.5 rounded-full bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(139,92,246,0.4)]"
+                    className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#1746D2] to-purple-600 text-white font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(139,92,246,0.4)]"
                   >
                     Submit Nomination
                   </button>

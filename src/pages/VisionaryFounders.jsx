@@ -22,21 +22,23 @@ export default function VisionaryFounders() {
       <Header />
       
       <main className="flex-grow">
-        {/* HERO SECTION WITH VIDEO BACKGROUND */}
-        <div className="relative w-full overflow-hidden min-h-screen flex items-center justify-center pt-24 pb-16 border-b border-white/10 bg-[#060410]">
+        {/* HERO SECTION WITH VIDEO BACKGROUND & BRAND OVERLAY */}
+        <div className="relative w-full overflow-hidden min-h-screen flex items-center justify-center pt-24 pb-16 border-b border-white/10 bg-[#02050E]">
           
-          {/* Centered Infinity Video Background */}
+          {/* Centered Video Background */}
           <div className="absolute inset-0 z-0">
             <video 
               autoPlay 
               loop 
               muted 
               playsInline
-              className="w-full h-full object-cover object-center opacity-75"
+              className="w-full h-full object-cover object-center opacity-40 mix-blend-screen"
             >
               <source src={bgVideo} type="video/mp4" />
             </video>
-
+            {/* Dark Brand Overlay & Ambient Radial Glow */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#02050E]/95 via-[#060D1E]/75 to-[#02050E]/90 z-1 pointer-events-none" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(23,70,210,0.2),transparent_70%)] z-1 pointer-events-none" />
           </div>
 
           {/* Content */}
@@ -47,8 +49,8 @@ export default function VisionaryFounders() {
               <div className="lg:col-span-9 flex flex-col items-start text-left gap-6">
                
 
-                <span className="font-mono text-xs font-bold text-violet-400 uppercase tracking-widest block">
-                  Visionary Founders
+                <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-[0.25em] block px-3 py-1 rounded-full bg-[#1746D2]/10 border border-[#1746D2]/20">
+                  VISIONARY FOUNDERS
                 </span>
 
                 {/* Title with Space Grotesk */}
@@ -69,7 +71,7 @@ export default function VisionaryFounders() {
                   </p>
 
                   <p 
-                    className="text-violet-300 text-xs sm:text-sm lg:text-base font-semibold border-l-2 border-violet-500 pl-3 leading-relaxed"
+                    className="text-[#00A86B] text-xs sm:text-sm lg:text-base font-semibold border-l-2 border-[#00A86B] pl-3 leading-relaxed"
                     style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                   >
                     "From Idea to International Clients —We don't just simply train founders. We build AI companies with them."
@@ -81,7 +83,7 @@ export default function VisionaryFounders() {
                   {/* Primary Pill Button */}
                   <button
                     onClick={() => document.getElementById('founder-form')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 px-6 py-3 text-xs font-bold tracking-wider text-white shadow-md hover:scale-[1.01] transition-all cursor-pointer"
+                    className="rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] hover:from-[#1746D2]/90 hover:to-[#00A86B]/90 px-6 py-3.5 text-xs font-bold tracking-wider text-white shadow-[0_4px_20px_rgba(23,70,210,0.35)] hover:scale-[1.02] transition-all cursor-pointer"
                     style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                   >
                     Apply to Become a Visionary Founder
@@ -90,7 +92,7 @@ export default function VisionaryFounders() {
                   {/* Secondary Pill Button */}
                   <button
                     onClick={() => document.getElementById('founder-form')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="rounded-full border border-white/20 bg-white/5 hover:bg-white/15 px-6 py-3 text-xs font-bold tracking-wider text-white shadow-md hover:scale-[1.01] transition-all backdrop-blur-md cursor-pointer"
+                    className="rounded-full border border-white/20 bg-white/5 hover:bg-white/15 px-6 py-3.5 text-xs font-bold tracking-wider text-white shadow-md hover:scale-[1.02] transition-all backdrop-blur-md cursor-pointer"
                     style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                   >
                     Schedule Confidential Founder Strategy Call
@@ -99,7 +101,7 @@ export default function VisionaryFounders() {
 
                 {/* Value Tagline & Proof Info inside a Premium Glass Card */}
                 <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md text-white/70 text-xs leading-relaxed space-y-4 shadow-2xl relative overflow-hidden max-w-3xl mt-4">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-violet-500/10 rounded-bl-full blur-xl pointer-events-none" />
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#1746D2]/10 rounded-bl-full blur-xl pointer-events-none" />
                   
                   <div>
                     <p className="font-semibold text-white/95 text-xs sm:text-sm leading-relaxed">
@@ -117,22 +119,22 @@ export default function VisionaryFounders() {
         </div>
 
         {/* Horizontal Trust Strip */}
-        <div className="w-full bg-[#0a0718] border-y border-white/5 py-5 relative z-10">
-          <div className="max-w-[85rem] mx-auto px-6 flex flex-wrap justify-center md:justify-between items-center gap-6 text-white/90 text-xs font-semibold font-mono uppercase tracking-wider">
+        <div className="w-full bg-[#040916] border-y border-white/10 py-5 relative z-10">
+          <div className="max-w-[1400px] mx-auto px-6 flex flex-wrap justify-center md:justify-between items-center gap-6 text-white/90 text-xs font-semibold font-mono uppercase tracking-wider">
             <div className="flex items-center gap-2">
-              <span className="text-violet-400 text-sm">✓</span> 25+ AI & Tech Capabilities
+              <span className="text-[#00A86B] text-sm font-bold">✓</span> 25+ AI & Tech Capabilities
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-violet-400 text-sm">✓</span> 100% Ownership Retained
+              <span className="text-[#00A86B] text-sm font-bold">✓</span> 100% Ownership Retained
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-violet-400 text-sm">✓</span> 9+ Ecosystem Components
+              <span className="text-[#00A86B] text-sm font-bold">✓</span> 9+ Ecosystem Components
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-violet-400 text-sm">✓</span> 7+ Global Markets Served
+              <span className="text-[#00A86B] text-sm font-bold">✓</span> 7+ Global Markets Served
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-violet-400 text-sm">✓</span> 1 Complete Ecosystem
+              <span className="text-[#00A86B] text-sm font-bold">✓</span> 1 Complete Ecosystem
             </div>
           </div>
         </div>

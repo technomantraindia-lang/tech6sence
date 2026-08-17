@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function FinalCTA() {
   const containerRef = useRef(null);
@@ -23,7 +24,7 @@ export default function FinalCTA() {
   return (
     <section 
       ref={containerRef}
-      className="relative w-full py-12 md:py-16 px-4 sm:px-6 md:px-8 overflow-hidden bg-[#FBFBFF]"
+      className="relative w-full py-16 md:py-24 px-4 sm:px-6 md:px-8 overflow-hidden bg-[#FAFAFA] border-t border-slate-200/80 text-slate-900"
     >
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes cta-glow-drift {
@@ -31,20 +32,12 @@ export default function FinalCTA() {
           33% { transform: translate(-50%, -50%) scale(1.15) translate(40px, -30px); }
           66% { transform: translate(-50%, -50%) scale(0.9) translate(-30px, 40px); }
         }
-        @keyframes cta-border-flow {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
         @keyframes cta-btn-shine {
           0% { transform: translateX(-100%) rotate(30deg); }
           100% { transform: translateX(200%) rotate(30deg); }
         }
         .animate-glow-drift {
           animation: cta-glow-drift 18s ease-in-out infinite;
-        }
-        .animate-border-flow {
-          animation: cta-border-flow 6s linear infinite;
         }
         .cta-btn-shine-effect {
           position: absolute;
@@ -55,7 +48,7 @@ export default function FinalCTA() {
           background: linear-gradient(
             to right,
             transparent,
-            rgba(255, 255, 255, 0.25) 50%,
+            rgba(255, 255, 255, 0.3) 50%,
             transparent
           );
           transform: rotate(30deg);
@@ -66,125 +59,80 @@ export default function FinalCTA() {
         }
       `}} />
 
-      {/* Background Elements */}
-      {/* Soft AI Grid pattern */}
+      {/* Ambient background glows */}
       <div 
-        className="absolute inset-0 pointer-events-none mix-blend-multiply transition-opacity duration-1000" 
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, rgba(37, 99, 235, 0.05) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(37, 99, 235, 0.05) 1px, transparent 1px)
-          `,
-          backgroundSize: '40px 40px',
-          backgroundPosition: 'center',
-          opacity: isVisible ? 0.35 : 0
-        }}
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[700px] h-[500px] md:h-[700px] rounded-full bg-gradient-to-tr from-blue-100/60 via-emerald-100/40 to-transparent blur-[120px] pointer-events-none z-0 animate-glow-drift"
       />
 
-      {/* Main Wide CTA Container */}
+      {/* Main Container */}
       <div 
-        className={`relative max-w-6xl mx-auto rounded-[2rem] md:rounded-[2.5rem] border border-slate-100 bg-white/70 backdrop-blur-md overflow-hidden py-12 px-6 sm:px-12 md:py-16 md:px-20 shadow-[0_20px_50px_rgba(0,0,0,0.02)] transition-all duration-1000 ease-out ${
+        className={`relative max-w-[1400px] mx-auto rounded-[2.5rem] border border-slate-200/80 bg-white/90 backdrop-blur-md overflow-hidden py-14 px-6 sm:px-12 md:py-20 md:px-20 shadow-[0_10px_40px_rgba(15,23,42,0.04)] transition-all duration-1000 ease-out ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
         }`}
       >
-        {/* Animated Gradient Top Border Line */}
-        <div 
-          className="absolute top-0 inset-x-0 h-[2.5px] bg-gradient-to-r from-blue-500 via-emerald-500 to-blue-500 bg-[size:200%_auto] animate-border-flow transition-transform duration-1000 ease-out" 
-          style={{
-            transform: isVisible ? 'scaleX(1)' : 'scaleX(0)',
-            transformOrigin: 'left'
-          }}
-        />
-
-        {/* Floating Gradient Glow Orb Behind Heading */}
-        <div 
-          className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] rounded-full bg-gradient-to-tr from-blue-200/40 via-emerald-200/35 to-transparent blur-[80px] sm:blur-[110px] pointer-events-none z-0 animate-glow-drift transition-all duration-1000 ease-out"
-          style={{
-            transform: `translate(-50%, -50%) scale(${isVisible ? 1 : 0.6})`,
-            opacity: isVisible ? 1 : 0
-          }}
-        />
-
         {/* Content Block (Centered) */}
-        <div className="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto">
+        <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto">
           
-          {/* Small Uppercase Label */}
-          <div 
-            className="mb-4 flex items-center gap-2 transition-all duration-700 ease-out"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(10px)'
-            }}
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-blue-600 animate-pulse" />
-            <span className="font-mono text-xs font-bold tracking-[0.25em] text-blue-600 uppercase">
-              READY TO BUILD WITH AI?
-            </span>
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" style={{ animationDelay: '0.5s' }} />
-          </div>
-
-          {/* Heading */}
+          {/* Headline */}
           <h2 
-            className="mb-6 font-display text-[clamp(1.85rem,4.2vw,3rem)] leading-[1.15] font-extrabold text-[#0B0527] tracking-tight transition-all duration-700 ease-out"
+            className="mb-6 font-display text-[clamp(2.2rem,4.5vw,3.5rem)] leading-[1.12] font-extrabold text-slate-900 tracking-tight transition-all duration-700 ease-out"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(15px)',
               transitionDelay: '150ms'
             }}
           >
-            Ready to Build Your Next <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-500 font-black">AI Advantage?</span>
+            Engineering the Future of{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1746D2] via-[#00A86B] to-[#1746D2] font-extrabold">
+              Intelligence
+            </span>
           </h2>
 
           {/* Paragraph */}
           <p 
-            className="mb-10 font-body text-[0.95rem] sm:text-[1.02rem] leading-relaxed text-slate-500 max-w-2xl font-medium transition-all duration-700 ease-out"
+            className="mb-10 font-body text-[1rem] sm:text-[1.1rem] leading-[1.8] text-slate-600 max-w-3xl font-medium transition-all duration-700 ease-out"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(15px)',
               transitionDelay: '300ms'
             }}
           >
-            From intelligent automation and deep-tech products to founder ecosystem support, TECH6SENSE AI helps businesses and entrepreneurs turn bold ideas into scalable AI execution.
+            Whether you're an enterprise accelerating AI adoption, a government modernizing digital infrastructure, a startup building the next breakthrough platform, or a visionary founder creating the future, TECH6SENSE AI provides the intelligence, engineering, and strategic partnership to transform ambition into global impact.
           </p>
 
-          {/* Action Buttons */}
+          {/* Action Button */}
           <div 
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full mb-10 transition-all duration-700 ease-out"
+            className="flex items-center justify-center w-full mb-12 transition-all duration-700 ease-out"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(15px)',
               transitionDelay: '450ms'
             }}
           >
-            {/* Primary Button */}
-            <a
-              href="#contact"
-              className="w-full sm:w-auto relative group px-8 py-4 rounded-xl text-white font-semibold text-[0.95rem] overflow-hidden bg-gradient-to-r from-blue-600 to-emerald-500 transition-all duration-300 hover:-translate-y-0.5 shadow-md shadow-blue-500/10 hover:shadow-lg hover:shadow-blue-500/25 flex items-center justify-center gap-2"
+            <Link
+              to="/#contact"
+              className="group relative inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] px-9 py-4 font-display text-base font-bold text-white shadow-[0_4px_20px_rgba(23,70,210,0.3)] transition-all duration-300 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer overflow-hidden"
             >
               <span className="cta-btn-shine-effect" />
-              Schedule Consultation
-            </a>
-
-            {/* Secondary Button */}
-            <a
-              href="#ecosystem"
-              className="w-full sm:w-auto group px-8 py-4 rounded-xl text-[#0B0527] font-semibold text-[0.95rem] border border-slate-200/80 bg-white/40 hover:bg-white/80 hover:border-slate-350 transition-all duration-300 flex items-center justify-center gap-2"
-            >
-              Explore TECH6SENSE Ecosystem
-              <span className="transition-transform duration-300 ease-out group-hover:translate-x-1 text-blue-600 font-bold">
-                →
-              </span>
-            </a>
+              <span>Talk to TECH6SENSE AI</span>
+              <span className="transition-transform duration-300 group-hover:translate-x-1 font-extrabold text-lg">→</span>
+            </Link>
           </div>
 
-          {/* Trust Line */}
-          <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-4 text-xs font-semibold text-slate-400 tracking-wider uppercase">
-            <span>AI solutions</span>
-            <span className="text-blue-400">•</span>
-            <span>Deep-tech products</span>
-            <span className="text-emerald-400">•</span>
-            <span>Founder ecosystem support</span>
+          {/* Brand signature (footer close) */}
+          <div 
+            className="border-t border-slate-200/80 pt-6 w-full max-w-2xl text-center transition-all duration-700 ease-out"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(15px)',
+              transitionDelay: '600ms'
+            }}
+          >
+            <p className="font-display text-xs sm:text-sm font-bold text-slate-800 tracking-wide">
+              <span className="text-[#1746D2] uppercase tracking-wider font-extrabold">TECH6SENSE AI</span>{' '}
+              <span className="text-slate-400 font-light mx-1">—</span>{' '}
+              <span className="text-slate-600 font-semibold">Sense Beyond Technology. Build Beyond Imagination.</span>
+            </p>
           </div>
 
         </div>

@@ -25,7 +25,7 @@ export default function AIAgentsBenefits() {
 
   return (
     <section ref={sectionRef} className="py-20 lg:py-32 bg-slate-50">
-      <div className="mx-auto max-w-[85rem] px-6">
+      <div className="mx-auto max-w-[1400px] px-6">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-start">
           
@@ -36,7 +36,7 @@ export default function AIAgentsBenefits() {
             }`}
           >
             <div className="inline-flex items-center gap-3 mb-6">
-              <span className="w-8 h-[2px] bg-gradient-to-r from-violet-400 to-fuchsia-400 rounded-full" />
+              <span className="w-8 h-[2px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] rounded-full" />
               <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-slate-500">
                 Business Value
               </span>
@@ -46,7 +46,7 @@ export default function AIAgentsBenefits() {
               Why Businesses Use AI Agents & Automation
             </h2>
             
-            <div className="pl-6 border-l-2 border-violet-200">
+            <div className="pl-6 border-l-2 border-[#1746D2]/20">
               <h3 className="font-display text-2xl md:text-3xl font-bold text-slate-800 mb-4 leading-snug">
                 Move repetitive work from manual effort to intelligent execution.
               </h3>
@@ -61,13 +61,13 @@ export default function AIAgentsBenefits() {
             {benefits.map((benefit, i) => (
               <div 
                 key={i} 
-                className={`group p-8 bg-white border border-slate-200 rounded-2xl shadow-sm transition-all duration-500 ease-out hover:-translate-y-1.5 hover:shadow-lg hover:border-violet-200 ${
+                className={`group p-8 bg-white border border-slate-200 rounded-2xl shadow-sm transition-all duration-500 ease-out hover:-translate-y-1.5 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:border-[#1746D2]/40 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                 }`}
                 style={{ transitionDelay: `${400 + (i * 150)}ms` }}
               >
-                <div className="w-12 h-12 rounded-full bg-violet-50 flex items-center justify-center mb-6 border border-violet-100 group-hover:bg-violet-100 transition-colors">
-                  <svg className="w-5 h-5 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="w-12 h-12 rounded-full bg-[#1746D2]/10 flex items-center justify-center mb-6 border border-[#1746D2]/10 group-hover:bg-[#1746D2]/10 transition-colors">
+                  <svg className="w-5 h-5 text-[#1746D2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>

@@ -221,29 +221,30 @@ export const DEBUG_LABELS = {
 };
 
 export const heroData = {
-  eyebrow: "GLOBAL AI • ENTERPRISE TECH • DEEP-TECH INNOVATION",
-  heading: "Building Intelligent AI Systems Across the Globe",
-  paragraph: "Tech6Sense AI delivers enterprise AI, autonomous agents, automation, AI products, and global intelligence solutions for future-ready businesses.",
+  eyebrow: "GLOBAL AI DEVELOPMENT · DEEP-TECH PRODUCTS · FOUNDER ECOSYSTEMS",
+  heading: "TECH6SENSE — The Sixth Sense of Intelligent Innovation.",
+  paragraph: "TECH6SENSE AI empower global enterprises, governments, startups, and founders with the Sixth Sense of Artificial Intelligence—transforming bold ideas into intelligent products, AI-powered businesses, autonomous systems, next-generation digital ecosystems, and globally scalable businesses.",
   primaryCta: {
-    label: "Explore AI Solutions",
-    href: "#solutions"
+    label: "Build with TECH6SENSE AI",
+    href: "#contact"
   },
   secondaryCta: {
-    label: "Let’s Connect",
+    label: "Talk to an AI Strategy Expert",
     href: "#connect"
   },
   servicesSummary: [
-    "AI Products",
-    "AI Agents",
-    "Automation",
-    "Cloud AI",
-    "Deep-Tech Lab",
-    "AI Consulting"
+    "Enterprise AI Development",
+    "Custom AI Products",
+    "Deep-Tech Innovation",
+    "Full Stack Engineering",
+    "AI Consulting",
+    "Global Delivery",
+    "Startup Acceleration",
+    "Business Growth Ecosystem"
   ],
   serviceTags: [
     { id: "ai-products", label: "AI Products", style: { top: "12%", left: "15%" } },
     { id: "ai-agents", label: "AI Agents", style: { top: "25%", right: "5%" } },
-    { id: "automation", label: "Automation", style: { top: "45%", left: "8%" } },
     { id: "cloud-ai", label: "Cloud AI", style: { bottom: "25%", right: "8%" } },
     { id: "deep-tech", label: "Deep-Tech Lab", style: { bottom: "12%", left: "15%" } },
     { id: "ai-consulting", label: "AI Consulting", style: { top: "60%", right: "12%" } }

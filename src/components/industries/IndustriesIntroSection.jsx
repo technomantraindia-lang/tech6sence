@@ -68,7 +68,7 @@ export default function IndustriesIntroSection() {
 
   return (
     <section ref={sectionRef} className="py-20 bg-slate-50 border-y border-slate-100">
-      <div className="mx-auto max-w-[85rem] px-6">
+      <div className="mx-auto max-w-[1400px] px-6">
         
         {/* Intro Paragraphs */}
         <div className={`max-w-4xl mx-auto text-center mb-24 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>

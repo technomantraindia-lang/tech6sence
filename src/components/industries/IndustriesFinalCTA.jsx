@@ -36,7 +36,7 @@ export default function IndustriesFinalCTA() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[85rem] px-6 text-center">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6 text-center">
         <div className={`max-w-4xl mx-auto transition-all duration-1000 ease-out ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
         }`}>
@@ -56,7 +56,7 @@ export default function IndustriesFinalCTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <Link to="#discuss" className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-blue-600 to-emerald-600 px-8 py-3.5 font-body text-sm font-bold text-white shadow-[0_4px_15px_rgba(59,130,246,0.3)] transition-all hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(59,130,246,0.4)]">
+            <Link to="#discuss" className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-blue-600 to-emerald-600 px-8 py-3.5 font-body text-sm font-bold text-white shadow-[0_4px_15px_rgba(59,130,246,0.3)] transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]">
               <span className="relative z-10 flex items-center gap-2">
                 Discuss Your Industry Use Case
                 <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

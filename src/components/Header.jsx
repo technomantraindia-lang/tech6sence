@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import companyLogo from '../assets/compney logo.png';
+import companyLogo from '../assets/new logo/TECH6SENSE Main Logo Transparent bg.svg';
 
 const NAV_LINKS = [
   { label: 'About', href: '/about', num: '01' },
@@ -133,10 +133,38 @@ export default function Header() {
           : 'border-white/5 bg-[#060214]/65 backdrop-blur-xl'
       }`}
     >
+      {/* Executive Premium Announcement Bar */}
+      <div className="w-full bg-gradient-to-r from-[#02050E] via-[#07132B] to-[#02050E] border-b border-[#D4AF37]/25 py-2 px-4 text-center relative z-20 shadow-[inset_0_-1px_10px_rgba(212,175,55,0.08)]">
+        <div className="mx-auto max-w-[1400px] flex items-center justify-center gap-3 flex-wrap">
+          {/* Live Radar Beacon */}
+          <div className="flex items-center gap-2">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00A86B] opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00A86B]" />
+            </span>
+            <span className="px-2.5 py-0.5 rounded-full text-[0.6rem] font-extrabold tracking-[0.2em] uppercase bg-gradient-to-r from-[#D4AF37]/20 via-[#D4AF37]/35 to-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] shadow-[0_0_12px_rgba(212,175,55,0.15)]">
+              GLOBAL FOOTPRINT
+            </span>
+          </div>
+
+          {/* Statement */}
+          <span className="font-display text-[0.72rem] sm:text-[0.78rem] md:text-[0.82rem] font-bold text-white tracking-wide">
+            Trusted by Enterprises, Governments, Startups & Founders
+          </span>
+
+          <span className="hidden sm:inline text-[#D4AF37]/40 font-light">|</span>
+
+          {/* Countries with Diamond Bullet Dividers */}
+          <span className="font-mono text-[0.65rem] sm:text-[0.72rem] md:text-[0.76rem] font-semibold text-[#D4AF37] tracking-wider">
+            USA <span className="text-[#00A86B] mx-1">✦</span> UK <span className="text-[#00A86B] mx-1">✦</span> CANADA <span className="text-[#00A86B] mx-1">✦</span> AUSTRALIA <span className="text-[#00A86B] mx-1">✦</span> EU <span className="text-[#00A86B] mx-1">✦</span> UAE <span className="text-[#00A86B] mx-1">✦</span> SINGAPORE <span className="text-[#00A86B] mx-1">✦</span> HONG KONG <span className="text-[#00A86B] mx-1">✦</span> INDIA
+          </span>
+        </div>
+      </div>
+
       {/* Scroll Progress Bar */}
       <div 
         ref={progressBarRef}
-        className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-blue-600 via-emerald-500 to-blue-600 transition-all duration-75 z-50"
+        className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-[#1746D2] via-[#00A86B] to-[#1746D2] transition-all duration-75 z-50"
         style={{ width: '0%' }}
       />
       {/* Top Glow Ambient Flare */}
@@ -152,7 +180,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center gap-5">
             <Link to="/" className="group relative flex shrink-0 items-center no-underline">
-              <div className="absolute -inset-2 rounded-lg bg-violet-400/0 blur-md transition-all group-hover:bg-violet-400/10" />
+              <div className="absolute -inset-2 rounded-lg bg-[#1746D2]/0 blur-md transition-all group-hover:bg-[#1746D2]/10" />
               <img
                 src={companyLogo}
                 alt="TECH6SENSE AI"
@@ -187,7 +215,7 @@ export default function Header() {
                   {/* Desktop Mega Menu */}
                   {link.isMega && (
                     <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-4 group-hover:translate-y-0 transition-all duration-300 ease-out z-50">
-                      <div className="relative bg-white/95 backdrop-blur-xl rounded-2xl shadow-[0_20px_60px_rgba(15,23,42,0.15)] border border-violet-100/50 p-8 flex gap-8 w-max max-w-[95vw]">
+                      <div className="relative bg-white/95 backdrop-blur-xl rounded-2xl shadow-[0_20px_60px_rgba(15,23,42,0.15)] border border-[#1746D2]/10/50 p-8 flex gap-8 w-max max-w-[95vw]">
                         {/* Categories */}
                         <div className="grid grid-cols-5 gap-8">
                           {link.categories.map(cat => (
@@ -199,8 +227,8 @@ export default function Header() {
                                 {cat.links.map(cLink => (
                                   <li key={cLink.label}>
                                     <Link to={cLink.href} className="group/link flex items-center gap-2">
-                                      <span className="w-0 h-0.5 bg-violet-500 transition-all duration-300 group-hover/link:w-2" />
-                                      <span className="font-body text-xs text-slate-600 transition-colors group-hover/link:text-violet-700">
+                                      <span className="w-0 h-0.5 bg-[#1746D2] transition-all duration-300 group-hover/link:w-2" />
+                                      <span className="font-body text-xs text-slate-600 transition-colors group-hover/link:text-[#1746D2]">
                                         {cLink.label}
                                       </span>
                                     </Link>
@@ -212,10 +240,10 @@ export default function Header() {
                         </div>
                         {/* CTA Strip */}
                         <div className="w-[240px] shrink-0 bg-slate-50/80 p-6 rounded-xl border border-slate-200/60 flex flex-col justify-center relative overflow-hidden">
-                          <div className="absolute top-0 right-0 w-32 h-32 bg-violet-100/50 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-[#1746D2]/10/50 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
                           <h4 className="relative z-10 font-display font-bold text-slate-900 mb-2">Need a Custom AI Solution?</h4>
                           <p className="relative z-10 text-xs text-slate-600 leading-relaxed mb-6">Explore end-to-end AI strategy, development, integration, and optimization.</p>
-                          <Link to="/ai-agents" className="relative z-10 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold text-xs px-4 py-2.5 rounded-full hover:shadow-[0_4px_15px_rgba(124,58,237,0.3)] transition-all hover:scale-[1.02]">
+                          <Link to="/ai-agents" className="relative z-10 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#1746D2] to-[#00A86B] text-white font-bold text-xs px-4 py-2.5 rounded-full hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all hover:scale-[1.02]">
                             View Intelligent Solutions
                           </Link>
                         </div>
@@ -226,11 +254,11 @@ export default function Header() {
                   {/* Desktop Standard Dropdown */}
                   {link.isDropdown && (
                     <div className="absolute top-full right-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-4 group-hover:translate-y-0 transition-all duration-300 ease-out z-50">
-                      <div className="bg-white/95 backdrop-blur-xl rounded-xl shadow-[0_20px_50px_rgba(15,23,42,0.1)] border border-violet-100/50 p-2 w-48 flex flex-col">
+                      <div className="bg-white/95 backdrop-blur-xl rounded-xl shadow-[0_20px_50px_rgba(15,23,42,0.1)] border border-[#1746D2]/10/50 p-2 w-48 flex flex-col">
                         {link.links.map(dLink => (
-                          <Link key={dLink.label} to={dLink.href} className="group/dlink px-4 py-2.5 rounded-lg hover:bg-violet-50 transition-colors flex items-center gap-2">
-                            <span className="w-0 h-0.5 bg-violet-500 transition-all duration-300 group-hover/dlink:w-2" />
-                            <span className="font-body text-xs font-semibold text-slate-700 transition-colors group-hover/dlink:text-violet-700">
+                          <Link key={dLink.label} to={dLink.href} className="group/dlink px-4 py-2.5 rounded-lg hover:bg-[#1746D2]/10 transition-colors flex items-center gap-2">
+                            <span className="w-0 h-0.5 bg-[#1746D2] transition-all duration-300 group-hover/dlink:w-2" />
+                            <span className="font-body text-xs font-semibold text-slate-700 transition-colors group-hover/dlink:text-[#1746D2]">
                               {dLink.label}
                             </span>
                           </Link>
@@ -249,7 +277,7 @@ export default function Header() {
             <div className="hidden shrink-0 lg:block">
               <Link
                 to="/lets-connect"
-                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 p-2 2xl:px-6 2xl:py-2.5 font-body text-[0.65rem] 2xl:text-xs font-bold tracking-widest text-white no-underline shadow-[0_4px_15px_rgba(37,99,235,0.25)] transition-all duration-500 hover:px-5 2xl:hover:px-6 hover:shadow-[0_8px_25px_rgba(37,99,235,0.4)] whitespace-nowrap"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 p-2 2xl:px-6 2xl:py-2.5 font-body text-[0.65rem] 2xl:text-xs font-bold tracking-widest text-white no-underline shadow-[0_4px_15px_rgba(37,99,235,0.25)] transition-all duration-500 hover:px-5 2xl:hover:px-6 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] whitespace-nowrap"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-blue-600 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <span className="relative z-10 flex items-center">
@@ -285,8 +313,8 @@ export default function Header() {
 
       {/* Full-width Mobile Menu Dropdown */}
       <div
-        className={`absolute top-full left-0 w-full border-b border-violet-500/20 bg-[#0a031d]/95 shadow-[0_16px_48px_rgba(0,0,0,0.5)] backdrop-blur-3xl transition-all duration-500 ease-in-out lg:hidden overflow-hidden ${
-          open ? 'max-h-[85vh] opacity-100 border-t border-violet-500/10' : 'max-h-0 opacity-0 border-transparent pointer-events-none'
+        className={`absolute top-full left-0 w-full border-b border-[#1746D2]/20 bg-[#0a031d]/95 shadow-[0_16px_48px_rgba(0,0,0,0.5)] backdrop-blur-3xl transition-all duration-500 ease-in-out lg:hidden overflow-hidden ${
+          open ? 'max-h-[85vh] opacity-100 border-t border-[#1746D2]/10' : 'max-h-0 opacity-0 border-transparent pointer-events-none'
         }`}
       >
         <div className="px-6 py-4 overflow-y-auto max-h-[85vh] hide-scrollbar pb-24">
@@ -301,7 +329,7 @@ export default function Header() {
                   {/* Top Level Link / Accordion Toggle */}
                   <div 
                     className={`group flex items-center justify-between rounded-xl border-l-2 px-4 py-3 cursor-pointer transition-all ${
-                      active ? 'border-violet-400 bg-violet-900/20' : 'border-transparent hover:border-violet-450 hover:bg-violet-950/40'
+                      active ? 'border-[#1746D2]/60 bg-[#0b1329]/20' : 'border-transparent hover:border-violet-450 hover:bg-[#040916]/40'
                     }`}
                     onClick={() => {
                       if (hasDropdown) toggleAccordion(link.label);
@@ -310,16 +338,16 @@ export default function Header() {
                   >
                     {!hasDropdown ? (
                       <Link to={link.href} className="flex items-center gap-4 flex-1">
-                        <span className="font-mono text-[0.65rem] tracking-wider text-violet-400">{link.num}</span>
+                        <span className="font-mono text-[0.65rem] tracking-wider text-[#1746D2]">{link.num}</span>
                         <span className={`font-body text-sm font-medium ${active ? 'text-white' : 'text-slate-300 group-hover:text-white'}`}>{link.label}</span>
                       </Link>
                     ) : (
                       <div className="flex items-center justify-between flex-1">
                         <div className="flex items-center gap-4">
-                          <span className="font-mono text-[0.65rem] tracking-wider text-violet-400">{link.num}</span>
+                          <span className="font-mono text-[0.65rem] tracking-wider text-[#1746D2]">{link.num}</span>
                           <span className={`font-body text-sm font-medium ${active || isActiveAcc ? 'text-white' : 'text-slate-300 group-hover:text-white'}`}>{link.label}</span>
                         </div>
-                        <svg className={`w-4 h-4 text-violet-400 transition-transform duration-300 ${isActiveAcc ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className={`w-4 h-4 text-[#1746D2] transition-transform duration-300 ${isActiveAcc ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
                       </div>
@@ -334,8 +362,8 @@ export default function Header() {
                         {/* Render Mega Menu Categories vertically */}
                         {link.isMega && link.categories.map((cat, idx) => (
                           <div key={idx} className="flex flex-col gap-2">
-                            <span className="text-xs font-bold text-violet-300 uppercase tracking-wider">{cat.title}</span>
-                            <ul className="flex flex-col gap-2 border-l border-violet-500/20 pl-3">
+                            <span className="text-xs font-bold text-[#1746D2]/80 uppercase tracking-wider">{cat.title}</span>
+                            <ul className="flex flex-col gap-2 border-l border-[#1746D2]/20 pl-3">
                               {cat.links.map(cLink => (
                                 <li key={cLink.label}>
                                   <Link to={cLink.href} onClick={() => setOpen(false)} className="text-xs font-medium text-slate-300 hover:text-white transition-colors block py-1">
@@ -349,7 +377,7 @@ export default function Header() {
                         
                         {/* Render standard dropdown links */}
                         {link.isDropdown && (
-                          <ul className="flex flex-col gap-3 border-l border-violet-500/20 pl-3">
+                          <ul className="flex flex-col gap-3 border-l border-[#1746D2]/20 pl-3">
                             {link.links.map(dLink => (
                               <li key={dLink.label}>
                                 <Link to={dLink.href} onClick={() => setOpen(false)} className="text-sm font-medium text-slate-300 hover:text-white transition-colors block py-1">
@@ -362,9 +390,9 @@ export default function Header() {
 
                         {/* Mega Menu CTA for mobile */}
                         {link.isMega && (
-                          <div className="mt-4 p-4 rounded-xl bg-violet-900/20 border border-violet-500/20">
+                          <div className="mt-4 p-4 rounded-xl bg-[#0b1329]/20 border border-[#1746D2]/20">
                             <h4 className="text-xs font-bold text-white mb-1">Need a Custom AI Solution?</h4>
-                            <Link to="/ai-agents" onClick={() => setOpen(false)} className="inline-block mt-3 text-xs font-bold text-white bg-violet-600 px-4 py-2 rounded-full hover:bg-violet-700 transition-colors">
+                            <Link to="/ai-agents" onClick={() => setOpen(false)} className="inline-block mt-3 text-xs font-bold text-white bg-[#1746D2] px-4 py-2 rounded-full hover:bg-[#1746D2] transition-colors">
                               View Solutions
                             </Link>
                           </div>

@@ -84,16 +84,16 @@ export default function IndustryDetailPanels() {
 
   return (
     <section ref={sectionRef} className="py-20 lg:py-32 bg-slate-50 border-t border-slate-100">
-      <div className="mx-auto max-w-[85rem] px-6">
+      <div className="mx-auto max-w-[1400px] px-6">
         
         {/* Header */}
         <div className={`text-center max-w-3xl mx-auto mb-16 lg:mb-24 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="inline-flex items-center gap-3 mb-6">
-            <span className="w-8 h-[2px] bg-gradient-to-r from-violet-400 to-fuchsia-400 rounded-full" />
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] rounded-full" />
             <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-slate-500">
               INDUSTRY USE CASES
             </span>
-            <span className="w-8 h-[2px] bg-gradient-to-r from-fuchsia-400 to-violet-400 rounded-full" />
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#00A86B] to-[#1746D2] rounded-full" />
           </div>
           
           <h2 className="font-display text-[clamp(1.75rem,3.5vw,3rem)] leading-tight font-extrabold text-slate-900 mb-6 tracking-tight">
@@ -118,18 +118,18 @@ export default function IndustryDetailPanels() {
                   onClick={() => setActiveTab(idx)}
                   className={`relative text-left px-5 py-3 lg:py-4 rounded-xl shrink-0 lg:shrink transition-all duration-300 border ${
                     isActive 
-                    ? 'bg-violet-50/50 border-violet-200 shadow-sm' 
+                    ? 'bg-[#1746D2]/10/50 border-[#1746D2]/20 shadow-sm' 
                     : 'bg-transparent border-transparent hover:bg-white hover:shadow-sm'
                   }`}
                 >
                   {isActive && (
-                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-1/2 bg-gradient-to-b from-violet-500 to-fuchsia-500 rounded-r-full hidden lg:block" />
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-1/2 bg-gradient-to-b from-[#1746D2] to-[#00A86B] rounded-r-full hidden lg:block" />
                   )}
                   {isActive && (
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1 w-1/2 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-t-full lg:hidden" />
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1 w-1/2 bg-gradient-to-r from-[#1746D2] to-[#00A86B] rounded-t-full lg:hidden" />
                   )}
                   <span className={`font-display font-bold text-sm lg:text-base whitespace-nowrap lg:whitespace-normal transition-colors ${
-                    isActive ? 'text-violet-700' : 'text-slate-600'
+                    isActive ? 'text-[#1746D2]' : 'text-slate-600'
                   }`}>
                     {ind.title}
                   </span>
@@ -142,15 +142,15 @@ export default function IndustryDetailPanels() {
           <div className="lg:col-span-8">
             <div className="bg-white rounded-3xl border border-slate-200 shadow-[0_10px_40px_rgba(15,23,42,0.04)] overflow-hidden min-h-[500px] flex flex-col relative">
               
-              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-violet-50 to-white pointer-events-none rounded-bl-full" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-[#1746D2]/10 to-white pointer-events-none rounded-bl-full" />
               
               {/* Product Info */}
               <div className="p-8 md:p-12 flex-1 flex flex-col justify-center z-10 relative">
                 <div key={activeTab} className="animate-fade-slide-up">
                   
                   <div className="w-12 h-12 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mb-6">
-                    <div className="w-4 h-4 bg-violet-400 rounded-full relative">
-                      <div className="absolute inset-0 bg-violet-400 rounded-full blur animate-pulse" />
+                    <div className="w-4 h-4 bg-[#1746D2] rounded-full relative">
+                      <div className="absolute inset-0 bg-[#1746D2] rounded-full blur animate-pulse" />
                     </div>
                   </div>
 
@@ -169,7 +169,7 @@ export default function IndustryDetailPanels() {
                       <div className="flex flex-col gap-3">
                         {activeInd.useCases.map((uc, i) => (
                           <div key={i} className="flex items-center gap-3">
-                            <div className="w-1.5 h-1.5 rounded-full bg-violet-400 shrink-0" />
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#1746D2] shrink-0" />
                             <span className="font-body text-sm font-medium text-slate-700">{uc}</span>
                           </div>
                         ))}

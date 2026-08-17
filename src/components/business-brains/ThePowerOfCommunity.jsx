@@ -7,7 +7,7 @@ export default function ThePowerOfCommunity() {
       {/* Subtle Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-900/10 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <span 
             className="font-mono text-sm font-bold text-cyan-400 uppercase tracking-widest mb-6 block"
@@ -20,7 +20,7 @@ export default function ThePowerOfCommunity() {
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             In the AI revolution, <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-[#1746D2]">
               connections are currency.
             </span>
           </h2>

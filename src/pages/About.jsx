@@ -155,7 +155,7 @@ export default function About() {
               <div className="flex flex-col sm:flex-row items-center gap-4">
                 <a
                   href="#contact"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 px-8 py-4 font-body text-xs font-bold tracking-widest text-white shadow-md hover:scale-[1.02] hover:shadow-lg transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 px-8 py-4 font-body text-xs font-bold tracking-widest text-white shadow-md hover:scale-[1.02] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all"
                 >
                   Connect with Global Strategy Team
                   <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" stroke="currentColor" strokeWidth="2.5">
@@ -624,7 +624,7 @@ export default function About() {
         {/* ── 7. FOUNDER'S MESSAGE ── */}
         <section className="w-full border-t border-slate-100 bg-slate-50/50 py-16 md:py-24">
           <div className="mx-auto max-w-[1400px] px-6">
-            <div className="group relative rounded-[2.5rem] border border-slate-200 bg-white p-10 md:p-16 shadow-sm overflow-hidden max-w-[1400px] mx-auto transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:border-blue-200/80">
+            <div className="group relative rounded-[2.5rem] border border-slate-200 bg-white p-10 md:p-16 shadow-sm overflow-hidden max-w-[1400px] mx-auto transition-all duration-500 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:border-blue-200/80">
               {/* Faded Accent Blob */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
               
@@ -664,7 +664,7 @@ export default function About() {
         </section>
 
         {/* ── 8. FINAL CTA BANNER ── */}
-        <section id="contact" className="mx-auto max-w-[85rem] px-6 py-16 md:py-24 relative z-10">
+        <section id="contact" className="mx-auto max-w-[1400px] px-6 py-16 md:py-24 relative z-10">
           <div className="relative rounded-[2.5rem] border border-blue-100 bg-slate-50/80 backdrop-blur-md p-10 md:p-16 text-center shadow-md overflow-hidden">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-blue-100/30 blur-[130px] pointer-events-none" />
 
@@ -678,7 +678,7 @@ export default function About() {
 
             <Link
               to="/lets-connect"
-              className="relative z-10 inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 px-8 py-4 font-body text-xs font-bold tracking-widest text-white shadow-md hover:scale-[1.03] hover:shadow-lg active:scale-[0.98]"
+              className="relative z-10 inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 px-8 py-4 font-body text-xs font-bold tracking-widest text-white shadow-md hover:scale-[1.03] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] active:scale-[0.98]"
             >
               Contact Our Global Strategy Team
               <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" stroke="currentColor" strokeWidth="2.5">

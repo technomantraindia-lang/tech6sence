@@ -29,9 +29,9 @@ export default function WhoOccupiesRoom() {
     <section className="relative bg-[#020617] text-white py-24 md:py-32 border-b border-slate-800/80 overflow-hidden">
       
       {/* Glow Effects */}
-      <div className="absolute bottom-10 left-10 w-[500px] h-[500px] bg-violet-900/15 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-[500px] h-[500px] bg-[#0b1329]/15 rounded-full blur-[150px] pointer-events-none" />
 
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 

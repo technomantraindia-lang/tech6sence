@@ -11,7 +11,7 @@ export default function IndustriesHero() {
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 opacity-50 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-50 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 opacity-50 pointer-events-none" />
       
-      <div className="relative mx-auto max-w-[85rem] px-6">
+      <div className="relative mx-auto max-w-[1400px] px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
           
           {/* Left Content */}
@@ -34,7 +34,7 @@ export default function IndustriesHero() {
             </div>
             
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-12">
-              <Link to="#explore" className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-blue-600 to-emerald-600 px-8 py-3.5 font-body text-sm font-bold text-white shadow-[0_4px_15px_rgba(59,130,246,0.3)] transition-all hover:scale-[1.02] hover:shadow-[0_8px_25px_rgba(59,130,246,0.4)]">
+              <Link to="#explore" className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-blue-600 to-emerald-600 px-8 py-3.5 font-body text-sm font-bold text-white shadow-[0_4px_15px_rgba(59,130,246,0.3)] transition-all hover:scale-[1.02] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]">
                 <span className="relative z-10 flex items-center gap-2">
                   Explore Industries
                   <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

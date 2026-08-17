@@ -8,7 +8,7 @@ export default function IntelligentFinalCTA() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="mx-auto max-w-[85rem] px-6 relative z-10 text-center">
+      <div className="mx-auto max-w-[1400px] px-6 relative z-10 text-center">
         
         {/* Footer Tagline - Styled in Royal Blue */}
         <div className="inline-flex items-center gap-3 mb-6 px-5 py-2 rounded-full border border-blue-500/20 bg-blue-950/60 backdrop-blur-xl">
@@ -32,7 +32,7 @@ export default function IntelligentFinalCTA() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
           <Link
             to="/lets-connect?inquiry=AI%20Transformation"
-            className="group relative inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 px-9 py-4 font-body text-sm font-bold text-white shadow-[0_4px_25px_rgba(37,99,235,0.3)] transition-all hover:scale-[1.03] hover:shadow-[0_8px_35px_rgba(37,99,235,0.5)]"
+            className="group relative inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 px-9 py-4 font-body text-sm font-bold text-white shadow-[0_4px_25px_rgba(37,99,235,0.3)] transition-all hover:scale-[1.03] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]"
           >
             Start Your AI Transformation
             <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

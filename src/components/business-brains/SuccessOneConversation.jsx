@@ -17,7 +17,7 @@ export default function SuccessOneConversation() {
       {/* Light Gridlines */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(124,58,237,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.015)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10 text-center">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10 text-center">
         
         <span 
           className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-4 block"

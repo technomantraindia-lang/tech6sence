@@ -27,16 +27,16 @@ export default function EcosystemModel() {
 
   return (
     <section ref={sectionRef} className="py-20 lg:py-32 bg-slate-50 border-t border-slate-100 overflow-hidden relative">
-      <div className="mx-auto max-w-[85rem] px-6">
+      <div className="mx-auto max-w-[1400px] px-6">
         
         {/* Header */}
         <div className={`text-center max-w-3xl mx-auto mb-20 lg:mb-32 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="inline-flex items-center gap-3 mb-6">
-            <span className="w-8 h-[2px] bg-gradient-to-r from-violet-400 to-fuchsia-400 rounded-full" />
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] rounded-full" />
             <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-slate-500">
               ECOSYSTEM MODEL
             </span>
-            <span className="w-8 h-[2px] bg-gradient-to-r from-fuchsia-400 to-violet-400 rounded-full" />
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#00A86B] to-[#1746D2] rounded-full" />
           </div>
           
           <h2 className="font-display text-[clamp(1.75rem,3.5vw,3rem)] leading-tight font-extrabold text-slate-900 mb-6 tracking-tight">
@@ -53,7 +53,7 @@ export default function EcosystemModel() {
           
           {/* Circular Connecting Lines (Desktop only) */}
           <div className={`absolute inset-0 hidden lg:flex items-center justify-center transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-            <div className="w-[500px] h-[500px] rounded-full border border-violet-200/60 animate-[spin_40s_linear_infinite]" />
+            <div className="w-[500px] h-[500px] rounded-full border border-[#1746D2]/20/60 animate-[spin_40s_linear_infinite]" />
             <div className="absolute w-[400px] h-[400px] rounded-full border border-fuchsia-200/50 animate-[spin_30s_linear_infinite_reverse]" />
           </div>
 
@@ -79,8 +79,8 @@ export default function EcosystemModel() {
 
           {/* Central Hub */}
           <div className={`relative z-30 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 w-48 h-48 bg-slate-900 rounded-full shadow-2xl flex flex-col items-center justify-center border-4 border-white mb-12 lg:mb-0 transition-all duration-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
-            <div className="absolute inset-0 bg-violet-500 rounded-full blur-2xl opacity-30 animate-pulse -z-10" />
-            <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-violet-500 to-fuchsia-500 flex items-center justify-center mb-2">
+            <div className="absolute inset-0 bg-[#1746D2] rounded-full blur-2xl opacity-30 animate-pulse -z-10" />
+            <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#1746D2] to-[#00A86B] flex items-center justify-center mb-2">
               <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
               </svg>
@@ -106,14 +106,14 @@ export default function EcosystemModel() {
               return (
                 <div 
                   key={i} 
-                  className={`bg-white p-6 rounded-2xl border border-slate-200 shadow-sm lg:w-[280px] w-full group hover:border-violet-300 hover:shadow-[0_8px_30px_rgba(139,92,246,0.1)] transition-all duration-500 ease-out ${positions[i]} ${
+                  className={`bg-white p-6 rounded-2xl border border-slate-200 shadow-sm lg:w-[280px] w-full group hover:border-[#1746D2]/40 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-500 ease-out ${positions[i]} ${
                     isVisible ? 'opacity-100 translate-y-0 lg:translate-y-0' : 'opacity-0 translate-y-12 lg:translate-y-8'
                   }`}
                   style={{ transitionDelay: `${400 + (i * 150)}ms` }}
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-2.5 h-2.5 rounded-full bg-violet-400 group-hover:scale-150 transition-transform duration-300" />
-                    <h3 className="font-display text-base font-bold text-slate-900 group-hover:text-violet-700 transition-colors">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#1746D2] group-hover:scale-150 transition-transform duration-300" />
+                    <h3 className="font-display text-base font-bold text-slate-900 group-hover:text-[#1746D2] transition-colors">
                       {pillar.title}
                     </h3>
                   </div>

@@ -32,10 +32,10 @@ export default function ApplicationForm() {
         
         {/* Dynamic Glows */}
         <div className="absolute top-1/4 right-0 w-[800px] h-[800px] bg-cyan-900/20 rounded-full blur-[150px] mix-blend-screen" />
-        <div className="absolute bottom-1/4 left-[-20%] w-[600px] h-[600px] bg-violet-900/20 rounded-full blur-[150px] mix-blend-screen" />
+        <div className="absolute bottom-1/4 left-[-20%] w-[600px] h-[600px] bg-[#0b1329]/20 rounded-full blur-[150px] mix-blend-screen" />
       </div>
 
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
           
           {/* Left Text Block */}
@@ -52,7 +52,7 @@ export default function ApplicationForm() {
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               Join Business <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-[#1746D2]">
                 Brains Community
               </span>
             </h2>
@@ -153,9 +153,9 @@ export default function ApplicationForm() {
 
                 <button 
                   type="submit" 
-                  className="relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-cyan-600 to-violet-600 p-[1px] group/btn transition-all hover:scale-[1.01]"
+                  className="relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-cyan-600 to-[#1746D2] p-[1px] group/btn transition-all hover:scale-[1.01]"
                 >
-                  <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-violet-500 opacity-0 transition-opacity duration-300 group-hover/btn:opacity-100" />
+                  <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-[#1746D2] opacity-0 transition-opacity duration-300 group-hover/btn:opacity-100" />
                   <div className="relative flex items-center justify-center gap-2 rounded-xl bg-slate-950 px-8 py-4 transition-all group-hover/btn:bg-opacity-0">
                     <span className="font-bold text-white text-sm tracking-wide" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                       Submit Application

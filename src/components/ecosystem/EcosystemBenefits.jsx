@@ -46,16 +46,16 @@ export default function EcosystemBenefits() {
 
   return (
     <section ref={sectionRef} className="py-20 lg:py-32 bg-slate-50 border-t border-slate-100 overflow-hidden relative">
-      <div className="mx-auto max-w-[85rem] px-6">
+      <div className="mx-auto max-w-[1400px] px-6">
         
         {/* Header */}
         <div className={`text-center max-w-3xl mx-auto mb-20 lg:mb-28 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="inline-flex items-center gap-3 mb-6">
-            <span className="w-8 h-[2px] bg-gradient-to-r from-violet-400 to-fuchsia-400 rounded-full" />
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] rounded-full" />
             <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-slate-500">
               ECOSYSTEM BENEFITS
             </span>
-            <span className="w-8 h-[2px] bg-gradient-to-r from-fuchsia-400 to-violet-400 rounded-full" />
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#00A86B] to-[#1746D2] rounded-full" />
           </div>
           
           <h2 className="font-display text-[clamp(1.75rem,3.5vw,3rem)] leading-tight font-extrabold text-slate-900 mb-6 tracking-tight">
@@ -73,7 +73,7 @@ export default function EcosystemBenefits() {
           {/* Continuous Line (Desktop) */}
           <div className="hidden lg:block absolute top-[28px] left-[10%] right-[10%] h-px bg-slate-200">
             <div 
-              className="h-full bg-gradient-to-r from-violet-400 to-fuchsia-400 transition-all duration-[2500ms] ease-out origin-left"
+              className="h-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] transition-all duration-[2500ms] ease-out origin-left"
               style={{ transform: isVisible ? 'scaleX(1)' : 'scaleX(0)' }}
             />
           </div>
@@ -81,7 +81,7 @@ export default function EcosystemBenefits() {
           {/* Continuous Line (Mobile) */}
           <div className="lg:hidden absolute top-[28px] bottom-[28px] left-[28px] w-px bg-slate-200">
             <div 
-              className="w-full bg-gradient-to-b from-violet-400 to-fuchsia-400 transition-all duration-[2500ms] ease-out origin-top"
+              className="w-full bg-gradient-to-b from-[#1746D2] to-[#00A86B] transition-all duration-[2500ms] ease-out origin-top"
               style={{ transform: isVisible ? 'scaleY(1)' : 'scaleY(0)' }}
             />
           </div>
@@ -98,16 +98,16 @@ export default function EcosystemBenefits() {
               >
                 
                 {/* Stage Node */}
-                <div className="w-14 h-14 shrink-0 rounded-full bg-white border-2 border-slate-100 flex items-center justify-center mb-0 lg:mb-6 shadow-sm group-hover:border-violet-300 group-hover:shadow-[0_0_20px_rgba(139,92,246,0.15)] transition-all duration-500 z-10 ml-0 lg:mx-auto relative">
-                  <div className="absolute inset-0 bg-violet-100 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
-                  <span className="font-display font-bold text-slate-400 group-hover:text-violet-600 transition-colors text-lg">
+                <div className="w-14 h-14 shrink-0 rounded-full bg-white border-2 border-slate-100 flex items-center justify-center mb-0 lg:mb-6 shadow-sm group-hover:border-[#1746D2]/40 group-hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-500 z-10 ml-0 lg:mx-auto relative">
+                  <div className="absolute inset-0 bg-[#1746D2]/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                  <span className="font-display font-bold text-slate-400 group-hover:text-[#1746D2] transition-colors text-lg">
                     {stage.num}
                   </span>
                 </div>
 
                 {/* Stage Content */}
                 <div className="pl-6 lg:pl-0 pt-3 lg:pt-0">
-                  <h3 className="font-display text-base font-bold text-slate-900 mb-2 group-hover:text-violet-700 transition-colors">
+                  <h3 className="font-display text-base font-bold text-slate-900 mb-2 group-hover:text-[#1746D2] transition-colors">
                     {stage.title}
                   </h3>
                   <p className="font-body text-sm text-slate-600 leading-relaxed max-w-[250px] lg:mx-auto">

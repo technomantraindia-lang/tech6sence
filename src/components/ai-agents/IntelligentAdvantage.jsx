@@ -55,7 +55,7 @@ export default function IntelligentAdvantage() {
       <div className="absolute top-1/4 left-[-10%] w-[400px] h-[400px] rounded-full bg-blue-100/10 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-[-10%] w-[400px] h-[400px] rounded-full bg-emerald-100/10 blur-[120px] pointer-events-none" />
 
-      <div className="mx-auto max-w-[85rem] px-6 relative z-10">
+      <div className="mx-auto max-w-[1400px] px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-3 mb-6">
@@ -77,8 +77,8 @@ export default function IntelligentAdvantage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {advantageItems.map((item, idx) => {
             const hoverShadow = item.isBlue 
-              ? "group-hover:shadow-[0_20px_40px_rgba(37,99,235,0.12)]" 
-              : "group-hover:shadow-[0_20px_40px_rgba(16,185,129,0.12)]";
+              ? "group-hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]" 
+              : "group-hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]";
 
             return (
               <div 

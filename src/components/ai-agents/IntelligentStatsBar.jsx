@@ -15,9 +15,9 @@ export default function IntelligentStatsBar() {
   const duplicatedStats = [...stats, ...stats, ...stats];
 
   return (
-    <section className="relative w-full border-y border-violet-100 bg-gradient-to-r from-violet-50/40 via-fuchsia-50/20 to-violet-50/40 py-8 overflow-hidden">
+    <section className="relative w-full border-y border-[#1746D2]/10 bg-gradient-to-r from-[#1746D2]/10/40 via-fuchsia-50/20 to-[#1746D2]/10/40 py-8 overflow-hidden">
       {/* Background soft glow */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[150px] bg-violet-200/25 blur-[100px] rounded-full" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[150px] bg-[#1746D2]/20/25 blur-[100px] rounded-full" />
 
       {/* Infinite Automatic Marquee Slider Track */}
       <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">

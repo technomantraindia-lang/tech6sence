@@ -41,16 +41,16 @@ export default function CrossIndustryTechnologyFit() {
 
   return (
     <section ref={sectionRef} className="py-20 lg:py-32 bg-white relative overflow-hidden">
-      <div className="mx-auto max-w-[85rem] px-6">
+      <div className="mx-auto max-w-[1400px] px-6">
         
         {/* Header */}
         <div className={`text-center max-w-3xl mx-auto mb-20 lg:mb-32 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="inline-flex items-center gap-3 mb-6">
-            <span className="w-8 h-[2px] bg-gradient-to-r from-violet-400 to-fuchsia-400 rounded-full" />
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] rounded-full" />
             <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-slate-500">
               TECHNOLOGY FIT
             </span>
-            <span className="w-8 h-[2px] bg-gradient-to-r from-fuchsia-400 to-violet-400 rounded-full" />
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#00A86B] to-[#1746D2] rounded-full" />
           </div>
           
           <h2 className="font-display text-[clamp(1.75rem,3.5vw,3rem)] leading-tight font-extrabold text-slate-900 mb-6 tracking-tight">
@@ -86,7 +86,7 @@ export default function CrossIndustryTechnologyFit() {
           {/* Central Foundation Node */}
           <div className={`relative z-20 mb-16 lg:mb-0 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
             <div className="bg-slate-900 px-8 py-5 rounded-2xl shadow-xl flex flex-col items-center justify-center border border-slate-800">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-violet-500 to-fuchsia-500 flex items-center justify-center mb-3">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#1746D2] to-[#00A86B] flex items-center justify-center mb-3">
                 <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -97,7 +97,7 @@ export default function CrossIndustryTechnologyFit() {
               <span className="font-mono text-[0.6rem] text-slate-400 uppercase tracking-widest mt-1">Foundation</span>
             </div>
             {/* Glow */}
-            <div className="absolute inset-0 bg-violet-500 rounded-2xl blur-xl opacity-20 -z-10 animate-pulse" />
+            <div className="absolute inset-0 bg-[#1746D2] rounded-2xl blur-xl opacity-20 -z-10 animate-pulse" />
           </div>
 
           {/* Branches Grid */}
@@ -105,13 +105,13 @@ export default function CrossIndustryTechnologyFit() {
             {branches.map((branch, i) => (
               <div 
                 key={i} 
-                className={`bg-white p-8 rounded-2xl border border-slate-200 shadow-sm transition-all duration-700 hover:shadow-md hover:border-violet-200 ${
+                className={`bg-white p-8 rounded-2xl border border-slate-200 shadow-sm transition-all duration-700 hover:shadow-md hover:border-[#1746D2]/40 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                 }`}
                 style={{ transitionDelay: `${500 + (i * 150)}ms` }}
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-2 h-2 rounded-full bg-violet-400" />
+                  <div className="w-2 h-2 rounded-full bg-[#1746D2]" />
                   <h3 className="font-display text-lg font-bold text-slate-900">
                     {branch.title}
                   </h3>

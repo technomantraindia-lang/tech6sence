@@ -75,7 +75,7 @@ export default function SaturnServicesRing({ onActiveChange }) {
       <mesh rotation={[-Math.PI / 2, 0, 0]}>
         <ringGeometry args={[2.37, 2.39, 64]} />
         <meshBasicMaterial 
-          color="#7c3aed" 
+          color="#1746D2" 
           transparent 
           opacity={0.24} 
           side={THREE.DoubleSide} 

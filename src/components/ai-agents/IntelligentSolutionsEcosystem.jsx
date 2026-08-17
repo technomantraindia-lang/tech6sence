@@ -275,7 +275,7 @@ function ServiceCard({ srv, accent, accentRgb }) {
       onMouseMove={handleMouseMove}
       to={srv.href}
       id={srv.id}
-      className="group relative p-7 rounded-2xl border border-slate-200/80 bg-white/90 backdrop-blur-md shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 overflow-hidden flex flex-col justify-between"
+      className="group relative p-7 rounded-2xl border border-slate-200/80 bg-white/90 backdrop-blur-md shadow-sm hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 overflow-hidden flex flex-col justify-between"
     >
       <div 
         className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -346,11 +346,11 @@ export default function IntelligentSolutionsEcosystem() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-3 mb-6">
-            <span className="w-8 h-[2px] bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full" />
-            <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-violet-600">
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] rounded-full" />
+            <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-[#1746D2]">
               SERVICES PRACTICE LINES
             </span>
-            <span className="w-8 h-[2px] bg-gradient-to-r from-fuchsia-500 to-violet-500 rounded-full" />
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#00A86B] to-[#1746D2] rounded-full" />
           </div>
           
           <h2 className="font-display text-[clamp(2rem,4vw,3.2rem)] leading-[1.1] font-extrabold text-slate-900 mb-6 tracking-tight">
@@ -392,7 +392,7 @@ export default function IntelligentSolutionsEcosystem() {
             
             <div className="mb-10 border-b border-slate-100 pb-8 flex flex-col md:flex-row md:items-start justify-between gap-6">
               <div className="max-w-3xl">
-                <span className="font-mono text-xs font-bold text-violet-600 uppercase tracking-widest mb-2 block">
+                <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-2 block">
                   {activeCategory.code} PRACTICE LINE CATEGORY
                 </span>
                 <h3 className="font-display text-3xl font-extrabold text-slate-900 mb-3">
@@ -435,7 +435,7 @@ export default function IntelligentSolutionsEcosystem() {
                   className="w-full flex items-center justify-between p-5 text-left"
                 >
                   <div>
-                    <span className="font-mono text-[0.65rem] font-bold text-violet-600 uppercase block mb-1">{cat.code}</span>
+                    <span className="font-mono text-[0.65rem] font-bold text-[#1746D2] uppercase block mb-1">{cat.code}</span>
                     <h3 className="font-display text-base font-bold text-slate-900">{cat.title}</h3>
                   </div>
                   <svg className={`w-5 h-5 text-slate-400 transition-transform ${isActive ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -455,7 +455,7 @@ export default function IntelligentSolutionsEcosystem() {
                           <h4 className="font-display text-sm font-bold text-slate-900 mb-1">{srv.h1}</h4>
                           <p className="font-body text-xs text-slate-600 mb-3">{srv.desc}</p>
                         </div>
-                        <span className="font-display text-xs font-bold text-violet-600 flex items-center gap-1">
+                        <span className="font-display text-xs font-bold text-[#1746D2] flex items-center gap-1">
                           {srv.cta} &rarr;
                         </span>
                       </Link>

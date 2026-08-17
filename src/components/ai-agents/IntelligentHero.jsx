@@ -25,14 +25,14 @@ export default function IntelligentHero() {
       </div>
 
       {/* Ambient Backdrops */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-violet-600/15 blur-[160px] rounded-full" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#1746D2]/15 blur-[160px] rounded-full" />
 
       {/* Main Hero Container */}
-      <div className="mx-auto max-w-[85rem] px-6 relative z-10 w-full py-12">
+      <div className="mx-auto max-w-[1400px] px-6 relative z-10 w-full py-12">
         <div className={`max-w-4xl transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           
           {/* Top Pill */}
-          <div className="inline-flex items-center gap-3 mb-6 px-4 py-2 rounded-full border border-violet-500/20 bg-violet-950/50 backdrop-blur-xl">
+          <div className="inline-flex items-center gap-3 mb-6 px-4 py-2 rounded-full border border-[#1746D2]/20 bg-[#040916]/50 backdrop-blur-xl">
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_12px_rgba(34,211,238,0.8)]" />
             <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-cyan-300">
               Intelligent Solutions
@@ -42,19 +42,19 @@ export default function IntelligentHero() {
           {/* Headline */}
           <h1 className="font-display text-[clamp(2.5rem,5.5vw,5.5rem)] leading-[1.05] font-black tracking-tight text-white mb-6">
             Architecting the Future of{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#1746D2] via-fuchsia-400 to-cyan-400">
               Enterprise Intelligence.
             </span>
           </h1>
 
           {/* Tagline */}
-          <div className="font-mono text-xs md:text-sm font-semibold tracking-wider text-violet-300 mb-6 uppercase flex flex-wrap items-center gap-2">
+          <div className="font-mono text-xs md:text-sm font-semibold tracking-wider text-[#1746D2]/80 mb-6 uppercase flex flex-wrap items-center gap-2">
             <span>Global AI Engineering</span>
-            <span className="text-violet-500">•</span>
+            <span className="text-[#1746D2]">•</span>
             <span>Intelligent Automation</span>
-            <span className="text-violet-500">•</span>
+            <span className="text-[#1746D2]">•</span>
             <span>Enterprise Software</span>
-            <span className="text-violet-500">•</span>
+            <span className="text-[#1746D2]">•</span>
             <span>Digital Transformation</span>
           </div>
 
@@ -67,7 +67,7 @@ export default function IntelligentHero() {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-5 w-full sm:w-auto mb-14">
             <a 
               href="/lets-connect?inquiry=AI%20Strategy" 
-              className="group relative inline-flex justify-center items-center gap-3 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-9 py-4 font-body text-sm font-bold text-white shadow-[0_4px_25px_rgba(124,58,237,0.35)] transition-all hover:scale-[1.03] hover:shadow-[0_8px_35px_rgba(124,58,237,0.5)]"
+              className="group relative inline-flex justify-center items-center gap-3 rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] px-9 py-4 font-body text-sm font-bold text-white shadow-[0_4px_25px_rgba(124,58,237,0.35)] transition-all hover:scale-[1.03] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]"
             >
               Talk to Our AI Strategy Team
               <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -76,7 +76,7 @@ export default function IntelligentHero() {
             </a>
             <a 
               href="#ecosystem" 
-              className="group relative inline-flex justify-center items-center gap-2 rounded-full border border-slate-700 bg-slate-900/60 backdrop-blur-md px-9 py-4 font-body text-sm font-bold text-slate-200 hover:border-violet-500 hover:text-white transition-all shadow-sm"
+              className="group relative inline-flex justify-center items-center gap-2 rounded-full border border-slate-700 bg-slate-900/60 backdrop-blur-md px-9 py-4 font-body text-sm font-bold text-slate-200 hover:border-[#1746D2] hover:text-white transition-all shadow-sm"
             >
               Explore Our Capabilities
             </a>

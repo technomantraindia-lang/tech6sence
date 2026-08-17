@@ -1,10 +1,19 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const SOLUTIONS = [
   {
-    title: 'AI Agents & Automation',
-    description: 'Autonomous workflows, task execution, and intelligent business process automation.',
+    title: 'AI Product & Model Development',
+    subtitle: 'From proprietary architecture to production-grade intelligence.',
+    overview: 'We design and build the AI products enterprises actually ship — not research demos. This spans foundation model selection and fine-tuning, custom model architecture, retrieval-augmented systems, and the full product engineering layer around them: APIs, data pipelines, and deployment infrastructure built to hold up under real usage.',
+    bullets: [
+      'Custom AI model design, training, and fine-tuning',
+      'Foundation model integration and optimization (LLM & multimodal)',
+      'Retrieval-augmented generation (RAG) and knowledge-grounded systems',
+      'End-to-end AI product architecture and engineering',
+      'MLOps, model monitoring, and continuous improvement pipelines',
+    ],
+    builtFor: 'Enterprises and founders building a defensible, owned AI product — not a wrapper around someone else\'s model.',
     path: '/ai-agents?tab=0#ecosystem',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth="1.5">
@@ -13,8 +22,17 @@ const SOLUTIONS = [
     ),
   },
   {
-    title: 'Generative AI & Copilots',
-    description: 'Custom AI assistants, knowledge systems, content engines, and enterprise copilots.',
+    title: 'Intelligent Automation & Agent Systems',
+    subtitle: 'Systems that act, not just assist.',
+    overview: 'Autonomous AI agents and multi-agent systems designed for complex operations, support, and back-office workflows. We engineer end-to-end automation integrated with existing enterprise business tools, with human-in-the-loop controls where required.',
+    bullets: [
+      'Autonomous AI agents for operations, support, and back-office workflows',
+      'Multi-agent orchestration across business systems and data sources',
+      'Workflow automation integrated with existing ERP, CRM, and internal tools',
+      'Decision-support automation with human-in-the-loop controls where required',
+      'Process mining and automation opportunity assessment',
+    ],
+    builtFor: 'Organizations looking to eliminate operational drag at scale — not automate a single task in isolation.',
     path: '/ai-agents?tab=1#ecosystem',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth="1.5">
@@ -23,8 +41,17 @@ const SOLUTIONS = [
     ),
   },
   {
-    title: 'Computer Vision Systems',
-    description: 'Image, video, object, and pattern recognition for real-world use cases.',
+    title: 'Generative & Applied AI',
+    subtitle: 'Generative systems engineered for outcomes, not novelty.',
+    overview: 'Enterprise generative AI applications engineered to deliver measurable business outcomes. We build custom copilots, internal AI assistants, and decision-support analytics tools backed by robust output evaluation and responsible-AI guardrails.',
+    bullets: [
+      'Enterprise generative AI applications (content, design, code, media)',
+      'Custom copilots and internal AI assistants',
+      'AI-powered decision-support and analytics tools',
+      'Prompt engineering, evaluation, and output-quality frameworks',
+      'Responsible-AI guardrails built into every generative deployment',
+    ],
+    builtFor: 'Teams that need generative AI to hold up in production — not just in a demo.',
     path: '/ai-agents?tab=2#ecosystem',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth="1.5">
@@ -34,8 +61,17 @@ const SOLUTIONS = [
     ),
   },
   {
-    title: 'Data Intelligence & Predictive Models',
-    description: 'Dashboards, forecasting, analytics, and decision intelligence systems.',
+    title: 'AI Strategy & Governance',
+    subtitle: 'The confidence layer for enterprise AI adoption.',
+    overview: 'Strategic roadmap, risk control, and policy frameworks that give executive leadership the confidence to adopt AI deliberately and securely across operating markets.',
+    bullets: [
+      'AI readiness assessment and opportunity roadmapping',
+      'Enterprise AI governance frameworks and risk controls',
+      'Regulatory and compliance alignment across operating markets',
+      'Responsible AI, model risk, and data governance policy design',
+      'Executive and board-level AI strategy advisory',
+    ],
+    builtFor: 'Enterprises and governments that need AI adoption to be deliberate, auditable, and defensible — not experimental.',
     path: '/ai-agents?tab=2#ecosystem',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth="1.5">
@@ -44,8 +80,17 @@ const SOLUTIONS = [
     ),
   },
   {
-    title: 'Enterprise AI Integration',
-    description: 'Cloud deployment, MLOps, secure integration, and scalable AI infrastructure.',
+    title: 'Enterprise Technology & Digital Infrastructure',
+    subtitle: 'The foundation every AI initiative is built on.',
+    overview: 'Full-stack IT engineering and cloud architecture designed to support AI workloads at scale. From cloud migration and data engineering to web, mobile, and enterprise application development.',
+    bullets: [
+      'Cloud architecture, migration, and infrastructure engineering',
+      'Full-stack web, mobile, and enterprise application development',
+      'Data engineering, integration, and pipeline architecture',
+      'Systems integration across legacy and modern environments',
+      'Security, scalability, and performance engineering',
+    ],
+    builtFor: 'Enterprises that need an infrastructure partner capable of supporting AI initiatives end-to-end — not just the model layer.',
     path: '/ai-agents?tab=3#ecosystem',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth="1.5">
@@ -56,114 +101,116 @@ const SOLUTIONS = [
   },
 ];
 
-function SolutionRow({ solution, index, isActive, rowRef, isVisible }) {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseMove = useCallback((e) => {
-    const el = document.getElementById(`sol-row-${index}`);
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    el.style.setProperty('--mouse-x', `${x}px`);
-    el.style.setProperty('--mouse-y', `${y}px`);
-  }, [index]);
-
-  const activeOrHovered = isHovered || isActive;
-
+function AccordionItem({ solution, index, isOpen, onHover, isVisible }) {
   return (
-    <Link
-      ref={rowRef}
-      id={`sol-row-${index}`}
-      to={solution.path}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onMouseMove={handleMouseMove}
-      className="group relative cursor-pointer select-none transition-all duration-700 ease-out block"
+    <div
+      onMouseEnter={() => onHover(index)}
+      className="group relative transition-all duration-700 ease-out"
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
-        transitionDelay: `${index * 120}ms`
+        transitionDelay: `${index * 100}ms`
       }}
     >
-      {/* Subtle cursor spotlight */}
+      {/* Card container */}
       <div
-        className="pointer-events-none absolute inset-0 z-0 rounded-2xl transition-opacity duration-300"
-        style={{
-          opacity: isHovered ? 1 : 0,
-          background: `radial-gradient(circle 200px at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(139, 92, 246, 0.06), transparent 70%)`,
-        }}
-      />
+        className={`rounded-2xl transition-all duration-300 border overflow-hidden ${
+          isOpen
+            ? 'bg-white shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] border-[#1746D2]/30'
+            : 'bg-transparent border-transparent hover:bg-white/60 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.25)]'
+        }`}
+      >
+        {/* Header row */}
+        <div className="flex items-center gap-4 md:gap-5 px-5 md:px-7 py-5 md:py-6 cursor-pointer">
+          {/* Icon */}
+          <div
+            className={`w-11 h-11 shrink-0 rounded-xl flex items-center justify-center border transition-all duration-300 ${
+              isOpen
+                ? 'bg-[#1746D2]/10 border-[#1746D2]/20 text-[#1746D2]'
+                : 'bg-white border-slate-200 text-slate-400 shadow-sm'
+            }`}
+          >
+            {solution.icon}
+          </div>
 
-      <div className={`relative z-10 flex items-center gap-5 md:gap-6 px-4 md:px-6 rounded-2xl transition-all duration-500 ease-out ${
-        activeOrHovered 
-          ? 'bg-white/70 py-8 md:py-9 shadow-[0_15px_35px_rgba(124,58,237,0.03)]' 
-          : 'bg-transparent py-6 md:py-7'
-      }`}>
-        {/* Icon */}
+          {/* Title & Subtitle */}
+          <div className="flex-1 min-w-0">
+            <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+              <h4 className={`font-display text-[1rem] md:text-[1.12rem] font-bold tracking-tight transition-colors duration-300 ${
+                isOpen ? 'text-slate-900' : 'text-slate-700'
+              }`}>
+                {solution.title}
+              </h4>
+              <span className="font-body text-[0.85rem] text-slate-500 italic font-normal">
+                {solution.subtitle}
+              </span>
+            </div>
+          </div>
+
+          {/* Arrow Link */}
+          <Link
+            to={solution.path}
+            className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+              isOpen ? 'bg-[#1746D2]/10 translate-x-1' : ''
+            }`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" stroke={isOpen ? '#1746D2' : '#94a3b8'} strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </Link>
+        </div>
+
+        {/* Accordion Content (expands on hover) */}
         <div
-          className="w-12 h-12 shrink-0 rounded-2xl flex items-center justify-center border transition-all duration-300 bg-white shadow-sm"
-          style={{
-            borderColor: activeOrHovered ? 'rgba(37, 99, 235, 0.4)' : 'rgba(226, 232, 240, 0.8)',
-            color: activeOrHovered ? '#2563eb' : '#64748b',
-          }}
+          className="transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] grid"
+          style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
         >
-          {solution.icon}
-        </div>
+          <div className="overflow-hidden">
+            <div className={`px-5 md:px-7 pb-6 pt-1 transition-opacity duration-400 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
+              <div className="h-[1px] bg-gradient-to-r from-[#1746D2]/10 via-[#00A86B]/10 to-transparent mb-5" />
 
-        {/* Content */}
-        <div className="flex-1 min-w-0">
-          <h4 className="font-display text-[1.1rem] md:text-[1.2rem] font-bold text-slate-800 tracking-tight transition-colors duration-300">
-            {solution.title}
-          </h4>
-          <p className={`mt-1 font-body text-[0.85rem] md:text-[0.9rem] leading-relaxed font-medium transition-colors duration-300 ${
-            activeOrHovered ? 'text-slate-700' : 'text-slate-500'
-          }`}>
-            {solution.description}
-          </p>
-        </div>
+              {/* Overview paragraph */}
+              <p className="font-body text-[0.9rem] leading-[1.75] text-slate-600 font-medium mb-5">
+                {solution.overview}
+              </p>
 
-        {/* Arrow */}
-        <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
-          activeOrHovered ? 'translate-x-1.5 bg-blue-50' : ''
-        }`}>
-          <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 transition-colors duration-300" stroke={activeOrHovered ? '#2563eb' : '#94a3b8'} strokeWidth="2">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-          </svg>
+              {/* Capability bullet points */}
+              <ul className="space-y-2.5 mb-6">
+                {solution.bullets.map((bullet, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#00A86B] shrink-0" />
+                    <span className="font-body text-[0.88rem] text-slate-700 font-semibold leading-relaxed">
+                      {bullet}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Built For Callout */}
+              <div className="flex flex-col sm:flex-row sm:items-baseline gap-1.5 p-4 rounded-xl bg-slate-50 border border-slate-100">
+                <span className="font-display text-[0.78rem] font-extrabold tracking-wide uppercase text-slate-900 shrink-0">
+                  Built for:
+                </span>
+                <span className="font-body text-[0.85rem] text-slate-600 font-medium leading-relaxed">
+                  {solution.builtFor}
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Bottom border line — gradient on hover */}
-      <div className="mx-4 md:mx-6 h-[1px] relative overflow-hidden">
-        <div className="absolute inset-0 bg-slate-100 transition-opacity duration-300" style={{ opacity: activeOrHovered ? 0 : 1 }} />
-        <div
-          className="absolute inset-0 bg-gradient-to-r from-blue-500 via-emerald-500 to-blue-400 transition-all duration-500"
-          style={{
-            opacity: activeOrHovered ? 1 : 0,
-            transform: activeOrHovered ? 'scaleX(1)' : 'scaleX(0)',
-            transformOrigin: 'left',
-          }}
-        />
-      </div>
-    </Link>
+      {/* Spacing between items */}
+      {index < SOLUTIONS.length - 1 && <div className="h-2" />}
+    </div>
   );
 }
 
 export default function AISolutionsOutcome() {
   const sectionRef = useRef(null);
-  const rowsRef = useRef([]);
   const [isVisible, setIsVisible] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(-1);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 640);
-    };
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const [openIndex, setOpenIndex] = useState(-1);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -179,35 +226,6 @@ export default function AISolutionsOutcome() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    if (isMobile || !isVisible) return;
-
-    const observerOptions = {
-      root: null,
-      rootMargin: '-40% 0px -40% 0px', // focused center viewport window
-      threshold: 0,
-    };
-
-    const handleIntersection = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const index = Number(entry.target.getAttribute('id').replace('sol-row-', ''));
-          if (!isNaN(index)) {
-            setActiveIndex(index);
-          }
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(handleIntersection, observerOptions);
-
-    rowsRef.current.forEach((el) => {
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, [isMobile, isVisible]);
-
   return (
     <section
       ref={sectionRef}
@@ -219,7 +237,7 @@ export default function AISolutionsOutcome() {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-gradient-to-bl from-blue-100/50 to-transparent blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-emerald-100/40 to-transparent blur-[100px] pointer-events-none" />
 
-      <div className="relative z-10 mx-auto max-w-[85rem] px-6">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6">
         {/* Two-column layout */}
         <div className="grid md:grid-cols-[1fr_1.4fr] gap-12 md:gap-16 lg:gap-20 items-start">
 
@@ -233,32 +251,32 @@ export default function AISolutionsOutcome() {
           >
             {/* Label */}
             <div className="mb-6 flex items-center gap-3">
-              <span className="h-[2px] w-10 bg-gradient-to-r from-blue-500 to-emerald-500" />
-              <span className="font-mono text-[0.65rem] font-bold tracking-[0.35em] uppercase text-blue-650">
-                AI Solutions
+              <span className="h-[2px] w-10 bg-gradient-to-r from-[#1746D2] to-[#00A86B]" />
+              <span className="font-mono text-[0.65rem] font-bold tracking-[0.35em] uppercase text-[#1746D2]">
+                WHAT WE ENGINEER
               </span>
             </div>
 
             {/* Heading */}
             <h2 className="mb-6 font-display text-[clamp(2rem,4vw,3.2rem)] leading-[1.1] font-extrabold text-slate-900 tracking-[-0.02em]">
-              AI Solutions Built for{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-emerald-500 to-blue-600">
-                Real Business Outcomes
+              One Ecosystem.{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1746D2] via-[#00A86B] to-[#1746D2]">
+                Every Layer of Intelligence.
               </span>
             </h2>
 
             {/* Paragraph */}
             <p className="mb-8 font-body text-[1rem] md:text-[1.05rem] leading-[1.75] text-slate-500 font-medium max-w-md">
-              From intelligent automation to custom AI products, TECH6SENSE AI helps businesses transform ideas into scalable, secure, and production-ready AI systems.
+              Every engagement draws on the same integrated ecosystem — five disciplines, engineered to work as one system rather than five separate vendors.
             </p>
 
             {/* CTA Button */}
             <div className="mb-4">
               <a
-                href="#solutions"
-                className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 px-7 py-3.5 font-display text-sm font-bold tracking-wider text-white shadow-[0_4px_15px_rgba(37,99,235,0.2)] transition-all duration-300 hover:shadow-[0_8px_25px_rgba(37,99,235,0.35)] hover:scale-[1.02] active:scale-[0.98]"
+                href="/services"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] px-7 py-3.5 font-display text-sm font-bold tracking-wider text-white shadow-[0_4px_15px_rgba(23,70,210,0.2)] transition-all duration-300 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:scale-[1.02] active:scale-[0.98]"
               >
-                Explore Solutions
+                See the Full Service Portfolio
                 <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
@@ -271,27 +289,15 @@ export default function AISolutionsOutcome() {
             </p>
           </div>
 
-          {/* RIGHT COLUMN: Solution rows */}
-          <div className="flex flex-col relative pl-4 sm:pl-8">
-            {/* Vertical Progress Line */}
-            <div className="absolute left-0 top-6 bottom-6 w-[1.5px] bg-slate-100/80 rounded-full hidden sm:block">
-              {/* Dynamic indicator segment */}
-              <div 
-                className="absolute w-[1.5px] bg-gradient-to-b from-blue-500 to-emerald-500 rounded-full transition-all duration-500 ease-out"
-                style={{
-                  height: `${100 / SOLUTIONS.length}%`,
-                  top: `${(activeIndex >= 0 ? activeIndex : 0) * (100 / SOLUTIONS.length)}%`
-                }}
-              />
-            </div>
-
+          {/* RIGHT COLUMN: Structured Accordion */}
+          <div className="flex flex-col gap-1" onMouseLeave={() => setOpenIndex(-1)}>
             {SOLUTIONS.map((solution, index) => (
-              <SolutionRow 
-                key={index} 
-                solution={solution} 
-                index={index} 
-                isActive={activeIndex === index}
-                rowRef={el => rowsRef.current[index] = el}
+              <AccordionItem
+                key={index}
+                solution={solution}
+                index={index}
+                isOpen={openIndex === index}
+                onHover={setOpenIndex}
                 isVisible={isVisible}
               />
             ))}

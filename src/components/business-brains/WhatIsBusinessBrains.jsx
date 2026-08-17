@@ -31,7 +31,7 @@ export default function WhatIsBusinessBrains() {
       {/* Glowing backdrop */}
       <div className="absolute top-[-5%] right-[-10%] w-[600px] h-[600px] rounded-full bg-cyan-100/60 blur-[130px] pointer-events-none" />
 
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 
             className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-widest mb-3 block"
@@ -57,7 +57,7 @@ export default function WhatIsBusinessBrains() {
           {cohorts.map((coh, idx) => (
             <div 
               key={idx} 
-              className="p-8 rounded-[2rem] border border-slate-200 bg-white flex flex-col justify-between shadow-[0_2px_8px_rgba(15,23,42,0.01)] hover:shadow-[0_12px_30px_-10px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1"
+              className="p-8 rounded-[2rem] border border-slate-200 bg-white flex flex-col justify-between shadow-[0_2px_8px_rgba(15,23,42,0.01)] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-300 hover:-translate-y-1"
             >
               <div>
                 <h3 

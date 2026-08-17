@@ -55,7 +55,7 @@ export default function HowItWorks() {
   return (
     <section className="relative bg-white text-slate-900 py-20 md:py-28 overflow-hidden border-b border-slate-200">
       
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
         
         {/* Left Side: Steps */}
         <div>
@@ -93,7 +93,7 @@ export default function HowItWorks() {
         <div>
           <div className="bg-slate-50 rounded-[2.5rem] p-10 md:p-12 h-full border border-slate-200 shadow-sm relative overflow-hidden">
             {/* Decorative element */}
-            <div className="absolute -top-12 -right-12 w-48 h-48 bg-violet-100 rounded-full blur-[60px] pointer-events-none" />
+            <div className="absolute -top-12 -right-12 w-48 h-48 bg-[#1746D2]/10 rounded-full blur-[60px] pointer-events-none" />
             
             <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-8 relative z-10" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               Member Expectations

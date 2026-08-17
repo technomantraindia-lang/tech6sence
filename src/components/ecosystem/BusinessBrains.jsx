@@ -21,7 +21,7 @@ export default function BusinessBrains() {
       title: "Business Strategy",
       desc: "Shape practical business models, growth direction, and market positioning.",
       icon: (
-        <svg className="w-6 h-6 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-6 h-6 text-[#1746D2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
         </svg>
       )
@@ -30,7 +30,7 @@ export default function BusinessBrains() {
       title: "Market Intelligence",
       desc: "Understand customer needs, industry gaps, competition, and opportunity areas.",
       icon: (
-        <svg className="w-6 h-6 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-6 h-6 text-[#1746D2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
         </svg>
@@ -40,7 +40,7 @@ export default function BusinessBrains() {
       title: "Investment Readiness",
       desc: "Prepare stronger business narratives, product logic, and growth-focused direction.",
       icon: (
-        <svg className="w-6 h-6 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-6 h-6 text-[#1746D2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
         </svg>
       )
@@ -49,7 +49,7 @@ export default function BusinessBrains() {
       title: "Partnership Thinking",
       desc: "Connect ideas with experts, collaborators, technology partners, and business networks.",
       icon: (
-        <svg className="w-6 h-6 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-6 h-6 text-[#1746D2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
       )
@@ -58,7 +58,7 @@ export default function BusinessBrains() {
       title: "Execution Planning",
       desc: "Convert business thinking into structured action plans and implementation priorities.",
       icon: (
-        <svg className="w-6 h-6 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-6 h-6 text-[#1746D2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
         </svg>
       )
@@ -67,16 +67,16 @@ export default function BusinessBrains() {
 
   return (
     <section ref={sectionRef} className="py-20 lg:py-32 bg-white relative overflow-hidden">
-      <div className="mx-auto max-w-[85rem] px-6">
+      <div className="mx-auto max-w-[1400px] px-6">
         
         {/* Header */}
         <div className={`text-center max-w-3xl mx-auto mb-20 lg:mb-32 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="inline-flex items-center gap-3 mb-6">
-            <span className="w-8 h-[2px] bg-gradient-to-r from-violet-400 to-fuchsia-400 rounded-full" />
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] rounded-full" />
             <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-slate-500">
               BUSINESS BRAINS
             </span>
-            <span className="w-8 h-[2px] bg-gradient-to-r from-fuchsia-400 to-violet-400 rounded-full" />
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#00A86B] to-[#1746D2] rounded-full" />
           </div>
           
           <h2 className="font-display text-[clamp(1.75rem,3.5vw,3rem)] leading-tight font-extrabold text-slate-900 mb-6 tracking-tight">
@@ -94,11 +94,11 @@ export default function BusinessBrains() {
           {/* Central Network Node */}
           <div className={`relative z-20 mb-16 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
             <div className="w-40 h-40 rounded-full bg-white border border-slate-200 shadow-xl flex items-center justify-center p-6 relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-violet-50 to-fuchsia-50 rounded-full animate-[spin_10s_linear_infinite]" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#1746D2]/10 to-fuchsia-50 rounded-full animate-[spin_10s_linear_infinite]" />
               <div className="absolute inset-2 bg-white rounded-full z-10" />
               <div className="relative z-20 text-center">
                 <span className="font-display font-extrabold text-lg text-slate-900 block leading-tight">Business</span>
-                <span className="font-display font-extrabold text-lg text-violet-600 block leading-tight">Brains</span>
+                <span className="font-display font-extrabold text-lg text-[#1746D2] block leading-tight">Brains</span>
                 <span className="font-display font-extrabold text-lg text-slate-900 block leading-tight">Network</span>
               </div>
             </div>
@@ -109,17 +109,17 @@ export default function BusinessBrains() {
             {focusAreas.map((area, i) => (
               <div 
                 key={i} 
-                className={`group relative p-8 bg-white border border-slate-200 rounded-2xl transition-all duration-500 ease-out hover:shadow-[0_8px_30px_rgba(15,23,42,0.06)] hover:border-violet-200 lg:first:col-start-1 lg:last:col-start-3 ${
+                className={`group relative p-8 bg-white border border-slate-200 rounded-2xl transition-all duration-500 ease-out hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:border-[#1746D2]/40 lg:first:col-start-1 lg:last:col-start-3 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                 }`}
                 style={{ transitionDelay: `${200 + (i * 150)}ms` }}
               >
                 
-                <div className="w-12 h-12 rounded-full bg-violet-50 flex items-center justify-center mb-6 group-hover:bg-violet-100 group-hover:scale-110 transition-all duration-300">
+                <div className="w-12 h-12 rounded-full bg-[#1746D2]/10 flex items-center justify-center mb-6 group-hover:bg-[#1746D2]/10 group-hover:scale-110 transition-all duration-300">
                   {area.icon}
                 </div>
                 
-                <h3 className="font-display text-lg font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">
+                <h3 className="font-display text-lg font-bold text-slate-900 mb-3 group-hover:text-[#1746D2] transition-colors">
                   {area.title}
                 </h3>
                 
@@ -128,7 +128,7 @@ export default function BusinessBrains() {
                 </p>
 
                 {/* Subtle Hover Underline */}
-                <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-violet-400 to-fuchsia-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-2xl" />
+                <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-2xl" />
               </div>
             ))}
           </div>

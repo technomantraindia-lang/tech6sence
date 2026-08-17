@@ -17,16 +17,16 @@ export default function IntelligentGlobalPresence() {
   const duplicatedPresence = [...globalPresence, ...globalPresence];
 
   return (
-    <section className="relative w-full border-y border-violet-500/15 bg-slate-900 py-6 overflow-hidden">
+    <section className="relative w-full border-y border-[#1746D2]/15 bg-slate-900 py-6 overflow-hidden">
       {/* Background Accent Glow */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[100px] bg-violet-600/10 blur-[80px] rounded-full" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[100px] bg-[#1746D2]/10 blur-[80px] rounded-full" />
 
-      <div className="mx-auto max-w-[85rem] px-6 relative z-10 flex flex-col md:flex-row items-center gap-6">
+      <div className="mx-auto max-w-[1400px] px-6 relative z-10 flex flex-col md:flex-row items-center gap-6">
         
         {/* Label */}
         <div className="shrink-0 flex items-center gap-3 bg-slate-900 z-20 pr-4">
-          <span className="w-2.5 h-2.5 rounded-full bg-violet-400 animate-pulse" />
-          <span className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-violet-300 whitespace-nowrap">
+          <span className="w-2.5 h-2.5 rounded-full bg-[#1746D2] animate-pulse" />
+          <span className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-[#1746D2]/80 whitespace-nowrap">
             GLOBAL PRESENCE
           </span>
         </div>
@@ -39,7 +39,7 @@ export default function IntelligentGlobalPresence() {
                 <span className="hover:text-white transition-colors tracking-wide whitespace-nowrap cursor-default">
                   {country}
                 </span>
-                <span className="text-violet-500/60 font-normal select-none">•</span>
+                <span className="text-[#1746D2]/60 font-normal select-none">•</span>
               </div>
             ))}
           </div>

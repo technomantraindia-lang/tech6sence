@@ -2,33 +2,33 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const PROOF_BLOCKS = [
   {
-    title: 'AI-First',
-    description: 'Strategy, automation, agents, and intelligent software systems.',
+    title: 'Full-Spectrum Ecosystem',
+    description: 'Product development, automation, governance, and infrastructure under one roof.',
     num: '01',
   },
   {
-    title: 'Deep-Tech Ready',
-    description: 'Wearables, smart devices, healthcare AI, and IoT intelligence.',
+    title: 'Global Delivery, Local Compliance',
+    description: 'Active across nine markets, engineered to regional regulatory standards.',
     num: '02',
   },
   {
-    title: 'Global Mindset',
-    description: 'Built for founders, enterprises, and future-ready digital teams.',
+    title: 'Deep-Tech Native',
+    description: 'We build proprietary hardware and platforms ourselves — not just software layers.',
     num: '03',
   },
 ];
 
 const TRUST_ITEMS = [
-  'Research-Led Thinking',
-  'Product Engineering Depth',
-  'Business-Ready Execution',
-  'Scalable AI Deployment',
+  'Intelligence First',
+  'Enterprise Engineering',
+  'Innovation Leadership',
+  'Global Expertise',
 ];
 
 const STATEMENT_POINTS = [
-  'PhD-led AI direction',
-  'Enterprise-grade development mindset',
-  'Global business ecosystem support',
+  'Governance-First Engineering — Strategy and risk are engineered in from day one, not bolted on after.',
+  'Founder-Built, Founder-Focused — Born from an entrepreneurial ecosystem, built to serve entrepreneurs and enterprises alike.',
+  'Strategic Partnership — We become an extension of your innovation team, not a vendor you manage.',
 ];
 
 export default function WhyChooseTech6Sense() {
@@ -83,7 +83,7 @@ export default function WhyChooseTech6Sense() {
       <div className="absolute top-[10%] left-[-8%] w-[400px] h-[400px] rounded-full bg-gradient-to-br from-blue-50/60 to-transparent blur-[120px] pointer-events-none" />
 
       <div
-        className="relative z-10 mx-auto max-w-[85rem] px-6 transition-all duration-1000 ease-out"
+        className="relative z-10 mx-auto max-w-[1400px] px-6 transition-all duration-1000 ease-out"
         style={{
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
@@ -98,11 +98,11 @@ export default function WhyChooseTech6Sense() {
             </span>
           </div>
           <h2 className="mb-5 font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.08] font-extrabold text-slate-900 tracking-[-0.03em]">
-            Built for Serious AI Innovation,{' '}
-            <span className="text-slate-400 font-extrabold">Not Just Experiments</span>
+            Why Global Organizations{' '}
+            <span className="text-slate-400 font-extrabold">Choose TECH6SENSE AI</span>
           </h2>
           <p className="font-body text-[1rem] md:text-[1.05rem] leading-[1.75] text-slate-500 font-medium max-w-2xl">
-            TECH6SENSE AI combines research-level intelligence, product engineering, and business ecosystem support to help organizations build AI systems that are practical, scalable, and future-ready.
+            Because we believe technology should create lasting business value — not just deliver software. Our multidisciplinary ecosystem combines Artificial Intelligence, enterprise engineering, deep-tech innovation, strategic consulting, and long-term partnership to help organizations build the future with confidence.
           </p>
         </div>
 
@@ -140,8 +140,8 @@ export default function WhyChooseTech6Sense() {
               className="relative rounded-[2rem] border border-slate-100/80 bg-white/80 backdrop-blur-sm p-8 md:p-10 lg:p-12 overflow-hidden transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-blue-200/80 hover:bg-white/90"
               style={{ 
                 boxShadow: isMainHovered 
-                  ? '0 30px 60px -15px rgba(37,99,235,0.06), 0 0 0 1px rgba(255,255,255,0.7) inset' 
-                  : '0 20px 50px -15px rgba(0,0,0,0.03), 0 0 0 1px rgba(255,255,255,0.5) inset' 
+                  ? '4px 4px 0px 0px rgba(23,70,210,0.35)' 
+                  : '0 2px 8px rgba(0,0,0,0.04)' 
               }}
             >
               {/* Subtle diagonal light sweep */}
@@ -158,7 +158,7 @@ export default function WhyChooseTech6Sense() {
 
               {/* Main statement */}
               <p className="font-display text-[1.4rem] md:text-[1.7rem] lg:text-[2rem] font-extrabold text-slate-800 leading-[1.25] tracking-tight mb-10 relative z-10">
-                AI expertise backed by real engineering, product thinking, and business execution.
+                AI expertise backed by real engineering, governance-first thinking, and long-term strategic partnership.
               </p>
 
               {/* Thin divider */}
@@ -212,7 +212,7 @@ export default function WhyChooseTech6Sense() {
                 }}
               >
                 {/* Number Badge */}
-                <div className="relative shrink-0 flex items-center justify-center w-10 md:w-11 h-10 md:h-11 rounded-full bg-slate-50 border border-slate-200/60 group-hover:bg-white group-hover:border-blue-300 shadow-sm group-hover:shadow-[0_8px_20px_rgba(37,99,235,0.2)] transition-all duration-300 z-10">
+                <div className="relative shrink-0 flex items-center justify-center w-10 md:w-11 h-10 md:h-11 rounded-full bg-slate-50 border border-slate-200/60 group-hover:bg-white group-hover:border-blue-300 shadow-sm group-hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-300 z-10">
                   {/* Subtle active ping on hover */}
                   <div className="absolute inset-0 rounded-full border border-blue-400 opacity-0 scale-50 group-hover:animate-[ping_1.5s_cubic-bezier(0,0,0.2,1)_infinite] group-hover:opacity-40" />
                   <span className="font-display text-[0.95rem] font-extrabold text-slate-500 group-hover:text-blue-600 transition-colors duration-300 relative z-10">

@@ -11,9 +11,9 @@ export default function MembershipPrivilege() {
     <section className="relative bg-[#000110] text-white py-24 md:py-32 border-b border-slate-800/80 overflow-hidden">
       
       {/* Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-cyan-900/15 to-violet-900/15 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-cyan-900/15 to-[#0b1329]/15 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-[85rem] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="max-w-4xl mx-auto text-center">
           

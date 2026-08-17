@@ -10,7 +10,7 @@ export default function SimpleTextSection() {
       {/* Soft gradient background glow behind the text */}
       <div className="absolute top-1/4 left-[-10%] h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-red-500/10 via-rose-500/5 to-transparent blur-[120px] pointer-events-none" />
 
-      <div className="relative z-10 mx-auto w-full max-w-[85rem] px-6">
+      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6">
         <div className="grid gap-12 md:grid-cols-2 items-center">
           
           {/* Left Column: Premium Text Content */}
@@ -27,7 +27,7 @@ export default function SimpleTextSection() {
 
 
             <div className="flex flex-wrap gap-5">
-              <Link to="#consultation" className="group relative flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-red-600 to-rose-600 px-8 py-3.5 font-display text-sm font-bold tracking-widest text-white shadow-[0_4px_15px_rgba(220,38,38,0.25)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_25px_rgba(220,38,38,0.4)] active:scale-[0.98]">
+              <Link to="#consultation" className="group relative flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-red-600 to-rose-600 px-8 py-3.5 font-display text-sm font-bold tracking-widest text-white shadow-[0_4px_15px_rgba(220,38,38,0.25)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] active:scale-[0.98]">
                 <span className="absolute inset-0 bg-gradient-to-r from-rose-600 to-red-600 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <span className="relative z-10">SCHEDULE CONSULTATION</span>
               </Link>
