@@ -59,6 +59,13 @@
 }
 
 @media (max-width: 720px) {
+  .tech-hero-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 100px 16px 40px;
+    height: auto;
+    min-height: 100vh;
+  }
   .tech-hero-cinematic-wrapper {
     flex-direction: column;
     justify-content: flex-start;
@@ -145,7 +152,7 @@
   }
   
   .tech-hero-container {
-    padding: 80px 16px 0;
+    padding: 80px 16px 40px;
   }
 }
 
