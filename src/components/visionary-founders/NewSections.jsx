@@ -753,7 +753,7 @@ export function FounderMessage() {
             <div className="lg:col-span-8">
               <span className="text-7xl font-serif text-[#1746D2] leading-none block mb-6">“</span>
               
-              <blockquote className="text-lg md:text-2xl font-extrabold font-display leading-snug mb-8 text-white">
+              <blockquote className="text-lg md:text-2xl font-extrabold font-display leading-snug mb-8 text-white text-justify">
                 "The AI and Tech landscape is moving faster than ever. Having a great idea is no longer enough; you need the infrastructure, the talent, and the global reach to execute it rapidly. I built TECH6SENSE AI on a foundation of global excellence, and with VISIONARY FOUNDERS, we are opening our doors to the next generation of tech leaders. We aren't just giving you advice—we are giving you our entire business ecosystem. If you have the drive, we have the engine. Let's build the future together."
               </blockquote>
 
