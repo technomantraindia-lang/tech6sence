@@ -265,8 +265,8 @@
     bottom: auto;
     left: auto;
     transform: none;
-    width: min(280px, 70vw);
-    height: min(280px, 70vw);
+    width: min(380px, 85vw);
+    height: min(380px, 85vw);
     margin: 15px auto 0;
   }
 }
