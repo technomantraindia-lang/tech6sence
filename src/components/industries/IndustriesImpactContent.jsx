@@ -96,28 +96,28 @@ export default function IndustriesImpactContent() {
                 </div>
                 
                 {/* Content (Right) */}
-                <div className="lg:w-3/5 p-8 md:p-12 flex flex-col">
-                  <div className="inline-flex items-center gap-3 mb-4">
+                <div className="lg:w-3/5 p-6 sm:p-8 md:p-12 flex flex-col text-center sm:text-left items-center sm:items-start">
+                  <div className="inline-flex items-center gap-3 mb-4 justify-center sm:justify-start">
                     <span className="w-8 h-[2px] bg-gradient-to-r from-blue-400 to-emerald-400 rounded-full" />
                     <span className="text-xs font-bold uppercase tracking-widest text-blue-600">
                       Sector Intelligence
                     </span>
                   </div>
                   
-                  <h3 className="font-display text-2xl md:text-3xl font-extrabold text-slate-900 mb-4 group-hover:text-blue-700 transition-colors">
+                  <h3 className="font-display text-2xl md:text-3xl font-extrabold text-slate-900 mb-4 group-hover:text-blue-700 transition-colors w-full">
                     {industry.title}
                   </h3>
                   
-                  <p className="text-base text-slate-600 leading-relaxed mb-8">
+                  <p className="text-base text-slate-600 leading-relaxed mb-8 w-full">
                     {snippet}
                   </p>
 
                   {/* Info-Rich Capabilities List */}
                   {techList.length > 0 && (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6 mb-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6 mb-8 w-full">
                       {techList.slice(0, 4).map((tech, i) => (
-                        <div key={i} className="flex items-start gap-2.5">
-                          <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0" />
+                        <div key={i} className="flex items-center sm:items-start justify-center sm:justify-start gap-2.5 text-center sm:text-left">
+                          <div className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0 hidden sm:block mt-2" />
                           <span className="text-sm font-medium text-slate-700 leading-relaxed">{tech}</span>
                         </div>
                       ))}
@@ -125,7 +125,7 @@ export default function IndustriesImpactContent() {
                   )}
                   
                   {/* Call to Action */}
-                  <div className="mt-auto pt-6 border-t border-slate-100">
+                  <div className="mt-auto pt-6 border-t border-slate-100 w-full flex justify-center sm:justify-start">
                     <span className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 group-hover:gap-3 transition-all duration-300">
                       Explore Detailed Insights
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
