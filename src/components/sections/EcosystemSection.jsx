@@ -102,11 +102,11 @@ export default function EcosystemSection() {
                   Build Your AI Empire Powered by a Global Ecosystem.
                 </h3>
                 
-                <p className="font-body text-slate-300 text-lg md:text-xl leading-relaxed mb-8">
+                <p className="font-body text-slate-300 text-lg md:text-xl leading-relaxed mb-8 text-justify">
                   <strong className="text-white">Visionary Founders</strong> is the world's elite most comprehensive premier all-in-one AI Founder Ecosystem designed to transform ambitious entrepreneurs, professionals, start-up founders, consultants, and innovators into owners of globally competitive AI and technology companies and dominate the global markets.
                 </p>
 
-                <p className="font-body text-[#00A86B] text-lg md:text-xl font-semibold border-l-4 border-[#00A86B] pl-5 leading-relaxed mb-12">
+                <p className="font-body text-[#00A86B] text-lg md:text-xl font-semibold border-l-4 border-[#00A86B] pl-5 leading-relaxed mb-12 text-justify">
                   "From Idea to International Clients — We don't just simply train founders. We build AI companies with them."
                 </p>
 
