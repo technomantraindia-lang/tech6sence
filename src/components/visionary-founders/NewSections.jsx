@@ -412,7 +412,18 @@ export function TimelineOverview() {
         </div>
 
         <div className="w-full mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-xl bg-white mb-8">
-          <table className="w-full border-collapse text-left">
+          {/* Mobile View: Stacked Cards */}
+          <div className="block md:hidden divide-y divide-slate-100">
+            {timelineRows.map((row, idx) => (
+              <div key={idx} className="p-4 space-y-1 bg-white">
+                <div className="font-bold text-slate-900 text-xs sm:text-sm">{row.phase}</div>
+                <div className="text-xs text-[#1746D2] font-semibold font-mono">{row.duration}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop View: Table */}
+          <table className="hidden md:table w-full border-collapse text-left">
             <thead>
               <tr className="bg-slate-950 text-white font-mono text-xs font-bold uppercase tracking-wider">
                 <th className="p-5">Phase</th>

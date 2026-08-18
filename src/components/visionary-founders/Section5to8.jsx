@@ -33,20 +33,37 @@ export function IntroducingProgram() {
         </p>
 
         <div className="w-full mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-xl bg-white mt-12">
-          <div className="p-6 bg-slate-900 text-white font-display font-bold text-lg text-center">
+          <div className="p-5 md:p-6 bg-slate-900 text-white font-display font-bold text-base md:text-lg text-center leading-snug">
             When you join, you don't get a course. You get a working business infrastructure:
           </div>
-          <table className="w-full text-left border-collapse">
+
+          {/* Mobile View: Clean Stacked Cards */}
+          <div className="block md:hidden divide-y divide-slate-100">
+            {functionList.map((item, i) => (
+              <div key={i} className="p-4 space-y-2 bg-white">
+                <div className="font-bold text-slate-900 text-sm flex items-start gap-2">
+                  <span className="text-[#00A86B] font-extrabold text-sm shrink-0 mt-0.5">✓</span>
+                  <span>{item.fn}</span>
+                </div>
+                <p className="text-xs text-slate-600 leading-relaxed font-medium text-justify pl-5">
+                  {item.get}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop View: Table */}
+          <table className="hidden md:table w-full text-left border-collapse">
             <thead>
               <tr className="bg-slate-100 font-mono text-xs font-bold text-slate-700 uppercase tracking-wider border-b border-slate-200">
-                <th className="p-4 md:p-6">Function</th>
-                <th className="p-4 md:p-6">What You Get</th>
+                <th className="p-4 md:p-6 w-1/3">Function</th>
+                <th className="p-4 md:p-6 w-2/3">What You Get</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 text-sm font-medium text-slate-700">
               {functionList.map((item, i) => (
                 <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                  <td className="p-4 md:p-6 font-bold text-slate-900 whitespace-nowrap md:whitespace-normal">{item.fn}</td>
+                  <td className="p-4 md:p-6 font-bold text-slate-900">{item.fn}</td>
                   <td className="p-4 md:p-6 leading-relaxed">{item.get}</td>
                 </tr>
               ))}
