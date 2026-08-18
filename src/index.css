@@ -13,12 +13,15 @@
 
 html, #root {
   scroll-behavior: auto;
-  overflow-x: clip;
+  overflow-x: hidden !important;
+  max-width: 100vw;
   width: 100%;
 }
 
 body {
-  @apply m-0 overflow-x-clip bg-bg font-body text-slate-100 antialiased;
+  @apply m-0 bg-bg font-body text-slate-100 antialiased;
+  overflow-x: hidden !important;
+  max-width: 100vw;
   position: relative;
   width: 100%;
 }
@@ -473,6 +476,7 @@ body::before {
 
 html.lenis, html.lenis body {
   height: auto;
+  overflow-x: hidden !important;
 }
 
 .lenis-smooth {
