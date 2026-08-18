@@ -64,14 +64,14 @@ export default function VisionaryFounders() {
                 {/* Subheadline & Tagline Combined */}
                 <div className="space-y-4 max-w-3xl">
                   <p 
-                    className="text-white/80 text-xs sm:text-sm lg:text-base leading-relaxed font-medium"
+                    className="text-white/80 text-xs sm:text-sm lg:text-base leading-relaxed font-medium text-justify"
                     style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                   >
                     Visionary Founders is the world’s elite most comprehensive premier all-in-one AI Founder Ecosystem designed to transform ambitious entrepreneurs, professionals, start-up founders, consultants, and innovators into owners of globally competitive AI and technology companies and dominate the global markets.
                   </p>
 
                   <p 
-                    className="text-[#00A86B] text-xs sm:text-sm lg:text-base font-semibold border-l-2 border-[#00A86B] pl-3 leading-relaxed"
+                    className="text-[#00A86B] text-xs sm:text-sm lg:text-base font-semibold border-l-2 border-[#00A86B] pl-3 leading-relaxed text-justify"
                     style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                   >
                     "From Idea to International Clients —We don't just simply train founders. We build AI companies with them."
