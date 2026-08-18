@@ -65,7 +65,7 @@ export default function FounderLetter() {
             </div>
 
             <div 
-              className="text-base md:text-xl text-slate-200 leading-relaxed font-normal space-y-4"
+              className="text-base md:text-xl text-slate-200 leading-relaxed font-normal space-y-4 text-justify"
               style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               <p className="font-medium text-white">
