@@ -243,7 +243,7 @@ export default function IndustryInnerPage() {
 
   if (!pageData) {
     return (
-      <div className="min-h-screen flex flex-col font-body bg-slate-50">
+      <div className="min-h-screen flex flex-col font-body bg-slate-50 overflow-x-hidden">
         <Header />
         <main className="flex-grow flex items-center justify-center pt-28 pb-20">
           <div className="text-center">
@@ -264,7 +264,7 @@ export default function IndustryInnerPage() {
   const bgImage = industriesImages[imageKey] ? industriesImages[imageKey].default : null;
 
   return (
-    <div className="min-h-screen flex flex-col font-body bg-white">
+    <div className="min-h-screen flex flex-col font-body bg-white overflow-x-hidden">
       <Header />
       
       <main className="flex-grow pt-20 md:pt-28">

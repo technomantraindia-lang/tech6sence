@@ -17,7 +17,7 @@ export default function Ecosystem() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col font-body bg-white">
+    <div className="min-h-screen flex flex-col font-body bg-white overflow-x-hidden">
       <Header />
       
       <main className="flex-grow pt-20 md:pt-28">

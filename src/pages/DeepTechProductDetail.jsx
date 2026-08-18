@@ -152,7 +152,7 @@ export default function DeepTechProductDetail() {
 
   if (!product) {
     return (
-      <div className="min-h-screen flex flex-col font-body bg-[#FAFAFA]">
+      <div className="min-h-screen flex flex-col font-body bg-[#FAFAFA] overflow-x-hidden">
         <Header />
         <div className="flex-grow flex flex-col items-center justify-center py-20 px-6">
           <h2 className="font-display text-2xl font-bold text-slate-800 mb-4">Product Not Found</h2>
