@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function ProductInnovationShowcase() {
+  const [flippedCard, setFlippedCard] = useState(null);
+
   const products = [
     {
       num: "01",
@@ -91,13 +93,14 @@ export default function ProductInnovationShowcase() {
             AI-Powered Deep-Tech Products
           </h2>
           <p className="font-body text-slate-600 text-base md:text-lg leading-relaxed font-medium">
-            Explore our ecosystem of intelligent wearable hardware, connected medical gear, and smart IoT devices. Hover over a product to learn more.
+            Explore our ecosystem of intelligent wearable hardware, connected medical gear, and smart IoT devices. Tap or hover over a product to learn more.
           </p>
         </div>
 
-        {/* 11 Products Grid with 3D Flip Card Animation */}
+        {/* 11 Products Grid with 3D Flip Card Animation & Touch Toggle */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((item, idx) => {
+            const isFlipped = flippedCard === idx;
             // Alternating colors
             const cardBg = item.isBlue 
               ? "bg-blue-50/40 hover:bg-blue-50 shadow-[2px_2px_4px_rgba(15,23,42,0.01)]" 
@@ -118,9 +121,12 @@ export default function ProductInnovationShowcase() {
             return (
               <div 
                 key={idx}
-                className="group w-full h-[260px] [perspective:1000px]"
+                onClick={() => setFlippedCard(isFlipped ? null : idx)}
+                className="group w-full h-[260px] [perspective:1000px] cursor-pointer"
               >
-                <div className="relative w-full h-full duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                <div className={`relative w-full h-full duration-700 [transform-style:preserve-3d] transition-transform ${
+                  isFlipped ? '[transform:rotateY(180deg)]' : 'group-hover:[transform:rotateY(180deg)]'
+                }`}>
                   
                   {/* Card Front Face */}
                   <div className={`absolute inset-0 w-full h-full [backface-visibility:hidden] p-8 rounded-3xl border-0 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03] ${cardBg} ${hoverGlow}`}>
@@ -134,18 +140,28 @@ export default function ProductInnovationShowcase() {
                       </h3>
                     </div>
 
-                    {/* Learn More Prompt with Down Arrow */}
-                    <div className="flex items-center gap-2 pt-4 border-t border-slate-100/60">
-                      <span className={`font-mono text-[0.65rem] font-bold uppercase tracking-wider ${accentText}`}>
-                        Learn More
-                      </span>
-                      <svg className={`w-4 h-4 transition-transform duration-300 group-hover:translate-y-1 ${accentText}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                      </svg>
+                    {/* Touch / Hover Prompt & Direct Details Link */}
+                    <div className="flex items-center justify-between pt-4 border-t border-slate-100/60 mt-auto">
+                      <div className="flex items-center gap-2">
+                        <span className={`font-mono text-[0.65rem] font-bold uppercase tracking-wider ${accentText}`}>
+                          {isFlipped ? "Close" : "Learn More"}
+                        </span>
+                        <svg className={`w-4 h-4 transition-transform duration-300 ${accentText} ${isFlipped ? 'rotate-180' : 'group-hover:translate-y-1'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                      </div>
+
+                      <Link
+                        to={`/deep-tech-products/${item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
+                        onClick={(e) => e.stopPropagation()}
+                        className={`inline-flex items-center gap-1 font-mono text-[0.68rem] font-bold uppercase tracking-wider ${accentText} hover:underline bg-white/70 px-2.5 py-1 rounded-lg border border-slate-200/80 shadow-xs`}
+                      >
+                        Details →
+                      </Link>
                     </div>
                   </div>
 
-                  {/* Card Back Face (Shown on hover) */}
+                  {/* Card Back Face (Shown on hover/tap) */}
                   <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] p-8 rounded-3xl bg-slate-950 text-white flex flex-col justify-center">
                     <span className={`block font-mono text-[0.65rem] font-bold uppercase tracking-widest mb-3 ${accentText}`}>
                       PRODUCT SPECIFICATION
@@ -156,6 +172,7 @@ export default function ProductInnovationShowcase() {
                     <div className="mt-6 flex flex-col gap-2">
                       <Link
                         to={`/deep-tech-products/${item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
+                        onClick={(e) => e.stopPropagation()}
                         className="inline-flex items-center gap-1.5 font-mono text-[0.7rem] font-bold uppercase tracking-wider hover:underline text-white"
                       >
                         View Details
@@ -165,6 +182,7 @@ export default function ProductInnovationShowcase() {
                       </Link>
                       <Link
                         to={`/lets-connect?inquiry=${encodeURIComponent(item.title)}`}
+                        onClick={(e) => e.stopPropagation()}
                         className={`inline-flex items-center gap-1.5 font-mono text-[0.7rem] font-bold uppercase tracking-wider hover:underline ${accentText}`}
                       >
                         Inquire Brand
