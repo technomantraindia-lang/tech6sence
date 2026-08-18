@@ -164,6 +164,7 @@ function CardComponent({ card, activeCard, setActiveCard }) {
 
 export default function IntelligenceStack() {
   const [activeCard, setActiveCard] = useState(null);
+  const [mobileActiveId, setMobileActiveId] = useState(1);
 
   const card1 = ECOSYSTEM_CARDS.find(c => c.id === 1);
   const card2 = ECOSYSTEM_CARDS.find(c => c.id === 2);
@@ -332,27 +333,115 @@ export default function IntelligenceStack() {
 
         {/* ── Mobile Layout ── */}
         <div className="lg:hidden flex flex-col gap-6">
-          <div className="flex flex-col items-center justify-center p-6 bg-white rounded-3xl shadow-sm border border-slate-100 mb-4">
+          {/* Logo Center Node */}
+          <div className="flex flex-col items-center justify-center p-6 bg-white rounded-3xl shadow-sm border border-slate-100 mb-2 relative overflow-hidden">
+            <div className="absolute -inset-px bg-gradient-to-tr from-blue-500/5 via-emerald-500/5 to-amber-500/5 opacity-50" />
             <img 
               src={logoSymbol} 
               alt="TECH6SENSE Logo Symbol" 
-              className="h-16 w-auto object-contain mb-2"
+              className="h-16 w-auto object-contain mb-2 relative z-10 animate-[pulse_4s_ease-in-out_infinite]"
             />
             <img 
               src={logoText} 
               alt="TECH6SENSE Text" 
-              className="h-5 w-auto object-contain"
+              className="h-5 w-auto object-contain relative z-10"
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {ECOSYSTEM_CARDS.map((card) => (
-              <CardComponent key={card.id} card={card} activeCard={activeCard} setActiveCard={setActiveCard} />
-            ))}
+          {/* Glowing Timeline Stream */}
+          <div className="relative pl-7 flex flex-col gap-6">
+            
+            {/* The vertical timeline laser line */}
+            <div className="absolute left-[11px] top-6 bottom-6 w-0.5 bg-slate-200/80 rounded-full overflow-hidden">
+              <div className="h-1/3 w-full bg-gradient-to-b from-emerald-500 via-blue-500 to-amber-500 animate-[timeline-flow_4s_linear_infinite]" />
+            </div>
+
+            {ECOSYSTEM_CARDS.map((card) => {
+              const isActive = mobileActiveId === card.id;
+              
+              return (
+                <div 
+                  key={card.id}
+                  className="relative transition-all duration-300"
+                >
+                  {/* Timeline Glowing Node Dot */}
+                  <button
+                    type="button"
+                    onClick={() => setMobileActiveId(card.id)}
+                    className={`absolute -left-[23px] top-6 w-3 h-3 rounded-full border-2 border-white transition-all duration-500 focus:outline-none ${
+                      isActive 
+                        ? `${card.dotBg} scale-125 shadow-[0_0_12px_#3b82f6]` 
+                        : 'bg-slate-300 hover:bg-slate-400'
+                    }`}
+                  />
+
+                  {/* Card Container */}
+                  <div
+                    onClick={() => setMobileActiveId(card.id)}
+                    className={`relative p-5 rounded-2xl border transition-all duration-500 flex flex-col justify-between cursor-pointer overflow-hidden ${
+                      isActive 
+                        ? `border-slate-300 bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] -translate-y-1 scale-[1.01]` 
+                        : 'border-slate-100 bg-white/60 opacity-70 hover:opacity-90'
+                    }`}
+                  >
+                    {/* Active Gradient Top Border */}
+                    {isActive && (
+                      <div className={`absolute top-0 left-0 right-0 h-1 transition-all ${card.dotBg}`} />
+                    )}
+
+                    {/* Headline and status */}
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className={`font-display font-extrabold text-sm tracking-tight ${card.textColor}`}>
+                        {card.num}. {card.title}
+                      </h3>
+                      <span className={`w-1.5 h-1.5 rounded-full ${card.dotBg} ${isActive ? 'animate-ping' : ''}`} />
+                    </div>
+
+                    <p className="font-body text-slate-600 text-[0.7rem] leading-relaxed font-semibold">
+                      {card.short}
+                    </p>
+
+                    {/* Expanded details */}
+                    <div 
+                      className={`grid transition-all duration-500 ease-in-out ${
+                        isActive ? 'grid-rows-[1fr] opacity-100 mt-4 pt-3.5 border-t border-slate-100' : 'grid-rows-[0fr] opacity-0'
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        <p className="font-body text-[0.7rem] text-slate-500 leading-relaxed font-normal mb-4">
+                          {card.full}
+                        </p>
+                        
+                        <Link 
+                          to={card.href}
+                          className="inline-flex items-center gap-2 font-display text-xs font-black text-[#1746D2] hover:underline"
+                        >
+                          Explore Dimension
+                          <svg viewBox="0 0 24 24" fill="none" className="w-3.5 h-3.5 stroke-[2.5]" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                          </svg>
+                        </Link>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              );
+            })}
+
           </div>
         </div>
 
       </div>
+
+      {/* Timeline flow animation */}
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes timeline-flow {
+          0% { transform: translateY(-100%); }
+          100% { transform: translateY(300%); }
+        }
+      `}} />
+
     </section>
   );
 }
