@@ -167,8 +167,8 @@
 @media (max-width: 768px) {
   .orbit-ring-container {
     display: block;
-    top: calc(20px + min(420px, 90vw) / 2);
+    top: calc(15px + min(280px, 70vw) / 2);
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.55);
+    transform: translate(-50%, -50%) scale(0.42);
   }
 }
