@@ -268,15 +268,15 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               type="button"
-              className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-250 bg-slate-50 text-slate-900 hover:border-slate-350 hover:bg-slate-100 transition-all lg:hidden z-50 animate-fade-in"
+              className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur-md text-white hover:bg-white/20 transition-all lg:hidden z-50"
               aria-label="Toggle menu"
               aria-expanded={open}
               onClick={() => setOpen(!open)}
             >
               <div className="flex w-5 flex-col items-end gap-1.5">
-                <span className={`block h-0.5 rounded-full bg-slate-900 transition-all ${open ? 'w-5 translate-y-2 rotate-45' : 'w-5'}`} />
-                <span className={`block h-0.5 rounded-full bg-slate-900 transition-all ${open ? 'w-0 opacity-0' : 'w-3.5'}`} />
-                <span className={`block h-0.5 rounded-full bg-slate-900 transition-all ${open ? 'w-5 -translate-y-2 -rotate-45' : 'w-5'}`} />
+                <span className={`block h-0.5 rounded-full bg-white transition-all ${open ? 'w-5 translate-y-2 rotate-45' : 'w-5'}`} />
+                <span className={`block h-0.5 rounded-full bg-white transition-all ${open ? 'w-0 opacity-0' : 'w-3.5'}`} />
+                <span className={`block h-0.5 rounded-full bg-white transition-all ${open ? 'w-5 -translate-y-2 -rotate-45' : 'w-5'}`} />
               </div>
             </button>
           </div>
