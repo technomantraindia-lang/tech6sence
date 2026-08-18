@@ -97,14 +97,14 @@ export default function IndustriesImpactContent() {
                 
                 {/* Content (Right) */}
                 <div className="lg:w-3/5 p-6 sm:p-8 md:p-12 flex flex-col">
-                  <div className="inline-flex items-center gap-3 mb-4">
+                  <div className="inline-flex items-center gap-3 mb-4 justify-center sm:justify-start w-full">
                     <span className="w-8 h-[2px] bg-gradient-to-r from-blue-400 to-emerald-400 rounded-full" />
                     <span className="text-xs font-bold uppercase tracking-widest text-blue-600">
                       Sector Intelligence
                     </span>
                   </div>
                   
-                  <h3 className="font-display text-2xl md:text-3xl font-extrabold text-slate-900 mb-4 group-hover:text-blue-700 transition-colors">
+                  <h3 className="font-display text-2xl md:text-3xl font-extrabold text-slate-900 mb-4 group-hover:text-blue-700 transition-colors text-center sm:text-left">
                     {industry.title}
                   </h3>
                   
