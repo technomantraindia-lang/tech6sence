@@ -782,7 +782,7 @@ function PremiumAnnouncementBar() {
       <div className="w-full flex flex-col lg:flex-row items-center gap-4 lg:gap-8">
         
         {/* Left Side: Live Radar Beacon & Statement (Static) */}
-        <div className="flex items-center gap-3.5 shrink-0 w-full lg:w-auto justify-center lg:justify-start">
+        <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-3.5 shrink-0 w-full lg:w-auto justify-center lg:justify-start text-center lg:text-left">
           <div className="flex items-center gap-2">
             <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#002214] border border-[#00A86B]/60 shrink-0">
               <span className="h-2 w-2 rounded-full bg-[#00A86B] shadow-[0_0_8px_#00A86B]" />
@@ -792,7 +792,7 @@ function PremiumAnnouncementBar() {
             </span>
           </div>
 
-          <span className="font-display text-xs md:text-sm font-bold text-white tracking-wide whitespace-nowrap">
+          <span className="font-display text-xs md:text-sm font-bold text-white tracking-wide leading-relaxed max-w-[90vw] sm:max-w-none">
             Trusted by Enterprises, Governments, Startups &amp; Founders
           </span>
           
