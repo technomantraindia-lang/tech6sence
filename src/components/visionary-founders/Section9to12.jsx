@@ -294,7 +294,7 @@ export function SuccessStories() {
         </div>
       </div>
 
-      <div className="relative z-10 w-full pl-6 md:pl-[calc(50vw-42.5rem)] pr-6">
+      <div className="relative z-10 w-full px-3 sm:px-6 md:pl-[calc(50vw-42.5rem)] md:pr-6">
         <style>{`
           .hide-scrollbar::-webkit-scrollbar {
             display: none;
@@ -307,13 +307,13 @@ export function SuccessStories() {
         
         <div 
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto hide-scrollbar snap-x snap-mandatory pb-12 pt-4"
+          className="flex gap-4 sm:gap-6 overflow-x-auto hide-scrollbar snap-x snap-mandatory pb-12 pt-4"
         >
           {stories.map((story) => (
             <div 
               key={story.id}
               onClick={() => setSelectedStory(story)}
-              className="min-w-[310px] w-[80vw] md:min-w-[420px] md:w-[420px] shrink-0 snap-center md:snap-start bg-white rounded-[2.5rem] p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group relative overflow-hidden cursor-pointer"
+              className="min-w-[290px] w-[88vw] sm:w-[84vw] md:min-w-[420px] md:w-[420px] shrink-0 snap-center md:snap-start bg-white rounded-[2rem] sm:rounded-[2.5rem] p-4 sm:p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group relative overflow-hidden cursor-pointer"
             >
               <div className="absolute top-0 right-0 w-24 h-24 bg-[#1746D2]/5 rounded-bl-full pointer-events-none" />
               
@@ -341,7 +341,7 @@ export function SuccessStories() {
                       <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
                       The Bottleneck
                     </h4>
-                    <p className="text-sm text-slate-655 leading-relaxed font-medium pl-3 line-clamp-4">{story.bottleneck}</p>
+                    <p className="text-sm text-slate-655 leading-relaxed font-medium pl-3 line-clamp-4 text-justify">{story.bottleneck}</p>
                   </div>
                   
                   <div className="space-y-1">
@@ -349,7 +349,7 @@ export function SuccessStories() {
                       <span className="w-1.5 h-1.5 rounded-full bg-[#1746D2]" />
                       Ecosystem Execution
                     </h4>
-                    <p className="text-sm text-slate-655 leading-relaxed font-medium pl-3 line-clamp-4">{story.execution}</p>
+                    <p className="text-sm text-slate-655 leading-relaxed font-medium pl-3 line-clamp-4 text-justify">{story.execution}</p>
                   </div>
                 </div>
 
