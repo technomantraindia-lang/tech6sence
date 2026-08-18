@@ -42,7 +42,7 @@ export default function VisionaryFounders() {
           </div>
 
           {/* Content */}
-          <div className="mx-auto max-w-[90%] px-6 relative z-10 w-full">
+          <div className="mx-auto w-full px-3 sm:px-6 md:max-w-[90%] relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
               
               {/* Left Column: Hero Copy & Buttons */}
@@ -64,7 +64,7 @@ export default function VisionaryFounders() {
                 {/* Subheadline & Tagline Combined */}
                 <div className="space-y-4 max-w-3xl">
                   <p 
-                    className="text-white/80 text-xs sm:text-sm lg:text-base leading-relaxed font-medium"
+                    className="text-white/80 text-xs sm:text-sm lg:text-base leading-relaxed font-medium text-justify"
                     style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                   >
                     Visionary Founders is the world’s elite most comprehensive premier all-in-one AI Founder Ecosystem designed to transform ambitious entrepreneurs, professionals, start-up founders, consultants, and innovators into owners of globally competitive AI and technology companies and dominate the global markets.
@@ -100,11 +100,11 @@ export default function VisionaryFounders() {
                 </div>
 
                 {/* Value Tagline & Proof Info inside a Premium Glass Card */}
-                <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md text-white/70 text-xs leading-relaxed space-y-4 shadow-2xl relative overflow-hidden max-w-3xl mt-4">
+                <div className="p-4 sm:p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md text-white/70 text-xs leading-relaxed space-y-4 shadow-2xl relative overflow-hidden max-w-3xl mt-4">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#1746D2]/10 rounded-bl-full blur-xl pointer-events-none" />
                   
                   <div>
-                    <p className="font-semibold text-white/95 text-xs sm:text-sm leading-relaxed">
+                    <p className="font-semibold text-white/95 text-xs sm:text-sm leading-relaxed text-justify">
                       The ultimate shortcut from concept to cross-border enterprise. We supply the tech, the talent, the legal, and the capital pipelines. You bring the vision. We Building the Next Generation of Global AI Companies.
                     </p>
                   </div>
