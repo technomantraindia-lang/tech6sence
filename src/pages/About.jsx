@@ -645,7 +645,7 @@ export default function About() {
                     A MESSAGE FROM OUR FOUNDER
                   </span>
 
-                  <blockquote className="font-display text-lg sm:text-xl md:text-2xl font-black text-slate-900 leading-relaxed mb-6 text-justify">
+                  <blockquote className="font-display text-lg sm:text-xl md:text-2xl font-black text-slate-900 leading-relaxed mb-6">
                     "In the modern digital economy, standalone software is no longer enough to secure market leadership. True disruption requires a complete ecosystem—where bleeding-edge technology meets visionary leadership and strategic global capital. I founded TECH6SENSE AI to be that ecosystem. We are here to partner with the boldest minds in business, architecting solutions that don't just adapt to the future, but actively define it."
                   </blockquote>
 
