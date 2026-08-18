@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { heroData } from './heroData';
 
 export default function HeroContent() {
@@ -19,20 +20,20 @@ export default function HeroContent() {
       </p>
       
       <div className="th-cta-group">
-        <a 
-          href={primaryCta.href} 
+        <Link 
+          to={primaryCta.href} 
           className="th-btn th-btn-primary" 
           id="hero-primary-cta"
         >
           {primaryCta.label}
-        </a>
-        <a 
-          href={secondaryCta.href} 
+        </Link>
+        <Link 
+          to={secondaryCta.href} 
           className="th-btn th-btn-secondary" 
           id="hero-secondary-cta"
         >
           {secondaryCta.label}
-        </a>
+        </Link>
       </div>
     </div>
   );

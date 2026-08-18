@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import logoSymbol from '../../assets/new logo/TECH6SENSE Logo Symbol (1).png';
 import logoText from '../../assets/new logo/TECH6SENSE Main Logo text.png';
 
@@ -14,7 +15,8 @@ const ECOSYSTEM_CARDS = [
     alignOffset: 'translate-x-6 xl:translate-x-10',
     cardBg: 'bg-emerald-50/35 hover:bg-emerald-50/70',
     shadowStyle: 'hover:shadow-[4px_4px_0px_0px_rgba(0,168,107,0.35)]',
-    glowColor: 'rgba(0, 168, 107, 0.09)'
+    glowColor: 'rgba(0, 168, 107, 0.09)',
+    href: '/ai-agents'
   },
   {
     id: 2,
@@ -27,7 +29,8 @@ const ECOSYSTEM_CARDS = [
     alignOffset: '-translate-x-6 xl:-translate-x-10',
     cardBg: 'bg-emerald-50/35 hover:bg-emerald-50/70',
     shadowStyle: 'hover:shadow-[4px_4px_0px_0px_rgba(0,168,107,0.35)]',
-    glowColor: 'rgba(0, 168, 107, 0.09)'
+    glowColor: 'rgba(0, 168, 107, 0.09)',
+    href: '/deep-tech-products'
   },
   {
     id: 4,
@@ -40,7 +43,8 @@ const ECOSYSTEM_CARDS = [
     alignOffset: '-translate-x-4 xl:-translate-x-6',
     cardBg: 'bg-blue-50/45 hover:bg-blue-50/80',
     shadowStyle: 'hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]',
-    glowColor: 'rgba(23, 70, 210, 0.09)'
+    glowColor: 'rgba(23, 70, 210, 0.09)',
+    href: '/business-brains'
   },
   {
     id: 3,
@@ -53,7 +57,8 @@ const ECOSYSTEM_CARDS = [
     alignOffset: 'translate-x-4 xl:translate-x-6',
     cardBg: 'bg-blue-50/45 hover:bg-blue-50/80',
     shadowStyle: 'hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]',
-    glowColor: 'rgba(23, 70, 210, 0.09)'
+    glowColor: 'rgba(23, 70, 210, 0.09)',
+    href: '/visionary-founders'
   },
   {
     id: 5,
@@ -66,7 +71,8 @@ const ECOSYSTEM_CARDS = [
     alignOffset: 'translate-x-6 xl:translate-x-10',
     cardBg: 'bg-emerald-50/35 hover:bg-emerald-50/70',
     shadowStyle: 'hover:shadow-[4px_4px_0px_0px_rgba(0,168,107,0.35)]',
-    glowColor: 'rgba(0, 168, 107, 0.09)'
+    glowColor: 'rgba(0, 168, 107, 0.09)',
+    href: '/enterprise-ai'
   },
   {
     id: 6,
@@ -79,7 +85,8 @@ const ECOSYSTEM_CARDS = [
     alignOffset: '-translate-x-6 xl:-translate-x-10',
     cardBg: 'bg-amber-50/35 hover:bg-amber-50/70',
     shadowStyle: 'hover:shadow-[4px_4px_0px_0px_rgba(212,175,55,0.35)]',
-    glowColor: 'rgba(212, 175, 55, 0.09)'
+    glowColor: 'rgba(212, 175, 55, 0.09)',
+    href: '/about'
   }
 ];
 
@@ -97,49 +104,61 @@ function CardComponent({ card, activeCard, setActiveCard }) {
   };
 
   return (
-    <div 
+    <Link 
+      to={card.href}
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setActiveCard(card)}
       onMouseLeave={() => setActiveCard(null)}
-      className={`group relative p-6 md:p-7 rounded-3xl transition-all duration-300 border border-slate-100 flex flex-col justify-between shadow-sm cursor-pointer z-20 ${
+      className={`group relative p-6 md:p-7 rounded-3xl transition-all duration-500 border flex flex-col justify-between shadow-sm cursor-pointer z-20 overflow-hidden block ${
         card.cardBg
-      } ${card.shadowStyle} ${card.alignOffset || ''} ${isHovered ? '-translate-y-1 z-50' : ''}`}
+      } ${card.shadowStyle} ${card.alignOffset || ''} ${
+        isHovered 
+          ? '-translate-y-1.5 shadow-xl border-slate-300 scale-[1.02]' 
+          : 'border-slate-100/80 hover:border-slate-200'
+      }`}
     >
+      {/* Top Accent Line on Hover */}
+      <div 
+        className={`absolute top-0 left-0 right-0 h-1 transition-all duration-500 ${card.dotBg} ${
+          isHovered ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'
+        }`}
+      />
+
       {/* Spotlight Glow Overlay */}
       <div
         className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden"
         style={{
-          background: `radial-gradient(circle 180px at var(--mx, -99px) var(--my, -99px), ${card.glowColor}, transparent 70%)`
+          background: `radial-gradient(circle 220px at var(--mx, -99px) var(--my, -99px), ${card.glowColor}, transparent 70%)`
         }}
       />
 
       {/* Card Content */}
       <div className="relative z-10 flex-1 min-w-0">
-        <h3 className={`font-display font-extrabold text-base md:text-lg mb-1.5 tracking-tight ${card.textColor}`}>
-          {card.num}. {card.title}
-        </h3>
-        <p className="font-body text-slate-600 text-xs md:text-sm leading-relaxed font-medium">
+        <div className="flex items-center justify-between mb-2">
+          <h3 className={`font-display font-extrabold text-base md:text-lg tracking-tight ${card.textColor}`}>
+            {card.num}. {card.title}
+          </h3>
+          <span className={`w-2 h-2 rounded-full transition-transform duration-300 ${card.dotBg}`} />
+        </div>
+        <p className="font-body text-slate-600 text-xs md:text-sm leading-relaxed font-medium transition-colors duration-300 group-hover:text-slate-900">
           {card.short}
         </p>
       </div>
 
-      {/* Hover Pop-up Tooltip Modal (Floats cleanly above the card) */}
-      {isHovered && (
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-3 w-80 md:w-96 p-5 bg-slate-900/95 text-white rounded-2xl shadow-2xl backdrop-blur-xl border border-white/10 z-[100] animate-in fade-in zoom-in-95 duration-200 pointer-events-none">
-          <div className="flex items-center gap-2 mb-2">
-            <span className={`w-2 h-2 rounded-full ${card.dotBg}`} />
-            <span className={`font-mono text-xs font-bold uppercase tracking-wider ${card.textColor}`}>
-              {card.title}
-            </span>
-          </div>
-          <p className="font-body text-xs md:text-sm text-slate-200 leading-relaxed font-normal">
+      {/* Subtle In-Card Expandable Details */}
+      <div 
+        className={`grid transition-all duration-500 ease-in-out ${
+          isHovered ? 'grid-rows-[1fr] opacity-100 mt-4 pt-3 border-t border-slate-200/60' : 'grid-rows-[0fr] opacity-0 mt-0 pt-0 border-t-0'
+        }`}
+      >
+        <div className="overflow-hidden">
+          <p className="font-body text-xs text-slate-500 leading-relaxed font-normal">
             {card.full}
           </p>
-          <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-8 border-transparent border-t-slate-900/95" />
         </div>
-      )}
-    </div>
+      </div>
+    </Link>
   );
 }
 
@@ -155,6 +174,10 @@ export default function IntelligenceStack() {
 
   return (
     <section className="relative w-full bg-[#FFFFFF] overflow-hidden py-16 md:py-24 z-20 font-body">
+      {/* Dynamic Background Glows */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-emerald-500/5 rounded-full blur-[100px] pointer-events-none -z-10" />
+
       {/* Subtle Grid Background */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-30 z-0"
@@ -169,8 +192,11 @@ export default function IntelligenceStack() {
         
         {/* Title Section */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <h2 className="font-display text-3xl md:text-5xl font-extrabold text-[#1746D2] tracking-tight mb-3">
-            THE TECH6SENSE ECOSYSTEM
+          <span className="font-mono text-xs font-bold text-blue-600 uppercase tracking-[0.25em] block mb-3">
+            Integrated Intelligence Architecture
+          </span>
+          <h2 className="font-display text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+            THE TECH6SENSE <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-emerald-600 to-amber-500">ECOSYSTEM</span>
           </h2>
           <p className="font-body text-slate-600 text-base md:text-lg font-medium">
             Six Dimensions of AI-Powered Transformation
@@ -193,32 +219,82 @@ export default function IntelligenceStack() {
             {/* SVG Lines & Diagram Geometry */}
             <svg viewBox="0 0 400 450" className="w-full h-full absolute inset-0 overflow-visible pointer-events-none">
               
-              {/* Main Flat-top Hexagon Outline */}
+              {/* Static Flat-top Hexagon Base Outline */}
               <polygon 
                 points="130,80 270,80 360,225 270,370 130,370 40,225" 
                 fill="none" 
                 stroke="#e2e8f0" 
-                strokeWidth="2"
+                strokeWidth="2.5"
               />
 
               {/* ── Stepped Connector Lines to Cards ── */}
               {/* Top-Left: Card 1 -> Vertex (130, 80) */}
-              <path d="M 30,48 L 95,48 L 130,80" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path 
+                d="M 30,48 L 95,48 L 130,80" 
+                fill="none" 
+                stroke={activeCard?.id === 1 ? '#059669' : '#05966960'} 
+                strokeWidth={activeCard?.id === 1 ? '3.5' : '2'} 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+                strokeDasharray="8 8"
+                className="transition-all duration-300 animate-[dash_3s_linear_infinite]"
+              />
               
               {/* Top-Right: Card 2 -> Vertex (270, 80) */}
-              <path d="M 370,48 L 305,48 L 270,80" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path 
+                d="M 370,48 L 305,48 L 270,80" 
+                fill="none" 
+                stroke={activeCard?.id === 2 ? '#059669' : '#05966960'} 
+                strokeWidth={activeCard?.id === 2 ? '3.5' : '2'} 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeDasharray="8 8"
+                className="transition-all duration-300 animate-[dash_3s_linear_infinite_reverse]"
+              />
 
               {/* Middle-Left: Card 4 -> Vertex (40, 225) */}
-              <line x1="-30" y1="225" x2="40" y2="225" stroke="#2563eb" strokeWidth="2.5" strokeLinecap="round" />
+              <line 
+                x1="-30" y1="225" x2="40" y2="225" 
+                stroke={activeCard?.id === 4 ? '#2563eb' : '#2563eb60'} 
+                strokeWidth={activeCard?.id === 4 ? '3.5' : '2'} 
+                strokeLinecap="round" 
+                strokeDasharray="8 8"
+                className="transition-all duration-300 animate-[dash_3s_linear_infinite]"
+              />
               
               {/* Middle-Right: Card 3 -> Vertex (360, 225) */}
-              <line x1="430" y1="225" x2="360" y2="225" stroke="#2563eb" strokeWidth="2.5" strokeLinecap="round" />
+              <line 
+                x1="430" y1="225" x2="360" y2="225" 
+                stroke={activeCard?.id === 3 ? '#2563eb' : '#2563eb60'} 
+                strokeWidth={activeCard?.id === 3 ? '3.5' : '2'} 
+                strokeLinecap="round" 
+                strokeDasharray="8 8"
+                className="transition-all duration-300 animate-[dash_3s_linear_infinite_reverse]"
+              />
 
               {/* Bottom-Left: Card 5 -> Vertex (130, 370) */}
-              <path d="M 30,402 L 95,402 L 130,370" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path 
+                d="M 30,402 L 95,402 L 130,370" 
+                fill="none" 
+                stroke={activeCard?.id === 5 ? '#059669' : '#05966960'} 
+                strokeWidth={activeCard?.id === 5 ? '3.5' : '2'} 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeDasharray="8 8"
+                className="transition-all duration-300 animate-[dash_3s_linear_infinite]"
+              />
 
               {/* Bottom-Right: Card 6 -> Vertex (270, 370) */}
-              <path d="M 370,402 L 305,402 L 270,370" fill="none" stroke="#d97706" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path 
+                d="M 370,402 L 305,402 L 270,370" 
+                fill="none" 
+                stroke={activeCard?.id === 6 ? '#d97706' : '#d9770660'} 
+                strokeWidth={activeCard?.id === 6 ? '3.5' : '2'} 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeDasharray="8 8"
+                className="transition-all duration-300 animate-[dash_3s_linear_infinite_reverse]"
+              />
 
               {/* ── 6 Node Dots Exactly on the 6 Hexagon Vertices ── */}
               <circle cx="130" cy="80" r="7.5" fill="#059669" />
@@ -230,7 +306,7 @@ export default function IntelligenceStack() {
             </svg>
 
             {/* Central Brand Emblem Node */}
-            <div className="relative z-20 flex flex-col items-center justify-center">
+            <div className="relative z-20 flex flex-col items-center justify-center transition-all duration-500 hover:scale-110">
               <img 
                 src={logoSymbol} 
                 alt="TECH6SENSE Logo Symbol" 

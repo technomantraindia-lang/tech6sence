@@ -226,11 +226,11 @@ export const heroData = {
   paragraph: "TECH6SENSE AI empower global enterprises, governments, startups, and founders with the Sixth Sense of Artificial Intelligence—transforming bold ideas into intelligent products, AI-powered businesses, autonomous systems, next-generation digital ecosystems, and globally scalable businesses.",
   primaryCta: {
     label: "Build with TECH6SENSE AI",
-    href: "#contact"
+    href: "/lets-connect"
   },
   secondaryCta: {
     label: "Talk to an AI Strategy Expert",
-    href: "#connect"
+    href: "/lets-connect"
   },
   servicesSummary: [
     "Enterprise AI Development",

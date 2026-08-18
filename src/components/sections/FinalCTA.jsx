@@ -110,7 +110,7 @@ export default function FinalCTA() {
             }}
           >
             <Link
-              to="/#contact"
+              to="/lets-connect"
               className="group relative inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] px-9 py-4 font-display text-base font-bold text-white shadow-[0_4px_20px_rgba(23,70,210,0.3)] transition-all duration-300 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer overflow-hidden"
             >
               <span className="cta-btn-shine-effect" />

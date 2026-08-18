@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
 // Product image imports
@@ -14,148 +14,209 @@ import imgMedical from '../../assets/productimages/Healthcare & Medical AI Devic
 import imgIoT from '../../assets/productimages/Smart IoT Devices.png';
 import imgNotepad from '../../assets/productimages/AI Digital Notepad.png';
 
+const CATEGORIES = ['All Products', 'Wearables & Audio', 'Health & Medical', 'Robotics & Enterprise IoT'];
+
 const PRODUCTS = [
   {
-    id: 'glasses',
-    tab: 'AI Smart Glasses',
-    title: 'AI Smart Glasses',
-    description: 'Intelligent wearable glasses combining AI assistants, augmented information, real-time translation, computer vision, voice interaction, navigation, recording, and productivity.',
-    features: ['Real-time translation HUD', 'Computer vision scene analysis', 'Voice-controlled AR interface'],
-    tags: ['AR HUD', 'Realtime Translation', 'Voice AI', 'BLE 5.2'],
-    accent: '#1746D2',
+    id: 'sense-vision',
+    name: 'SENSE Vision',
+    category: 'AI Smart Glasses',
+    categoryGroup: 'Wearables & Audio',
+    description: 'Heads-up AI assistance built into everyday eyewear — real-time information overlay, visual recognition, and hands-free interaction designed for both consumer and enterprise field use.',
     image: imgGlasses,
+    accent: '#A855F7',
+    glow: 'rgba(168, 85, 247, 0.25)',
+    bgGradient: 'from-[#1e1035] via-[#2d164d] to-[#120824]',
+    tag: 'AR HUD & Vision AI'
   },
   {
-    id: 'exoskeleton',
-    tab: 'AI Exoskeleton',
-    title: 'AI-Powered Exoskeleton',
-    description: 'Advanced AI-assisted wearable robotic system enhancing human mobility, rehabilitation, industrial productivity, and defense capabilities.',
-    features: ['Active motion assistance', 'Intelligent feedback loops', 'Ergonomic weight distribution'],
-    tags: ['Robotics', 'Motion AI', 'Haptic FB', 'Safety+'],
-    accent: '#D4AF37',
+    id: 'sense-exo',
+    name: 'SENSE Exo',
+    category: 'Exoskeleton Systems',
+    categoryGroup: 'Robotics & Enterprise IoT',
+    description: 'Wearable support structures engineered for industrial, mobility, and rehabilitation applications — augmenting human strength and endurance with AI-assisted motion control.',
     image: imgExoskeleton,
+    accent: '#F59E0B',
+    glow: 'rgba(245, 158, 11, 0.25)',
+    bgGradient: 'from-[#2b1f09] via-[#3d2c0e] to-[#171004]',
+    tag: 'Motion AI & Robotics'
   },
   {
-    id: 'earphones',
-    tab: 'AI Earphones',
-    title: 'AI Earphones',
-    description: 'Next-generation intelligent audio powered by AI noise cancellation, language translation, health sensing, voice assistant, and contextual awareness.',
-    features: ['Active noise isolation', 'On-the-go audio translation', 'Health vital monitoring'],
-    tags: ['ANC', 'Biometrics', 'NLP', 'Spatial Audio'],
-    accent: '#0ea5e9',
+    id: 'sense-sonic',
+    name: 'SENSE Sonic',
+    category: 'AI Earphones',
+    categoryGroup: 'Wearables & Audio',
+    description: 'Intelligent audio devices combining real-time translation, contextual assistance, and adaptive sound — built for professionals who move between languages, meetings, and markets.',
     image: imgEarphones,
+    accent: '#38BDF8',
+    glow: 'rgba(56, 189, 248, 0.25)',
+    bgGradient: 'from-[#0a1b38] via-[#112d5e] to-[#050e20]',
+    tag: 'Adaptive Audio & NLP'
   },
   {
-    id: 'smartwatch',
-    tab: 'AI Smartwatch',
-    title: 'AI Smartwatch',
-    description: 'Enterprise-grade intelligent smartwatch integrating AI health monitoring, productivity, communication, navigation, safety, and fitness analytics.',
-    features: ['Enterprise calendar sync', 'Safety alerts & fall detection', 'Dynamic health telemetry'],
-    tags: ['Heart Rate', 'LTE', 'NFC', 'Secure OS'],
-    accent: '#10b981',
+    id: 'sense-chrono',
+    name: 'SENSE Chrono',
+    category: 'Smartwatches',
+    categoryGroup: 'Wearables & Audio',
+    description: 'AI-driven wearables for health tracking, productivity, and connected notifications — engineered as a natural extension of the SENSE ecosystem rather than a standalone device.',
     image: imgSmartwatch,
+    accent: '#10B981',
+    glow: 'rgba(16, 185, 129, 0.25)',
+    bgGradient: 'from-[#06241a] via-[#0d3d2c] to-[#03140e]',
+    tag: 'Biometric Telemetry'
   },
   {
-    id: 'fitness-band',
-    tab: 'AI Fitness Band',
-    title: 'AI Fitness Health Band',
-    description: 'Professional-grade AI fitness tracker providing continuous health analytics, recovery insights, performance optimization, sleep intelligence, and personalized coaching.',
-    features: ['Personalized AI coaching', 'Precise sleep phase tracking', 'Continuous vitals detection'],
-    tags: ['Coaching', 'Sleep Tracking', 'SpO2', 'Vitals'],
-    accent: '#1746D2',
+    id: 'sense-pulse',
+    name: 'SENSE Pulse',
+    category: 'Fitness & Health Bands',
+    categoryGroup: 'Health & Medical',
+    description: 'Continuous activity and biometric tracking built for everyday performance monitoring, with AI-driven insights designed to support — not replace — professional health guidance.',
     image: imgFitnessBand,
+    accent: '#F43F5E',
+    glow: 'rgba(244, 63, 94, 0.25)',
+    bgGradient: 'from-[#2d0a14] via-[#4a1022] to-[#170409]',
+    tag: 'Continuous Health AI'
   },
   {
-    id: 'assistant',
-    tab: 'AI Assistant',
-    title: 'Wearable AI Assistant',
-    description: 'A wearable companion capable of understanding conversations, scheduling tasks, answering questions, managing workflows, and providing proactive intelligence.',
-    features: ['Conversational tracking', 'Proactive work shortcuts', 'Automated agenda builders'],
-    tags: ['Voice Agent', 'Task Sync', 'NLP Engine', 'Contextual'],
-    accent: '#f59e0b',
+    id: 'sense-aura',
+    name: 'SENSE Aura',
+    category: 'Wearable Personal Assistants',
+    categoryGroup: 'Wearables & Audio',
+    description: 'A discreet, always-available AI companion device — contextual reminders, voice assistance, and proactive support built for daily professional and personal use.',
     image: imgAssistant,
+    accent: '#6366F1',
+    glow: 'rgba(99, 102, 241, 0.25)',
+    bgGradient: 'from-[#10183b] via-[#1a265e] to-[#080d21]',
+    tag: 'Proactive Voice Companion'
   },
   {
-    id: 'smart-ring',
-    tab: 'AI Smart Ring',
-    title: 'AI Smart Ring',
-    description: 'Continuous biometric monitoring, secure authentication, contactless experiences, wellness intelligence, and AI-driven lifestyle optimization in a minimal design.',
-    features: ['Contactless NFC interactions', 'Minimal size biometric scans', 'Sleep and wellness scoring'],
-    tags: ['NFC Pay', 'Biometric', 'Wellness', 'NFC Auth'],
-    accent: '#1746D2',
+    id: 'sense-halo',
+    name: 'SENSE Halo',
+    category: 'Smart Ring',
+    categoryGroup: 'Wearables & Audio',
+    description: 'Minimalist biometric and activity tracking in ring form — engineered for users who want continuous intelligence without a visible device.',
     image: imgSmartRing,
+    accent: '#CBD5E1',
+    glow: 'rgba(203, 213, 225, 0.25)',
+    bgGradient: 'from-[#161c2b] via-[#232d42] to-[#0d111a]',
+    tag: 'Invisible Intelligence'
   },
   {
-    id: 'health-device',
-    tab: 'AI Health Device',
-    title: 'Wearable Personal Health',
-    description: 'Advanced healthcare wearable designed for preventive healthcare, chronic disease management, continuous diagnostics, and remote patient monitoring.',
-    features: ['Chronic care auto-alerts', 'Remote diagnostics pipeline', 'Clinical vital signs logging'],
-    tags: ['Clinical Vitals', 'Diagnostics', 'IoMT', '24/7 Monitoring'],
-    accent: '#ef4444',
+    id: 'sense-vita',
+    name: 'SENSE Vita',
+    category: 'Personal Health Devices',
+    categoryGroup: 'Health & Medical',
+    description: 'Consumer wellness devices designed to support everyday health awareness — built within our wellness product lane, distinct from regulated medical hardware.',
     image: imgHealthDevice,
+    accent: '#EC4899',
+    glow: 'rgba(236, 72, 153, 0.25)',
+    bgGradient: 'from-[#2b0821] via-[#470d37] to-[#170311]',
+    tag: 'Wellness & Diagnostics'
   },
   {
-    id: 'medical-devices',
-    tab: 'Medical Devices',
-    title: 'Healthcare AI Devices',
-    description: 'Medical-grade intelligent devices supporting hospitals, clinics, diagnostics, patient monitoring, telemedicine, and healthcare automation.',
-    features: ['FDA compliant data layers', 'Telemedicine sync & pipelines', 'Hospital system integrations'],
-    tags: ['FDA Compliant', 'Hospital Tech', 'Telemed', 'ML Vitals'],
-    accent: '#06b6d4',
+    id: 'sense-clinic',
+    name: 'SENSE Clinic',
+    category: 'Healthcare & Medical AI Devices',
+    categoryGroup: 'Health & Medical',
+    description: 'Purpose-built devices for clinical and healthcare environments, developed within our regulated product lane — engineered to meet the compliance and certification standards required for medical use.',
     image: imgMedical,
+    accent: '#14B8A6',
+    glow: 'rgba(20, 184, 166, 0.25)',
+    bgGradient: 'from-[#052426] via-[#0a3d40] to-[#021415]',
+    tag: 'Clinical Grade IoMT'
   },
   {
-    id: 'iot-devices',
-    tab: 'Smart IoT',
-    title: 'Smart IoT Devices',
-    description: 'AI-enabled connected devices powering homes, industries, factories, agriculture, smart cities, logistics, and infrastructure.',
-    features: ['MQTT fast data transport', 'Dynamic edge computation', 'Secure OTA code updates'],
-    tags: ['Edge Compute', 'MQTT', 'OTA Updates', 'Cloud Sync'],
-    accent: '#3b82f6',
+    id: 'sense-grid',
+    name: 'SENSE Grid',
+    category: 'Smart IoT Devices',
+    categoryGroup: 'Robotics & Enterprise IoT',
+    description: 'Connected sensors and infrastructure devices for smart facilities, industrial monitoring, and enterprise IoT deployments at scale.',
     image: imgIoT,
+    accent: '#3B82F6',
+    glow: 'rgba(59, 130, 246, 0.25)',
+    bgGradient: 'from-[#0a1e3d] via-[#123061] to-[#040e1f]',
+    tag: 'Industrial Facility IoT'
   },
   {
-    id: 'digital-notepad',
-    tab: 'Digital Notepad',
-    title: 'AI Digital Notepad',
-    description: 'The intelligent notebook that understands handwriting, summarizes meetings, generates tasks, translates content, and synchronizes seamlessly across devices.',
-    features: ['Live handwriting recognition', 'Meeting summary generation', 'Omni-device note sync'],
-    tags: ['Smart Ink', 'OCR Engine', 'Notepad Sync', 'NLP Summary'],
-    accent: '#14b8a6',
+    id: 'sense-slate',
+    name: 'SENSE Slate',
+    category: 'AI Digital Notepad',
+    categoryGroup: 'Robotics & Enterprise IoT',
+    description: 'An AI-native writing and note-capture device — transcription, summarisation, and intelligent organization built directly into the hardware.',
     image: imgNotepad,
+    accent: '#059669',
+    glow: 'rgba(5, 150, 105, 0.25)',
+    bgGradient: 'from-[#07241b] via-[#0d3b2c] to-[#03130e]',
+    tag: 'Smart Ink OCR Engine'
   }
 ];
 
-function FloatingTag({ text, x, y, delay }) {
+function ProductCard({ product }) {
   return (
-    <span
-      className="absolute px-3 py-1.5 rounded-full text-[0.6rem] font-bold tracking-widest uppercase border border-white/20 bg-white/10 backdrop-blur-md text-slate-700 shadow-sm pointer-events-none select-none dtp-float-tag"
-      style={{ left: x, top: y, animationDelay: `${delay}s` }}
+    <Link
+      to={`/deep-tech-products/${product.id}`}
+      className="group relative rounded-[2rem] overflow-hidden bg-slate-950 p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-500 hover:-translate-y-1 border border-white/10 hover:border-white/25 min-h-[460px] md:min-h-[500px]"
     >
-      {text}
-    </span>
+      {/* Full-Bleed Product Background Image */}
+      <div className="absolute inset-0 z-0 overflow-hidden bg-slate-950">
+        <img 
+          src={product.image} 
+          alt={product.name} 
+          className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 opacity-60 group-hover:opacity-75"
+        />
+        {/* Dark Scrim Gradients for text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/80" />
+      </div>
+
+      {/* Top Details */}
+      <div className="relative z-20">
+        <div className="flex items-center justify-between gap-3 mb-5">
+          <span 
+            className="font-mono text-[0.68rem] font-bold tracking-[0.2em] uppercase px-3 py-1 rounded-full bg-white/10 border border-white/15 text-white backdrop-blur-md"
+          >
+            {product.category}
+          </span>
+          <span 
+            className="w-2 h-2 rounded-full transition-transform duration-300 group-hover:scale-150"
+            style={{ backgroundColor: product.accent }}
+          />
+        </div>
+
+        <h3 className="font-display text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-[1.15] mb-2 group-hover:text-white transition-colors duration-300">
+          {product.name}
+        </h3>
+      </div>
+
+      {/* Spacer */}
+      <div className="relative z-20 flex-1 min-h-[80px]" />
+
+      {/* Bottom Content & Action Strip */}
+      <div className="relative z-20">
+        <p className="font-body text-slate-200 text-xs md:text-sm leading-relaxed mb-6 line-clamp-3">
+          {product.description}
+        </p>
+
+        <div className="flex items-center justify-between pt-3.5 border-t border-white/15">
+          <span className="font-mono text-[0.75rem] font-semibold text-slate-300 group-hover:text-white transition-colors duration-300">
+            {product.tag}
+          </span>
+
+          {/* Circular Arrow Button (Mercury style) */}
+          <div className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/90 group-hover:bg-white text-slate-950 border border-white flex items-center justify-center transition-all duration-300 shadow-md group-hover:scale-110">
+            <svg viewBox="0 0 20 20" fill="none" className="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" stroke="currentColor" strokeWidth="2.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.5l11-11m0 0h-8m8 0v8" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </Link>
   );
 }
 
 export default function DeepTechProducts() {
   const sectionRef = useRef(null);
-  const tabsRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [activeTab, setActiveTab] = useState(0);
-  const [transitioning, setTransitioning] = useState(false);
-
-  useEffect(() => {
-    const el = tabsRef.current;
-    if (!el) return;
-    const onWheel = (e) => {
-      e.preventDefault(); // always block page scroll
-      el.scrollBy({ top: e.deltaY * 1.2, behavior: 'smooth' });
-    };
-    el.addEventListener('wheel', onWheel, { passive: false });
-    return () => el.removeEventListener('wheel', onWheel);
-  }, []);
-
+  const [activeCategory, setActiveCategory] = useState('All Products');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -171,204 +232,75 @@ export default function DeepTechProducts() {
     return () => observer.disconnect();
   }, []);
 
-  const handleTabClick = useCallback((index) => {
-    if (index === activeTab || transitioning) return;
-    setTransitioning(true);
-    setActiveTab(index);
-    setTimeout(() => {
-      setTransitioning(false);
-    }, 250);
-  }, [activeTab, transitioning]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      handleTabClick((activeTab + 1) % PRODUCTS.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [activeTab, handleTabClick]);
-
-  const product = PRODUCTS[activeTab];
-  const tagPositions = [
-    { x: '5%', y: '10%' },
-    { x: '70%', y: '5%' },
-    { x: '75%', y: '80%' },
-    { x: '5%', y: '75%' },
-  ];
+  const filteredProducts = useMemo(() => {
+    if (activeCategory === 'All Products') return PRODUCTS;
+    return PRODUCTS.filter((p) => p.categoryGroup === activeCategory);
+  }, [activeCategory]);
 
   return (
     <section
       ref={sectionRef}
       id="deep-tech-products"
-      className="relative w-full overflow-visible bg-white py-24 md:py-32"
+      className="relative w-full bg-[#FAFBFF] py-16 md:py-24 overflow-hidden border-t border-slate-100"
     >
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes dtp-dash { to { stroke-dashoffset: -24; } }
-        @keyframes dtp-pulse-kf { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-        @keyframes dtp-pulse-delay-kf { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
-        @keyframes dtp-spin-kf { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        @keyframes dtp-spin-rev-kf { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
-        @keyframes dtp-float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-5px); } }
-        @keyframes dtp-float-tag-kf { 0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.8; } 50% { transform: translateY(-6px) rotate(1deg); opacity: 1; } }
-        @keyframes dtp-ecg { from { stroke-dashoffset: 300; } to { stroke-dashoffset: 0; } }
+      {/* Background Ambience */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-100/30 rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-100/30 rounded-full blur-[120px] pointer-events-none -z-10" />
+
+      <div className="w-full px-3 sm:px-6 md:px-8 lg:px-10 relative z-10">
         
-        .dtp-dash-anim { animation: dtp-dash 2s linear infinite; }
-        .dtp-pulse { animation: dtp-pulse-kf 2.5s ease-in-out infinite; }
-        .dtp-pulse-delay { animation: dtp-pulse-delay-kf 2.5s ease-in-out infinite; }
-        .dtp-spin { transform-origin: center; transform-box: fill-box; animation: dtp-spin-kf 25s linear infinite; }
-        .dtp-spin-reverse { transform-origin: center; transform-box: fill-box; animation: dtp-spin-rev-kf 18s linear infinite; }
-        .dtp-float-panel { animation: dtp-float 6s ease-in-out infinite; }
-        .dtp-float-tag { animation: dtp-float-tag-kf 5s ease-in-out infinite; }
-        .dtp-ecg-anim { stroke-dasharray: 300; animation: dtp-ecg 2.5s linear infinite; }
-      `}} />
-      <style dangerouslySetInnerHTML={{ __html: `
-        .dtp-tabs-scroll {
-          scrollbar-width: auto;
-          scrollbar-color: rgba(37, 99, 235, 0.45) transparent;
-        }
-        .dtp-tabs-scroll::-webkit-scrollbar {
-          width: 8px;
-          height: 8px;
-        }
-        .dtp-tabs-scroll::-webkit-scrollbar-track {
-          background: rgba(0, 0, 0, 0.03);
-          border-radius: 999px;
-        }
-        .dtp-tabs-scroll::-webkit-scrollbar-thumb {
-          background: linear-gradient(180deg, #2563ed88, #10b98188);
-          border-radius: 999px;
-          border: 1.5px solid transparent;
-          background-clip: padding-box;
-          transition: all 0.3s ease;
-        }
-        .dtp-tabs-scroll::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(180deg, #2563ed, #10b981);
-          background-clip: padding-box;
-        }
-      `}} />
-
-      {/* Decorative Grid Background */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
-
-      <div
-        className="mx-auto max-w-[1400px] px-6 transition-all duration-1000 ease-out relative z-10"
-        style={{
-          opacity: isVisible ? 1 : 0,
-          transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-        }}
-      >
-        {/* Header Section */}
-        <div className="mb-16 md:mb-24 flex flex-col items-center text-center max-w-3xl mx-auto">
-          <div className="mb-6 flex items-center gap-4">
-            <div className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
-            <span className="font-mono text-[0.7rem] font-bold tracking-[0.3em] uppercase text-slate-400">
-              Deep-Tech Products
-            </span>
+        {/* Section Header (Using Exact PDF Copy) */}
+        <div 
+          className="mb-12 md:mb-14 text-center max-w-4xl mx-auto transition-all duration-1000 ease-out"
+          style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)' }}
+        >
+          <div className="flex justify-center items-center gap-3 mb-5">
+            <span className="h-[2px] w-8 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full" />
+            <h2 className="text-blue-600 font-mono font-bold tracking-[0.2em] uppercase text-xs md:text-sm">
+              INTELLIGENCE, WORN AND DEPLOYED
+            </h2>
+            <span className="h-[2px] w-8 bg-gradient-to-l from-blue-500 to-emerald-500 rounded-full" />
           </div>
-          
-          <h2 className="mb-6 font-display text-[clamp(2.5rem,5vw,4.2rem)] leading-[1.05] font-black text-slate-900 tracking-[-0.03em]">
-            Hardware Built for the{' '}
+
+          <h3 className="font-display text-[clamp(2.3rem,3.8vw,3.5rem)] leading-[1.1] font-extrabold text-slate-900 tracking-tight mb-5">
+            The Hardware Layer of the{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-500">
-              Future
+              Sixth Sense
             </span>
-          </h2>
+          </h3>
 
-          <p className="font-body text-[1.1rem] leading-[1.7] text-slate-500 font-medium">
-            From wearable intelligence to AI-powered healthcare and IoT devices, TECH6SENSE AI builds next-generation products that connect software intelligence with real-world hardware innovation.
+          <p className="font-body text-base md:text-lg leading-[1.7] text-slate-600 font-medium max-w-3xl mx-auto">
+            Software and strategy are only half the picture. TECH6SENSE AI's deep-tech division designs and engineers the physical devices that carry intelligence into the real world — unified under one proprietary platform layer.
           </p>
-        </div>
 
-        {/* Clean, Borderless Content Layout */}
-        <div className="grid lg:grid-cols-[1fr_2.5fr] gap-12 lg:gap-16 items-center">
-          
-          {/* LEFT: Command Center Tabs */}
-          <div
-            ref={tabsRef}
-            className="flex flex-row lg:flex-col gap-3 overflow-x-auto lg:overflow-y-auto lg:max-h-[480px] pb-4 lg:pb-0 dtp-tabs-scroll pr-2"
-          >
-            {PRODUCTS.map((p, i) => (
+          {/* Category Filter Pills */}
+          <div className="flex flex-wrap justify-center items-center gap-2 md:gap-3 mt-8">
+            {CATEGORIES.map((cat) => (
               <button
-                key={p.id}
-                onClick={() => handleTabClick(i)}
-                className="group relative px-6 py-4 rounded-2xl flex items-center gap-4 text-left transition-all duration-500 outline-none select-none flex-shrink-0 min-w-[200px]"
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-5 py-2 rounded-full text-xs md:text-sm font-display font-bold transition-all duration-300 cursor-pointer ${
+                  activeCategory === cat
+                    ? 'bg-slate-900 text-white shadow-md shadow-slate-900/20 scale-105'
+                    : 'bg-white text-slate-600 hover:text-slate-900 border border-slate-200/80 hover:border-slate-300 shadow-sm'
+                }`}
               >
-                {/* Active Background highlight */}
-                <div 
-                  className={`absolute inset-0 rounded-2xl transition-all duration-500 ${i === activeTab ? 'opacity-100' : 'opacity-0 group-hover:opacity-10'}`} 
-                  style={{ background: `linear-gradient(135deg, ${p.accent}15, ${p.accent}05)` }} 
-                />
-                
-                {/* Active Left Border line */}
-                <div 
-                  className={`absolute left-0 top-1/4 bottom-1/4 w-1 rounded-r-full transition-all duration-500 ${i === activeTab ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0'}`}
-                  style={{ background: p.accent }}
-                />
-
-                <span 
-                  className={`font-mono text-[0.8rem] font-bold tracking-widest uppercase transition-colors duration-500 relative z-10 ${i === activeTab ? 'text-slate-900' : 'text-slate-500 group-hover:text-slate-700'}`}
-                >
-                  {p.tab}
-                </span>
+                {cat} {cat === 'All Products' && `(${PRODUCTS.length})`}
               </button>
             ))}
           </div>
-
-          {/* RIGHT: Borderless Floating Product Panel */}
-          <div className="relative w-full overflow-hidden dtp-float-panel">
-            {/* Massive background ambient glow for the active product */}
-            <div
-              className="absolute inset-0 blur-[100px] pointer-events-none transition-all duration-700 opacity-30"
-              style={{ background: `radial-gradient(ellipse at center, ${product.accent}, transparent 70%)` }}
-            />
-
-            <div className={`relative rounded-3xl border shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] grid md:grid-cols-[1fr_1.2fr] gap-10 items-center p-8 md:p-12 transition-all duration-500 ${transitioning ? 'opacity-0 scale-[0.98]' : 'opacity-100 scale-100'}`} style={{ background: '#0d0d10', borderColor: `${product.accent}25` }}>
-              
-              {/* Product Text Details */}
-              <div className="flex flex-col z-10">
-                <h3 className="font-display text-[2.2rem] md:text-[2.8rem] font-black text-white tracking-tight leading-[1.1] mb-6">
-                  {product.title}
-                </h3>
-                
-                <p className="font-body text-[1.05rem] leading-relaxed text-slate-300 mb-8 font-medium">
-                  {product.description}
-                </p>
-
-                <div className="flex flex-col gap-4 mb-10">
-                  {product.features.map((feat, i) => (
-                    <div key={i} className="flex items-center gap-4">
-                      <div className="w-1.5 h-1.5 rounded-full" style={{ background: product.accent }} />
-                      <span className="font-body text-[0.95rem] font-semibold text-slate-200">{feat}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <Link
-                  to={`/deep-tech-products/${product.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
-                  className="group inline-flex items-center gap-4 w-fit border-b-2 pb-1 font-display text-[0.9rem] font-bold tracking-widest uppercase transition-colors duration-300"
-                  style={{ borderColor: product.accent, color: product.accent }}
-                >
-                  Explore Details
-                  <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" stroke="currentColor" strokeWidth="2.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                </Link>
-              </div>
-
-              {/* Product Visual Area */}
-              <div className="relative h-[380px] md:h-[480px] flex items-center justify-center">
-                <div className="relative z-10 w-full max-w-[460px] flex items-center justify-center">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    className="w-full h-auto object-contain max-h-[440px] transition-all duration-700"
-                    style={{ mixBlendMode: 'lighten' }}
-                  />
-                </div>
-              </div>
-
-            </div>
-          </div>
-
         </div>
+
+        {/* Mercury-Inspired Tight Showcase Grid */}
+        <div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 transition-all duration-1000 ease-out"
+          style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(30px)' }}
+        >
+          {filteredProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+
       </div>
     </section>
   );

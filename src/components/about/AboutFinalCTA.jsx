@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function AboutFinalCTA() {
   const [isVisible, setIsVisible] = useState(false);
@@ -80,8 +81,8 @@ export default function AboutFinalCTA() {
           }`}
         >
           {/* Primary Button */}
-          <a 
-            href="#contact" 
+          <Link 
+            to="/lets-connect" 
             className="group relative w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] px-8 py-4 font-body text-sm font-bold text-white transition-all hover:scale-105 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]"
           >
             <span>Schedule Consultation</span>
@@ -90,11 +91,11 @@ export default function AboutFinalCTA() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
               </svg>
             </div>
-          </a>
+          </Link>
           
           {/* Secondary Button */}
-          <a 
-            href="#solutions" 
+          <Link 
+            to="/ai-agents" 
             className="group relative w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-white border border-slate-200 px-8 py-4 font-body text-sm font-bold text-slate-700 transition-all hover:border-[#1746D2]/40 hover:text-[#1746D2] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]"
           >
             <span>Explore AI Solutions</span>
@@ -107,7 +108,7 @@ export default function AboutFinalCTA() {
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
-          </a>
+          </Link>
         </div>
 
         {/* Trust Line */}

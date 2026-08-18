@@ -272,15 +272,15 @@ export default function AISolutionsOutcome() {
 
             {/* CTA Button */}
             <div className="mb-4">
-              <a
-                href="/services"
+              <Link
+                to="/ai-agents"
                 className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] px-7 py-3.5 font-display text-sm font-bold tracking-wider text-white shadow-[0_4px_15px_rgba(23,70,210,0.2)] transition-all duration-300 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:scale-[1.02] active:scale-[0.98]"
               >
                 See the Full Service Portfolio
                 <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
-              </a>
+              </Link>
             </div>
 
             {/* Trust line */}

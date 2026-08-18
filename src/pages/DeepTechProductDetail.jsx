@@ -19,17 +19,44 @@ import imgIoT from '../assets/productimages/Smart IoT Devices.png';
 import imgNotepad from '../assets/productimages/AI Digital Notepad-exploredview.png';
 
 const EXPLORED_IMAGES = {
+  "sense-vision": imgGlasses,
+  "sense-exo": imgExoskeleton,
+  "sense-sonic": imgEarphones,
+  "sense-chrono": imgSmartwatch,
+  "sense-pulse": imgFitnessBand,
+  "sense-aura": imgAssistant,
+  "sense-halo": imgSmartRing,
+  "sense-vita": imgHealthDevice,
+  "sense-clinic": imgMedical,
+  "sense-grid": imgIoT,
+  "sense-slate": imgNotepad,
+
   "ai-smart-glasses": imgGlasses,
   "ai-powered-next-generation-exoskeleton": imgExoskeleton,
   "ai-earphones": imgEarphones,
   "ai-smartwatch": imgSmartwatch,
   "ai-fitness-health-band": imgFitnessBand,
   "wearable-ai-personal-assistant": imgAssistant,
+  "wearable-ai-powered-personal-assistant": imgAssistant,
   "ai-smart-ring": imgSmartRing,
   "wearable-ai-personal-health-device": imgHealthDevice,
   "healthcare-medical-ai-devices": imgMedical,
   "smart-iot-devices": imgIoT,
   "ai-digital-notepad": imgNotepad
+};
+
+const PRODUCT_SLUG_MAP = {
+  'sense-vision': 'ai-smart-glasses',
+  'sense-exo': 'ai-powered-next-generation-exoskeleton',
+  'sense-sonic': 'ai-earphones',
+  'sense-chrono': 'ai-smartwatch',
+  'sense-pulse': 'ai-fitness-health-band',
+  'sense-aura': 'wearable-ai-powered-personal-assistant',
+  'sense-halo': 'ai-smart-ring',
+  'sense-vita': 'wearable-ai-personal-health-device',
+  'sense-clinic': 'healthcare-medical-ai-devices',
+  'sense-grid': 'smart-iot-devices',
+  'sense-slate': 'ai-digital-notepad'
 };
 
 // Helper to convert text to URL slug
@@ -88,13 +115,15 @@ export default function DeepTechProductDetail() {
 
   useEffect(() => {
     if (deepTechData && deepTechData.products) {
+      const mappedSlug = PRODUCT_SLUG_MAP[productId] || productId;
+
       // Robust title match (handles word splits like smartwatch/smart watch, plurals, and extra descriptors)
       const found = deepTechData.products.find(p => {
         const titleSlug = slugify(p.title);
-        if (titleSlug === productId) return true;
+        if (titleSlug === mappedSlug || titleSlug === productId) return true;
 
         const cleanA = titleSlug.replace(/-/g, '');
-        const cleanB = productId.replace(/-/g, '');
+        const cleanB = mappedSlug.replace(/-/g, '');
         if (cleanA === cleanB) return true;
 
         const stripHelpers = (s) => s.replace(/powered|devices|device|nextgeneration|nextgen|and|or|the/g, '').replace(/s$/, '');

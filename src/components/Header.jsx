@@ -133,34 +133,6 @@ export default function Header() {
           : 'border-white/5 bg-[#060214]/65 backdrop-blur-xl'
       }`}
     >
-      {/* Executive Premium Announcement Bar */}
-      <div className="w-full bg-gradient-to-r from-[#02050E] via-[#07132B] to-[#02050E] border-b border-[#D4AF37]/25 py-2 px-4 text-center relative z-20 shadow-[inset_0_-1px_10px_rgba(212,175,55,0.08)]">
-        <div className="mx-auto max-w-[1400px] flex items-center justify-center gap-3 flex-wrap">
-          {/* Live Radar Beacon */}
-          <div className="flex items-center gap-2">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00A86B] opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00A86B]" />
-            </span>
-            <span className="px-2.5 py-0.5 rounded-full text-[0.6rem] font-extrabold tracking-[0.2em] uppercase bg-gradient-to-r from-[#D4AF37]/20 via-[#D4AF37]/35 to-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] shadow-[0_0_12px_rgba(212,175,55,0.15)]">
-              GLOBAL FOOTPRINT
-            </span>
-          </div>
-
-          {/* Statement */}
-          <span className="font-display text-[0.72rem] sm:text-[0.78rem] md:text-[0.82rem] font-bold text-white tracking-wide">
-            Trusted by Enterprises, Governments, Startups & Founders
-          </span>
-
-          <span className="hidden sm:inline text-[#D4AF37]/40 font-light">|</span>
-
-          {/* Countries with Diamond Bullet Dividers */}
-          <span className="font-mono text-[0.65rem] sm:text-[0.72rem] md:text-[0.76rem] font-semibold text-[#D4AF37] tracking-wider">
-            USA <span className="text-[#00A86B] mx-1">✦</span> UK <span className="text-[#00A86B] mx-1">✦</span> CANADA <span className="text-[#00A86B] mx-1">✦</span> AUSTRALIA <span className="text-[#00A86B] mx-1">✦</span> EU <span className="text-[#00A86B] mx-1">✦</span> UAE <span className="text-[#00A86B] mx-1">✦</span> SINGAPORE <span className="text-[#00A86B] mx-1">✦</span> HONG KONG <span className="text-[#00A86B] mx-1">✦</span> INDIA
-          </span>
-        </div>
-      </div>
-
       {/* Scroll Progress Bar */}
       <div 
         ref={progressBarRef}
@@ -173,9 +145,9 @@ export default function Header() {
         aria-hidden="true"
       />
       
-      <div className="relative mx-auto max-w-[1400px] w-full px-2 sm:px-4 transition-all duration-300">
+      <div className="relative w-full px-4 sm:px-6 md:px-8 lg:px-12 transition-all duration-300">
         <div className={`flex items-center justify-between gap-4 transition-all duration-300 ${
-          scrolled ? 'py-3.5' : 'py-5'
+          scrolled ? 'py-3.5' : 'py-4 md:py-5'
         }`}>
           {/* Logo */}
           <div className="flex items-center gap-5">
@@ -184,7 +156,7 @@ export default function Header() {
               <img
                 src={companyLogo}
                 alt="TECH6SENSE AI"
-                className="relative h-8 w-auto object-contain md:h-9"
+                className="relative h-10 sm:h-11 md:h-12 w-auto object-contain transition-all duration-300"
               />
             </Link>
           </div>
@@ -198,9 +170,9 @@ export default function Header() {
                 <div key={link.href} className={link.isMega ? "group static" : "group relative"}>
                   <Link
                     to={link.href}
-                    className="relative flex items-center gap-0.5 2xl:gap-1 rounded-lg px-1.5 2xl:px-3 py-2 no-underline transition-all hover:bg-white/5"
+                    className="relative flex items-center gap-0.5 2xl:gap-1 rounded-lg px-2 2xl:px-3.5 py-2 no-underline transition-all hover:bg-white/5"
                   >
-                    <span className={`font-body text-[0.75rem] 2xl:text-sm font-bold transition-colors whitespace-nowrap ${active ? 'text-blue-400' : 'text-slate-300 group-hover:text-white'}`}>
+                    <span className={`font-body text-[0.86rem] 2xl:text-[0.96rem] font-bold transition-colors whitespace-nowrap ${active ? 'text-blue-400' : 'text-slate-300 group-hover:text-white'}`}>
                       {link.label}
                     </span>
                     {(link.isMega || link.isDropdown) && (

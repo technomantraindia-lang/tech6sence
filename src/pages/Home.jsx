@@ -705,16 +705,39 @@ function AboutSection() {
 
           {/* Bento Cards - Right Side */}
           <div className="flex flex-col gap-5 justify-center">
-            <BentoCard
-              title="An Intelligence Ecosystem"
-              description="Not just an AI vendor. Not an agency. Not a studio. We build models, platforms, products, and go-to-market systems — and stay accountable to outcomes, not deliverables."
-              icon={
-                <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
-                </svg>
-              }
-              color="blue"
-            />
+            {/* Trust Indicators Card */}
+            <div className="rounded-3xl border border-slate-100 bg-white p-7 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden">
+              {/* Subtle background gradient glow */}
+              <div className="absolute top-0 right-0 w-28 h-28 bg-[#00A86B]/5 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-28 h-28 bg-[#1746D2]/5 rounded-full blur-2xl pointer-events-none" />
+              
+              <h4 className="font-display text-lg font-extrabold text-slate-900 mb-6">
+                Trust Indicators
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  "Enterprise AI Development",
+                  "Custom AI Products",
+                  "Deep-Tech Innovation",
+                  "Full Stack Engineering",
+                  "AI Consulting",
+                  "Global Delivery",
+                  "Startup Acceleration",
+                  "Business Growth Ecosystem"
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-3 group">
+                    <span className="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-50 text-[#00A86B] shrink-0 border border-emerald-100 group-hover:scale-110 transition-transform duration-300">
+                      <svg viewBox="0 0 24 24" fill="none" className="w-3.5 h-3.5" stroke="currentColor" strokeWidth="3">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
+                    </span>
+                    <span className="font-body text-xs md:text-sm font-semibold text-slate-700 group-hover:text-slate-900 transition-colors duration-300">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
 
             <BentoCard
               title="Global AI Engineering"
@@ -746,6 +769,65 @@ function AboutSection() {
 
 // RealisticGlobeCanvas removed from Home page level
 
+function PremiumAnnouncementBar() {
+  const countries = [
+    "USA", "UK", "Canada", "Australia", "European Union", "UAE", "Singapore", "Hong Kong", "India"
+  ];
+  
+  // Duplicate list to make infinite marquee scrolling seamless
+  const duplicatedCountries = [...countries, ...countries, ...countries, ...countries];
+
+  return (
+    <div className="w-full bg-gradient-to-r from-[#03060f] via-[#091530] to-[#03060f] border-y border-[#D4AF37]/20 py-3.5 px-4 md:px-8 lg:px-12 relative z-20 shadow-[inset_0_-1px_10px_rgba(212,175,55,0.05)] overflow-hidden">
+      <div className="w-full flex flex-col lg:flex-row items-center gap-4 lg:gap-8">
+        
+        {/* Left Side: Live Radar Beacon & Statement (Static) */}
+        <div className="flex items-center gap-3.5 shrink-0 w-full lg:w-auto justify-center lg:justify-start">
+          <div className="flex items-center gap-2">
+            <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#002214] border border-[#00A86B]/60 shrink-0">
+              <span className="h-2 w-2 rounded-full bg-[#00A86B] shadow-[0_0_8px_#00A86B]" />
+            </div>
+            <span className="px-3.5 py-1 rounded-full text-[0.65rem] font-bold tracking-[0.15em] uppercase border border-[#D4AF37] text-[#D4AF37] bg-transparent whitespace-nowrap">
+              GLOBAL FOOTPRINT
+            </span>
+          </div>
+
+          <span className="font-display text-xs md:text-sm font-bold text-white tracking-wide whitespace-nowrap">
+            Trusted by Enterprises, Governments, Startups &amp; Founders
+          </span>
+          
+          {/* Vertical divider on desktop */}
+          <div className="hidden lg:block h-6 w-[1px] bg-white/10 ml-4" />
+        </div>
+
+        {/* Right Side: Countries list (Scrolling Marquee) */}
+        <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
+          <div className="flex w-max animate-announcement-marquee gap-8 items-center font-mono text-xs md:text-sm font-semibold text-[#D4AF37] tracking-wider py-1">
+            {duplicatedCountries.map((country, idx) => (
+              <div key={idx} className="flex items-center gap-8">
+                <span>{country}</span>
+                <span className="text-[#00A86B]">✦</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+
+      {/* Inline styles for this specific marquee */}
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes announcementMarquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-announcement-marquee {
+          animation: announcementMarquee 25s linear infinite;
+        }
+      `}} />
+    </div>
+  );
+}
+
 const MemoHeader = memo(Header);
 const MemoAboutSection = memo(AboutSection);
 const MemoIntelligenceStack = memo(IntelligenceStack);
@@ -768,6 +850,7 @@ export default function Home() {
     <main className="bg-bg relative">
       <MemoHeader />
       <TechHero />
+      <PremiumAnnouncementBar />
       <Suspense fallback={null}>
         <MemoAboutSection />
         <MemoIntelligenceStack />

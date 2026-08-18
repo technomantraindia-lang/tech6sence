@@ -91,7 +91,7 @@ export default function IndustriesIntroSection() {
             </p>
           </div>
 
-          <div className="overflow-hidden bg-white rounded-3xl border border-slate-200 shadow-sm max-w-5xl mx-auto">
+          <div className="overflow-hidden bg-white rounded-3xl border border-slate-200 shadow-sm max-w-[1400px] mx-auto">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
@@ -126,7 +126,7 @@ export default function IndustriesIntroSection() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1400px] mx-auto">
             {capabilities.map((cap, idx) => (
               <div key={idx} className="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm hover:border-blue-300 transition-colors group">
                 <div className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-blue-500 to-emerald-500 shrink-0 group-hover:scale-150 transition-transform" />
