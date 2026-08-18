@@ -424,7 +424,7 @@ export function SuccessStories() {
                   <span className="w-2.5 h-2.5 rounded-full bg-rose-500 shadow-md shadow-rose-500/50" />
                   The Bottleneck
                 </h4>
-                <p className="text-sm md:text-base text-slate-600 leading-relaxed font-medium pl-4 text-justify">{selectedStory.bottleneck}</p>
+                <p className="text-sm md:text-base text-slate-600 leading-relaxed font-medium pl-4">{selectedStory.bottleneck}</p>
               </div>
 
               <div className="space-y-2">
@@ -432,20 +432,20 @@ export function SuccessStories() {
                   <span className="w-2.5 h-2.5 rounded-full bg-[#1746D2] shadow-md shadow-[#1746D2]/50" />
                   Ecosystem Execution
                 </h4>
-                <p className="text-sm md:text-base text-slate-600 leading-relaxed font-medium pl-4 text-justify">{selectedStory.execution}</p>
+                <p className="text-sm md:text-base text-slate-600 leading-relaxed font-medium pl-4">{selectedStory.execution}</p>
               </div>
             </div>
 
             <div className="space-y-4 pt-6 border-t border-slate-100">
               <div className="p-5 rounded-2xl bg-emerald-50 border border-emerald-100/60 shadow-sm">
                 <h4 className="font-bold text-emerald-900 text-xs uppercase tracking-widest mb-1.5">The Commercial Result</h4>
-                <p className="text-sm md:text-base text-emerald-800 font-bold leading-relaxed text-justify">{selectedStory.result}</p>
+                <p className="text-sm md:text-base text-emerald-800 font-bold leading-relaxed">{selectedStory.result}</p>
               </div>
 
               {selectedStory.takeaway && (
                 <div className="p-5 rounded-2xl bg-[#1746D2]/10 border border-[#1746D2]/20/60 shadow-sm">
                   <h4 className="font-bold text-[#0d162a] text-xs uppercase tracking-widest mb-1.5">Key Takeaway</h4>
-                  <p className="text-sm md:text-base text-[#1233A0] font-semibold leading-relaxed text-justify">{selectedStory.takeaway}</p>
+                  <p className="text-sm md:text-base text-[#1233A0] font-semibold leading-relaxed">{selectedStory.takeaway}</p>
                 </div>
               )}
             </div>

@@ -654,7 +654,7 @@ export function FinalCTA() {
           The Next Generation of Global AI Companies Will Be Built by Visionary Founders.
         </h2>
         
-        <div className="text-slate-350 text-base md:text-lg mb-10 max-w-3xl mx-auto font-medium space-y-4 text-slate-300 leading-relaxed">
+        <div className="text-slate-350 text-base md:text-lg mb-10 max-w-3xl mx-auto font-medium space-y-4 text-slate-300 leading-relaxed text-justify">
           <p>
             Behind every transformative AI company is a founder with the courage to think differently, the ambition to solve meaningful problems, and the commitment to build something that creates lasting value.
           </p>
@@ -664,7 +664,7 @@ export function FinalCTA() {
           <p>
             Whether you're turning an idea into a startup, launching an AI product, or expanding an existing business into global markets, your journey begins with a single step.
           </p>
-          <p className="text-white font-bold text-xl mt-6">
+          <p className="text-white font-bold text-xl mt-6 text-center">
             Your Vision Deserves a World-Class Ecosystem.
           </p>
         </div>
