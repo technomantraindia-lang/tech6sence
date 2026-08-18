@@ -149,7 +149,7 @@ export default function EcosystemSection() {
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(0,168,107,0.15),transparent_60%)] pointer-events-none" />
             <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-[100px] pointer-events-none" />
             
-            <div className="relative z-10 grid lg:grid-cols-[1fr_1.2fr] gap-12 p-10 md:p-16 lg:p-20">
+            <div className="relative z-10 grid lg:grid-cols-[1fr_1.2fr] gap-12 px-5 py-10 md:p-16 lg:p-20">
               
               {/* Left Content - Features */}
               <div className="flex flex-col justify-center h-full order-2 lg:order-1 pb-8 lg:pb-0 lg:pr-8 lg:border-r border-white/10">
@@ -181,7 +181,7 @@ export default function EcosystemSection() {
                   Stop Networking. <span className="text-white">Start Unlocking Millions.</span>
                 </p>
 
-                <div className="font-body text-slate-300 text-[1.05rem] leading-relaxed space-y-5 mb-8">
+                <div className="font-body text-slate-300 text-[1.05rem] leading-relaxed space-y-5 mb-8 text-justify">
                   <p>
                     Welcome to <strong className="text-white">Business Brains</strong>—an invitation-only global syndicate reserved for elite investors, visionary entrepreneurs, and titans of industry. We operate beyond the public eye, at the absolute pinnacle of global commerce, capital, and artificial intelligence.
                   </p>
