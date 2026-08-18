@@ -224,6 +224,14 @@ export default function InnovationStories() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -314,11 +322,20 @@ export default function InnovationStories() {
 
               if (!isVisibleCard) return null;
 
-              // Transform calculations for Hand-Fan playing card effect
-              const translateX = offset * 110; // Horizontal shift
-              const rotate = offset * 8; // Fan rotation angle
-              const scale = isActive ? 1.05 : 0.9 - Math.abs(offset) * 0.05;
-              const opacity = isActive ? 1 : 0.42 - Math.abs(offset) * 0.08;
+              // Mobile: cards come from top (translateY). Desktop: fan from sides (translateX + rotate)
+              let cardTransform, cardOpacity;
+              if (isMobile) {
+                const translateY = offset * -60;
+                const scale = isActive ? 1 : 0.92 - Math.abs(offset) * 0.04;
+                cardOpacity = isActive ? 1 : 0.35 - Math.abs(offset) * 0.08;
+                cardTransform = `translateY(${translateY}px) scale(${scale})`;
+              } else {
+                const translateX = offset * 110;
+                const rotate = offset * 8;
+                const scale = isActive ? 1.05 : 0.9 - Math.abs(offset) * 0.05;
+                cardOpacity = isActive ? 1 : 0.42 - Math.abs(offset) * 0.08;
+                cardTransform = `translateX(${translateX}px) rotate(${rotate}deg) scale(${scale})`;
+              }
               const zIndex = 30 - Math.abs(offset) * 5;
 
               return (
@@ -331,10 +348,10 @@ export default function InnovationStories() {
                       : 'border-slate-200/80 shadow-[4px_4px_0px_0px_rgba(23,70,210,0.15)] hover:opacity-75'
                   }`}
                   style={{
-                    transform: `translateX(${translateX}px) rotate(${rotate}deg) scale(${scale})`,
-                    opacity: opacity,
+                    transform: cardTransform,
+                    opacity: cardOpacity,
                     zIndex: zIndex,
-                    transformOrigin: 'bottom center',
+                    transformOrigin: isMobile ? 'top center' : 'bottom center',
                     filter: isActive ? 'none' : 'brightness(0.94)',
                   }}
                 >
@@ -436,3 +453,4 @@ export default function InnovationStories() {
     </section>
   );
 }
+
