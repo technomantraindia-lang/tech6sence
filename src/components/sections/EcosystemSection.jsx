@@ -90,7 +90,7 @@ export default function EcosystemSection() {
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(23,70,210,0.15),transparent_60%)] pointer-events-none" />
             <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-[#00A86B]/10 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="relative z-10 grid lg:grid-cols-[1.2fr_1fr] gap-12 p-10 md:p-16 lg:p-20">
+            <div className="relative z-10 grid lg:grid-cols-[1.2fr_1fr] gap-12 px-5 py-10 md:p-16 lg:p-20">
               
               {/* Left Content */}
               <div className="flex flex-col items-start text-white">
