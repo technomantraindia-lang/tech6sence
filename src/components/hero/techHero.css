@@ -60,11 +60,12 @@
 
 @media (max-width: 720px) {
   .tech-hero-container {
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
-    padding: 90px 16px 20px;
+    padding: 100px 16px 80px;
     height: auto;
     min-height: auto;
+    overflow: visible;
   }
   .tech-hero-cinematic-wrapper {
     flex-direction: column;
@@ -165,7 +166,8 @@
   }
   
   .tech-hero-container {
-    padding: 80px 16px 40px;
+    padding: 80px 16px 60px;
+    overflow: visible;
   }
 }
 
@@ -225,12 +227,16 @@
 
 @media (max-width: 720px) {
   .tech-hero-visual {
-    position: relative;
+    position: absolute;
     inset: auto;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
-    margin-top: 20px;
-    z-index: 2;
-    transform: none; /* Reset on mobile */
+    height: 380px;
+    z-index: 1;
+    margin-top: 0;
+    overflow: visible;
   }
 }
 
@@ -261,13 +267,13 @@
 
 @media (max-width: 768px) {
   .tech-globe-stage {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    transform: none;
-    width: min(380px, 85vw);
-    height: min(380px, 85vw);
-    margin: 15px auto 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 380px;
+    height: 380px;
+    margin: 0;
   }
 }
 
