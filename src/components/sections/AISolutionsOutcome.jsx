@@ -101,10 +101,11 @@ const SOLUTIONS = [
   },
 ];
 
-function AccordionItem({ solution, index, isOpen, onHover, isVisible }) {
+function AccordionItem({ solution, index, isOpen, onHover, onToggle, isVisible }) {
   return (
     <div
       onMouseEnter={() => onHover(index)}
+      onClick={() => onToggle(index)}
       className="group relative transition-all duration-700 ease-out"
       style={{
         opacity: isVisible ? 1 : 0,
@@ -212,6 +213,11 @@ export default function AISolutionsOutcome() {
   const [isVisible, setIsVisible] = useState(false);
   const [openIndex, setOpenIndex] = useState(-1);
 
+  // Toggle handler for touch/click on mobile
+  const handleToggle = (index) => {
+    setOpenIndex(prev => prev === index ? -1 : index);
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -298,6 +304,7 @@ export default function AISolutionsOutcome() {
                 index={index}
                 isOpen={openIndex === index}
                 onHover={setOpenIndex}
+                onToggle={handleToggle}
                 isVisible={isVisible}
               />
             ))}
