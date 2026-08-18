@@ -300,28 +300,35 @@ export default function Header() {
                 <div key={link.href} className="flex flex-col">
                   {/* Top Level Link / Accordion Toggle */}
                   <div 
-                    className={`group flex items-center justify-between rounded-xl border-l-2 px-4 py-3 cursor-pointer transition-all ${
+                    className={`group flex items-center justify-between rounded-xl border-l-2 px-4 py-3 transition-all ${
                       active ? 'border-[#1746D2]/60 bg-[#0b1329]/20' : 'border-transparent hover:border-violet-450 hover:bg-[#040916]/40'
                     }`}
-                    onClick={() => {
-                      if (hasDropdown) toggleAccordion(link.label);
-                      else setOpen(false); // Only close if it's a direct link
-                    }}
                   >
                     {!hasDropdown ? (
-                      <Link to={link.href} className="flex items-center gap-4 flex-1">
+                      <Link to={link.href} onClick={() => setOpen(false)} className="flex items-center gap-4 flex-1 cursor-pointer">
                         <span className="font-mono text-[0.65rem] tracking-wider text-[#1746D2]">{link.num}</span>
                         <span className={`font-body text-sm font-medium ${active ? 'text-white' : 'text-slate-300 group-hover:text-white'}`}>{link.label}</span>
                       </Link>
                     ) : (
                       <div className="flex items-center justify-between flex-1">
-                        <div className="flex items-center gap-4">
+                        <Link 
+                          to={link.href} 
+                          onClick={() => setOpen(false)} 
+                          className="flex items-center gap-4 flex-1 cursor-pointer"
+                        >
                           <span className="font-mono text-[0.65rem] tracking-wider text-[#1746D2]">{link.num}</span>
                           <span className={`font-body text-sm font-medium ${active || isActiveAcc ? 'text-white' : 'text-slate-300 group-hover:text-white'}`}>{link.label}</span>
-                        </div>
-                        <svg className={`w-4 h-4 text-[#1746D2] transition-transform duration-300 ${isActiveAcc ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
+                        </Link>
+                        <button 
+                          type="button"
+                          onClick={(e) => { e.stopPropagation(); toggleAccordion(link.label); }}
+                          className="p-2 -mr-2 rounded-lg hover:bg-white/10 transition-colors cursor-pointer"
+                          aria-label={`Toggle ${link.label} submenu`}
+                        >
+                          <svg className={`w-4 h-4 text-[#1746D2] transition-transform duration-300 ${isActiveAcc ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
                       </div>
                     )}
                   </div>
