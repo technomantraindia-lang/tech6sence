@@ -665,23 +665,23 @@ function AboutSection() {
             </h3>
             
             {/* Animated gradient border card */}
-            <div className="animated-gradient-border group relative rounded-2xl px-8 py-8">
-              <p className="mb-5 font-body text-base leading-relaxed text-slate-600 md:text-lg relative z-10">
+            <div className="animated-gradient-border group relative rounded-2xl px-4 sm:px-6 md:px-8 py-8">
+              <p className="mb-5 font-body text-base leading-relaxed text-slate-600 md:text-lg relative z-10 text-justify">
                 TECH6SENSE AI was founded on a simple conviction: the organizations that win the next decade won't just use AI — they'll be architected around it. We are a global AI development, full-stack IT services, and deep-tech product engineering company operating globally.
               </p>
-              <p className="mb-5 font-body text-base leading-relaxed text-slate-600 md:text-lg relative z-10">
+              <p className="mb-5 font-body text-base leading-relaxed text-slate-600 md:text-lg relative z-10 text-justify">
                 TECH6SENSE AI is a next-generation Artificial Intelligence company specializing in enterprise AI development, intelligent software engineering, deep-tech product innovation, AI-powered automation, and global technology consulting.
               </p>
-              <p className="mb-5 font-body text-base leading-relaxed text-slate-600 md:text-lg relative z-10">
+              <p className="mb-5 font-body text-base leading-relaxed text-slate-600 md:text-lg relative z-10 text-justify">
                 We don't hand off strategy decks and disappear. We build — models, platforms, products, and go-to-market systems — and we stay accountable to outcomes, not deliverables.
               </p>
-              <p className="mb-5 font-body text-base leading-relaxed text-slate-600 md:text-lg relative z-10">
+              <p className="mb-5 font-body text-base leading-relaxed text-slate-600 md:text-lg relative z-10 text-justify">
                 We partner with ambitious organizations to transform complex ideas into intelligent products, scalable platforms, and industry-defining solutions that create measurable business value.
               </p>
-              <p className="mb-5 font-body text-base leading-relaxed text-slate-600 md:text-lg relative z-10">
+              <p className="mb-5 font-body text-base leading-relaxed text-slate-600 md:text-lg relative z-10 text-justify">
                 Whether you're modernizing enterprise operations, building a groundbreaking AI product, launching a technology startup, or creating intelligent infrastructure, our multidisciplinary teams deliver world-class engineering from strategy through deployment.
               </p>
-              <p className="font-body text-base leading-relaxed text-slate-600 md:text-lg relative z-10">
+              <p className="font-body text-base leading-relaxed text-slate-600 md:text-lg relative z-10 text-justify">
                 Beyond client engagements, TECH6SENSE AI operates two ecosystem ventures that extend our expertise outward: <strong className="text-slate-800 font-bold">Visionary Founders</strong>, which equips entrepreneurs to launch their own AI companies, and <strong className="text-slate-800 font-bold">Business Brains</strong>, a private global circle connecting investors and operators who move markets.
               </p>
 
