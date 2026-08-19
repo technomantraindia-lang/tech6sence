@@ -126,14 +126,12 @@ export default function MemberBenefits() {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span 
             className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-4 block"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             MEMBER VALUE
           </span>
 
           <h2 
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 mb-6"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             Strategic Value for Every Seat at the Table
           </h2>
@@ -153,7 +151,6 @@ export default function MemberBenefits() {
                       ? 'bg-slate-950 text-white shadow-md' 
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
                   }`}
-                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                   role="tab"
                   aria-selected={isActive}
                 >
@@ -181,12 +178,11 @@ export default function MemberBenefits() {
 
                 <h3 
                   className="text-xl font-bold text-slate-900 mb-4 group-hover:text-cyan-600 transition-colors"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 >
                   {card.title}
                 </h3>
 
-                <ul className="space-y-2.5 text-slate-600 text-sm leading-relaxed" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                <ul className="space-y-2.5 text-slate-600 text-sm leading-relaxed">
                   {card.bullets.map((b, i) => (
                     <li key={i} className="flex items-start gap-2.5">
                       <span className="text-cyan-600 font-bold shrink-0">✓</span>

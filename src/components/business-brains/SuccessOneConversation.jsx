@@ -21,21 +21,18 @@ export default function SuccessOneConversation() {
         
         <span 
           className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-4 block"
-          style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
           ONE CONVERSATION
         </span>
 
         <h2 
           className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 mb-4"
-          style={{ fontFamily: "'Space Grotesk', sans-serif" }}
         >
           Success Starts With One Conversation
         </h2>
 
         <p 
           className="text-slate-600 text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-12 font-normal"
-          style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
           The next conversation inside BUSINESS BRAINS could lead to:
         </p>
@@ -46,7 +43,6 @@ export default function SuccessOneConversation() {
             <div 
               key={idx}
               className="px-6 py-3.5 rounded-full bg-white border border-slate-200 hover:border-cyan-500/40 text-slate-800 text-sm font-semibold transition-all duration-300 shadow-sm hover:-translate-y-0.5"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               <span className="text-cyan-600 mr-2 font-mono">✦</span>
               {opp}

@@ -36,21 +36,18 @@ export default function BusinessBrainsPromise() {
           <div className="max-w-3xl">
             <span 
               className="font-mono text-xs font-bold text-cyan-400 uppercase tracking-[0.25em] mb-3 block"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               THE PROMISE
             </span>
 
             <h2 
               className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-tight"
-              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             >
               THE BUSINESS BRAINS PROMISE
             </h2>
 
             <p 
               className="text-slate-300 text-base md:text-lg leading-relaxed font-normal"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               Every interaction, gathering, and initiative within BUSINESS BRAINS is deliberately designed to deliver extraordinary strategic value.
             </p>
@@ -107,7 +104,6 @@ export default function BusinessBrainsPromise() {
                 {/* Title */}
                 <h3 
                   className="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 >
                   {item.title}
                 </h3>
@@ -115,7 +111,6 @@ export default function BusinessBrainsPromise() {
                 {/* Description */}
                 <p 
                   className="text-slate-300 text-sm leading-relaxed font-normal"
-                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                 >
                   {item.desc}
                 </p>

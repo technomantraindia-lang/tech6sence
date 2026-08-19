@@ -60,21 +60,18 @@ export default function WhyEliteJoin() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 
             className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-4 block"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             THE THREE PILLARS
           </span>
 
           <h2 
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 mb-4"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             Why the Elite Join
           </h2>
 
           <p 
             className="text-slate-600 text-base md:text-lg leading-relaxed font-normal"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             We provide our members with an insurmountable competitive advantage through three distinct pillars.
           </p>
@@ -98,14 +95,12 @@ export default function WhyEliteJoin() {
 
                 <h3 
                   className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-cyan-600 transition-colors"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 >
                   {pillar.title}
                 </h3>
 
                 <p 
                   className="text-slate-600 text-sm leading-relaxed mb-8 font-normal"
-                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                 >
                   {pillar.desc}
                 </p>

@@ -29,21 +29,18 @@ export default function FlagshipEvent() {
 
           <span 
             className="font-mono text-xs font-bold text-cyan-400 uppercase tracking-[0.25em] mb-2 block"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             FLAGSHIP EXPERIENCE
           </span>
           
           <h2 
             className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-3"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             Annual Business Brains Summit
           </h2>
           
           <p 
             className="text-sm md:text-base text-slate-300 max-w-2xl leading-relaxed mb-8"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             An annual gathering of global leaders, institutional investors, sovereign funds, AI pioneers, and enterprise founders.
           </p>
@@ -60,7 +57,6 @@ export default function FlagshipEvent() {
                 </div>
                 <div 
                   className="text-xs md:text-sm font-bold text-white group-hover:text-cyan-300 transition-colors"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 >
                   {feat.title}
                 </div>

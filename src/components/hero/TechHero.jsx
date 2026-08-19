@@ -16,8 +16,8 @@ export default function TechHero() {
       {/* Dark gradient overlay to blend into the bottom content seamlessly */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#03060f]/60 via-transparent to-[#03060f] pointer-events-none z-[1]" />
 
-      {/* Mobile-only dark overlay for enhanced contrast & readability */}
-      <div className="block md:hidden absolute inset-0 bg-gradient-to-b from-[#03060f]/85 via-[#03060f]/65 to-[#03060f]/95 pointer-events-none z-[2] backdrop-blur-[1px]" />
+      {/* Mobile-only subtle semi-transparent overlay */}
+      <div className="block md:hidden absolute inset-0 bg-gradient-to-b from-[#03060f]/35 via-transparent to-[#03060f]/60 pointer-events-none z-[2]" />
 
       {/* Dot pattern overlay for aesthetic grids */}
       <div className="tech-hero-grid" />

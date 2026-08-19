@@ -51,14 +51,12 @@ export default function SyndicatePrivileges() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 
             className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-4 block"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             PRIVATE ACCESS
           </span>
 
           <h2 
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             Syndicate Privileges
           </h2>
@@ -86,14 +84,12 @@ export default function SyndicatePrivileges() {
               <div>
                 <h3 
                   className="text-xl font-bold text-slate-900 mb-3 group-hover:text-cyan-600 transition-colors"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 >
                   {priv.title}
                 </h3>
 
                 <p 
                   className="text-slate-600 text-sm leading-relaxed font-normal"
-                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                 >
                   {priv.desc}
                 </p>

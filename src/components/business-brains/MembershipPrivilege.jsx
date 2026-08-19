@@ -19,14 +19,12 @@ export default function MembershipPrivilege() {
           
           <span 
             className="font-mono text-xs font-bold text-cyan-400 uppercase tracking-[0.25em] mb-4 block"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             MEMBERSHIP
           </span>
 
           <h2 
             className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             Membership Is a Privilege, Not a Product.
           </h2>
@@ -39,7 +37,6 @@ export default function MembershipPrivilege() {
 
           <p 
             className="text-slate-300 text-base md:text-lg leading-relaxed mb-16 font-normal max-w-3xl mx-auto space-y-4"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             BUSINESS BRAINS does not operate on open enrollment. Every application undergoes comprehensive review by our syndicate committee. Admission is strictly aligned with leadership standards, proven achievement, and long-term vision. Our objective is not rapid volume growth, but preserving absolute integrity, trust density, and exclusivity for our global circle.
           </p>
@@ -53,13 +50,11 @@ export default function MembershipPrivilege() {
                 <div className="font-mono text-xs text-cyan-400 font-bold mb-3">0{idx + 1}</div>
                 <h3 
                   className="text-xl font-bold text-white mb-2"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 >
                   {pt.title}
                 </h3>
                 <p 
                   className="text-slate-300 text-sm leading-relaxed font-normal"
-                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                 >
                   {pt.desc}
                 </p>

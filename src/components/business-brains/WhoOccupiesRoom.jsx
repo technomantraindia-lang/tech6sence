@@ -36,21 +36,18 @@ export default function WhoOccupiesRoom() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 
             className="font-mono text-xs font-bold text-cyan-400 uppercase tracking-[0.25em] mb-4 block"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             THE GLOBAL CIRCLE
           </span>
 
           <h2 
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             Who Occupies the Room
           </h2>
 
           <p 
             className="text-slate-300 text-base md:text-lg leading-relaxed font-normal"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             Our private network spans USA, UK, Australia, Canada, India, European Union, UAE, Singapore, and Hong Kong.
           </p>
@@ -69,12 +66,11 @@ export default function WhoOccupiesRoom() {
 
                 <h3 
                   className="text-2xl font-bold text-white mb-6"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 >
                   {prof.title}
                 </h3>
 
-                <div className="space-y-4 text-xs md:text-sm text-slate-300 font-normal leading-relaxed" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                <div className="space-y-4 text-xs md:text-sm text-slate-300 font-normal leading-relaxed">
                   <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
                     <span className="font-bold text-white block mb-1">Member Tier:</span>
                     <span className="text-slate-300">{prof.typicalProfile}</span>

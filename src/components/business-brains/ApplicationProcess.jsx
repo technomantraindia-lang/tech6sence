@@ -50,14 +50,12 @@ export default function ApplicationProcess() {
         
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 
-            className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-4 block" 
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+            className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-4 block"
           >
             THE INDUCTION PROTOCOL
           </span>
           <h2 
-            className="text-3xl md:text-5xl font-extrabold text-slate-950 mb-3" 
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+            className="text-3xl md:text-5xl font-extrabold text-slate-950 mb-3"
           >
             A Private Four-Stage Review
           </h2>
@@ -83,15 +81,13 @@ export default function ApplicationProcess() {
               </span>
               
               <h3 
-                className="text-xl font-bold text-slate-900 mb-2 group-hover:text-cyan-600 transition-colors" 
-                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                className="text-xl font-bold text-slate-900 mb-2 group-hover:text-cyan-600 transition-colors"
               >
                 {stage.title}
               </h3>
               
               <p 
-                className="text-sm text-slate-600 leading-relaxed max-w-[220px] font-normal" 
-                style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                className="text-sm text-slate-600 leading-relaxed max-w-[220px] font-normal"
               >
                 {stage.desc}
               </p>

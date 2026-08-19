@@ -76,14 +76,12 @@ export default function WhatHappensInside() {
           <div className="max-w-2xl">
             <span 
               className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-3 block"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               INSIDE THE CIRCLE
             </span>
 
             <h2 
               className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-950 tracking-tight"
-              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             >
               What Happens Inside Business Brains
             </h2>
@@ -137,7 +135,6 @@ export default function WhatHappensInside() {
                 {/* Title */}
                 <h3 
                   className="text-xl font-bold text-slate-950 mb-3 group-hover:text-cyan-600 transition-colors"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 >
                   {item.title}
                 </h3>
@@ -145,7 +142,6 @@ export default function WhatHappensInside() {
                 {/* Description */}
                 <p 
                   className="text-slate-600 text-sm leading-relaxed font-normal"
-                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                 >
                   {item.desc}
                 </p>

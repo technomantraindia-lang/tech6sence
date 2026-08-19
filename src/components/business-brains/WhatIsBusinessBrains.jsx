@@ -35,19 +35,16 @@ export default function WhatIsBusinessBrains() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 
             className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-widest mb-3 block"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             What is Business Brains?
           </span>
           <h2 
-            className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-950" 
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+            className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-950"
           >
             Three Pillars of Network Synergy
           </h2>
           <p 
-            className="font-body text-slate-500 leading-relaxed mt-4 font-medium" 
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+            className="font-body text-slate-500 leading-relaxed mt-4 font-medium"
           >
             We operate as a persistent network that active members query for co-investment, technology consultation, and board level scaling.
           </p>
@@ -61,20 +58,17 @@ export default function WhatIsBusinessBrains() {
             >
               <div>
                 <h3 
-                  className="font-display text-xl font-bold text-slate-900 mb-1" 
-                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                  className="font-display text-xl font-bold text-slate-900 mb-1"
                 >
                   {coh.title}
                 </h3>
                 <span 
-                  className="font-mono text-[0.65rem] font-bold text-cyan-600 tracking-wider uppercase mb-6 block" 
-                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                  className="font-mono text-[0.65rem] font-bold text-cyan-600 tracking-wider uppercase mb-6 block"
                 >
                   {coh.highlight}
                 </span>
                 <p 
-                  className="font-body text-xs text-slate-500 leading-relaxed mb-8 font-medium" 
-                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                  className="font-body text-xs text-slate-500 leading-relaxed mb-8 font-medium"
                 >
                   {coh.desc}
                 </p>
@@ -83,8 +77,7 @@ export default function WhatIsBusinessBrains() {
                 {coh.points.map((pt, i) => (
                   <li 
                     key={i} 
-                    className="flex items-center gap-2.5 text-xs text-slate-600 font-bold" 
-                    style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                    className="flex items-center gap-2.5 text-xs text-slate-600 font-bold"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
                     {pt}

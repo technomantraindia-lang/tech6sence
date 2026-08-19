@@ -11,14 +11,12 @@ export default function NetworkCTA() {
         
         <span 
           className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-3 block"
-          style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
           PRIVATE CONSIDERATION
         </span>
 
         <h2 
           className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 mb-3 max-w-4xl mx-auto leading-tight"
-          style={{ fontFamily: "'Space Grotesk', sans-serif" }}
         >
           Millions Are Being Unlocked.
         </h2>
@@ -29,7 +27,6 @@ export default function NetworkCTA() {
 
         <p 
           className="text-slate-600 text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-8 font-normal"
-          style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
           The world's most transformative companies and high-yield syndicates are formed inside private circles. Request a board review today to present your credentials to the Business Brains Syndicate.
         </p>
@@ -38,7 +35,6 @@ export default function NetworkCTA() {
           <a 
             href="#application-entry"
             className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-500 hover:to-blue-600 text-white font-bold text-sm tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:-translate-y-0.5"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             REQUEST BOARD REVIEW
           </a>

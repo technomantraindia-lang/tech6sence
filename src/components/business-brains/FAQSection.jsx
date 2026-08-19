@@ -73,14 +73,12 @@ export default function FAQSection() {
         <div className="text-center mb-16">
           <span 
             className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-4 block"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             PRIVATE MEMBERSHIP FAQ
           </span>
 
           <h2 
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             Questions About the Circle
           </h2>
@@ -98,7 +96,6 @@ export default function FAQSection() {
                 <button
                   onClick={() => toggleAccordion(idx)}
                   className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-slate-900 hover:text-cyan-700 transition-colors"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                   aria-expanded={isOpen}
                 >
                   <span className="text-base md:text-lg">{faq.q}</span>
@@ -108,7 +105,7 @@ export default function FAQSection() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-2 text-slate-600 text-sm md:text-base leading-relaxed border-t border-slate-200/80 font-normal" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                  <div className="px-6 pb-6 pt-2 text-slate-600 text-sm md:text-base leading-relaxed border-t border-slate-200/80 font-normal">
                     {faq.a}
                   </div>
                 )}

@@ -78,14 +78,12 @@ export default function InfluenceWithoutBorders() {
         <div className="text-center max-w-4xl mx-auto mb-16 space-y-4">
           <span 
             className="font-mono text-xs font-bold text-cyan-400 uppercase tracking-[0.25em] mb-2 block"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             GLOBAL REACH
           </span>
 
           <h2 
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             Influence Without Borders
           </h2>
@@ -96,7 +94,6 @@ export default function InfluenceWithoutBorders() {
 
           <p 
             className="text-slate-300 text-sm md:text-base leading-relaxed font-normal max-w-3xl mx-auto"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             A localized network limits your net worth. Business Brains operates seamlessly across the world’s most powerful financial and technological hubs, providing our members with instant, frictionless access to cross-border capital, strategic partnerships, and market entry. Our active syndicate spans:
           </p>
@@ -221,7 +218,6 @@ export default function InfluenceWithoutBorders() {
 
                       <h3 
                         className="text-xl font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors"
-                        style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                       >
                         {reg.name}
                       </h3>
@@ -296,7 +292,6 @@ export default function InfluenceWithoutBorders() {
 
                       <h3 
                         className="text-xl font-bold text-white mb-1 group-hover:text-[#1746D2]/80 transition-colors"
-                        style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                       >
                         {reg.name}
                       </h3>
@@ -324,7 +319,6 @@ export default function InfluenceWithoutBorders() {
           <div className="text-center max-w-4xl mx-auto mt-16 pt-8 border-t border-white/10">
             <p 
               className="text-slate-300 text-sm md:text-base leading-relaxed font-normal max-w-3xl mx-auto"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               Through our encrypted network, members execute cross-border expansions, secure international capital, and establish global supply chains with unprecedented speed.
             </p>

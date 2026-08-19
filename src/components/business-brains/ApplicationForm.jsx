@@ -45,19 +45,19 @@ export default function ApplicationForm() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
               </span>
-              <span className="font-mono text-[0.65rem] font-bold uppercase tracking-widest" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              <span className="font-mono text-[0.65rem] font-bold uppercase tracking-widest">
                 Applications Open
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
               Join Business <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-[#1746D2]">
                 Brains Community
               </span>
             </h2>
             
-            <p className="text-lg text-slate-300 max-w-lg mb-12 leading-relaxed" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+            <p className="text-lg text-slate-300 max-w-lg mb-12 leading-relaxed">
               Our committee reviews applications on a rolling basis to ensure the highest quality network for our members.
             </p>
 
@@ -71,8 +71,8 @@ export default function ApplicationForm() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-white font-bold text-lg mb-1" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Strict Confidentiality</h4>
-                  <p className="text-slate-400 text-sm leading-relaxed" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Your data is securely encrypted and never shared with third parties.</p>
+                  <h4 className="text-white font-bold text-lg mb-1">Strict Confidentiality</h4>
+                  <p className="text-slate-400 text-sm leading-relaxed">Your data is securely encrypted and never shared with third parties.</p>
                 </div>
               </div>
 
@@ -83,8 +83,8 @@ export default function ApplicationForm() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-white font-bold text-lg mb-1" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Vetted Network</h4>
-                  <p className="text-slate-400 text-sm leading-relaxed" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Every member goes through a strict verification process for community fit.</p>
+                  <h4 className="text-white font-bold text-lg mb-1">Vetted Network</h4>
+                  <p className="text-slate-400 text-sm leading-relaxed">Every member goes through a strict verification process for community fit.</p>
                 </div>
               </div>
             </div>
@@ -101,13 +101,13 @@ export default function ApplicationForm() {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-[0.65rem] font-bold text-cyan-400 uppercase tracking-widest" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Full Name *</label>
+                    <label className="text-[0.65rem] font-bold text-cyan-400 uppercase tracking-widest">Full Name *</label>
                     <input required type="text" name="name" value={formData.name} onChange={handleChange} 
                            className="w-full bg-slate-950/50 border border-slate-800 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all hover:border-slate-600" 
                            placeholder="John Doe" />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[0.65rem] font-bold text-cyan-400 uppercase tracking-widest" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Email Address *</label>
+                    <label className="text-[0.65rem] font-bold text-cyan-400 uppercase tracking-widest">Email Address *</label>
                     <input required type="email" name="email" value={formData.email} onChange={handleChange} 
                            className="w-full bg-slate-950/50 border border-slate-800 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all hover:border-slate-600" 
                            placeholder="john@company.com" />
@@ -116,13 +116,13 @@ export default function ApplicationForm() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-[0.65rem] font-bold text-cyan-400 uppercase tracking-widest" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Phone Number</label>
+                    <label className="text-[0.65rem] font-bold text-cyan-400 uppercase tracking-widest">Phone Number</label>
                     <input type="tel" name="phone" value={formData.phone} onChange={handleChange} 
                            className="w-full bg-slate-950/50 border border-slate-800 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all hover:border-slate-600" 
                            placeholder="+1 (555) 000-0000" />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[0.65rem] font-bold text-cyan-400 uppercase tracking-widest" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>LinkedIn Profile *</label>
+                    <label className="text-[0.65rem] font-bold text-cyan-400 uppercase tracking-widest">LinkedIn Profile *</label>
                     <input required type="url" name="linkedin" value={formData.linkedin} onChange={handleChange} 
                            className="w-full bg-slate-950/50 border border-slate-800 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all hover:border-slate-600" 
                            placeholder="https://linkedin.com/in/..." />
@@ -131,13 +131,13 @@ export default function ApplicationForm() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-[0.65rem] font-bold text-cyan-400 uppercase tracking-widest" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Company Name</label>
+                    <label className="text-[0.65rem] font-bold text-cyan-400 uppercase tracking-widest">Company Name</label>
                     <input type="text" name="company" value={formData.company} onChange={handleChange} 
                            className="w-full bg-slate-950/50 border border-slate-800 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all hover:border-slate-600" 
                            placeholder="Acme Corp" />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[0.65rem] font-bold text-cyan-400 uppercase tracking-widest" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Job Title / Role</label>
+                    <label className="text-[0.65rem] font-bold text-cyan-400 uppercase tracking-widest">Job Title / Role</label>
                     <input type="text" name="role" value={formData.role} onChange={handleChange} 
                            className="w-full bg-slate-950/50 border border-slate-800 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all hover:border-slate-600" 
                            placeholder="Founder / CEO" />
@@ -145,7 +145,7 @@ export default function ApplicationForm() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[0.65rem] font-bold text-cyan-400 uppercase tracking-widest" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Primary Goals *</label>
+                  <label className="text-[0.65rem] font-bold text-cyan-400 uppercase tracking-widest">Primary Goals *</label>
                   <textarea required name="goals" value={formData.goals} onChange={handleChange} rows={4} 
                             className="w-full bg-slate-950/50 border border-slate-800 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all hover:border-slate-600 resize-none" 
                             placeholder="What are you hoping to achieve by joining Business Brains?" />
@@ -157,7 +157,7 @@ export default function ApplicationForm() {
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-[#1746D2] opacity-0 transition-opacity duration-300 group-hover/btn:opacity-100" />
                   <div className="relative flex items-center justify-center gap-2 rounded-xl bg-slate-950 px-8 py-4 transition-all group-hover/btn:bg-opacity-0">
-                    <span className="font-bold text-white text-sm tracking-wide" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                    <span className="font-bold text-white text-sm tracking-wide">
                       Submit Application
                     </span>
                     <svg className="w-4 h-4 text-white transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

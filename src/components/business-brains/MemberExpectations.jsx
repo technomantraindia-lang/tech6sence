@@ -39,21 +39,18 @@ export default function MemberExpectations() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 
             className="font-mono text-xs font-bold text-cyan-400 uppercase tracking-[0.25em] mb-4 block"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             THE STANDARD
           </span>
 
           <h2 
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             THE BUSINESS BRAINS STANDARD
           </h2>
 
           <p 
             className="text-slate-300 text-base md:text-lg leading-relaxed font-normal"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             Every member is expected to uphold the values that define our institution.
           </p>
@@ -72,14 +69,12 @@ export default function MemberExpectations() {
 
               <h3 
                 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors"
-                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               >
                 {std.title}
               </h3>
 
               <p 
                 className="text-slate-300 text-sm leading-relaxed font-normal"
-                style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
               >
                 {std.desc}
               </p>

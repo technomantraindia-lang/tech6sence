@@ -59,7 +59,7 @@ export default function HowItWorks() {
         
         {/* Left Side: Steps */}
         <div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-12" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-12">
             How It Works
           </h2>
           <div className="space-y-10 relative">
@@ -74,13 +74,13 @@ export default function HowItWorks() {
                 </div>
                 
                 <div className="pt-2">
-                  <span className="font-mono text-sm font-bold text-cyan-600 mb-1 block" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                  <span className="font-mono text-sm font-bold text-cyan-600 mb-1 block">
                     STEP {step.num}
                   </span>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-slate-500 text-sm leading-relaxed" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                  <p className="text-slate-500 text-sm leading-relaxed">
                     {step.desc}
                   </p>
                 </div>
@@ -95,7 +95,7 @@ export default function HowItWorks() {
             {/* Decorative element */}
             <div className="absolute -top-12 -right-12 w-48 h-48 bg-[#1746D2]/10 rounded-full blur-[60px] pointer-events-none" />
             
-            <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-8 relative z-10" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-8 relative z-10">
               Member Expectations
             </h2>
             
@@ -107,7 +107,7 @@ export default function HowItWorks() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="text-slate-700 font-medium" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                  <span className="text-slate-700 font-medium">
                     {exp}
                   </span>
                 </li>
@@ -115,16 +115,15 @@ export default function HowItWorks() {
             </ul>
 
             <div className="mt-12 pt-10 border-t border-slate-200 relative z-10">
-              <h3 className="text-lg font-bold text-slate-900 mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              <h3 className="text-lg font-bold text-slate-900 mb-4">
                 Ready to Transform Your Network?
               </h3>
-              <p className="text-sm text-slate-500 mb-6" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              <p className="text-sm text-slate-500 mb-6">
                 Apply now and join the community where capital meets innovation.
               </p>
               <a 
                 href="#business-brain-commu" 
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-cyan-600 text-white rounded-xl font-bold text-sm hover:bg-cyan-700 transition-colors"
-                style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
               >
                 Apply for Membership
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

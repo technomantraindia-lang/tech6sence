@@ -307,7 +307,7 @@ export default function InnovationStories() {
           onMouseLeave={() => setIsPaused(false)}
         >
           {/* Card Container */}
-          <div className="relative w-full max-w-[580px] h-[400px] md:h-[440px] flex items-center justify-center">
+          <div className="relative w-full max-w-[560px] md:max-w-[620px] h-[440px] md:h-[460px] mx-auto">
             {STORIES.map((story, index) => {
               // Calculate offset relative to active index (-2, -1, 0, 1, 2)
               let offset = index - currentIndex;
@@ -325,59 +325,89 @@ export default function InnovationStories() {
               // Mobile: cards come from top (translateY). Desktop: fan from sides (translateX + rotate)
               let cardTransform, cardOpacity;
               if (isMobile) {
-                const translateY = offset * -60;
+                const translateY = offset * -50;
                 const scale = isActive ? 1 : 0.92 - Math.abs(offset) * 0.04;
                 cardOpacity = isActive ? 1 : 0.35 - Math.abs(offset) * 0.08;
                 cardTransform = `translateY(${translateY}px) scale(${scale})`;
               } else {
                 const translateX = offset * 110;
-                const rotate = offset * 8;
-                const scale = isActive ? 1.05 : 0.9 - Math.abs(offset) * 0.05;
+                const rotate = offset * 7;
+                const scale = isActive ? 1.02 : 0.9 - Math.abs(offset) * 0.05;
                 cardOpacity = isActive ? 1 : 0.42 - Math.abs(offset) * 0.08;
                 cardTransform = `translateX(${translateX}px) rotate(${rotate}deg) scale(${scale})`;
               }
               const zIndex = 30 - Math.abs(offset) * 5;
 
+              // Theme color styles per card
+              const isBlue = story.accent === '#1746D2';
+              const isGreen = story.accent === '#00A86B';
+              const isGold = story.accent === '#D4AF37';
+
+              const cardBg = isBlue
+                ? 'bg-[#F8FAFF]'
+                : isGreen
+                ? 'bg-[#F6FCF9]'
+                : 'bg-[#FFFCF5]';
+
+              const cardBorder = isActive
+                ? isBlue
+                  ? 'border-[#1746D2]/50 shadow-[6px_6px_0px_0px_rgba(23,70,210,0.35)] ring-2 ring-[#1746D2]/20'
+                  : isGreen
+                  ? 'border-[#00A86B]/50 shadow-[6px_6px_0px_0px_rgba(0,168,107,0.35)] ring-2 ring-[#00A86B]/20'
+                  : 'border-[#D4AF37]/60 shadow-[6px_6px_0px_0px_rgba(212,175,55,0.4)] ring-2 ring-[#D4AF37]/25'
+                : isBlue
+                ? 'border-blue-200/80 shadow-[4px_4px_0px_0px_rgba(23,70,210,0.12)] hover:opacity-85'
+                : isGreen
+                ? 'border-emerald-200/80 shadow-[4px_4px_0px_0px_rgba(0,168,107,0.12)] hover:opacity-85'
+                : 'border-amber-200/80 shadow-[4px_4px_0px_0px_rgba(212,175,55,0.15)] hover:opacity-85';
+
+              const badgeBg = isBlue
+                ? 'bg-[#1746D2]/10 text-[#1746D2] border border-[#1746D2]/25'
+                : isGreen
+                ? 'bg-[#00A86B]/10 text-[#00A86B] border border-[#00A86B]/25'
+                : 'bg-[#D4AF37]/15 text-[#9e7c13] border border-[#D4AF37]/35';
+
+              const taglineColor = isBlue
+                ? 'text-[#1746D2]'
+                : isGreen
+                ? 'text-[#00A86B]'
+                : 'text-[#9e7c13]';
+
+              const topBarLine = isBlue
+                ? 'bg-[#1746D2]'
+                : isGreen
+                ? 'bg-[#00A86B]'
+                : 'bg-[#D4AF37]';
+
               return (
                 <div
                   key={story.id}
                   onClick={() => setCurrentIndex(index)}
-                  className={`absolute top-0 w-full rounded-[2.2rem] p-7 md:p-9 border transition-all duration-700 cubic-bezier(0.16,1,0.3,1) cursor-pointer select-none bg-white ${
-                    isActive
-                      ? 'border-[#1746D2]/40 shadow-[6px_6px_0px_0px_rgba(23,70,210,0.4)] ring-2 ring-[#1746D2]/20'
-                      : 'border-slate-200/80 shadow-[4px_4px_0px_0px_rgba(23,70,210,0.15)] hover:opacity-75'
-                  }`}
+                  className={`absolute top-0 left-0 w-full h-full rounded-[2.2rem] p-7 md:p-8 border transition-all duration-700 cubic-bezier(0.16,1,0.3,1) cursor-pointer select-none overflow-hidden flex flex-col justify-between ${cardBg} ${cardBorder}`}
                   style={{
                     transform: cardTransform,
                     opacity: cardOpacity,
                     zIndex: zIndex,
                     transformOrigin: isMobile ? 'top center' : 'bottom center',
-                    filter: isActive ? 'none' : 'brightness(0.94)',
+                    filter: isActive ? 'none' : 'brightness(0.96)',
                   }}
                 >
-                  {/* Playing Card Top Bar: Rank & Suit */}
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-5">
-                    <div className="flex items-center gap-2">
-                      <span className={`font-mono text-xl font-extrabold ${story.suitColor}`}>
-                        {story.suit}
-                      </span>
-                      <span className="font-mono text-xs font-bold uppercase tracking-widest text-slate-400">
-                        CARD {story.id.toString().padStart(2, '0')} / {STORIES.length.toString().padStart(2, '0')}
-                      </span>
+                  {/* Top Colored Accent Stripe */}
+                  <div className={`absolute top-0 left-0 right-0 h-1.5 ${topBarLine}`} />
+
+                  {/* Top Bar: Location & Tagline */}
+                  <div className="flex items-center justify-between border-b border-slate-200/60 pb-3.5 mb-4 pt-1">
+                    <div className={`font-mono text-[0.7rem] md:text-xs font-extrabold uppercase tracking-wider ${taglineColor}`}>
+                      {story.tagline}
                     </div>
 
-                    <div className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-mono text-[0.72rem] font-extrabold uppercase tracking-wider">
+                    <div className={`px-3 py-1 rounded-full font-mono text-[0.72rem] font-extrabold uppercase tracking-wider ${badgeBg}`}>
                       {story.location}
                     </div>
                   </div>
 
-                  {/* Category Tagline */}
-                  <div className="font-mono text-[0.7rem] md:text-xs font-bold uppercase tracking-wider text-[#1746D2] mb-2">
-                    {story.tagline}
-                  </div>
-
                   {/* Story Title */}
-                  <h3 className="font-display text-[1.15rem] md:text-[1.35rem] font-bold text-slate-900 leading-snug mb-4">
+                  <h3 className="font-display text-[1.15rem] md:text-[1.35rem] font-bold text-slate-900 leading-snug mb-3">
                     {story.title}
                   </h3>
 
@@ -387,7 +417,7 @@ export default function InnovationStories() {
                   </blockquote>
 
                   {/* Client Info */}
-                  <div className="flex items-center justify-between border-t border-slate-100 pt-4 mt-auto">
+                  <div className="flex items-center justify-between border-t border-slate-200/60 pt-4 mt-auto">
                     <div>
                       <div className="font-display text-sm font-extrabold text-slate-900">
                         {story.client}
@@ -397,9 +427,9 @@ export default function InnovationStories() {
                       </div>
                     </div>
 
-                    {/* Bottom Suit Emblem */}
-                    <div className={`font-mono text-2xl font-black ${story.suitColor} opacity-30`}>
-                      {story.suit}
+                    {/* Clean Verified Enterprise Client Badge */}
+                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100/80 border border-slate-200 text-[0.68rem] font-bold font-mono text-slate-600 uppercase tracking-wider">
+                      <span>✓ VERIFIED</span>
                     </div>
                   </div>
                 </div>

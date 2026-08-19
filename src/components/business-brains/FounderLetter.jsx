@@ -12,14 +12,12 @@ export default function FounderLetter() {
         
         <span 
           className="font-mono text-xs font-bold text-cyan-400 uppercase tracking-[0.25em] mb-4 block"
-          style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
           FROM THE FOUNDER
         </span>
 
         <h2 
           className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-3"
-          style={{ fontFamily: "'Space Grotesk', sans-serif" }}
         >
           A Letter from the Founder
         </h2>
@@ -44,14 +42,12 @@ export default function FounderLetter() {
 
             <h3 
               className="text-2xl font-bold text-white mb-1"
-              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             >
               Chintan
             </h3>
 
             <p 
               className="text-xs font-mono text-cyan-400 uppercase tracking-wider"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               Founder of TECH6SENSE AI
             </p>
@@ -66,7 +62,6 @@ export default function FounderLetter() {
 
             <div 
               className="text-base md:text-xl text-slate-200 leading-relaxed font-normal space-y-4 text-justify"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               <p className="font-medium text-white">
                 BUSINESS BRAINS was born out of a fundamental realization: true innovation and unprecedented wealth creation happen when strategic capital, technical supremacy, and visionary leadership collide in an environment of absolute trust.
@@ -80,7 +75,6 @@ export default function FounderLetter() {
             <div className="pt-6 border-t border-white/10 flex items-center justify-between">
               <div 
                 className="font-serif italic text-2xl md:text-3xl text-cyan-400 tracking-wider font-bold"
-                style={{ fontFamily: "Georgia, serif" }}
               >
                 Chintan
               </div>

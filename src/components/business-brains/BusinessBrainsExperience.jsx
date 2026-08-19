@@ -63,14 +63,12 @@ export default function BusinessBrainsExperience() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 
             className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-4 block"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             THE EXPERIENCE
           </span>
 
           <h2 
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             An Experience Designed for Exceptional Leaders
           </h2>
@@ -101,14 +99,12 @@ export default function BusinessBrainsExperience() {
 
                 <h3 
                   className={`text-xl font-bold mb-3 transition-colors ${exp.featured ? 'text-slate-950' : 'text-slate-900 group-hover:text-cyan-600'}`}
-                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 >
                   {exp.title}
                 </h3>
 
                 <p 
                   className="text-slate-600 text-sm leading-relaxed font-normal"
-                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                 >
                   {exp.desc}
                 </p>

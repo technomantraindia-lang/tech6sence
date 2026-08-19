@@ -24,13 +24,11 @@ export default function ComparisonSection() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 
             className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-4 block"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             THE DIFFERENCE
           </span>
           <h2 
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             Why BUSINESS BRAINS is Different
           </h2>
@@ -53,14 +51,12 @@ export default function ComparisonSection() {
               <div key={idx} className="grid grid-cols-2 p-6 hover:bg-white transition-colors text-sm md:text-base">
                 <div 
                   className="text-slate-500 flex items-center gap-3 pr-4 font-normal"
-                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                 >
                   <span className="text-red-500 text-xs font-mono">✕</span>
                   {row.traditional}
                 </div>
                 <div 
                   className="text-slate-900 font-bold flex items-center gap-3 pl-4 border-l border-slate-200"
-                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                 >
                   <span className="text-cyan-600 text-xs font-mono font-bold">✓</span>
                   {row.businessBrains}

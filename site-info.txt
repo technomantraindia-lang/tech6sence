@@ -221,3 +221,13 @@ return (
 
 Why this looks so smooth:
 By using React state linked to browser scroll events, the browser re-evaluates the coordinate formulas on every frame. When combined with SVG gradients and CSS keyframe stroke-dashoffset pulses, the lines appear alive, organic, and perfectly attached to the moving sphere.
+
+
+color pallete for site 
+For entire website use only colours 
+Royal Blue : #1746D2
+Emerald Green : #00A86B
+Gold : #D4AF37
+White
+Black
+Also use same font for entire website like logo font so entire website looks like corporate and clean

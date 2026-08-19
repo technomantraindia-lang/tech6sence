@@ -12,7 +12,7 @@ function BasicGlobe() {
 
     // Rotate the fallback globe at the same speed
     if (globeRef.current) {
-      globeRef.current.rotation.y = elapsed * 0.12;
+      globeRef.current.rotation.y = elapsed * 0.06;
     }
 
     // Subtle atmosphere pulse

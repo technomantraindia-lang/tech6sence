@@ -104,21 +104,18 @@ export default function ApplicationAndNomination() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 
             className="font-mono text-xs font-bold text-cyan-400 uppercase tracking-[0.25em] mb-4 block"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             Consideration for Membership · By Invitation Only
           </span>
 
           <h2 
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             Present Yourself for Consideration
           </h2>
 
           <p 
             className="text-slate-300 text-base md:text-lg leading-relaxed mb-4 font-normal"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             Choose your path to present your credentials to the syndicate review committee.
           </p>
@@ -148,13 +145,11 @@ export default function ApplicationAndNomination() {
               </div>
               <h3 
                 className="text-2xl font-bold text-white mb-3"
-                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               >
                 Apply Directly
               </h3>
               <p 
                 className="text-slate-300 text-sm leading-relaxed mb-6 font-normal"
-                style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
               >
                 Present your own case for membership in the Circle.
               </p>
@@ -166,7 +161,6 @@ export default function ApplicationAndNomination() {
                   ? 'bg-cyan-500 text-slate-950 shadow-[0_0_20px_rgba(6,182,212,0.4)]' 
                   : 'bg-white/10 hover:bg-white/20 text-white'
               }`}
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               Begin My Application
             </button>
@@ -189,13 +183,11 @@ export default function ApplicationAndNomination() {
               </div>
               <h3 
                 className="text-2xl font-bold text-white mb-3"
-                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               >
                 Nominate Someone
               </h3>
               <p 
                 className="text-slate-300 text-sm leading-relaxed mb-6 font-normal"
-                style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
               >
                 You are a member, or know someone who belongs in this room.
               </p>
@@ -207,7 +199,6 @@ export default function ApplicationAndNomination() {
                   ? 'bg-[#1746D2] text-white shadow-[0_0_20px_rgba(139,92,246,0.4)]' 
                   : 'bg-white/10 hover:bg-white/20 text-white'
               }`}
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               Submit a Nomination
             </button>
@@ -224,10 +215,10 @@ export default function ApplicationAndNomination() {
                 <div className="w-16 h-16 rounded-full bg-cyan-500/20 border border-cyan-400 text-cyan-400 flex items-center justify-center mx-auto text-2xl font-bold">
                   ✓
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                <h3 className="text-2xl md:text-3xl font-bold text-white">
                   Your Application Has Been Received
                 </h3>
-                <p className="text-slate-300 text-base leading-relaxed max-w-xl mx-auto" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                <p className="text-slate-300 text-base leading-relaxed max-w-xl mx-auto">
                   Thank you for submitting your dossier to BUSINESS BRAINS. Our syndicate review committee personally reviews every application to ensure alignment with our global standards. If your profile clears initial committee evaluation, our concierge team will contact you to schedule a confidential interview.
                 </p>
                 <div className="text-cyan-400 font-mono font-bold text-sm">
@@ -659,10 +650,10 @@ export default function ApplicationAndNomination() {
                 <div className="w-16 h-16 rounded-full bg-[#1746D2]/20 border border-[#1746D2]/60 text-[#1746D2] flex items-center justify-center mx-auto text-2xl font-bold">
                   ✓
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                <h3 className="text-2xl md:text-3xl font-bold text-white">
                   Your Nomination Has Been Received
                 </h3>
-                <p className="text-slate-300 text-base leading-relaxed max-w-xl mx-auto" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                <p className="text-slate-300 text-base leading-relaxed max-w-xl mx-auto">
                   Thank you for nominating a candidate to BUSINESS BRAINS. Our committee will review the nominee's credentials and, if aligned with our institutional standards, extend a private invitation or initiate contact.
                 </p>
                 <button 
@@ -674,7 +665,7 @@ export default function ApplicationAndNomination() {
               </div>
             ) : (
               <form onSubmit={handleNomSubmit} className="space-y-6">
-                <h4 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                <h4 className="text-2xl font-bold text-white mb-2">
                   Nominate Someone for the Circle
                 </h4>
                 <p className="text-sm text-slate-300 mb-6 font-normal">

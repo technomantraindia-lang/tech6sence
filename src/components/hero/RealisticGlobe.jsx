@@ -30,18 +30,11 @@ const RealisticGlobe = memo(function RealisticGlobe({ disableRiseEffect }) {
     return cloned;
   }, [scene]);
 
-  // Entrance and auto-rotation
-  const currentY = useRef(disableRiseEffect ? 0 : -3);
+  // Smooth continuous auto-rotation (Slow, elegant pace)
   useFrame((state) => {
     if (!globeGroupRef.current) return;
-
-    if (!disableRiseEffect) {
-      currentY.current += (0 - currentY.current) * 0.15;
-      globeGroupRef.current.position.y = currentY.current;
-    }
-
-    // Rotation — starts offset so land faces viewer, faster spin
-    globeGroupRef.current.rotation.y = Math.PI * 0.55 + state.clock.getElapsedTime() * 0.18;
+    // Rotation — starts offset so land faces viewer, slow & smooth spin
+    globeGroupRef.current.rotation.y = GLB_Y_ROTATION + state.clock.getElapsedTime() * 0.06;
   });
 
   return (
@@ -54,7 +47,7 @@ const RealisticGlobe = memo(function RealisticGlobe({ disableRiseEffect }) {
       {/* Earth group */}
       <group 
         ref={globeGroupRef} 
-        position={[0, disableRiseEffect ? 0 : -3.0, 0]}
+        position={[0, 0, 0]}
         rotation={[-0.18, 0, 0]}
       >
         <primitive

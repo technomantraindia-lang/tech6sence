@@ -42,7 +42,6 @@ export default function HeroTrustStrip() {
               </h2>
               <h1 
                 className="text-3xl sm:text-5xl md:text-[3.25rem] font-extrabold leading-[1.1] text-white tracking-tight"
-                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               >
                 The World’s Most Exclusive Private Global Circle for Elite Investors, Entrepreneurs & Industry Leaders
               </h1>
@@ -56,7 +55,6 @@ export default function HeroTrustStrip() {
             {/* Focused Subheadline */}
             <div 
               className="text-sm md:text-[15px] text-slate-350 leading-relaxed font-medium space-y-4 text-slate-350 max-w-2xl"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               <p>
                 Welcome to Business Brains—an invitation-only global syndicate reserved for elite investors, visionary entrepreneurs, and titans of industry. We operate beyond the public eye, at the absolute pinnacle of global commerce, capital, and artificial intelligence.
@@ -74,7 +72,6 @@ export default function HeroTrustStrip() {
               <a 
                 href="#nomination-form"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white rounded-full font-bold text-sm tracking-wide transition-all duration-300 shadow-[0_0_25px_rgba(6,182,212,0.35)] hover:-translate-y-0.5 cursor-pointer"
-                style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
               >
                 <span>Request a Global Invitation</span>
                 <span>→</span>
@@ -82,7 +79,6 @@ export default function HeroTrustStrip() {
               <a 
                 href="#philosophy"
                 className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 bg-white/5 hover:bg-white/10 text-white border border-white/15 rounded-full font-bold text-sm tracking-wide backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
-                style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
               >
                 Enter the World of Business Brains
               </a>
@@ -136,22 +132,22 @@ export default function HeroTrustStrip() {
           
           <div className="px-2">
             <div className="text-xl md:text-2xl font-bold font-mono text-cyan-400">500+</div>
-            <div className="text-xs text-slate-350 font-medium" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Members Worldwide</div>
+            <div className="text-xs text-slate-350 font-medium">Members Worldwide</div>
           </div>
 
           <div className="px-2">
             <div className="text-xl md:text-2xl font-bold font-mono text-cyan-400">9+</div>
-            <div className="text-xs text-slate-350 font-medium" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Nations</div>
+            <div className="text-xs text-slate-350 font-medium">Nations</div>
           </div>
 
           <div className="px-2">
             <div className="text-xl md:text-2xl font-bold font-mono text-cyan-400">Invitation Only</div>
-            <div className="text-xs text-slate-350 font-medium" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>By Invitation Only</div>
+            <div className="text-xs text-slate-350 font-medium">By Invitation Only</div>
           </div>
 
           <div className="px-2">
             <div className="text-xl md:text-2xl font-bold font-mono text-cyan-400">TECH6SENSE AI</div>
-            <div className="text-xs text-slate-350 font-medium" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>An institution by TECH6SENSE AI</div>
+            <div className="text-xs text-slate-350 font-medium">An institution by TECH6SENSE AI</div>
           </div>
 
         </div>

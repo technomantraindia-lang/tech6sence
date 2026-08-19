@@ -9,6 +9,7 @@ const SimpleTextSection = lazy(() => import('../components/sections/SimpleTextSe
 const AISolutionsOutcome = lazy(() => import('../components/sections/AISolutionsOutcome'))
 const WhoWeServe = lazy(() => import('../components/sections/WhoWeServe'))
 const DeepTechProducts = lazy(() => import('../components/sections/DeepTechProducts'))
+const AIProductOpportunitySection = lazy(() => import('../components/sections/AIProductOpportunitySection'))
 const IndustriesTransform = lazy(() => import('../components/sections/IndustriesTransform'))
 const EcosystemSection = lazy(() => import('../components/sections/EcosystemSection'))
 const EngagementModels = lazy(() => import('../components/sections/EngagementModels'))
@@ -821,7 +822,7 @@ function PremiumAnnouncementBar() {
           100% { transform: translateX(-50%); }
         }
         .animate-announcement-marquee {
-          animation: announcementMarquee 25s linear infinite;
+          animation: announcementMarquee 65s linear infinite;
         }
       `}} />
     </div>
@@ -835,6 +836,7 @@ const MemoAISolutionsOutcome = memo(AISolutionsOutcome);
 const MemoHowWeWork = memo(HowWeWork);
 const MemoWhoWeServe = memo(WhoWeServe);
 const MemoDeepTechProducts = memo(DeepTechProducts);
+const MemoAIProductOpportunity = memo(AIProductOpportunitySection);
 const MemoEcosystemSection = memo(EcosystemSection);
 const MemoEngagementModels = memo(EngagementModels);
 const MemoIndustriesTransform = memo(IndustriesTransform);
@@ -858,6 +860,7 @@ export default function Home() {
         <MemoHowWeWork />
         <MemoWhoWeServe />
         <MemoDeepTechProducts />
+        <MemoAIProductOpportunity />
         <MemoEcosystemSection />
         <MemoEngagementModels />
         <MemoIndustriesTransform />

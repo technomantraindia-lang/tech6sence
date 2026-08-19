@@ -29,10 +29,7 @@ export default function Blogs() {
               <span className="text-xs font-bold text-[#1746D2] tracking-wider uppercase">Insights & News</span>
             </div>
 
-            <h1
-              className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] mb-6 text-slate-900"
-              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-            >
+            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] mb-6 text-slate-900">
               Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1746D2] to-[#00A86B]">
                 Latest Blogs
               </span>
@@ -77,10 +74,7 @@ export default function Blogs() {
                     <span className="font-semibold text-slate-700">{blog.author}</span>
                   </div>
 
-                  <h3
-                    className="text-xl md:text-2xl font-bold text-slate-900 mb-4 leading-snug group-hover:text-[#1746D2] transition-colors duration-300"
-                    style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-                  >
+                  <h3 className="font-display text-xl md:text-2xl font-bold text-slate-900 mb-4 leading-snug group-hover:text-[#1746D2] transition-colors duration-300">
                     {blog.title}
                   </h3>
 

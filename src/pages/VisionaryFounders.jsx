@@ -53,38 +53,28 @@ export default function VisionaryFounders() {
                   VISIONARY FOUNDERS
                 </span>
 
-                {/* Title with Space Grotesk */}
-                <h1 
-                  className="text-[clamp(2.25rem,3.8vw,3.25rem)] leading-[1.1] font-extrabold tracking-tight text-white"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-                >
+                {/* Title */}
+                <h1 className="font-display text-[clamp(2.25rem,3.8vw,3.25rem)] leading-[1.1] font-extrabold tracking-tight text-white">
                   Build Your AI Empire Powered by a Global Ecosystem.
                 </h1>
 
                 {/* Subheadline & Tagline Combined */}
                 <div className="space-y-4 max-w-3xl">
-                  <p 
-                    className="text-white/80 text-xs sm:text-sm lg:text-base leading-relaxed font-medium text-justify"
-                    style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-                  >
+                  <p className="font-body text-white/80 text-xs sm:text-sm lg:text-base leading-relaxed font-medium text-justify">
                     Visionary Founders is the world’s elite most comprehensive premier all-in-one AI Founder Ecosystem designed to transform ambitious entrepreneurs, professionals, start-up founders, consultants, and innovators into owners of globally competitive AI and technology companies and dominate the global markets.
                   </p>
 
-                  <p 
-                    className="text-[#00A86B] text-xs sm:text-sm lg:text-base font-semibold border-l-2 border-[#00A86B] pl-3 leading-relaxed"
-                    style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-                  >
+                  <p className="font-body text-[#00A86B] text-xs sm:text-sm lg:text-base font-semibold border-l-2 border-[#00A86B] pl-3 leading-relaxed">
                     "From Idea to International Clients —We don't just simply train founders. We build AI companies with them."
                   </p>
                 </div>
 
                 {/* Interactive buttons */}
-                <div className="flex flex-wrap items-center gap-3 w-full">
+                <div className="flex flex-wrap items-center gap-3 w-full font-body">
                   {/* Primary Pill Button */}
                   <button
                     onClick={() => document.getElementById('founder-form')?.scrollIntoView({ behavior: 'smooth' })}
                     className="rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] hover:from-[#1746D2]/90 hover:to-[#00A86B]/90 px-6 py-3.5 text-xs font-bold tracking-wider text-white shadow-[0_4px_20px_rgba(23,70,210,0.35)] hover:scale-[1.02] transition-all cursor-pointer"
-                    style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                   >
                     Apply to Become a Visionary Founder
                   </button>
@@ -93,7 +83,6 @@ export default function VisionaryFounders() {
                   <button
                     onClick={() => document.getElementById('founder-form')?.scrollIntoView({ behavior: 'smooth' })}
                     className="rounded-full border border-white/20 bg-white/5 hover:bg-white/15 px-6 py-3.5 text-xs font-bold tracking-wider text-white shadow-md hover:scale-[1.02] transition-all backdrop-blur-md cursor-pointer"
-                    style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                   >
                     Schedule Confidential Founder Strategy Call
                   </button>

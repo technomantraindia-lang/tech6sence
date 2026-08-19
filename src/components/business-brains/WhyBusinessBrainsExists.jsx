@@ -54,21 +54,18 @@ export default function WhyBusinessBrainsExists() {
           <div className="lg:col-span-5 lg:sticky lg:top-28 space-y-6">
             <span 
               className="font-mono text-xs font-bold text-cyan-400 uppercase tracking-[0.25em] block"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               WHY BUSINESS BRAINS EXISTS
             </span>
 
             <h2 
               className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight"
-              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             >
               Beyond Networking. We Are a Wealth & Innovation Engine.
             </h2>
 
             <div 
               className="text-slate-300 text-base md:text-lg leading-relaxed font-normal space-y-4"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               <p>
                 The era of conventional business networking is obsolete. True global dominance requires a fusion of strategic capital, unmatched market intelligence, and technological supremacy.
@@ -93,13 +90,11 @@ export default function WhyBusinessBrainsExists() {
                   <div>
                     <h3 
                       className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors"
-                      style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                     >
                       {theme.title}
                     </h3>
                     <p 
                       className="text-slate-300 text-sm leading-relaxed"
-                      style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                     >
                       {theme.desc}
                     </p>

@@ -22,7 +22,6 @@ export default function PhilosophySection() {
         {/* Eyebrow */}
         <span 
           className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-8 block"
-          style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
           THE PHILOSOPHY
         </span>
@@ -34,14 +33,13 @@ export default function PhilosophySection() {
           <div className="lg:col-span-6">
             <h2 
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] text-slate-950 tracking-tight"
-              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             >
               Not Everyone Deserves Access.
             </h2>
           </div>
 
           {/* Right Column: Manifesto Paragraphs */}
-          <div className="lg:col-span-6 space-y-6 text-slate-600 font-normal text-base md:text-lg leading-relaxed" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+          <div className="lg:col-span-6 space-y-6 text-slate-600 font-normal text-base md:text-lg leading-relaxed">
             <p className="text-slate-800 font-medium">
               The world's greatest opportunities rarely appear on public platforms. They happen inside private conversations, around executive tables, within trusted circles, and between leaders who share vision, integrity, and ambition.
             </p>
@@ -71,7 +69,6 @@ export default function PhilosophySection() {
               <div className="font-mono text-xs font-bold text-cyan-600 mb-2">0{idx + 1}</div>
               <h3 
                 className="text-lg font-bold text-slate-900 group-hover:text-cyan-600 transition-colors"
-                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               >
                 {stmt}
               </h3>

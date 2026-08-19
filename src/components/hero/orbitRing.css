@@ -30,8 +30,8 @@
   width: 0;
   height: 0;
   transform-style: preserve-3d;
-  /* Synced with Earth: 2π / 0.18 = 34.9s */
-  animation: orbit-spin 34.9s linear infinite;
+  /* Synced with Earth: 2π / 0.06 = 104.7s for slow, ultra-smooth spinning */
+  animation: orbit-spin 104.7s linear infinite;
 }
 
 .orbit-card-wrapper {
@@ -117,7 +117,7 @@
 }
 
 .orbit-card-country {
-  font-family: var(--font-display, 'Space Grotesk', system-ui, sans-serif);
+  font-family: 'Outfit', system-ui, sans-serif;
   font-size: 0.58rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -127,7 +127,7 @@
 }
 
 .orbit-card-service {
-  font-family: var(--font-body, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-family: 'Outfit', system-ui, sans-serif;
   font-size: 0.46rem;
   font-weight: 500;
   color: rgba(148, 163, 184, 0.7);
