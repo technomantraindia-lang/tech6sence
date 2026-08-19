@@ -6,7 +6,7 @@ export default function WhyBusinessBrainsExists() {
       title: "Strategic Capital",
       desc: "Access to high-yield venture scaling, syndicate co-investment structures, institutional funding rounds, and sovereign capital alignment.",
       icon: (
-        <svg className="w-6 h-6 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       )
@@ -24,7 +24,7 @@ export default function WhyBusinessBrainsExists() {
       title: "Technological Supremacy",
       desc: "Deep-tech architectural validation, enterprise AI transformation frameworks, and technical model audits backed by TECH6SENSE AI.",
       icon: (
-        <svg className="w-6 h-6 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       )
@@ -44,7 +44,7 @@ export default function WhyBusinessBrainsExists() {
     <section className="relative bg-[#020617] text-white py-24 md:py-32 border-b border-slate-800/80 overflow-hidden">
       
       {/* Glow Effects */}
-      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-cyan-900/15 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-emerald-900/15 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
@@ -53,7 +53,7 @@ export default function WhyBusinessBrainsExists() {
           {/* Left Column: Heading and Description */}
           <div className="lg:col-span-5 lg:sticky lg:top-28 space-y-6">
             <span 
-              className="font-mono text-xs font-bold text-cyan-400 uppercase tracking-[0.25em] block"
+              className="font-mono text-xs font-bold text-emerald-400 uppercase tracking-[0.25em] block"
             >
               WHY BUSINESS BRAINS EXISTS
             </span>
@@ -81,7 +81,7 @@ export default function WhyBusinessBrainsExists() {
             {themes.map((theme, idx) => (
               <div 
                 key={idx}
-                className="p-8 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-cyan-500/30 transition-all duration-300 backdrop-blur-sm group"
+                className="p-8 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-emerald-500/30 transition-all duration-300 backdrop-blur-sm group"
               >
                 <div className="flex items-start gap-5">
                   <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
@@ -89,7 +89,7 @@ export default function WhyBusinessBrainsExists() {
                   </div>
                   <div>
                     <h3 
-                      className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors"
+                      className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors"
                     >
                       {theme.title}
                     </h3>

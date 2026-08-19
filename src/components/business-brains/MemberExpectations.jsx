@@ -32,13 +32,13 @@ export default function MemberExpectations() {
     <section className="relative bg-[#000110] text-white py-24 md:py-32 border-b border-slate-800/80 overflow-hidden">
       
       {/* Glow Effects */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-900/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-900/10 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 
-            className="font-mono text-xs font-bold text-cyan-400 uppercase tracking-[0.25em] mb-4 block"
+            className="font-mono text-xs font-bold text-emerald-400 uppercase tracking-[0.25em] mb-4 block"
           >
             THE STANDARD
           </span>
@@ -60,15 +60,15 @@ export default function MemberExpectations() {
           {standards.map((std, idx) => (
             <div 
               key={idx}
-              className="p-8 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-cyan-500/30 transition-all duration-300 backdrop-blur-md group"
+              className="p-8 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-emerald-500/30 transition-all duration-300 backdrop-blur-md group"
             >
               <div className="flex items-center gap-3 mb-4">
-                <span className="font-mono text-xs text-cyan-400 font-bold">0{idx + 1}</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                <span className="font-mono text-xs text-emerald-400 font-bold">0{idx + 1}</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
               </div>
 
               <h3 
-                className="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors"
+                className="text-xl font-bold text-white mb-3 group-hover:text-emerald-300 transition-colors"
               >
                 {std.title}
               </h3>

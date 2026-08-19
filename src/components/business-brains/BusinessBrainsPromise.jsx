@@ -27,7 +27,7 @@ export default function BusinessBrainsPromise() {
     <section className="relative bg-[#000110] text-white py-24 md:py-32 border-b border-slate-800/80 overflow-hidden">
       
       {/* Constellation Glow Background */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] bg-gradient-to-tr from-cyan-950/20 via-violet-950/20 to-blue-950/20 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] bg-gradient-to-tr from-emerald-950/20 via-violet-950/20 to-blue-950/20 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
@@ -35,7 +35,7 @@ export default function BusinessBrainsPromise() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div className="max-w-3xl">
             <span 
-              className="font-mono text-xs font-bold text-cyan-400 uppercase tracking-[0.25em] mb-3 block"
+              className="font-mono text-xs font-bold text-emerald-400 uppercase tracking-[0.25em] mb-3 block"
             >
               THE PROMISE
             </span>
@@ -57,7 +57,7 @@ export default function BusinessBrainsPromise() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => handleScroll('left')}
-              className="w-12 h-12 rounded-full bg-white/5 border border-white/15 hover:border-cyan-400 hover:bg-cyan-500/10 text-white transition-all flex items-center justify-center shadow-md group"
+              className="w-12 h-12 rounded-full bg-white/5 border border-white/15 hover:border-emerald-400 hover:bg-emerald-500/10 text-white transition-all flex items-center justify-center shadow-md group"
               aria-label="Previous Promise Value"
             >
               <svg className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,7 +66,7 @@ export default function BusinessBrainsPromise() {
             </button>
             <button
               onClick={() => handleScroll('right')}
-              className="w-12 h-12 rounded-full bg-white/5 border border-white/15 hover:border-cyan-400 hover:bg-cyan-500/10 text-white transition-all flex items-center justify-center shadow-md group"
+              className="w-12 h-12 rounded-full bg-white/5 border border-white/15 hover:border-emerald-400 hover:bg-emerald-500/10 text-white transition-all flex items-center justify-center shadow-md group"
               aria-label="Next Promise Value"
             >
               <svg className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -85,14 +85,14 @@ export default function BusinessBrainsPromise() {
           {promiseItems.map((item, idx) => (
             <div 
               key={idx}
-              className="snap-start shrink-0 w-[300px] sm:w-[340px] md:w-[380px] p-7 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-cyan-400/60 backdrop-blur-md transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] group hover:-translate-y-1.5 flex flex-col justify-between"
+              className="snap-start shrink-0 w-[300px] sm:w-[340px] md:w-[380px] p-7 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-emerald-400/60 backdrop-blur-md transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] group hover:-translate-y-1.5 flex flex-col justify-between"
             >
               <div>
                 {/* Value Tag & Icon Header */}
                 <div className="flex items-center justify-between mb-5">
-                  <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                    <span className="font-mono text-xs font-bold text-cyan-300 uppercase">
+                  <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="font-mono text-xs font-bold text-emerald-300 uppercase">
                       VALUE {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                     </span>
                   </div>
@@ -103,7 +103,7 @@ export default function BusinessBrainsPromise() {
 
                 {/* Title */}
                 <h3 
-                  className="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors"
+                  className="text-xl font-bold text-white mb-3 group-hover:text-emerald-300 transition-colors"
                 >
                   {item.title}
                 </h3>
@@ -117,7 +117,7 @@ export default function BusinessBrainsPromise() {
               </div>
 
               {/* Card Footer Badge */}
-              <div className="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-cyan-400">
+              <div className="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-emerald-400">
                 <span>Strategic Guarantee</span>
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </div>

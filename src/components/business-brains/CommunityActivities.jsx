@@ -16,7 +16,7 @@ export default function CommunityActivities() {
         "Fundraising in the current environment"
       ],
       icon: (
-        <svg className="w-6 h-6 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
       )
@@ -50,7 +50,7 @@ export default function CommunityActivities() {
         "Follow-up meeting facilitation"
       ],
       icon: (
-        <svg className="w-6 h-6 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
         </svg>
       )
@@ -84,7 +84,7 @@ export default function CommunityActivities() {
         "Direct messaging and warm introductions"
       ],
       icon: (
-        <svg className="w-6 h-6 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
         </svg>
       )
@@ -95,13 +95,13 @@ export default function CommunityActivities() {
     <section className="relative bg-[#020617] text-white py-24 md:py-32 border-b border-slate-800/80 overflow-hidden">
       
       {/* Background Glow */}
-      <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-cyan-900/15 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-emerald-900/15 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 
-            className="font-mono text-xs font-bold text-cyan-400 uppercase tracking-[0.25em] mb-4 block"
+            className="font-mono text-xs font-bold text-emerald-400 uppercase tracking-[0.25em] mb-4 block"
           >
             HOW MEMBERS CONNECT
           </span>
@@ -125,7 +125,7 @@ export default function CommunityActivities() {
             return (
               <div 
                 key={act.id}
-                className="p-8 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-cyan-500/30 transition-all duration-300 backdrop-blur-md flex flex-col justify-between group"
+                className="p-8 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-emerald-500/30 transition-all duration-300 backdrop-blur-md flex flex-col justify-between group"
               >
                 <div>
                   <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
@@ -133,7 +133,7 @@ export default function CommunityActivities() {
                   </div>
 
                   <h3 
-                    className="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors"
+                    className="text-xl font-bold text-white mb-3 group-hover:text-emerald-300 transition-colors"
                   >
                     {act.title}
                   </h3>
@@ -158,7 +158,7 @@ export default function CommunityActivities() {
                   <div className="space-y-2 pt-4 border-t border-white/10 text-xs text-slate-300 font-medium">
                     {act.items.map((it, iIdx) => (
                       <div key={iIdx} className="flex items-start gap-2">
-                        <span className="text-cyan-400 font-bold shrink-0">•</span>
+                        <span className="text-emerald-400 font-bold shrink-0">•</span>
                         <span>{it}</span>
                       </div>
                     ))}

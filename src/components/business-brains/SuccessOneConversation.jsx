@@ -20,7 +20,7 @@ export default function SuccessOneConversation() {
       <div className="max-w-[1400px] mx-auto px-6 relative z-10 text-center">
         
         <span 
-          className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-4 block"
+          className="font-mono text-xs font-bold text-emerald-600 uppercase tracking-[0.25em] mb-4 block"
         >
           ONE CONVERSATION
         </span>
@@ -42,17 +42,17 @@ export default function SuccessOneConversation() {
           {opportunities.map((opp, idx) => (
             <div 
               key={idx}
-              className="px-6 py-3.5 rounded-full bg-white border border-slate-200 hover:border-cyan-500/40 text-slate-800 text-sm font-semibold transition-all duration-300 shadow-sm hover:-translate-y-0.5"
+              className="px-6 py-3.5 rounded-full bg-white border border-slate-200 hover:border-emerald-500/40 text-slate-800 text-sm font-semibold transition-all duration-300 shadow-sm hover:-translate-y-0.5"
             >
-              <span className="text-cyan-600 mr-2 font-mono">✦</span>
+              <span className="text-emerald-600 mr-2 font-mono">✦</span>
               {opp}
             </div>
           ))}
         </div>
 
         {/* Closing Statement */}
-        <div className="p-6 rounded-2xl bg-cyan-50 border border-cyan-100 max-w-xl mx-auto shadow-sm">
-          <p className="text-base md:text-lg font-bold font-mono text-cyan-900">
+        <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-100 max-w-xl mx-auto shadow-sm">
+          <p className="text-base md:text-lg font-bold font-mono text-emerald-900">
             One introduction can change everything.
           </p>
         </div>

@@ -23,7 +23,7 @@ export default function ComparisonSection() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 
-            className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-4 block"
+            className="font-mono text-xs font-bold text-emerald-600 uppercase tracking-[0.25em] mb-4 block"
           >
             THE DIFFERENCE
           </span>
@@ -39,8 +39,8 @@ export default function ComparisonSection() {
           {/* Table Header */}
           <div className="grid grid-cols-2 bg-slate-100 border-b border-slate-200 p-6 text-sm font-bold tracking-wider uppercase font-mono">
             <div className="text-slate-500">Traditional Networking</div>
-            <div className="text-cyan-700 flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-cyan-500 animate-pulse" />
+            <div className="text-emerald-700 flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
               BUSINESS BRAINS
             </div>
           </div>
@@ -58,7 +58,7 @@ export default function ComparisonSection() {
                 <div 
                   className="text-slate-900 font-bold flex items-center gap-3 pl-4 border-l border-slate-200"
                 >
-                  <span className="text-cyan-600 text-xs font-mono font-bold">✓</span>
+                  <span className="text-emerald-600 text-xs font-mono font-bold">✓</span>
                   {row.businessBrains}
                 </div>
               </div>
@@ -74,8 +74,8 @@ export default function ComparisonSection() {
               <div className="p-3 rounded-xl bg-red-50 border border-red-100 text-slate-600 text-sm">
                 <span className="text-red-600 font-bold mr-2">Traditional:</span> {row.traditional}
               </div>
-              <div className="p-3 rounded-xl bg-cyan-50 border border-cyan-100 text-slate-900 text-sm font-semibold">
-                <span className="text-cyan-600 font-bold mr-2">BUSINESS BRAINS:</span> {row.businessBrains}
+              <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-100 text-slate-900 text-sm font-semibold">
+                <span className="text-emerald-600 font-bold mr-2">BUSINESS BRAINS:</span> {row.businessBrains}
               </div>
             </div>
           ))}

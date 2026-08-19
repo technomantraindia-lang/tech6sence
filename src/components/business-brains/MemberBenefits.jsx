@@ -118,14 +118,14 @@ export default function MemberBenefits() {
       
       {/* Light Gridlines & Glows */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(124,58,237,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.015)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
-      <div className="absolute top-1/2 left-[-10%] w-[500px] h-[500px] bg-cyan-100/60 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-[-10%] w-[500px] h-[500px] bg-emerald-100/60 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 right-[-5%] w-[450px] h-[450px] bg-[#1746D2]/10/50 rounded-full blur-[130px] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span 
-            className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-4 block"
+            className="font-mono text-xs font-bold text-emerald-600 uppercase tracking-[0.25em] mb-4 block"
           >
             MEMBER VALUE
           </span>
@@ -166,18 +166,18 @@ export default function MemberBenefits() {
           {tabsData[activeTab].map((card, idx) => (
             <div 
               key={idx}
-              className="p-8 rounded-3xl bg-slate-50 border border-slate-200 hover:border-cyan-500/40 transition-all duration-300 shadow-[0_2px_8px_rgba(15,23,42,0.02)] hover:shadow-md group hover:-translate-y-1 flex flex-col justify-between"
+              className="p-8 rounded-3xl bg-slate-50 border border-slate-200 hover:border-emerald-500/40 transition-all duration-300 shadow-[0_2px_8px_rgba(15,23,42,0.02)] hover:shadow-md group hover:-translate-y-1 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="w-2 h-2 rounded-full bg-cyan-500" />
-                  <span className="font-mono text-xs text-cyan-600 uppercase tracking-widest font-bold">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                  <span className="font-mono text-xs text-emerald-600 uppercase tracking-widest font-bold">
                     {activeTab} 0{idx + 1}
                   </span>
                 </div>
 
                 <h3 
-                  className="text-xl font-bold text-slate-900 mb-4 group-hover:text-cyan-600 transition-colors"
+                  className="text-xl font-bold text-slate-900 mb-4 group-hover:text-emerald-600 transition-colors"
                 >
                   {card.title}
                 </h3>
@@ -185,7 +185,7 @@ export default function MemberBenefits() {
                 <ul className="space-y-2.5 text-slate-600 text-sm leading-relaxed">
                   {card.bullets.map((b, i) => (
                     <li key={i} className="flex items-start gap-2.5">
-                      <span className="text-cyan-600 font-bold shrink-0">✓</span>
+                      <span className="text-emerald-600 font-bold shrink-0">✓</span>
                       <span>{b}</span>
                     </li>
                   ))}

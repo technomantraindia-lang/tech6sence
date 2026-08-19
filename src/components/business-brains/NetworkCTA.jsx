@@ -5,12 +5,12 @@ export default function NetworkCTA() {
     <section className="relative bg-white text-slate-900 py-12 md:py-16 overflow-hidden border-t border-slate-200">
       
       {/* Light Glow Effects */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-cyan-500/10 to-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-emerald-500/10 to-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-6 relative z-10 text-center">
         
         <span 
-          className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-3 block"
+          className="font-mono text-xs font-bold text-emerald-600 uppercase tracking-[0.25em] mb-3 block"
         >
           PRIVATE CONSIDERATION
         </span>
@@ -21,7 +21,7 @@ export default function NetworkCTA() {
           Millions Are Being Unlocked.
         </h2>
 
-        <div className="text-lg md:text-xl font-bold text-cyan-700 font-mono mb-5">
+        <div className="text-lg md:text-xl font-bold text-emerald-700 font-mono mb-5">
           Are you in the room, or are you on the outside looking in?
         </div>
 
@@ -34,7 +34,7 @@ export default function NetworkCTA() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-12">
           <a 
             href="#application-entry"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-500 hover:to-blue-600 text-white font-bold text-sm tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:-translate-y-0.5"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-600 to-blue-700 hover:from-emerald-500 hover:to-blue-600 text-white font-bold text-sm tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:-translate-y-0.5"
           >
             REQUEST BOARD REVIEW
           </a>

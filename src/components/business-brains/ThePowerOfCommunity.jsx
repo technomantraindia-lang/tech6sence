@@ -5,12 +5,12 @@ export default function ThePowerOfCommunity() {
     <section className="relative bg-[#000110] text-white py-24 md:py-32 overflow-hidden border-b border-slate-900">
       
       {/* Subtle Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-900/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-900/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <span 
-            className="font-mono text-sm font-bold text-cyan-400 uppercase tracking-widest mb-6 block"
+            className="font-mono text-sm font-bold text-emerald-400 uppercase tracking-widest mb-6 block"
           >
             The Power of Community
           </span>
@@ -18,7 +18,7 @@ export default function ThePowerOfCommunity() {
             className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white mb-10"
           >
             In the AI revolution, <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-[#1746D2]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-[#1746D2]">
               connections are currency.
             </span>
           </h2>

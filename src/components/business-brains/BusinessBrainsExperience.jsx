@@ -62,7 +62,7 @@ export default function BusinessBrainsExperience() {
         
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 
-            className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-4 block"
+            className="font-mono text-xs font-bold text-emerald-600 uppercase tracking-[0.25em] mb-4 block"
           >
             THE EXPERIENCE
           </span>
@@ -81,24 +81,24 @@ export default function BusinessBrainsExperience() {
               key={exp.id}
               className={`p-8 rounded-3xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between ${
                 exp.featured 
-                  ? 'border-2 border-cyan-500 bg-white shadow-md' 
-                  : 'border border-slate-200 bg-white/80 hover:border-cyan-500/40 shadow-sm'
+                  ? 'border-2 border-emerald-500 bg-white shadow-md' 
+                  : 'border border-slate-200 bg-white/80 hover:border-emerald-500/40 shadow-sm'
               }`}
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <span className={`font-mono text-xs uppercase font-bold tracking-widest ${exp.featured ? 'text-cyan-600' : 'text-slate-400'}`}>
+                  <span className={`font-mono text-xs uppercase font-bold tracking-widest ${exp.featured ? 'text-emerald-600' : 'text-slate-400'}`}>
                     {exp.featured ? 'CORE INITIATIVE' : `EXPERIENCE 0${exp.id}`}
                   </span>
                   {exp.featured && (
-                    <span className="px-2.5 py-0.5 rounded-full bg-cyan-100 text-cyan-800 font-mono text-[10px] font-bold">
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono text-[10px] font-bold">
                       FEATURED
                     </span>
                   )}
                 </div>
 
                 <h3 
-                  className={`text-xl font-bold mb-3 transition-colors ${exp.featured ? 'text-slate-950' : 'text-slate-900 group-hover:text-cyan-600'}`}
+                  className={`text-xl font-bold mb-3 transition-colors ${exp.featured ? 'text-slate-950' : 'text-slate-900 group-hover:text-emerald-600'}`}
                 >
                   {exp.title}
                 </h3>

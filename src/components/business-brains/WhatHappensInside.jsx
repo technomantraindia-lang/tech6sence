@@ -75,7 +75,7 @@ export default function WhatHappensInside() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-2xl">
             <span 
-              className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-3 block"
+              className="font-mono text-xs font-bold text-emerald-600 uppercase tracking-[0.25em] mb-3 block"
             >
               INSIDE THE CIRCLE
             </span>
@@ -91,7 +91,7 @@ export default function WhatHappensInside() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => handleScroll('left')}
-              className="w-12 h-12 rounded-full bg-white border border-slate-300 hover:border-cyan-500 hover:bg-cyan-50 text-slate-700 hover:text-cyan-600 transition-all flex items-center justify-center shadow-sm group"
+              className="w-12 h-12 rounded-full bg-white border border-slate-300 hover:border-emerald-500 hover:bg-emerald-50 text-slate-700 hover:text-emerald-600 transition-all flex items-center justify-center shadow-sm group"
               aria-label="Previous Slide"
             >
               <svg className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -100,7 +100,7 @@ export default function WhatHappensInside() {
             </button>
             <button
               onClick={() => handleScroll('right')}
-              className="w-12 h-12 rounded-full bg-white border border-slate-300 hover:border-cyan-500 hover:bg-cyan-50 text-slate-700 hover:text-cyan-600 transition-all flex items-center justify-center shadow-sm group"
+              className="w-12 h-12 rounded-full bg-white border border-slate-300 hover:border-emerald-500 hover:bg-emerald-50 text-slate-700 hover:text-emerald-600 transition-all flex items-center justify-center shadow-sm group"
               aria-label="Next Slide"
             >
               <svg className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -119,12 +119,12 @@ export default function WhatHappensInside() {
           {items.map((item, idx) => (
             <div 
               key={idx}
-              className="snap-start shrink-0 w-[300px] sm:w-[340px] md:w-[380px] p-7 rounded-3xl bg-white border border-slate-200 hover:border-cyan-500/50 transition-all duration-300 shadow-[0_4px_20px_rgba(15,23,42,0.03)] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] group hover:-translate-y-1.5 flex flex-col justify-between"
+              className="snap-start shrink-0 w-[300px] sm:w-[340px] md:w-[380px] p-7 rounded-3xl bg-white border border-slate-200 hover:border-emerald-500/50 transition-all duration-300 shadow-[0_4px_20px_rgba(15,23,42,0.03)] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] group hover:-translate-y-1.5 flex flex-col justify-between"
             >
               <div>
                 {/* Header Row */}
                 <div className="flex items-center justify-between mb-5">
-                  <span className="font-mono text-xs font-bold text-cyan-600 bg-cyan-50 px-3 py-1 rounded-full border border-cyan-200">
+                  <span className="font-mono text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
                     ACTIVITY {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                   </span>
                   <span className="text-2xl group-hover:scale-110 transition-transform">
@@ -134,7 +134,7 @@ export default function WhatHappensInside() {
 
                 {/* Title */}
                 <h3 
-                  className="text-xl font-bold text-slate-950 mb-3 group-hover:text-cyan-600 transition-colors"
+                  className="text-xl font-bold text-slate-950 mb-3 group-hover:text-emerald-600 transition-colors"
                 >
                   {item.title}
                 </h3>
@@ -148,7 +148,7 @@ export default function WhatHappensInside() {
               </div>
 
               {/* Card Footer Badge */}
-              <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-400 group-hover:text-cyan-600 transition-colors">
+              <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-400 group-hover:text-emerald-600 transition-colors">
                 <span>Circle Activity</span>
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </div>

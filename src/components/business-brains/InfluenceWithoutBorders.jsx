@@ -59,7 +59,7 @@ export default function InfluenceWithoutBorders() {
       
       {/* Dynamic Keyframe Style for Flowing Laser Beams */}
       <style>{`
-        @keyframes flowLaserCyan {
+        @keyframes flowLaseremerald {
           0% { stroke-dashoffset: 60; }
           100% { stroke-dashoffset: 0; }
         }
@@ -77,7 +77,7 @@ export default function InfluenceWithoutBorders() {
         {/* Header Block */}
         <div className="text-center max-w-4xl mx-auto mb-16 space-y-4">
           <span 
-            className="font-mono text-xs font-bold text-cyan-400 uppercase tracking-[0.25em] mb-2 block"
+            className="font-mono text-xs font-bold text-emerald-400 uppercase tracking-[0.25em] mb-2 block"
           >
             GLOBAL REACH
           </span>
@@ -88,7 +88,7 @@ export default function InfluenceWithoutBorders() {
             Influence Without Borders
           </h2>
 
-          <div className="text-base sm:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-[#1746D2] font-mono uppercase tracking-wide">
+          <div className="text-base sm:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-[#1746D2] font-mono uppercase tracking-wide">
             True power is not localized.
           </div>
 
@@ -109,7 +109,7 @@ export default function InfluenceWithoutBorders() {
             preserveAspectRatio="none"
           >
             <defs>
-              <linearGradient id="laserGlowCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+              <linearGradient id="laserGlowemerald" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.9" />
                 <stop offset="50%" stopColor="#38bdf8" stopOpacity="0.8" />
                 <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.2" />
@@ -122,7 +122,7 @@ export default function InfluenceWithoutBorders() {
               </linearGradient>
 
               {/* High-intensity Glow Filters */}
-              <filter id="glowCyanFilter" x="-30%" y="-30%" width="160%" height="160%">
+              <filter id="glowemeraldFilter" x="-30%" y="-30%" width="160%" height="160%">
                 <feGaussianBlur stdDeviation="4" result="blur" />
                 <feMerge>
                   <feMergeNode in="blur" />
@@ -138,27 +138,27 @@ export default function InfluenceWithoutBorders() {
               </filter>
             </defs>
 
-            {/* Path 0: Americas -> Flowing Cyan Laser Beam */}
+            {/* Path 0: Americas -> Flowing emerald Laser Beam */}
             <path 
               d={paths[0]}
               fill="none" 
-              stroke="url(#laserGlowCyan)" 
+              stroke="url(#laserGlowemerald)" 
               strokeWidth={hoveredCard === 0 ? "4" : "2.5"}
               strokeDasharray="24 12"
-              filter="url(#glowCyanFilter)"
-              style={{ animation: 'flowLaserCyan 2s linear infinite' }}
+              filter="url(#glowemeraldFilter)"
+              style={{ animation: 'flowLaseremerald 2s linear infinite' }}
               className="transition-all duration-300"
             />
 
-            {/* Path 1: Europe & UK -> Flowing Cyan Laser Beam */}
+            {/* Path 1: Europe & UK -> Flowing emerald Laser Beam */}
             <path 
               d={paths[1]}
               fill="none" 
-              stroke="url(#laserGlowCyan)" 
+              stroke="url(#laserGlowemerald)" 
               strokeWidth={hoveredCard === 1 ? "4" : "2.5"}
               strokeDasharray="24 12"
-              filter="url(#glowCyanFilter)"
-              style={{ animation: 'flowLaserCyan 2.2s linear infinite' }}
+              filter="url(#glowemeraldFilter)"
+              style={{ animation: 'flowLaseremerald 2.2s linear infinite' }}
               className="transition-all duration-300"
             />
 
@@ -202,22 +202,22 @@ export default function InfluenceWithoutBorders() {
                     onMouseLeave={() => setHoveredCard(null)}
                     className={`p-5 rounded-2xl backdrop-blur-md transition-all duration-300 border flex flex-col justify-between group cursor-pointer ${
                       isHovered 
-                        ? 'bg-cyan-950/70 border-cyan-400 shadow-[0_0_30px_rgba(6,182,212,0.35)] -translate-y-1' 
-                        : 'bg-white/[0.03] border-white/10 hover:border-cyan-500/40'
+                        ? 'bg-emerald-950/70 border-emerald-400 shadow-[0_0_30px_rgba(0, 168, 107,0.35)] -translate-y-1' 
+                        : 'bg-white/[0.03] border-white/10 hover:border-emerald-500/40'
                     }`}
                   >
                     <div>
                       <div className="flex items-center justify-between mb-2">
-                        <span className="font-mono text-[11px] font-bold text-cyan-400 uppercase tracking-wider">
+                        <span className="font-mono text-[11px] font-bold text-emerald-400 uppercase tracking-wider">
                           {reg.zone}
                         </span>
-                        <span className="px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-[10px] font-mono text-cyan-300 font-bold">
+                        <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[10px] font-mono text-emerald-300 font-bold">
                           Active Node
                         </span>
                       </div>
 
                       <h3 
-                        className="text-xl font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors"
+                        className="text-xl font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors"
                       >
                         {reg.name}
                       </h3>
@@ -230,7 +230,7 @@ export default function InfluenceWithoutBorders() {
                         {reg.countries.map((c, cIdx) => (
                           <div key={cIdx} className="flex items-center justify-between text-xs py-1 px-2.5 rounded-lg bg-white/[0.02] border border-white/5">
                             <span className="font-semibold text-slate-200">{c.name}</span>
-                            <span className="text-[10px] font-mono text-cyan-400">📍 {c.city}</span>
+                            <span className="text-[10px] font-mono text-emerald-400">📍 {c.city}</span>
                           </div>
                         ))}
                       </div>
@@ -256,7 +256,7 @@ export default function InfluenceWithoutBorders() {
 
               {/* Caption Below Globe */}
               <div className="text-center mt-6 space-y-1">
-                <div className="font-mono text-xs font-bold text-cyan-400 uppercase tracking-widest">
+                <div className="font-mono text-xs font-bold text-emerald-400 uppercase tracking-widest">
                   SOVEREIGN SYNDICATE NETWORK
                 </div>
                 <p className="text-xs text-slate-400">Hover any region card to illuminate its direct connection path.</p>

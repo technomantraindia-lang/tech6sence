@@ -29,12 +29,12 @@ export default function WhatIsBusinessBrains() {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(124,58,237,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.015)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
       
       {/* Glowing backdrop */}
-      <div className="absolute top-[-5%] right-[-10%] w-[600px] h-[600px] rounded-full bg-cyan-100/60 blur-[130px] pointer-events-none" />
+      <div className="absolute top-[-5%] right-[-10%] w-[600px] h-[600px] rounded-full bg-emerald-100/60 blur-[130px] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 
-            className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-widest mb-3 block"
+            className="font-mono text-xs font-bold text-emerald-600 uppercase tracking-widest mb-3 block"
           >
             What is Business Brains?
           </span>
@@ -63,7 +63,7 @@ export default function WhatIsBusinessBrains() {
                   {coh.title}
                 </h3>
                 <span 
-                  className="font-mono text-[0.65rem] font-bold text-cyan-600 tracking-wider uppercase mb-6 block"
+                  className="font-mono text-[0.65rem] font-bold text-emerald-600 tracking-wider uppercase mb-6 block"
                 >
                   {coh.highlight}
                 </span>
@@ -79,7 +79,7 @@ export default function WhatIsBusinessBrains() {
                     key={i} 
                     className="flex items-center gap-2.5 text-xs text-slate-600 font-bold"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                     {pt}
                   </li>
                 ))}

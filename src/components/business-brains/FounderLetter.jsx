@@ -11,7 +11,7 @@ export default function FounderLetter() {
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <span 
-          className="font-mono text-xs font-bold text-cyan-400 uppercase tracking-[0.25em] mb-4 block"
+          className="font-mono text-xs font-bold text-emerald-400 uppercase tracking-[0.25em] mb-4 block"
         >
           FROM THE FOUNDER
         </span>
@@ -22,7 +22,7 @@ export default function FounderLetter() {
           A Letter from the Founder
         </h2>
 
-        <div className="text-cyan-400 font-mono text-base md:text-lg mb-12">
+        <div className="text-emerald-400 font-mono text-base md:text-lg mb-12">
           A Convergence of Apex Minds.
         </div>
 
@@ -32,7 +32,7 @@ export default function FounderLetter() {
           <div className="lg:col-span-4 flex flex-col items-center text-center border-b lg:border-b-0 lg:border-r border-white/10 pb-8 lg:pb-0 lg:pr-8">
             
             {/* Founder Avatar Image */}
-            <div className="w-36 h-36 md:w-44 md:h-44 rounded-full bg-slate-900 border-2 border-cyan-500/50 flex flex-col items-center justify-center mb-6 relative overflow-hidden group shadow-[0_0_35px_rgba(6,182,212,0.3)]">
+            <div className="w-36 h-36 md:w-44 md:h-44 rounded-full bg-slate-900 border-2 border-emerald-500/50 flex flex-col items-center justify-center mb-6 relative overflow-hidden group shadow-[0_0_35px_rgba(0, 168, 107,0.3)]">
               <img 
                 src={founderImg} 
                 alt="Chintan - Founder of TECH6SENSE AI" 
@@ -47,7 +47,7 @@ export default function FounderLetter() {
             </h3>
 
             <p 
-              className="text-xs font-mono text-cyan-400 uppercase tracking-wider"
+              className="text-xs font-mono text-emerald-400 uppercase tracking-wider"
             >
               Founder of TECH6SENSE AI
             </p>
@@ -56,7 +56,7 @@ export default function FounderLetter() {
           {/* Right Column: Letter Content */}
           <div className="lg:col-span-8 relative space-y-6">
             {/* Quotation Mark */}
-            <div className="text-6xl md:text-8xl font-serif text-cyan-500/20 leading-none select-none font-bold">
+            <div className="text-6xl md:text-8xl font-serif text-emerald-500/20 leading-none select-none font-bold">
               “
             </div>
 
@@ -74,7 +74,7 @@ export default function FounderLetter() {
             {/* Signature Block */}
             <div className="pt-6 border-t border-white/10 flex items-center justify-between">
               <div 
-                className="font-serif italic text-2xl md:text-3xl text-cyan-400 tracking-wider font-bold"
+                className="font-serif italic text-2xl md:text-3xl text-emerald-400 tracking-wider font-bold"
               >
                 Chintan
               </div>

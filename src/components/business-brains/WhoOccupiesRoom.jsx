@@ -35,7 +35,7 @@ export default function WhoOccupiesRoom() {
         
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 
-            className="font-mono text-xs font-bold text-cyan-400 uppercase tracking-[0.25em] mb-4 block"
+            className="font-mono text-xs font-bold text-emerald-400 uppercase tracking-[0.25em] mb-4 block"
           >
             THE GLOBAL CIRCLE
           </span>
@@ -57,10 +57,10 @@ export default function WhoOccupiesRoom() {
           {profiles.map((prof, idx) => (
             <div 
               key={idx}
-              className="p-8 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-cyan-500/30 transition-all duration-300 backdrop-blur-md flex flex-col justify-between"
+              className="p-8 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-emerald-500/30 transition-all duration-300 backdrop-blur-md flex flex-col justify-between"
             >
               <div>
-                <span className="font-mono text-xs font-bold text-cyan-400 uppercase tracking-widest mb-3 block">
+                <span className="font-mono text-xs font-bold text-emerald-400 uppercase tracking-widest mb-3 block">
                   {prof.category}
                 </span>
 
@@ -81,9 +81,9 @@ export default function WhoOccupiesRoom() {
                     <span className="text-slate-300">{prof.expertise}</span>
                   </div>
 
-                  <div className="p-4 rounded-2xl bg-cyan-500/5 border border-cyan-500/10">
-                    <span className="font-bold text-cyan-300 block mb-1">Value Extracted:</span>
-                    <span className="text-cyan-100">{prof.valueGained}</span>
+                  <div className="p-4 rounded-2xl bg-emerald-500/5 border border-emerald-500/10">
+                    <span className="font-bold text-emerald-300 block mb-1">Value Extracted:</span>
+                    <span className="text-emerald-100">{prof.valueGained}</span>
                   </div>
                 </div>
               </div>

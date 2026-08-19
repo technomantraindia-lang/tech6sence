@@ -72,7 +72,7 @@ export default function FAQSection() {
         
         <div className="text-center mb-16">
           <span 
-            className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-4 block"
+            className="font-mono text-xs font-bold text-emerald-600 uppercase tracking-[0.25em] mb-4 block"
           >
             PRIVATE MEMBERSHIP FAQ
           </span>
@@ -95,11 +95,11 @@ export default function FAQSection() {
               >
                 <button
                   onClick={() => toggleAccordion(idx)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-slate-900 hover:text-cyan-700 transition-colors"
+                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-slate-900 hover:text-emerald-700 transition-colors"
                   aria-expanded={isOpen}
                 >
                   <span className="text-base md:text-lg">{faq.q}</span>
-                  <span className={`w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center shrink-0 text-cyan-600 transition-transform duration-300 ${isOpen ? 'rotate-180 bg-cyan-50 border-cyan-300' : ''}`}>
+                  <span className={`w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center shrink-0 text-emerald-600 transition-transform duration-300 ${isOpen ? 'rotate-180 bg-emerald-50 border-emerald-300' : ''}`}>
                     ↓
                   </span>
                 </button>

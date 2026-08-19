@@ -14,14 +14,14 @@ export default function PhilosophySection() {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(124,58,237,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.015)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
       
       {/* Glowing backdrop */}
-      <div className="absolute top-1/2 left-[-10%] w-[500px] h-[500px] bg-cyan-100/60 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-[-10%] w-[500px] h-[500px] bg-emerald-100/60 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 right-[-5%] w-[450px] h-[450px] bg-[#1746D2]/10/50 rounded-full blur-[130px] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         {/* Eyebrow */}
         <span 
-          className="font-mono text-xs font-bold text-cyan-600 uppercase tracking-[0.25em] mb-8 block"
+          className="font-mono text-xs font-bold text-emerald-600 uppercase tracking-[0.25em] mb-8 block"
         >
           THE PHILOSOPHY
         </span>
@@ -44,7 +44,7 @@ export default function PhilosophySection() {
               The world's greatest opportunities rarely appear on public platforms. They happen inside private conversations, around executive tables, within trusted circles, and between leaders who share vision, integrity, and ambition.
             </p>
 
-            <div className="p-6 rounded-2xl bg-white border border-slate-200 border-l-4 border-l-cyan-500 text-slate-900 font-medium text-lg leading-relaxed shadow-sm">
+            <div className="p-6 rounded-2xl bg-white border border-slate-200 border-l-4 border-l-emerald-500 text-slate-900 font-medium text-lg leading-relaxed shadow-sm">
               “Extraordinary leaders create extraordinary outcomes when surrounded by extraordinary people.”
             </div>
 
@@ -64,11 +64,11 @@ export default function PhilosophySection() {
           {statements.map((stmt, idx) => (
             <div 
               key={idx} 
-              className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-[0_2px_8px_rgba(15,23,42,0.03)] hover:shadow-md hover:border-cyan-500/40 transition-all duration-300 group"
+              className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-[0_2px_8px_rgba(15,23,42,0.03)] hover:shadow-md hover:border-emerald-500/40 transition-all duration-300 group"
             >
-              <div className="font-mono text-xs font-bold text-cyan-600 mb-2">0{idx + 1}</div>
+              <div className="font-mono text-xs font-bold text-emerald-600 mb-2">0{idx + 1}</div>
               <h3 
-                className="text-lg font-bold text-slate-900 group-hover:text-cyan-600 transition-colors"
+                className="text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition-colors"
               >
                 {stmt}
               </h3>
