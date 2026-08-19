@@ -6,8 +6,8 @@ const categories = [
     title: "AI Development",
     code: "SYS-01",
     desc: "Build intelligent AI products, models, agents, and custom software systems designed for real-world enterprise use.",
-    accent: "#7c3aed",
-    accentRgb: "124, 58, 237",
+    accent: "#1746D2",
+    accentRgb: "23, 70, 210",
     services: [
       { 
         id: "ai-product-development", 
@@ -55,8 +55,8 @@ const categories = [
     title: "Automation & Copilots",
     code: "SYS-02",
     desc: "Automate operational bottlenecks, deploy intelligent enterprise copilots, and leverage generative AI & RAG frameworks.",
-    accent: "#d946ef",
-    accentRgb: "217, 70, 239",
+    accent: "#00A86B",
+    accentRgb: "0, 168, 107",
     services: [
       { 
         id: "ai-automation-for-businesses", 
@@ -112,8 +112,8 @@ const categories = [
     title: "Data & Visual Intelligence",
     code: "SYS-03",
     desc: "Transform enterprise data, machine learning pipelines, predictive forecasting models, and computer vision systems into actionable intelligence.",
-    accent: "#06b6d4",
-    accentRgb: "6, 182, 212",
+    accent: "#D4AF37",
+    accentRgb: "212, 175, 55",
     services: [
       { 
         id: "data-analytics-business-intelligence", 
@@ -153,8 +153,8 @@ const categories = [
     title: "Enterprise AI & Cloud",
     code: "SYS-04",
     desc: "Deploy AI across cloud environments, AIaaS, MLOps lifecycle pipelines, AI security firewalls, and regulatory governance frameworks.",
-    accent: "#4f46e5",
-    accentRgb: "79, 70, 229",
+    accent: "#1746D2",
+    accentRgb: "23, 70, 210",
     services: [
       { 
         id: "ai-integration-cloud-services", 
@@ -210,8 +210,8 @@ const categories = [
     title: "Advanced Tech & Software",
     code: "SYS-05",
     desc: "Extend technology capabilities across IoT sensor networks, enterprise blockchain, immersive AR/VR simulation, AI UX design, and enterprise software.",
-    accent: "#f59e0b",
-    accentRgb: "245, 158, 11",
+    accent: "#D4AF37",
+    accentRgb: "212, 175, 55",
     services: [
       { 
         id: "internet-of-things-development", 

@@ -287,6 +287,144 @@ export function WhatYouWalkAwayWith() {
     </section>
   );
 }
+// Interactive Cybernetic SVG Animated Globe Visual Component
+function GlobalInfraVisual() {
+  return (
+    <div className="relative w-full h-full bg-[#03060f] overflow-hidden flex items-center justify-center">
+      {/* Grid Pattern Background */}
+      <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] [background-size:24px_24px]" />
+      
+      {/* Radar sweeping circle */}
+      <div className="absolute w-[80%] h-[80%] rounded-full border border-blue-500/10 flex items-center justify-center animate-[spin_12s_linear_infinite]">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2.5px] h-1/2 bg-gradient-to-t from-emerald-500 via-emerald-500/30 to-transparent origin-bottom" />
+      </div>
+      <div className="absolute w-[60%] h-[60%] rounded-full border border-blue-500/15" />
+      <div className="absolute w-[40%] h-[40%] rounded-full border border-blue-500/20" />
+
+      {/* Cybernetic Rotating Globe SVG */}
+      <svg className="w-[85%] h-[85%] relative z-10 animate-[spin_60s_linear_infinite]" viewBox="0 0 200 200" fill="none">
+        
+        {/* Outer HUD Rings / Radar Compass Ticks */}
+        <circle cx="100" cy="100" r="90" stroke="#1746D2" strokeWidth="0.5" strokeDasharray="2 6" opacity="0.3" />
+        <circle cx="100" cy="100" r="94" stroke="#00A86B" strokeWidth="0.75" strokeDasharray="1 12" opacity="0.4" className="animate-[spin_20s_linear_infinite_reverse]" />
+        <circle cx="100" cy="100" r="85" stroke="#1746D2" strokeWidth="0.5" opacity="0.15" />
+        
+        {/* Tilted Globe Grid Group */}
+        <g transform="rotate(-15 100 100)">
+          {/* Longitudinal Rings */}
+          <ellipse cx="100" cy="100" rx="80" ry="15" stroke="#1746D2" strokeWidth="0.5" opacity="0.15" />
+          <ellipse cx="100" cy="100" rx="80" ry="35" stroke="#1746D2" strokeWidth="0.5" opacity="0.25" />
+          <ellipse cx="100" cy="100" rx="80" ry="55" stroke="#1746D2" strokeWidth="0.5" opacity="0.35" />
+          <ellipse cx="100" cy="100" rx="80" ry="75" stroke="#1746D2" strokeWidth="0.5" opacity="0.45" />
+
+          {/* Latitudinal Rings */}
+          <ellipse cx="100" cy="100" rx="15" ry="80" stroke="#1746D2" strokeWidth="0.5" opacity="0.15" />
+          <ellipse cx="100" cy="100" rx="35" ry="80" stroke="#1746D2" strokeWidth="0.5" opacity="0.25" />
+          <ellipse cx="100" cy="100" rx="55" ry="80" stroke="#1746D2" strokeWidth="0.5" opacity="0.35" />
+          <ellipse cx="100" cy="100" rx="75" ry="80" stroke="#1746D2" strokeWidth="0.5" opacity="0.45" />
+
+          {/* Equator & Prime Meridian */}
+          <line x1="20" y1="100" x2="180" y2="100" stroke="#1746D2" strokeWidth="0.5" opacity="0.4" />
+          <line x1="100" y1="20" x2="100" y2="180" stroke="#1746D2" strokeWidth="0.5" opacity="0.4" />
+        </g>
+        
+        {/* Network Connection Paths (Mesh) */}
+        <path id="path1" d="M 50 60 Q 75 40 100 30" stroke="#1746D2" strokeWidth="0.75" opacity="0.5" />
+        <path id="path2" d="M 100 30 Q 125 40 150 60" stroke="#1746D2" strokeWidth="0.75" opacity="0.5" />
+        <path id="path3" d="M 150 60 Q 160 100 150 140" stroke="#00A86B" strokeWidth="0.75" opacity="0.4" />
+        <path id="path4" d="M 150 140 Q 125 155 100 170" stroke="#1746D2" strokeWidth="0.75" opacity="0.5" />
+        <path id="path5" d="M 100 170 Q 75 155 50 140" stroke="#1746D2" strokeWidth="0.75" opacity="0.5" />
+        <path id="path6" d="M 50 140 Q 40 100 50 60" stroke="#00A86B" strokeWidth="0.75" opacity="0.4" />
+        
+        {/* Cross-Regional Secondary Connection Arcs */}
+        <path id="path-cross1" d="M 50 60 Q 100 100 150 140" stroke="#00A86B" strokeWidth="0.75" strokeDasharray="2 2" opacity="0.4" />
+        <path id="path-cross2" d="M 100 30 Q 100 100 100 170" stroke="#D4AF37" strokeWidth="0.75" strokeDasharray="1 3" opacity="0.5" />
+        <path id="path-cross3" d="M 150 60 Q 100 100 50 140" stroke="#1746D2" strokeWidth="0.75" strokeDasharray="2 2" opacity="0.4" />
+        
+        {/* Pulsing Nodes (Hubs) */}
+        {/* London */}
+        <g className="animate-pulse">
+          <circle cx="100" cy="30" r="3.5" fill="#00A86B" />
+          <circle cx="100" cy="30" r="7" stroke="#00A86B" strokeWidth="0.5" opacity="0.4" />
+          <text x="106" y="27" fill="#94a3b8" fontSize="4.5" fontFamily="monospace" fontWeight="bold" opacity="0.8">LON</text>
+        </g>
+        {/* New York */}
+        <g className="animate-pulse" style={{ animationDelay: '0.4s' }}>
+          <circle cx="50" cy="60" r="3.5" fill="#1746D2" />
+          <circle cx="50" cy="60" r="7" stroke="#1746D2" strokeWidth="0.5" opacity="0.4" />
+          <text x="35" y="57" fill="#94a3b8" fontSize="4.5" fontFamily="monospace" fontWeight="bold" opacity="0.8">NYC</text>
+        </g>
+        {/* Tokyo */}
+        <g className="animate-pulse" style={{ animationDelay: '0.8s' }}>
+          <circle cx="150" cy="60" r="3.5" fill="#D4AF37" />
+          <circle cx="150" cy="60" r="7" stroke="#D4AF37" strokeWidth="0.5" opacity="0.4" />
+          <text x="156" y="57" fill="#94a3b8" fontSize="4.5" fontFamily="monospace" fontWeight="bold" opacity="0.8">TOK</text>
+        </g>
+        {/* Sydney */}
+        <g className="animate-pulse" style={{ animationDelay: '1.2s' }}>
+          <circle cx="150" cy="140" r="3.5" fill="#1746D2" />
+          <circle cx="150" cy="140" r="7" stroke="#1746D2" strokeWidth="0.5" opacity="0.4" />
+          <text x="156" y="137" fill="#94a3b8" fontSize="4.5" fontFamily="monospace" fontWeight="bold" opacity="0.8">SYD</text>
+        </g>
+        {/* GIFT City */}
+        <g className="animate-pulse" style={{ animationDelay: '0.2s' }}>
+          <circle cx="100" cy="170" r="3.5" fill="#00A86B" />
+          <circle cx="100" cy="170" r="7" stroke="#00A86B" strokeWidth="0.5" opacity="0.4" />
+          <text x="106" y="173" fill="#94a3b8" fontSize="4.5" fontFamily="monospace" fontWeight="bold" opacity="0.8">GIFT</text>
+        </g>
+        {/* Toronto */}
+        <g className="animate-pulse" style={{ animationDelay: '0.6s' }}>
+          <circle cx="50" cy="140" r="3.5" fill="#D4AF37" />
+          <circle cx="50" cy="140" r="7" stroke="#D4AF37" strokeWidth="0.5" opacity="0.4" />
+          <text x="35" y="137" fill="#94a3b8" fontSize="4.5" fontFamily="monospace" fontWeight="bold" opacity="0.8">TOR</text>
+        </g>
+
+        {/* Multiple Animated Data Packets traveling along paths */}
+        <circle cx="0" cy="0" r="2.2" fill="#fff" className="shadow-[0_0_8px_#fff]">
+          <animateMotion 
+            path="M 50 60 Q 75 40 100 30" 
+            dur="3s" 
+            repeatCount="indefinite" 
+          />
+        </circle>
+        <circle cx="0" cy="0" r="1.8" fill="#00A86B">
+          <animateMotion 
+            path="M 100 30 Q 125 40 150 60" 
+            dur="2.5s" 
+            repeatCount="indefinite" 
+          />
+        </circle>
+        <circle cx="0" cy="0" r="2.2" fill="#fff">
+          <animateMotion 
+            path="M 150 140 Q 125 155 100 170" 
+            dur="4s" 
+            repeatCount="indefinite" 
+          />
+        </circle>
+        <circle cx="0" cy="0" r="1.8" fill="#D4AF37">
+          <animateMotion 
+            path="M 100 30 Q 100 100 100 170" 
+            dur="3.5s" 
+            repeatCount="indefinite" 
+          />
+        </circle>
+      </svg>
+      
+      {/* Decorative cybernetic scanning line */}
+      <div className="absolute inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#00A86B]/60 to-transparent top-0 animate-[scan_3s_linear_infinite]" />
+
+      {/* Styles for scanning animation */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes scan {
+          0% { top: 0%; opacity: 0; }
+          10% { opacity: 1; }
+          90% { opacity: 1; }
+          100% { top: 100%; opacity: 0; }
+        }
+      `}} />
+    </div>
+  );
+}
 
 // Section 4: Why TECH6SENSE AI
 export function WhyTech6SenseAI() {
@@ -302,15 +440,10 @@ export function WhyTech6SenseAI() {
         
         {/* Top Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-16">
-          {/* Left: High-Tech Global Machine Infrastructure Image */}
+          {/* Left: High-Tech Global Machine Infrastructure Interactive Visual */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-lg aspect-[4/3] rounded-3xl border border-slate-200/80 shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] overflow-hidden group">
-              <img
-                src={globalInfraImg}
-                alt="Global AI Machine Infrastructure"
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-80" />
+              <GlobalInfraVisual />
               <div className="absolute bottom-4 left-4 right-4 z-10">
                 <span className="inline-block px-3 py-1 rounded-full bg-[#1746D2]/80 backdrop-blur-md border border-white/20 text-white font-mono text-[0.68rem] font-bold uppercase tracking-wider shadow-md">
                   GLOBAL MACHINE INFRASTRUCTURE

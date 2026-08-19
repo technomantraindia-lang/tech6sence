@@ -857,14 +857,14 @@ export default function Home() {
         <MemoAboutSection />
         <MemoIntelligenceStack />
         <MemoAISolutionsOutcome />
-        <MemoHowWeWork />
-        <MemoWhoWeServe />
         <MemoDeepTechProducts />
         <MemoAIProductOpportunity />
         <MemoEcosystemSection />
+        <MemoWhyChoose />
+        <MemoWhoWeServe />
+        <MemoHowWeWork />
         <MemoEngagementModels />
         <MemoIndustriesTransform />
-        <MemoWhyChoose />
         <MemoInnovationStories />
         <MemoFAQSection />
         <MemoFinalCTA />

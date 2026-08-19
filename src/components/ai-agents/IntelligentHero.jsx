@@ -33,8 +33,8 @@ export default function IntelligentHero() {
           
           {/* Top Pill */}
           <div className="inline-flex items-center gap-3 mb-6 px-4 py-2 rounded-full border border-[#1746D2]/20 bg-[#040916]/50 backdrop-blur-xl">
-            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_12px_rgba(34,211,238,0.8)]" />
-            <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-cyan-300">
+            <span className="w-2 h-2 rounded-full bg-[#00A86B] animate-pulse shadow-[0_0_12px_rgba(0,168,107,0.8)]" />
+            <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-[#00A86B]">
               Intelligent Solutions
             </span>
           </div>
@@ -42,7 +42,7 @@ export default function IntelligentHero() {
           {/* Headline */}
           <h1 className="font-display text-[clamp(2.5rem,5.5vw,5.5rem)] leading-[1.05] font-black tracking-tight text-white mb-6">
             Architecting the Future of{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#1746D2] via-fuchsia-400 to-cyan-400">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#1746D2] via-[#00A86B] to-[#D4AF37]">
               Enterprise Intelligence.
             </span>
           </h1>
@@ -67,7 +67,7 @@ export default function IntelligentHero() {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-5 w-full sm:w-auto mb-14">
             <a 
               href="/lets-connect?inquiry=AI%20Strategy" 
-              className="group relative inline-flex justify-center items-center gap-3 rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] px-9 py-4 font-body text-sm font-bold text-white shadow-[0_4px_25px_rgba(124,58,237,0.35)] transition-all hover:scale-[1.03] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]"
+              className="group relative inline-flex justify-center items-center gap-3 rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] px-9 py-4 font-body text-sm font-bold text-white shadow-[0_4px_25px_rgba(23,70,210,0.35)] transition-all hover:scale-[1.03] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]"
             >
               Talk to Our AI Strategy Team
               <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
