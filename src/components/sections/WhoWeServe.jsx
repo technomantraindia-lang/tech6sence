@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 export default function WhoWeServe() {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [hoveredIdx, setHoveredIdx] = useState(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -67,36 +68,48 @@ export default function WhoWeServe() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-          {items.map((item, index) => (
-            <Link
-              key={index}
-              to={item.href} 
-              className="group relative bg-white rounded-2xl p-8 border border-slate-100 transition-all duration-500 ease-out hover:-translate-y-1 hover:border-[#1746D2]/30 block"
-              style={{ 
-                boxShadow: '4px 4px 0px 0px rgba(23,70,210,0.25)',
-                opacity: isVisible ? 1 : 0, 
-                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transitionDelay: `${(index + 1) * 150}ms`
-              }}
-            >
-              <div className="flex flex-col h-full">
-                <div className="flex items-center gap-4 mb-4">
-                  <div 
-                    className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-500"
-                    style={{ backgroundColor: `${item.color}15` }}
-                  >
-                    <svg className="w-6 h-6" style={{ color: item.color }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
+          {items.map((item, index) => {
+            const isHovered = hoveredIdx === index;
+            const bgOpacity = isHovered ? '10' : '05';
+            const borderOpacity = isHovered ? '35' : '15';
+
+            return (
+              <Link
+                key={index}
+                to={item.href} 
+                onMouseEnter={() => setHoveredIdx(index)}
+                onMouseLeave={() => setHoveredIdx(null)}
+                className="group relative rounded-2xl p-8 border transition-all duration-500 ease-out hover:-translate-y-1 block"
+                style={{ 
+                  backgroundColor: `${item.color}${bgOpacity}`,
+                  borderColor: `${item.color}${borderOpacity}`,
+                  boxShadow: isHovered 
+                    ? `4px 4px 0px 0px ${item.color}35` 
+                    : `4px 4px 0px 0px ${item.color}18`,
+                  opacity: isVisible ? 1 : 0, 
+                  transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                  transitionDelay: `${(index + 1) * 150}ms`
+                }}
+              >
+                <div className="flex flex-col h-full">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div 
+                      className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-500"
+                      style={{ backgroundColor: isHovered ? `${item.color}25` : `${item.color}15` }}
+                    >
+                      <svg className="w-6 h-6" style={{ color: item.color }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <h4 className="text-xl font-bold text-slate-900 group-hover:text-[#1746D2] transition-colors">{item.title}</h4>
                   </div>
-                  <h4 className="text-xl font-bold text-slate-900 group-hover:text-[#1746D2] transition-colors">{item.title}</h4>
+                  <p className="text-slate-600 leading-relaxed">
+                    {item.desc}
+                  </p>
                 </div>
-                <p className="text-slate-600 leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>
