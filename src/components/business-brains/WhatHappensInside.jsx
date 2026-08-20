@@ -75,7 +75,7 @@ export default function WhatHappensInside() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-2xl">
             <span 
-              className="font-mono text-xs font-bold text-emerald-600 uppercase tracking-[0.25em] mb-3 block"
+              className="font-display text-sm font-extrabold text-emerald-600 uppercase tracking-[0.25em] mb-3 block"
             >
               INSIDE THE CIRCLE
             </span>
@@ -124,7 +124,7 @@ export default function WhatHappensInside() {
               <div>
                 {/* Header Row */}
                 <div className="flex items-center justify-between mb-5">
-                  <span className="font-mono text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+                  <span className="font-display text-sm font-extrabold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
                     ACTIVITY {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                   </span>
                   <span className="text-2xl group-hover:scale-110 transition-transform">

@@ -146,11 +146,11 @@ export default function Footer() {
               </h4>
               <ul className="space-y-4 p-0 m-0 list-none">
                 {[
-                  { label: 'AI Development', href: '/ai-agents?tab=0#ecosystem' },
-                  { label: 'Automation & Copilots', href: '/ai-agents?tab=1#ecosystem' },
-                  { label: 'Data Intelligence', href: '/ai-agents?tab=2#ecosystem' },
-                  { label: 'Enterprise AI & Cloud', href: '/ai-agents?tab=3#ecosystem' },
-                  { label: 'Advanced Software', href: '/ai-agents?tab=4#ecosystem' },
+                  { label: 'AI Product & Model Development', href: '/ai-agents?tab=0#ecosystem' },
+                  { label: 'Intelligent Automation & Agent Systems', href: '/ai-agents?tab=1#ecosystem' },
+                  { label: 'Generative & Applied AI', href: '/ai-agents?tab=2#ecosystem' },
+                  { label: 'AI Strategy & Governance', href: '/ai-agents?tab=3#ecosystem' },
+                  { label: 'Enterprise Technology & Digital Infrastructure', href: '/ai-agents?tab=4#ecosystem' },
                 ].map((link) => (
                   <li key={link.label}>
                     <Link 

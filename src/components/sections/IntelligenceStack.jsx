@@ -193,7 +193,7 @@ export default function IntelligenceStack() {
         
         {/* Title Section */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <span className="font-mono text-xs font-bold text-blue-600 uppercase tracking-[0.25em] block mb-3">
+          <span className="font-display text-sm font-extrabold text-blue-600 uppercase tracking-[0.25em] block mb-3">
             Integrated Intelligence Architecture
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">

@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 const categories = [
   {
-    title: "AI Development",
+    title: "AI Product & Model Development",
     code: "SYS-01",
     desc: "Build intelligent AI products, models, agents, and custom software systems designed for real-world enterprise use.",
     accent: "#1746D2",
@@ -52,7 +52,7 @@ const categories = [
     ]
   },
   {
-    title: "Automation & Copilots",
+    title: "Intelligent Automation & Agent Systems",
     code: "SYS-02",
     desc: "Automate operational bottlenecks, deploy intelligent enterprise copilots, and leverage generative AI & RAG frameworks.",
     accent: "#00A86B",
@@ -109,7 +109,7 @@ const categories = [
     ]
   },
   {
-    title: "Data & Visual Intelligence",
+    title: "Generative & Applied AI",
     code: "SYS-03",
     desc: "Transform enterprise data, machine learning pipelines, predictive forecasting models, and computer vision systems into actionable intelligence.",
     accent: "#D4AF37",
@@ -150,7 +150,7 @@ const categories = [
     ]
   },
   {
-    title: "Enterprise AI & Cloud",
+    title: "AI Strategy & Governance",
     code: "SYS-04",
     desc: "Deploy AI across cloud environments, AIaaS, MLOps lifecycle pipelines, AI security firewalls, and regulatory governance frameworks.",
     accent: "#1746D2",
@@ -207,7 +207,7 @@ const categories = [
     ]
   },
   {
-    title: "Advanced Tech & Software",
+    title: "Enterprise Technology & Digital Infrastructure",
     code: "SYS-05",
     desc: "Extend technology capabilities across IoT sensor networks, enterprise blockchain, immersive AR/VR simulation, AI UX design, and enterprise software.",
     accent: "#D4AF37",
@@ -275,34 +275,42 @@ function ServiceCard({ srv, accent, accentRgb }) {
       onMouseMove={handleMouseMove}
       to={srv.href}
       id={srv.id}
-      className="group relative p-7 rounded-2xl border border-slate-200/80 bg-white/90 backdrop-blur-md shadow-sm hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 overflow-hidden flex flex-col justify-between"
+      className="group relative p-7 rounded-2xl border border-slate-200/80 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between hover:border-transparent"
+      style={{
+        boxShadow: 'var(--hover-shadow, 0 1px 2px 0 rgba(0, 0, 0, 0.05))'
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.setProperty('--hover-shadow', `0 20px 40px -15px rgba(${accentRgb}, 0.5)`);
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.removeProperty('--hover-shadow');
+      }}
     >
+      {/* Solid background on hover */}
       <div 
-        className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        style={{
-          background: `radial-gradient(circle 160px at var(--mx, -99px) var(--my, -99px), rgba(${accentRgb}, 0.07), transparent 70%)`
-        }}
+        className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
+        style={{ backgroundColor: accent }}
       />
 
       <div className="relative z-10">
-        <span className="inline-block font-mono text-[0.65rem] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 mb-3">
+        <span className="inline-block font-display text-sm font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 mb-3 group-hover:bg-white/20 group-hover:text-white transition-colors duration-300">
           {srv.title}
         </span>
         
-        <h4 className="font-display text-base font-extrabold text-slate-900 mb-2 leading-snug group-hover:text-slate-950">
+        <h4 className="font-display text-base font-extrabold text-slate-900 mb-2 leading-snug group-hover:text-white transition-colors duration-300">
           {srv.h1}
         </h4>
         
-        <p className="font-body text-xs text-slate-600 leading-relaxed font-medium mb-6">
+        <p className="font-body text-xs text-slate-600 leading-relaxed font-medium mb-6 group-hover:text-white/90 transition-colors duration-300">
           {srv.desc}
         </p>
       </div>
 
-      <div className="relative z-10 pt-4 border-t border-slate-100 flex items-center justify-between">
-        <span className="font-display text-xs font-bold transition-all group-hover:translate-x-1" style={{ color: accent }}>
+      <div className="relative z-10 pt-4 border-t border-slate-100 group-hover:border-white/20 flex items-center justify-between transition-colors duration-300">
+        <span className="font-display text-xs font-bold transition-all group-hover:translate-x-1 group-hover:!text-white" style={{ color: accent }}>
           {srv.cta}
         </span>
-        <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5" style={{ color: accent }}>
+        <svg className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:!text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5" style={{ color: accent }}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
         </svg>
       </div>
@@ -373,14 +381,13 @@ export default function IntelligentSolutionsEcosystem() {
                   setActiveTab(i);
                   setActiveAccordion(i);
                 }}
-                className={`px-5 py-3 rounded-2xl border transition-all duration-300 cursor-pointer flex items-center gap-2 relative ${
+                className={`px-5 py-3 rounded-2xl border transition-all duration-300 cursor-pointer flex items-center justify-center relative ${
                   isActive 
-                    ? 'bg-slate-900 border-slate-900 text-white shadow-md' 
-                    : 'bg-transparent border-transparent text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                    ? 'bg-[#1746D2] border-[#1746D2] text-white shadow-md' 
+                    : 'bg-transparent border-transparent text-slate-500 hover:bg-slate-50 hover:text-[#1746D2]'
                 }`}
               >
-                <span className="font-mono text-[0.65rem] font-bold opacity-60 uppercase">{cat.code}</span>
-                <span className="font-display text-xs lg:text-sm font-bold">{cat.title}</span>
+                <span className="font-display text-sm font-bold whitespace-nowrap">{cat.title}</span>
               </button>
             );
           })}
@@ -392,8 +399,8 @@ export default function IntelligentSolutionsEcosystem() {
             
             <div className="mb-10 border-b border-slate-100 pb-8 flex flex-col md:flex-row md:items-start justify-between gap-6">
               <div className="max-w-3xl">
-                <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-2 block">
-                  {activeCategory.code} PRACTICE LINE CATEGORY
+                <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-2 block">
+                  PRACTICE LINE CATEGORY
                 </span>
                 <h3 className="font-display text-3xl font-extrabold text-slate-900 mb-3">
                   {activeCategory.title}
@@ -435,7 +442,6 @@ export default function IntelligentSolutionsEcosystem() {
                   className="w-full flex items-center justify-between p-5 text-left"
                 >
                   <div>
-                    <span className="font-mono text-[0.65rem] font-bold text-[#1746D2] uppercase block mb-1">{cat.code}</span>
                     <h3 className="font-display text-base font-bold text-slate-900">{cat.title}</h3>
                   </div>
                   <svg className={`w-5 h-5 text-slate-400 transition-transform ${isActive ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">

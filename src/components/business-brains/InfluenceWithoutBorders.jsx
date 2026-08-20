@@ -77,7 +77,7 @@ export default function InfluenceWithoutBorders() {
         {/* Header Block */}
         <div className="text-center max-w-4xl mx-auto mb-16 space-y-4">
           <span 
-            className="font-mono text-xs font-bold text-emerald-400 uppercase tracking-[0.25em] mb-2 block"
+            className="font-display text-sm font-extrabold text-emerald-400 uppercase tracking-[0.25em] mb-2 block"
           >
             GLOBAL REACH
           </span>
@@ -256,7 +256,7 @@ export default function InfluenceWithoutBorders() {
 
               {/* Caption Below Globe */}
               <div className="text-center mt-6 space-y-1">
-                <div className="font-mono text-xs font-bold text-emerald-400 uppercase tracking-widest">
+                <div className="font-display text-sm font-extrabold text-emerald-400 uppercase tracking-widest">
                   SOVEREIGN SYNDICATE NETWORK
                 </div>
                 <p className="text-xs text-slate-400">Hover any region card to illuminate its direct connection path.</p>

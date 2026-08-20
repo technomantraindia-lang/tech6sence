@@ -81,7 +81,7 @@ export default function IndustriesTransform() {
         >
           <div className="flex items-center gap-3 mb-4">
             <span className="h-[2px] w-8 bg-gradient-to-r from-[#1746D2] to-[#00A86B]" />
-            <span className="font-mono text-xs font-bold tracking-[0.25em] uppercase text-blue-600">
+            <span className="font-display text-sm font-extrabold tracking-[0.25em] uppercase text-blue-600">
               DOMAIN DEPTH
             </span>
           </div>
@@ -106,7 +106,7 @@ export default function IndustriesTransform() {
               className="group flex gap-6 pb-6 border-b border-slate-100 hover:border-slate-200 transition-colors duration-300"
             >
               {/* Monospace Index Number */}
-              <span className="font-mono text-xs font-bold text-[#1746D2] tracking-wider pt-1 shrink-0 select-none">
+              <span className="font-display text-sm font-extrabold text-[#1746D2] tracking-wider pt-1 shrink-0 select-none">
                 0{idx + 1}.
               </span>
               

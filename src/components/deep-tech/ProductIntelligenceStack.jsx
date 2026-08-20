@@ -62,7 +62,7 @@ export default function ProductIntelligenceStack() {
                 className={`p-6 rounded-2xl transition-all duration-300 border border-transparent flex flex-col justify-between group cursor-default select-none ${cardBg} ${hoverTransform} ${hoverGlow}`}
               >
                 <div>
-                  <span className={`inline-flex items-center justify-center w-8 h-8 rounded-full font-mono text-xs font-bold mb-4 transition-all duration-500 ease-out group-hover:rotate-[360deg] ${badgeBg}`}>
+                  <span className={`inline-flex items-center justify-center w-8 h-8 rounded-full font-display text-sm font-extrabold mb-4 transition-all duration-500 ease-out group-hover:rotate-[360deg] ${badgeBg}`}>
                     {ph.num}
                   </span>
                   <h3 className={`font-display text-base font-extrabold text-slate-900 transition-colors duration-300 mb-2 leading-snug ${hoverText}`}>

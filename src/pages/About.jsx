@@ -345,7 +345,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left side explanation */}
             <div className="lg:col-span-7">
-              <span className="font-mono text-xs font-bold text-emerald-600 uppercase tracking-widest mb-3 block">
+              <span className="font-display text-sm font-extrabold text-emerald-600 uppercase tracking-widest mb-3 block">
                 TECHNICAL DIFFERENTIATION
               </span>
               <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight mb-6">
@@ -372,7 +372,7 @@ export default function About() {
                 ].map((item, idx) => (
                   <span
                     key={idx}
-                    className="font-mono text-xs font-bold px-4 py-2 rounded-full border border-slate-200 bg-slate-50 text-blue-700 shadow-sm"
+                    className="font-display text-sm font-extrabold px-4 py-2 rounded-full border border-slate-200 bg-slate-50 text-blue-700 shadow-sm"
                   >
                     {item}
                   </span>
@@ -641,7 +641,7 @@ export default function About() {
                 </div>
                 {/* Quote Column */}
                 <div className="md:col-span-8 flex flex-col items-start text-left">
-                  <span className="font-mono text-[0.65rem] font-bold text-emerald-600 uppercase tracking-[0.25em] mb-4">
+                  <span className="font-display text-sm font-extrabold text-emerald-600 uppercase tracking-[0.25em] mb-4">
                     A MESSAGE FROM OUR FOUNDER
                   </span>
 

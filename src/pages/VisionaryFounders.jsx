@@ -49,7 +49,7 @@ export default function VisionaryFounders() {
               <div className="lg:col-span-9 flex flex-col items-start text-left gap-6">
                
 
-                <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-[0.25em] block px-3 py-1 rounded-full bg-[#1746D2]/10 border border-[#1746D2]/20">
+                <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-[0.25em] block px-3 py-1 rounded-full bg-[#1746D2]/10 border border-[#1746D2]/20">
                   VISIONARY FOUNDERS
                 </span>
 

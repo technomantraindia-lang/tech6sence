@@ -232,7 +232,7 @@ export default function DeepTechApplications() {
             ))}
           </div>
 
-          <p className="text-center font-mono text-[0.65rem] font-bold text-slate-400 uppercase tracking-wider mt-10">
+          <p className="text-center font-display text-sm font-extrabold text-slate-400 uppercase tracking-wider mt-10">
             * Specific certifications depend on the product category, target market, intended use, and regulatory pathway.
           </p>
 
@@ -281,7 +281,7 @@ export default function DeepTechApplications() {
                   }`}
                 >
                   <div>
-                    <span className={`inline-flex items-center justify-center w-8 h-8 rounded-full font-mono text-xs font-bold mb-4 transition-all duration-500 ease-out group-hover:rotate-[360deg] ${badgeBg}`}>
+                    <span className={`inline-flex items-center justify-center w-8 h-8 rounded-full font-display text-sm font-extrabold mb-4 transition-all duration-500 ease-out group-hover:rotate-[360deg] ${badgeBg}`}>
                       {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                     </span>
                     <h3 className={`font-display text-base font-extrabold text-slate-900 transition-colors duration-300 leading-snug ${hoverText}`}>

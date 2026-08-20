@@ -191,7 +191,7 @@ export default function FAQSection() {
         >
           <div className="mb-5 flex items-center justify-center gap-3">
             <span className="h-[2px] w-10 bg-gradient-to-r from-blue-500 to-emerald-500" />
-            <span className="font-mono text-[0.65rem] font-bold tracking-[0.35em] uppercase text-blue-600">
+            <span className="font-display text-sm font-extrabold tracking-[0.35em] uppercase text-blue-600">
               FREQUENTLY ASKED QUESTIONS
             </span>
             <span className="h-[2px] w-10 bg-gradient-to-l from-blue-500 to-emerald-500" />
@@ -213,7 +213,7 @@ export default function FAQSection() {
             <button
               key={cat}
               onClick={() => { setSelectedCat(cat); setOpenIdx(null); }}
-              className={`px-4 py-2 rounded-full font-mono text-xs font-bold transition-all duration-300 ${
+              className={`px-4 py-2 rounded-full font-display text-sm font-extrabold transition-all duration-300 ${
                 selectedCat === cat
                   ? 'bg-slate-900 text-white shadow-md shadow-slate-900/10'
                   : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200/60'
@@ -253,7 +253,7 @@ export default function FAQSection() {
 
                 {isOpen && (
                   <div className="px-6 pb-6 pt-2 font-body text-slate-600 text-[0.95rem] leading-relaxed border-t border-slate-50 bg-slate-50/30">
-                    <span className="font-mono text-[0.65rem] font-bold tracking-widest uppercase text-blue-600 block mb-2">
+                    <span className="font-display text-sm font-extrabold tracking-widest uppercase text-blue-600 block mb-2">
                       [{faq.cat}]
                     </span>
                     {faq.a}

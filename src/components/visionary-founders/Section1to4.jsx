@@ -5,7 +5,7 @@ export function ProgramPromise() {
     <section className="py-20 md:py-28 bg-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
       <div className="max-w-[1400px] mx-auto px-6 relative z-10 text-center">
-        <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
+        <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
           Program Promise
         </span>
         <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 font-display">
@@ -135,7 +135,7 @@ export function RealityVsSolution() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
           <div className="p-8 md:p-12 rounded-[2rem] bg-white border border-slate-200 shadow-sm relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full opacity-70 transition-transform group-hover:scale-110"></div>
-            <span className="font-mono text-xs font-bold text-blue-600 uppercase tracking-widest mb-4 block">
+            <span className="font-display text-sm font-extrabold text-blue-600 uppercase tracking-widest mb-4 block">
               The Reality
             </span>
             <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-6 font-display">
@@ -151,7 +151,7 @@ export function RealityVsSolution() {
 
           <div className="p-8 md:p-12 rounded-[2rem] bg-gradient-to-br from-blue-700 to-indigo-900 text-white border border-blue-800 shadow-xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/30 rounded-bl-full blur-xl transition-transform group-hover:scale-125"></div>
-            <span className="font-mono text-xs font-bold text-blue-200 uppercase tracking-widest mb-4 block">
+            <span className="font-display text-sm font-extrabold text-blue-200 uppercase tracking-widest mb-4 block">
               The Solution
             </span>
             <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-6 font-display">

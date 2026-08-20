@@ -35,7 +35,7 @@ export default function BusinessBrainsPromise() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div className="max-w-3xl">
             <span 
-              className="font-mono text-xs font-bold text-emerald-400 uppercase tracking-[0.25em] mb-3 block"
+              className="font-display text-sm font-extrabold text-emerald-400 uppercase tracking-[0.25em] mb-3 block"
             >
               THE PROMISE
             </span>
@@ -92,7 +92,7 @@ export default function BusinessBrainsPromise() {
                 <div className="flex items-center justify-between mb-5">
                   <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="font-mono text-xs font-bold text-emerald-300 uppercase">
+                    <span className="font-display text-sm font-extrabold text-emerald-300 uppercase">
                       VALUE {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                     </span>
                   </div>

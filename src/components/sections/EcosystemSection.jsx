@@ -20,7 +20,7 @@ const BRAINS_POINTS = [
 function EcoListItem({ point, index, color, textColor = 'text-slate-700' }) {
   return (
     <div className={`group flex items-center gap-4 py-4 border-b border-white/10 hover:border-white/30 transition-colors`}>
-      <span className="font-mono text-[0.65rem] font-bold text-slate-400 group-hover:text-slate-300 transition-colors">0{index + 1}</span>
+      <span className="font-display text-sm font-extrabold text-slate-400 group-hover:text-slate-300 transition-colors">0{index + 1}</span>
       <span className={`font-body text-[0.95rem] ${textColor} font-medium flex-1 transition-transform duration-300 group-hover:translate-x-1`}>{point.text}</span>
       <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 opacity-0 -translate-x-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0" style={{ stroke: color }} strokeWidth="2.5">
         <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
@@ -63,7 +63,7 @@ export default function EcosystemSection() {
           <div className="w-full lg:max-w-4xl">
             <div className="mb-6 flex items-center gap-4">
               <div className="w-1.5 h-1.5 rounded-full bg-[#1746D2] animate-pulse" />
-              <span className="font-mono text-[0.7rem] font-bold tracking-[0.3em] uppercase text-slate-400">
+              <span className="font-display text-sm font-extrabold tracking-[0.3em] uppercase text-slate-400">
                 SENSE GROWTH &amp; SENSE CONNECTION
               </span>
             </div>
@@ -94,7 +94,7 @@ export default function EcosystemSection() {
               
               {/* Left Content */}
               <div className="flex flex-col items-start text-white">
-                <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-[0.2em] block px-4 py-2 rounded-full bg-[#1746D2]/10 border border-[#1746D2]/20 mb-8">
+                <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-[0.2em] block px-4 py-2 rounded-full bg-[#1746D2]/10 border border-[#1746D2]/20 mb-8">
                   The Global AI Founder Ecosystem
                 </span>
 
@@ -166,7 +166,7 @@ export default function EcosystemSection() {
 
               {/* Right Content */}
               <div className="flex flex-col items-start text-white order-1 lg:order-2">
-                <span className="font-mono text-xs font-bold text-[#00A86B] uppercase tracking-[0.2em] block px-4 py-2 rounded-full bg-[#00A86B]/10 border border-[#00A86B]/20 mb-8">
+                <span className="font-display text-sm font-extrabold text-[#00A86B] uppercase tracking-[0.2em] block px-4 py-2 rounded-full bg-[#00A86B]/10 border border-[#00A86B]/20 mb-8">
                   The Nexus of Global Capital and Technological Supremacy
                 </span>
 

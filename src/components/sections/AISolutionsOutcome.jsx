@@ -102,6 +102,23 @@ const SOLUTIONS = [
 ];
 
 function AccordionItem({ solution, index, isOpen, onHover, onToggle, isVisible }) {
+  // Cycle through brand colors for solid backgrounds: Blue, Emerald, Gold
+  const themes = [
+    {
+      cardOpen: 'bg-[#1746D2] shadow-[0_20px_40px_-15px_rgba(23,70,210,0.5)] border-[#1746D2]',
+      cardClosedHover: 'hover:shadow-[0_10px_30px_-15px_rgba(23,70,210,0.3)]',
+    },
+    {
+      cardOpen: 'bg-[#00A86B] shadow-[0_20px_40px_-15px_rgba(0,168,107,0.5)] border-[#00A86B]',
+      cardClosedHover: 'hover:shadow-[0_10px_30px_-15px_rgba(0,168,107,0.3)]',
+    },
+    {
+      cardOpen: 'bg-[#D4AF37] shadow-[0_20px_40px_-15px_rgba(212,175,55,0.5)] border-[#D4AF37]',
+      cardClosedHover: 'hover:shadow-[0_10px_30px_-15px_rgba(212,175,55,0.3)]',
+    }
+  ];
+  const t = themes[index % 3];
+
   return (
     <div
       onMouseEnter={() => onHover(index)}
@@ -117,8 +134,8 @@ function AccordionItem({ solution, index, isOpen, onHover, onToggle, isVisible }
       <div
         className={`rounded-2xl transition-all duration-300 border overflow-hidden ${
           isOpen
-            ? 'bg-white shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] border-[#1746D2]/30'
-            : 'bg-transparent border-transparent hover:bg-white/60 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.25)]'
+            ? t.cardOpen
+            : `bg-transparent border-transparent hover:bg-white/60 ${t.cardClosedHover}`
         }`}
       >
         {/* Header row */}
@@ -127,8 +144,8 @@ function AccordionItem({ solution, index, isOpen, onHover, onToggle, isVisible }
           <div
             className={`w-11 h-11 shrink-0 rounded-xl flex items-center justify-center border transition-all duration-300 ${
               isOpen
-                ? 'bg-[#1746D2]/10 border-[#1746D2]/20 text-[#1746D2]'
-                : 'bg-white border-slate-200 text-slate-400 shadow-sm'
+                ? 'bg-white/15 border-white/20 text-white shadow-sm'
+                : 'bg-white border-slate-200 text-slate-400 shadow-sm group-hover:text-slate-600'
             }`}
           >
             {solution.icon}
@@ -138,11 +155,13 @@ function AccordionItem({ solution, index, isOpen, onHover, onToggle, isVisible }
           <div className="flex-1 min-w-0">
             <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
               <h4 className={`font-display text-[1rem] md:text-[1.12rem] font-bold tracking-tight transition-colors duration-300 ${
-                isOpen ? 'text-slate-900' : 'text-slate-700'
+                isOpen ? 'text-white' : 'text-slate-700 group-hover:text-slate-900'
               }`}>
                 {solution.title}
               </h4>
-              <span className="font-body text-[0.85rem] text-slate-500 italic font-normal">
+              <span className={`font-body text-[0.85rem] italic font-normal transition-colors duration-300 ${
+                isOpen ? 'text-white/80' : 'text-slate-500'
+              }`}>
                 {solution.subtitle}
               </span>
             </div>
@@ -152,11 +171,11 @@ function AccordionItem({ solution, index, isOpen, onHover, onToggle, isVisible }
           <Link
             to={solution.path}
             className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
-              isOpen ? 'bg-[#1746D2]/10 translate-x-1' : ''
+              isOpen ? 'bg-white/20 translate-x-1 shadow-sm' : ''
             }`}
             onClick={(e) => e.stopPropagation()}
           >
-            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" stroke={isOpen ? '#1746D2' : '#94a3b8'} strokeWidth="2">
+            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" stroke={isOpen ? '#ffffff' : '#94a3b8'} strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
           </Link>
@@ -169,10 +188,10 @@ function AccordionItem({ solution, index, isOpen, onHover, onToggle, isVisible }
         >
           <div className="overflow-hidden">
             <div className={`px-5 md:px-7 pb-6 pt-1 transition-opacity duration-400 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
-              <div className="h-[1px] bg-gradient-to-r from-[#1746D2]/10 via-[#00A86B]/10 to-transparent mb-5" />
+              <div className="h-[1px] bg-gradient-to-r from-white/30 via-white/10 to-transparent mb-5" />
 
               {/* Overview paragraph */}
-              <p className="font-body text-[0.9rem] leading-[1.75] text-slate-600 font-medium mb-5">
+              <p className="font-body text-[0.9rem] leading-[1.75] text-white/90 font-medium mb-5">
                 {solution.overview}
               </p>
 
@@ -180,8 +199,8 @@ function AccordionItem({ solution, index, isOpen, onHover, onToggle, isVisible }
               <ul className="space-y-2.5 mb-6">
                 {solution.bullets.map((bullet, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#00A86B] shrink-0" />
-                    <span className="font-body text-[0.88rem] text-slate-700 font-semibold leading-relaxed">
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full shrink-0 bg-white shadow-[0_0_8px_rgba(255,255,255,0.6)]" />
+                    <span className="font-body text-[0.88rem] text-white font-semibold leading-relaxed">
                       {bullet}
                     </span>
                   </li>
@@ -189,11 +208,11 @@ function AccordionItem({ solution, index, isOpen, onHover, onToggle, isVisible }
               </ul>
 
               {/* Built For Callout */}
-              <div className="flex flex-col sm:flex-row sm:items-baseline gap-1.5 p-4 rounded-xl bg-slate-50 border border-slate-100">
-                <span className="font-display text-[0.78rem] font-extrabold tracking-wide uppercase text-slate-900 shrink-0">
+              <div className="flex flex-col sm:flex-row sm:items-baseline gap-1.5 p-4 rounded-xl border bg-black/10 border-white/20 text-white">
+                <span className="font-display text-[0.78rem] font-extrabold tracking-wide uppercase shrink-0 text-white/90">
                   Built for:
                 </span>
-                <span className="font-body text-[0.85rem] text-slate-600 font-medium leading-relaxed">
+                <span className="font-body text-[0.85rem] font-medium leading-relaxed">
                   {solution.builtFor}
                 </span>
               </div>
@@ -258,7 +277,7 @@ export default function AISolutionsOutcome() {
             {/* Label */}
             <div className="mb-6 flex items-center gap-3">
               <span className="h-[2px] w-10 bg-gradient-to-r from-[#1746D2] to-[#00A86B]" />
-              <span className="font-mono text-[0.65rem] font-bold tracking-[0.35em] uppercase text-[#1746D2]">
+              <span className="font-display text-sm font-extrabold tracking-[0.35em] uppercase text-[#1746D2]">
                 WHAT WE ENGINEER
               </span>
             </div>
@@ -290,8 +309,8 @@ export default function AISolutionsOutcome() {
             </div>
 
             {/* Trust line */}
-            <p className="font-body text-[0.75rem] text-slate-400 font-medium tracking-wide">
-              Built for enterprises, startups, and future-ready digital teams.
+            <p className="font-display text-sm md:text-base font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#1746D2] to-[#00A86B] italic tracking-wide mt-2">
+              "Built for enterprises, startups, and future-ready digital teams."
             </p>
           </div>
 

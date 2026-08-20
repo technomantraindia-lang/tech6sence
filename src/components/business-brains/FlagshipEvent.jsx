@@ -28,7 +28,7 @@ export default function FlagshipEvent() {
           </div>
 
           <span 
-            className="font-mono text-xs font-bold text-emerald-400 uppercase tracking-[0.25em] mb-2 block"
+            className="font-display text-sm font-extrabold text-emerald-400 uppercase tracking-[0.25em] mb-2 block"
           >
             FLAGSHIP EXPERIENCE
           </span>

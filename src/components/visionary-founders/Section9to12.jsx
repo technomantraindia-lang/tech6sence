@@ -38,7 +38,7 @@ export function HowItWorks() {
     <section className="py-20 md:py-28 bg-slate-50 relative border-b border-slate-200">
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
+          <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
             THE SIX-PHASE FOUNDER JOURNEY
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display">
@@ -51,7 +51,7 @@ export function HowItWorks() {
             <div key={i} className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-24 h-24 bg-[#1746D2]/10 rounded-bl-[100px] -z-0 transition-transform group-hover:scale-125"></div>
               <div className="relative z-10">
-                <span className="font-mono text-xs font-bold text-[#1746D2] block mb-4 uppercase tracking-widest">
+                <span className="font-display text-sm font-extrabold text-[#1746D2] block mb-4 uppercase tracking-widest">
                   {step.num}
                 </span>
                 <h4 className="font-display text-xl font-bold text-slate-900 mb-3">{step.title}</h4>
@@ -402,7 +402,7 @@ export function SuccessStories() {
             </button>
 
             <div className="flex items-center justify-between gap-4 mb-4 mt-2">
-              <span className="px-3.5 py-1 rounded-full bg-[#1746D2]/20 text-[#1233A0] font-mono text-xs font-bold uppercase tracking-wider">
+              <span className="px-3.5 py-1 rounded-full bg-[#1746D2]/20 text-[#1233A0] font-display text-sm font-extrabold uppercase tracking-wider">
                 Case #{selectedStory.id}
               </span>
               <div className="text-xs font-bold text-slate-500">

@@ -50,7 +50,7 @@ export default function SyndicatePrivileges() {
         
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 
-            className="font-mono text-xs font-bold text-emerald-600 uppercase tracking-[0.25em] mb-4 block"
+            className="font-display text-sm font-extrabold text-emerald-600 uppercase tracking-[0.25em] mb-4 block"
           >
             PRIVATE ACCESS
           </span>

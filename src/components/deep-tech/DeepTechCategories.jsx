@@ -82,7 +82,7 @@ export default function DeepTechCategories() {
 
                 {/* Traditional Column */}
                 <div className="md:col-span-4 border-t md:border-t-0 md:border-r border-slate-200/60 pt-3 md:pt-0 pr-0 md:pr-6">
-                  <span className="block font-mono text-[0.6rem] font-bold text-slate-400 uppercase tracking-widest mb-1">
+                  <span className="block font-display text-sm font-extrabold text-slate-400 uppercase tracking-widest mb-1">
                     TRADITIONAL FRAGMENTED APPROACH
                   </span>
                   <span className="font-body text-xs md:text-sm text-slate-500 font-medium">
@@ -92,7 +92,7 @@ export default function DeepTechCategories() {
 
                 {/* Ecosystem Column */}
                 <div className="md:col-span-5 pt-3 md:pt-0">
-                  <span className="block font-mono text-[0.6rem] font-bold text-slate-400 uppercase tracking-widest mb-1">
+                  <span className="block font-display text-sm font-extrabold text-slate-400 uppercase tracking-widest mb-1">
                     THE TECH6SENSE ECOSYSTEM
                   </span>
                   <span className="font-body text-xs md:text-sm text-slate-800 font-bold">

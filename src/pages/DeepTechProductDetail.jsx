@@ -714,7 +714,7 @@ export default function DeepTechProductDetail() {
 
               {/* Highlights Bento Box */}
               <div className="relative p-8 rounded-3xl border border-slate-100 bg-slate-50/50 backdrop-blur-md shadow-sm">
-                <h3 className="font-mono text-xs font-bold text-slate-400 uppercase tracking-widest mb-6 pb-3 border-b border-slate-200/50">
+                <h3 className="font-display text-sm font-extrabold text-slate-400 uppercase tracking-widest mb-6 pb-3 border-b border-slate-200/50">
                   PRODUCT KEY CAPABILITIES
                 </h3>
                 <ul className="space-y-4">
@@ -1073,7 +1073,7 @@ export default function DeepTechProductDetail() {
                 <button
                   key={tabName}
                   onClick={() => setActiveTab(tabName)}
-                  className={`relative px-6 py-3 rounded-xl font-mono text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-sm border transform hover:-translate-y-0.5 active:translate-y-0 ${
+                  className={`relative px-6 py-3 rounded-xl font-display text-sm font-extrabold uppercase tracking-wider transition-all duration-300 shadow-sm border transform hover:-translate-y-0.5 active:translate-y-0 ${
                     isActive 
                       ? 'bg-blue-600 border-blue-600 text-white shadow-blue-500/25 shadow-lg' 
                       : 'bg-white border-slate-200/80 text-slate-600 hover:text-white hover:bg-emerald-600 hover:border-emerald-600 hover:shadow-emerald-500/20 hover:shadow-md'
@@ -1356,7 +1356,7 @@ export default function DeepTechProductDetail() {
                   className="p-8 rounded-3xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
-                    <span className="w-8 h-8 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center font-mono text-xs font-bold mb-6">
+                    <span className="w-8 h-8 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center font-display text-sm font-extrabold mb-6">
                       L0{idx + 1}
                     </span>
                     <h3 className="font-display text-lg font-bold text-white mb-4 pb-3 border-b border-white/10">
@@ -1398,7 +1398,7 @@ export default function DeepTechProductDetail() {
             <div className="overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-sm max-w-4xl mx-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="bg-slate-50 border-b border-slate-200/80 font-mono text-xs font-bold uppercase text-slate-500 tracking-wider">
+                  <tr className="bg-slate-50 border-b border-slate-200/80 font-display text-sm font-extrabold uppercase text-slate-500 tracking-wider">
                     <th className="py-4 px-6">Category</th>
                     <th className="py-4 px-6">Specification</th>
                   </tr>
@@ -1743,7 +1743,7 @@ export default function DeepTechProductDetail() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {lifecycle.slice(1).map((item, idx) => (
                 <div key={idx} className="p-5 rounded-2xl border border-slate-200/60 bg-white shadow-sm flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-xl bg-[#1746D2]/10 text-[#1746D2] flex items-center justify-center font-mono text-xs font-bold">
+                  <span className="w-8 h-8 rounded-xl bg-[#1746D2]/10 text-[#1746D2] flex items-center justify-center font-display text-sm font-extrabold">
                     {String(idx + 1).padStart(2, '0')}
                   </span>
                   <span className="text-xs md:text-sm font-bold text-slate-700">{item}</span>
@@ -1870,7 +1870,7 @@ export default function DeepTechProductDetail() {
                     <div className="mt-6 pt-4 border-t border-slate-100/60 flex items-center justify-between">
                       <Link
                         to={`/deep-tech-products/${pSlug}`}
-                        className="inline-flex items-center gap-1.5 font-mono text-[0.75rem] font-bold uppercase tracking-wider text-blue-600 hover:text-blue-700 transition"
+                        className="inline-flex items-center gap-1.5 font-display text-sm font-extrabold uppercase tracking-wider text-blue-600 hover:text-blue-700 transition"
                       >
                         View Details
                         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

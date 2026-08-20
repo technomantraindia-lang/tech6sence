@@ -71,7 +71,7 @@ export default function ProductVisionIntro() {
         {/* Pillars List - Ultra-smooth Expanding Accordion */}
         <div className="pt-12 border-t border-slate-100">
           <div className="mb-10">
-            <span className="font-mono text-xs font-bold text-blue-600 uppercase tracking-[0.2em] mb-2 block">
+            <span className="font-display text-sm font-extrabold text-blue-600 uppercase tracking-[0.2em] mb-2 block">
               PILLARS OF OUR ECOSYSTEM
             </span>
             <h3 className="font-display text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
@@ -102,7 +102,7 @@ export default function ProductVisionIntro() {
                   {/* Top content wrapper */}
                   <div className="flex flex-col items-start w-full">
                     {/* Badge */}
-                    <div className={`flex h-8 w-8 items-center justify-center rounded-full font-mono text-xs font-bold shrink-0 mb-6 transition-transform duration-300 group-hover:scale-110 ${badgeBg}`}>
+                    <div className={`flex h-8 w-8 items-center justify-center rounded-full font-display text-sm font-extrabold shrink-0 mb-6 transition-transform duration-300 group-hover:scale-110 ${badgeBg}`}>
                       {pillar.num}
                     </div>
                     
@@ -119,7 +119,7 @@ export default function ProductVisionIntro() {
 
                   {/* Expand cue at bottom */}
                   <div className="flex items-center justify-between w-full border-t border-slate-200/50 pt-4 mt-6 shrink-0">
-                    <span className="font-mono text-[0.6rem] font-bold text-slate-400 uppercase tracking-wider">
+                    <span className="font-display text-sm font-extrabold text-slate-400 uppercase tracking-wider">
                       Engineering Pillar
                     </span>
                     <div className="text-slate-400 group-hover:translate-x-1.5 transition-transform duration-300">

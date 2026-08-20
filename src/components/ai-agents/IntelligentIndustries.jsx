@@ -90,7 +90,7 @@ export default function IntelligentIndustries() {
                 <h3 className="font-display text-lg font-black tracking-tight text-white">
                   {sector.name}
                 </h3>
-                <span className={`font-mono text-xs font-bold ${sector.accent}`}>
+                <span className={`font-display text-sm font-extrabold ${sector.accent}`}>
                   0{idx + 1}
                 </span>
               </div>

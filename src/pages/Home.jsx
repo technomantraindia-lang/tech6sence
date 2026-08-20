@@ -630,6 +630,60 @@ function BentoCard({ title, description, icon, color = "blue" }) {
   )
 }
 
+function TrustIndicatorsSlider() {
+  const indicators = [
+    { label: "Enterprise AI Development", isBlue: true },
+    { label: "Deep-Tech Innovation", isBlue: false },
+    { label: "AI Consulting", isBlue: true },
+    { label: "Startup Acceleration", isBlue: false },
+    { label: "Custom AI Products", isBlue: false },
+    { label: "Full Stack Engineering", isBlue: true },
+    { label: "Global Delivery", isBlue: false },
+    { label: "Business Growth Ecosystem", isBlue: true },
+  ];
+
+  const duplicatedIndicators = [...indicators, ...indicators, ...indicators, ...indicators];
+
+  const renderCard = (st, i) => {
+    const cardColor = st.isBlue 
+      ? "border-blue-200 bg-blue-50/40 hover:border-blue-400"
+      : "border-emerald-200 bg-emerald-50/40 hover:border-emerald-400";
+    
+    const badgeText = st.isBlue ? "text-blue-700" : "text-emerald-700";
+
+    return (
+      <div 
+        key={i} 
+        className={`p-5 rounded-2xl border backdrop-blur-md flex flex-col justify-center transition-all duration-300 hover:shadow-md select-none shrink-0 w-[300px] h-[100px] ${cardColor}`}
+      >
+        <span className={`font-display text-base md:text-lg font-black leading-snug block text-center ${badgeText}`}>
+          {st.label}
+        </span>
+      </div>
+    );
+  };
+
+  return (
+    <div className="relative w-full flex flex-col gap-4 overflow-hidden py-8 bg-white border-b border-slate-100">
+      <div className="flex w-max animate-trust-marquee gap-4">
+        {duplicatedIndicators.map((st, i) => renderCard(st, i))}
+      </div>
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes trustMarquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-25%); }
+        }
+        .animate-trust-marquee {
+          animation: trustMarquee 35s linear infinite;
+        }
+        .animate-trust-marquee:hover {
+          animation-play-state: paused;
+        }
+      `}} />
+    </div>
+  );
+}
+
 function AboutSection() {
   return (
     <section id="about" className="relative w-full py-16 md:py-20 px-6 overflow-hidden" style={{ background: 'linear-gradient(180deg, #FAFBFF 0%, #f0f4ff 100%)' }}>
@@ -650,13 +704,13 @@ function AboutSection() {
             </svg>
           </span>
           <span className="h-px w-16 bg-gradient-to-r from-[#1746D2] via-[#00A86B] to-transparent" />
-          <h2 className="font-body text-xs font-bold tracking-[0.3em] text-[#1746D2] uppercase">
+          <h2 className="font-display text-sm font-extrabold tracking-[0.3em] text-[#1746D2] uppercase">
             WHO WE ARE
           </h2>
         </div>
 
         {/* Content Layout */}
-        <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] xl:gap-14 items-center">
+        <div className="max-w-4xl xl:max-w-5xl mx-auto">
           
           {/* Main Narrative */}
           <div className="flex flex-col justify-center">
@@ -703,65 +757,6 @@ function AboutSection() {
               </a>
             </div>
           </div>
-
-          {/* Bento Cards - Right Side */}
-          <div className="flex flex-col gap-5 justify-center">
-            {/* Trust Indicators Card */}
-            <div className="rounded-3xl border border-slate-100 bg-white p-7 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden">
-              {/* Subtle background gradient glow */}
-              <div className="absolute top-0 right-0 w-28 h-28 bg-[#00A86B]/5 rounded-full blur-2xl pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-28 h-28 bg-[#1746D2]/5 rounded-full blur-2xl pointer-events-none" />
-              
-              <h4 className="font-display text-lg font-extrabold text-slate-900 mb-6">
-                Trust Indicators
-              </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {[
-                  "Enterprise AI Development",
-                  "Custom AI Products",
-                  "Deep-Tech Innovation",
-                  "Full Stack Engineering",
-                  "AI Consulting",
-                  "Global Delivery",
-                  "Startup Acceleration",
-                  "Business Growth Ecosystem"
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-3 group">
-                    <span className="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-50 text-[#00A86B] shrink-0 border border-emerald-100 group-hover:scale-110 transition-transform duration-300">
-                      <svg viewBox="0 0 24 24" fill="none" className="w-3.5 h-3.5" stroke="currentColor" strokeWidth="3">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                      </svg>
-                    </span>
-                    <span className="font-body text-xs md:text-sm font-semibold text-slate-700 group-hover:text-slate-900 transition-colors duration-300">
-                      {item}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <BentoCard
-              title="Global AI Engineering"
-              description="Operating globally across nine markets, we serve enterprises, governments, startups, and visionary founders with full-stack AI services, deep-tech innovation, and enterprise-grade deployment."
-              icon={
-                <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
-                </svg>
-              }
-              color="emerald"
-            />
-
-            <BentoCard
-              title="GIFT City & Ecosystem Hub"
-              description="Headquartered at GIFT City — India's premier global tech and financial hub — powering our Visionary Founders program and the Business Brains private global syndicate."
-              icon={
-                <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6h1.5m-1.5 3h1.5m-1.5 3h1.5M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
-                </svg>
-              }
-              color="blue"
-            />
-          </div>
         </div>
       </div>
     </section>
@@ -784,14 +779,7 @@ function PremiumAnnouncementBar() {
         
         {/* Left Side: Live Radar Beacon & Statement (Static) */}
         <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-3.5 shrink-0 w-full lg:w-auto justify-center lg:justify-start text-center lg:text-left">
-          <div className="flex items-center gap-2">
-            <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#002214] border border-[#00A86B]/60 shrink-0">
-              <span className="h-2 w-2 rounded-full bg-[#00A86B] shadow-[0_0_8px_#00A86B]" />
-            </div>
-            <span className="px-3.5 py-1 rounded-full text-[0.65rem] font-bold tracking-[0.15em] uppercase border border-[#D4AF37] text-[#D4AF37] bg-transparent whitespace-nowrap">
-              GLOBAL FOOTPRINT
-            </span>
-          </div>
+
 
           <span className="font-display text-xs md:text-sm font-bold text-white tracking-wide leading-relaxed max-w-[90vw] sm:max-w-none">
             Trusted by Enterprises, Governments, Startups &amp; Founders
@@ -822,7 +810,7 @@ function PremiumAnnouncementBar() {
           100% { transform: translateX(-50%); }
         }
         .animate-announcement-marquee {
-          animation: announcementMarquee 65s linear infinite;
+          animation: announcementMarquee 120s linear infinite;
         }
       `}} />
     </div>
@@ -853,6 +841,7 @@ export default function Home() {
       <MemoHeader />
       <TechHero />
       <PremiumAnnouncementBar />
+      <TrustIndicatorsSlider />
       <Suspense fallback={null}>
         <MemoAboutSection />
         <MemoIntelligenceStack />

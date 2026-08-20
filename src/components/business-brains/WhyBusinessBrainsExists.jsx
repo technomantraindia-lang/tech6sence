@@ -53,7 +53,7 @@ export default function WhyBusinessBrainsExists() {
           {/* Left Column: Heading and Description */}
           <div className="lg:col-span-5 lg:sticky lg:top-28 space-y-6">
             <span 
-              className="font-mono text-xs font-bold text-emerald-400 uppercase tracking-[0.25em] block"
+              className="font-display text-sm font-extrabold text-emerald-400 uppercase tracking-[0.25em] block"
             >
               WHY BUSINESS BRAINS EXISTS
             </span>

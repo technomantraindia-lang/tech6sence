@@ -101,7 +101,7 @@ export default function IntelligentAdvantage() {
 
                     {/* How We Deliver prompt with Down Arrow */}
                     <div className="flex items-center gap-2 pt-4 border-t border-slate-100">
-                      <span className={`font-mono text-[0.65rem] font-bold uppercase tracking-wider ${item.accentText}`}>
+                      <span className={`font-display text-sm font-extrabold uppercase tracking-wider ${item.accentText}`}>
                         How We Deliver
                       </span>
                       <svg className={`w-4 h-4 transition-transform duration-300 group-hover:translate-y-1 ${item.accentText}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -112,7 +112,7 @@ export default function IntelligentAdvantage() {
 
                   {/* Card Back Face (Shown on hover) */}
                   <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] p-8 rounded-3xl border border-slate-200 bg-slate-950 text-white flex flex-col justify-center">
-                    <span className={`block font-mono text-[0.65rem] font-bold uppercase tracking-widest mb-3 ${item.accentText}`}>
+                    <span className={`block font-display text-sm font-extrabold uppercase tracking-widest mb-3 ${item.accentText}`}>
                       METHODOLOGY
                     </span>
                     <p className="font-body text-sm text-slate-300 leading-relaxed font-medium">

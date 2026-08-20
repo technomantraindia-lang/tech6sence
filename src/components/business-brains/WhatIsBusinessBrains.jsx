@@ -34,7 +34,7 @@ export default function WhatIsBusinessBrains() {
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 
-            className="font-mono text-xs font-bold text-emerald-600 uppercase tracking-widest mb-3 block"
+            className="font-display text-sm font-extrabold text-emerald-600 uppercase tracking-widest mb-3 block"
           >
             What is Business Brains?
           </span>
@@ -63,7 +63,7 @@ export default function WhatIsBusinessBrains() {
                   {coh.title}
                 </h3>
                 <span 
-                  className="font-mono text-[0.65rem] font-bold text-emerald-600 tracking-wider uppercase mb-6 block"
+                  className="font-display text-sm font-extrabold text-emerald-600 tracking-wider uppercase mb-6 block"
                 >
                   {coh.highlight}
                 </span>

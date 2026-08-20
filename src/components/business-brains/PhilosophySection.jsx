@@ -21,7 +21,7 @@ export default function PhilosophySection() {
         
         {/* Eyebrow */}
         <span 
-          className="font-mono text-xs font-bold text-emerald-600 uppercase tracking-[0.25em] mb-8 block"
+          className="font-display text-sm font-extrabold text-emerald-600 uppercase tracking-[0.25em] mb-8 block"
         >
           THE PHILOSOPHY
         </span>
@@ -66,7 +66,7 @@ export default function PhilosophySection() {
               key={idx} 
               className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-[0_2px_8px_rgba(15,23,42,0.03)] hover:shadow-md hover:border-emerald-500/40 transition-all duration-300 group"
             >
-              <div className="font-mono text-xs font-bold text-emerald-600 mb-2">0{idx + 1}</div>
+              <div className="font-display text-sm font-extrabold text-emerald-600 mb-2">0{idx + 1}</div>
               <h3 
                 className="text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition-colors"
               >

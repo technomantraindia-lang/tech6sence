@@ -39,7 +39,7 @@ export function GlobalAIOpportunity() {
           {/* Left Column: Eyebrow, Main Opportunity Text & 2x2 Stats Grid */}
           <div className={`flex flex-col gap-6 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
             <div>
-              <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
+              <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
                 GLOBAL STATISTICS
               </span>
               <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 font-display leading-[1.1]">
@@ -175,7 +175,7 @@ export function EliteAdvantage() {
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
+          <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
             The Elite Advantage
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display mb-4">
@@ -187,7 +187,7 @@ export function EliteAdvantage() {
         <div className="hidden lg:block overflow-hidden rounded-3xl border border-slate-200 shadow-xl bg-white">
           <table className="w-full border-collapse text-left">
             <thead>
-              <tr className="bg-slate-900 text-white font-mono text-xs font-bold uppercase tracking-wider">
+              <tr className="bg-slate-900 text-white font-display text-sm font-extrabold uppercase tracking-wider">
                 <th className="p-6 w-1/3">Without Visionary Founders</th>
                 <th className="p-6 w-1/3 bg-[#0d162a]/40 border-x border-white/10">With Visionary Founders</th>
                 <th className="p-6 w-1/3">The Outcome</th>
@@ -445,7 +445,7 @@ export function WhyTech6SenseAI() {
             <div className="relative w-full max-w-lg aspect-[4/3] rounded-3xl border border-slate-200/80 shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] overflow-hidden group">
               <GlobalInfraVisual />
               <div className="absolute bottom-4 left-4 right-4 z-10">
-                <span className="inline-block px-3 py-1 rounded-full bg-[#1746D2]/80 backdrop-blur-md border border-white/20 text-white font-mono text-[0.68rem] font-bold uppercase tracking-wider shadow-md">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#1746D2]/80 backdrop-blur-md border border-white/20 text-white font-display text-sm font-extrabold uppercase tracking-wider shadow-md">
                   GLOBAL MACHINE INFRASTRUCTURE
                 </span>
               </div>
@@ -454,7 +454,7 @@ export function WhyTech6SenseAI() {
 
           {/* Right: Copy */}
           <div className="lg:col-span-7">
-            <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
+            <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
               WHY TECH6SENSE AI
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 font-display leading-[1.1]">
@@ -536,7 +536,7 @@ export function TimelineOverview() {
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
+          <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
             TIMELINE OVERVIEW
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display mb-4">
@@ -558,7 +558,7 @@ export function TimelineOverview() {
           {/* Desktop View: Table */}
           <table className="hidden md:table w-full border-collapse text-left">
             <thead>
-              <tr className="bg-slate-950 text-white font-mono text-xs font-bold uppercase tracking-wider">
+              <tr className="bg-slate-950 text-white font-display text-sm font-extrabold uppercase tracking-wider">
                 <th className="p-5">Phase</th>
                 <th className="p-5">Typical Duration</th>
               </tr>
@@ -608,7 +608,7 @@ export function NationalVsGlobalComparison() {
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
+          <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
             Ecosystem Structure & Your Investment
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display mb-4">
@@ -626,7 +626,7 @@ export function NationalVsGlobalComparison() {
         <div className="hidden lg:block overflow-hidden rounded-3xl border border-slate-200 shadow-xl bg-white">
           <table className="w-full border-collapse text-left">
             <thead>
-              <tr className="bg-slate-950 text-white font-mono text-xs font-bold uppercase tracking-wider">
+              <tr className="bg-slate-950 text-white font-display text-sm font-extrabold uppercase tracking-wider">
                 <th className="p-5 w-1/4">Feature / Resources</th>
                 <th className="p-5 w-3/8">NATIONAL (Launch & Dominate Your Home Market)</th>
                 <th className="p-5 w-3/8 bg-[#0d162a]/40 border-l border-white/10">GLOBAL (Build a Company That Operates Globally)</th>
@@ -695,7 +695,7 @@ export function FounderSelectionCriteria() {
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
+          <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
             WHO WE'RE LOOKING FOR
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display mb-4">
@@ -782,7 +782,7 @@ export function ApplicationJourney() {
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
+          <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
             APPLICATION JOURNEY
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display mb-4">

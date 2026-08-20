@@ -13,7 +13,7 @@ export function ApplicationProcess() {
     <section className="py-20 md:py-28 bg-white relative">
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
+          <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
             Application Process
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 font-display">
@@ -261,7 +261,7 @@ export function FAQSection() {
     <section className="py-20 md:py-28 bg-slate-50 relative">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
+          <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
             Frequently Asked Questions
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display">

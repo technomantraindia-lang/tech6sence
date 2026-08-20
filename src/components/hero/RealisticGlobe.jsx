@@ -62,10 +62,11 @@ const RealisticGlobe = memo(function RealisticGlobe({ disableRiseEffect }) {
 
 
 
-const RealisticGlobeCanvas = memo(function RealisticGlobeCanvas({ disableRiseEffect }) {
+const RealisticGlobeCanvas = memo(function RealisticGlobeCanvas({ disableRiseEffect, onReady }) {
   console.log("[Performance] RealisticGlobeCanvas rendered (should only happen ONCE)");
   const containerRef = useRef();
   const [inView, setInView] = React.useState(true);
+  const readyFired = React.useRef(false);
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
@@ -80,6 +81,14 @@ const RealisticGlobeCanvas = memo(function RealisticGlobeCanvas({ disableRiseEff
     return () => observer.disconnect();
   }, []);
 
+  const handleCreated = React.useCallback(() => {
+    // Fire onReady after a short delay to let the first frame paint
+    if (!readyFired.current && onReady) {
+      readyFired.current = true;
+      setTimeout(onReady, 300);
+    }
+  }, [onReady]);
+
   return (
     <div ref={containerRef} style={{ width: '100%', height: '100%' }}>
       <Canvas
@@ -88,6 +97,7 @@ const RealisticGlobeCanvas = memo(function RealisticGlobeCanvas({ disableRiseEff
         camera={{ position: [0, 0, 6.8], fov: 45 }}
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance", logarithmicDepthBuffer: false }}
         style={{ width: '100%', height: '100%', background: 'transparent' }}
+        onCreated={handleCreated}
       >
         <Suspense fallback={null}>
           <RealisticGlobe disableRiseEffect={disableRiseEffect} />

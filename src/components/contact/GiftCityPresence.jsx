@@ -128,17 +128,17 @@ export default function GiftCityPresence() {
               {/* Floating Labels */}
               <div className="absolute top-[15%] left-[20%] bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-sm z-30 flex items-center gap-2 animate-float" style={{ animationDelay: '1.2s' }}>
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00A86B]" />
-                <span className="font-mono text-[0.6rem] font-bold text-slate-700 uppercase tracking-wider">Global AI Vision</span>
+                <span className="font-display text-sm font-extrabold text-slate-700 uppercase tracking-wider">Global AI Vision</span>
               </div>
               
               <div className="absolute bottom-[20%] right-[10%] bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-sm z-30 flex items-center gap-2 animate-float" style={{ animationDelay: '2.1s' }}>
                 <span className="w-1.5 h-1.5 rounded-full bg-[#1746D2]" />
-                <span className="font-mono text-[0.6rem] font-bold text-slate-700 uppercase tracking-wider">Innovation Base</span>
+                <span className="font-display text-sm font-extrabold text-slate-700 uppercase tracking-wider">Innovation Base</span>
               </div>
 
               <div className="absolute bottom-[10%] left-[25%] bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-sm z-30 flex items-center gap-2 animate-float" style={{ animationDelay: '0.8s' }}>
                 <span className="w-1.5 h-1.5 rounded-full bg-[#1746D2]" />
-                <span className="font-mono text-[0.6rem] font-bold text-slate-700 uppercase tracking-wider">India</span>
+                <span className="font-display text-sm font-extrabold text-slate-700 uppercase tracking-wider">India</span>
               </div>
               
             </div>

@@ -46,7 +46,7 @@ export default function AIProductOpportunitySection() {
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 sm:mb-20">
           <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 backdrop-blur-md mb-6 shadow-[0_0_20px_rgba(212,175,55,0.15)]">
             <span className="h-2 w-2 rounded-full bg-[#D4AF37] animate-ping" />
-            <span className="font-mono text-[0.72rem] font-bold text-[#D4AF37] tracking-[0.25em] uppercase">
+            <span className="font-display text-sm font-extrabold text-[#D4AF37] tracking-[0.25em] uppercase">
               AI PRODUCT BUSINESS OPPORTUNITY
             </span>
           </div>
@@ -75,7 +75,7 @@ export default function AIProductOpportunitySection() {
             >
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xl">{item.icon}</span>
-                <span className="font-mono text-[0.55rem] font-bold text-slate-400 tracking-widest px-2 py-0.5 rounded bg-white/5 border border-white/10 uppercase">
+                <span className="font-display text-sm font-extrabold text-slate-400 tracking-widest px-2 py-0.5 rounded bg-white/5 border border-white/10 uppercase">
                   {item.tag}
                 </span>
               </div>
@@ -108,7 +108,7 @@ export default function AIProductOpportunitySection() {
                   </div>
                 </div>
 
-                <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00A86B]/10 border border-[#00A86B]/30 font-mono text-[0.65rem] font-bold text-[#00A86B] uppercase tracking-wider">
+                <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00A86B]/10 border border-[#00A86B]/30 font-display text-sm font-extrabold text-[#00A86B] uppercase tracking-wider">
                   ✦ 7 CORE CAPABILITIES
                 </span>
               </div>
@@ -142,7 +142,7 @@ export default function AIProductOpportunitySection() {
             <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 bg-black/20 -mx-8 -mb-8 p-6 sm:px-8">
               <div className="flex items-center gap-3">
                 <span className="flex h-2.5 w-2.5 rounded-full bg-[#00A86B] animate-pulse" />
-                <span className="font-mono text-xs font-bold text-slate-300 uppercase tracking-wider">
+                <span className="font-display text-sm font-extrabold text-slate-300 uppercase tracking-wider">
                   Global Manufacturing &amp; Quality Pipelines Ready
                 </span>
               </div>
@@ -172,7 +172,7 @@ export default function AIProductOpportunitySection() {
                   </div>
                 </div>
 
-                <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 font-mono text-[0.65rem] font-bold text-[#D4AF37] uppercase tracking-wider">
+                <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 font-display text-sm font-extrabold text-[#D4AF37] uppercase tracking-wider">
                   ✦ OPERATOR PROFILE
                 </span>
               </div>

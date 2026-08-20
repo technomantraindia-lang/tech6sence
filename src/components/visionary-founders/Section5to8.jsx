@@ -18,7 +18,7 @@ export function IntroducingProgram() {
   return (
     <section className="py-20 md:py-28 bg-white relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
-        <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block text-center">
+        <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block text-center">
           THE SOLUTION
         </span>
         <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 font-display max-w-5xl mx-auto text-center leading-tight">
@@ -55,7 +55,7 @@ export function IntroducingProgram() {
           {/* Desktop View: Table */}
           <table className="hidden md:table w-full text-left border-collapse">
             <thead>
-              <tr className="bg-slate-100 font-mono text-xs font-bold text-slate-700 uppercase tracking-wider border-b border-slate-200">
+              <tr className="bg-slate-100 font-display text-sm font-extrabold text-slate-700 uppercase tracking-wider border-b border-slate-200">
                 <th className="p-4 md:p-6 w-1/3">Function</th>
                 <th className="p-4 md:p-6 w-2/3">What You Get</th>
               </tr>
@@ -326,7 +326,7 @@ export function EcosystemComponents() {
       
       <div className="max-w-[1400px] mx-auto px-6 relative z-10 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div className="max-w-2xl">
-          <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
+          <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
             Complete Ecosystem Components
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 font-display">
@@ -460,7 +460,7 @@ export function WhoIsThisFor() {
   return (
     <section className="py-20 md:py-28 bg-white relative">
       <div className="max-w-[1400px] mx-auto px-6 text-center">
-        <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
+        <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
           WHO THIS IS FOR
         </span>
         <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-12 font-display">
@@ -506,7 +506,7 @@ export function WhatYouWillAchieve() {
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
-            <span className="font-mono text-xs font-bold text-[#1746D2] uppercase tracking-widest mb-4 block">
+            <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
               What You Will Achieve
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-8 font-display">

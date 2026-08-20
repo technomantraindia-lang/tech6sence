@@ -87,7 +87,7 @@ function BlockItem({ block, index }) {
     if (block.level === 1) {
       return (
         <div className={`mb-8 ${index === 0 ? '' : 'mt-20 pt-12 border-t border-slate-100'}`}>
-          <span className="inline-block font-mono text-[0.6rem] font-bold text-emerald-600 uppercase tracking-[0.25em] mb-3">
+          <span className="inline-block font-display text-sm font-extrabold text-emerald-600 uppercase tracking-[0.25em] mb-3">
             ── SECTION OVERVIEW
           </span>
           <h2 className="font-display text-[clamp(1.6rem,3.2vw,2.5rem)] font-extrabold leading-[1.2] tracking-tight bg-gradient-to-r from-blue-700 via-blue-800 to-emerald-600 bg-clip-text text-transparent">
@@ -202,7 +202,7 @@ function OverviewSection({ title, blocks }) {
           <p className="font-body text-[0.875rem] text-slate-650 leading-relaxed font-medium mb-4">
             TECH6SENSE AI guarantees reliable enterprise solution delivery optimized around your core operational frameworks and telemetry goals.
           </p>
-          <div className="flex items-center gap-2 text-emerald-600 font-mono text-xs font-bold">
+          <div className="flex items-center gap-2 text-emerald-600 font-display text-sm font-extrabold">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
             <span>Active Integration Protocol</span>
           </div>
@@ -680,7 +680,7 @@ function JsonBlockLayout({ pageData, serviceId, category, isVisible }) {
               {/* Category tag */}
               <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-blue-100 bg-blue-50/50 mb-6 shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
-                <span className="font-mono text-[0.65rem] font-bold tracking-widest uppercase text-blue-700">
+                <span className="font-display text-sm font-extrabold tracking-widest uppercase text-blue-700">
                   {category}
                 </span>
               </div>
@@ -917,7 +917,7 @@ export default function ServiceDetail() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#1746D2]/10 blur-[120px] pointer-events-none" />
 
           <div className="relative z-10 max-w-lg">
-            <span className="font-mono text-xs font-bold text-fuchsia-400 uppercase tracking-[0.25em] mb-4 block">
+            <span className="font-display text-sm font-extrabold text-fuchsia-400 uppercase tracking-[0.25em] mb-4 block">
               ERROR CODE // 404_PAGE_NOT_FOUND
             </span>
             <h1 className="font-display text-4xl sm:text-5xl font-extrabold mb-6 tracking-tight">
@@ -982,7 +982,7 @@ export default function ServiceDetail() {
               </nav>
 
               <div
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#1746D2]/20 bg-white shadow-sm mb-6 font-mono text-[0.65rem] font-bold tracking-widest uppercase"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#1746D2]/20 bg-white shadow-sm mb-6 font-display text-sm font-extrabold tracking-widest uppercase"
                 style={{ color: service.accent }}
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
@@ -1058,7 +1058,7 @@ export default function ServiceDetail() {
         {/* FEATURES BENTO GRID SECTION */}
         <section className="mx-auto max-w-[1400px] px-6 py-20 md:py-28 relative z-10 border-b border-[#1746D2]/10">
           <div className="max-w-3xl mb-16">
-            <span className="font-mono text-xs font-bold text-fuchsia-400 uppercase tracking-widest mb-3 block">
+            <span className="font-display text-sm font-extrabold text-fuchsia-400 uppercase tracking-widest mb-3 block">
               CAPABILITIES & WORKFLOWS
             </span>
             <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -1084,7 +1084,7 @@ export default function ServiceDetail() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
             <div className="col-span-1 lg:col-span-6">
-              <span className="font-mono text-xs font-bold text-fuchsia-400 uppercase tracking-widest mb-3 block">
+              <span className="font-display text-sm font-extrabold text-fuchsia-400 uppercase tracking-widest mb-3 block">
                 INTEGRATION STACK
               </span>
               <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight mb-6">
@@ -1098,7 +1098,7 @@ export default function ServiceDetail() {
                 {service.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="font-mono text-xs font-bold px-4 py-2 rounded-full border border-slate-200 bg-slate-50 text-[#1746D2] shadow-sm"
+                    className="font-display text-sm font-extrabold px-4 py-2 rounded-full border border-slate-200 bg-slate-50 text-[#1746D2] shadow-sm"
                   >
                     {tech}
                   </span>
@@ -1119,7 +1119,7 @@ export default function ServiceDetail() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                     </svg>
                   </span>
-                  <span className="font-mono text-xs font-bold text-slate-700 uppercase tracking-wider">
+                  <span className="font-display text-sm font-extrabold text-slate-700 uppercase tracking-wider">
                     Secure Sandbox & Production Deployments
                   </span>
                 </div>

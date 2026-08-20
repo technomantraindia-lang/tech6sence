@@ -131,7 +131,7 @@ export default function ProductInnovationShowcase() {
                   {/* Card Front Face */}
                   <div className={`absolute inset-0 w-full h-full [backface-visibility:hidden] p-8 rounded-3xl border-0 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03] ${cardBg} ${hoverGlow}`}>
                     <div>
-                      <span className={`inline-flex items-center justify-center w-8 h-8 rounded-full font-mono text-xs font-bold mb-6 transition-all duration-500 ease-out group-hover:rotate-[360deg] ${badgeBg}`}>
+                      <span className={`inline-flex items-center justify-center w-8 h-8 rounded-full font-display text-sm font-extrabold mb-6 transition-all duration-500 ease-out group-hover:rotate-[360deg] ${badgeBg}`}>
                         {item.num}
                       </span>
 
@@ -143,7 +143,7 @@ export default function ProductInnovationShowcase() {
                     {/* Touch / Hover Prompt & Direct Details Link */}
                     <div className="flex items-center justify-between pt-4 border-t border-slate-100/60 mt-auto">
                       <div className="flex items-center gap-2">
-                        <span className={`font-mono text-[0.65rem] font-bold uppercase tracking-wider ${accentText}`}>
+                        <span className={`font-display text-sm font-extrabold uppercase tracking-wider ${accentText}`}>
                           {isFlipped ? "Close" : "Learn More"}
                         </span>
                         <svg className={`w-4 h-4 transition-transform duration-300 ${accentText} ${isFlipped ? 'rotate-180' : 'group-hover:translate-y-1'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -154,7 +154,7 @@ export default function ProductInnovationShowcase() {
                       <Link
                         to={`/deep-tech-products/${item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
                         onClick={(e) => e.stopPropagation()}
-                        className={`inline-flex items-center gap-1 font-mono text-[0.68rem] font-bold uppercase tracking-wider ${accentText} hover:underline bg-white/70 px-2.5 py-1 rounded-lg border border-slate-200/80 shadow-xs`}
+                        className={`inline-flex items-center gap-1 font-display text-sm font-extrabold uppercase tracking-wider ${accentText} hover:underline bg-white/70 px-2.5 py-1 rounded-lg border border-slate-200/80 shadow-xs`}
                       >
                         Details →
                       </Link>
@@ -163,7 +163,7 @@ export default function ProductInnovationShowcase() {
 
                   {/* Card Back Face (Shown on hover/tap) */}
                   <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] p-8 rounded-3xl bg-slate-950 text-white flex flex-col justify-center">
-                    <span className={`block font-mono text-[0.65rem] font-bold uppercase tracking-widest mb-3 ${accentText}`}>
+                    <span className={`block font-display text-sm font-extrabold uppercase tracking-widest mb-3 ${accentText}`}>
                       PRODUCT SPECIFICATION
                     </span>
                     <p className="font-body text-xs md:text-sm text-slate-300 leading-relaxed font-semibold">
@@ -173,7 +173,7 @@ export default function ProductInnovationShowcase() {
                       <Link
                         to={`/deep-tech-products/${item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
                         onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center gap-1.5 font-mono text-[0.7rem] font-bold uppercase tracking-wider hover:underline text-white"
+                        className="inline-flex items-center gap-1.5 font-display text-sm font-extrabold uppercase tracking-wider hover:underline text-white"
                       >
                         View Details
                         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -183,7 +183,7 @@ export default function ProductInnovationShowcase() {
                       <Link
                         to={`/lets-connect?inquiry=${encodeURIComponent(item.title)}`}
                         onClick={(e) => e.stopPropagation()}
-                        className={`inline-flex items-center gap-1.5 font-mono text-[0.7rem] font-bold uppercase tracking-wider hover:underline ${accentText}`}
+                        className={`inline-flex items-center gap-1.5 font-display text-sm font-extrabold uppercase tracking-wider hover:underline ${accentText}`}
                       >
                         Inquire Brand
                         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

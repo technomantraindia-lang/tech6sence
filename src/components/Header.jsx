@@ -11,7 +11,7 @@ const NAV_LINKS = [
     isMega: true,
     categories: [
       {
-        title: 'AI Development',
+        title: 'AI Product & Model Development',
         links: [
           { label: 'AI Product Development', href: '/services/ai-product-development' },
           { label: 'AI Software Development', href: '/services/ai-software-development' },
@@ -21,7 +21,7 @@ const NAV_LINKS = [
         ]
       },
       {
-        title: 'Automation & Copilots',
+        title: 'Intelligent Automation & Agent Systems',
         links: [
           { label: 'AI Automation for Businesses', href: '/services/ai-automation-for-businesses' },
           { label: 'Robotic Process Automation', href: '/services/robotic-process-automation' },
@@ -32,7 +32,7 @@ const NAV_LINKS = [
         ]
       },
       {
-        title: 'Data & Visual Intelligence',
+        title: 'Generative & Applied AI',
         links: [
           { label: 'Data Analytics & Business Intelligence', href: '/services/data-analytics-business-intelligence' },
           { label: 'Machine Learning Development', href: '/services/machine-learning-development' },
@@ -41,7 +41,7 @@ const NAV_LINKS = [
         ]
       },
       {
-        title: 'Enterprise AI & Cloud',
+        title: 'AI Strategy & Governance',
         links: [
           { label: 'AI Integration & Cloud Services', href: '/services/ai-integration-cloud-services' },
           { label: 'AI-as-a-Service', href: '/services/ai-as-a-service' },
@@ -52,7 +52,7 @@ const NAV_LINKS = [
         ]
       },
       {
-        title: 'Advanced Tech & Software',
+        title: 'Enterprise Technology & Digital Infrastructure',
         links: [
           { label: 'Internet of Things Development', href: '/services/internet-of-things-development' },
           { label: 'Blockchain Development', href: '/services/blockchain-development' },

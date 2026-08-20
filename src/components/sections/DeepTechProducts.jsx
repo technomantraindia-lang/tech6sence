@@ -172,7 +172,7 @@ function ProductCard({ product }) {
       <div className="relative z-20">
         <div className="flex items-center justify-between gap-3 mb-5">
           <span 
-            className="font-mono text-[0.68rem] font-bold tracking-[0.2em] uppercase px-3 py-1 rounded-full bg-white/10 border border-white/15 text-white backdrop-blur-md"
+            className="font-display text-sm font-extrabold tracking-[0.2em] uppercase px-3 py-1 rounded-full bg-white/10 border border-white/15 text-white backdrop-blur-md"
           >
             {product.category}
           </span>

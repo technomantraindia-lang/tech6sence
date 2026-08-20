@@ -189,7 +189,7 @@ export default function HowWeWork() {
           
           {/* Top Header inside Detail Box */}
           <div className="flex items-center justify-between border-b border-slate-100 pb-6 mb-8 gap-4 flex-wrap">
-            <span className={`px-4 py-1.5 rounded-full font-mono text-xs font-bold uppercase tracking-wider border ${currentStep.badgeBg}`}>
+            <span className={`px-4 py-1.5 rounded-full font-display text-sm font-extrabold uppercase tracking-wider border ${currentStep.badgeBg}`}>
               {currentStep.subtitle}
             </span>
             <span className="font-mono text-xs md:text-sm font-bold text-slate-400 uppercase tracking-widest">
@@ -265,7 +265,7 @@ export default function HowWeWork() {
               {/* Status Badge below drawing */}
               <div className="mt-5 inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-slate-200 shadow-2xs relative z-10">
                 <span className="w-2 h-2 rounded-full bg-[#00A86B] animate-pulse" />
-                <span className="font-mono text-[0.65rem] font-bold text-slate-700 uppercase tracking-wider">
+                <span className="font-display text-sm font-extrabold text-slate-700 uppercase tracking-wider">
                   S.E.N.S.E. STAGE 0{currentStep.id} ARCHITECTURE ACTIVE
                 </span>
               </div>
@@ -281,7 +281,7 @@ export default function HowWeWork() {
               <div className="space-y-6">
                 {/* What Happens */}
                 <div>
-                  <div className="font-mono text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
+                  <div className="font-display text-sm font-extrabold text-slate-400 uppercase tracking-wider mb-2">
                     WHAT HAPPENS:
                   </div>
                   <p className="font-body text-slate-700 text-base md:text-lg leading-relaxed font-medium">
@@ -291,7 +291,7 @@ export default function HowWeWork() {
 
                 {/* What You Receive */}
                 <div>
-                  <div className="font-mono text-xs font-bold text-[#00A86B] uppercase tracking-wider mb-2">
+                  <div className="font-display text-sm font-extrabold text-[#00A86B] uppercase tracking-wider mb-2">
                     WHAT YOU RECEIVE:
                   </div>
                   <div className={`p-4 md:p-5 rounded-2xl border text-slate-900 font-semibold text-sm md:text-base leading-snug ${currentStep.receiveBg}`}>

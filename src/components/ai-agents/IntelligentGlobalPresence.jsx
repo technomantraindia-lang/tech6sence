@@ -26,7 +26,7 @@ export default function IntelligentGlobalPresence() {
         {/* Label */}
         <div className="shrink-0 flex items-center gap-3 bg-slate-900 z-20 pr-4">
           <span className="w-2.5 h-2.5 rounded-full bg-[#1746D2] animate-pulse" />
-          <span className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-[#1746D2]/80 whitespace-nowrap">
+          <span className="font-display text-sm font-extrabold uppercase tracking-[0.25em] text-[#1746D2]/80 whitespace-nowrap">
             GLOBAL PRESENCE
           </span>
         </div>

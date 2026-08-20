@@ -52,7 +52,7 @@ export default function IntelligentIntroPrinciples() {
             <div className="p-8 rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-50/50 via-white to-emerald-50/30 shadow-[0_10px_30px_rgba(37,99,235,0.03)] relative overflow-hidden mb-6">
               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100/30 rounded-full blur-2xl pointer-events-none" />
               
-              <span className="block font-mono text-[0.65rem] font-bold text-blue-600 uppercase tracking-widest mb-3">
+              <span className="block font-display text-sm font-extrabold text-blue-600 uppercase tracking-widest mb-3">
                 OUR MANDATE
               </span>
               
@@ -63,7 +63,7 @@ export default function IntelligentIntroPrinciples() {
 
             {/* Master Tagline Card - Styled with Royal Blue Background */}
             <div className="p-6 rounded-2xl border border-slate-800 bg-blue-950 text-white shadow-md">
-              <span className="block font-mono text-[0.65rem] font-bold text-emerald-400 uppercase tracking-widest mb-2">
+              <span className="block font-display text-sm font-extrabold text-emerald-400 uppercase tracking-widest mb-2">
                 OUR VISION
               </span>
               <p className="font-display text-lg md:text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-emerald-300 to-white italic">
@@ -78,7 +78,7 @@ export default function IntelligentIntroPrinciples() {
         {/* Our Operating Principles */}
         <div className="pt-12 border-t border-slate-100">
           <div className="mb-10">
-            <span className="font-mono text-xs font-bold text-blue-600 uppercase tracking-[0.2em] mb-2 block">
+            <span className="font-display text-sm font-extrabold text-blue-600 uppercase tracking-[0.2em] mb-2 block">
               CORE PHILOSOPHY
             </span>
             <h3 className="font-display text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
@@ -94,7 +94,7 @@ export default function IntelligentIntroPrinciples() {
               >
                 <div>
                   {/* Corrected Alignment Circle: removed inline-block, kept clean flex center alignment, styled in Royal Blue & Embedded Green */}
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-50 text-blue-600 border border-blue-100 font-mono text-xs font-bold mb-6 group-hover:bg-emerald-500 group-hover:text-white group-hover:border-emerald-500 transition-all duration-300">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-50 text-blue-600 border border-blue-100 font-display text-sm font-extrabold mb-6 group-hover:bg-emerald-500 group-hover:text-white group-hover:border-emerald-500 transition-all duration-300">
                     0{idx + 1}
                   </div>
                   

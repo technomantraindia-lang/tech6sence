@@ -10,7 +10,7 @@ export default function NetworkCTA() {
       <div className="max-w-[1400px] mx-auto px-6 relative z-10 text-center">
         
         <span 
-          className="font-mono text-xs font-bold text-emerald-600 uppercase tracking-[0.25em] mb-3 block"
+          className="font-display text-sm font-extrabold text-emerald-600 uppercase tracking-[0.25em] mb-3 block"
         >
           PRIVATE CONSIDERATION
         </span>

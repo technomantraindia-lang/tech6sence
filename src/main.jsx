@@ -24,7 +24,6 @@ const ServiceDetail = lazy(() => import('./pages/ServiceDetail'))
 import VisionaryFounders from './pages/VisionaryFounders'
 import BusinessBrains from './pages/BusinessBrains'
 const Blogs = lazy(() => import('./pages/Blogs'))
-import LoadingScreen from './components/LoadingScreen'
 import Lenis from 'lenis'
 
 // Initialize Lenis globally for buttery-smooth inertial scrolling
@@ -56,21 +55,6 @@ if (typeof window !== 'undefined') {
 
 function AppWrapper({ children }) {
   const { pathname } = useLocation();
-  const [showLoader, setShowLoader] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      // Always play loader in development or if query parameter ?loader=true is set
-      if (import.meta.env.DEV || params.get('loader') === 'true') {
-        return true;
-      }
-      const hasVisited = sessionStorage.getItem('t6s_visited');
-      const isReload = typeof performance !== 'undefined' && 
-        (performance.navigation?.type === 1 || 
-         performance.getEntriesByType?.('navigation')?.[0]?.type === 'reload');
-      return !hasVisited || isReload;
-    }
-    return true;
-  });
 
   useEffect(() => {
     if (import.meta.env.DEV) {
@@ -87,19 +71,8 @@ function AppWrapper({ children }) {
     }
   }, [pathname]);
 
-  const handleLoaderComplete = () => {
-    sessionStorage.setItem('t6s_visited', 'true');
-    setShowLoader(false);
-  };
-
   return (
     <>
-      <AnimatePresence mode="wait">
-        {showLoader && (
-          <LoadingScreen key="site-loader" onComplete={handleLoaderComplete} />
-        )}
-      </AnimatePresence>
-
       <motion.div
         initial={false}
         animate={{ opacity: 1, y: 0 }}
@@ -115,7 +88,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <AppWrapper>
-      <Suspense fallback={<LoadingScreen />}>
+      <Suspense fallback={<div className="bg-black w-full min-h-screen"></div>}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

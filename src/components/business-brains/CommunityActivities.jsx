@@ -101,7 +101,7 @@ export default function CommunityActivities() {
         
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 
-            className="font-mono text-xs font-bold text-emerald-400 uppercase tracking-[0.25em] mb-4 block"
+            className="font-display text-sm font-extrabold text-emerald-400 uppercase tracking-[0.25em] mb-4 block"
           >
             HOW MEMBERS CONNECT
           </span>

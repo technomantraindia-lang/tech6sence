@@ -35,7 +35,7 @@ export default function WhoOccupiesRoom() {
         
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span 
-            className="font-mono text-xs font-bold text-emerald-400 uppercase tracking-[0.25em] mb-4 block"
+            className="font-display text-sm font-extrabold text-emerald-400 uppercase tracking-[0.25em] mb-4 block"
           >
             THE GLOBAL CIRCLE
           </span>
@@ -60,7 +60,7 @@ export default function WhoOccupiesRoom() {
               className="p-8 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-emerald-500/30 transition-all duration-300 backdrop-blur-md flex flex-col justify-between"
             >
               <div>
-                <span className="font-mono text-xs font-bold text-emerald-400 uppercase tracking-widest mb-3 block">
+                <span className="font-display text-sm font-extrabold text-emerald-400 uppercase tracking-widest mb-3 block">
                   {prof.category}
                 </span>
 

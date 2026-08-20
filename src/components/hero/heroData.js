@@ -221,7 +221,12 @@ export const DEBUG_LABELS = {
 };
 
 export const heroData = {
-  eyebrow: "GLOBAL AI DEVELOPMENT · DEEP-TECH PRODUCTS · FOUNDER ECOSYSTEMS",
+  eyebrow: [
+    { text: "GLOBAL AI DEVELOPMENT", color: "blue" },
+    { text: "DEEP-TECH PRODUCTS", color: "green" },
+    { text: "FOUNDER ECOSYSTEMS", color: "blue" }
+  ],
+  subHeading: "ENGINEERING THE SIXTH SENSE OF ARTIFICIAL INTELLIGENCE",
   heading: "TECH6SENSE — The Sixth Sense of Intelligent Innovation.",
   paragraph: "TECH6SENSE AI empower global enterprises, governments, startups, and founders with the Sixth Sense of Artificial Intelligence—transforming bold ideas into intelligent products, AI-powered businesses, autonomous systems, next-generation digital ecosystems, and globally scalable businesses.",
   primaryCta: {
