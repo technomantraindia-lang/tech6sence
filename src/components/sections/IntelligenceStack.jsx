@@ -228,9 +228,9 @@ export default function IntelligenceStack() {
               />
 
               {/* ── Stepped Connector Lines to Cards ── */}
-              {/* Top-Left: Card 1 -> Vertex (130, 80) */}
+              {/* Top-Left: Center -> Card 1 */}
               <path 
-                d="M 30,48 L 95,48 L 130,80" 
+                d="M 130,80 L 95,48 L 30,48" 
                 fill="none" 
                 stroke={activeCard?.id === 1 ? '#059669' : '#05966960'} 
                 strokeWidth={activeCard?.id === 1 ? '3.5' : '2'} 
@@ -240,21 +240,21 @@ export default function IntelligenceStack() {
                 className="transition-all duration-300 animate-[dash_3s_linear_infinite]"
               />
               
-              {/* Top-Right: Card 2 -> Vertex (270, 80) */}
+              {/* Top-Right: Center -> Card 2 */}
               <path 
-                d="M 370,48 L 305,48 L 270,80" 
+                d="M 270,80 L 305,48 L 370,48" 
                 fill="none" 
                 stroke={activeCard?.id === 2 ? '#059669' : '#05966960'} 
                 strokeWidth={activeCard?.id === 2 ? '3.5' : '2'} 
                 strokeLinecap="round" 
                 strokeLinejoin="round" 
                 strokeDasharray="8 8"
-                className="transition-all duration-300 animate-[dash_3s_linear_infinite_reverse]"
+                className="transition-all duration-300 animate-[dash_3s_linear_infinite]"
               />
 
-              {/* Middle-Left: Card 4 -> Vertex (40, 225) */}
+              {/* Middle-Left: Center -> Card 4 */}
               <line 
-                x1="-30" y1="225" x2="40" y2="225" 
+                x1="40" y1="225" x2="-30" y2="225" 
                 stroke={activeCard?.id === 4 ? '#2563eb' : '#2563eb60'} 
                 strokeWidth={activeCard?.id === 4 ? '3.5' : '2'} 
                 strokeLinecap="round" 
@@ -262,19 +262,19 @@ export default function IntelligenceStack() {
                 className="transition-all duration-300 animate-[dash_3s_linear_infinite]"
               />
               
-              {/* Middle-Right: Card 3 -> Vertex (360, 225) */}
+              {/* Middle-Right: Center -> Card 3 */}
               <line 
-                x1="430" y1="225" x2="360" y2="225" 
+                x1="360" y1="225" x2="430" y2="225" 
                 stroke={activeCard?.id === 3 ? '#2563eb' : '#2563eb60'} 
                 strokeWidth={activeCard?.id === 3 ? '3.5' : '2'} 
                 strokeLinecap="round" 
                 strokeDasharray="8 8"
-                className="transition-all duration-300 animate-[dash_3s_linear_infinite_reverse]"
+                className="transition-all duration-300 animate-[dash_3s_linear_infinite]"
               />
 
-              {/* Bottom-Left: Card 5 -> Vertex (130, 370) */}
+              {/* Bottom-Left: Center -> Card 5 */}
               <path 
-                d="M 30,402 L 95,402 L 130,370" 
+                d="M 130,370 L 95,402 L 30,402" 
                 fill="none" 
                 stroke={activeCard?.id === 5 ? '#059669' : '#05966960'} 
                 strokeWidth={activeCard?.id === 5 ? '3.5' : '2'} 
@@ -284,16 +284,16 @@ export default function IntelligenceStack() {
                 className="transition-all duration-300 animate-[dash_3s_linear_infinite]"
               />
 
-              {/* Bottom-Right: Card 6 -> Vertex (270, 370) */}
+              {/* Bottom-Right: Center -> Card 6 */}
               <path 
-                d="M 370,402 L 305,402 L 270,370" 
+                d="M 270,370 L 305,402 L 370,402" 
                 fill="none" 
                 stroke={activeCard?.id === 6 ? '#d97706' : '#d9770660'} 
                 strokeWidth={activeCard?.id === 6 ? '3.5' : '2'} 
                 strokeLinecap="round" 
                 strokeLinejoin="round" 
                 strokeDasharray="8 8"
-                className="transition-all duration-300 animate-[dash_3s_linear_infinite_reverse]"
+                className="transition-all duration-300 animate-[dash_3s_linear_infinite]"
               />
 
               {/* ── 6 Node Dots Exactly on the 6 Hexagon Vertices ── */}
