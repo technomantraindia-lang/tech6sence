@@ -241,7 +241,7 @@ export default function DeepTechProducts() {
     <section
       ref={sectionRef}
       id="deep-tech-products"
-      className="relative w-full bg-[#FAFBFF] py-16 md:py-24 overflow-hidden border-t border-slate-100"
+      className="relative w-full bg-[#FAFBFF] pt-24 pb-12 overflow-hidden border-t border-slate-100"
     >
       {/* Background Ambience */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-100/30 rounded-full blur-[120px] pointer-events-none -z-10" />

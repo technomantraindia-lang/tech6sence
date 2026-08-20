@@ -8,8 +8,8 @@ const ECOSYSTEM_CARDS = [
     id: 1,
     num: '1',
     title: 'SENSE INTELLIGENCE',
-    short: 'AI development, machine learning, smart automation.',
-    full: 'Advanced AI Development & Custom Enterprise Solutions. We design and build the AI products enterprises actually ship — not research demos. Custom model architecture, retrieval-augmented systems, and the full product engineering layer built to hold up under real usage.',
+    short: 'Advanced AI Development & Custom Enterprise Solutions',
+    full: '',
     textColor: 'text-emerald-600',
     dotBg: 'bg-emerald-600',
     alignOffset: 'translate-x-6 xl:translate-x-10',
@@ -22,8 +22,8 @@ const ECOSYSTEM_CARDS = [
     id: 2,
     num: '2',
     title: 'SENSE INNOVATION',
-    short: 'Deep-tech products, invention, advanced hardware/software.',
-    full: 'Next Generation of AI-Powered Deep-Tech Products. Turn Your Tech Vision Into a Global Brand. Software and strategy are only half the picture — TECH6SENSE AI designs and engineers the physical devices that carry intelligence into the real world.',
+    short: 'Next Generation of AI-Powered Deep-Tech Products',
+    full: 'Turn Your Tech Vision Into a Global Brand',
     textColor: 'text-emerald-600',
     dotBg: 'bg-emerald-600',
     alignOffset: '-translate-x-6 xl:-translate-x-10',
@@ -35,9 +35,9 @@ const ECOSYSTEM_CARDS = [
   {
     id: 4,
     num: '4',
-    title: 'SENSE COMMUNITY',
-    short: 'Business brains network, collaboration, ecosystem.',
-    full: 'Business Brains — Most Exclusive Private Global Network for Elite Investors, Entrepreneurs & Industry Leaders. An invitation-only global syndicate operating at the absolute pinnacle of global commerce, capital, and artificial intelligence.',
+    title: 'SENSE CONNECTION',
+    short: 'Business Brains - Most Exclusive Private Global Network',
+    full: 'For Elite Investors, Entrepreneurs & Industry Leaders',
     textColor: 'text-blue-600',
     dotBg: 'bg-blue-600',
     alignOffset: '-translate-x-4 xl:-translate-x-6',
@@ -50,8 +50,8 @@ const ECOSYSTEM_CARDS = [
     id: 3,
     num: '3',
     title: 'SENSE GROWTH',
-    short: 'Visionary founders, startup acceleration, strategic growth.',
-    full: 'Visionary Founders Business Ecosystem — The Global AI Founder Ecosystem. Build Your AI Empire Globally. We transform ambitious entrepreneurs and innovators into owners of globally competitive AI and technology companies.',
+    short: 'Visionary Founders Business Ecosystem',
+    full: 'The Global AI Founder Ecosystem — Build Your AI Empire Globally',
     textColor: 'text-blue-600',
     dotBg: 'bg-blue-600',
     alignOffset: 'translate-x-4 xl:translate-x-6',
@@ -63,9 +63,9 @@ const ECOSYSTEM_CARDS = [
   {
     id: 5,
     num: '5',
-    title: 'SENSE INTEGRATION',
-    short: 'Technology deployment, cloud, system integration.',
-    full: 'Integrating Intelligence across the Enterprise — Seamless Technology Deployment. AI is only as strong as the infrastructure underneath it. We provide full-stack IT services engineered specifically to support AI workloads at global scale.',
+    title: 'SENSE TRANSFORMATION',
+    short: 'Integrating Intelligence across the Enterprise',
+    full: 'Seamless Technology Deployment',
     textColor: 'text-emerald-600',
     dotBg: 'bg-emerald-600',
     alignOffset: 'translate-x-6 xl:translate-x-10',
@@ -78,8 +78,8 @@ const ECOSYSTEM_CARDS = [
     id: 6,
     num: '6',
     title: 'SENSE FUTURE',
-    short: 'Research, training, evolution, future readiness.',
-    full: 'Creating What the World Will Need Next — Continuous Research & Evolution. TECH6SENSE AI — The Sixth Sense of Intelligent Innovation. We invest in long-horizon research and continuously evolve our capabilities so your competitive advantage compounds rather than decays.',
+    short: 'Creating What the World Will Need Next',
+    full: 'Continuous Research & Evolution',
     textColor: 'text-amber-600',
     dotBg: 'bg-amber-500',
     alignOffset: '-translate-x-6 xl:-translate-x-10',
@@ -147,17 +147,19 @@ function CardComponent({ card, activeCard, setActiveCard }) {
       </div>
 
       {/* Subtle In-Card Expandable Details */}
-      <div 
-        className={`grid transition-all duration-500 ease-in-out ${
-          isHovered ? 'grid-rows-[1fr] opacity-100 mt-4 pt-3 border-t border-slate-200/60' : 'grid-rows-[0fr] opacity-0 mt-0 pt-0 border-t-0'
-        }`}
-      >
-        <div className="overflow-hidden">
-          <p className="font-body text-xs text-slate-500 leading-relaxed font-normal">
-            {card.full}
-          </p>
+      {card.full && (
+        <div 
+          className={`grid transition-all duration-500 ease-in-out ${
+            isHovered ? 'grid-rows-[1fr] opacity-100 mt-4 pt-3 border-t border-slate-200/60' : 'grid-rows-[0fr] opacity-0 mt-0 pt-0 border-t-0'
+          }`}
+        >
+          <div className="overflow-hidden">
+            <p className="font-body text-xs text-slate-500 leading-relaxed font-normal">
+              {card.full}
+            </p>
+          </div>
         </div>
-      </div>
+      )}
     </Link>
   );
 }
@@ -194,14 +196,11 @@ export default function IntelligenceStack() {
         {/* Title Section */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
           <span className="font-display text-sm font-extrabold text-blue-600 uppercase tracking-[0.25em] block mb-3">
-            Integrated Intelligence Architecture
+            One Company. Six Senses. Infinite Advantage.
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
             THE TECH6SENSE <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-emerald-600 to-amber-500">ECOSYSTEM</span>
           </h2>
-          <p className="font-body text-slate-600 text-base md:text-lg font-medium">
-            Six Dimensions of AI-Powered Transformation
-          </p>
         </div>
 
         {/* ── Desktop Diagram Layout ── */}
@@ -432,6 +431,13 @@ export default function IntelligenceStack() {
           </div>
         </div>
 
+      </div>
+      
+      {/* Closing Line */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 mt-16 md:mt-24 text-center pb-8">
+        <p className="font-display text-[1.1rem] md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600 tracking-wide">
+          TECH6SENSE AI -The Sixth Sense of Intelligent Innovation.
+        </p>
       </div>
 
       {/* Timeline flow animation */}

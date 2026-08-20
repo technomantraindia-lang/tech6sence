@@ -55,32 +55,26 @@ export default function EcosystemSection() {
     >
       <div className="relative z-10 mx-auto max-w-[1400px] px-6">
         
-        {/* Full width header layout */}
-        <div 
-          className="mb-16 md:mb-24 flex flex-col lg:flex-row items-start justify-between gap-8 transition-all duration-1000 ease-out"
-          style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(30px)' }}
-        >
-          <div className="w-full lg:max-w-4xl">
-            <div className="mb-6 flex items-center gap-4">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#1746D2] animate-pulse" />
-              <span className="font-display text-sm font-extrabold tracking-[0.3em] uppercase text-slate-400">
-                SENSE GROWTH &amp; SENSE CONNECTION
+
+        <div className="space-y-4">
+          
+          {/* VISIONARY FOUNDERS - Header */}
+          <div className="mb-12 flex flex-col items-center text-center transition-all duration-1000 ease-out">
+            <div className="flex justify-center items-center gap-3 mb-6">
+              <span className="h-[2px] w-8 bg-gradient-to-r from-[#1746D2] to-[#00A86B] rounded-full" />
+              <span className="text-[#1746D2] font-mono font-bold tracking-[0.2em] uppercase text-sm">
+                SENSE GROWTH
               </span>
+              <span className="h-[2px] w-8 bg-gradient-to-l from-[#1746D2] to-[#00A86B] rounded-full" />
             </div>
-            <h2 className="font-display text-[clamp(2.5rem,4.8vw,4.2rem)] leading-[1.08] font-black text-slate-900 tracking-tight">
-              The Visionary Founders &amp;{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1746D2] via-[#00A86B] to-[#1746D2]">
-                Business Brains Ecosystem.
+            <h2 className="font-display text-[clamp(2rem,3.5vw,3.5rem)] leading-[1.1] font-black text-slate-900 tracking-tight">
+              VISIONARY FOUNDERS <br className="hidden sm:block"/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1746D2] to-[#00A86B]">
+                by TECH6SENSE AI
               </span>
             </h2>
           </div>
-          <p className="font-body text-[1.1rem] leading-[1.75] text-slate-500 font-medium lg:max-w-md pt-2">
-            Two exclusive ecosystems designed for global impact: Visionary Founders — for ambitious entrepreneurs building AI companies, and Business Brains — the world's most exclusive private global circle for elite investors, entrepreneurs, and industry leaders.
-          </p>
-        </div>
 
-        <div className="space-y-12 lg:space-y-16">
-          
           {/* VISIONARY FOUNDERS - Premium Full Width Block */}
           <div 
             className="relative bg-[#0A1128] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-1000 ease-out group"
@@ -103,16 +97,16 @@ export default function EcosystemSection() {
                 </h3>
                 
                 <p className="font-body text-slate-300 text-lg md:text-xl leading-relaxed mb-8 text-justify">
-                  <strong className="text-white">Visionary Founders</strong> is the world's elite most comprehensive premier all-in-one AI Founder Ecosystem designed to transform ambitious entrepreneurs, professionals, start-up founders, consultants, and innovators into owners of globally competitive AI and technology companies and dominate the global markets.
+                  Visionary Founders is the world’s elite most comprehensive premier all-in-one AI Founder Ecosystem designed to transform ambitious entrepreneurs, professionals, start-up founders, consultants, and innovators into owners of globally competitive AI and technology companies and dominate the global markets.
                 </p>
 
                 <p className="font-body text-[#00A86B] text-lg md:text-xl font-semibold border-l-4 border-[#00A86B] pl-5 leading-relaxed mb-12 text-justify">
-                  "From Idea to International Clients — We don't just simply train founders. We build AI companies with them."
+                  "From Idea to International Clients —We don't just simply train founders. We build AI companies with them."
                 </p>
 
                 <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm text-slate-300 text-sm leading-relaxed mb-12 shadow-lg">
                   <p className="font-semibold text-white text-base mb-4">
-                    The ultimate shortcut from concept to cross-border enterprise. We supply the tech, the talent, the legal, and the capital pipelines. You bring the vision. We're building the Next Generation of Global AI Companies.
+                    The ultimate shortcut from concept to cross-border enterprise. We supply the tech, the talent, the legal, and the capital pipelines. You bring the vision. We Building the Next Generation of Global AI Companies.
                   </p>
                   <div className="text-xs text-slate-400 border-t border-white/10 pt-4 font-mono">
                     Built by TECH6SENSE AI. Trusted by founders across the USA, UK, Australia, Canada, UAE, EU, India and Singapore.
@@ -140,6 +134,23 @@ export default function EcosystemSection() {
             </div>
           </div>
 
+          {/* BUSINESS BRAINS - Header */}
+          <div className="pt-24 mb-12 flex flex-col items-center text-center transition-all duration-1000 ease-out">
+            <div className="flex justify-center items-center gap-3 mb-6">
+              <span className="h-[2px] w-8 bg-gradient-to-r from-[#00A86B] to-[#D4AF37] rounded-full" />
+              <span className="text-[#00A86B] font-mono font-bold tracking-[0.2em] uppercase text-sm">
+                SENSE CONNECTION
+              </span>
+              <span className="h-[2px] w-8 bg-gradient-to-l from-[#00A86B] to-[#D4AF37] rounded-full" />
+            </div>
+            <h2 className="font-display text-[clamp(2rem,3.5vw,3.5rem)] leading-[1.1] font-black text-slate-900 tracking-tight">
+              BUSINESS BRAINS <br className="hidden sm:block"/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00A86B] to-[#D4AF37]">
+                Powered by TECH6SENSE AI
+              </span>
+            </h2>
+          </div>
+
           {/* BUSINESS BRAINS - Premium Full Width Block */}
           <div 
             className="relative bg-[#021A12] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-1000 delay-200 ease-out group"
@@ -153,9 +164,12 @@ export default function EcosystemSection() {
               
               {/* Left Content - Features */}
               <div className="flex flex-col justify-center h-full order-2 lg:order-1 pb-8 lg:pb-0 lg:pr-8 lg:border-r border-white/10">
-                <h4 className="font-display text-2xl font-bold text-white mb-2">BUSINESS BRAINS | PRIVATE GLOBAL CIRCLE</h4>
+                <p className="font-display text-sm text-[#00A86B] font-bold mb-6">BUSINESS BRAINS | PRIVATE GLOBAL CIRCLE</p>
+                <p className="font-mono text-xs text-slate-300 tracking-[0.1em] mb-4">
+                  Menu: The Syndicate | The Triad | Global Reach | The Privilege |
+                </p>
                 <p className="font-mono text-xs text-[#00A86B] tracking-[0.2em] uppercase mb-8 border-b border-white/10 pb-4">
-                  BY INVITATION ONLY
+                  Section label: BY INVITATION ONLY
                 </p>
                 <div className="flex flex-col flex-1">
                   {BRAINS_POINTS.map((point, i) => (
@@ -173,7 +187,7 @@ export default function EcosystemSection() {
                 <h3 className="font-display text-[clamp(2.2rem,3vw,3.2rem)] leading-[1.15] font-extrabold tracking-tight mb-6">
                   The World's Most Exclusive Private Global Circle for{' '}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00A86B] to-emerald-400">
-                    Elite Investors, Entrepreneurs &amp; Industry Leaders.
+                    Elite Investors, Entrepreneurs &amp; Industry Leaders
                   </span>
                 </h3>
                 
@@ -183,13 +197,13 @@ export default function EcosystemSection() {
 
                 <div className="font-body text-slate-300 text-[1.05rem] leading-relaxed space-y-5 mb-8 text-justify">
                   <p>
-                    Welcome to <strong className="text-white">Business Brains</strong>—an invitation-only global syndicate reserved for elite investors, visionary entrepreneurs, and titans of industry. We operate beyond the public eye, at the absolute pinnacle of global commerce, capital, and artificial intelligence.
+                    Welcome to Business Brains—an invitation-only global syndicate reserved for elite investors, visionary entrepreneurs, and titans of industry. We operate beyond the public eye, at the absolute pinnacle of global commerce, capital, and artificial intelligence.
                   </p>
                   <p>
                     Operating at the intersection of limitless capital and bleeding-edge technology, this is the private room where next-level business paradigms are engineered and million-dollar opportunities are unlocked daily.
                   </p>
                   <p>
-                    BUSINESS BRAINS is not designed for networking. It is built for <strong className="text-white">influence, collaboration, investment, innovation, and legacy</strong>. Within this private circle, relationships become strategic alliances, conversations become global ventures, and visionary ideas become industry-defining companies.
+                    BUSINESS BRAINS is not designed for networking. It is built for influence, collaboration, investment, innovation, and legacy. Within this private circle, relationships become strategic alliances, conversations become global ventures, and visionary ideas become industry-defining companies.
                   </p>
                 </div>
 

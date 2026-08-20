@@ -1,23 +1,33 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import flagAus from '../../assets/flags/australia.webp';
+import flagCan from '../../assets/flags/canada.webp';
+import flagEu from '../../assets/flags/eu.webp';
+import flagInd from '../../assets/flags/india.webp';
+import flagSgp from '../../assets/flags/singapore.webp';
+import flagUae from '../../assets/flags/uae.webp';
+import flagUk from '../../assets/flags/uk.webp';
+import flagUsa from '../../assets/flags/usa.webp';
 
 const STORIES = [
   {
     id: 1,
     suit: '♠',
     suitColor: 'text-[#1746D2]',
-    tagline: 'Healthcare & Life Sciences — USA',
+    tagline: 'USA | Healthcare & Life Sciences',
+    flag: flagUsa,
     title: 'AI Clinical Intelligence Platform',
     client: 'Dr. Michael Anderson',
     role: 'Chief Medical Officer',
     location: 'USA',
-    quote: 'TECH6SENSE AI successfully delivered our AI-powered clinical intelligence platform that streamlined patient data analysis and automated medical documentation. Their team’s expertise in Generative AI and healthcare workflows helped us significantly improve operational efficiency while maintaining enterprise-grade security. They are a trusted long-term technology partner.',
+    quote: 'TECH6SENSE AI successfully delivered our AI-powered clinical intelligence platform that streamlined patient data analysis and automated medical documentation. Their team’s expertise in Generative AI and healthcare workflows helped us significantly improve operational efficiency while maintaining enterprise-grade security. They are a trusted long term technology partner.',
     accent: '#1746D2',
   },
   {
     id: 2,
     suit: '♥',
     suitColor: 'text-[#00A86B]',
-    tagline: 'Banking & Financial Services — USA',
+    tagline: 'USA | Banking & Financial Services',
+    flag: flagUsa,
     title: 'AI Banking Copilot & Compliance Automation',
     client: 'Jennifer Collins',
     role: 'VP – Digital Transformation',
@@ -29,7 +39,8 @@ const STORIES = [
     id: 3,
     suit: '♦',
     suitColor: 'text-[#D4AF37]',
-    tagline: 'Manufacturing — United Kingdom',
+    tagline: 'United Kingdom | Manufacturing',
+    flag: flagUk,
     title: 'Predictive Maintenance & AI Quality Inspection',
     client: 'James Richardson',
     role: 'Operations Director',
@@ -41,7 +52,8 @@ const STORIES = [
     id: 4,
     suit: '♣',
     suitColor: 'text-[#1746D2]',
-    tagline: 'Retail & E-Commerce — Canada',
+    tagline: 'Canada | Retail & E-Commerce',
+    flag: flagCan,
     title: 'AI Recommendation Engine & Customer Analytics',
     client: 'Sarah Mitchell',
     role: 'Chief Digital Officer',
@@ -53,7 +65,8 @@ const STORIES = [
     id: 5,
     suit: '♠',
     suitColor: 'text-[#00A86B]',
-    tagline: 'Logistics & Supply Chain — Australia',
+    tagline: 'Australia | Logistics & Supply Chain',
+    flag: flagAus,
     title: 'AI Logistics Optimization & Fleet Analytics',
     client: 'Daniel Carter',
     role: 'Head of Supply Chain',
@@ -65,7 +78,8 @@ const STORIES = [
     id: 6,
     suit: '♥',
     suitColor: 'text-[#D4AF37]',
-    tagline: 'Education & EdTech — India',
+    tagline: 'India | Education & EdTech',
+    flag: flagInd,
     title: 'Personalized AI Tutors & Learning Analytics',
     client: 'Ronak Shah',
     role: 'Founder & CEO',
@@ -77,7 +91,8 @@ const STORIES = [
     id: 7,
     suit: '♦',
     suitColor: 'text-[#1746D2]',
-    tagline: 'Insurance — USA',
+    tagline: 'USA | Insurance',
+    flag: flagUsa,
     title: 'AI Claims Automation & Risk Analytics',
     client: 'Robert Williams',
     role: 'Chief Technology Officer',
@@ -89,19 +104,21 @@ const STORIES = [
     id: 8,
     suit: '♣',
     suitColor: 'text-[#00A86B]',
-    tagline: 'Real Estate & Construction — UAE',
+    tagline: 'UAE | Real Estate & Construction',
+    flag: flagUae,
     title: 'Intelligent Property Management & Analytics',
     client: 'Ahmed Al Mansoori',
     role: 'Managing Director',
     location: 'UAE',
-    quote: 'The intelligent property management solution modernized our operations through AI-driven analytics and automation. TECH6SENSE AI delivered a world-class enterprise platform tailored to our business.',
+    quote: 'The intelligent property management solution modernized our operations through AI driven analytics and automation. TECH6SENSE AI delivered a world-class enterprise platform tailored to our business.',
     accent: '#00A86B',
   },
   {
     id: 9,
     suit: '♠',
     suitColor: 'text-[#D4AF37]',
-    tagline: 'Agriculture — India',
+    tagline: 'India | Agriculture',
+    flag: flagInd,
     title: 'AI Agriculture & Crop Monitoring Platform',
     client: 'Parag Sharma',
     role: 'Director',
@@ -113,7 +130,8 @@ const STORIES = [
     id: 10,
     suit: '♥',
     suitColor: 'text-[#1746D2]',
-    tagline: 'Energy & Utilities — Australia',
+    tagline: 'Australia | Energy & Utilities',
+    flag: flagAus,
     title: 'Smart Energy & Predictive Maintenance Platform',
     client: 'Olivia Thompson',
     role: 'Engineering Director',
@@ -125,7 +143,8 @@ const STORIES = [
     id: 11,
     suit: '♦',
     suitColor: 'text-[#00A86B]',
-    tagline: 'Telecommunications — Hong Kong',
+    tagline: 'Hong Kong | Telecommunications',
+    flag: null,
     title: 'Intelligent Network Monitoring & Issue Detection',
     client: 'Kevin Wong',
     role: 'CTO',
@@ -137,7 +156,8 @@ const STORIES = [
     id: 12,
     suit: '♣',
     suitColor: 'text-[#D4AF37]',
-    tagline: 'Automotive & Mobility — Germany (EU)',
+    tagline: 'European Union | Automotive & Mobility',
+    flag: flagEu,
     title: 'Manufacturing Analytics & Predictive Operations',
     client: 'Lukas Schneider',
     role: 'Innovation Director',
@@ -149,7 +169,8 @@ const STORIES = [
     id: 13,
     suit: '♠',
     suitColor: 'text-[#1746D2]',
-    tagline: 'Pharma & Biotechnology — Singapore',
+    tagline: 'Singapore | Pharmaceuticals & Biotechnology',
+    flag: flagSgp,
     title: 'AI Research Automation & Lab Intelligence',
     client: 'Dr. Wei Tan',
     role: 'Head of Innovation',
@@ -161,7 +182,8 @@ const STORIES = [
     id: 14,
     suit: '♥',
     suitColor: 'text-[#00A86B]',
-    tagline: 'Travel & Hospitality — UAE',
+    tagline: 'UAE | Travel, Tourism & Hospitality',
+    flag: flagUae,
     title: 'AI Concierge & Multilingual Guest Assistant',
     client: 'Fatima Al Nuaimi',
     role: 'COO',
@@ -173,7 +195,8 @@ const STORIES = [
     id: 15,
     suit: '♦',
     suitColor: 'text-[#D4AF37]',
-    tagline: 'Media & Marketing — United Kingdom',
+    tagline: 'United Kingdom | Media, Entertainment & Marketing',
+    flag: flagUk,
     title: 'Generative AI Content & Media Studio',
     client: 'Emma Roberts',
     role: 'Creative Director',
@@ -185,7 +208,8 @@ const STORIES = [
     id: 16,
     suit: '♣',
     suitColor: 'text-[#1746D2]',
-    tagline: 'Legal Services — Canada',
+    tagline: 'Canada | Legal Services',
+    flag: flagCan,
     title: 'AI Legal Research Assistant & Document Review',
     client: 'David Morgan',
     role: 'Managing Partner',
@@ -197,7 +221,8 @@ const STORIES = [
     id: 17,
     suit: '♠',
     suitColor: 'text-[#00A86B]',
-    tagline: 'Human Resources & Talent — Singapore',
+    tagline: 'Singapore | Human Resources & Talent Management',
+    flag: flagSgp,
     title: 'AI Recruitment & Talent Matching Platform',
     client: 'Grace Lim',
     role: 'HR Director',
@@ -209,14 +234,15 @@ const STORIES = [
     id: 18,
     suit: '♥',
     suitColor: 'text-[#D4AF37]',
-    tagline: 'Cybersecurity — USA',
+    tagline: 'USA | Cybersecurity',
+    flag: flagUsa,
     title: 'AI Threat Detection & Incident Response',
     client: 'Christopher Evans',
     role: 'Chief Information Security Officer',
     location: 'USA',
     quote: 'TECH6SENSE AI delivered an AI-powered cybersecurity platform that enhanced threat detection, automated incident response, and strengthened our security operations.',
     accent: '#D4AF37',
-  },
+  }
 ];
 
 export default function InnovationStories() {
@@ -271,165 +297,124 @@ export default function InnovationStories() {
       className="relative w-full py-20 md:py-28 overflow-hidden bg-[#FAFAFA] border-t border-slate-200/80"
     >
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-gradient-to-tr from-blue-100/50 via-emerald-100/30 to-transparent blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-tr from-blue-100/50 via-emerald-100/30 to-transparent blur-[120px] pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-6">
-        {/* Header (Centered) */}
+        
+        {/* Eyebrow */}
         <div 
-          className={`flex flex-col items-center text-center max-w-3xl mx-auto mb-14 md:mb-20 transition-all duration-1000 ease-out ${
+          className={`flex items-center justify-center gap-3 mb-4 transition-all duration-1000 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <div className="flex items-center gap-3 mb-4">
-            <span className="h-[2px] w-10 bg-gradient-to-r from-[#1746D2] to-[#00A86B]" />
-            <span className="font-mono text-xs font-extrabold tracking-[0.25em] uppercase text-[#1746D2]">
-              CLIENT TESTIMONIALS
-            </span>
-            <span className="h-[2px] w-10 bg-gradient-to-r from-[#00A86B] to-[#1746D2]" />
-          </div>
-
-          <h2 className="font-display text-[clamp(2.1rem,4.2vw,3.4rem)] leading-[1.12] font-extrabold text-slate-900 tracking-tight mb-4">
-            Trusted by Leaders Across{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1746D2] via-[#00A86B] to-[#1746D2]">
-              Global Markets.
-            </span>
-          </h2>
-
-          <p className="font-body text-[0.98rem] md:text-[1.05rem] text-slate-600 font-medium leading-relaxed max-w-2xl">
-            Real enterprise clients, real business results, and AI engineering excellence delivered worldwide.
-          </p>
+          <span className="h-[2px] w-10 bg-gradient-to-r from-[#1746D2] to-[#00A86B]" />
+          <span className="font-mono text-xs font-extrabold tracking-[0.25em] uppercase text-[#1746D2]">
+            Client Testimonial
+          </span>
+          <span className="h-[2px] w-10 bg-gradient-to-r from-[#00A86B] to-[#1746D2]" />
         </div>
 
-        {/* 3D PLAYING CARD HAND-FAN SLIDER */}
+        <h2 className="font-display text-[clamp(2.1rem,4.2vw,3.4rem)] leading-[1.12] font-extrabold text-slate-900 tracking-tight mb-16 text-center">
+          Hear from those who are part of the{' '}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1746D2] to-[#00A86B]">
+            Global Ecosystem.
+          </span>
+        </h2>
+
+        {/* 3D COVERFLOW SLIDER */}
         <div 
-          className="relative w-full max-w-5xl mx-auto min-h-[460px] md:min-h-[500px] flex items-center justify-center py-6"
+          className="relative w-full max-w-6xl mx-auto min-h-[400px] md:min-h-[460px] flex items-center justify-center py-6 perspective-1000"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
           {/* Card Container */}
-          <div className="relative w-full max-w-[560px] md:max-w-[620px] h-[440px] md:h-[460px] mx-auto">
+          <div className="relative w-full max-w-[380px] md:max-w-[420px] h-[340px] md:h-[380px] mx-auto transform-style-3d">
             {STORIES.map((story, index) => {
               // Calculate offset relative to active index (-2, -1, 0, 1, 2)
               let offset = index - currentIndex;
               const total = STORIES.length;
 
-              // Handle wrap-around math for smooth infinite hand-fan loop
+              // Handle wrap-around math for smooth infinite loop
               if (offset > total / 2) offset -= total;
               if (offset < -total / 2) offset += total;
 
               const isActive = offset === 0;
-              const isVisibleCard = Math.abs(offset) <= 2;
+              const isVisibleCard = Math.abs(offset) <= 3; // Render up to 7 cards to show the full curve
 
               if (!isVisibleCard) return null;
 
-              // Mobile: cards come from top (translateY). Desktop: fan from sides (translateX + rotate)
+              // 3D curved carousel math
               let cardTransform, cardOpacity;
               if (isMobile) {
-                const translateY = offset * -50;
-                const scale = isActive ? 1 : 0.92 - Math.abs(offset) * 0.04;
-                cardOpacity = isActive ? 1 : 0.35 - Math.abs(offset) * 0.08;
-                cardTransform = `translateY(${translateY}px) scale(${scale})`;
+                const translateX = offset * 105;
+                const scale = isActive ? 1 : 0.82;
+                cardOpacity = isActive ? 1 : 0.35;
+                cardTransform = `translateX(${translateX}px) scale(${scale})`;
               } else {
-                const translateX = offset * 110;
-                const rotate = offset * 7;
-                const scale = isActive ? 1.02 : 0.9 - Math.abs(offset) * 0.05;
-                cardOpacity = isActive ? 1 : 0.42 - Math.abs(offset) * 0.08;
-                cardTransform = `translateX(${translateX}px) rotate(${rotate}deg) scale(${scale})`;
+                // Desktop: Curved arch carousel in Z-space
+                const translateX = offset * 175; 
+                const translateY = Math.abs(offset) * 20; 
+                const translateZ = Math.abs(offset) * -80; 
+                const rotateY = offset * -16; // Gentler rotation so corner cards remain readable
+                const rotateZ = offset * 1.5; 
+                const scale = isActive ? 1 : 0.9 - Math.abs(offset) * 0.07;
+                cardOpacity = isActive ? 1 : Math.max(0.35, 0.75 - Math.abs(offset) * 0.13); // Higher minimum visibility
+                cardTransform = `translate3d(${translateX}px, ${translateY}px, ${translateZ}px) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg) scale(${scale})`;
               }
               const zIndex = 30 - Math.abs(offset) * 5;
 
-              // Theme color styles per card
-              const isBlue = story.accent === '#1746D2';
-              const isGreen = story.accent === '#00A86B';
-              const isGold = story.accent === '#D4AF37';
-
-              const cardBg = isBlue
-                ? 'bg-[#F8FAFF]'
-                : isGreen
-                ? 'bg-[#F6FCF9]'
-                : 'bg-[#FFFCF5]';
-
-              const cardBorder = isActive
-                ? isBlue
-                  ? 'border-[#1746D2]/50 shadow-[6px_6px_0px_0px_rgba(23,70,210,0.35)] ring-2 ring-[#1746D2]/20'
-                  : isGreen
-                  ? 'border-[#00A86B]/50 shadow-[6px_6px_0px_0px_rgba(0,168,107,0.35)] ring-2 ring-[#00A86B]/20'
-                  : 'border-[#D4AF37]/60 shadow-[6px_6px_0px_0px_rgba(212,175,55,0.4)] ring-2 ring-[#D4AF37]/25'
-                : isBlue
-                ? 'border-blue-200/80 shadow-[4px_4px_0px_0px_rgba(23,70,210,0.12)] hover:opacity-85'
-                : isGreen
-                ? 'border-emerald-200/80 shadow-[4px_4px_0px_0px_rgba(0,168,107,0.12)] hover:opacity-85'
-                : 'border-amber-200/80 shadow-[4px_4px_0px_0px_rgba(212,175,55,0.15)] hover:opacity-85';
-
-              const badgeBg = isBlue
-                ? 'bg-[#1746D2]/10 text-[#1746D2] border border-[#1746D2]/25'
-                : isGreen
-                ? 'bg-[#00A86B]/10 text-[#00A86B] border border-[#00A86B]/25'
-                : 'bg-[#D4AF37]/15 text-[#9e7c13] border border-[#D4AF37]/35';
-
-              const taglineColor = isBlue
-                ? 'text-[#1746D2]'
-                : isGreen
-                ? 'text-[#00A86B]'
-                : 'text-[#9e7c13]';
-
-              const topBarLine = isBlue
-                ? 'bg-[#1746D2]'
-                : isGreen
-                ? 'bg-[#00A86B]'
-                : 'bg-[#D4AF37]';
+              // Set all cards to use their respective brand solid color
+              const cardBg = 'border-transparent text-white';
+              const textColor = 'text-white';
+              const quoteColor = 'text-white/95';
+              const roleColor = 'text-white/80';
+              const taglineColor = 'text-white/90';
 
               return (
                 <div
                   key={story.id}
                   onClick={() => setCurrentIndex(index)}
-                  className={`absolute top-0 left-0 w-full h-full rounded-[2.2rem] p-7 md:p-8 border transition-all duration-700 cubic-bezier(0.16,1,0.3,1) cursor-pointer select-none overflow-hidden flex flex-col justify-between ${cardBg} ${cardBorder}`}
+                  className={`absolute top-0 left-0 w-full h-full rounded-2xl p-7 md:p-9 transition-all duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)] cursor-pointer select-none overflow-hidden flex flex-col justify-center ${cardBg}`}
                   style={{
+                    backgroundColor: story.accent,
                     transform: cardTransform,
                     opacity: cardOpacity,
                     zIndex: zIndex,
-                    transformOrigin: isMobile ? 'top center' : 'bottom center',
-                    filter: isActive ? 'none' : 'brightness(0.96)',
+                    transformOrigin: 'center center',
+                    boxShadow: isActive 
+                      ? `0 20px 40px -10px ${story.accent}70` 
+                      : `0 10px 25px -10px rgba(0,0,0,0.15)`,
                   }}
                 >
-                  {/* Top Colored Accent Stripe */}
-                  <div className={`absolute top-0 left-0 right-0 h-1.5 ${topBarLine}`} />
-
-                  {/* Top Bar: Location & Tagline */}
-                  <div className="flex items-center justify-between border-b border-slate-200/60 pb-3.5 mb-4 pt-1">
-                    <div className={`font-mono text-[0.7rem] md:text-xs font-extrabold uppercase tracking-wider ${taglineColor}`}>
+                  {/* Tagline & Flag */}
+                  <div className="flex items-center gap-2.5 mb-5">
+                    {story.flag && (
+                      <img src={story.flag} alt={`${story.location} flag`} className="w-5 h-auto rounded-[2px] shadow-sm" />
+                    )}
+                    <div className={`font-mono text-[0.65rem] md:text-[0.7rem] font-bold uppercase tracking-wider ${taglineColor}`}>
                       {story.tagline}
-                    </div>
-
-                    <div className={`px-3 py-1 rounded-full font-mono text-[0.72rem] font-extrabold uppercase tracking-wider ${badgeBg}`}>
-                      {story.location}
                     </div>
                   </div>
 
-                  {/* Story Title */}
-                  <h3 className="font-display text-[1.15rem] md:text-[1.35rem] font-bold text-slate-900 leading-snug mb-3">
-                    {story.title}
-                  </h3>
-
                   {/* Quote */}
-                  <blockquote className="font-body text-[0.86rem] md:text-[0.92rem] text-slate-600 italic font-medium leading-relaxed mb-6 line-clamp-4">
+                  <blockquote className={`font-body text-[0.95rem] md:text-[1.05rem] ${quoteColor} font-medium leading-relaxed mb-8`}>
                     "{story.quote}"
                   </blockquote>
 
                   {/* Client Info */}
-                  <div className="flex items-center justify-between border-t border-slate-200/60 pt-4 mt-auto">
+                  <div className="flex items-center gap-4 mt-auto">
+                    {/* Avatar Bubble */}
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-sm shrink-0 ${isActive ? 'bg-white/20 text-white' : 'bg-white/10 text-white/90'}`}>
+                      {story.client.charAt(0)}
+                    </div>
+                    
                     <div>
-                      <div className="font-display text-sm font-extrabold text-slate-900">
+                      <div className={`font-display text-[0.95rem] font-bold ${textColor}`}>
                         {story.client}
                       </div>
-                      <div className="font-body text-xs text-slate-500 font-semibold">
+                      <div className={`font-body text-[0.8rem] ${roleColor}`}>
                         {story.role}
                       </div>
-                    </div>
-
-                    {/* Clean Verified Enterprise Client Badge */}
-                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100/80 border border-slate-200 text-[0.68rem] font-bold font-mono text-slate-600 uppercase tracking-wider">
-                      <span>✓ VERIFIED</span>
                     </div>
                   </div>
                 </div>
@@ -439,44 +424,23 @@ export default function InnovationStories() {
         </div>
 
         {/* Navigation & Controls */}
-        <div className="flex items-center justify-center gap-6 mt-8">
-          {/* Previous Button */}
-          <button
-            onClick={handlePrev}
-            aria-label="Previous Testimonial"
-            className="w-12 h-12 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-700 hover:text-[#1746D2] hover:border-[#1746D2]/40 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-300 active:scale-95 cursor-pointer"
-          >
-            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" stroke="currentColor" strokeWidth="2.5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-            </svg>
-          </button>
-
+        <div className="flex items-center justify-center gap-8 mt-12">
           {/* Dots Indicator */}
-          <div className="flex items-center gap-2 max-w-[280px] overflow-x-auto py-2 px-3 custom-scrollbar">
+          <div className="flex items-center gap-2 max-w-[280px] overflow-hidden py-2 px-1">
             {STORIES.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
                 aria-label={`Go to slide ${idx + 1}`}
-                className={`h-2.5 rounded-full transition-all duration-500 cursor-pointer ${
+                className={`h-1.5 rounded-full transition-all duration-500 cursor-pointer ${
                   currentIndex === idx
-                    ? 'w-8 bg-gradient-to-r from-[#1746D2] to-[#00A86B]'
-                    : 'w-2.5 bg-slate-300 hover:bg-slate-400'
+                    ? 'w-6'
+                    : 'w-2 bg-slate-300 hover:bg-slate-400'
                 }`}
+                style={{ backgroundColor: currentIndex === idx ? STORIES[currentIndex].accent : undefined }}
               />
             ))}
           </div>
-
-          {/* Next Button */}
-          <button
-            onClick={handleNext}
-            aria-label="Next Testimonial"
-            className="w-12 h-12 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-700 hover:text-[#1746D2] hover:border-[#1746D2]/40 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-300 active:scale-95 cursor-pointer"
-          >
-            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" stroke="currentColor" strokeWidth="2.5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-            </svg>
-          </button>
         </div>
 
       </div>

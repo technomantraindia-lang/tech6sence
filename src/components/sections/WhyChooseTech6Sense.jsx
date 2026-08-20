@@ -124,7 +124,7 @@ export default function WhyChooseTech6Sense() {
     <section
       ref={sectionRef}
       id="why-tech6sense"
-      className="relative w-full py-24 md:py-32 overflow-hidden bg-[#FAFBFF]"
+      className="relative w-full pt-24 pb-10 md:pt-32 md:pb-12 overflow-hidden bg-[#FAFBFF]"
     >
       {/* Background gradients */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] rounded-full bg-gradient-to-bl from-blue-100/50 to-transparent blur-[120px] pointer-events-none -translate-y-1/4 translate-x-1/4" />
@@ -154,44 +154,75 @@ export default function WhyChooseTech6Sense() {
         </div>
 
         {/* Staggered Zig-Zag Grid */}
-        <div className="relative grid md:grid-cols-2 gap-8 lg:gap-12 md:pb-24">
+        <div className="relative grid md:grid-cols-2 gap-8 lg:gap-12 md:pb-6">
           
           {/* Faint connecting zig-zag pattern in the background (visible on desktop) */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none hidden md:block z-0 opacity-[0.03]" preserveAspectRatio="none">
-            <path d="M 25% 0 L 75% 10% L 25% 20% L 75% 30% L 25% 40% L 75% 50% L 25% 60% L 75% 70% L 25% 80% L 75% 90% L 25% 100%" stroke="black" strokeWidth="4" fill="none" strokeDasharray="10 10"/>
-          </svg>
+          {/* Central Vertical Connector Line (Desktop Only) */}
+          <div 
+            className="absolute left-1/2 top-10 bottom-10 w-[2px] -translate-x-1/2 hidden md:block z-0 pointer-events-none"
+            style={{
+              backgroundImage: 'linear-gradient(to bottom, #cbd5e1 50%, rgba(255,255,255,0) 0%)',
+              backgroundSize: '2px 10px',
+              backgroundRepeat: 'repeat-y',
+              opacity: 0.6
+            }}
+          />
 
-          {ALL_POINTS.map((point, i) => (
-            <div
-              key={i}
-              className={`group relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-10 border border-slate-200/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-500 ease-out hover:-translate-y-2 flex flex-col z-10 
-                ${i % 2 !== 0 ? 'md:mt-28' : 'md:mb-28'}
-                ${point.shadowHover}
-              `}
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(40px)',
-                transitionDelay: `${150 + i * 100}ms`,
-              }}
-            >
-              <div className="relative z-10 flex flex-col h-full">
-                {/* Header with Number and Title */}
-                <div className="flex items-start gap-5 mb-6">
-                  <div className={`relative shrink-0 flex items-center justify-center w-14 h-14 rounded-2xl ${point.bg} ${point.textColor} font-display font-black text-2xl group-hover:scale-110 group-hover:bg-gradient-to-br ${point.color} group-hover:text-white transition-all duration-500 shadow-sm`}>
-                    {point.num}
+          {ALL_POINTS.map((point, i) => {
+            const brandColor = i % 3 === 0 ? '#1746D2' : i % 3 === 1 ? '#00A86B' : '#D4AF37';
+            const isLeftColumn = i % 2 === 0;
+
+            return (
+              <div
+                key={i}
+                className={`group relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-10 border border-slate-200/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-500 ease-out hover:-translate-y-2 flex flex-col z-10 
+                  ${i % 2 !== 0 ? 'md:mt-28' : 'md:mb-28'}
+                  ${point.shadowHover}
+                `}
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(40px)',
+                  transitionDelay: `${150 + i * 100}ms`,
+                }}
+              >
+                {/* Horizontal branch connecting to center trunk */}
+                {isLeftColumn ? (
+                  <>
+                    <div className="absolute -right-4 lg:-right-6 top-1/2 -translate-y-1/2 w-4 lg:w-6 border-t border-dashed border-slate-300 hidden md:block pointer-events-none z-0" />
+                    <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-2 shadow-sm hidden md:flex items-center justify-center pointer-events-none z-20" style={{ borderColor: brandColor }}>
+                      <span className="absolute w-full h-full rounded-full animate-ping opacity-75" style={{ backgroundColor: brandColor }} />
+                      <span className="w-2 h-2 rounded-full" style={{ backgroundColor: brandColor }} />
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="absolute -left-4 lg:-left-6 top-1/2 -translate-y-1/2 w-4 lg:w-6 border-t border-dashed border-slate-300 hidden md:block pointer-events-none z-0" />
+                    <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-2 shadow-sm hidden md:flex items-center justify-center pointer-events-none z-20" style={{ borderColor: brandColor }}>
+                      <span className="absolute w-full h-full rounded-full animate-ping opacity-75" style={{ backgroundColor: brandColor }} />
+                      <span className="w-2 h-2 rounded-full" style={{ backgroundColor: brandColor }} />
+                    </div>
+                  </>
+                )}
+
+                <div className="relative z-10 flex flex-col h-full">
+                  {/* Header with Number and Title */}
+                  <div className="flex items-start gap-5 mb-6">
+                    <div className={`relative shrink-0 flex items-center justify-center w-14 h-14 rounded-2xl ${point.bg} ${point.textColor} font-display font-black text-2xl group-hover:scale-110 group-hover:bg-gradient-to-br ${point.color} group-hover:text-white transition-all duration-500 shadow-sm`}>
+                      {point.num}
+                    </div>
+                    <h4 className={`font-display text-[1.4rem] lg:text-[1.6rem] font-bold text-slate-800 leading-tight pt-1.5 group-hover:${point.textColor} transition-colors duration-300`}>
+                      {point.title}
+                    </h4>
                   </div>
-                  <h4 className={`font-display text-[1.4rem] lg:text-[1.6rem] font-bold text-slate-800 leading-tight pt-1.5 group-hover:${point.textColor} transition-colors duration-300`}>
-                    {point.title}
-                  </h4>
-                </div>
 
-                {/* Description */}
-                <p className="font-body text-[1.05rem] leading-relaxed text-slate-600 font-medium mt-auto group-hover:text-slate-700 transition-colors duration-300">
-                  {point.description}
-                </p>
+                  {/* Description */}
+                  <p className="font-body text-[1.05rem] leading-relaxed text-slate-600 font-medium mt-auto group-hover:text-slate-700 transition-colors duration-300">
+                    {point.description}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>

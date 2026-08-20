@@ -47,7 +47,7 @@ export default function WhoWeServe() {
   ];
 
   return (
-    <section ref={sectionRef} id="who-we-serve" className="py-20 md:py-28 bg-[#FAFBFF] relative overflow-hidden">
+    <section ref={sectionRef} id="who-we-serve" className="pt-10 pb-20 md:pt-12 md:pb-28 bg-[#FAFBFF] relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[400px] bg-gradient-to-b from-blue-50/50 to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
       <div className="mx-auto max-w-5xl px-6 relative z-10">
         <div 

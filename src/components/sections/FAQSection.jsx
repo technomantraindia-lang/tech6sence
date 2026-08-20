@@ -225,24 +225,30 @@ export default function FAQSection() {
         </div>
 
         {/* FAQ Accordion List */}
-        <div className="max-w-4xl mx-auto flex flex-col gap-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
           {filteredFaqs.map((faq, idx) => {
             const isOpen = openIdx === idx;
             return (
               <div
                 key={idx}
-                className="rounded-2xl bg-white border border-slate-100/90 shadow-sm overflow-hidden transition-all duration-300"
+                className={`rounded-2xl border shadow-sm overflow-hidden transition-all duration-300 ${
+                  isOpen 
+                    ? 'bg-gradient-to-r from-[#1746D2] to-[#00A86B] border-transparent' 
+                    : 'bg-white border-slate-100/90'
+                }`}
+                onMouseEnter={() => setOpenIdx(idx)}
+                onMouseLeave={() => setOpenIdx(null)}
               >
                 <button
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
-                  className="w-full text-left p-6 flex items-center justify-between gap-4 cursor-pointer select-none hover:bg-slate-50/50"
+                  className={`w-full text-left p-6 flex items-start justify-between gap-4 cursor-pointer select-none transition-all duration-300 group ${isOpen ? '' : 'hover:bg-gradient-to-r hover:from-[#1746D2] hover:to-[#00A86B]'}`}
                 >
-                  <span className="font-display text-[1.05rem] md:text-[1.15rem] font-bold text-slate-900 tracking-tight">
+                  <span className={`font-display text-[1.05rem] md:text-[1.15rem] font-bold tracking-tight transition-colors duration-300 ${isOpen ? 'text-white' : 'text-slate-900 group-hover:text-white'}`}>
                     {faq.q}
                   </span>
                   <span
-                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'rotate-180 bg-blue-50 text-blue-600' : 'bg-slate-100 text-slate-500'
+                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                      isOpen ? 'rotate-180 bg-white/20 text-white' : 'bg-slate-100 text-slate-500 group-hover:bg-white/20 group-hover:text-white'
                     }`}
                   >
                     <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4" stroke="currentColor" strokeWidth="2.5">
@@ -252,8 +258,8 @@ export default function FAQSection() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-2 font-body text-slate-600 text-[0.95rem] leading-relaxed border-t border-slate-50 bg-slate-50/30">
-                    <span className="font-display text-sm font-extrabold tracking-widest uppercase text-blue-600 block mb-2">
+                  <div className="px-6 pb-6 pt-2 font-body text-white/90 text-[0.95rem] leading-relaxed border-t border-white/20">
+                    <span className="font-display text-sm font-extrabold tracking-widest uppercase text-white block mb-2 opacity-90">
                       [{faq.cat}]
                     </span>
                     {faq.a}
