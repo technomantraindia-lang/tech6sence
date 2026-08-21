@@ -23,13 +23,7 @@ export default function IntelligentGlobalPresence() {
 
       <div className="mx-auto max-w-[1400px] px-6 relative z-10 flex flex-col md:flex-row items-center gap-6">
         
-        {/* Label */}
-        <div className="shrink-0 flex items-center gap-3 bg-slate-900 z-20 pr-4">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#1746D2] animate-pulse" />
-          <span className="font-display text-sm font-extrabold uppercase tracking-[0.25em] text-[#1746D2]/80 whitespace-nowrap">
-            GLOBAL PRESENCE
-          </span>
-        </div>
+        {/* Label removed as requested */}
 
         {/* Marquee Container */}
         <div className="relative flex-grow overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">

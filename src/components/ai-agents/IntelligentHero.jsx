@@ -9,7 +9,7 @@ export default function IntelligentHero() {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden bg-slate-950 min-h-[85vh] flex flex-col justify-center pt-32 pb-24">
+    <section className="relative w-full overflow-hidden bg-slate-950 min-h-[100svh] lg:min-h-[auto] lg:aspect-video flex flex-col justify-center pt-32 pb-24">
       {/* Background Video */}
       <div className="absolute inset-0 z-0 opacity-75">
         <video 
@@ -28,19 +28,19 @@ export default function IntelligentHero() {
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#1746D2]/15 blur-[160px] rounded-full" />
 
       {/* Main Hero Container */}
-      <div className="mx-auto max-w-[1400px] px-6 relative z-10 w-full py-12">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 relative z-10 w-full py-12">
         <div className={`max-w-4xl transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           
           {/* Top Pill */}
           <div className="inline-flex items-center gap-3 mb-6 px-4 py-2 rounded-full border border-[#1746D2]/20 bg-[#040916]/50 backdrop-blur-xl">
             <span className="w-2 h-2 rounded-full bg-[#00A86B] animate-pulse shadow-[0_0_12px_rgba(0,168,107,0.8)]" />
-            <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-[#00A86B]">
+            <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-[0.25em] text-[#00A86B]">
               Intelligent Solutions
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="font-display text-[clamp(2.5rem,5.5vw,5.5rem)] leading-[1.05] font-black tracking-tight text-white mb-6">
+          <h1 className="font-display text-[clamp(2rem,4.5vw,5rem)] leading-[1.1] font-black tracking-tight text-white mb-6 break-words max-w-full">
             Architecting the Future of{' '}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#1746D2] via-[#00A86B] to-[#D4AF37]">
               Enterprise Intelligence.
@@ -48,18 +48,18 @@ export default function IntelligentHero() {
           </h1>
 
           {/* Tagline */}
-          <div className="font-mono text-xs md:text-sm font-semibold tracking-wider text-[#1746D2]/80 mb-6 uppercase flex flex-wrap items-center gap-2">
+          <div className="font-mono text-[10px] md:text-sm font-semibold tracking-wider text-[#1746D2]/80 mb-6 uppercase flex flex-wrap items-center gap-2">
             <span>Global AI Engineering</span>
-            <span className="text-[#1746D2]">•</span>
+            <span className="text-[#1746D2] hidden sm:inline">•</span>
             <span>Intelligent Automation</span>
-            <span className="text-[#1746D2]">•</span>
+            <span className="text-[#1746D2] hidden sm:inline">•</span>
             <span>Enterprise Software</span>
-            <span className="text-[#1746D2]">•</span>
+            <span className="text-[#1746D2] hidden sm:inline">•</span>
             <span>Digital Transformation</span>
           </div>
 
           {/* Subheadline */}
-          <p className="font-body text-slate-300 text-lg md:text-xl font-medium leading-relaxed mb-10 max-w-3xl">
+          <p className="font-body text-slate-300 text-base sm:text-lg md:text-xl font-medium leading-relaxed mb-10 max-w-3xl break-words">
             TECH6SENSE AI empowers global enterprises with bespoke Artificial Intelligence, advanced automation, and full-stack IT capabilities. We transform complex data into autonomous ecosystems and measurable business impact.
           </p>
 

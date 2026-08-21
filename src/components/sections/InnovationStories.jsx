@@ -19,7 +19,7 @@ const STORIES = [
     client: 'Dr. Michael Anderson',
     role: 'Chief Medical Officer',
     location: 'USA',
-    quote: 'TECH6SENSE AI successfully delivered our AI-powered clinical intelligence platform that streamlined patient data analysis and automated medical documentation. Their team’s expertise in Generative AI and healthcare workflows helped us significantly improve operational efficiency while maintaining enterprise-grade security. They are a trusted long term technology partner.',
+    quote: 'TECH6SENSE AI successfully delivered our AI-powered clinical intelligence platform that streamlined patient data analysis and automated medical documentation. Their team’s expertise in Generative AI and healthcare workflows helped us significantly improve operational efficiency while maintaining enterprise-grade security. They are a trusted long-term technology partner.',
     accent: '#1746D2',
   },
   {
@@ -110,7 +110,7 @@ const STORIES = [
     client: 'Ahmed Al Mansoori',
     role: 'Managing Director',
     location: 'UAE',
-    quote: 'The intelligent property management solution modernized our operations through AI driven analytics and automation. TECH6SENSE AI delivered a world-class enterprise platform tailored to our business.',
+    quote: 'The intelligent property management solution modernized our operations through AI-driven analytics and automation. TECH6SENSE AI delivered a world-class enterprise platform tailored to our business.',
     accent: '#00A86B',
   },
   {

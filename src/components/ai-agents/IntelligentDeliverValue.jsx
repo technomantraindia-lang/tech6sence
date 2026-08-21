@@ -49,7 +49,7 @@ export default function IntelligentDeliverValue() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-3 mb-6">
             <span className="w-8 h-[2px] bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full" />
-            <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-blue-600">
+            <span className="text-sm sm:text-base font-mono font-bold uppercase tracking-[0.25em] text-blue-600">
               DELIVERY METHODOLOGY
             </span>
             <span className="w-8 h-[2px] bg-gradient-to-r from-emerald-500 to-blue-600 rounded-full" />

@@ -3,153 +3,320 @@ import React, { useState, useEffect, useRef } from 'react';
 const FAQS = [
   {
     cat: 'About TECH6SENSE',
-    q: 'What does TECH6SENSE AI do?',
-    a: 'TECH6SENSE AI is a global artificial intelligence development, full-stack IT services, and deep-tech product engineering company operating globally. We design, build, and deploy enterprise AI solutions, autonomous agent systems, proprietary deep-tech products, and scalable digital infrastructure for enterprises, governments, startups, and visionary founders.',
+    q: `What is TECH6SENSE AI?`,
+    a: `TECH6SENSE AI is a global Artificial Intelligence, Enterprise Technology, and Deep-Tech
+Innovation company that helps organizations design, develop, deploy, and scale intelligent
+technologies. Our ecosystem includes AI development, full-stack IT services, enterprise
+software engineering, deep-tech product innovation, the Visionary Founders Ecosystem, and
+the Business Brains Private Global Circle.`,
   },
   {
     cat: 'About TECH6SENSE',
-    q: 'Is TECH6SENSE AI a service company, a product company, or an agency?',
-    a: "None of the above in isolation. TECH6SENSE AI is an integrated intelligence ecosystem. We provide enterprise services and full-stack software development, engineer physical deep-tech products, and operate two ecosystem ventures: Visionary Founders (a global AI founder ecosystem) and Business Brains (an exclusive private network for investors and operators).",
+    q: `Which industries do you serve?`,
+    a: `We work across healthcare, banking, financial services, insurance, manufacturing, retail,
+logistics, supply chain, education, government, telecommunications, energy, automotive, real
+estate, construction, legal, media, hospitality, travel, agriculture, cybersecurity, life sciences,
+professional services, and many other industries.`,
   },
   {
     cat: 'About TECH6SENSE',
-    q: 'Where is TECH6SENSE AI headquartered and where do you operate?',
-    a: 'TECH6SENSE AI operates globally across nine major markets: United States, United Kingdom, Canada, European Union, UAE, India, Singapore, and Australia, with key operating hubs in premier innovation centers including GIFT City, India.',
+    q: `Which countries do you serve?`,
+    a: `We work with organizations across the United States, United Kingdom, Canada, Australia,
+India, the European Union, UAE, Singapore, Hong Kong, and other international markets
+through remote and hybrid delivery models.`,
   },
   {
     cat: 'About TECH6SENSE',
-    q: 'What makes TECH6SENSE AI different from traditional IT vendors or AI agencies?',
-    a: 'Most agencies build software wrappers on third-party APIs. Traditional IT vendors sell headcount. TECH6SENSE AI applies our proprietary S.E.N.S.E. framework to deliver production-grade intelligence, governance-first engineering, owned IP, and access to a global business ecosystem.',
+    q: `What makes TECH6SENSE AI different from other AI companies?`,
+    a: `Our strength lies in combining AI strategy, enterprise software engineering, deep-tech
+innovation, product development, founder enablement, and long-term business partnerships
+under one integrated ecosystem. TECH6SENSE AI engineers, governs, deploys, and
+continues to improve the system.We focus on measurable business outcomes rather than
+technology alone.`,
   },
   {
     cat: 'Capabilities & AI',
-    q: 'What is the S.E.N.S.E. Framework?',
-    a: 'The S.E.N.S.E. framework is our 5-stage methodology designed to prevent enterprise AI failure: S — Sense (Opportunity Mapping), E — Engineer (Production Build), N — Navigate (Risk & Governance), S — Scale (Global Deployment), E — Evolve (Continuous Improvement).',
+    q: `What AI services do you offer?`,
+    a: `We provide custom AI development, AI agents, AI Product Development, Generative AI,
+Agentic AI, enterprise AI, machine learning, computer vision, natural language processing,
+predictive analytics, AI automation, AI copilots, recommendation systems, intelligent search,
+AI integration, AI governance consulting, AIOps & MLOps and all.`,
   },
   {
     cat: 'Capabilities & AI',
-    q: 'Does TECH6SENSE AI build custom AI models or just integrate third-party APIs?',
-    a: 'We build proprietary model architectures, fine-tune open-weights models, design specialized RAG (Retrieval-Augmented Generation) systems, and engineer multi-agent workflows tailored to your proprietary enterprise data.',
+    q: `Do you build custom AI solutions?`,
+    a: `Yes. Every organization has unique business objectives, workflows, and data. We design
+custom AI solutions tailored to your specific operational requirements, industry regulations,
+and growth goals.`,
   },
   {
     cat: 'Capabilities & AI',
-    q: 'What industries does TECH6SENSE AI serve?',
-    a: 'We engineer solutions across Healthcare & Life Sciences, Financial Services & Banking, Manufacturing & Logistics, Retail & E-Commerce, Public Sector & Smart Cities, and Energy & Utilities.',
+    q: `Do you develop enterprise software?`,
+    a: `Yes. We build enterprise-grade software, SaaS platforms, web applications, mobile
+applications, internal business systems, cloud-native platforms, APIs, and digital
+transformation solutions.`,
+  },
+  {
+    cat: 'About TECH6SENSE',
+    q: `Does TECH6SENSE AI work with startups or only enterprises?`,
+    a: `Both. Enterprise engagements run through the AI Development and IT Services practices,
+while early-stage founders are typically served through the Visionary Founders ecosystem,
+which is structured for organisations that are still being built.`,
   },
   {
     cat: 'Capabilities & AI',
-    q: 'What technologies and frameworks do you use for AI development?',
-    a: 'We utilize Python, PyTorch, TensorFlow, LangChain, LlamaIndex, vLLM, TensorRT, Triton, Docker, Kubernetes, AWS, GCP, Azure, Next.js, React, Node.js, and specialized hardware/embedded C++ systems for deep-tech integrations.',
+    q: `Can you modernise legacy systems?`,
+    a: `Yes. Legacy modernisation engagements range from incremental strangler-pattern
+replacement through to full re-platforming, with the approach chosen against operational risk
+tolerance rather than engineering preference.`,
+  },
+  {
+    cat: 'About TECH6SENSE',
+    q: `Can TECH6SENSE AI help if we don't have data?`,
+    a: `Yes! Lack of historical data is a common challenge. We have strategies:
+Data Synthesis:
+•
+Generate synthetic data for training
+•
+Use simulation and modeling
+•
+Transfer learning from similar domains
+Rapid Data Collection:
+•
+Design efficient data collection systems
+•
+Implement automated data capture
+•
+Structure for future AI use
+Alternative Approaches:
+•
+Start with rule-based systems while collecting data
+•
+Use pre-trained models and fine-tune
+•
+Leverage publicly available datasets
+•
+Partner with data providers
+Phased Approach:
+•
+Phase 1: Data collection and infrastructure
+•
+Phase 2: Initial AI models with limited data
+•
+Phase 3: Advanced AI with rich datasets
+We conduct a data readiness assessment to identify the best path forward for your specific
+situation.`,
   },
   {
     cat: 'Capabilities & AI',
-    q: 'How does TECH6SENSE AI handle data privacy and security?',
-    a: 'Data privacy is built into our core architecture. We support zero-data-retention deployments, on-premise/air-gapped model hosting, end-to-end encryption, and full compliance with GDPR, HIPAA, SOC2, and regional sovereignty mandates.',
+    q: `What is Deep-Tech Product Development?`,
+    a: `Deep-tech products combine advanced engineering with technologies such as AI, computer
+vision, IoT, robotics, wearable intelligence, edge computing, and intelligent hardware. We
+support clients from concept through engineering and commercialization.`,
   },
   {
     cat: 'Capabilities & AI',
-    q: "Can TECH6SENSE AI help us if we don't have an in-house AI team?",
-    a: 'Yes. We frequently serve as an end-to-end AI engineering partner or provide embedded fractional CTO and engineering leadership to guide your internal teams.',
+    q: `Can you help us build an AI-powered hardware product?`,
+    a: `Yes. We support the design and development of intelligent wearables, smart healthcare
+devices, industrial IoT systems, robotics platforms, AI-enabled consumer products, and other
+advanced technology solutions.`,
   },
   {
-    cat: 'Engagements & Pricing',
-    q: 'How long does a typical AI engagement take?',
-    a: 'Initial discovery and proof-of-concept sprints typically take 3-6 weeks. Production-grade enterprise AI builds generally range from 12 to 24 weeks depending on architectural complexity.',
-  },
-  {
-    cat: 'Engagements & Pricing',
-    q: 'What is the cost of working with TECH6SENSE AI?',
-    a: 'Engagements are structured based on scope, technical complexity, and engagement model (fixed-phase product builds, dedicated engineering teams, or strategic advisory). We provide transparent, milestone-based pricing.',
+    cat: 'About TECH6SENSE',
+    q: `Can I start my own AI product business with TECH6SENSE AI?`,
+    a: `Absolutely! This is a core part of our mission. We provide the complete business ecosystem:
+What You Get:
+•
+Proven Products: Access to our AI hardware designs and technology
+•
+Manufacturing: We produce devices with your branding
+•
+Software Platform: Mobile apps, cloud infrastructure, AI algorithms
+•
+Business Setup: Company formation, legal, compliance
+•
+Marketing Support: Branding, website, social media, marketing materials
+•
+Distribution: Help with channels, partnerships, e-commerce
+•
+Sales Training: How to sell AI products effectively
+•
+Technical Support: Customer service infrastructure
+Your Role:
+•
+Brand building and positioning
+•
+Sales and customer relationships
+•
+Market-specific customization
+•
+Business development
+This model allows entrepreneurs to enter the lucrative AI hardware market without
+manufacturing expertise or massive capital.`,
   },
   {
     cat: 'Visionary Founders',
-    q: 'What is Visionary Founders?',
-    a: 'Visionary Founders is the premier all-in-one AI founder ecosystem designed to transform ambitious entrepreneurs, professionals, and startup founders into owners of globally competitive AI and technology companies.',
+    q: `What is the Visionary Founders Ecosystem?`,
+    a: `The Visionary Founders Ecosystem is TECH6SENSE AI's company-building platform
+designed to help entrepreneurs launch, grow, and scale globally competitive AI and
+technology businesses through technology, strategy, branding, engineering, mentorship, and
+ecosystem support combining venture architecture, technology foundation, market-entry
+strategy, brand positioning and global expansion into a single pathway.`,
   },
   {
     cat: 'Visionary Founders',
-    q: 'Is Visionary Founders an incubator, an accelerator, or a course?',
-    a: 'It is a full-stack venture execution ecosystem. We do not just teach or mentor; we actively co-build company infrastructure, tech stacks, branding, legal frameworks, and client-acquisition pipelines alongside the founder.',
+    q: `Who is Visionary Founders Ecosystem designed for?`,
+    a: `It is designed for entrepreneurs, startup founders, researchers, professionals, innovators,
+corporate leaders, students, and anyone committed to building a technology-driven business.`,
   },
   {
-    cat: 'Visionary Founders',
-    q: 'Who is Visionary Founders designed for?',
-    a: 'For aspiring entrepreneurs, domain experts, executives, consultants, and startup founders who want to build a defensible AI or technology company with world-class engineering backing.',
+    cat: 'Capabilities & AI',
+    q: `Is it only for AI startups?`,
+    a: `No. While AI is a core focus, we also support SaaS, enterprise software, deep-tech,
+healthcare technology, fintech, edtech, robotics, cybersecurity, and other technology
+ventures.`,
   },
   {
-    cat: 'Visionary Founders',
-    q: 'How does Visionary Founders help someone build an AI company from scratch?',
-    a: 'We handle company formation guidance, product architecture, branding, website systems, CTO direction, recruitment of technical talent, and international client acquisition strategy.',
-  },
-  {
-    cat: 'Visionary Founders',
-    q: 'Do I need to be a programmer or AI expert to join Visionary Founders?',
-    a: 'No. Our team provides the deep engineering muscle, product architecture, and technical execution, allowing founders to focus on domain strategy, vision, and market leadership.',
+    cat: 'About TECH6SENSE',
+    q: `Will TECH6SENSE AI help build my product?`,
+    a: `Yes. Depending on the engagement, our engineering teams can assist with architecture,
+design, software development, AI integration, testing, deployment, and ongoing technical
+support.`,
   },
   {
     cat: 'Business Brains',
-    q: 'What is Business Brains?',
-    a: 'Business Brains is an invitation-only global syndicate reserved for elite investors, visionary entrepreneurs, and industry titans operating at the pinnacle of commerce, capital, and artificial intelligence.',
+    q: `What is the Business Brains Private Global Circle?`,
+    a: `Business Brains is a private, invitation-only global circle for investors, entrepreneurs and
+industry leaders, structured for genuine access and discretion rather than volume networking.`,
   },
   {
-    cat: 'Business Brains',
-    q: 'Is Business Brains open to anyone?',
-    a: 'No. Access is strictly by invitation or private application. Membership is vetted to maintain an exclusive circle of high-net-worth operators and strategic leaders.',
-  },
-  {
-    cat: 'Business Brains',
-    q: 'What benefits do Business Brains members receive?',
-    a: 'Members gain access to private deal flow, co-investment syndicates, high-level AI business co-creation opportunities, executive roundtables, and cross-border strategic partnerships.',
-  },
-  {
-    cat: 'Business Brains',
-    q: 'How does TECH6SENSE AI connect client projects with the Business Brains ecosystem?',
-    a: 'Vetted client ventures and high-growth AI startups engineered by TECH6SENSE AI can be presented directly to the Business Brains syndicate for strategic partnerships and capital expansion.',
+    cat: 'Capabilities & AI',
+    q: `How do I become a member?`,
+    a: `Membership is by nomination or by application subject to review. It is not available for direct
+purchase, and admission is determined by assessment rather than by fee. We evaluate
+applicants based on their background, business objectives, and alignment with the
+community's vision.`,
   },
   {
     cat: 'Governance & IP',
-    q: 'How does TECH6SENSE AI approach AI governance and compliance?',
-    a: 'We embed governance directly into the technical pipeline — including model auditability, bias detection, hallucination guardrails, and data lineage tracking.',
+    q: `How does TECH6SENSE AI handle data security and compliance?`,
+    a: `Governance is designed into the architecture rather than added after deployment: jurisdiction-
+aligned data residency, documented access controls, traceable decision logging, and defined
+human oversight points appropriate to each workload's risk class.`,
+  },
+  {
+    cat: 'Capabilities & AI',
+    q: `What happens if the project fails to deliver the expected outcome?`,
+    a: `Success criteria are agreed in writing before build begins, and progress is reviewed against
+them at every milestone — which means divergence surfaces early enough to correct rather
+than at final delivery. Where a stated outcome proves technically unachievable, the honest
+recommendation is made rather than the budget consumed.`,
   },
   {
     cat: 'Governance & IP',
-    q: 'Does TECH6SENSE AI assist with AI regulatory alignment (e.g. EU AI Act, US AI frameworks)?',
-    a: 'Yes. Our strategic advisory team ensures your AI systems comply with global regulatory frameworks including the EU AI Act, NIST AI Risk Management Framework, and regional data protection laws.',
+    q: `Do you sign Non-Disclosure Agreements (NDAs)?`,
+    a: `Yes. We are happy to sign mutual or client-provided NDAs before discussing confidential
+ideas, intellectual property, or proprietary business information.`,
+  },
+  {
+    cat: 'Capabilities & AI',
+    q: `Who owns the intellectual property?`,
+    a: `Ownership is defined within the project agreement. In most custom development
+engagements, intellectual property is transferred to the client upon fulfillment of contractual
+obligations.`,
   },
   {
     cat: 'Governance & IP',
-    q: 'Who owns the Intellectual Property (IP) created during an engagement?',
-    a: 'You do. 100% of the custom code, trained weights, proprietary pipelines, and intellectual property developed during client engagements are assigned directly to your organization.',
+    q: `How does TECH6SENSE AI approach AI governance?`,
+    a: `Governance is engineered into every system as a delivery phase — documented evaluation,
+decision traceability, defined human oversight points, and a risk register your board can read
+— rather than retrofitted after an audit request.`,
+  },
+  {
+    cat: 'Capabilities & AI',
+    q: `How do you protect sensitive information?`,
+    a: `We implement industry-standard security practices including secure development workflows,
+encrypted communications, role-based access controls, and confidentiality procedures.`,
+  },
+  {
+    cat: 'Capabilities & AI',
+    q: `Do you provide post-launch support?`,
+    a: `Yes. We offer maintenance, feature enhancements, monitoring, optimization, performance
+improvements, security updates, and long-term technology support.`,
+  },
+  {
+    cat: 'Capabilities & AI',
+    q: `Will you train our internal team?`,
+    a: `Yes. Knowledge transfer and enablement are standard scope — the objective is that your
+team can operate, understand and extend the system rather than remain dependent on the
+vendor.`,
+  },
+  {
+    cat: 'Capabilities & AI',
+    q: `Can you scale our platform as we grow?`,
+    a: `Absolutely. We build scalable architectures that support future expansion, increased user
+demand, new features, and international growth.`,
+  },
+  {
+    cat: 'About TECH6SENSE',
+    q: `Why should we choose TECH6SENSE AI?`,
+    a: `Because we believe technology should create lasting business value—not just deliver
+software.
+Our multidisciplinary ecosystem combines Artificial Intelligence, enterprise engineering,
+deep-tech innovation, strategic consulting, and long-term partnership to help organizations
+build the future with confidence.`,
   },
   {
     cat: 'Getting Started',
-    q: 'How do we start an engagement with TECH6SENSE AI?',
-    a: 'Request a consultation through our website. We conduct a initial technical alignment call to assess your goals, data readiness, and optimal engagement model.',
-  },
-  {
-    cat: 'Getting Started',
-    q: 'What happens after the initial consultation call?',
-    a: 'We deliver a tailored proposal including an opportunity map, proposed technical architecture, scope definition, team composition, and milestone roadmap.',
-  },
-  {
-    cat: 'Getting Started',
-    q: 'Does TECH6SENSE AI offer ongoing support and maintenance after deployment?',
-    a: 'Yes. Through the Evolve phase of our S.E.N.S.E. framework, we offer ongoing model monitoring, retraining pipelines, security updates, and SLA-backed infrastructure management.',
-  },
-  {
-    cat: 'Getting Started',
-    q: 'Can TECH6SENSE AI help us audit or fix an existing AI project that failed?',
-    a: 'Yes. We perform technical forensics on failing or stalled AI projects, identifying architecture flaws, data bottlenecks, or governance gaps to rebuild them into production-ready systems.',
-  },
-  {
-    cat: 'Getting Started',
-    q: 'Does TECH6SENSE AI offer hardware and deep-tech product manufacturing support?',
-    a: 'Yes. Our Sense Innovation division handles embedded hardware design, IoT sensor integration, smart wearables development, and prototyping for physical deep-tech products.',
-  },
-  {
-    cat: 'Getting Started',
-    q: 'How can investors or strategic partners collaborate with TECH6SENSE AI?',
-    a: 'Investors and strategic institutions can reach out through our Business Brains channel to discuss syndicate access, co-venture opportunities, and portfolio technology advisory.',
+    q: `What should I prepare before our first meeting?`,
+    a: `A: To maximize our initial consultation:
+Business Context:
+•
+Brief company overview
+•
+Key challenges or opportunities
+•
+Current technology landscape
+•
+Budget range (if known)
+•
+Timeline expectations
+Technical Information (if available):
+•
+Existing systems and databases
+•
+Data availability and quality
+•
+IT infrastructure
+•
+Security/compliance requirements
+Stakeholders:
+•
+Include decision-makers in initial calls
+•
+Technical leads (CTO, IT head)
+•
+Business owners (relevant VPs)
+Questions:
+•
+List your concerns and questions
+•
+Success criteria
+•
+Risk concerns
+Don't Worry If You Don't Have Everything: We're here to help guide you through the
+process. Even a general discussion of challenges can lead to valuable insights.
+
+
+FINAL CTA
+Headline: Engineering the Future of Intelligence
+Whether you're an enterprise accelerating AI adoption, a government modernizing digital
+infrastructure, a startup building the next breakthrough platform, or a visionary founder creating the
+future, TECH6SENSE AI provides the intelligence, engineering, and strategic partnership to transform
+ambition into global impact.
+Button: Talk to TECH6SENSE AI →
+Brand signature (footer close):
+TECH6SENSE AI — Sense Beyond Technology. Build Beyond Imagination.`,
   },
 ];
 

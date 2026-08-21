@@ -4,8 +4,8 @@ export default function IntelligentStatsBar() {
   const stats = [
     { label: "Global Markets", value: "8+ Global Markets", desc: "Delivery footprint across global markets", isBlue: true },
     { label: "Practice Lines", value: "26 Practice Lines", desc: "Specialized AI & IT practice lines under one engineering roof", isBlue: false },
-    { label: "End-to-End Capability", value: "Strategy → Build → Deployment → Governance", desc: "Complete lifecycle management", isBlue: true },
-    { label: "Implementations", value: "350+ Implementations", desc: "Proven track record across industries", isBlue: false },
+    { label: "End-to-End Capability", value: "End-to-end capability", desc: "strategy → build → deployment → governance", isBlue: true },
+    { label: "Implementations", value: "350+ Successful Implementations", desc: "Proven track record across industries", isBlue: false },
     { label: "Engineering Leadership", value: "PhD-Led Teams", desc: "Research-backed, production-grade solutions", isBlue: true },
     { label: "Average ROI", value: "2,000%+ Average ROI", desc: "Measurable business impact", isBlue: false },
     { label: "Domain Expertise", value: "19+ Industries", desc: "Deep domain expertise", isBlue: true },

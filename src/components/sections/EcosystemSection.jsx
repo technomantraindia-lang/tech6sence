@@ -88,7 +88,7 @@ export default function EcosystemSection() {
               
               {/* Left Content */}
               <div className="flex flex-col items-start text-white">
-                <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-[0.2em] block px-4 py-2 rounded-full bg-[#1746D2]/10 border border-[#1746D2]/20 mb-8">
+                <span className="font-display text-sm font-extrabold text-blue-400 uppercase tracking-[0.2em] block px-4 py-2 rounded-full bg-blue-500/10 border border-blue-400/20 mb-8">
                   The Global AI Founder Ecosystem
                 </span>
 

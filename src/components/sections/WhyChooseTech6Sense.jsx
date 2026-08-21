@@ -21,7 +21,7 @@ const ALL_POINTS = [
   },
   {
     title: 'Deep-Tech Native',
-    description: 'We build proprietary hardware and platforms ourselves — not just software layers.',
+    description: 'We build proprietary hardware and platforms ourselves,',
     num: '03',
     color: 'from-[#D4AF37] to-[#D4AF37]',
     textColor: 'text-[#D4AF37]',

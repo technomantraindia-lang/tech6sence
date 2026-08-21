@@ -24,7 +24,7 @@ export default function AIProductOpportunitySection() {
 
   const idealFor = [
     { label: "Technology Entrepreneurs & Startups", desc: "Launch an AI hardware company without multi-million R&D capital." },
-    { label: "Existing Businesses Expanding into AI", desc: "Integrate proprietary AI products into your existing portfolio." },
+    { label: "Existing businesses expanding into AI products", desc: "Integrate proprietary AI products into your existing portfolio." },
     { label: "Regional Distributors & Resellers", desc: "Secure exclusive territorial distribution rights for AI hardware." },
     { label: "Healthcare & Wellness Brands", desc: "Offer branded AI smart rings, glasses, and health trackers." },
     { label: "Corporate Wellness Programs", desc: "Deploy turnkey AI health monitoring products for enterprise clients." },
@@ -51,7 +51,7 @@ export default function AIProductOpportunitySection() {
             Complete Ecosystem. Your Brand. Our Technology.
           </p>
           <p className="font-body text-slate-500 text-sm md:text-base font-medium max-w-2xl mx-auto leading-relaxed">
-            We provide everything you need to launch, scale, and own your white-label AI hardware and deep-tech company — from R&amp;D and manufacturing to software, marketing, and global fulfillment.
+            We provide everything you need to launch your own AI product company: ✓ Proven AI hardware designs ✓ Manufacturing and quality assurance ✓ Software platforms and apps ✓ Business setup and support ✓ Marketing and distribution assistance
           </p>
         </div>
 

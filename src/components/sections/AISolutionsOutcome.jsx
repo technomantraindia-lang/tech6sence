@@ -24,7 +24,7 @@ const SOLUTIONS = [
   {
     title: 'Intelligent Automation & Agent Systems',
     subtitle: 'Systems that act, not just assist.',
-    overview: 'Autonomous AI agents and multi-agent systems designed for complex operations, support, and back-office workflows. We engineer end-to-end automation integrated with existing enterprise business tools, with human-in-the-loop controls where required.',
+    overview: 'We build autonomous and semi-autonomous agents that take on real operational work — routing decisions, executing multi-step workflows, and coordinating across your existing tools and systems. The goal is measurable reduction in manual effort, not another dashboard to monitor.',
     bullets: [
       'Autonomous AI agents for operations, support, and back-office workflows',
       'Multi-agent orchestration across business systems and data sources',
@@ -43,7 +43,7 @@ const SOLUTIONS = [
   {
     title: 'Generative & Applied AI',
     subtitle: 'Generative systems engineered for outcomes, not novelty.',
-    overview: 'Enterprise generative AI applications engineered to deliver measurable business outcomes. We build custom copilots, internal AI assistants, and decision-support analytics tools backed by robust output evaluation and responsible-AI guardrails.',
+    overview: 'We deploy generative AI where it moves a real business metric — content and creative production, code generation, design systems, and decision-support tools — built with the reliability, guardrails, and monitoring that production environments demand.',
     bullets: [
       'Enterprise generative AI applications (content, design, code, media)',
       'Custom copilots and internal AI assistants',
@@ -63,7 +63,7 @@ const SOLUTIONS = [
   {
     title: 'AI Strategy & Governance',
     subtitle: 'The confidence layer for enterprise AI adoption.',
-    overview: 'Strategic roadmap, risk control, and policy frameworks that give executive leadership the confidence to adopt AI deliberately and securely across operating markets.',
+    overview: 'Before code is written, we help leadership answer the harder questions: where AI creates real advantage, what the risk exposure looks like, and how to govern deployment across the organization. This is the difference between AI adoption that stalls in committee and AI adoption that scales with confidence.',
     bullets: [
       'AI readiness assessment and opportunity roadmapping',
       'Enterprise AI governance frameworks and risk controls',
@@ -82,7 +82,7 @@ const SOLUTIONS = [
   {
     title: 'Enterprise Technology & Digital Infrastructure',
     subtitle: 'The foundation every AI initiative is built on.',
-    overview: 'Full-stack IT engineering and cloud architecture designed to support AI workloads at scale. From cloud migration and data engineering to web, mobile, and enterprise application development.',
+    overview: 'AI is only as strong as the infrastructure underneath it. We provide full-stack IT services — cloud architecture, systems integration, data engineering, and application development — engineered specifically to support AI workloads at global scale.',
     bullets: [
       'Cloud architecture, migration, and infrastructure engineering',
       'Full-stack web, mobile, and enterprise application development',

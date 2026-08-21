@@ -7,7 +7,7 @@ const STEPS = [
     name: 'Sense',
     subtitle: 'OPPORTUNITY MAPPING',
     whatHappens: 'Signal mapping across data, workflow, and market. We establish what is knowable before deciding what is buildable.',
-    whatYouReceive: 'Opportunity map, data readiness assessment, prioritised use-case portfolio.',
+    whatYouReceive: 'Opportunity map, data readiness assessment, prioritised use-case portfolio',
     color: '#1746D2', // Royal Blue
     gradient: 'from-[#1746D2] to-[#1746D2]/80',
     badgeBg: 'bg-[#1746D2]/10 text-[#1746D2] border-[#1746D2]/25',
@@ -20,7 +20,7 @@ const STEPS = [
     name: 'Engineer',
     subtitle: 'PRODUCTION BUILD',
     whatHappens: 'Architecture and build — models, pipelines, interfaces, and integration into the systems your people already use.',
-    whatYouReceive: 'Production architecture, working system, integration layer.',
+    whatYouReceive: 'Production architecture, working system, integration layer',
     color: '#00A86B', // Emerald Green
     gradient: 'from-[#00A86B] to-[#1746D2]',
     badgeBg: 'bg-[#00A86B]/10 text-[#00A86B] border-[#00A86B]/25',
@@ -33,7 +33,7 @@ const STEPS = [
     name: 'Navigate',
     subtitle: 'RISK & GOVERNANCE',
     whatHappens: 'Governance, risk, regulatory alignment, and model accountability designed in — not retrofitted after an audit.',
-    whatYouReceive: 'Governance framework, risk register, compliance documentation, evaluation protocol.',
+    whatYouReceive: 'Governance framework, risk register, compliance documentation, evaluation protocol',
     color: '#D4AF37', // Gold
     gradient: 'from-[#D4AF37] to-[#00A86B]',
     badgeBg: 'bg-[#D4AF37]/10 text-[#B89220] border-[#D4AF37]/30',
@@ -46,7 +46,7 @@ const STEPS = [
     name: 'Scale',
     subtitle: 'GLOBAL DEPLOYMENT',
     whatHappens: 'Multi-region, multi-team, multi-workload deployment with performance and cost held to a defined envelope.',
-    whatYouReceive: 'Deployment across markets, monitoring stack, cost and latency baselines.',
+    whatYouReceive: 'Deployment across markets, monitoring stack, cost and latency baselines',
     color: '#1746D2', // Royal Blue
     gradient: 'from-[#1746D2] to-[#00A86B]',
     badgeBg: 'bg-[#1746D2]/10 text-[#1746D2] border-[#1746D2]/25',
@@ -59,7 +59,7 @@ const STEPS = [
     name: 'Evolve',
     subtitle: 'CONTINUOUS IMPROVEMENT',
     whatHappens: "Continuous evaluation and retraining, so the system's advantage compounds instead of decaying.",
-    whatYouReceive: 'Improvement cadence, drift monitoring, quarterly performance review.',
+    whatYouReceive: 'Improvement cadence, drift monitoring, quarterly performance review',
     color: '#00A86B', // Emerald Green
     gradient: 'from-[#00A86B] to-[#D4AF37]',
     badgeBg: 'bg-[#00A86B]/10 text-[#00A86B] border-[#00A86B]/25',
