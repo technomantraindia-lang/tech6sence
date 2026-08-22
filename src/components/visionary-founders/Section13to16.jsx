@@ -13,9 +13,13 @@ export function ApplicationProcess() {
     <section className="py-20 md:py-28 bg-white relative">
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
-            Application Process
-          </span>
+          <div className="inline-flex items-center gap-3 mb-4">
+            <span className="w-8 h-[2px] bg-[#1746D2] rounded-full" />
+            <span className="font-display text-sm font-extrabold tracking-[0.25em] uppercase text-[#1746D2]">
+              APPLICATION PROCESS
+            </span>
+            <span className="w-8 h-[2px] bg-[#00A86B] rounded-full" />
+          </div>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 font-display">
             This Isn't a Signup Form. It's a Selection Process.
           </h2>
@@ -176,118 +180,221 @@ export function FAQSection() {
 
   const faqs = [
     {
+      num: 1,
       q: "What is the Visionary Founders Ecosystem?",
       a: "Visionary Founders is an elite, turnkey venture execution engine and global AI founder ecosystem by TECH6SENSE AI designed to support entrepreneurs who want to build, launch, and grow AI and technology companies. The ecosystem combines strategic guidance, technology resources, business enablement, founder education, and community support to help founders develop sustainable businesses. It equips technology entrepreneurs with end-to-end infrastructure, eliminating operational roadblocks to ensure rapid market entry."
     },
     {
+      num: 2,
       q: "Is the Visionary Founders Ecosystem a course or training program?",
       a: "No. This is not a theoretical course or coaching program. It is a done-with-you + ecosystem-based execution model where TECH6SENSE AI supports you with real infrastructure, real teams, and real execution. While it includes training components such as client acquisition training, it is not a course. It is an operational ecosystem that provides a working team — legal, technical, branding, and sales support — to build and launch an actual company."
     },
     {
+      num: 3,
       q: "Is the Visionary Founders Ecosystem available globally?",
       a: "Yes. The ecosystem is open to founders globally and includes a dedicated Global tier specifically designed for founders who want to build a company that operates internationally."
     },
     {
+      num: 4,
       q: "Who is the Visionary Founders Ecosystem for?",
       a: "It is designed for aspiring first-time founders, working professionals planning to start a company, existing business owners exploring AI or IT, technical professionals without business infrastructure, and domain experts bringing a new venture to life in a different industry."
     },
     {
+      num: 5,
       q: "Can beginners apply?",
       a: "Yes. Founders at different stages are welcome to apply. Whether you have an idea, a prototype, or an operating business, the application process helps determine whether the ecosystem is a good fit for your goals."
     },
     {
+      num: 6,
       q: "Do I need a technical background to join?",
       a: "No. The ecosystem provides a full technology team, including CTO guidance and developers, so non-technical founders can build and launch a technical product without prior coding experience."
     },
     {
+      num: 7,
       q: "Do I need a business plan or prototype to apply?",
       a: "No. A clear founder profile and stated business direction are sufficient to apply. Existing assets such as a prototype or registered company are helpful but not required."
     },
     {
+      num: 8,
       q: "Will I own my company fully?",
       a: "Yes. You will own 100% of your company. You will be the legal owner of your company. TECH6SENSE AI provides ecosystem support, TECH6SENSE AI is not taking ownership or any equity (unless a separate partnership agreement is created). TECH6SENSE AI acts as your ecosystem partner and strategic enabler."
     },
     {
+      num: 9,
       q: "Is Visionary Founders Ecosystem online or offline?",
-      a: "The Visionary Founders Ecosystem can be delivered: Online, Hybrid, With direct strategic support from TECH6SENSE AI"
+      a: "The Visionary Founders Ecosystem can be delivered:",
+      bullets: [
+        "Online",
+        "Hybrid",
+        "With direct strategic support from TECH6SENSE AI"
+      ]
     },
     {
+      num: 10,
       q: "How is Visionary Founders Ecosystem different from a business incubator or accelerator or other start-up programs?",
-      a: "Most programs provide: Training, Mentorship, Networking. Visionary Founders Ecosystem provides: Infrastructure, Dedicated team, Technical backbone, Execution support, Real business ecosystem. It’s not just advisory — it’s end to end operational support."
+      a: "Most programs provide:",
+      bullets: ["Training", "Mentorship", "Networking"],
+      a2: "Visionary Founders Ecosystem provides:",
+      bullets2: ["Infrastructure", "Dedicated team", "Technical backbone", "Execution support", "Real business ecosystem"],
+      footer: "It's not just advisory — it's end to end operational support."
     },
     {
+      num: 11,
       q: "Who runs the Visionary Founders Ecosystem?",
       a: "The Visionary Founders Ecosystem is run by TECH6SENSE AI, a global AI and Tech development company."
     },
     {
+      num: 12,
       q: "Will my company be legally registered?",
-      a: "Yes. We provide support for: Company registration, Legal documentation, Compliance guidance, Business structuring. You will own your registered company."
+      a: "Yes. We provide support for:",
+      bullets: ["Company registration", "Legal documentation", "Compliance guidance", "Business structuring"],
+      footer: "You will own your registered company."
     },
     {
+      num: 13,
       q: "Is my business idea kept confidential?",
       a: "TECH6SENSE AI treats business ideas and confidential application details with reasonable confidentiality and does not disclose them to unrelated third parties without consent."
     },
     {
+      num: 14,
       q: "Do you provide technical team support?",
-      a: "Yes. You get access to: AI / IT developers, Technical Team Lead and Project Manager, Dedicated CTO, Product architecture guidance. This ensures your company has strong technical foundation."
+      a: "Yes. You get access to:",
+      bullets: [
+        "AI / IT developers",
+        "Technical Team Lead and Project Manager",
+        "Dedicated CTO",
+        "Product architecture guidance"
+      ],
+      footer: "This ensures your company has strong technical foundation."
     },
     {
+      num: 15,
       q: "Does Visionary Founders help founders prepare for fundraising?",
-      a: "Yes. We provide guidance for: Government funding schemes, Start-up ecosystem programs, Private investor readiness, Business planning and fundraising strategy."
+      a: "Yes. We provide guidance for:",
+      bullets: [
+        "Government funding schemes",
+        "Start-up ecosystem programs",
+        "Private investor readiness",
+        "Business planning and fundraising strategy."
+      ]
     },
     {
+      num: 16,
       q: "Does Visionary Founders help with global expansion?",
-      a: "Yes. The Ecosystem includes support for: International client acquisition, Global business strategy, Company setup abroad, Visa & relocation guidance (where applicable)."
+      a: "Yes. The Ecosystem includes support for:",
+      bullets: [
+        "International client acquisition",
+        "Global business strategy",
+        "Company setup abroad",
+        "Visa & relocation guidance (where applicable)"
+      ]
     },
     {
+      num: 17,
       q: "How do I get started?",
       a: "The first step is to complete the Founder Application Form. Once your application is reviewed, eligible applicants may be invited to a Founder Strategy Session to explore the best path forward."
     },
     {
+      num: 18,
       q: "Is every applicant accepted?",
       a: "No. Applications are reviewed to understand each founder's goals and determine whether Visionary Founders is the right fit. Applications are evaluated on founder commitment, market viability, tier fit, and execution readiness. Submitting an application does not guarantee acceptance."
     },
     {
+      num: 19,
       q: "Is there an interview?",
       a: "Selected applicants may be invited to participate in a Founder Strategy Session."
     },
     {
+      num: 20,
       q: "What happens on the Founder Strategy Call?",
       a: "The call is a 30–45 minute confidential conversation with our Ecosystem Advisor covering the founder's background, market, ecosystem structure, tier fit, and realistic timeline, with no pressure to commit during the call itself."
     }
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-slate-50 relative">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
-            Frequently Asked Questions
-          </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display">
-            VISIONARY FOUNDERS by TECH6SENSE AI
+    <section id="faq" className="relative w-full py-20 md:py-28 overflow-hidden bg-[#FAF9FF]">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6">
+        {/* Header */}
+        <div className="mb-14 md:mb-16 text-center max-w-3xl mx-auto">
+          <div className="mb-5 flex items-center justify-center gap-3">
+            <span className="h-[2px] w-10 bg-[#1746D2]" />
+            <span className="font-display text-sm font-extrabold tracking-[0.35em] uppercase text-[#1746D2]">
+              FREQUENTLY ASKED QUESTIONS
+            </span>
+            <span className="h-[2px] w-10 bg-[#00A86B]" />
+          </div>
+          <h2 className="mb-5 font-display text-[clamp(2rem,4vw,3.5rem)] leading-[1.1] font-extrabold text-slate-900 tracking-tight">
+            Everything You Need to Know About{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1746D2] to-[#00A86B]">
+              Visionary Founders.
+            </span>
           </h2>
+          <p className="font-body text-slate-500 text-sm md:text-base font-semibold">
+            Comprehensive answers covering our ecosystem model, technical support, legal setup, and application process.
+          </p>
         </div>
 
-        <div className="space-y-4">
-          {faqs.map((faq, i) => (
-            <div key={i} className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all">
-              <button 
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
+        {/* 2-Column FAQ Grid (Home Page Design) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+          {faqs.map((faq, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <div
+                key={i}
+                className={`rounded-2xl border shadow-sm overflow-hidden transition-all duration-300 ${
+                  isOpen 
+                    ? 'bg-gradient-to-r from-[#1746D2] to-[#00A86B] border-transparent text-white' 
+                    : 'bg-white border-slate-200/80 text-slate-900'
+                }`}
+                onMouseEnter={() => setOpenIndex(i)}
+                onMouseLeave={() => setOpenIndex(null)}
               >
-                <span className="font-bold text-slate-900 pr-4 text-sm md:text-base">({i + 1}) {faq.q}</span>
-                <span className={`text-[#1746D2] transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`}>
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </span>
-              </button>
-              <div className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${openIndex === i ? 'max-h-[300px] pb-5 opacity-100' : 'max-h-0 opacity-0'}`}>
-                <p className="text-slate-650 font-medium text-xs md:text-sm leading-relaxed">{faq.a}</p>
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : i)}
+                  className={`w-full text-left p-6 flex items-start justify-between gap-4 cursor-pointer select-none transition-all duration-300 group ${
+                    isOpen ? '' : 'hover:bg-gradient-to-r hover:from-[#1746D2] hover:to-[#00A86B]'
+                  }`}
+                >
+                  <span className={`font-display text-sm md:text-base font-bold tracking-tight leading-snug transition-colors duration-300 ${
+                    isOpen ? 'text-white' : 'text-slate-900 group-hover:text-white'
+                  }`}>
+                    ({faq.num}) {faq.q}
+                  </span>
+                  <span
+                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                      isOpen ? 'rotate-180 bg-white/20 text-white' : 'bg-slate-100 text-slate-500 group-hover:bg-white/20 group-hover:text-white'
+                    }`}
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4" stroke="currentColor" strokeWidth="2.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </span>
+                </button>
+
+                {isOpen && (
+                  <div className="px-6 pb-6 pt-2 font-body text-white/95 text-xs md:text-sm leading-relaxed border-t border-white/20 space-y-3">
+                    <p>{faq.a}</p>
+                    {faq.bullets && (
+                      <ul className="list-disc pl-5 space-y-1 font-medium text-white/90">
+                        {faq.bullets.map((b, bIdx) => (
+                          <li key={bIdx}>{b}</li>
+                        ))}
+                      </ul>
+                    )}
+                    {faq.a2 && <p className="pt-1 font-bold">{faq.a2}</p>}
+                    {faq.bullets2 && (
+                      <ul className="list-disc pl-5 space-y-1 font-medium text-white/90">
+                        {faq.bullets2.map((b, bIdx) => (
+                          <li key={bIdx}>{b}</li>
+                        ))}
+                      </ul>
+                    )}
+                    {faq.footer && <p className="pt-1 font-semibold">{faq.footer}</p>}
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
@@ -373,7 +480,7 @@ export function ApplicationForm() {
 
   return (
     <section id="founder-form" className="py-20 md:py-28 bg-white relative">
-      <div className="max-w-3xl mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4 font-display">
             Visionary Founders Ecosystem — Founder Application Form
@@ -422,12 +529,12 @@ export function ApplicationForm() {
               <div className="border-b border-slate-200 pb-4 mb-4">
                 <span className="text-xs font-bold text-[#1746D2] uppercase tracking-widest block font-mono">Step 2 of 5</span>
                 <h3 className="text-xl font-bold text-slate-900 font-display mt-1">STEP 2 — Founder Profile</h3>
-                <p className="text-xs text-slate-500 italic mt-1">"Your founder profile — helps us understand where you're starting from."</p>
+                <p className="text-xs text-slate-500 italic mt-1 font-medium">"Your founder profile — helps us understand where you're starting from."</p>
               </div>
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">What best describes you? *</label>
-                <select name="describeYou" value={formData.describeYou} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white" required>
+                <select name="describeYou" value={formData.describeYou} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white font-medium text-sm text-slate-800" required>
                   <option value="">Select option</option>
                   <option value="Aspiring first-time founder">Aspiring first-time founder</option>
                   <option value="Working professional planning to start a company">Working professional planning to start a company</option>
@@ -440,7 +547,7 @@ export function ApplicationForm() {
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Do you have prior business experience? *</label>
-                <select name="priorExperience" value={formData.priorExperience} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white" required>
+                <select name="priorExperience" value={formData.priorExperience} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white font-medium text-sm text-slate-800" required>
                   <option value="">Select option</option>
                   <option value="Yes, I have run a business before">Yes, I have run a business before</option>
                   <option value="Yes, but not as the primary owner">Yes, but not as the primary owner</option>
@@ -451,12 +558,10 @@ export function ApplicationForm() {
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">What type of company do you want to build? *</label>
-                <select name="companyType" value={formData.companyType} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white" required>
+                <select name="companyType" value={formData.companyType} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white font-medium text-sm text-slate-800" required>
                   <option value="">Select option</option>
-                  <option value="AI Product">AI Product</option>
-                  <option value="AI-SaaS Company">AI-SaaS Company</option>
-                  <option value="IT Services">IT Services</option>
-                  <option value="Development Company">Development Company</option>
+                  <option value="AI Product / AI-SaaS Company">AI Product / AI-SaaS Company</option>
+                  <option value="IT Services / Development Company">IT Services / Development Company</option>
                   <option value="AI Consulting & Solutions">AI Consulting & Solutions</option>
                   <option value="Automation & AI Agents Business">Automation & AI Agents Business</option>
                   <option value="Not sure yet — need guidance">Not sure yet — need guidance</option>
@@ -465,7 +570,7 @@ export function ApplicationForm() {
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Do you already have a business idea? *</label>
-                <select name="ideaStatus" value={formData.ideaStatus} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white" required>
+                <select name="ideaStatus" value={formData.ideaStatus} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white font-medium text-sm text-slate-800" required>
                   <option value="">Select option</option>
                   <option value="Yes, fully defined">Yes, fully defined</option>
                   <option value="Yes, but still shaping it">Yes, but still shaping it</option>
@@ -482,12 +587,12 @@ export function ApplicationForm() {
               <div className="border-b border-slate-200 pb-4 mb-4">
                 <span className="text-xs font-bold text-[#1746D2] uppercase tracking-widest block font-mono">Step 3 of 5</span>
                 <h3 className="text-xl font-bold text-slate-900 font-display mt-1">STEP 3 — Timeline & Goals</h3>
-                <p className="text-xs text-slate-500 italic mt-1">"Your timeline and goals — this shapes how your onboarding is paced."</p>
+                <p className="text-xs text-slate-500 italic mt-1 font-medium">"Your timeline and goals — this shapes how your onboarding is paced."</p>
               </div>
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">When do you want to start your company? *</label>
-                <select name="startTimeline" value={formData.startTimeline} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white" required>
+                <select name="startTimeline" value={formData.startTimeline} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white font-medium text-sm text-slate-800" required>
                   <option value="">Select option</option>
                   <option value="Immediately">Immediately</option>
                   <option value="Within 1–3 months">Within 1–3 months</option>
@@ -499,7 +604,7 @@ export function ApplicationForm() {
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Are you willing to invest time and resources to build your company seriously? *</label>
-                <select name="commitment" value={formData.commitment} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white" required>
+                <select name="commitment" value={formData.commitment} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white font-medium text-sm text-slate-800" required>
                   <option value="">Select option</option>
                   <option value="Yes, fully committed">Yes, fully committed</option>
                   <option value="Yes, but part-time initially">Yes, but part-time initially</option>
@@ -510,7 +615,7 @@ export function ApplicationForm() {
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">What is your primary goal? *</label>
-                <select name="primaryGoal" value={formData.primaryGoal} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white" required>
+                <select name="primaryGoal" value={formData.primaryGoal} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white font-medium text-sm text-slate-800" required>
                   <option value="">Select option</option>
                   <option value="Build and scale a company in my home market">Build and scale a company in my home market</option>
                   <option value="Build a company that operates internationally">Build a company that operates internationally</option>
@@ -528,25 +633,25 @@ export function ApplicationForm() {
               <div className="border-b border-slate-200 pb-4 mb-4">
                 <span className="text-xs font-bold text-[#1746D2] uppercase tracking-widest block font-mono">Step 4 of 5</span>
                 <h3 className="text-xl font-bold text-slate-900 font-display mt-1">STEP 4 — Tier & Investment Readiness</h3>
-                <p className="text-xs text-slate-500 italic mt-1">"Which tier fits your ambition? Not sure? Pick your best guess — we'll confirm the right fit together on your Founder Strategy Call."</p>
+                <p className="text-xs text-slate-500 italic mt-1 font-medium">"Which tier fits your ambition? Not sure? Pick your best guess — we'll confirm the right fit together on your Founder Strategy Call."</p>
               </div>
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Preferred tier *</label>
-                <select name="preferredTier" value={formData.preferredTier} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white" required>
+                <select name="preferredTier" value={formData.preferredTier} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white font-medium text-sm text-slate-800" required>
                   <option value="">Select option</option>
-                  <option value="National">National — "Launch and dominate your home market first"</option>
-                  <option value="Global">Global — "Build a company engineered to operate globally from day one"</option>
+                  <option value='National — "Launch and dominate your home market first"'>National — "Launch and dominate your home market first"</option>
+                  <option value='Global — "Build a company engineered to operate globally from day one"'>Global — "Build a company engineered to operate globally from day one"</option>
                 </select>
               </div>
 
-              <div className="p-4 rounded-xl bg-[#1746D2]/10 border border-[#1746D2]/20 text-[#0d162a] text-xs font-medium leading-relaxed">
+              <div className="p-4.5 rounded-2xl bg-[#1746D2]/10 border border-[#1746D2]/20 text-[#0d162a] text-xs font-medium leading-relaxed shadow-xs">
                 "Visionary Founders is a premium ecosystem with infrastructure, a dedicated tech team, branding & Marketing, and client acquisition support built in. It's a serious business investment, not a course or a subscription."
               </div>
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Are you ready for a serious business investment? *</label>
-                <select name="investmentReady" value={formData.investmentReady} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white" required>
+                <select name="investmentReady" value={formData.investmentReady} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white font-medium text-sm text-slate-800" required>
                   <option value="">Select option</option>
                   <option value="Yes, I understand and I'm ready">Yes, I understand and I'm ready</option>
                   <option value="I need more information first">I need more information first</option>
@@ -556,7 +661,7 @@ export function ApplicationForm() {
 
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">How did you hear about us? *</label>
-                <select name="howHeard" value={formData.howHeard} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white" required>
+                <select name="howHeard" value={formData.howHeard} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#1746D2] focus:ring-2 focus:ring-[#1746D2]/40 transition-all outline-none bg-white font-medium text-sm text-slate-800" required>
                   <option value="">Select option</option>
                   <option value="Google Search">Google Search</option>
                   <option value="Instagram">Instagram</option>
@@ -578,27 +683,29 @@ export function ApplicationForm() {
               <div className="border-b border-slate-200 pb-4 mb-4">
                 <span className="text-xs font-bold text-[#1746D2] uppercase tracking-widest block font-mono">Step 5 of 5</span>
                 <h3 className="text-xl font-bold text-slate-900 font-display mt-1">STEP 5 — Review & Consent</h3>
-                <p className="text-xs text-slate-500 italic mt-1">Review your details and check the consent statements before final submission.</p>
+                <p className="text-xs text-slate-500 italic mt-1 font-medium">No new data collected. All 14 responses are displayed back to the founder for confirmation before final submission.</p>
               </div>
 
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 space-y-3.5 text-xs text-slate-700 font-medium">
-                <div><strong>Full Name:</strong> {formData.fullName}</div>
-                <div><strong>Email:</strong> {formData.email}</div>
-                <div><strong>Phone / WhatsApp:</strong> {formData.phone}</div>
-                <div><strong>Country:</strong> {formData.country}</div>
-                <div><strong>Describe You:</strong> {formData.describeYou}</div>
-                <div><strong>Prior Business Experience:</strong> {formData.priorExperience}</div>
-                <div><strong>Company to Build:</strong> {formData.companyType}</div>
-                <div><strong>Business Idea Status:</strong> {formData.ideaStatus}</div>
-                <div><strong>Start Timeline:</strong> {formData.startTimeline}</div>
-                <div><strong>Commitment Level:</strong> {formData.commitment}</div>
-                <div><strong>Primary Goal:</strong> {formData.primaryGoal}</div>
-                <div><strong>Preferred Tier:</strong> {formData.preferredTier}</div>
-                <div><strong>Investment Readiness:</strong> {formData.investmentReady}</div>
-                <div><strong>How Heard:</strong> {formData.howHeard}</div>
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 space-y-3.5 text-xs text-slate-800 font-medium divide-y divide-slate-100">
+                <div className="pt-2"><strong>1. Full Legal Name:</strong> {formData.fullName || 'Not provided'}</div>
+                <div className="pt-2"><strong>2. Primary Email:</strong> {formData.email || 'Not provided'}</div>
+                <div className="pt-2"><strong>3. Phone / WhatsApp:</strong> {formData.phone || 'Not provided'}</div>
+                <div className="pt-2"><strong>4. Current Country:</strong> {formData.country || 'Not provided'}</div>
+                <div className="pt-2"><strong>5. What Best Describes You:</strong> {formData.describeYou || 'Not selected'}</div>
+                <div className="pt-2"><strong>6. Prior Business Experience:</strong> {formData.priorExperience || 'Not selected'}</div>
+                <div className="pt-2"><strong>7. Company Type to Build:</strong> {formData.companyType || 'Not selected'}</div>
+                <div className="pt-2"><strong>8. Business Idea Status:</strong> {formData.ideaStatus || 'Not selected'}</div>
+                <div className="pt-2"><strong>9. Start Timeline:</strong> {formData.startTimeline || 'Not selected'}</div>
+                <div className="pt-2"><strong>10. Time & Resource Commitment:</strong> {formData.commitment || 'Not selected'}</div>
+                <div className="pt-2"><strong>11. Primary Goal:</strong> {formData.primaryGoal || 'Not selected'}</div>
+                <div className="pt-2"><strong>12. Preferred Tier:</strong> {formData.preferredTier || 'Not selected'}</div>
+                <div className="pt-2"><strong>13. Serious Investment Readiness:</strong> {formData.investmentReady || 'Not selected'}</div>
+                <div className="pt-2"><strong>14. How You Heard About Us:</strong> {formData.howHeard || 'Not selected'}</div>
               </div>
 
               <div className="space-y-4 pt-4 border-t border-slate-200 text-xs font-medium text-slate-700">
+                <h4 className="font-bold text-slate-900 text-sm mb-2">Consent & Declaration</h4>
+                <p className="text-slate-500 text-xs font-normal">Please review and confirm the following before submitting your application:</p>
                 <label className="flex items-start gap-3 cursor-pointer">
                   <input type="checkbox" name="consent1" checked={formData.consent1} onChange={handleInputChange} className="mt-0.5" required />
                   <span>I confirm that the information provided is accurate and complete to the best of my knowledge.</span>
@@ -647,14 +754,14 @@ export function FinalCTA() {
   return (
     <section className="py-24 bg-slate-900 text-white relative overflow-hidden text-center">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#0d162a]/50 via-slate-900 to-slate-900 z-0"></div>
-      <div className="max-w-4xl mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         <img src={companyLogo} alt="TECH6SENSE AI Logo" className="h-12 md:h-16 mx-auto mb-12 opacity-80 object-contain" />
         
-        <h2 className="text-3xl md:text-5xl font-extrabold mb-6 font-display leading-tight">
+        <h2 className="text-3xl md:text-5xl font-extrabold mb-8 font-display leading-tight max-w-[1400px] mx-auto">
           The Next Generation of Global AI Companies Will Be Built by Visionary Founders.
         </h2>
         
-        <div className="text-slate-350 text-base md:text-lg mb-10 max-w-3xl mx-auto font-medium space-y-4 text-slate-300 leading-relaxed text-justify">
+        <div className="text-slate-300 text-base md:text-lg mb-10 max-w-[1400px] mx-auto font-medium space-y-5 leading-relaxed text-center">
           <p>
             Behind every transformative AI company is a founder with the courage to think differently, the ambition to solve meaningful problems, and the commitment to build something that creates lasting value.
           </p>
@@ -664,18 +771,25 @@ export function FinalCTA() {
           <p>
             Whether you're turning an idea into a startup, launching an AI product, or expanding an existing business into global markets, your journey begins with a single step.
           </p>
-          <p className="text-white font-bold text-xl mt-6 text-center">
+          <p className="text-white font-extrabold text-xl md:text-2xl pt-4 text-center text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-200 to-emerald-300">
             Your Vision Deserves a World-Class Ecosystem.
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <button onClick={() => document.getElementById('founder-form')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 bg-white text-[#0d162a] font-bold rounded-full hover:bg-[#1746D2]/10 transition-colors shadow-xl w-full sm:w-auto text-sm uppercase tracking-wide">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4 mb-14">
+          <button onClick={() => document.getElementById('founder-form')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 bg-white text-[#0d162a] font-bold rounded-full hover:bg-[#1746D2] hover:text-white transition-all shadow-xl w-full sm:w-auto text-sm uppercase tracking-wide">
             Apply to Become a Visionary Founder
           </button>
-          <button onClick={() => document.getElementById('founder-form')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 bg-transparent border-2 border-white/20 text-white font-bold rounded-full hover:bg-white/10 transition-colors w-full sm:w-auto text-sm uppercase tracking-wide">
+          <button onClick={() => document.getElementById('founder-form')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 bg-[#00A86B] hover:bg-[#00925c] text-white font-bold rounded-full transition-all shadow-xl w-full sm:w-auto text-sm uppercase tracking-wide">
             Schedule Confidential Founder Strategy Call
           </button>
+        </div>
+
+        {/* Closing Statement */}
+        <div className="pt-10 border-t border-white/15 max-w-[1400px] mx-auto text-center">
+          <p className="text-slate-400 font-medium text-xs md:text-sm leading-relaxed max-w-4xl mx-auto">
+            Visionary Founders by TECH6SENSE AI is committed to supporting founders through strategic guidance, technology expertise, and a collaborative ecosystem. While every founder's journey is unique and business outcomes depend on many factors, our mission is to provide the resources, knowledge, and community that help entrepreneurs build strong, sustainable AI and technology companies.
+          </p>
         </div>
         
       </div>

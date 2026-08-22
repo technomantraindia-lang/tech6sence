@@ -76,25 +76,23 @@ export default function InfluenceWithoutBorders() {
         
         {/* Header Block */}
         <div className="text-center max-w-4xl mx-auto mb-16 space-y-4">
-          <span 
-            className="font-display text-sm font-extrabold text-emerald-400 uppercase tracking-[0.25em] mb-2 block"
-          >
-            GLOBAL REACH
-          </span>
+          <div className="inline-flex items-center gap-3">
+            <span className="w-8 h-[2px] bg-[#1746D2] rounded-full" />
+            <span className="font-display text-sm font-extrabold tracking-[0.25em] uppercase text-[#1746D2]">
+              GLOBAL REACH
+            </span>
+            <span className="w-8 h-[2px] bg-[#00A86B] rounded-full" />
+          </div>
 
-          <h2 
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white"
-          >
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-display">
             Influence Without Borders
           </h2>
 
-          <div className="text-base sm:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-[#1746D2] font-mono uppercase tracking-wide">
+          <div className="text-lg sm:text-xl font-extrabold text-white font-display tracking-wide">
             True power is not localized.
           </div>
 
-          <p 
-            className="text-slate-300 text-sm md:text-base leading-relaxed font-normal max-w-3xl mx-auto"
-          >
+          <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium max-w-3xl mx-auto">
             A localized network limits your net worth. Business Brains operates seamlessly across the world’s most powerful financial and technological hubs, providing our members with instant, frictionless access to cross-border capital, strategic partnerships, and market entry. Our active syndicate spans:
           </p>
         </div>

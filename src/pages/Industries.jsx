@@ -16,7 +16,7 @@ export default function Industries() {
     <div className="min-h-screen flex flex-col font-body bg-white overflow-x-hidden">
       <Header />
       
-      <main className="flex-grow pt-20 md:pt-28">
+      <main className="flex-grow">
         <IndustriesHero />
         <IndustriesIntroSection />
         <IndustriesImpactContent />

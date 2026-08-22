@@ -5,57 +5,108 @@ export function HowItWorks() {
     {
       num: "Step 1",
       title: "Application & Global Readiness Review",
-      desc: "We evaluate your idea, target markets, and readiness for international positioning."
+      desc: "We evaluate your idea, target markets, and readiness for international positioning.",
+      badgeBg: "bg-[#1746D2]",
+      badgeText: "text-white",
+      borderColor: "hover:border-[#1746D2]/60",
+      shadowGlow: "hover:shadow-[0_0_30px_rgba(23,70,210,0.25)]",
+      glowGradient: "from-[#1746D2]/40"
     },
     {
       num: "Step 2",
       title: "Legal Foundation and Premium Brand & Digital Build",
-      desc: "Company registration and documentation, structured with cross-border operation in mind. Your branding manager and web team build a presence designed to compete against global players, not just local ones."
+      desc: "Company registration and documentation, structured with cross-border operation in mind. Your branding manager and web team build a presence designed to compete against global players, not just local ones.",
+      badgeBg: "bg-[#D4AF37]",
+      badgeText: "text-slate-950 font-extrabold",
+      borderColor: "hover:border-[#D4AF37]/60",
+      shadowGlow: "hover:shadow-[0_0_30px_rgba(212,175,55,0.25)]",
+      glowGradient: "from-[#D4AF37]/45"
     },
     {
       num: "Step 3",
       title: "Technology Build",
-      desc: "Your CTO, technical lead, project manager, and developers begin building your product to enterprise standard."
+      desc: "Your CTO, technical lead, project manager, and developers begin building your product to enterprise standard.",
+      badgeBg: "bg-[#00A86B]",
+      badgeText: "text-white",
+      borderColor: "hover:border-[#00A86B]/60",
+      shadowGlow: "hover:shadow-[0_0_30px_rgba(0,168,107,0.25)]",
+      glowGradient: "from-[#00A86B]/40"
     },
     {
       num: "Step 4",
       title: "International Client Acquisition Training",
-      desc: "You're trained to sell across markets and buying cultures, supported by your Client Success Manager."
+      desc: "You're trained to sell across markets and buying cultures, supported by your Client Success Manager.",
+      badgeBg: "bg-[#1746D2]",
+      badgeText: "text-white",
+      borderColor: "hover:border-[#1746D2]/60",
+      shadowGlow: "hover:shadow-[0_0_30px_rgba(23,70,210,0.25)]",
+      glowGradient: "from-[#1746D2]/40"
     },
     {
       num: "Step 5",
       title: "Fundraising Activation",
-      desc: "Introduction to government scheme funding and preparation for private investor conversations."
+      desc: "Introduction to government scheme funding and preparation for private investor conversations.",
+      badgeBg: "bg-[#D4AF37]",
+      badgeText: "text-slate-950 font-extrabold",
+      borderColor: "hover:border-[#D4AF37]/60",
+      shadowGlow: "hover:shadow-[0_0_30px_rgba(212,175,55,0.25)]",
+      glowGradient: "from-[#D4AF37]/45"
     },
     {
       num: "Step 6",
       title: "Global Expansion (Optional Track)",
-      desc: "For founders ready to scale abroad — entity setup, visa support, and relocation guidance in your target country."
+      desc: "For founders ready to scale abroad — entity setup, visa support, and relocation guidance in your target country.",
+      badgeBg: "bg-[#00A86B]",
+      badgeText: "text-white",
+      borderColor: "hover:border-[#00A86B]/60",
+      shadowGlow: "hover:shadow-[0_0_30px_rgba(0,168,107,0.25)]",
+      glowGradient: "from-[#00A86B]/40"
     }
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-slate-50 relative border-b border-slate-200">
-      <div className="max-w-[1400px] mx-auto px-6">
+    <section className="py-20 md:py-28 bg-slate-50 relative border-b border-slate-200/80 overflow-hidden">
+      {/* Background Soft Glows */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#1746D2]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#00A86B]/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
-            THE SIX-PHASE FOUNDER JOURNEY
-          </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display">
+          <div className="inline-flex items-center gap-3 mb-4">
+            <span className="w-8 h-[2px] bg-[#1746D2] rounded-full" />
+            <span className="font-display text-sm font-extrabold tracking-[0.25em] uppercase text-[#1746D2]">
+              THE SIX-PHASE FOUNDER JOURNEY
+            </span>
+            <span className="w-8 h-[2px] bg-[#00A86B] rounded-full" />
+          </div>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display tracking-tight leading-tight">
             From Application to Global Company — Here's Exactly How It Works
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {steps.map((step, i) => (
-            <div key={i} className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-[#1746D2]/10 rounded-bl-[100px] -z-0 transition-transform group-hover:scale-125"></div>
+            <div 
+              key={i} 
+              className={`bg-white p-8 rounded-[2rem] border border-slate-200/90 shadow-sm ${step.shadowGlow} ${step.borderColor} hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden group flex flex-col justify-between`}
+            >
+              {/* Top-Right Corner Color Glow on Hover */}
+              <div className={`absolute -top-10 -right-10 w-36 h-36 bg-gradient-to-br ${step.glowGradient} to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none`} />
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-slate-100 to-transparent rounded-bl-full opacity-60 pointer-events-none" />
+
               <div className="relative z-10">
-                <span className="font-display text-sm font-extrabold text-[#1746D2] block mb-4 uppercase tracking-widest">
-                  {step.num}
-                </span>
-                <h4 className="font-display text-xl font-bold text-slate-900 mb-3">{step.title}</h4>
-                <p className="text-slate-600 font-medium text-sm leading-relaxed">{step.desc}</p>
+                <div className="flex items-center justify-between mb-6">
+                  <span className={`px-3 py-1 rounded-xl text-xs font-mono font-bold tracking-wider uppercase ${step.badgeBg} ${step.badgeText} shadow-xs`}>
+                    {step.num}
+                  </span>
+                </div>
+
+                <h4 className="font-display text-xl font-extrabold text-slate-900 mb-3 leading-snug group-hover:text-[#1746D2] transition-colors">
+                  {step.title}
+                </h4>
+                <p className="text-slate-600 font-medium text-xs md:text-sm leading-relaxed">
+                  {step.desc}
+                </p>
               </div>
             </div>
           ))}

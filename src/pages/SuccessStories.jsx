@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/sections/Footer';
 import SuccessStoriesHero from '../components/success-stories/SuccessStoriesHero';
 import SuccessStoriesContent from '../components/success-stories/SuccessStoriesContent';
+import IndustriesFinalCTA from '../components/industries/IndustriesFinalCTA';
 
 export default function SuccessStories() {
   
@@ -14,9 +15,10 @@ export default function SuccessStories() {
     <div className="min-h-screen flex flex-col font-body bg-white overflow-x-hidden">
       <Header />
       
-      <main className="flex-grow pt-20 md:pt-28">
+      <main className="flex-grow">
         <SuccessStoriesHero />
         <SuccessStoriesContent />
+        <IndustriesFinalCTA />
       </main>
       
       <Footer />

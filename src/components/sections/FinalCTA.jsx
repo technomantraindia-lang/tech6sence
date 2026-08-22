@@ -9,6 +9,7 @@ export default function FinalCTA() {
     name: '',
     email: '',
     company: '',
+    category: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -28,7 +29,7 @@ export default function FinalCTA() {
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitSuccess(true);
-      setFormData({ name: '', email: '', company: '', message: '' });
+      setFormData({ name: '', email: '', company: '', category: '', message: '' });
     }, 1500);
   };
 
@@ -212,6 +213,36 @@ export default function FinalCTA() {
                       placeholder="e.g. Acme Corp"
                       className="w-full bg-slate-50 border border-slate-200/80 rounded-xl px-4 py-3 text-slate-900 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1746D2]/10 focus:border-[#1746D2] transition-all"
                     />
+                  </div>
+
+                  <div>
+                    <label className="block text-[0.7rem] font-bold text-slate-500 uppercase tracking-wider mb-2">Select Team / Service Category</label>
+                    <select 
+                      name="category"
+                      value={formData.category}
+                      onChange={handleChange}
+                      className="w-full bg-slate-50 border border-slate-200/80 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#1746D2]/10 focus:border-[#1746D2] transition-all appearance-none"
+                      style={{ backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`, backgroundPosition: 'right 1rem center', backgroundRepeat: 'no-repeat', backgroundSize: '1.5em 1.5em' }}
+                    >
+                      <option value="">Select Team Category (Optional)</option>
+                      <optgroup label="⚡ INTELLIGENT SOLUTIONS">
+                        <option value="[INTELLIGENT SOLUTIONS] AI Product & Model Development">AI Product & Model Development</option>
+                        <option value="[INTELLIGENT SOLUTIONS] Intelligent Automation & Agent Systems">Intelligent Automation & Agent Systems</option>
+                        <option value="[INTELLIGENT SOLUTIONS] Generative & Applied AI">Generative & Applied AI</option>
+                      </optgroup>
+                      <optgroup label="🧬 DEEP-TECH PRODUCTS">
+                        <option value="[DEEP-TECH PRODUCTS] Deep-Tech Hardware & Embedded Systems">Deep-Tech Hardware & Embedded Systems</option>
+                        <option value="[DEEP-TECH PRODUCTS] AI IoT & Smart Sensors">AI IoT & Smart Sensors</option>
+                      </optgroup>
+                      <optgroup label="🚀 VISIONARY FOUNDERS">
+                        <option value="[VISIONARY FOUNDERS] AI Venture Studio & Co-Founder Bench">AI Venture Studio & Co-Founder Bench</option>
+                        <option value="[VISIONARY FOUNDERS] Startup Infrastructure & Turnkey Tech">Startup Infrastructure & Turnkey Tech</option>
+                      </optgroup>
+                      <optgroup label="🧠 BUSINESS BRAINS">
+                        <option value="[BUSINESS BRAINS] Executive Advisory & Member Network">Executive Advisory & Member Network</option>
+                        <option value="[BUSINESS BRAINS] Investor & Family Office Track">Investor & Family Office Track</option>
+                      </optgroup>
+                    </select>
                   </div>
 
                   <div>

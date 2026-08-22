@@ -85,7 +85,7 @@ export default function DeepTechApplications() {
             <div className="lg:col-span-5">
               <div className="inline-flex items-center gap-3 mb-6">
                 <span className="w-8 h-[2px] bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full" />
-                <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-blue-600">
+                <span className="text-sm sm:text-base font-mono font-bold uppercase tracking-[0.25em] text-blue-600">
                   STARTUP PRODUCT ECOSYSTEM
                 </span>
               </div>
@@ -126,7 +126,7 @@ export default function DeepTechApplications() {
           <div className="text-center max-w-3xl mx-auto mb-20">
             <div className="inline-flex items-center gap-3 mb-6">
               <span className="w-8 h-[2px] bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full" />
-              <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-blue-400">
+              <span className="text-sm sm:text-base font-mono font-bold uppercase tracking-[0.25em] text-blue-400">
                 RESEARCH & INNOVATION
               </span>
               <span className="w-8 h-[2px] bg-gradient-to-r from-emerald-500 to-blue-600 rounded-full" />
@@ -162,7 +162,7 @@ export default function DeepTechApplications() {
             <div className="lg:col-span-5">
               <div className="inline-flex items-center gap-3 mb-6">
                 <span className="w-8 h-[2px] bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full" />
-                <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-blue-600">
+                <span className="text-sm sm:text-base font-mono font-bold uppercase tracking-[0.25em] text-blue-600">
                   DATA PRIVACY & TRUST
                 </span>
               </div>
@@ -203,7 +203,7 @@ export default function DeepTechApplications() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-3 mb-6">
               <span className="w-8 h-[2px] bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full" />
-              <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-blue-600">
+              <span className="text-sm sm:text-base font-mono font-bold uppercase tracking-[0.25em] text-blue-600">
                 REGULATORY READINESS
               </span>
               <span className="w-8 h-[2px] bg-gradient-to-r from-emerald-500 to-blue-600 rounded-full" />
@@ -246,7 +246,7 @@ export default function DeepTechApplications() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-3 mb-6">
               <span className="w-8 h-[2px] bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full" />
-              <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-blue-600">
+              <span className="text-sm sm:text-base font-mono font-bold uppercase tracking-[0.25em] text-blue-600">
                 CLIENT DIFFERENTIATORS
               </span>
               <span className="w-8 h-[2px] bg-gradient-to-r from-emerald-500 to-blue-600 rounded-full" />

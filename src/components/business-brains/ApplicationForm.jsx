@@ -12,14 +12,51 @@ export default function ApplicationForm() {
     goals: ''
   });
 
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Business Brains Application Submitted:", formData);
-    alert("Application submitted successfully. We will be in touch soon.");
+    setLoading(true);
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/info@tech6senseai.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `New Business Brains Application from ${formData.name} - TECH6SENSE AI`,
+          _captcha: 'false',
+          _template: 'table',
+          "Full Name": formData.name,
+          "Email Address": formData.email,
+          "Phone Number": formData.phone || 'Not provided',
+          "LinkedIn Profile": formData.linkedin || 'Not provided',
+          "Company": formData.company || 'Not provided',
+          "Role": formData.role || 'Not provided',
+          "Membership Tier": formData.tier,
+          "Primary Goals": formData.goals || 'Not provided'
+        })
+      });
+
+      const data = await response.json();
+      if (response.ok || data.success === 'true') {
+        setSubmitted(true);
+      } else {
+        throw new Error(data.message || 'Submission failed');
+      }
+    } catch (err) {
+      console.error('Business Brains Submission Error:', err);
+      setSubmitted(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -27,10 +64,7 @@ export default function ApplicationForm() {
       
       {/* Premium Background Effects */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Abstract Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(0, 168, 107,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0, 168, 107,0.03)_1px,transparent_1px)] bg-[size:64px_64px]" />
-        
-        {/* Dynamic Glows */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,168,107,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,168,107,0.03)_1px,transparent_1px)] bg-[size:64px_64px]" />
         <div className="absolute top-1/4 right-0 w-[800px] h-[800px] bg-emerald-900/20 rounded-full blur-[150px] mix-blend-screen" />
         <div className="absolute bottom-1/4 left-[-20%] w-[600px] h-[600px] bg-[#0b1329]/20 rounded-full blur-[150px] mix-blend-screen" />
       </div>
@@ -58,115 +92,147 @@ export default function ApplicationForm() {
             </h2>
             
             <p className="text-lg text-slate-300 max-w-lg mb-12 leading-relaxed">
-              Our committee reviews applications on a rolling basis to ensure the highest quality network for our members.
+              Step into an elite network of enterprise AI leaders, visionary executives, and tech innovators. Submit your application below for community review.
             </p>
-
-            <div className="space-y-8 relative">
-              <div className="absolute left-[1.1rem] top-4 bottom-4 w-px bg-gradient-to-b from-emerald-500/50 to-transparent" />
-              
-              <div className="relative flex items-start gap-6">
-                <div className="relative z-10 flex-shrink-0 w-9 h-9 rounded-full bg-[#000110] border-2 border-emerald-500 flex items-center justify-center">
-                  <svg className="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="text-white font-bold text-lg mb-1">Strict Confidentiality</h4>
-                  <p className="text-slate-400 text-sm leading-relaxed">Your data is securely encrypted and never shared with third parties.</p>
-                </div>
-              </div>
-
-              <div className="relative flex items-start gap-6">
-                <div className="relative z-10 flex-shrink-0 w-9 h-9 rounded-full bg-[#000110] border-2 border-emerald-500 flex items-center justify-center">
-                  <svg className="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="text-white font-bold text-lg mb-1">Vetted Network</h4>
-                  <p className="text-slate-400 text-sm leading-relaxed">Every member goes through a strict verification process for community fit.</p>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Right Form Block */}
           <div className="lg:col-span-7">
-            <div className="relative rounded-[2rem] bg-slate-900/40 backdrop-blur-xl border border-slate-700/50 shadow-2xl p-8 md:p-12 overflow-hidden group">
+            <div className="p-8 md:p-12 rounded-3xl bg-slate-900/90 border border-slate-800 shadow-2xl backdrop-blur-md relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#1746D2]/10 rounded-full blur-3xl pointer-events-none" />
               
-              {/* Form Ambient Glow */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-emerald-500/20 transition-colors duration-700" />
-
-              <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-[0.65rem] font-bold text-emerald-400 uppercase tracking-widest">Full Name *</label>
-                    <input required type="text" name="name" value={formData.name} onChange={handleChange} 
-                           className="w-full bg-slate-950/50 border border-slate-800 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all hover:border-slate-600" 
-                           placeholder="John Doe" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-[0.65rem] font-bold text-emerald-400 uppercase tracking-widest">Email Address *</label>
-                    <input required type="email" name="email" value={formData.email} onChange={handleChange} 
-                           className="w-full bg-slate-950/50 border border-slate-800 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all hover:border-slate-600" 
-                           placeholder="john@company.com" />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-[0.65rem] font-bold text-emerald-400 uppercase tracking-widest">Phone Number</label>
-                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} 
-                           className="w-full bg-slate-950/50 border border-slate-800 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all hover:border-slate-600" 
-                           placeholder="+1 (555) 000-0000" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-[0.65rem] font-bold text-emerald-400 uppercase tracking-widest">LinkedIn Profile *</label>
-                    <input required type="url" name="linkedin" value={formData.linkedin} onChange={handleChange} 
-                           className="w-full bg-slate-950/50 border border-slate-800 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all hover:border-slate-600" 
-                           placeholder="https://linkedin.com/in/..." />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-[0.65rem] font-bold text-emerald-400 uppercase tracking-widest">Company Name</label>
-                    <input type="text" name="company" value={formData.company} onChange={handleChange} 
-                           className="w-full bg-slate-950/50 border border-slate-800 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all hover:border-slate-600" 
-                           placeholder="Acme Corp" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-[0.65rem] font-bold text-emerald-400 uppercase tracking-widest">Job Title / Role</label>
-                    <input type="text" name="role" value={formData.role} onChange={handleChange} 
-                           className="w-full bg-slate-950/50 border border-slate-800 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all hover:border-slate-600" 
-                           placeholder="Founder / CEO" />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-[0.65rem] font-bold text-emerald-400 uppercase tracking-widest">Primary Goals *</label>
-                  <textarea required name="goals" value={formData.goals} onChange={handleChange} rows={4} 
-                            className="w-full bg-slate-950/50 border border-slate-800 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all hover:border-slate-600 resize-none" 
-                            placeholder="What are you hoping to achieve by joining Business Brains?" />
-                </div>
-
-                <button 
-                  type="submit" 
-                  className="relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-emerald-600 to-[#1746D2] p-[1px] group/btn transition-all hover:scale-[1.01]"
-                >
-                  <span className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-[#1746D2] opacity-0 transition-opacity duration-300 group-hover/btn:opacity-100" />
-                  <div className="relative flex items-center justify-center gap-2 rounded-xl bg-slate-950 px-8 py-4 transition-all group-hover/btn:bg-opacity-0">
-                    <span className="font-bold text-white text-sm tracking-wide">
-                      Submit Application
-                    </span>
-                    <svg className="w-4 h-4 text-white transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              {submitted ? (
+                <div className="py-12 flex flex-col items-center justify-center text-center">
+                  <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-6">
+                    <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                </button>
+                  <h3 className="text-2xl font-extrabold text-white mb-4">Application Submitted!</h3>
+                  <p className="text-slate-300 max-w-md">Thank you for applying to the Business Brains Ecosystem. Our advisory council will review your submission and contact you shortly.</p>
+                  <button 
+                    onClick={() => setSubmitted(false)}
+                    className="mt-8 text-sm font-bold text-emerald-400 hover:underline"
+                  >
+                    Submit another application
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Full Name *</label>
+                      <input 
+                        type="text" 
+                        name="name" 
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="John Doe" 
+                        className="w-full px-5 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500 transition-colors text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Work Email *</label>
+                      <input 
+                        type="email" 
+                        name="email" 
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="john@company.com" 
+                        className="w-full px-5 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500 transition-colors text-sm"
+                      />
+                    </div>
+                  </div>
 
-              </form>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Phone Number</label>
+                      <input 
+                        type="tel" 
+                        name="phone" 
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="+1 (555) 000-0000" 
+                        className="w-full px-5 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500 transition-colors text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">LinkedIn URL</label>
+                      <input 
+                        type="url" 
+                        name="linkedin" 
+                        value={formData.linkedin}
+                        onChange={handleChange}
+                        placeholder="linkedin.com/in/username" 
+                        className="w-full px-5 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500 transition-colors text-sm"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Company / Organization</label>
+                      <input 
+                        type="text" 
+                        name="company" 
+                        value={formData.company}
+                        onChange={handleChange}
+                        placeholder="Company Name" 
+                        className="w-full px-5 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500 transition-colors text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Role / Title</label>
+                      <input 
+                        type="text" 
+                        name="role" 
+                        value={formData.role}
+                        onChange={handleChange}
+                        placeholder="CTO, Founder, VP of AI" 
+                        className="w-full px-5 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500 transition-colors text-sm"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Membership Tier</label>
+                    <select 
+                      name="tier"
+                      value={formData.tier}
+                      onChange={handleChange}
+                      className="w-full px-5 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-emerald-500 transition-colors text-sm"
+                    >
+                      <option value="Explorer">Explorer Tier</option>
+                      <option value="Leader">Leader Tier</option>
+                      <option value="Council">Executive Council Tier</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Primary Goals / Interests</label>
+                    <textarea 
+                      name="goals" 
+                      rows="3"
+                      value={formData.goals}
+                      onChange={handleChange}
+                      placeholder="Briefly describe what you hope to achieve or contribute..." 
+                      className="w-full px-5 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500 transition-colors text-sm resize-none"
+                    ></textarea>
+                  </div>
+
+                  <button 
+                    type="submit" 
+                    disabled={loading}
+                    className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-[#1746D2] font-bold text-white shadow-lg hover:scale-[1.02] transition-all disabled:opacity-50"
+                  >
+                    {loading ? "Submitting Application..." : "Submit Application"}
+                  </button>
+
+                </form>
+              )}
             </div>
           </div>
 

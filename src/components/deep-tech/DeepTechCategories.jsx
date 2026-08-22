@@ -44,10 +44,10 @@ export default function DeepTechCategories() {
       <div className="mx-auto max-w-[1400px] px-6 relative z-10">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-[1400px] mx-auto mb-16">
           <div className="inline-flex items-center gap-3 mb-6">
             <span className="w-8 h-[2px] bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full" />
-            <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-blue-600">
+            <span className="text-sm sm:text-base font-mono font-bold uppercase tracking-[0.25em] text-blue-600">
               Why Partner with TECH6SENSE AI?
             </span>
             <span className="w-8 h-[2px] bg-gradient-to-r from-emerald-500 to-blue-600 rounded-full" />
@@ -58,7 +58,7 @@ export default function DeepTechCategories() {
         </div>
 
         {/* Matrix Grid Layout - Clean, premium, borders removed on cards, alternating backgrounds */}
-        <div className="flex flex-col gap-6 max-w-5xl mx-auto">
+        <div className="flex flex-col gap-6 max-w-[1400px] mx-auto">
           {comparison.map((item, idx) => {
             const cardBg = item.isBlue 
               ? "bg-blue-50/30 hover:bg-blue-50/60" 

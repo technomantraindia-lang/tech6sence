@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { industriesImpactData } from '../../data/industriesImpactData';
 
-const industriesImages = import.meta.glob('../../assets/industries images/*.avif', { eager: true });
+const industriesImages = import.meta.glob('../../assets/industries images/*.{avif,jpg,jpeg,png,webp}', { eager: true });
 
 export default function IndustriesImpactContent() {
   const navigate = useNavigate();
@@ -11,10 +11,39 @@ export default function IndustriesImpactContent() {
     const searchKey = title.toLowerCase().replace(/[^a-z0-9]/g, '');
     const searchKeyNoAnd = searchKey.replace(/and/g, '');
     
-    // Hardcode mapping for Manufacturing & Supply Chain
+    // Hardcode mapping for Healthcare & Life Sciences
+    if (searchKey.includes('healthcare')) {
+      const targetJpg = '../../assets/industries images/Healthcare & Life Sciences AI Solutions.jpg';
+      const targetAvif = '../../assets/industries images/Healthcare & Life Sciences AI Solutions.avif';
+      return (industriesImages[targetJpg] || industriesImages[targetAvif])?.default || null;
+    }
+
+    // Hardcode mapping for Banking & Financial Services
+    if (searchKey.includes('banking') || searchKey.includes('finance')) {
+      const targetJpg = '../../assets/industries images/Banking & Financial Services AI Solutions.jpg';
+      const targetAvif = '../../assets/industries images/Banking & Financial Services AI Solutions.avif';
+      return (industriesImages[targetJpg] || industriesImages[targetAvif])?.default || null;
+    }
+
+    // Hardcode mapping for Manufacturing & Industrial AI
     if (searchKey.includes('manufacturing')) {
-      const target = '../../assets/industries images/Manufacturing AI Solutions.avif';
-      return industriesImages[target] ? industriesImages[target].default : null;
+      const targetJpg = '../../assets/industries images/Manufacturing AI Solutions.jpg';
+      const targetAvif = '../../assets/industries images/Manufacturing AI Solutions.avif';
+      return (industriesImages[targetJpg] || industriesImages[targetAvif])?.default || null;
+    }
+
+    // Hardcode mapping for Retail & E-Commerce
+    if (searchKey.includes('retail') || searchKey.includes('ecommerce')) {
+      const targetJpg = '../../assets/industries images/Retail & E-Commerce AI Solutions.jpg';
+      const targetAvif = '../../assets/industries images/Retail & E-Commerce AI Solutions.avif';
+      return (industriesImages[targetJpg] || industriesImages[targetAvif])?.default || null;
+    }
+
+    // Hardcode mapping for Logistics & Supply Chain
+    if (searchKey.includes('logistics') || searchKey.includes('supplychain')) {
+      const targetJpg = '../../assets/industries images/Logistics & Supply Chain AI Solutions.jpg';
+      const targetAvif = '../../assets/industries images/Logistics & Supply Chain AI Solutions.avif';
+      return (industriesImages[targetJpg] || industriesImages[targetAvif])?.default || null;
     }
     
     // Hardcode mapping for Smart Cities

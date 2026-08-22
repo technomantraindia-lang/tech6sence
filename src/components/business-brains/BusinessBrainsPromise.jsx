@@ -24,32 +24,30 @@ export default function BusinessBrainsPromise() {
   };
 
   return (
-    <section className="relative bg-[#000110] text-white py-24 md:py-32 border-b border-slate-800/80 overflow-hidden">
+    <section className="relative bg-[#000110] text-white py-20 md:py-28 border-b border-slate-800/80 overflow-hidden">
       
       {/* Constellation Glow Background */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] bg-gradient-to-tr from-emerald-950/20 via-violet-950/20 to-blue-950/20 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] bg-emerald-900/10 rounded-full blur-[200px] pointer-events-none" />
 
-      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10 space-y-16">
         
-        {/* Header Block & Navigation Controls */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
-          <div className="max-w-3xl">
-            <span 
-              className="font-display text-sm font-extrabold text-emerald-400 uppercase tracking-[0.25em] mb-3 block"
-            >
-              THE PROMISE
-            </span>
+        {/* Header Block & Controls */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="max-w-3xl space-y-4 text-left">
+            <div className="inline-flex items-center gap-3">
+              <span className="w-8 h-[2px] bg-[#1746D2] rounded-full" />
+              <span className="font-display text-sm font-extrabold tracking-[0.25em] uppercase text-[#1746D2]">
+                THE PROMISE
+              </span>
+              <span className="w-8 h-[2px] bg-[#00A86B] rounded-full" />
+            </div>
 
-            <h2 
-              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-tight"
-            >
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-display uppercase">
               THE BUSINESS BRAINS PROMISE
             </h2>
 
-            <p 
-              className="text-slate-300 text-base md:text-lg leading-relaxed font-normal"
-            >
-              Every interaction, gathering, and initiative within BUSINESS BRAINS is deliberately designed to deliver extraordinary strategic value.
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium">
+              Every interaction within BUSINESS BRAINS is designed to create value through:
             </p>
           </div>
 

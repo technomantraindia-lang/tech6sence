@@ -7,28 +7,28 @@ export default function ProductDevelopmentApproach() {
       title: "Ideation & Architecture",
       desc: "You bring the vision. Our AI and hardware architects map out the feasibility, component sourcing, and edge-AI requirements.",
       badgeBg: "bg-blue-100 text-blue-700",
-      cardBg: "bg-blue-50/40 hover:bg-blue-50/70"
+      cardBg: "bg-[#1746D2] hover:bg-blue-700 text-white"
     },
     {
       num: "02",
       title: "Prototyping & Firmware",
       desc: "We build the physical alpha units alongside custom, highly secure firmware and companion mobile applications.",
       badgeBg: "bg-emerald-100 text-emerald-700",
-      cardBg: "bg-emerald-50/40 hover:bg-emerald-50/70"
+      cardBg: "bg-[#00A86B] hover:bg-emerald-600 text-white"
     },
     {
       num: "03",
       title: "Testing & Certification",
       desc: "Rigorous global compliance testing (FCC, CE, RoHS, FDA) to ensure your product is legally and technically ready for a global rollout.",
       badgeBg: "bg-blue-100 text-blue-700",
-      cardBg: "bg-blue-50/40 hover:bg-blue-50/70"
+      cardBg: "bg-[#1746D2] hover:bg-blue-700 text-white"
     },
     {
       num: "04",
       title: "Mass Production & Fulfillment",
       desc: "We spin up our world-class manufacturing lines, delivering packaged, retail-ready deep-tech products directly to your distribution hubs.",
       badgeBg: "bg-emerald-100 text-emerald-700",
-      cardBg: "bg-emerald-50/40 hover:bg-emerald-50/70"
+      cardBg: "bg-[#00A86B] hover:bg-emerald-600 text-white"
     }
   ];
 
@@ -43,7 +43,7 @@ export default function ProductDevelopmentApproach() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-3 mb-6">
             <span className="w-8 h-[2px] bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full" />
-            <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-blue-600">
+            <span className="text-sm sm:text-base font-mono font-bold uppercase tracking-[0.25em] text-blue-600">
               THE INNOVATION ENGINE
             </span>
             <span className="w-8 h-[2px] bg-gradient-to-r from-emerald-500 to-blue-600 rounded-full" />
@@ -64,13 +64,10 @@ export default function ProductDevelopmentApproach() {
               className={`p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 relative flex flex-col justify-between border-0 ${st.cardBg}`}
             >
               <div>
-                <span className={`font-mono text-xs font-extrabold px-3 py-1 rounded-full inline-block mb-4 ${st.badgeBg}`}>
-                  STEP {st.num}
-                </span>
-                <h3 className="font-display text-lg font-extrabold text-slate-900 mb-3">
+                <h3 className="font-display text-lg font-extrabold text-white mb-3">
                   {st.title}
                 </h3>
-                <p className="font-body text-xs md:text-sm text-slate-600 leading-relaxed font-medium">
+                <p className="font-body text-xs md:text-sm text-white/90 leading-relaxed font-medium">
                   {st.desc}
                 </p>
               </div>

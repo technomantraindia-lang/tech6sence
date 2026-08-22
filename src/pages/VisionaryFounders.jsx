@@ -42,63 +42,68 @@ export default function VisionaryFounders() {
           </div>
 
           {/* Content */}
-          <div className="mx-auto w-full px-3 sm:px-6 md:max-w-[90%] relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+          <div className="mx-auto w-full px-3 sm:px-6 max-w-[1400px] relative z-10">
+            <div className="flex flex-col items-center text-center max-w-[1400px] mx-auto">
               
-              {/* Left Column: Hero Copy & Buttons */}
-              <div className="lg:col-span-9 flex flex-col items-start text-left gap-6">
+              {/* Center-aligned Hero Copy & Buttons */}
+              <div className="w-full flex flex-col items-center text-center gap-6">
                
+                {/* Brand Badge & Eyebrow Tag */}
+                <div className="flex flex-wrap items-center justify-center gap-3">
+                  <span className="font-display text-xs sm:text-sm font-black text-white uppercase tracking-[0.25em] block px-5 py-2 rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] shadow-[0_0_20px_rgba(23,70,210,0.5)] border border-white/20">
+                    VISIONARY FOUNDERS by TECH6SENSE AI
+                  </span>
+                  <span className="font-mono text-xs font-semibold text-[#D4AF37] uppercase tracking-wider block px-4 py-2 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/40 backdrop-blur-md">
+                    The Global AI Founder Ecosystem
+                  </span>
+                </div>
 
-                <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-[0.25em] block px-3 py-1 rounded-full bg-[#1746D2]/10 border border-[#1746D2]/20">
-                  VISIONARY FOUNDERS
-                </span>
-
-                {/* Title */}
-                <h1 className="font-display text-[clamp(2.25rem,3.8vw,3.25rem)] leading-[1.1] font-extrabold tracking-tight text-white">
-                  Build Your AI Empire Powered by a Global Ecosystem.
+                {/* Headline */}
+                <h1 className="font-display text-[clamp(2.25rem,4.5vw,4rem)] leading-[1.08] font-extrabold tracking-tight text-white max-w-[1400px] text-center">
+                  Build Your AI Empire Powered by a{' '}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1746D2] via-[#00A86B] to-[#D4AF37]">
+                    Global Ecosystem.
+                  </span>
                 </h1>
 
-                {/* Subheadline & Tagline Combined */}
-                <div className="space-y-4 max-w-3xl">
-                  <p className="font-body text-white/80 text-xs sm:text-sm lg:text-base leading-relaxed font-medium text-justify">
+                {/* Subheadline & Supporting Line */}
+                <div className="space-y-4 max-w-[1400px] text-center">
+                  <p className="font-body text-white/90 text-base sm:text-lg leading-relaxed font-medium text-center max-w-[1200px] mx-auto">
                     Visionary Founders is the world’s elite most comprehensive premier all-in-one AI Founder Ecosystem designed to transform ambitious entrepreneurs, professionals, start-up founders, consultants, and innovators into owners of globally competitive AI and technology companies and dominate the global markets.
                   </p>
 
-                  <p className="font-body text-[#00A86B] text-xs sm:text-sm lg:text-base font-semibold border-l-2 border-[#00A86B] pl-3 leading-relaxed">
+                  <p className="font-body text-[#00A86B] text-base sm:text-lg font-semibold leading-relaxed text-center max-w-[1200px] mx-auto pt-1">
                     "From Idea to International Clients —We don't just simply train founders. We build AI companies with them."
                   </p>
                 </div>
 
-                {/* Interactive buttons */}
-                <div className="flex flex-wrap items-center gap-3 w-full font-body">
-                  {/* Primary Pill Button */}
+                {/* Primary & Secondary CTA Buttons */}
+                <div className="flex flex-wrap items-center justify-center gap-4 w-full font-body pt-2">
                   <button
                     onClick={() => document.getElementById('founder-form')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] hover:from-[#1746D2]/90 hover:to-[#00A86B]/90 px-6 py-3.5 text-xs font-bold tracking-wider text-white shadow-[0_4px_20px_rgba(23,70,210,0.35)] hover:scale-[1.02] transition-all cursor-pointer"
+                    className="rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] hover:from-[#1746D2]/90 hover:to-[#00A86B]/90 px-8 py-4 text-sm font-bold tracking-wider text-white shadow-[0_4px_25px_rgba(23,70,210,0.35)] hover:scale-[1.02] transition-all cursor-pointer"
                   >
                     Apply to Become a Visionary Founder
                   </button>
 
-                  {/* Secondary Pill Button */}
                   <button
                     onClick={() => document.getElementById('founder-form')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="rounded-full border border-white/20 bg-white/5 hover:bg-white/15 px-6 py-3.5 text-xs font-bold tracking-wider text-white shadow-md hover:scale-[1.02] transition-all backdrop-blur-md cursor-pointer"
+                    className="rounded-full border border-[#D4AF37]/50 bg-[#D4AF37]/10 hover:bg-[#D4AF37]/20 px-8 py-4 text-sm font-bold tracking-wider text-[#D4AF37] shadow-md hover:scale-[1.02] transition-all backdrop-blur-md cursor-pointer"
                   >
                     Schedule Confidential Founder Strategy Call
                   </button>
                 </div>
 
-                {/* Value Tagline & Proof Info inside a Premium Glass Card */}
-                <div className="p-4 sm:p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md text-white/70 text-xs leading-relaxed space-y-4 shadow-2xl relative overflow-hidden max-w-3xl mt-4">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#1746D2]/10 rounded-bl-full blur-xl pointer-events-none" />
+                {/* Value Tagline & Supporting Proof Line Glass Card */}
+                <div className="p-6 sm:p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md text-white/80 text-sm sm:text-base leading-relaxed space-y-4 shadow-2xl relative overflow-hidden max-w-[1400px] w-full mt-3 text-center mx-auto">
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-[#D4AF37]/10 rounded-bl-full blur-2xl pointer-events-none" />
                   
-                  <div>
-                    <p className="font-semibold text-white/95 text-xs sm:text-sm leading-relaxed text-justify">
-                      The ultimate shortcut from concept to cross-border enterprise. We supply the tech, the talent, the legal, and the capital pipelines. You bring the vision. We Building the Next Generation of Global AI Companies.
-                    </p>
-                  </div>
-                  <div className="text-[10px] text-white/50 border-t border-white/5 pt-3 font-mono leading-relaxed">
-                    Built by TECH6SENSE AI. Trusted across the USA, UK, Australia, Canada, UAE, EU, India and Singapore.
+                  <p className="font-semibold text-white/95 text-base sm:text-lg leading-relaxed text-center max-w-[1200px] mx-auto">
+                    The ultimate shortcut from concept to cross-border enterprise. We supply the tech, the talent, the legal, and the capital pipelines. You bring the vision. We Building the Next Generation of Global AI Companies.
+                  </p>
+                  
+                  <div className="text-xs sm:text-sm text-white/70 border-t border-white/10 pt-4 font-mono leading-relaxed text-center">
+                    Built by TECH6SENSE AI. Trusted by founders across the USA, UK, Australia, Canada, UAE, EU, India and Singapore.
                   </div>
                 </div>
 
@@ -107,23 +112,23 @@ export default function VisionaryFounders() {
           </div>
         </div>
 
-        {/* Horizontal Trust Strip */}
+        {/* Horizontal Trust Strip (below hero) */}
         <div className="w-full bg-[#040916] border-y border-white/10 py-5 relative z-10">
-          <div className="max-w-[1400px] mx-auto px-6 flex flex-wrap justify-center md:justify-between items-center gap-6 text-white/90 text-xs font-semibold font-mono uppercase tracking-wider">
+          <div className="max-w-[1400px] mx-auto px-6 flex flex-wrap justify-center md:justify-between items-center gap-6 text-white/90 text-xs sm:text-sm font-semibold font-mono uppercase tracking-wider">
             <div className="flex items-center gap-2">
-              <span className="text-[#00A86B] text-sm font-bold">✓</span> 25+ AI & Tech Capabilities
+              <span className="text-[#00A86B] text-base font-bold">✓</span> 25+ AI & Tech Capabilities
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-[#00A86B] text-sm font-bold">✓</span> 100% Ownership Retained
+              <span className="text-[#00A86B] text-base font-bold">✓</span> 100% Ownership Retained
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-[#00A86B] text-sm font-bold">✓</span> 9+ Ecosystem Components
+              <span className="text-[#00A86B] text-base font-bold">✓</span> 9+ Ecosystem Components
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-[#00A86B] text-sm font-bold">✓</span> 7+ Global Markets Served
+              <span className="text-[#00A86B] text-base font-bold">✓</span> 7+ Global Markets Served
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-[#00A86B] text-sm font-bold">✓</span> 1 Complete Ecosystem
+              <span className="text-[#00A86B] text-base font-bold">✓</span> 1 Complete Ecosystem
             </div>
           </div>
         </div>
@@ -142,11 +147,10 @@ export default function VisionaryFounders() {
           <WhyTech6SenseAI />
           <FounderMessage />
           <NationalVsGlobalComparison />
-          <ApplicationProcess />
           <FounderSelectionCriteria />
+          <ApplicationForm />
           <SuccessStories />
           <FAQSection />
-          <ApplicationForm />
           <FinalCTA />
         </div>
       </main>

@@ -36,13 +36,13 @@ export default function DeepTechHero() {
           {/* Upper Brand Badge */}
           <div className="inline-flex items-center gap-3 mb-8 px-5 py-2 rounded-full border border-blue-500/20 bg-blue-950/60 backdrop-blur-xl">
             <span className="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse" />
-            <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-blue-300">
+            <span className="text-sm sm:text-base font-mono font-bold uppercase tracking-[0.25em] text-blue-300">
               Deep-Tech Products
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="font-display text-[clamp(2.5rem,5.5vw,4.8rem)] leading-none font-black tracking-tight text-white mb-6">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] leading-[1.1] font-black tracking-tight text-white mb-6">
             Building the World's Next Generation of AI-Powered Deep-Tech Products
           </h1>
 

@@ -2,76 +2,94 @@ import React from 'react';
 
 export default function PhilosophySection() {
   const statements = [
-    "Private Conversations",
-    "Executive Tables",
-    "Trusted Circles",
-    "Exceptional Leaders"
+    { title: "Private Conversations", desc: "Where the world's greatest opportunities begin." },
+    { title: "Executive Tables", desc: "Where million-dollar ventures are engineered." },
+    { title: "Trusted Circles", desc: "Where relationships become strategic alliances." },
+    { title: "Exceptional Leaders", desc: "Where shared vision creates lasting legacy." }
   ];
 
   return (
-    <section id="philosophy" className="relative bg-slate-50 text-slate-900 py-24 md:py-32 border-b border-slate-200 overflow-hidden">
+    <section id="philosophy" className="relative bg-slate-50 text-slate-900 py-20 md:py-28 border-b border-slate-200 overflow-hidden">
       {/* Light Gridlines */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(124,58,237,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.015)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(23,70,210,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(23,70,210,0.015)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
       
       {/* Glowing backdrop */}
       <div className="absolute top-1/2 left-[-10%] w-[500px] h-[500px] bg-emerald-100/60 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-[-5%] w-[450px] h-[450px] bg-[#1746D2]/10/50 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-0 right-[-5%] w-[450px] h-[450px] bg-[#1746D2]/10 rounded-full blur-[130px] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         {/* Eyebrow */}
-        <span 
-          className="font-display text-sm font-extrabold text-emerald-600 uppercase tracking-[0.25em] mb-8 block"
-        >
-          THE PHILOSOPHY
-        </span>
+        <div className="inline-flex items-center gap-3 mb-6">
+          <span className="w-8 h-[2px] bg-[#1746D2] rounded-full" />
+          <span className="font-display text-sm font-extrabold tracking-[0.25em] uppercase text-[#1746D2]">
+            THE PHILOSOPHY
+          </span>
+          <span className="w-8 h-[2px] bg-[#00A86B] rounded-full" />
+        </div>
 
         {/* Editorial Split Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-16">
           
           {/* Left Column: Oversized Editorial Heading */}
-          <div className="lg:col-span-6">
-            <h2 
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] text-slate-950 tracking-tight"
-            >
+          <div className="lg:col-span-5">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.1] text-slate-900 tracking-tight font-display">
               Not Everyone Deserves Access.
             </h2>
           </div>
 
           {/* Right Column: Manifesto Paragraphs */}
-          <div className="lg:col-span-6 space-y-6 text-slate-600 font-normal text-base md:text-lg leading-relaxed">
-            <p className="text-slate-800 font-medium">
-              The world's greatest opportunities rarely appear on public platforms. They happen inside private conversations, around executive tables, within trusted circles, and between leaders who share vision, integrity, and ambition.
-            </p>
-
-            <div className="p-6 rounded-2xl bg-white border border-slate-200 border-l-4 border-l-emerald-500 text-slate-900 font-medium text-lg leading-relaxed shadow-sm">
-              “Extraordinary leaders create extraordinary outcomes when surrounded by extraordinary people.”
+          <div className="lg:col-span-7 space-y-6 text-slate-700 font-normal text-base md:text-lg leading-relaxed">
+            
+            {/* Stanza 1 */}
+            <div className="space-y-2 bg-white p-6 rounded-2xl border border-slate-200 shadow-xs">
+              <p className="font-bold text-slate-900">
+                The world's greatest opportunities rarely appear on public platforms.
+              </p>
+              <ul className="space-y-1 text-slate-600 font-medium text-sm md:text-base list-disc pl-5">
+                <li>They happen inside private conversations.</li>
+                <li>Around executive tables.</li>
+                <li>Within trusted circles.</li>
+                <li>Between leaders who share vision, integrity, and ambition.</li>
+              </ul>
             </div>
 
-            <p className="text-slate-600">
+            {/* Stanza 2: Principle Box */}
+            <div className="p-6 rounded-2xl bg-[#000110] border border-slate-800 text-white space-y-2 shadow-lg">
+              <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest block">
+                BUSINESS BRAINS was founded on a timeless principle:
+              </span>
+              <p className="font-display font-extrabold text-lg md:text-xl text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400 leading-snug">
+                “Extraordinary leaders create extraordinary outcomes when surrounded by extraordinary people.”
+              </p>
+            </div>
+
+            {/* Stanza 3 */}
+            <p className="text-slate-700 font-medium">
               This is a private institution where relationships are cultivated with intention, where ideas are challenged by world-class thinkers, and where influence is transformed into meaningful impact.
             </p>
             
-            <p className="text-slate-650">
+            {/* Stanza 4 */}
+            <p className="text-slate-900 font-bold text-lg leading-relaxed border-l-4 border-l-[#00A86B] pl-4 italic">
               We believe that the future of business will not be built through isolated ambition—but through trusted collaboration among exceptional leaders across the world.
             </p>
+
           </div>
 
         </div>
 
-        {/* Four Short Statement Rows */}
+        {/* Four Short Statement Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-12 border-t border-slate-200">
           {statements.map((stmt, idx) => (
             <div 
               key={idx} 
-              className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-[0_2px_8px_rgba(15,23,42,0.03)] hover:shadow-md hover:border-emerald-500/40 transition-all duration-300 group"
+              className="p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#1746D2]/40 transition-all duration-300 group"
             >
-              <div className="font-display text-sm font-extrabold text-emerald-600 mb-2">0{idx + 1}</div>
-              <h3 
-                className="text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition-colors"
-              >
-                {stmt}
+              <div className="font-mono text-xs font-bold text-[#1746D2] mb-2">0{idx + 1}</div>
+              <h3 className="text-base md:text-lg font-bold text-slate-900 group-hover:text-[#1746D2] transition-colors mb-1">
+                {stmt.title}
               </h3>
+              <p className="text-xs text-slate-500 font-medium">{stmt.desc}</p>
             </div>
           ))}
         </div>

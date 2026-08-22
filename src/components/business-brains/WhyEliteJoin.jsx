@@ -3,13 +3,13 @@ import React from 'react';
 export default function WhyEliteJoin() {
   const pillars = [
     {
-      number: "01",
-      title: "The Capital Nexus — Unrivaled Deal Flow",
-      desc: "Direct access to curated co-investment syndicates, institutional venture rounds, and proprietary deep-tech pipelines cleared by comprehensive technical due diligence.",
+      number: "I",
+      title: "I. The Capital Nexus (Unrivaled Deal Flow)",
+      desc: "Bypass the public markets and traditional venture bottlenecks. Our inner circle has first-look access to vetted, off-market investments, exclusive syndications, and high-yield acquisitions. If a deal is poised to reshape an industry, it is discussed here first.",
       points: [
-        "Vetted deal pipelines",
-        "Co-investment structures",
-        "Institutional round participation"
+        "Vetted off-market investments",
+        "Exclusive syndicate deals",
+        "First-look acquisition rounds"
       ],
       icon: (
         <svg className="w-7 h-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -18,13 +18,13 @@ export default function WhyEliteJoin() {
       )
     },
     {
-      number: "02",
-      title: "The AI Arsenal — Powered by TECH6SENSE AI",
-      desc: "Priority access to proprietary AI architecture, model audits, enterprise integration frameworks, and technological supremacy from TECH6SENSE AI engineers.",
+      number: "II",
+      title: "II. The AI Arsenal (Powered by TECH6SENSE AI)",
+      desc: "In the modern economy, technological stagnation is a death sentence. Members receive direct, priority integration with TECH6SENSE AI, leveraging enterprise-grade artificial intelligence and IT infrastructure to automate operations, slash overhead, and scale exponentially faster than competitors.",
       points: [
-        "Proprietary AI frameworks",
-        "Technical due diligence",
-        "Enterprise AI integration"
+        "Priority TECH6SENSE AI integration",
+        "Enterprise IT infrastructure",
+        "Operational automation & scaling"
       ],
       icon: (
         <svg className="w-7 h-7 text-[#1746D2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -33,13 +33,13 @@ export default function WhyEliteJoin() {
       )
     },
     {
-      number: "03",
-      title: "The Brain Trust — Elite Strategic Intelligence",
-      desc: "Confidential Chatham House executive roundtables, advisory placements, cross-border intelligence briefs, and direct access to high-level decision makers.",
+      number: "III",
+      title: "III. The Brain Trust (Elite Strategic Intelligence)",
+      desc: "Isolate yourself from noise and surround yourself with proven operators. Engage in closed-door digital masterminds and private, high-security summits held in global business capitals. Share board-level insights, navigate regulatory landscapes, and orchestrate legacy-building partnerships with peers who operate at your exact frequency.",
       points: [
-        "Board & advisor placements",
-        "Confidential executive circles",
-        "Cross-border intelligence"
+        "Closed-door digital masterminds",
+        "High-security global summits",
+        "Board-level strategic partnerships"
       ],
       icon: (
         <svg className="w-7 h-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -50,29 +50,27 @@ export default function WhyEliteJoin() {
   ];
 
   return (
-    <section className="relative bg-slate-50 text-slate-900 py-24 md:py-32 border-b border-slate-200 overflow-hidden">
+    <section id="syndicate" className="relative bg-slate-50 text-slate-900 py-20 md:py-28 border-b border-slate-200 overflow-hidden">
       
       {/* Light Gridlines */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(124,58,237,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.015)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(23,70,210,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(23,70,210,0.015)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span 
-            className="font-display text-sm font-extrabold text-emerald-600 uppercase tracking-[0.25em] mb-4 block"
-          >
-            THE THREE PILLARS
-          </span>
+          <div className="inline-flex items-center gap-3 mb-4">
+            <span className="w-8 h-[2px] bg-[#1746D2] rounded-full" />
+            <span className="font-display text-sm font-extrabold tracking-[0.25em] uppercase text-[#1746D2]">
+              WHY THE ELITE JOIN
+            </span>
+            <span className="w-8 h-[2px] bg-[#00A86B] rounded-full" />
+          </div>
 
-          <h2 
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 mb-4"
-          >
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 font-display">
             Why the Elite Join
           </h2>
 
-          <p 
-            className="text-slate-600 text-base md:text-lg leading-relaxed font-normal"
-          >
+          <p className="text-slate-600 text-base md:text-lg leading-relaxed font-medium">
             We provide our members with an insurmountable competitive advantage through three distinct pillars.
           </p>
         </div>
@@ -88,20 +86,16 @@ export default function WhyEliteJoin() {
                   <div className="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center justify-center group-hover:scale-110 transition-transform">
                     {pillar.icon}
                   </div>
-                  <span className="font-mono text-xl font-bold text-slate-300 group-hover:text-emerald-600 transition-colors">
+                  <span className="font-mono text-2xl font-bold text-slate-300 group-hover:text-emerald-600 transition-colors">
                     {pillar.number}
                   </span>
                 </div>
 
-                <h3 
-                  className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-emerald-600 transition-colors"
-                >
+                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 group-hover:text-emerald-600 transition-colors font-display">
                   {pillar.title}
                 </h3>
 
-                <p 
-                  className="text-slate-600 text-sm leading-relaxed mb-8 font-normal"
-                >
+                <p className="text-slate-600 text-sm leading-relaxed mb-8 font-normal text-justify md:text-left">
                   {pillar.desc}
                 </p>
               </div>

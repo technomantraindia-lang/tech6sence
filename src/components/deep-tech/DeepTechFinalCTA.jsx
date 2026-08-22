@@ -13,18 +13,18 @@ export default function DeepTechFinalCTA() {
         {/* Upper Slogan Badge */}
         <div className="inline-flex items-center gap-3 mb-6 px-5 py-2 rounded-full border border-blue-500/20 bg-blue-950/60 backdrop-blur-xl">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-emerald-300">
+          <span className="text-sm sm:text-base font-mono font-bold uppercase tracking-[0.25em] text-emerald-300">
             Build Smarter. Engineer Faster. Innovate Globally.
           </span>
         </div>
 
         {/* Headline */}
-        <h2 className="font-display text-[clamp(2.25rem,5vw,4.5rem)] font-black tracking-tight text-white mb-6 leading-tight max-w-4xl mx-auto">
+        <h2 className="font-display text-[clamp(2.25rem,5vw,4.5rem)] font-black tracking-tight text-white mb-6 leading-tight max-w-[1400px] mx-auto">
           Let's Build the Next Global Deep-Tech Innovation Together
         </h2>
 
         {/* Subheadlines */}
-        <div className="max-w-3xl mx-auto mb-10 flex flex-col gap-6">
+        <div className="max-w-[1400px] mx-auto mb-10 flex flex-col gap-6">
           <p className="font-body text-slate-300 text-base md:text-lg font-medium leading-relaxed">
             Whether you're an entrepreneur with a breakthrough idea, a startup creating the next category-defining product, or an enterprise accelerating digital transformation, TECH6SENSE AI provides the expertise, engineering, AI capabilities, and commercialization ecosystem to bring your vision to life.
           </p>

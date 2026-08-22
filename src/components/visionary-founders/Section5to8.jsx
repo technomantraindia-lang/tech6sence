@@ -16,55 +16,82 @@ export function IntroducingProgram() {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-white relative overflow-hidden">
+    <section className="py-20 md:py-28 bg-white relative overflow-hidden border-b border-slate-200/80">
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
-        <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block text-center">
-          THE SOLUTION
-        </span>
-        <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 font-display max-w-5xl mx-auto text-center leading-tight">
-          Visionary Founders By TECH6SENSE AI
-        </h2>
-        <h3 className="text-xl md:text-2xl font-bold text-[#1746D2] mb-8 font-display text-center">
-          One Global Ecosystem. Every Pillar of Your Company Handled.
-        </h3>
         
-        <p className="text-slate-650 max-w-4xl mx-auto text-base md:text-lg leading-relaxed mb-12 text-center font-medium">
-          Visionary Founders isn't a course. It isn't a mentorship group. It isn't an incubator that gives you advice and wishes you luck. It's a complete operating ecosystem — the legal foundation, technology team, brand engine, sales machine, and expansion pathway of a mature company, made available to you from the moment you join. You focus on vision, strategy, and clients. We power everything behind you — engineered from day one for founders who intend to operate internationally, not just locally.
-        </p>
+        {/* Header Stack */}
+        <div className="text-center max-w-4xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-3 mb-4">
+            <span className="w-8 h-[2px] bg-[#1746D2] rounded-full" />
+            <span className="font-display text-sm font-extrabold tracking-[0.25em] uppercase text-[#1746D2]">
+              THE SOLUTION
+            </span>
+            <span className="w-8 h-[2px] bg-[#00A86B] rounded-full" />
+          </div>
 
-        <div className="w-full mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-xl bg-white mt-12">
-          <div className="p-5 md:p-6 bg-slate-900 text-white font-display font-bold text-base md:text-lg text-center leading-snug">
-            When you join, you don't get a course. You get a working business infrastructure:
+          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display tracking-tight leading-tight pt-2">
+            Visionary Founders By TECH6SENSE AI
+          </h2>
+
+          <h3 className="text-xl md:text-2xl font-bold text-[#1746D2] font-display">
+            One Global Ecosystem. Every Pillar of Your Company Handled.
+          </h3>
+        </div>
+
+        {/* Intro Copy */}
+        <div className="max-w-4xl mx-auto space-y-6 text-slate-700 text-base md:text-lg leading-relaxed font-medium text-center mb-14 bg-slate-50 p-8 rounded-3xl border border-slate-200/80 shadow-sm">
+          <p className="font-semibold text-slate-900 text-lg md:text-xl">
+            Visionary Founders isn't a course. It isn't a mentorship group. It isn't an incubator that gives you advice and wishes you luck.
+          </p>
+          <p className="text-slate-600 text-sm md:text-base leading-relaxed">
+            It's a complete operating ecosystem — the legal foundation, technology team, brand engine, sales machine, and expansion pathway of a mature company, made available to you from the moment you join. You focus on vision, strategy, and clients. We power everything behind you — engineered from day one for founders who intend to operate internationally, not just locally.
+          </p>
+        </div>
+
+        {/* Business Infrastructure Table Section */}
+        <div className="w-full mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-2xl bg-white">
+          {/* Restored Original Dark Background for Header Banner */}
+          <div className="p-5 md:p-6 bg-slate-900 text-white font-display font-bold text-base md:text-lg text-center leading-snug flex items-center justify-center gap-3">
+            <span className="w-2 h-2 rounded-full bg-[#00A86B] animate-pulse" />
+            <span>When you join, you don't get a course. You get a working business infrastructure:</span>
           </div>
 
           {/* Mobile View: Clean Stacked Cards */}
           <div className="block md:hidden divide-y divide-slate-100">
             {functionList.map((item, i) => (
-              <div key={i} className="p-4 space-y-2 bg-white">
-                <div className="font-bold text-slate-900 text-sm flex items-start gap-2">
+              <div key={i} className="p-5 space-y-2 bg-white">
+                <div className="font-bold text-[#1746D2] text-sm flex items-start gap-2">
                   <span className="text-[#00A86B] font-extrabold text-sm shrink-0 mt-0.5">✓</span>
                   <span>{item.fn}</span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed font-medium text-justify pl-5">
+                <p className="text-xs text-slate-800 leading-relaxed font-semibold pl-5">
                   {item.get}
                 </p>
               </div>
             ))}
           </div>
 
-          {/* Desktop View: Table */}
+          {/* Desktop View: Styled Table with Royal Blue & Emerald Green Columns */}
           <table className="hidden md:table w-full text-left border-collapse">
             <thead>
-              <tr className="bg-slate-100 font-display text-sm font-extrabold text-slate-700 uppercase tracking-wider border-b border-slate-200">
-                <th className="p-4 md:p-6 w-1/3">Function</th>
-                <th className="p-4 md:p-6 w-2/3">What You Get</th>
+              <tr className="font-display text-sm font-extrabold uppercase tracking-wider border-b border-slate-200">
+                <th className="p-5 md:p-6 w-1/3 border-r border-slate-200 bg-[#1746D2]/10 text-[#1746D2]">
+                  Function
+                </th>
+                <th className="p-5 md:p-6 w-2/3 bg-[#00A86B]/10 text-[#00A86B]">
+                  What You Get
+                </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 text-sm font-medium text-slate-700">
+            <tbody className="divide-y divide-slate-200 text-sm font-medium text-slate-800">
               {functionList.map((item, i) => (
-                <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                  <td className="p-4 md:p-6 font-bold text-slate-900">{item.fn}</td>
-                  <td className="p-4 md:p-6 leading-relaxed">{item.get}</td>
+                <tr key={i} className="transition-colors group">
+                  <td className="p-5 md:p-6 font-extrabold text-[#1746D2] border-r border-slate-200 bg-[#1746D2]/5 group-hover:bg-[#1746D2]/10 transition-colors">
+                    {item.fn}
+                  </td>
+                  <td className="p-5 md:p-6 leading-relaxed font-semibold text-slate-800 bg-[#00A86B]/5 group-hover:bg-[#00A86B]/10 transition-colors">
+                    {item.get}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -76,20 +103,8 @@ export function IntroducingProgram() {
 }
 
 export function EcosystemComponents() {
-  const scrollRef = React.useRef(null);
-  const [expandedCard, setExpandedCard] = useState(null);
-
-  const scrollLeft = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -400, behavior: 'smooth' });
-    }
-  };
-
-  const scrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 400, behavior: 'smooth' });
-    }
-  };
+  const [row1Active, setRow1Active] = useState(0);
+  const [row2Active, setRow2Active] = useState(0);
 
   const components = [
     {
@@ -320,169 +335,276 @@ export function EcosystemComponents() {
     }
   ];
 
-  return (
-    <section className="py-20 md:py-28 bg-slate-900 text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#0d162a]/40 via-slate-900 to-slate-900 z-0"></div>
-      
-      <div className="max-w-[1400px] mx-auto px-6 relative z-10 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
-        <div className="max-w-2xl">
-          <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
-            Complete Ecosystem Components
-          </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 font-display">
-            Everything you need to launch, grow, and scale your AI Company— all in one integrated ecosystem
-          </h2>
-        </div>
-        <div className="flex gap-4 pb-2">
-          <button 
-            onClick={scrollLeft}
-            className="w-12 h-12 rounded-full border border-slate-700 bg-slate-800/50 hover:bg-slate-700 flex items-center justify-center text-slate-300 hover:text-white transition-colors"
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button 
-            onClick={scrollRight}
-            className="w-12 h-12 rounded-full border border-slate-700 bg-slate-800/50 hover:bg-slate-700 flex items-center justify-center text-slate-300 hover:text-white transition-colors"
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
-      </div>
+  const row1 = components.slice(0, 5);
+  const row2 = components.slice(5, 10);
 
-      <div className="relative z-10 w-full pl-6 md:pl-[calc(50vw-42.5rem)] pr-6">
-        <style>{`
-          .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-          }
-          .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-          }
-        `}</style>
-        
-        <div 
-          ref={scrollRef}
-          className="flex gap-6 overflow-x-auto hide-scrollbar snap-x snap-mandatory pb-12 pt-4"
-        >
-          {components.map((comp, idx) => (
-            <div 
-              key={idx}
-              className="min-w-[320px] w-[85vw] md:min-w-[450px] md:w-[450px] shrink-0 snap-center md:snap-start bg-slate-800/40 backdrop-blur-md rounded-[2.5rem] p-8 border border-slate-700/50 hover:border-[#1746D2]/50 hover:-translate-y-2 transition-all duration-300 flex flex-col group relative overflow-hidden shadow-2xl"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#1746D2]/10 rounded-bl-full blur-xl group-hover:bg-[#1746D2]/20 transition-colors"></div>
-              
-              <span className="font-mono text-5xl font-extrabold text-slate-700/50 mb-6 block group-hover:text-[#1746D2]/30 transition-colors">
-                {comp.num}
-              </span>
-              
-              <h3 className="text-2xl font-extrabold text-white mb-2 font-display leading-tight min-h-[64px]">
-                {comp.title}
-              </h3>
-              
-              <h4 className="text-[#00A86B] font-bold mb-4 text-sm uppercase tracking-wide">
-                {comp.subtitle}
-              </h4>
-              
-              <p className="text-slate-300 mb-6 min-h-[72px]">
+  const renderHorizontalCard = (comp, idx, activeIdx, setActiveFn) => {
+    const isActive = activeIdx === idx;
+    return (
+      <div
+        key={idx}
+        onMouseEnter={() => setActiveFn(idx)}
+        className={`relative transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer overflow-hidden rounded-2xl ${
+          isActive 
+            ? 'flex-1 min-w-[500px] bg-white border-2 border-[#1746D2] shadow-2xl p-6' 
+            : 'w-20 shrink-0 bg-white border border-slate-200/90 shadow-xs hover:border-[#1746D2]/60 hover:bg-blue-50/30 p-5'
+        }`}
+      >
+        {/* Active Expanded Content (Smooth Fade & Slide In) */}
+        <div className={`transition-all duration-500 ease-out h-full flex flex-col justify-between ${
+          isActive ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 pointer-events-none absolute inset-0 p-6'
+        }`}>
+          <div className="flex flex-col h-full justify-between space-y-3 overflow-y-auto pr-1">
+            <div>
+              <div className="flex items-center justify-between gap-3 mb-2 border-b border-slate-100 pb-3">
+                <div className="flex items-center gap-3">
+                  <span className="px-2.5 py-1 rounded-xl text-xs font-mono font-extrabold bg-[#1746D2] text-white shadow-xs">
+                    {comp.num}
+                  </span>
+                  <div>
+                    <h3 className="font-display text-lg font-extrabold text-slate-900 leading-snug">
+                      {comp.title}
+                    </h3>
+                    <p className="text-[11px] font-extrabold text-[#00A86B] uppercase tracking-wider">
+                      {comp.subtitle}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-slate-700 text-xs font-medium leading-relaxed mb-3">
                 {comp.desc}
               </p>
-              
-              <div className="flex-1 mb-8 overflow-y-auto max-h-[220px] pr-2 custom-scrollbar">
-                {comp.services ? (
-                  <ul className="space-y-2.5">
+
+              {comp.services ? (
+                <div className="space-y-1.5">
+                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#1746D2] block">
+                    Deliverables:
+                  </span>
+                  <div className="grid grid-cols-2 gap-1.5">
                     {comp.services.map((service, i) => (
-                      <li key={i} className="flex items-start gap-2.5 text-slate-300 text-xs font-medium">
-                        <svg className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
+                      <div key={i} className="flex items-start gap-1.5 text-xs font-semibold text-slate-800 bg-slate-50 p-2 rounded-xl border border-slate-200/80">
+                        <span className="text-[#00A86B] font-extrabold shrink-0">✓</span>
                         <span>{service}</span>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <div className="space-y-4">
-                    {comp.sections.map((sect, i) => (
-                      <div key={i}>
-                        <h5 className="text-[10px] font-bold uppercase tracking-wider text-[#00A86B] mb-2">{sect.heading}</h5>
-                        <ul className="space-y-2">
-                          {sect.items.map((item, j) => (
-                            <li key={j} className="flex items-start gap-2.5 text-slate-300 text-xs font-medium">
-                              <svg className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                              </svg>
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
                       </div>
                     ))}
                   </div>
+                </div>
+              ) : (
+                <div className="space-y-2">
+                  {comp.sections.map((sect, i) => (
+                    <div key={i} className="space-y-1">
+                      <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#1746D2] block">
+                        {sect.heading}
+                      </span>
+                      <div className="grid grid-cols-2 gap-1.5">
+                        {sect.items.map((item, j) => (
+                          <div key={j} className="flex items-start gap-1.5 text-xs font-semibold text-slate-800 bg-slate-50 p-2 rounded-xl border border-slate-200/80">
+                            <span className="text-[#00A86B] font-extrabold shrink-0">✓</span>
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="p-3 rounded-xl bg-[#00A86B]/10 border border-[#00A86B]/25 mt-2">
+              <div className="inline-block px-2 py-0.5 rounded bg-[#00A86B] text-white text-[9px] font-extrabold uppercase tracking-widest mb-0.5">
+                Your Benefit
+              </div>
+              <p className="text-slate-900 font-bold text-xs leading-relaxed">
+                {comp.benefit}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Collapsed Vertical Tab (Smooth Fade) */}
+        <div className={`transition-all duration-300 ease-out h-full flex flex-col items-center justify-between ${
+          !isActive ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4 pointer-events-none absolute inset-0 p-5'
+        }`}>
+          <span className="px-2 py-1 rounded-lg text-xs font-mono font-extrabold bg-[#1746D2]/10 text-[#1746D2]">
+            {comp.num}
+          </span>
+          
+          <div className="h-full flex items-center justify-center my-3">
+            <span className="font-display font-extrabold text-slate-700 text-xs tracking-wider uppercase whitespace-nowrap rotate-180 [writing-mode:vertical-lr]">
+              {comp.title}
+            </span>
+          </div>
+
+          <span className="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center text-[#1746D2] font-bold text-xs">
+            +
+          </span>
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <section className="py-20 md:py-32 bg-[#FAF9FF] relative overflow-hidden border-b border-slate-200/80">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+        
+        {/* Section Header */}
+        <div className="mb-12 text-center max-w-3xl mx-auto space-y-4">
+          <div className="inline-flex items-center gap-3">
+            <span className="w-8 h-[2px] bg-[#1746D2] rounded-full" />
+            <span className="font-display text-sm font-extrabold tracking-[0.25em] uppercase text-[#1746D2]">
+              COMPLETE ECOSYSTEM COMPONENTS
+            </span>
+            <span className="w-8 h-[2px] bg-[#00A86B] rounded-full" />
+          </div>
+          
+          <h2 className="font-display text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+            Everything You Need to Scale Your AI Company
+          </h2>
+          
+          <p className="font-body text-base md:text-lg leading-relaxed text-slate-600 font-medium">
+            10 integrated operating pillars arranged across 2 rows. Hover over any vertical tab to expand its deliverables.
+          </p>
+        </div>
+
+        {/* Desktop View: 2 Rows of Horizontal Accordions */}
+        <div className="hidden lg:block space-y-6">
+          {/* Row 1: Components 01 - 05 */}
+          <div>
+            <div className="flex flex-row h-[480px] gap-3 w-full max-w-[1400px] mx-auto p-3 bg-slate-100/70 rounded-3xl border border-slate-200/80 shadow-inner overflow-hidden">
+              {row1.map((comp, idx) => renderHorizontalCard(comp, idx, row1Active, setRow1Active))}
+            </div>
+          </div>
+
+          {/* Row 2: Components 06 - 10 */}
+          <div>
+            <div className="flex flex-row h-[480px] gap-3 w-full max-w-[1400px] mx-auto p-3 bg-slate-100/70 rounded-3xl border border-slate-200/80 shadow-inner overflow-hidden">
+              {row2.map((comp, idx) => renderHorizontalCard(comp, idx, row2Active, setRow2Active))}
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile & Tablet View */}
+        <div className="block lg:hidden grid grid-cols-1 md:grid-cols-2 gap-4">
+          {components.map((comp, idx) => {
+            const isActive = row1Active === idx;
+            return (
+              <div
+                key={idx}
+                onMouseEnter={() => setRow1Active(idx)}
+                className={`rounded-3xl bg-white transition-all duration-300 border overflow-hidden ${
+                  isActive ? 'border-2 border-[#1746D2] shadow-xl' : 'border-slate-200/90 shadow-xs'
+                }`}
+              >
+                <button
+                  onClick={() => setRow1Active(isActive ? null : idx)}
+                  className="w-full text-left p-6 flex items-start justify-between gap-4 cursor-pointer"
+                >
+                  <div className="flex items-start gap-3">
+                    <span className="px-2.5 py-1 rounded-xl text-xs font-mono font-extrabold bg-[#1746D2] text-white shrink-0">
+                      {comp.num}
+                    </span>
+                    <div>
+                      <h3 className="font-display text-base font-extrabold text-slate-900 leading-snug">
+                        {comp.title}
+                      </h3>
+                      <p className="text-xs font-bold text-[#00A86B] uppercase tracking-wider mt-0.5">
+                        {comp.subtitle}
+                      </p>
+                    </div>
+                  </div>
+                  <span className="text-xs font-bold text-[#1746D2] shrink-0">
+                    {isActive ? '−' : '+'}
+                  </span>
+                </button>
+
+                {isActive && (
+                  <div className="px-6 pb-6 pt-2 border-t border-slate-100 bg-slate-50/50 space-y-4">
+                    <p className="text-slate-700 text-xs font-medium leading-relaxed">
+                      {comp.desc}
+                    </p>
+
+                    {comp.services ? (
+                      <div className="space-y-1.5">
+                        {comp.services.map((service, i) => (
+                          <div key={i} className="flex items-start gap-2 text-xs font-semibold text-slate-800 bg-white p-2 rounded-lg border border-slate-200/70">
+                            <span className="text-[#00A86B] font-bold">✓</span>
+                            <span>{service}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="space-y-3">
+                        {comp.sections.map((sect, i) => (
+                          <div key={i} className="space-y-1">
+                            <span className="text-[10px] font-extrabold uppercase text-[#1746D2]">
+                              {sect.heading}
+                            </span>
+                            {sect.items.map((item, j) => (
+                              <div key={j} className="flex items-start gap-2 text-xs font-semibold text-slate-800 bg-white p-2 rounded-lg border border-slate-200/70">
+                                <span className="text-[#00A86B] font-bold">✓</span>
+                                <span>{item}</span>
+                              </div>
+                            ))}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    <div className="p-3 rounded-xl bg-[#00A86B]/10 border border-[#00A86B]/20">
+                      <span className="text-[9px] font-extrabold uppercase text-[#00A86B] block">Your Benefit</span>
+                      <p className="text-slate-900 font-bold text-xs mt-0.5">{comp.benefit}</p>
+                    </div>
+                  </div>
                 )}
               </div>
-              
-              <div className="p-5 rounded-2xl bg-white/5 border border-white/10 mt-auto">
-                <h6 className="font-bold text-[#00A86B] text-[0.7rem] mb-1.5 uppercase tracking-widest">Your Benefit</h6>
-                <p className="text-slate-200 font-medium text-xs md:text-sm leading-relaxed">{comp.benefit}</p>
-              </div>
-            </div>
-          ))}
-          
-          <div className="min-w-[40px] shrink-0"></div>
+            );
+          })}
         </div>
+
       </div>
     </section>
   );
 }
 
 export function WhoIsThisFor() {
-  const [showAll, setShowAll] = useState(false);
-
   const profiles = [
-    { title: "Global Founders", desc: "Founders anywhere in the world who want to build an AI or Tech company designed for international clients, not just their home market" },
-    { title: "Technical Professionals", desc: "Technical professionals who can build product but lack the legal, brand, sales, and fundraising infrastructure to scale it globally" },
-    { title: "Domain Experts", desc: "Domain experts in other industries bringing an AI or Tech venture to life in a new region" },
-    { title: "Existing Company Founders", desc: "Founders already running a company who want a credible, funded path to a second country" },
-    { title: "Corporate Executives", desc: "Corporate Executives Outgrowing the Boardroom: High-level professionals looking to monetize their industry insights by launching an independent tech enterprise with institutional backing." },
-    { title: "Agency Owners", desc: "Existing Agency Owners: IT and software boutique owners looking to pivot into AI products, scale internationally, and attract venture funding." },
-    { title: "Aspiring AI & Tech Entrepreneurs", desc: "Aspiring Tech & AI Entrepreneurs: Visionaries who have the domain expertise but lack the massive technical development and legal infrastructure to execute at scale." },
-    { title: "Students & Recent Graduates", desc: "The Student or Recent Graduate : Why apply for jobs when you can create them? Launch a real AI or IT company with senior guidance at every step — no experience barrier." },
-    { title: "Corporate Professionals", desc: "The Corporate Professional : You've built careers for others. Visionary Founders lets you build your own — with the safety net of a full support system while you transition." },
-    { title: "Non-Technical Business Owners", desc: "The Non-Tech Business Owner : You see the AI opportunity but don't code. You don't need to. Our developers, CTO, and technical leads become your technology department." },
-    { title: "Global Expansion Seekers", desc: "The Global Expansion Seeker : You already run a business and want international markets. We handle overseas company setup, market entry, and relocation pathways." }
+    { title: "Global Founders", desc: "Founders anywhere in the world who want to build an AI or Tech company designed for international clients, not just their home market." },
+    { title: "Technical Professionals", desc: "Technical professionals who can build product but lack the legal, brand, sales, and fundraising infrastructure to scale it globally." },
+    { title: "Domain Experts", desc: "Domain experts in other industries bringing an AI or Tech venture to life in a new region." },
+    { title: "Existing Company Founders", desc: "Founders already running a company who want a credible, funded path to a second country." },
+    { title: "Corporate Executives", desc: "High-level professionals looking to monetize their industry insights by launching an independent tech enterprise with institutional backing." },
+    { title: "Existing Agency Owners", desc: "IT and software boutique owners looking to pivot into AI products, scale internationally, and attract venture funding." },
+    { title: "Aspiring Tech & AI Entrepreneurs", desc: "Visionaries who have the domain expertise but lack the massive technical development and legal infrastructure to execute at scale." },
+    { title: "Students & Recent Graduates", desc: "Why apply for jobs when you can create them? Launch a real AI or IT company with senior guidance at every step — no experience barrier." },
+    { title: "Corporate Professionals", desc: "You've built careers for others. Visionary Founders lets you build your own — with the safety net of a full support system while you transition." },
+    { title: "Non-Technical Business Owners", desc: "You see the AI opportunity but don't code. You don't need to. Our developers, CTO, and technical leads become your technology department." },
+    { title: "Global Expansion Seekers", desc: "You already run a business and want international markets. We handle overseas company setup, market entry, and relocation pathways." }
   ];
-
-  const visibleProfiles = showAll ? profiles : profiles.slice(0, 4);
 
   return (
     <section className="py-20 md:py-28 bg-white relative">
       <div className="max-w-[1400px] mx-auto px-6 text-center">
-        <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
-          WHO THIS IS FOR
-        </span>
+        <div className="inline-flex items-center gap-3 mb-4">
+          <span className="w-8 h-[2px] bg-[#1746D2] rounded-full" />
+          <span className="font-display text-sm font-extrabold tracking-[0.25em] uppercase text-[#1746D2]">
+            WHO THIS IS FOR
+          </span>
+          <span className="w-8 h-[2px] bg-[#00A86B] rounded-full" />
+        </div>
         <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-12 font-display">
           Built for Visionaries at Every Stage
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-5xl mx-auto">
-          {visibleProfiles.map((profile, i) => (
-            <div key={i} className="p-6 rounded-2xl border border-slate-200 bg-slate-50 hover:bg-white hover:shadow-md transition-all">
-              <h4 className="font-display text-lg font-bold text-slate-900 mb-3">{profile.title}</h4>
-              <p className="text-slate-650 font-medium text-xs md:text-sm leading-relaxed">{profile.desc}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left max-w-6xl mx-auto">
+          {profiles.map((profile, i) => (
+            <div key={i} className="p-6 rounded-2xl border border-slate-200 bg-slate-50 hover:bg-white hover:shadow-md transition-all flex flex-col justify-between">
+              <div>
+                <h4 className="font-display text-lg font-bold text-slate-900 mb-3">{profile.title}</h4>
+                <p className="text-slate-600 font-medium text-xs md:text-sm leading-relaxed">{profile.desc}</p>
+              </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <button 
-            onClick={() => setShowAll(!showAll)}
-            className="rounded-full bg-slate-900 hover:bg-slate-800 px-8 py-3.5 text-xs font-bold tracking-widest text-white shadow-md transition-all uppercase"
-          >
-            {showAll ? "View Less" : "View All Ideal Profiles"}
-          </button>
         </div>
       </div>
     </section>

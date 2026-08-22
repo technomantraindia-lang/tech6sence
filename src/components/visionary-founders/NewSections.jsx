@@ -30,114 +30,102 @@ export function GlobalAIOpportunity() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-28 bg-white relative overflow-hidden">
+    <section ref={sectionRef} className="py-20 md:py-28 bg-white relative overflow-hidden border-b border-slate-200/80">
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
       
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-3 mb-4">
+            <span className="w-8 h-[2px] bg-[#1746D2] rounded-full" />
+            <span className="font-display text-sm font-extrabold tracking-[0.25em] uppercase text-[#1746D2]">
+              GLOBAL STATISTICS
+            </span>
+            <span className="w-8 h-[2px] bg-[#00A86B] rounded-full" />
+          </div>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display leading-[1.1] tracking-tight">
+            Artificial Intelligence Is Reshaping Every Industry
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Left Column: Eyebrow, Main Opportunity Text & 2x2 Stats Grid */}
-          <div className={`flex flex-col gap-6 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-            <div>
-              <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
-                GLOBAL STATISTICS
-              </span>
-              <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 font-display leading-[1.1]">
-                Artificial Intelligence is creating the biggest business opportunity of this century.
-              </h2>
-              <h3 className="text-lg font-bold text-[#1746D2] mb-4 font-display">
-                Artificial Intelligence Is Reshaping Every Industry
-              </h3>
-              <p className="text-slate-600 text-sm md:text-base mb-4 leading-relaxed font-medium">
+          {/* Left Column: Macro Perspective */}
+          <div className={`lg:col-span-6 flex flex-col gap-6 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+            <div className="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 shadow-sm space-y-6">
+              <p className="text-slate-700 text-base md:text-lg leading-relaxed font-medium">
                 Over the coming decade, organizations across healthcare, finance, manufacturing, retail, logistics, education, cyber security, and all professional services are expected to continue investing heavily in AI-driven innovation. Businesses worldwide are actively seeking partners capable of delivering practical AI solutions.
               </p>
-              <p className="text-slate-600 text-sm md:text-base mb-6 leading-relaxed font-medium">
+
+              <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium">
                 This growing demand creates significant opportunities for founders who combine technical capability with strong business execution. The Visionary Founders Program is designed to help entrepreneurs prepare for those opportunities by developing both the strategic and operational foundations of an AI business.
               </p>
             </div>
 
-            {/* 2x2 Grid of Stat Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {/* Stat Card 1 */}
-              <div className="bg-slate-50 border border-slate-200/60 p-5 rounded-2xl shadow-sm hover:border-violet-305 transition-all duration-300 flex flex-col justify-between">
-                <div>
-                  <span className="text-[9px] font-bold text-[#1746D2] uppercase tracking-widest font-mono block mb-1">Market Potential</span>
-                  <div className="text-3xl font-extrabold text-slate-900 font-display">$15.7T</div>
-                </div>
-                <p className="text-[11px] text-slate-500 mt-2 font-medium">Estimated global economic impact of AI by 2030 (PwC).</p>
-              </div>
-
-              {/* Stat Card 2 */}
-              <div className="bg-slate-50 border border-slate-200/60 p-5 rounded-2xl shadow-sm hover:border-violet-305 transition-all duration-300 flex flex-col justify-between">
-                <div>
-                  <span className="text-[9px] font-bold text-[#1746D2] uppercase tracking-widest font-mono block mb-1">Enterprise Demand</span>
-                  <div className="text-3xl font-extrabold text-slate-900 font-display">84% YoY</div>
-                </div>
-                <p className="text-[11px] text-slate-500 mt-2 font-medium">Increase in active enterprise requests for AI business services.</p>
-              </div>
-
-              {/* Stat Card 3 */}
-              <div className="bg-slate-50 border border-slate-200/60 p-5 rounded-2xl shadow-sm hover:border-violet-305 transition-all duration-300 flex flex-col justify-between">
-                <div>
-                  <span className="text-[9px] font-bold text-[#1746D2] uppercase tracking-widest font-mono block mb-1">Global Reach</span>
-                  <div className="text-3xl font-extrabold text-slate-900 font-display">Hubs</div>
-                </div>
-                <p className="text-[11px] text-slate-500 mt-2 font-medium">Serving founders and enterprises across USA, UK, UAE, SG & IND.</p>
-              </div>
-
-              {/* Stat Card 4 */}
-              <div className="bg-slate-50 border border-slate-200/60 p-5 rounded-2xl shadow-sm hover:border-violet-305 transition-all duration-300 flex flex-col justify-between">
-                <div>
-                  <span className="text-[9px] font-bold text-[#1746D2] uppercase tracking-widest font-mono block mb-1">Ecosystem Focus</span>
-                  <div className="text-3xl font-extrabold text-slate-900 font-display">25+</div>
-                </div>
-                <p className="text-[11px] text-slate-500 mt-2 font-medium">Core AI and deep-tech business capabilities delivered.</p>
-              </div>
+            <div className="p-6 rounded-2xl bg-gradient-to-r from-[#1746D2]/10 to-[#00A86B]/10 border border-[#1746D2]/20">
+              <h4 className="font-display font-extrabold text-slate-900 text-lg md:text-xl mb-2">
+                Artificial Intelligence is creating the biggest business opportunity of this century.
+              </h4>
+              <p className="font-body text-slate-600 text-xs md:text-sm font-medium">
+                Every industry and region is undergoing a structural shift toward intelligent technology assets.
+              </p>
             </div>
           </div>
 
-          {/* Right Column: Founder Vision, Core Pillars, Lack Matrix & Warning Card */}
-          <div className={`flex flex-col gap-6 transition-all duration-1000 delay-200 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-            <div className="border-b border-slate-100 pb-6">
-              <h4 className="font-display font-bold text-slate-900 text-xl md:text-2xl mb-4 leading-tight">The Future Doesn't Need More Employees. It Needs More AI Founders.</h4>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs md:text-sm font-semibold text-slate-800">
+          {/* Right Column: The Founder Opportunity & Lack Matrix */}
+          <div className={`lg:col-span-6 flex flex-col gap-6 transition-all duration-1000 delay-200 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+            <div className="bg-slate-900 text-white p-8 rounded-3xl shadow-xl space-y-6 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-48 h-48 bg-[#1746D2]/20 rounded-bl-full blur-2xl pointer-events-none" />
+              
+              <h3 className="font-display font-extrabold text-white text-xl md:text-2xl leading-tight">
+                The Future Doesn't Need More Employees.<br />
+                <span className="text-[#00A86B]">It Needs More AI Founders.</span>
+              </h3>
+
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs md:text-sm font-semibold text-slate-200">
                 <li className="flex items-center gap-2">
-                  <span className="w-5 h-5 rounded-full bg-[#1746D2]/20 text-[#1746D2] flex items-center justify-center text-xs shrink-0">✓</span>
+                  <span className="w-5 h-5 rounded-full bg-[#00A86B]/20 text-[#00A86B] flex items-center justify-center text-xs shrink-0 font-bold">✓</span>
                   <span>Every company is becoming an AI company.</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-5 h-5 rounded-full bg-[#1746D2]/20 text-[#1746D2] flex items-center justify-center text-xs shrink-0">✓</span>
+                  <span className="w-5 h-5 rounded-full bg-[#00A86B]/20 text-[#00A86B] flex items-center justify-center text-xs shrink-0 font-bold">✓</span>
                   <span>Every industry needs AI.</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-5 h-5 rounded-full bg-[#1746D2]/20 text-[#1746D2] flex items-center justify-center text-xs shrink-0">✓</span>
+                  <span className="w-5 h-5 rounded-full bg-[#00A86B]/20 text-[#00A86B] flex items-center justify-center text-xs shrink-0 font-bold">✓</span>
                   <span>Every government is investing in AI.</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-5 h-5 rounded-full bg-[#1746D2]/20 text-[#1746D2] flex items-center justify-center text-xs shrink-0">✓</span>
+                  <span className="w-5 h-5 rounded-full bg-[#00A86B]/20 text-[#00A86B] flex items-center justify-center text-xs shrink-0 font-bold">✓</span>
                   <span>Every enterprise is looking for AI partners.</span>
                 </li>
               </ul>
             </div>
 
-            <div>
-              <p className="text-slate-600 text-sm mb-4 font-semibold">Yet millions of talented people never start because they lack:</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+            <div className="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200/80 space-y-4">
+              <p className="text-slate-800 text-sm md:text-base font-bold">
+                Yet millions of talented people never start because they lack:
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                 {lacks.map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-slate-50 p-2.5 rounded-xl border border-slate-200/60 hover:bg-slate-100 transition-colors">
+                  <div key={i} className="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-white p-2.5 rounded-xl border border-slate-200/60 shadow-xs">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#1746D2] shrink-0" />
                     <span>{item}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="p-5 rounded-2xl bg-[#1746D2]/10 border border-[#1746D2]/20/50 text-xs md:text-sm text-[#050c1e] leading-relaxed font-medium">
-                <strong>That's where VISIONARY FOUNDERS changes everything.</strong> Instead of spending years trying to build everything yourself... You gain access to an entire Global AI business ecosystem that works alongside you.
+              <div className="p-5 rounded-2xl bg-[#1746D2]/10 border border-[#1746D2]/20 text-xs md:text-sm text-slate-900 leading-relaxed font-medium mt-4">
+                <strong className="text-[#1746D2] font-extrabold">That's where VISIONARY FOUNDERS changes everything.</strong><br />
+                Instead of spending years trying to build everything yourself... You gain access to an entire Global AI business ecosystem that works alongside you.
               </div>
             </div>
 
           </div>
         </div>
+
       </div>
     </section>
   );
@@ -175,30 +163,40 @@ export function EliteAdvantage() {
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
-            The Elite Advantage
-          </span>
+          <div className="inline-flex items-center gap-3 mb-4">
+            <span className="w-8 h-[2px] bg-[#1746D2] rounded-full" />
+            <span className="font-display text-sm font-extrabold tracking-[0.25em] uppercase text-[#1746D2]">
+              THE ELITE ADVANTAGE
+            </span>
+            <span className="w-8 h-[2px] bg-[#00A86B] rounded-full" />
+          </div>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display mb-4">
             Comparison Framework
           </h2>
         </div>
 
-        {/* Desktop View: 3 Columns Comparison */}
-        <div className="hidden lg:block overflow-hidden rounded-3xl border border-slate-200 shadow-xl bg-white">
+        {/* Desktop View: 3 Columns Dark Table Comparison */}
+        <div className="hidden lg:block overflow-hidden rounded-3xl border border-slate-800 shadow-2xl bg-slate-950">
           <table className="w-full border-collapse text-left">
             <thead>
-              <tr className="bg-slate-900 text-white font-display text-sm font-extrabold uppercase tracking-wider">
-                <th className="p-6 w-1/3">Without Visionary Founders</th>
-                <th className="p-6 w-1/3 bg-[#0d162a]/40 border-x border-white/10">With Visionary Founders</th>
-                <th className="p-6 w-1/3">The Outcome</th>
+              <tr className="bg-slate-950 text-white font-display text-xs md:text-sm font-extrabold uppercase tracking-wider border-b border-slate-800">
+                <th className="p-6 w-1/3 border-r border-slate-800 text-white">Without Visionary Founders</th>
+                <th className="p-6 w-1/3 border-r border-slate-800 text-white">With Visionary Founders</th>
+                <th className="p-6 w-1/3 text-white">The Outcome</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 font-medium text-sm text-slate-700">
+            <tbody className="divide-y divide-white/15 font-medium text-sm">
               {comparisons.map((row, i) => (
-                <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                  <td className="p-6 text-slate-500">{row.without}</td>
-                  <td className="p-6 bg-[#1746D2]/10/20 text-slate-900 font-semibold border-x border-[#1746D2]/20/50">{row.with}</td>
-                  <td className="p-6 text-emerald-700 font-bold">{row.outcome}</td>
+                <tr key={i} className="transition-colors hover:brightness-105">
+                  <td className="p-6 text-white bg-slate-900 border-r border-slate-800 font-medium">
+                    {row.without}
+                  </td>
+                  <td className="p-6 bg-[#1746D2] text-white font-extrabold border-r border-white/15">
+                    {row.with}
+                  </td>
+                  <td className="p-6 bg-[#00A86B] text-white font-extrabold">
+                    {row.outcome}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -208,18 +206,18 @@ export function EliteAdvantage() {
         {/* Mobile View: Stacked comparison cards */}
         <div className="lg:hidden space-y-6">
           {comparisons.map((row, i) => (
-            <div key={i} className="border border-slate-200 rounded-2xl bg-white shadow-sm p-5 space-y-4">
-              <div>
-                <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Without Visionary Founders</span>
-                <p className="text-xs text-slate-500 font-medium">{row.without}</p>
+            <div key={i} className="border border-slate-800 rounded-2xl shadow-xl overflow-hidden divide-y divide-white/15">
+              <div className="p-5 bg-slate-900">
+                <span className="block text-[10px] font-extrabold text-slate-300 uppercase tracking-widest mb-1">Without Visionary Founders</span>
+                <p className="text-xs text-white font-medium">{row.without}</p>
               </div>
-              <div className="border-t border-slate-100 pt-3">
-                <span className="block text-[10px] font-bold text-[#1746D2] uppercase tracking-widest mb-1">With Visionary Founders</span>
-                <p className="text-xs text-slate-900 font-semibold">{row.with}</p>
+              <div className="p-5 bg-[#1746D2]">
+                <span className="block text-[10px] font-extrabold text-blue-100 uppercase tracking-widest mb-1">With Visionary Founders</span>
+                <p className="text-xs text-white font-bold">{row.with}</p>
               </div>
-              <div className="border-t border-slate-100 pt-3">
-                <span className="block text-[10px] font-bold text-emerald-600 uppercase tracking-widest mb-1">The Outcome</span>
-                <p className="text-xs text-emerald-700 font-bold">{row.outcome}</p>
+              <div className="p-5 bg-[#00A86B]">
+                <span className="block text-[10px] font-extrabold text-emerald-100 uppercase tracking-widest mb-1">The Outcome</span>
+                <p className="text-xs text-white font-extrabold">{row.outcome}</p>
               </div>
             </div>
           ))}
@@ -238,22 +236,27 @@ export function WhatYouWalkAwayWith() {
     { title: 'Real Product or Service', desc: 'A real product or service, built by a technical team led by an actual CTO — not freelancers assembled ad hoc' },
     { title: 'Client Acquisition Engine', desc: 'A trained, repeatable client acquisition engine built for winning clients across borders' },
     { title: 'Active Capital Pathways', desc: 'Active capital pathways — government-backed funding at home, private capital abroad' },
-    { title: 'Roadmap to Second Country', desc: 'A live roadmap to a second country — entity, compliance, and visa groundwork already laid' }
+    { title: 'Roadmap to Second Country', desc: 'A live roadmap to a second country — entity setup, compliance, and visa groundwork already laid' }
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-slate-50 border-t border-slate-200/80 text-slate-900 relative overflow-hidden">
-      {/* Background Soft Glow */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-gradient-to-bl from-blue-100/50 to-transparent blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-emerald-100/40 to-transparent blur-[100px] pointer-events-none" />
+    <section className="py-20 md:py-28 bg-slate-950 border-t border-slate-800 text-white relative overflow-hidden">
+      {/* Background Soft Glows */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#1746D2]/20 blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-[#00A86B]/20 blur-[130px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-30 pointer-events-none" />
       
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <span className="font-mono text-xs font-extrabold text-[#1746D2] uppercase tracking-[0.25em] mb-4 block">
-            What You Walk Away With
-          </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display mb-4 tracking-tight">
+          <div className="inline-flex items-center gap-3 mb-4">
+            <span className="w-8 h-[2px] bg-[#D4AF37] rounded-full" />
+            <span className="font-display text-sm font-extrabold tracking-[0.25em] uppercase text-[#D4AF37]">
+              WHAT YOU WALK AWAY WITH
+            </span>
+            <span className="w-8 h-[2px] bg-[#00A86B] rounded-full" />
+          </div>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white font-display mb-4 tracking-tight">
             Tangible Deliverables & Core Assets
           </h2>
         </div>
@@ -262,167 +265,35 @@ export function WhatYouWalkAwayWith() {
           {deliverables.map((item, i) => (
             <div 
               key={i} 
-              className="p-8 rounded-[2rem] bg-white border border-slate-200/80 shadow-sm hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:border-[#1746D2]/40 hover:-translate-y-1 transition-all duration-300 flex flex-col group"
+              className="p-8 rounded-[2rem] bg-slate-900/90 backdrop-blur-md border border-slate-800/90 shadow-xl hover:shadow-[0_0_30px_rgba(23,70,210,0.25)] hover:border-[#1746D2]/60 hover:-translate-y-1 transition-all duration-300 flex flex-col group relative overflow-hidden"
             >
-              <div className="w-10 h-10 rounded-xl bg-[#1746D2]/10 border border-[#1746D2]/20 text-[#1746D2] flex items-center justify-center mb-6">
+              {/* Top-Right Corner Hover Color Glow Effect */}
+              <div className="absolute -top-12 -right-12 w-44 h-44 bg-gradient-to-br from-[#1746D2] via-[#00A86B] to-transparent rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-all duration-500 pointer-events-none" />
+              <div className="absolute top-0 right-0 w-28 h-28 bg-gradient-to-bl from-[#60a5fa]/25 via-[#00A86B]/15 to-transparent rounded-bl-[2.5rem] opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none" />
+              
+              <div className="w-10 h-10 rounded-xl bg-[#1746D2]/20 border border-[#1746D2]/40 text-[#60a5fa] flex items-center justify-center mb-6 shadow-inner relative z-10">
                 <span className="font-mono font-bold text-sm">0{i + 1}</span>
               </div>
-              <h4 className="text-lg font-bold font-display text-slate-900 mb-3 group-hover:text-[#1746D2] transition-colors">
+              <h4 className="text-lg font-bold font-display text-white mb-3 group-hover:text-[#60a5fa] transition-colors relative z-10">
                 {item.title}
               </h4>
-              <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-medium">
+              <p className="text-slate-300 text-xs md:text-sm leading-relaxed font-medium relative z-10">
                 {item.desc}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 text-center max-w-3xl mx-auto border-t border-slate-200/80 pt-8">
-          <p className="text-sm md:text-base text-[#1746D2] font-semibold italic leading-relaxed">
-            "This isn't a certificate program. It's an operating company, built with you, engineered to compete globally from the first day it exists."
-          </p>
+        <div className="mt-16 text-center max-w-3xl mx-auto border-t border-slate-800/80 pt-8">
+          <div className="p-6 rounded-2xl bg-gradient-to-r from-[#1746D2]/15 via-slate-900/80 to-[#00A86B]/15 border border-slate-800/80 backdrop-blur-sm">
+            <p className="text-sm md:text-base text-[#38bdf8] font-semibold italic leading-relaxed">
+              "This isn't a certificate program. It's an operating company, built with you, engineered to compete globally from the first day it exists."
+            </p>
+          </div>
         </div>
 
       </div>
     </section>
-  );
-}
-// Interactive Cybernetic SVG Animated Globe Visual Component
-function GlobalInfraVisual() {
-  return (
-    <div className="relative w-full h-full bg-[#03060f] overflow-hidden flex items-center justify-center">
-      {/* Grid Pattern Background */}
-      <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] [background-size:24px_24px]" />
-      
-      {/* Radar sweeping circle */}
-      <div className="absolute w-[80%] h-[80%] rounded-full border border-blue-500/10 flex items-center justify-center animate-[spin_12s_linear_infinite]">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2.5px] h-1/2 bg-gradient-to-t from-emerald-500 via-emerald-500/30 to-transparent origin-bottom" />
-      </div>
-      <div className="absolute w-[60%] h-[60%] rounded-full border border-blue-500/15" />
-      <div className="absolute w-[40%] h-[40%] rounded-full border border-blue-500/20" />
-
-      {/* Cybernetic Rotating Globe SVG */}
-      <svg className="w-[85%] h-[85%] relative z-10 animate-[spin_60s_linear_infinite]" viewBox="0 0 200 200" fill="none">
-        
-        {/* Outer HUD Rings / Radar Compass Ticks */}
-        <circle cx="100" cy="100" r="90" stroke="#1746D2" strokeWidth="0.5" strokeDasharray="2 6" opacity="0.3" />
-        <circle cx="100" cy="100" r="94" stroke="#00A86B" strokeWidth="0.75" strokeDasharray="1 12" opacity="0.4" className="animate-[spin_20s_linear_infinite_reverse]" />
-        <circle cx="100" cy="100" r="85" stroke="#1746D2" strokeWidth="0.5" opacity="0.15" />
-        
-        {/* Tilted Globe Grid Group */}
-        <g transform="rotate(-15 100 100)">
-          {/* Longitudinal Rings */}
-          <ellipse cx="100" cy="100" rx="80" ry="15" stroke="#1746D2" strokeWidth="0.5" opacity="0.15" />
-          <ellipse cx="100" cy="100" rx="80" ry="35" stroke="#1746D2" strokeWidth="0.5" opacity="0.25" />
-          <ellipse cx="100" cy="100" rx="80" ry="55" stroke="#1746D2" strokeWidth="0.5" opacity="0.35" />
-          <ellipse cx="100" cy="100" rx="80" ry="75" stroke="#1746D2" strokeWidth="0.5" opacity="0.45" />
-
-          {/* Latitudinal Rings */}
-          <ellipse cx="100" cy="100" rx="15" ry="80" stroke="#1746D2" strokeWidth="0.5" opacity="0.15" />
-          <ellipse cx="100" cy="100" rx="35" ry="80" stroke="#1746D2" strokeWidth="0.5" opacity="0.25" />
-          <ellipse cx="100" cy="100" rx="55" ry="80" stroke="#1746D2" strokeWidth="0.5" opacity="0.35" />
-          <ellipse cx="100" cy="100" rx="75" ry="80" stroke="#1746D2" strokeWidth="0.5" opacity="0.45" />
-
-          {/* Equator & Prime Meridian */}
-          <line x1="20" y1="100" x2="180" y2="100" stroke="#1746D2" strokeWidth="0.5" opacity="0.4" />
-          <line x1="100" y1="20" x2="100" y2="180" stroke="#1746D2" strokeWidth="0.5" opacity="0.4" />
-        </g>
-        
-        {/* Network Connection Paths (Mesh) */}
-        <path id="path1" d="M 50 60 Q 75 40 100 30" stroke="#1746D2" strokeWidth="0.75" opacity="0.5" />
-        <path id="path2" d="M 100 30 Q 125 40 150 60" stroke="#1746D2" strokeWidth="0.75" opacity="0.5" />
-        <path id="path3" d="M 150 60 Q 160 100 150 140" stroke="#00A86B" strokeWidth="0.75" opacity="0.4" />
-        <path id="path4" d="M 150 140 Q 125 155 100 170" stroke="#1746D2" strokeWidth="0.75" opacity="0.5" />
-        <path id="path5" d="M 100 170 Q 75 155 50 140" stroke="#1746D2" strokeWidth="0.75" opacity="0.5" />
-        <path id="path6" d="M 50 140 Q 40 100 50 60" stroke="#00A86B" strokeWidth="0.75" opacity="0.4" />
-        
-        {/* Cross-Regional Secondary Connection Arcs */}
-        <path id="path-cross1" d="M 50 60 Q 100 100 150 140" stroke="#00A86B" strokeWidth="0.75" strokeDasharray="2 2" opacity="0.4" />
-        <path id="path-cross2" d="M 100 30 Q 100 100 100 170" stroke="#D4AF37" strokeWidth="0.75" strokeDasharray="1 3" opacity="0.5" />
-        <path id="path-cross3" d="M 150 60 Q 100 100 50 140" stroke="#1746D2" strokeWidth="0.75" strokeDasharray="2 2" opacity="0.4" />
-        
-        {/* Pulsing Nodes (Hubs) */}
-        {/* London */}
-        <g className="animate-pulse">
-          <circle cx="100" cy="30" r="3.5" fill="#00A86B" />
-          <circle cx="100" cy="30" r="7" stroke="#00A86B" strokeWidth="0.5" opacity="0.4" />
-          <text x="106" y="27" fill="#94a3b8" fontSize="4.5" fontFamily="monospace" fontWeight="bold" opacity="0.8">LON</text>
-        </g>
-        {/* New York */}
-        <g className="animate-pulse" style={{ animationDelay: '0.4s' }}>
-          <circle cx="50" cy="60" r="3.5" fill="#1746D2" />
-          <circle cx="50" cy="60" r="7" stroke="#1746D2" strokeWidth="0.5" opacity="0.4" />
-          <text x="35" y="57" fill="#94a3b8" fontSize="4.5" fontFamily="monospace" fontWeight="bold" opacity="0.8">NYC</text>
-        </g>
-        {/* Tokyo */}
-        <g className="animate-pulse" style={{ animationDelay: '0.8s' }}>
-          <circle cx="150" cy="60" r="3.5" fill="#D4AF37" />
-          <circle cx="150" cy="60" r="7" stroke="#D4AF37" strokeWidth="0.5" opacity="0.4" />
-          <text x="156" y="57" fill="#94a3b8" fontSize="4.5" fontFamily="monospace" fontWeight="bold" opacity="0.8">TOK</text>
-        </g>
-        {/* Sydney */}
-        <g className="animate-pulse" style={{ animationDelay: '1.2s' }}>
-          <circle cx="150" cy="140" r="3.5" fill="#1746D2" />
-          <circle cx="150" cy="140" r="7" stroke="#1746D2" strokeWidth="0.5" opacity="0.4" />
-          <text x="156" y="137" fill="#94a3b8" fontSize="4.5" fontFamily="monospace" fontWeight="bold" opacity="0.8">SYD</text>
-        </g>
-        {/* GIFT City */}
-        <g className="animate-pulse" style={{ animationDelay: '0.2s' }}>
-          <circle cx="100" cy="170" r="3.5" fill="#00A86B" />
-          <circle cx="100" cy="170" r="7" stroke="#00A86B" strokeWidth="0.5" opacity="0.4" />
-          <text x="106" y="173" fill="#94a3b8" fontSize="4.5" fontFamily="monospace" fontWeight="bold" opacity="0.8">GIFT</text>
-        </g>
-        {/* Toronto */}
-        <g className="animate-pulse" style={{ animationDelay: '0.6s' }}>
-          <circle cx="50" cy="140" r="3.5" fill="#D4AF37" />
-          <circle cx="50" cy="140" r="7" stroke="#D4AF37" strokeWidth="0.5" opacity="0.4" />
-          <text x="35" y="137" fill="#94a3b8" fontSize="4.5" fontFamily="monospace" fontWeight="bold" opacity="0.8">TOR</text>
-        </g>
-
-        {/* Multiple Animated Data Packets traveling along paths */}
-        <circle cx="0" cy="0" r="2.2" fill="#fff" className="shadow-[0_0_8px_#fff]">
-          <animateMotion 
-            path="M 50 60 Q 75 40 100 30" 
-            dur="3s" 
-            repeatCount="indefinite" 
-          />
-        </circle>
-        <circle cx="0" cy="0" r="1.8" fill="#00A86B">
-          <animateMotion 
-            path="M 100 30 Q 125 40 150 60" 
-            dur="2.5s" 
-            repeatCount="indefinite" 
-          />
-        </circle>
-        <circle cx="0" cy="0" r="2.2" fill="#fff">
-          <animateMotion 
-            path="M 150 140 Q 125 155 100 170" 
-            dur="4s" 
-            repeatCount="indefinite" 
-          />
-        </circle>
-        <circle cx="0" cy="0" r="1.8" fill="#D4AF37">
-          <animateMotion 
-            path="M 100 30 Q 100 100 100 170" 
-            dur="3.5s" 
-            repeatCount="indefinite" 
-          />
-        </circle>
-      </svg>
-      
-      {/* Decorative cybernetic scanning line */}
-      <div className="absolute inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#00A86B]/60 to-transparent top-0 animate-[scan_3s_linear_infinite]" />
-
-      {/* Styles for scanning animation */}
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes scan {
-          0% { top: 0%; opacity: 0; }
-          10% { opacity: 1; }
-          90% { opacity: 1; }
-          100% { top: 100%; opacity: 0; }
-        }
-      `}} />
-    </div>
   );
 }
 
@@ -430,40 +301,31 @@ function GlobalInfraVisual() {
 export function WhyTech6SenseAI() {
   const capabilities = [
     "AI Product Engineering", "Generative & Agentic AI Systems", "AI Agents", "AI Automation", 
-    "Data Intelligence", "computer vision", "NLP", "AI governance", "blockchain", "IoT", 
-    "and AR/VR", "Web & App Development", "Emerging Technologies — 25+ capabilities at your command."
+    "Data Intelligence", "computer vision, NLP, AI governance, blockchain, IoT, and AR/VR", 
+    "Web & App Development", "Emerging Technologies — 25+ capabilities at your command."
   ];
 
   return (
     <section className="pt-20 md:pt-28 pb-0 bg-white relative overflow-hidden border-t border-slate-200">
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
-        {/* Top Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-16">
-          {/* Left: High-Tech Global Machine Infrastructure Interactive Visual */}
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-lg aspect-[4/3] rounded-3xl border border-slate-200/80 shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] overflow-hidden group">
-              <GlobalInfraVisual />
-              <div className="absolute bottom-4 left-4 right-4 z-10">
-                <span className="inline-block px-3 py-1 rounded-full bg-[#1746D2]/80 backdrop-blur-md border border-white/20 text-white font-display text-sm font-extrabold uppercase tracking-wider shadow-md">
-                  GLOBAL MACHINE INFRASTRUCTURE
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right: Copy */}
-          <div className="lg:col-span-7">
-            <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
+        {/* Main Content Layout (max-w-[1400px]) */}
+        <div className="text-center max-w-[1400px] mx-auto mb-16">
+          <div className="inline-flex items-center gap-3 mb-4">
+            <span className="w-8 h-[2px] bg-[#1746D2] rounded-full" />
+            <span className="font-display text-sm font-extrabold tracking-[0.25em] uppercase text-[#1746D2]">
               WHY TECH6SENSE AI
             </span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 font-display leading-[1.1]">
-              Backed by a Company That Builds AI for the World.
-            </h2>
-            <p className="text-slate-605 text-sm md:text-base mb-6 leading-relaxed font-medium">
+            <span className="w-8 h-[2px] bg-[#00A86B] rounded-full" />
+          </div>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display tracking-tight leading-tight mb-6">
+            Backed by a Company That Builds AI for the World.
+          </h2>
+          <div className="space-y-4 text-slate-600 text-base md:text-lg leading-relaxed font-medium max-w-[1400px] mx-auto">
+            <p>
               Visionary Founders isn't run by coaches or content creators. It's powered by TECH6SENSE AI — a global AI development company serving clients across the USA, UK, Australia, Canada, UAE, EU, India and Singapore.
             </p>
-            <p className="text-slate-605 text-sm md:text-base leading-relaxed font-medium">
+            <p className="text-slate-700 font-semibold">
               Every pillar of this ecosystem — the developers, the CTOs, the project managers, the client acquisition systems — is the same infrastructure TECH6SENSE AI uses to deliver AI products and IT services worldwide. We're not teaching theory. We're plugging you into a working global machine.
             </p>
           </div>
@@ -471,7 +333,7 @@ export function WhyTech6SenseAI() {
       </div> {/* Close max-w-[1400px] container */}
 
       {/* Full Width Capability Strip - Infinite Marquee Ticker */}
-      <div className="w-full overflow-hidden bg-slate-950 border-y border-white/5 py-6 mt-16 select-none shadow-lg relative">
+      <div className="w-full overflow-hidden bg-slate-950 border-y border-white/5 py-6 mt-12 select-none shadow-lg relative">
         {/* Gradient edge masks to fade text smoothly at screen boundaries */}
         <div className="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-slate-950 to-transparent z-10 pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none" />
@@ -498,9 +360,7 @@ export function WhyTech6SenseAI() {
               {cap}
             </span>
           ))}
-     
         </div>
-
       </div>
     </section>
   );
@@ -536,9 +396,13 @@ export function TimelineOverview() {
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
-            TIMELINE OVERVIEW
-          </span>
+          <div className="inline-flex items-center gap-3 mb-4">
+            <span className="w-8 h-[2px] bg-[#1746D2] rounded-full" />
+            <span className="font-display text-sm font-extrabold tracking-[0.25em] uppercase text-[#1746D2]">
+              TIMELINE OVERVIEW
+            </span>
+            <span className="w-8 h-[2px] bg-[#00A86B] rounded-full" />
+          </div>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display mb-4">
             Typical Durations & Cohort Benchmarks
           </h2>
@@ -608,9 +472,13 @@ export function NationalVsGlobalComparison() {
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
-            Ecosystem Structure & Your Investment
-          </span>
+          <div className="inline-flex items-center gap-3 mb-4">
+            <span className="w-8 h-[2px] bg-[#1746D2] rounded-full" />
+            <span className="font-display text-sm font-extrabold tracking-[0.25em] uppercase text-[#1746D2]">
+              ECOSYSTEM STRUCTURE & YOUR INVESTMENT
+            </span>
+            <span className="w-8 h-[2px] bg-[#00A86B] rounded-full" />
+          </div>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display mb-4">
             National vs. Global Structuring
           </h2>
@@ -623,21 +491,27 @@ export function NationalVsGlobalComparison() {
         </div>
 
         {/* Desktop View */}
-        <div className="hidden lg:block overflow-hidden rounded-3xl border border-slate-200 shadow-xl bg-white">
+        <div className="hidden lg:block overflow-hidden rounded-3xl border border-slate-800 shadow-2xl bg-slate-950">
           <table className="w-full border-collapse text-left">
             <thead>
-              <tr className="bg-slate-950 text-white font-display text-sm font-extrabold uppercase tracking-wider">
-                <th className="p-5 w-1/4">Feature / Resources</th>
-                <th className="p-5 w-3/8">NATIONAL (Launch & Dominate Your Home Market)</th>
-                <th className="p-5 w-3/8 bg-[#0d162a]/40 border-l border-white/10">GLOBAL (Build a Company That Operates Globally)</th>
+              <tr className="bg-slate-950 text-white font-display text-xs md:text-sm font-extrabold uppercase tracking-wider border-b border-slate-800">
+                <th className="p-6 w-1/4 border-r border-slate-800 text-white">Feature / Resources</th>
+                <th className="p-6 w-3/8 border-r border-slate-800 text-white">NATIONAL (Launch & Dominate Your Home Market)</th>
+                <th className="p-6 w-3/8 text-white">GLOBAL (Build a Company That Operates Globally)</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 font-medium text-xs md:text-sm text-slate-700">
+            <tbody className="divide-y divide-white/15 font-medium text-xs md:text-sm">
               {features.map((feat, i) => (
-                <tr key={i} className="hover:bg-slate-50/50 transition-colors">
-                  <td className="p-5 font-bold text-slate-900">{feat.title}</td>
-                  <td className="p-5 text-slate-500 leading-relaxed">{feat.local}</td>
-                  <td className="p-5 bg-[#1746D2]/10/20 text-slate-900 font-semibold border-l border-[#1746D2]/20/50 leading-relaxed">{feat.global}</td>
+                <tr key={i} className="transition-colors hover:brightness-105">
+                  <td className="p-6 text-white bg-slate-900 font-extrabold border-r border-slate-800">
+                    {feat.title}
+                  </td>
+                  <td className="p-6 bg-[#1746D2] text-white font-medium border-r border-white/15 leading-relaxed">
+                    {feat.local}
+                  </td>
+                  <td className="p-6 bg-[#00A86B] text-white font-extrabold leading-relaxed">
+                    {feat.global}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -647,28 +521,28 @@ export function NationalVsGlobalComparison() {
         {/* Mobile View */}
         <div className="lg:hidden space-y-4">
           {features.map((feat, i) => (
-            <div key={i} className="border border-slate-200 rounded-2xl bg-white shadow-sm overflow-hidden">
+            <div key={i} className="border border-slate-800 rounded-2xl bg-slate-950 shadow-xl overflow-hidden divide-y divide-white/15">
               <button 
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full p-5 text-left flex justify-between items-center bg-slate-50/50 focus:outline-none"
+                className="w-full p-5 text-left flex justify-between items-center bg-slate-950 text-white focus:outline-none"
               >
-                <span className="font-bold text-slate-900 text-xs md:text-sm">{feat.title}</span>
-                <span className={`text-[#1746D2] transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`}>
+                <span className="font-bold text-white text-xs md:text-sm">{feat.title}</span>
+                <span className={`text-[#00A86B] transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`}>
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
                   </svg>
                 </span>
               </button>
               
-              <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === i ? 'max-h-80 border-t border-slate-100 p-5' : 'max-h-0'}`}>
+              <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === i ? 'max-h-80 border-t border-slate-800 p-5' : 'max-h-0'}`}>
                 <div className="space-y-4">
-                  <div>
-                    <span className="block text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-1">National Track</span>
-                    <p className="text-xs text-slate-500 font-medium leading-relaxed">{feat.local}</p>
+                  <div className="p-4 rounded-xl bg-[#1746D2] text-white">
+                    <span className="block text-[10px] font-extrabold text-blue-100 uppercase tracking-widest mb-1">National Track</span>
+                    <p className="text-xs text-white font-medium leading-relaxed">{feat.local}</p>
                   </div>
-                  <div>
-                    <span className="block text-[9px] font-bold text-[#1746D2] uppercase tracking-widest mb-1">Global Track</span>
-                    <p className="text-xs text-slate-900 font-semibold leading-relaxed">{feat.global}</p>
+                  <div className="p-4 rounded-xl bg-[#00A86B] text-white">
+                    <span className="block text-[10px] font-extrabold text-emerald-100 uppercase tracking-widest mb-1">Global Track</span>
+                    <p className="text-xs text-white font-extrabold leading-relaxed">{feat.global}</p>
                   </div>
                 </div>
               </div>
@@ -681,7 +555,7 @@ export function NationalVsGlobalComparison() {
   );
 }
 
-// Section 7: Founder Selection Criteria
+// Section 7: Founder Selection Criteria & Application Process (Merged)
 export function FounderSelectionCriteria() {
   const criteria = [
     { title: 'Market Problem', desc: 'A clearly defined problem they\'re solving, in a market with real paying demand' },
@@ -690,38 +564,170 @@ export function FounderSelectionCriteria() {
     { title: 'International Ambition', desc: 'For Global tier specifically: a genuine international ambition, not just interest in the label' }
   ];
 
+  const evalCriteria = [
+    { name: 'Founder Commitment', desc: 'Genuine intent to build and operate the company full-time, not a side project' },
+    { name: 'Market Viability', desc: 'A real, addressable problem in a market with paying demand' },
+    { name: 'Fit with Program Structure', desc: "Whether Ascend or Global tier genuinely matches the founder's goals" },
+    { name: 'Execution Readiness', desc: 'Founder\'s ability to actively participate in building the business alongside the team' }
+  ];
+
   return (
     <section className="py-20 md:py-28 bg-slate-50 relative overflow-hidden border-b border-slate-200">
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
+        {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <span className="font-display text-sm font-extrabold text-[#1746D2] uppercase tracking-widest mb-4 block">
-            WHO WE'RE LOOKING FOR
-          </span>
+          <div className="inline-flex items-center gap-3 mb-4">
+            <span className="w-8 h-[2px] bg-[#1746D2] rounded-full" />
+            <span className="font-display text-sm font-extrabold tracking-[0.25em] uppercase text-[#1746D2]">
+              APPLICATION PROCESS & WHO WE'RE LOOKING FOR
+            </span>
+            <span className="w-8 h-[2px] bg-[#00A86B] rounded-full" />
+          </div>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display mb-4">
-            Candidate Requirements for Cohort Selection
+            Selection & Application Process
           </h2>
           <p className="text-slate-655 text-sm md:text-base font-semibold">
-            The program is highly selective by design — not every applicant is accepted. We prioritize founders who show:
+            Every applicant goes through a real evaluation to ensure mutual fit. Here's exactly how it works step-by-step:
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {criteria.map((crit, i) => (
-            <div key={i} className="p-8 rounded-[2rem] bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col">
-              <div className="w-10 h-10 rounded-xl bg-[#1746D2]/10 text-[#1746D2] flex items-center justify-center font-mono font-bold text-sm mb-6 border border-[#1746D2]/20">
-                0{i + 1}
+        {/* Integrated Application Steps (First - max-w-[1400px]) */}
+        <div className="bg-white p-8 md:p-14 rounded-3xl border border-slate-200 shadow-xl max-w-[1400px] mx-auto mb-20">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 font-display mb-3">
+              Step-by-Step Selection & Onboarding Process
+            </h3>
+            <p className="text-slate-600 text-xs md:text-sm leading-relaxed max-w-2xl mx-auto">
+              This isn't an automatic checkout. Every applicant goes through a real evaluation. Here's what happens step-by-step:
+            </p>
+          </div>
+
+          <div className="space-y-10">
+            {/* Step 1 */}
+            <div className="flex gap-6 items-start">
+              <div className="w-12 h-12 rounded-full bg-[#1746D2] text-white flex items-center justify-center font-bold font-mono text-lg shrink-0 shadow-md">1</div>
+              <div>
+                <h4 className="font-display font-bold text-slate-900 text-base md:text-lg mb-2">Step 1 — Submit Your Application</h4>
+                <p className="text-slate-600 text-xs md:text-sm leading-relaxed">Complete the application form with your idea, target market, industry, and which tier you believe fits — National or Global. This takes most founders 10–15 minutes.</p>
               </div>
-              <h4 className="font-display font-bold text-slate-900 text-lg mb-3">{crit.title}</h4>
-              <p className="text-slate-500 font-medium text-xs leading-relaxed">{crit.desc}</p>
             </div>
-          ))}
+
+            {/* Step 2 */}
+            <div className="flex gap-6 items-start">
+              <div className="w-12 h-12 rounded-full bg-[#1746D2] text-white flex items-center justify-center font-bold font-mono text-lg shrink-0 shadow-md">2</div>
+              <div className="w-full">
+                <h4 className="font-display font-bold text-slate-900 text-base md:text-lg mb-2">Step 2 — Application Review</h4>
+                <p className="text-slate-600 text-xs md:text-sm leading-relaxed mb-4">Our team reviews every application against four criteria:</p>
+                <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm bg-slate-50 mt-4">
+                  <table className="w-full border-collapse text-left text-xs md:text-sm">
+                    <thead>
+                      <tr className="bg-slate-950 text-white font-mono text-[10px] md:text-xs font-bold uppercase tracking-wider">
+                        <th className="p-4 w-1/3">Criteria</th>
+                        <th className="p-4 w-2/3">What We Look For</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-200 font-medium text-slate-700">
+                      {evalCriteria.map((item, i) => (
+                        <tr key={i} className="hover:bg-white transition-colors">
+                          <td className="p-4 font-bold text-slate-900">{item.name}</td>
+                          <td className="p-4 text-slate-600 leading-relaxed">{item.desc}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="flex gap-6 items-start">
+              <div className="w-12 h-12 rounded-full bg-[#1746D2] text-white flex items-center justify-center font-bold font-mono text-lg shrink-0 shadow-md">3</div>
+              <div>
+                <h4 className="font-display font-bold text-slate-900 text-base md:text-lg mb-2">Step 3 — Founder Strategy Call</h4>
+                <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
+                  Shortlisted applicants are invited to a confidential 30–45 minute call with a Program Advisor. This is a two-way conversation:
+                </p>
+                <ul className="list-disc pl-5 mt-3 text-slate-600 text-xs md:text-sm space-y-1.5 font-medium">
+                  <li>We assess your idea, market, and readiness in more depth</li>
+                  <li>You get direct answers on program structure, tier fit, timelines, and pricing</li>
+                  <li>We map out what Month 1 through your first client would realistically look like</li>
+                </ul>
+                <p className="text-slate-500 text-xs italic mt-3">There's no pressure to decide on this call — it exists to make sure both sides are confident before moving forward.</p>
+              </div>
+            </div>
+
+            {/* Step 4 */}
+            <div className="flex gap-6 items-start">
+              <div className="w-12 h-12 rounded-full bg-[#1746D2] text-white flex items-center justify-center font-bold font-mono text-lg shrink-0 shadow-md">4</div>
+              <div>
+                <h4 className="font-display font-bold text-slate-900 text-base md:text-lg mb-2">Step 4 — Tier Confirmation & Offer</h4>
+                <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
+                  Based on the call, we confirm which tier — National or Global — genuinely fits your goals, and issue a formal offer outlining full scope, ecosystem fee structure, and timeline benchmarks.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 5 */}
+            <div className="flex gap-6 items-start">
+              <div className="w-12 h-12 rounded-full bg-[#1746D2] text-white flex items-center justify-center font-bold font-mono text-lg shrink-0 shadow-md">5</div>
+              <div>
+                <h4 className="font-display font-bold text-slate-900 text-base md:text-lg mb-2">Step 5 — Agreement & Onboarding Kickoff</h4>
+                <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
+                  Once you accept the offer, onboarding begins within 5 business days. You're introduced to your full team (Branding Manager, Tech Lead, Dedicated CTO, and Client Success Manager).
+                </p>
+              </div>
+            </div>
+
+            {/* Step 6 */}
+            <div className="flex gap-6 items-start">
+              <div className="w-12 h-12 rounded-full bg-[#1746D2] text-white flex items-center justify-center font-bold font-mono text-lg shrink-0 shadow-md">6</div>
+              <div>
+                <h4 className="font-display font-bold text-slate-900 text-base md:text-lg mb-2">Step 6 — Build Phase Begins</h4>
+                <p className="text-slate-600 text-xs md:text-sm leading-relaxed">Legal registration, branding, website, and product development begin in parallel, coordinated by your Project Manager.</p>
+              </div>
+            </div>
+
+            {/* Step 7 */}
+            <div className="flex gap-6 items-start">
+              <div className="w-12 h-12 rounded-full bg-[#1746D2] text-white flex items-center justify-center font-bold font-mono text-lg shrink-0 shadow-md">7</div>
+              <div>
+                <h4 className="font-display font-bold text-slate-900 text-base md:text-lg mb-2">Step 7 — Launch & Client Acquisition</h4>
+                <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-medium">Once your company, brand, and product are live, your Client Success Manager and acquisition training take over — supporting you through outreach, pitching, and closing your first clients.</p>
+              </div>
+            </div>
+          </div>
         </div>
 
+        {/* Candidate Requirements (Placed After Steps) */}
+        <div className="max-w-[1400px] mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 font-display mb-3">
+              Who We're Looking For — Candidate Requirements
+            </h3>
+            <p className="text-slate-600 text-xs md:text-sm font-semibold">
+              The program is highly selective by design. We prioritize founders who show:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {criteria.map((crit, i) => (
+              <div key={i} className="p-8 rounded-[2rem] bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col">
+                <div className="w-10 h-10 rounded-xl bg-[#1746D2]/10 text-[#1746D2] flex items-center justify-center font-mono font-bold text-sm mb-6 border border-[#1746D2]/20">
+                  0{i + 1}
+                </div>
+                <h4 className="font-display font-bold text-slate-900 text-lg mb-3">{crit.title}</h4>
+                <p className="text-slate-500 font-medium text-xs leading-relaxed">{crit.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA Button */}
         <div className="mt-16 text-center">
           <button 
             onClick={() => document.getElementById('founder-form')?.scrollIntoView({ behavior: 'smooth' })}
-            className="rounded-full bg-[#1746D2] hover:bg-[#1233A0] px-8 py-4 text-sm font-bold tracking-widest text-white shadow-md transition-all uppercase"
+            className="rounded-full bg-[#1746D2] hover:bg-[#1233A0] px-8 py-4 text-sm font-bold tracking-widest text-white shadow-lg hover:scale-[1.02] transition-all uppercase"
           >
             Start Your Application
           </button>

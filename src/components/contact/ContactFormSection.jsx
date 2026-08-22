@@ -122,17 +122,33 @@ export default function ContactFormSection() {
                       className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:border-[#1746D2]/60 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm appearance-none"
                       style={{ backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`, backgroundPosition: 'right 1rem center', backgroundRepeat: 'no-repeat', backgroundSize: '1.5em 1.5em' }}
                     >
-                      <option value="">Select an option</option>
-                      <option value="AI Product Development">AI Product Development</option>
-                      <option value="AI Agents & Automation">AI Agents & Automation</option>
-                      <option value="Generative AI & Copilots">Generative AI & Copilots</option>
-                      <option value="Computer Vision">Computer Vision</option>
-                      <option value="Data Intelligence">Data Intelligence</option>
-                      <option value="Enterprise AI Integration">Enterprise AI Integration</option>
-                      <option value="Deep-Tech Products">Deep-Tech Products</option>
-                      <option value="Founder / Ecosystem Collaboration">Founder / Ecosystem Collaboration</option>
-                      <option value="Partnership">Partnership</option>
-                      <option value="Other">Other</option>
+                      <option value="">Select Team Category / Inquiry Type</option>
+                      <optgroup label="⚡ INTELLIGENT SOLUTIONS">
+                        <option value="[INTELLIGENT SOLUTIONS] AI Product & Model Development">AI Product & Model Development</option>
+                        <option value="[INTELLIGENT SOLUTIONS] Intelligent Automation & Agent Systems">Intelligent Automation & Agent Systems</option>
+                        <option value="[INTELLIGENT SOLUTIONS] Generative & Applied AI">Generative & Applied AI</option>
+                        <option value="[INTELLIGENT SOLUTIONS] AI Strategy & Governance">AI Strategy & Governance</option>
+                        <option value="[INTELLIGENT SOLUTIONS] Data & Visual Intelligence">Data & Visual Intelligence</option>
+                      </optgroup>
+                      <optgroup label="🧬 DEEP-TECH PRODUCTS">
+                        <option value="[DEEP-TECH PRODUCTS] Deep-Tech Hardware & Embedded Systems">Deep-Tech Hardware & Embedded Systems</option>
+                        <option value="[DEEP-TECH PRODUCTS] AI IoT & Smart Sensors">AI IoT & Smart Sensors</option>
+                        <option value="[DEEP-TECH PRODUCTS] Robotics & Autonomous Systems">Robotics & Autonomous Systems</option>
+                      </optgroup>
+                      <optgroup label="🚀 VISIONARY FOUNDERS">
+                        <option value="[VISIONARY FOUNDERS] AI Venture Studio & Co-Founder Bench">AI Venture Studio & Co-Founder Bench</option>
+                        <option value="[VISIONARY FOUNDERS] Startup Infrastructure & Turnkey Tech">Startup Infrastructure & Turnkey Tech</option>
+                        <option value="[VISIONARY FOUNDERS] Founder Application Inquiry">Founder Application Inquiry</option>
+                      </optgroup>
+                      <optgroup label="🧠 BUSINESS BRAINS">
+                        <option value="[BUSINESS BRAINS] Executive Advisory & Member Network">Executive Advisory & Member Network</option>
+                        <option value="[BUSINESS BRAINS] Investor & Family Office Track">Investor & Family Office Track</option>
+                        <option value="[BUSINESS BRAINS] Peer Nomination & Advisory">Peer Nomination & Advisory</option>
+                      </optgroup>
+                      <optgroup label="📩 GENERAL INQUIRY">
+                        <option value="[GENERAL CONTACT] Partnership / Strategic Alliance">Partnership / Strategic Alliance</option>
+                        <option value="[GENERAL CONTACT] General Business Discussion">General Business Discussion</option>
+                      </optgroup>
                     </select>
                   </div>
                   {/* Project Stage */}

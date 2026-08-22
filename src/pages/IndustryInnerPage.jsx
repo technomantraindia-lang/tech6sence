@@ -2,6 +2,7 @@ import React, { useEffect, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/sections/Footer';
+import IndustriesFinalCTA from '../components/industries/IndustriesFinalCTA';
 import innerPagesData from '../data/industries-inner-pages.json';
 import { industriesImpactData } from '../data/industriesImpactData';
 
@@ -343,40 +344,8 @@ export default function IndustryInnerPage() {
           </div>
         </div>
 
-        {/* Dynamic CTA Section (Extracted from document footer) */}
-        {ctaBlocks.length > 0 && (
-          <div className="bg-slate-900 py-24 relative overflow-hidden">
-            {/* Background elements */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-900/20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 pointer-events-none" />
-            
-            <div className="max-w-[50rem] mx-auto px-6 relative z-10 text-center">
-              {ctaBlocks.map((block, idx) => {
-                if (idx === 0) {
-                  return (
-                    <h2 key={idx} className="font-display text-3xl md:text-5xl font-bold text-white mb-8 leading-tight tracking-tight">
-                      {block.text}
-                    </h2>
-                  );
-                }
-                return (
-                  <p key={idx} className="text-lg md:text-xl text-slate-300 leading-relaxed mb-6">
-                    {block.text}
-                  </p>
-                );
-              })}
-              
-              <div className="mt-12">
-                <Link to="/lets-connect" className="inline-flex items-center justify-center py-4 px-10 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 text-white font-bold text-lg hover:scale-[1.03] shadow-[0_10px_30px_rgba(16,185,129,0.2)] transition-all duration-300">
-                  Discuss Your AI Strategy
-                  <svg className="w-5 h-5 ml-2 -mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-          </div>
-        )}
+        {/* Final CTA Section */}
+        <IndustriesFinalCTA />
 
       </main>
       

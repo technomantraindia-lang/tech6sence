@@ -43,11 +43,8 @@ export default function BusinessBrains() {
         {/* 4. SECTION 1 — THE PHILOSOPHY */}
         <PhilosophySection />
 
-        {/* 5. SECTION 2 — WHY BUSINESS BRAINS EXISTS */}
+        {/* 5. SECTION 2 — WHY BUSINESS BRAINS EXISTS & THE DIFFERENCE TABLE */}
         <WhyBusinessBrainsExists />
-
-        {/* 6. SECTION 3 — TRADITIONAL NETWORKING VS BUSINESS BRAINS */}
-        <ComparisonSection />
 
         {/* 7. SECTION 4 — A LETTER FROM THE FOUNDER */}
         <FounderLetter />
@@ -55,11 +52,8 @@ export default function BusinessBrains() {
         {/* 8. SECTION 5 — WHY THE ELITE JOIN */}
         <WhyEliteJoin />
 
-        {/* 9. SECTION 6 — WHO OCCUPIES THE ROOM */}
+        {/* 9. SECTION 6 — WHO OCCUPIES THE ROOM & COMMUNITY BENEFITS */}
         <WhoOccupiesRoom />
-
-        {/* 10. SECTION 7 — MEMBER BENEFITS BY PROFILE */}
-        <MemberBenefits />
 
         {/* 11. SECTION 8 — HOW MEMBERS CONNECT */}
         <CommunityActivities />

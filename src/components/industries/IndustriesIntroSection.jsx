@@ -67,46 +67,45 @@ export default function IndustriesIntroSection() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 bg-slate-50 border-y border-slate-100">
-      <div className="mx-auto max-w-[1400px] px-6">
+    <section ref={sectionRef} id="explore-industries" className="py-20 md:py-28 bg-slate-50 border-y border-slate-200">
+      <div className="mx-auto max-w-[1400px] px-6 space-y-24">
         
-        {/* Intro Paragraphs */}
-        <div className={`max-w-4xl mx-auto text-center mb-24 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-lg md:text-xl text-slate-700 leading-relaxed mb-6">
-            At <span className="font-bold text-blue-700">TECH6SENSE AI</span>, we design and deploy enterprise-grade Artificial Intelligence solutions that automate operations, optimize decision-making, improve customer experiences, reduce operational costs, and create new revenue opportunities.
-          </p>
-          <p className="text-lg text-slate-600 leading-relaxed">
-            Our AI experts combine Machine Learning, Generative AI, Computer Vision, NLP, Predictive Analytics, AI Agents, Robotics, and Intelligent Automation to solve real-world business problems across multiple industries.
-          </p>
-        </div>
+        {/* Why Choose TECH6SENSE AI & Transformation Table */}
+        <div className={`transition-all duration-1000 ease-out space-y-12 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <div className="inline-flex items-center gap-3">
+              <span className="w-8 h-[2px] bg-[#1746D2] rounded-full" />
+              <span className="font-display text-sm font-extrabold tracking-[0.25em] uppercase text-[#1746D2]">
+                TRANSFORMATION METHODOLOGY
+              </span>
+              <span className="w-8 h-[2px] bg-[#00A86B] rounded-full" />
+            </div>
 
-        {/* Why Choose TECH6SENSE AI Table */}
-        <div className={`mb-24 transition-all duration-1000 delay-200 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900">
               Why Organizations Choose TECH6SENSE AI
             </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Across every industry, our approach focuses on measurable business outcomes rather than technology alone. Every engagement is built around a structured transformation methodology:
+
+            <p className="text-slate-600 text-base md:text-lg leading-relaxed font-medium">
+              Across every industries, our approach focuses on measurable business outcomes rather than technology alone. Every engagement is built around a structured transformation methodology:
             </p>
           </div>
 
-          <div className="overflow-hidden bg-white rounded-3xl border border-slate-200 shadow-sm max-w-[1400px] mx-auto">
+          <div className="overflow-hidden bg-white rounded-3xl border border-slate-200 shadow-xl max-w-[1400px] mx-auto">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="bg-slate-50 border-b border-slate-200">
-                    <th className="py-5 px-6 font-display font-bold text-slate-900 whitespace-nowrap">Business Objective</th>
-                    <th className="py-5 px-6 font-display font-bold text-slate-900 min-w-[250px]">TECH6SENSE AI Approach</th>
-                    <th className="py-5 px-6 font-display font-bold text-slate-900 whitespace-nowrap">Typical Business Impact</th>
+                  <tr className="text-white font-extrabold">
+                    <th className="py-5 px-6 font-display font-bold text-white uppercase tracking-wider text-sm whitespace-nowrap bg-slate-950">Business Objective</th>
+                    <th className="py-5 px-6 font-display font-bold text-white uppercase tracking-wider text-sm min-w-[280px] bg-[#1746D2]">TECH6SENSE AI Approach</th>
+                    <th className="py-5 px-6 font-display font-bold text-white uppercase tracking-wider text-sm whitespace-nowrap bg-[#00A86B]">Typical Business Impact</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-100">
+                <tbody className="divide-y divide-slate-200">
                   {businessImpacts.map((row, idx) => (
-                    <tr key={idx} className="hover:bg-blue-50/50 transition-colors">
-                      <td className="py-5 px-6 font-semibold text-slate-800">{row.objective}</td>
-                      <td className="py-5 px-6 text-slate-600 leading-relaxed">{row.approach}</td>
-                      <td className="py-5 px-6 font-bold text-blue-700">{row.impact}</td>
+                    <tr key={idx} className="transition-colors even:bg-slate-50/60 hover:bg-blue-50/50">
+                      <td className="py-5 px-6 font-bold text-slate-900">{row.objective}</td>
+                      <td className="py-5 px-6 text-slate-600 font-medium leading-relaxed">{row.approach}</td>
+                      <td className="py-5 px-6 font-extrabold text-[#00A86B]">{row.impact}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -115,22 +114,36 @@ export default function IndustriesIntroSection() {
           </div>
         </div>
 
-        {/* Enterprise AI Capabilities */}
-        <div className={`transition-all duration-1000 delay-300 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
+        {/* Enterprise AI Capabilities Delivered by TECH6SENSE AI */}
+        <div className={`transition-all duration-1000 delay-300 ease-out space-y-12 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <div className="inline-flex items-center gap-3">
+              <span className="w-8 h-[2px] bg-[#1746D2] rounded-full" />
+              <span className="font-display text-sm font-extrabold tracking-[0.25em] uppercase text-[#1746D2]">
+                ENTERPRISE STACK
+              </span>
+              <span className="w-8 h-[2px] bg-[#00A86B] rounded-full" />
+            </div>
+
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900">
               Enterprise AI Capabilities Delivered by TECH6SENSE AI
             </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+
+            <p className="text-slate-600 text-base md:text-lg leading-relaxed font-medium">
               Our industry solutions are powered by a comprehensive AI technology stack, including:
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1400px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-[1400px] mx-auto">
             {capabilities.map((cap, idx) => (
-              <div key={idx} className="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm hover:border-blue-300 transition-colors group">
-                <div className="w-2 h-2 mt-2 rounded-full bg-gradient-to-r from-blue-500 to-emerald-500 shrink-0 group-hover:scale-150 transition-transform" />
-                <span className="font-body text-slate-700 font-medium leading-relaxed">{cap}</span>
+              <div 
+                key={idx} 
+                className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-[#1746D2] transition-all flex items-start gap-3.5 group"
+              >
+                <div className="w-2.5 h-2.5 mt-2 rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] shrink-0 group-hover:scale-125 transition-transform" />
+                <span className="font-body text-slate-800 font-semibold text-sm md:text-base leading-relaxed group-hover:text-[#1746D2] transition-colors">
+                  {cap}
+                </span>
               </div>
             ))}
           </div>
