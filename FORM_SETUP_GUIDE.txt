@@ -1,0 +1,165 @@
+================================================================================
+          TECH6SENSE AI - WEBSITE FORM SUBMISSION & TEAM ROUTING GUIDE
+================================================================================
+
+Target Email: info@tech6senseai.com
+
+--------------------------------------------------------------------------------
+1. OVERVIEW & RECOMMENDED SERVICE
+--------------------------------------------------------------------------------
+To handle form submissions across the TECH6SENSE AI site with full custom HTML email
+design, team category routing, PDF document generation, client file attachments,
+and automated client "Thank You" emails, RESEND is the recommended service.
+
+* Recommended Service: Resend (https://resend.com)
+* Free Tier Limits: 3,000 emails / month (100 emails / day)
+* Key Benefits:
+  - 100% custom HTML/CSS email design with TECH6SENSE brand colors & logo.
+  - Team category routing & custom subject lines.
+  - Native client file attachments (Pitch decks, PDFs, images).
+  - Auto-generated PDF attachments for form submissions.
+  - Custom automated thank-you email sent back to the applicant/client.
+  - High deliverability (no spam folder issues).
+
+--------------------------------------------------------------------------------
+2. THE 4 TEAM CATEGORIES & SUBJECT LINE TAGS
+--------------------------------------------------------------------------------
+All forms are structured to pass team identification tags to ensure incoming
+emails are instantly routed and identifiable:
+
+1. ⚡ INTELLIGENT SOLUTIONS TEAM
+   - Subject Tag: [INTELLIGENT SOLUTIONS]
+   - Sub-categories: AI Product & Model Development, AI Agents, Generative AI, MLOps
+
+2. 🧬 DEEP-TECH PRODUCTS TEAM
+   - Subject Tag: [DEEP-TECH PRODUCTS]
+   - Sub-categories: Deep-Tech Hardware, AI IoT, Smart Sensors, Robotics
+
+3. 🚀 VISIONARY FOUNDERS TEAM
+   - Subject Tag: [VISIONARY FOUNDERS]
+   - Sub-categories: Venture Studio, Co-Founder Bench, Startup Infrastructure
+
+4. 🧠 BUSINESS BRAINS TEAM
+   - Subject Tag: [BUSINESS BRAINS]
+   - Sub-categories: Executive Advisory, Investor Network, Peer Nomination
+
+5. 📩 GENERAL SALES & INQUIRIES
+   - Subject Tag: [GENERAL INQUIRY]
+   - Sub-categories: Strategic Partnerships, General Discussion
+
+--------------------------------------------------------------------------------
+3. ALL 6 ACTIVE FORMS & THEIR CODE LOCATIONS
+--------------------------------------------------------------------------------
+1. Turnkey AI Founder Application Form
+   - Page: /visionary-founders
+   - Component: src/components/visionary-founders/Section13to16.jsx
+   - Default Subject: 🚀 [VISIONARY FOUNDERS] New Founder Application - {Applicant Name}
+
+2. Executive Network Application Form
+   - Page: /business-brains
+   - Component: src/components/business-brains/ApplicationForm.jsx
+   - Default Subject: 🧠 [BUSINESS BRAINS] Network Member Application - {Applicant Name}
+
+3. Track-Specific Membership Application Form
+   - Page: /business-brains
+   - Component: src/components/business-brains/ApplicationAndNomination.jsx (Direct Tab)
+   - Default Subject: 🧠 [BUSINESS BRAINS] Direct Membership Application - {Track}
+
+4. Peer Nomination Form
+   - Page: /business-brains
+   - Component: src/components/business-brains/ApplicationAndNomination.jsx (Nomination Tab)
+   - Default Subject: 🧠 [BUSINESS BRAINS] Peer Nomination - {Nominee Name}
+
+5. Primary Enterprise Consultation & Strategy Form
+   - Page: /lets-connect
+   - Component: src/components/contact/ContactFormSection.jsx
+   - Default Subject: {Selected Category Tag} New Consultation Request - {Client Name}
+
+6. Homepage Quick Consultation Form
+   - Page: / (Home)
+   - Component: src/components/sections/FinalCTA.jsx
+   - Default Subject: {Selected Category Tag} Homepage Consultation Request - {Client Name}
+
+--------------------------------------------------------------------------------
+4. STEP-BY-STEP IMPLEMENTATION INSTRUCTIONS (WHEN READY TO SETUP)
+--------------------------------------------------------------------------------
+
+STEP 1: Create Free Account on Resend
+-------------------------------------
+1. Go to https://resend.com and sign up.
+2. Verify domain (tech6senseai.com) or add sender email info@tech6senseai.com.
+3. Generate an API Key under Account Settings -> API Keys.
+
+STEP 2: Add API Key to Environment File (.env)
+----------------------------------------------
+Create or update .env in project root:
+  VITE_RESEND_API_KEY=re_123456789_your_api_key_here
+  VITE_TARGET_EMAIL=info@tech6senseai.com
+
+STEP 3: Install Required Helper Packages (Optional)
+--------------------------------------------------
+For client-side PDF generation:
+  npm install html2pdf.js
+
+STEP 4: Resend Email Dispatch Helper (Example React Code)
+--------------------------------------------------------
+Create src/utils/sendEmail.js:
+
+```javascript
+export async function sendFormEmail({ teamCategory, formName, clientData, fileAttachment }) {
+  const subject = `${teamCategory} ${formName} - ${clientData.name || 'New Submission'}`;
+  
+  // HTML Template for Admin Notification
+  const htmlContent = `
+    <div style="font-family: Arial, sans-serif; background: #050112; color: #ffffff; padding: 30px; rounded: 16px;">
+      <h2 style="color: #00A86B; border-bottom: 2px solid #1746D2; padding-bottom: 10px;">
+        ${teamCategory} New Submission
+      </h2>
+      <p><strong>Form Name:</strong> ${formName}</p>
+      <table style="width: 100%; color: #ffffff; border-collapse: collapse; margin-top: 15px;">
+        ${Object.entries(clientData).map(([key, val]) => `
+          <tr style="border-bottom: 1px solid #1e293b;">
+            <td style="padding: 10px; font-weight: bold; color: #94a3b8; text-transform: capitalize;">${key}</td>
+            <td style="padding: 10px;">${val}</td>
+          </tr>
+        `).join('')}
+      </table>
+    </div>
+  `;
+
+  // Call Resend API Endpoint
+  const response = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${import.meta.env.VITE_RESEND_API_KEY}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      from: 'TECH6SENSE AI Forms <forms@tech6senseai.com>',
+      to: ['info@tech6senseai.com'],
+      subject: subject,
+      html: htmlContent
+    })
+  });
+
+  return response.ok;
+}
+```
+
+--------------------------------------------------------------------------------
+5. QUICK ZERO-CODE ALTERNATIVE: FormSubmit.co
+--------------------------------------------------------------------------------
+If rapid setup without API keys is preferred:
+Point form submission directly to FormSubmit:
+  fetch('https://formsubmit.co/ajax/info@tech6senseai.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      _subject: "🚀 [VISIONARY FOUNDERS] New Founder Application",
+      ...formData
+    })
+  });
+
+================================================================================
+                  GUIDE SAVED FOR FUTURE REFERENCE
+================================================================================
