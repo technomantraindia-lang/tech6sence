@@ -1,3 +1,17 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build & Cache output
+dist
+dist-ssr
+.vite
+
 # Logs
 logs
 *.log
@@ -7,13 +21,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-.vite
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
+# Editor & System Files
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -24,8 +32,17 @@ dist-ssr
 *.sln
 *.sw?
 *.zip
+
+# Temporary Scripts & Text Extraction Files
 Final Industries Impact.txt
 check_encoding.py
 fix_json.cjs
 fix_json.js
 inspect_json.py
+extract_blogs.ps1
+extract_success.ps1
+build_blogs.ps1
+build_success_json.ps1
+extracted_blogs.txt
+extracted_success_stories.txt
+temp_docx/
