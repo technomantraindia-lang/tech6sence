@@ -57,17 +57,11 @@ for ($s = 0; $s -lt $storyStartIndices.Count; $s++) {
     $testimonialQuote = ""
     $testimonialAuthor = ""
     if ($testStart -ge 0 -and $testStart -lt $block.Count - 1) {
-        $quoteLines = @()
-        for ($q = $testStart + 1; $q -lt $block.Count; $q++) {
-            $lineStr = $block[$q]
-            if ($lineStr.StartsWith("-") -or $lineStr.StartsWith("[char]0x2014")) {
-                $testimonialAuthor = $lineStr
-                break
-            } else {
-                $quoteLines += $lineStr
-            }
-        }
-        $testimonialQuote = ($quoteLines -join " ")
+        $qLine = $block[$testStart + 1]
+        $aLine = if ($testStart + 2 -lt $block.Count) { $block[$testStart + 2] } else { "" }
+        
+        $testimonialQuote = $qLine.Trim('"').Trim()
+        $testimonialAuthor = $aLine.Trim()
     }
 
     # Metrics / Business Impact
@@ -112,4 +106,4 @@ for ($s = 0; $s -lt $storyStartIndices.Count; $s++) {
 
 $json = $stories | ConvertTo-Json -Depth 10
 [System.IO.File]::WriteAllText("src/data/successStoriesParsed.json", $json, [System.Text.Encoding]::UTF8)
-Write-Host "Successfully parsed $($stories.Count) success stories into src/data/successStoriesParsed.json!"
+Write-Host "Successfully parsed $($stories.Count) success stories with clean quotes and separate single-line client author names!"

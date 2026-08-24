@@ -171,11 +171,8 @@ export default function SuccessStoriesContent() {
                   <div className="p-8 md:p-10 bg-[#050112] text-white relative">
 
                     <div className="flex flex-wrap items-center justify-between gap-4 mb-6 relative z-10">
-                      {/* Story Number & Industry */}
+                      {/* Industry Badge */}
                       <div className="flex flex-wrap items-center gap-3">
-                        <span className="px-3.5 py-1.5 rounded-full bg-[#1746D2] text-white text-xs font-mono font-bold tracking-wider uppercase shadow-sm">
-                          {story.number}
-                        </span>
                         <span className="px-3.5 py-1.5 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-bold">
                           {story.industry}
                         </span>
@@ -217,7 +214,7 @@ export default function SuccessStoriesContent() {
                   {/* CARD BODY */}
                   <div className="p-8 md:p-10 space-y-8">
                     
-                    {/* CLIENT TESTIMONIAL (Upper side placement with solid styling) */}
+                    {/* CLIENT TESTIMONIAL (Upper side placement with quote & single-line client author name) */}
                     {story.testimonial.quote && (
                       <div className="p-6 md:p-8 rounded-2xl bg-blue-50/60 border-l-4 border-[#1746D2] shadow-sm space-y-3">
                         <div className="flex items-center justify-between gap-4">
@@ -235,13 +232,15 @@ export default function SuccessStoriesContent() {
                         </div>
 
                         <p className="text-slate-900 text-base md:text-xl font-display font-semibold italic leading-relaxed">
-                          "{story.testimonial.quote}"
+                          "{story.testimonial.quote.replace(/^[“"]|[”"]$/g, '').trim()}"
                         </p>
 
                         {story.testimonial.author && (
-                          <div className="pt-2 flex items-center gap-2">
-                            <span className="text-xs font-mono font-bold text-[#00A86B]">
-                              — {story.testimonial.author}
+                          <div className="pt-2 border-t border-slate-200/60 flex items-center">
+                            <span className="text-xs md:text-sm font-mono font-bold text-[#00A86B] whitespace-nowrap overflow-hidden text-ellipsis">
+                              {story.testimonial.author.startsWith('—') || story.testimonial.author.startsWith('-')
+                                ? story.testimonial.author
+                                : `— ${story.testimonial.author}`}
                             </span>
                           </div>
                         )}
@@ -285,26 +284,28 @@ export default function SuccessStoriesContent() {
                         </h4>
                         
                         <div className="space-y-4 text-slate-700 text-sm md:text-base leading-relaxed">
-                          {story.fullContent.map((line, idx) => {
-                            const isSubHead = (
-                              line.startsWith('Business Challenges') ||
-                              line.startsWith('TECH6SENSE AI Solution') ||
-                              line.startsWith('Implementation Process') ||
-                              line.startsWith('Implementation Journey') ||
-                              line.startsWith('Project Execution') ||
-                              line.startsWith('Phase ')
-                            );
-
-                            if (isSubHead) {
-                              return (
-                                <h5 key={idx} className="font-display text-base font-bold text-slate-900 pt-3">
-                                  {line}
-                                </h5>
+                          {story.fullContent
+                            .filter((line) => !line.startsWith('Success Story '))
+                            .map((line, idx) => {
+                              const isSubHead = (
+                                line.startsWith('Business Challenges') ||
+                                line.startsWith('TECH6SENSE AI Solution') ||
+                                line.startsWith('Implementation Process') ||
+                                line.startsWith('Implementation Journey') ||
+                                line.startsWith('Project Execution') ||
+                                line.startsWith('Phase ')
                               );
-                            }
 
-                            return <p key={idx}>{line}</p>;
-                          })}
+                              if (isSubHead) {
+                                return (
+                                  <h5 key={idx} className="font-display text-base font-bold text-slate-900 pt-3">
+                                    {line}
+                                  </h5>
+                                );
+                              }
+
+                              return <p key={idx}>{line}</p>;
+                            })}
                         </div>
                       </div>
                     )}
