@@ -24,6 +24,7 @@ const ServiceDetail = lazy(() => import('./pages/ServiceDetail'))
 import VisionaryFounders from './pages/VisionaryFounders'
 import BusinessBrains from './pages/BusinessBrains'
 const Blogs = lazy(() => import('./pages/Blogs'))
+const BlogDetail = lazy(() => import('./pages/BlogDetail'))
 import Lenis from 'lenis'
 
 // Initialize Lenis globally for buttery-smooth inertial scrolling
@@ -108,6 +109,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/visionary-founders" element={<VisionaryFounders />} />
           <Route path="/business-brains" element={<BusinessBrains />} />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:slug" element={<BlogDetail />} />
         </Routes>
       </Suspense>
       <GoToTop />

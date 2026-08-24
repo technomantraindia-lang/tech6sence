@@ -20,13 +20,12 @@ export default function Blogs() {
         <section className="relative pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden border-b border-slate-200/60 bg-white">
           {/* Background Effects */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[500px] bg-[#1746D2]/10 blur-[120px] rounded-full pointer-events-none" />
-          <div className="absolute inset-0 bg-[url('https://tech6senseai.com/wp-content/uploads/2026/02/noise.png')] opacity-[0.02] mix-blend-multiply pointer-events-none" />
 
           <div className="max-w-[1400px] mx-auto px-6 relative z-10 w-full text-center flex flex-col items-center">
 
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1746D2]/10 border border-[#1746D2]/20 shadow-sm mb-8">
               <span className="flex h-2 w-2 rounded-full bg-[#1746D2] animate-pulse" />
-              <span className="text-xs font-bold text-[#1746D2] tracking-wider uppercase">Insights & News</span>
+              <span className="text-xs font-bold text-[#1746D2] tracking-wider uppercase">TECH6SENSE AI Insights</span>
             </div>
 
             <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] mb-6 text-slate-900">
@@ -36,7 +35,7 @@ export default function Blogs() {
             </h1>
 
             <p className="max-w-2xl text-lg md:text-xl text-slate-600 leading-relaxed font-light mb-8">
-              Stay ahead of the curve with our expert insights on Agentic AI, enterprise automation, deep-tech innovations, and the future of business intelligence.
+              Stay ahead of the curve with our expert insights on Agentic AI, enterprise automation, deep-tech product ecosystems, visionary startup scaling, and industry transformation.
             </p>
           </div>
         </section>
@@ -46,17 +45,21 @@ export default function Blogs() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogsData.map((blog) => (
-              <article
+              <Link
                 key={blog.id}
+                to={`/blogs/${blog.slug}`}
                 className="group relative flex flex-col bg-white rounded-2xl border border-slate-200 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-[#1746D2]/40 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]"
               >
                 {/* Image Container */}
-                <div className="relative h-64 overflow-hidden bg-slate-100">
-                  <div className="absolute inset-0 bg-[#0b1329]/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                <div className="relative h-64 overflow-hidden bg-gradient-to-br from-[#050112] via-slate-900 to-[#1746D2]/30">
+                  <div className="absolute inset-0 bg-[#0b1329]/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
                   <img
                     src={blog.image}
                     alt={blog.title}
-                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105 relative z-0"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                    }}
                   />
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4 z-20">
@@ -71,7 +74,7 @@ export default function Blogs() {
                   <div className="flex items-center gap-4 text-xs font-mono text-slate-500 mb-4">
                     <span>{blog.date}</span>
                     <span className="w-1 h-1 rounded-full bg-slate-300" />
-                    <span className="font-semibold text-slate-700">{blog.author}</span>
+                    <span className="font-semibold text-slate-700">{blog.readTime}</span>
                   </div>
 
                   <h3 className="font-display text-xl md:text-2xl font-bold text-slate-900 mb-4 leading-snug group-hover:text-[#1746D2] transition-colors duration-300">
@@ -93,7 +96,7 @@ export default function Blogs() {
                     </span>
                   </div>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
 

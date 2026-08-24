@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import worldMapImg from '../../assets/gift-city-world-map.jpg';
 
 export default function GiftCityPresence() {
   const [isVisible, setIsVisible] = useState(false);
@@ -61,9 +62,9 @@ export default function GiftCityPresence() {
               {points.map((point, i) => (
                 <div 
                   key={i} 
-                  className={`flex gap-4 transition-all duration-700 delay-${i * 100} ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                  className={`flex gap-4 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 >
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#1746D2] mt-2 shrink-0" />
+                  <div className="w-2 h-2 rounded-full bg-[#1746D2] mt-2 shrink-0" />
                   <div>
                     <h4 className="font-display text-base font-bold text-slate-900 mb-1">{point.title}</h4>
                     <p className="font-body text-sm text-slate-600 leading-relaxed">{point.desc}</p>
@@ -73,84 +74,66 @@ export default function GiftCityPresence() {
             </div>
           </div>
 
-          {/* Right Side: Abstract Visual */}
-          <div className={`lg:col-span-7 relative h-[500px] lg:h-[600px] w-full flex items-center justify-center transition-all duration-1000 delay-300 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
+          {/* Right Side: Generated 3D World Map Showcase */}
+          <div className={`lg:col-span-7 relative w-full flex items-center justify-center transition-all duration-1000 delay-300 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
             
-            <div className="relative w-full max-w-[600px] aspect-square flex items-center justify-center animate-float">
+            <div className="relative w-full max-w-[620px] rounded-3xl p-3 sm:p-5 bg-slate-50 border border-slate-200/90 shadow-xl overflow-hidden group">
               
-              {/* Soft Grid Background */}
-              <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+CjxyZWN0IHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0ibm9uZSIvPgo8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIwLjUiIGZpbGw9IiM4YjVjZjYiIGZpbGwtb3BhY2l0eT0iMC4zIi8+Cjwvc3ZnPg==')] opacity-60 rounded-full [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]" />
+              {/* World Map Image */}
+              <div className="relative overflow-hidden rounded-2xl border border-slate-200 shadow-md">
+                <img 
+                  src={worldMapImg} 
+                  alt="TECH6SENSE AI GIFT City Global Map"
+                  className="w-full h-auto object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700"
+                />
+                
+                {/* Floating Location Badges */}
+                <div className="absolute top-[8%] left-[6%] bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-slate-200 shadow-md flex items-center gap-2 animate-float">
+                  <span className="w-2 h-2 rounded-full bg-[#00A86B] animate-pulse" />
+                  <span className="font-display text-xs font-extrabold text-slate-900 uppercase tracking-wider">GLOBAL AI VISION</span>
+                </div>
+                
+                <div className="absolute bottom-[10%] left-[8%] bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-slate-200 shadow-md flex items-center gap-2 animate-float" style={{ animationDelay: '1.2s' }}>
+                  <span className="w-2 h-2 rounded-full bg-[#1746D2]" />
+                  <span className="font-display text-xs font-extrabold text-slate-900 uppercase tracking-wider">INDIA</span>
+                </div>
 
-              {/* Connecting Map Lines */}
-              <svg className="absolute inset-0 w-full h-full text-[#1746D2]/40" viewBox="0 0 600 600">
-                {isVisible && (
-                  <>
-                    <path d="M300,300 Q450,150 550,200" fill="none" stroke="url(#map-grad)" strokeWidth="2" strokeDasharray="4 4" className="animate-[drawLine_2s_ease-out_forwards]" strokeDashoffset="500" />
-                    <path d="M300,300 Q150,150 50,200" fill="none" stroke="url(#map-grad)" strokeWidth="2" strokeDasharray="4 4" className="animate-[drawLine_2s_ease-out_forwards]" strokeDashoffset="500" />
-                    <path d="M300,300 Q450,450 550,400" fill="none" stroke="url(#map-grad)" strokeWidth="2" strokeDasharray="4 4" className="animate-[drawLine_2s_ease-out_forwards]" strokeDashoffset="500" />
-                    <path d="M300,300 Q150,450 50,400" fill="none" stroke="url(#map-grad)" strokeWidth="2" strokeDasharray="4 4" className="animate-[drawLine_2s_ease-out_forwards]" strokeDashoffset="500" />
-                  </>
-                )}
-                <defs>
-                  <linearGradient id="map-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.8" />
-                    <stop offset="100%" stopColor="#d946ef" stopOpacity="0.2" />
-                  </linearGradient>
-                </defs>
-              </svg>
-
-              {/* Rings */}
-              <div className="absolute inset-12 border border-[#1746D2]/10 rounded-full animate-[spin_60s_linear_infinite]" />
-              <div className="absolute inset-24 border border-fuchsia-50 rounded-full animate-[spin_40s_linear_infinite_reverse]" />
-
-              {/* Center Marker (GIFT City) */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 flex items-center justify-center z-30">
-                <div className="absolute inset-0 bg-[#1746D2] rounded-full blur-xl opacity-40 animate-pulse" />
-                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#1746D2] to-[#00A86B] flex items-center justify-center shadow-lg border-2 border-white relative z-10">
-                  <div className="w-2 h-2 bg-white rounded-full" />
+                <div className="absolute bottom-[18%] right-[8%] bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-slate-200 shadow-md flex items-center gap-2 animate-float" style={{ animationDelay: '2.0s' }}>
+                  <span className="w-2 h-2 rounded-full bg-[#00A86B]" />
+                  <span className="font-display text-xs font-extrabold text-slate-900 uppercase tracking-wider">INNOVATION BASE</span>
                 </div>
               </div>
 
-              {/* Floating Location Card */}
-              <div className="absolute top-[35%] right-[25%] bg-white p-3 pr-4 rounded-xl border border-slate-200 shadow-[0_10px_30px_rgba(15,23,42,0.08)] z-40 flex items-center gap-3 animate-float" style={{ animationDelay: '0.5s' }}>
-                <div className="w-8 h-8 rounded-full bg-[#1746D2]/10 flex items-center justify-center">
-                  <svg className="w-4 h-4 text-[#1746D2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
+              {/* Bottom Info Strip */}
+              <div className="mt-3.5 p-3.5 rounded-xl bg-white border border-slate-200 flex items-center justify-between shadow-xs">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-[#1746D2]/10 flex items-center justify-center text-[#1746D2]">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h5 className="font-display text-xs sm:text-sm font-extrabold text-slate-900">GIFT City Hub</h5>
+                    <p className="text-[11px] text-slate-500 font-medium">Gandhinagar, Gujarat, India</p>
+                  </div>
                 </div>
-                <div className="flex flex-col">
-                  <span className="font-display font-bold text-slate-900 text-xs leading-tight">GIFT City</span>
-                  <span className="font-body text-slate-500 text-[0.65rem] leading-tight">Gandhinagar, Gujarat</span>
-                </div>
+                <span className="font-mono text-xs font-bold text-[#1746D2]">Global Ecosystem →</span>
               </div>
 
-              {/* Floating Labels */}
-              <div className="absolute top-[15%] left-[20%] bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-sm z-30 flex items-center gap-2 animate-float" style={{ animationDelay: '1.2s' }}>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00A86B]" />
-                <span className="font-display text-sm font-extrabold text-slate-700 uppercase tracking-wider">Global AI Vision</span>
-              </div>
-              
-              <div className="absolute bottom-[20%] right-[10%] bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-sm z-30 flex items-center gap-2 animate-float" style={{ animationDelay: '2.1s' }}>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#1746D2]" />
-                <span className="font-display text-sm font-extrabold text-slate-700 uppercase tracking-wider">Innovation Base</span>
-              </div>
-
-              <div className="absolute bottom-[10%] left-[25%] bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-sm z-30 flex items-center gap-2 animate-float" style={{ animationDelay: '0.8s' }}>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#1746D2]" />
-                <span className="font-display text-sm font-extrabold text-slate-700 uppercase tracking-wider">India</span>
-              </div>
-              
             </div>
+
           </div>
 
         </div>
       </div>
       <style dangerouslySetInnerHTML={{__html: `
-        @keyframes drawLine {
-          from { stroke-dashoffset: 500; }
-          to { stroke-dashoffset: 0; }
+        @keyframes float {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-8px); }
+          100% { transform: translateY(0px); }
         }
+        .animate-float { animation: float 6s ease-in-out infinite; }
       `}} />
     </section>
   );
