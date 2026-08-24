@@ -90,7 +90,7 @@ export default function EcosystemSection() {
               
               {/* Left Content */}
               <div className="flex flex-col items-start text-white">
-                <span className="font-display text-xs sm:text-sm font-extrabold text-blue-400 uppercase tracking-[0.2em] block px-3.5 sm:px-4 py-2 rounded-full bg-blue-500/10 border border-blue-400/20 mb-6 sm:mb-8">
+                <span className="font-display text-xs sm:text-sm font-extrabold text-[#FFD700] uppercase tracking-[0.2em] block px-3.5 sm:px-4 py-2 rounded-full bg-[#FFD700]/10 border border-[#FFD700]/30 shadow-[0_0_15px_rgba(255,215,0,0.15)] mb-6 sm:mb-8">
                   The Global AI Founder Ecosystem
                 </span>
 
@@ -167,12 +167,9 @@ export default function EcosystemSection() {
               
               {/* Left Content - Features */}
               <div className="flex flex-col justify-center h-full order-2 lg:order-1 pb-8 lg:pb-0 lg:pr-8 lg:border-r border-white/10">
-                <p className="font-display text-sm text-[#00A86B] font-bold mb-6">BUSINESS BRAINS | PRIVATE GLOBAL CIRCLE</p>
-                <p className="font-mono text-xs text-slate-300 tracking-[0.1em] mb-4">
-                  Menu: The Syndicate | The Triad | Global Reach | The Privilege |
-                </p>
-                <p className="font-mono text-xs text-[#00A86B] tracking-[0.2em] uppercase mb-8 border-b border-white/10 pb-4">
-                  Section label: BY INVITATION ONLY
+                <p className="font-display text-sm text-[#00A86B] font-bold mb-3">BUSINESS BRAINS | PRIVATE GLOBAL CIRCLE</p>
+                <p className="font-mono text-xs text-[#00A86B] tracking-[0.2em] uppercase font-bold mb-6 border-b border-white/10 pb-4">
+                  BY INVITATION ONLY
                 </p>
                 <div className="flex flex-col flex-1">
                   {BRAINS_POINTS.map((point, i) => (
