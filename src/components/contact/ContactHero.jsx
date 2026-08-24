@@ -9,14 +9,14 @@ export default function ContactHero() {
   return (
     <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-36 overflow-hidden bg-[#050112] text-white text-center">
       
-      {/* Generated AI Neural Network Full-Bleed Background Image */}
+      {/* Generated Robotic AI & Human Handshake Full-Bleed Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 mix-blend-screen scale-105 pointer-events-none transition-transform duration-1000"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-65 scale-105 pointer-events-none transition-transform duration-1000"
         style={{ backgroundImage: `url(${heroBgImage})` }}
       />
       
-      {/* Dark Ambient Gradient Overlays for High Contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050112]/90 via-[#050112]/75 to-[#050112] z-0 pointer-events-none" />
+      {/* Dark Ambient Gradient Overlays for High Contrast & Text Readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#050112]/80 via-[#050112]/65 to-[#050112] z-0 pointer-events-none" />
 
       {/* Ambient Neon Glow Orbs */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#1746D2]/20 rounded-full blur-[180px] pointer-events-none" />
