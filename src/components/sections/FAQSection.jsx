@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 const FAQS = [
   {
@@ -366,7 +367,7 @@ export default function FAQSection() {
           <h2 className="mb-5 font-display text-[clamp(2.2rem,4.5vw,3.8rem)] leading-[1.08] font-extrabold text-slate-900 tracking-[-0.03em]">
             Everything You Need to Know About{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-emerald-500 to-blue-600">
-              TECH6SENSE AI.
+              TECH6SENSE AI
             </span>
           </h2>
           <p className="font-body text-[1rem] md:text-[1.05rem] leading-[1.75] text-slate-500 font-medium">
@@ -409,6 +410,7 @@ export default function FAQSection() {
                 <button
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
                   className={`w-full text-left p-6 flex items-start justify-between gap-4 cursor-pointer select-none transition-all duration-300 group ${isOpen ? '' : 'hover:bg-gradient-to-r hover:from-[#1746D2] hover:to-[#00A86B]'}`}
+                  {...touchHoverProps}
                 >
                   <span className={`font-display text-[1.05rem] md:text-[1.15rem] font-bold tracking-tight transition-colors duration-300 ${isOpen ? 'text-white' : 'text-slate-900 group-hover:text-white'}`}>
                     {faq.q}

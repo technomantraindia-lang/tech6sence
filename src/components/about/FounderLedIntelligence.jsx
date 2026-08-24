@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import founderImg from '../../assets/founder.png'; // Make sure this matches the filename you pasted
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function FounderLedIntelligence() {
   const [isVisible, setIsVisible] = useState(false);
@@ -78,7 +79,7 @@ export default function FounderLedIntelligence() {
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
             }`}
           >
-            <div className="relative w-full aspect-[4/5] max-w-md mx-auto lg:mx-0 rounded-3xl border border-slate-200 bg-white shadow-[0_20px_50px_rgba(15,23,42,0.05)] overflow-hidden group">
+            <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="relative w-full aspect-[4/5] max-w-md mx-auto lg:mx-0 rounded-3xl border border-slate-200 bg-white shadow-[0_20px_50px_rgba(15,23,42,0.05)] overflow-hidden group">
               
               {/* Soft abstract AI frame */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#1746D2]/10/80 to-slate-50/80" />
@@ -96,7 +97,7 @@ export default function FounderLedIntelligence() {
               </div>
 
               {/* Founder Tag */}
-              <div className="absolute top-6 left-6 px-4 py-2 bg-white/90 backdrop-blur-md rounded-full border border-[#1746D2]/10 shadow-sm flex items-center gap-2 transition-transform duration-500 group-hover:scale-105 group-hover:border-[#1746D2]/40">
+              <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="absolute top-6 left-6 px-4 py-2 bg-white/90 backdrop-blur-md rounded-full border border-[#1746D2]/10 shadow-sm flex items-center gap-2 transition-transform duration-500 group-hover:scale-105 group-hover:border-[#1746D2]/40">
                 <div className="w-2 h-2 rounded-full bg-[#1746D2] animate-pulse" />
                 <span className="text-[10px] md:text-xs font-bold text-slate-900 uppercase tracking-widest">
                   Founder & AI Vision
@@ -169,12 +170,14 @@ export default function FounderLedIntelligence() {
             <a 
               href="#founder-story" 
               className={`group relative inline-flex items-center gap-3 rounded-full bg-white border border-slate-200 px-8 py-4 font-body text-sm font-bold text-slate-800 transition-all hover:border-[#1746D2]/40 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] duration-700 ease-out delay-1000 ${
+              {...touchHoverProps}
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
               }`}
             >
               <span>Meet the Vision Behind TECH6SENSE</span>
               <svg 
                 className="w-4 h-4 text-[#1746D2] transition-transform duration-300 group-hover:translate-x-1" 
+                {...touchHoverProps}
                 fill="none" 
                 viewBox="0 0 24 24" 
                 stroke="currentColor" 

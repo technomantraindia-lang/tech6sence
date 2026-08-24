@@ -1,4 +1,5 @@
 import React from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function IntelligentIndustries() {
   const sectors = [
@@ -101,17 +102,18 @@ export default function IntelligentIndustries() {
                   <li 
                     key={itemIdx} 
                     className="group relative flex items-center gap-3 py-1 cursor-default"
+                    {...touchHoverProps}
                   >
                     {/* Glowing Bullet Dot */}
                     <span className={`w-1.5 h-1.5 rounded-full shrink-0 transition-transform duration-300 group-hover:scale-125 ${sector.bulletColor}`} />
                     
                     {/* Clean Frameless Text */}
-                    <span className="font-body text-sm font-semibold text-slate-400 group-hover:text-white transition-colors duration-300 leading-relaxed">
+                    <span onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-body text-sm font-semibold text-slate-400 group-hover:text-white transition-colors duration-300 leading-relaxed">
                       {item}
                     </span>
 
                     {/* Faint Sliding underline effect on hover */}
-                    <span className={`absolute bottom-0 left-4.5 right-0 h-[1px] scale-x-0 origin-left transition-transform duration-300 ${sector.underlineColor} group-hover:scale-x-100`} />
+                    <span onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className={`absolute bottom-0 left-4.5 right-0 h-[1px] scale-x-0 origin-left transition-transform duration-300 ${sector.underlineColor} group-hover:scale-x-100`} />
                   </li>
                 ))}
               </ul>

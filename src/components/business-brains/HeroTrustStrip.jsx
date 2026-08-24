@@ -48,7 +48,7 @@ export default function HeroTrustStrip() {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,168,107,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,168,107,0.03)_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none z-0" />
 
         {/* MAIN HERO CONTENT — MAX WIDTH 1400PX CENTERED */}
-        <div className="max-w-[1400px] mx-auto px-6 relative z-10 w-full my-auto text-center flex flex-col items-center gap-8 py-8">
+        <div className="max-w-[1400px] mx-auto px-3.5 sm:px-6 relative z-10 w-full my-auto text-center flex flex-col items-center gap-6 sm:gap-8 py-8">
           
           {/* Title / Powered by & Eyebrow Tag */}
           <div className="space-y-3 flex flex-col items-center">
@@ -114,7 +114,7 @@ export default function HeroTrustStrip() {
           </div>
 
           {/* Micro-copy beneath CTA */}
-          <p className="text-xs text-slate-400 leading-relaxed max-w-[1400px] font-medium pt-1">
+          <p className="text-xs text-[#D4AF37] font-semibold leading-relaxed max-w-[1400px] pt-1">
             Membership is intentionally limited to preserve the quality, trust, and exclusivity that define BUSINESS BRAINS and curated by the board of TECH6SENSE AI.
           </p>
 

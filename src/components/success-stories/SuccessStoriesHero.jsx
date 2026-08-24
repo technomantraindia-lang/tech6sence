@@ -41,25 +41,7 @@ export default function SuccessStoriesHero() {
             Explore how TECH6SENSE AI solutions have driven measurable impact, solved critical operational challenges, and created unprecedented value across global industries.
           </p>
 
-          {/* Quick Metrics Bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-6 border-t border-slate-800/80">
-            <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/60 backdrop-blur-sm">
-              <div className="font-display text-2xl md:text-3xl font-extrabold text-[#00A86B]">100+</div>
-              <div className="text-xs md:text-sm font-medium text-slate-400">AI Deployments</div>
-            </div>
-            <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/60 backdrop-blur-sm">
-              <div className="font-display text-2xl md:text-3xl font-extrabold text-[#1746D2]">35%+</div>
-              <div className="text-xs md:text-sm font-medium text-slate-400">Avg Cost Savings</div>
-            </div>
-            <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/60 backdrop-blur-sm">
-              <div className="font-display text-2xl md:text-3xl font-extrabold text-[#D4AF37]">14+</div>
-              <div className="text-xs md:text-sm font-medium text-slate-400">Industry Sectors</div>
-            </div>
-            <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/60 backdrop-blur-sm">
-              <div className="font-display text-2xl md:text-3xl font-extrabold text-white">99.9%</div>
-              <div className="text-xs md:text-sm font-medium text-slate-400">Model Accuracy</div>
-            </div>
-          </div>
+
 
         </div>
       </div>

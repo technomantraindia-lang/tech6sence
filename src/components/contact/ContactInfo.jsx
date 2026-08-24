@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function ContactInfo() {
   const [isVisible, setIsVisible] = useState(false);
@@ -49,6 +50,7 @@ export default function ContactInfo() {
           {/* Email */}
           <div 
             className={`group relative bg-white border border-slate-200 p-8 rounded-2xl flex flex-col items-center text-center hover:border-[#1746D2]/40 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+            {...touchHoverProps}
             style={{ transitionDelay: '200ms' }}
           >
             <div className="w-12 h-12 rounded-full bg-[#1746D2]/10 flex items-center justify-center mb-5 group-hover:bg-[#1746D2]/10 group-hover:scale-110 transition-all duration-300">
@@ -57,7 +59,7 @@ export default function ContactInfo() {
               </svg>
             </div>
             <h3 className="font-display text-sm font-bold text-slate-500 uppercase tracking-wider mb-2">Email</h3>
-            <a href="mailto:info@tech6senseai.com" className="font-body text-base font-bold text-slate-900 group-hover:text-[#1746D2] transition-colors">
+            <a href="mailto:info@tech6senseai.com" onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-body text-base font-bold text-slate-900 group-hover:text-[#1746D2] transition-colors">
               info@tech6senseai.com
             </a>
           </div>
@@ -65,6 +67,7 @@ export default function ContactInfo() {
           {/* Phone */}
           <div 
             className={`group relative bg-white border border-slate-200 p-8 rounded-2xl flex flex-col items-center text-center hover:border-[#1746D2]/40 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+            {...touchHoverProps}
             style={{ transitionDelay: '300ms' }}
           >
             <div className="w-12 h-12 rounded-full bg-[#1746D2]/10 flex items-center justify-center mb-5 group-hover:bg-[#1746D2]/10 group-hover:scale-110 transition-all duration-300">
@@ -73,7 +76,7 @@ export default function ContactInfo() {
               </svg>
             </div>
             <h3 className="font-display text-sm font-bold text-slate-500 uppercase tracking-wider mb-2">Phone</h3>
-            <a href="tel:+919081766355" className="font-body text-base font-bold text-slate-900 group-hover:text-[#1746D2] transition-colors">
+            <a href="tel:+919081766355" onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-body text-base font-bold text-slate-900 group-hover:text-[#1746D2] transition-colors">
               +91 90817 66355
             </a>
           </div>
@@ -81,6 +84,7 @@ export default function ContactInfo() {
           {/* Location */}
           <div 
             className={`group relative bg-white border border-slate-200 p-8 rounded-2xl flex flex-col items-center text-center hover:border-[#1746D2]/40 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+            {...touchHoverProps}
             style={{ transitionDelay: '400ms' }}
           >
             <div className="w-12 h-12 rounded-full bg-[#1746D2]/10 flex items-center justify-center mb-5 group-hover:bg-[#1746D2]/10 group-hover:scale-110 transition-all duration-300">
@@ -90,7 +94,7 @@ export default function ContactInfo() {
               </svg>
             </div>
             <h3 className="font-display text-sm font-bold text-slate-500 uppercase tracking-wider mb-2">Location</h3>
-            <p className="font-body text-base font-bold text-slate-900 group-hover:text-[#1746D2] transition-colors">
+            <p onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-body text-base font-bold text-slate-900 group-hover:text-[#1746D2] transition-colors">
               GIFT City, Gandhinagar, Gujarat, India
             </p>
           </div>

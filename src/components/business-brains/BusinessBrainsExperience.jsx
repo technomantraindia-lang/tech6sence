@@ -1,4 +1,5 @@
 import React from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function BusinessBrainsExperience() {
   const experiences = [
@@ -100,20 +101,21 @@ export default function BusinessBrainsExperience() {
             <div 
               key={exp.id}
               className={`p-8 rounded-3xl bg-white border border-slate-200/90 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group ${exp.restShadow} ${exp.hoverBg}`}
+              {...touchHoverProps}
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono text-xs font-bold text-[#1746D2] group-hover:text-white uppercase tracking-widest transition-colors">
+                  <span onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-mono text-xs font-bold text-[#1746D2] group-hover:text-white uppercase tracking-widest transition-colors">
                     0{exp.id}
                   </span>
-                  <span className="w-2 h-2 rounded-full bg-[#00A86B] group-hover:bg-white transition-colors" />
+                  <span onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="w-2 h-2 rounded-full bg-[#00A86B] group-hover:bg-white transition-colors" />
                 </div>
 
-                <h3 className="text-lg font-bold text-slate-900 group-hover:text-white mb-3 font-display transition-colors">
+                <h3 onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="text-lg font-bold text-slate-900 group-hover:text-white mb-3 font-display transition-colors">
                   {exp.title}
                 </h3>
 
-                <p className="text-slate-600 group-hover:text-white text-xs md:text-sm leading-relaxed font-normal text-justify md:text-left transition-colors">
+                <p onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="text-slate-600 group-hover:text-white text-xs md:text-sm leading-relaxed font-normal text-justify md:text-left transition-colors">
                   {exp.desc}
                 </p>
               </div>

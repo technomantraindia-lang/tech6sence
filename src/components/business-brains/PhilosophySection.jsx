@@ -1,4 +1,5 @@
 import React from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function PhilosophySection() {
   const statements = [
@@ -80,18 +81,37 @@ export default function PhilosophySection() {
 
         {/* Four Short Statement Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-12 border-t border-slate-200">
-          {statements.map((stmt, idx) => (
-            <div 
-              key={idx} 
-              className="p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#1746D2]/40 transition-all duration-300 group"
-            >
-              <div className="font-mono text-xs font-bold text-[#1746D2] mb-2">0{idx + 1}</div>
-              <h3 className="text-base md:text-lg font-bold text-slate-900 group-hover:text-[#1746D2] transition-colors mb-1">
-                {stmt.title}
-              </h3>
-              <p className="text-xs text-slate-500 font-medium">{stmt.desc}</p>
-            </div>
-          ))}
+          {statements.map((stmt, idx) => {
+            const isBlue = idx % 2 === 0;
+
+            const cardBg = isBlue
+              ? "bg-blue-50/70 hover:bg-[#1746D2] border-blue-200/80 hover:border-[#1746D2]"
+              : "bg-emerald-50/70 hover:bg-[#00A86B] border-emerald-200/80 hover:border-[#00A86B]";
+
+            const hoverGlow = isBlue
+              ? "hover:shadow-[0_15px_30px_-10px_rgba(23,70,210,0.4)]"
+              : "hover:shadow-[0_15px_30px_-10px_rgba(0,168,107,0.4)]";
+
+            const numberColor = isBlue ? "text-[#1746D2]" : "text-[#00A86B]";
+
+            return (
+              <div 
+                key={idx} 
+                className={`p-6 rounded-2xl border transition-all duration-300 group hover:-translate-y-1.5 cursor-default ${cardBg} ${hoverGlow}`}
+                {...touchHoverProps}
+              >
+                <div className={`font-mono text-xs font-extrabold ${numberColor} group-hover:text-[#FFD700] mb-2 transition-colors`}>
+                  0{idx + 1}
+                </div>
+                <h3 onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="text-base md:text-lg font-bold text-slate-900 group-hover:text-white transition-colors mb-1">
+                  {stmt.title}
+                </h3>
+                <p onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="text-xs text-slate-600 group-hover:text-white/90 font-medium transition-colors leading-relaxed">
+                  {stmt.desc}
+                </p>
+              </div>
+            );
+          })}
         </div>
 
       </div>

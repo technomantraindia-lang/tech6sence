@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function CompanyStory() {
   const [isVisible, setIsVisible] = useState(false);
@@ -104,15 +105,16 @@ export default function CompanyStory() {
               <div 
                 key={index} 
                 className={`group cursor-default py-2 inline-flex relative transition-all duration-700 ease-out ${
+                {...touchHoverProps}
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
                 style={{ transitionDelay: `${800 + index * 150}ms` }}
               >
-                <span className="font-body text-sm md:text-base font-bold text-slate-700 transition-colors group-hover:text-slate-900">
+                <span onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-body text-sm md:text-base font-bold text-slate-700 transition-colors group-hover:text-slate-900">
                   {point}
                 </span>
                 {/* Hover Underline Effect */}
-                <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-[#1746D2] to-[#00A86B] transition-all duration-300 group-hover:w-full" />
+                <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-[#1746D2] to-[#00A86B] transition-all duration-300 group-hover:w-full" />
               </div>
             ))}
           </div>

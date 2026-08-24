@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { sendFormEmail } from '../../utils/sendEmail';
 import companyLogo from '../../assets/new logo/TECH6SENSE Main Logo Transparent bg.svg';
 
 export function ApplicationProcess() {
@@ -348,6 +349,8 @@ export function FAQSection() {
                 }`}
                 onMouseEnter={() => setOpenIndex(i)}
                 onMouseLeave={() => setOpenIndex(null)}
+                onTouchStart={() => setOpenIndex(i)}
+                onTouchEnd={() => setOpenIndex(null)}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : i)}
@@ -440,19 +443,39 @@ export function ApplicationForm() {
     if (step > 1) setStep(prev => prev - 1);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.consent1 || !formData.consent2 || !formData.consent3) {
       alert("Please confirm all declarations before submitting.");
       return;
     }
     setSubmitted(true);
+    await sendFormEmail({
+      subjectTag: '🚀 [VISIONARY FOUNDERS]',
+      formTitle: 'Founder Application',
+      formData: {
+        fullName: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        country: formData.country,
+        profileDescription: formData.describeYou,
+        priorExperience: formData.priorExperience,
+        targetCompanyType: formData.companyType,
+        ideaStatus: formData.ideaStatus,
+        startTimeline: formData.startTimeline,
+        weeklyCommitment: formData.commitment,
+        primaryGoal: formData.primaryGoal,
+        preferredTier: formData.preferredTier,
+        investmentReadyOrSelfFunded: formData.investmentReady,
+        howDidYouHearAboutUs: formData.howHeard
+      }
+    });
   };
 
   if (submitted) {
     return (
       <section className="py-20 bg-white relative text-center">
-        <div className="max-w-2xl mx-auto px-6 bg-slate-50 p-12 rounded-3xl border border-slate-200 shadow-xl">
+        <div className="max-w-2xl mx-auto px-3 sm:px-6 bg-slate-50 p-4 sm:p-8 md:p-12 rounded-3xl border border-slate-200 shadow-xl">
           <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
             <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -787,7 +810,7 @@ export function FinalCTA() {
 
         {/* Closing Statement */}
         <div className="pt-10 border-t border-white/15 max-w-[1400px] mx-auto text-center">
-          <p className="text-slate-400 font-medium text-xs md:text-sm leading-relaxed max-w-4xl mx-auto">
+          <p className="text-[#D4AF37] font-semibold text-xs md:text-sm leading-relaxed max-w-4xl mx-auto">
             Visionary Founders by TECH6SENSE AI is committed to supporting founders through strategic guidance, technology expertise, and a collaborative ecosystem. While every founder's journey is unique and business outcomes depend on many factors, our mission is to provide the resources, knowledge, and community that help entrepreneurs build strong, sustainable AI and technology companies.
           </p>
         </div>

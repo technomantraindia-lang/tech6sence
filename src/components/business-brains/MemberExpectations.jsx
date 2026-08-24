@@ -1,4 +1,5 @@
 import React from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function MemberExpectations() {
   const standards = [
@@ -85,6 +86,7 @@ export default function MemberExpectations() {
             <div 
               key={idx}
               className={`p-8 rounded-3xl bg-slate-950/90 border border-slate-800/90 hover:-translate-y-2 transition-all duration-300 backdrop-blur-md group ${std.restShadow} ${std.hoverBg}`}
+              {...touchHoverProps}
             >
               <div className="flex items-center gap-3 mb-4">
                 <span className={`font-mono text-xs font-bold text-emerald-400 transition-colors ${std.badgeColor}`}>
@@ -97,7 +99,7 @@ export default function MemberExpectations() {
                 {std.title}
               </h3>
 
-              <p className="text-slate-300 group-hover:text-white text-sm leading-relaxed font-normal text-justify md:text-left transition-colors">
+              <p onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="text-slate-300 group-hover:text-white text-sm leading-relaxed font-normal text-justify md:text-left transition-colors">
                 {std.desc}
               </p>
             </div>

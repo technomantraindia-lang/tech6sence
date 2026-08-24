@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function WhatWeBuild() {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,9 +30,9 @@ export default function WhatWeBuild() {
       desc: "Intelligent automation, AI agents, generative AI, computer vision, data intelligence, and enterprise AI systems for business transformation.",
       cta: "Explore AI Solutions",
       visual: (
-        <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-white border border-slate-100 shadow-[0_8px_20px_rgba(15,23,42,0.03)] flex items-center justify-center transition-all duration-500 group-hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]">
+        <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="relative w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-white border border-slate-100 shadow-[0_8px_20px_rgba(15,23,42,0.03)] flex items-center justify-center transition-all duration-500 group-hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]">
           {/* Subtle Glow */}
-          <div className="absolute inset-0 bg-[#1746D2]/10/50 rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="absolute inset-0 bg-[#1746D2]/10/50 rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           
           {/* Minimal Node Animation */}
           <div className="relative flex items-center justify-center">
@@ -48,9 +49,9 @@ export default function WhatWeBuild() {
       desc: "AI wearables, healthcare AI devices, IoT intelligence, human augmentation, and future-ready smart devices built for real-world use.",
       cta: "View Deep-Tech Products",
       visual: (
-        <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-white border border-slate-100 shadow-[0_8px_20px_rgba(15,23,42,0.03)] flex items-center justify-center transition-all duration-500 group-hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]">
+        <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="relative w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-white border border-slate-100 shadow-[0_8px_20px_rgba(15,23,42,0.03)] flex items-center justify-center transition-all duration-500 group-hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]">
           {/* Subtle Glow */}
-          <div className="absolute inset-0 bg-fuchsia-100/50 rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="absolute inset-0 bg-fuchsia-100/50 rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           
           {/* Minimal Smart Device Shape */}
           <div className="relative w-8 h-12 md:w-10 md:h-14 rounded-xl border-[1.5px] border-fuchsia-200 bg-slate-50/50 flex flex-col justify-between p-1.5 shadow-inner">
@@ -72,9 +73,9 @@ export default function WhatWeBuild() {
       desc: "Visionary Founders and Business Brains programs that support entrepreneurs, investors, and AI-first business growth.",
       cta: "Discover the Ecosystem",
       visual: (
-        <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-white border border-slate-100 shadow-[0_8px_20px_rgba(15,23,42,0.03)] flex items-center justify-center transition-all duration-500 group-hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]">
+        <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="relative w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-white border border-slate-100 shadow-[0_8px_20px_rgba(15,23,42,0.03)] flex items-center justify-center transition-all duration-500 group-hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]">
           {/* Subtle Glow */}
-          <div className="absolute inset-0 bg-[#1746D2]/10/50 rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="absolute inset-0 bg-[#1746D2]/10/50 rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           
           {/* Minimal Network/Founder Shape */}
           <div className="relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center">
@@ -130,6 +131,7 @@ export default function WhatWeBuild() {
             <div 
               key={index}
               className={`group relative flex flex-col md:flex-row items-start md:items-center justify-between p-8 md:p-12 lg:p-14 bg-white/50 backdrop-blur-sm rounded-3xl border border-slate-200/60 shadow-[0_4px_20px_rgba(15,23,42,0.02)] transition-all duration-700 ease-out hover:bg-[#1746D2]/10/40 hover:border-[#1746D2]/10/80 ${
+              {...touchHoverProps}
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
               style={{ transitionDelay: `${300 + index * 150}ms` }}
@@ -137,7 +139,7 @@ export default function WhatWeBuild() {
               
               {/* Thin Animated Gradient Border on Hover (Bottom) */}
               <div className="absolute bottom-0 left-0 h-[2px] w-full overflow-hidden rounded-b-3xl">
-                <div className="h-full w-0 bg-gradient-to-r from-[#1746D2] to-[#00A86B] transition-all duration-500 ease-out group-hover:w-full" />
+                <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="h-full w-0 bg-gradient-to-r from-[#1746D2] to-[#00A86B] transition-all duration-500 ease-out group-hover:w-full" />
               </div>
 
               {/* Number & Title */}
@@ -158,10 +160,12 @@ export default function WhatWeBuild() {
                 <a 
                   href={`#${block.title.toLowerCase().replace(/\s+/g, '-')}`}
                   className="group/cta inline-flex items-center gap-2 font-body text-sm font-bold text-slate-800 transition-colors hover:text-[#1746D2] w-fit"
+                  {...touchHoverProps}
                 >
                   {block.cta}
                   <svg 
                     className="w-4 h-4 text-[#1746D2] transition-transform duration-300 group-hover/cta:translate-x-1.5" 
+                    {...touchHoverProps}
                     fill="none" 
                     viewBox="0 0 24 24" 
                     stroke="currentColor" 
@@ -173,7 +177,7 @@ export default function WhatWeBuild() {
               </div>
 
               {/* Minimal Right-Side Visual */}
-              <div className="w-full md:w-auto flex justify-start md:justify-end transition-transform duration-700 ease-out group-hover:translate-x-2">
+              <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="w-full md:w-auto flex justify-start md:justify-end transition-transform duration-700 ease-out group-hover:translate-x-2">
                 {block.visual}
               </div>
 

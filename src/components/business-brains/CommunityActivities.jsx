@@ -1,4 +1,5 @@
 import React from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function CommunityActivities() {
   const activities = [
@@ -16,7 +17,7 @@ export default function CommunityActivities() {
         "Fundraising in the current environment"
       ],
       icon: (
-        <svg className="w-6 h-6 text-[#1746D2] group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="w-6 h-6 text-[#1746D2] group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
       )
@@ -35,7 +36,7 @@ export default function CommunityActivities() {
         "Follow-up meeting facilitation"
       ],
       icon: (
-        <svg className="w-6 h-6 text-[#00A86B] group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="w-6 h-6 text-[#00A86B] group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
         </svg>
       )
@@ -55,7 +56,7 @@ export default function CommunityActivities() {
         "Gala networking dinner"
       ],
       icon: (
-        <svg className="w-6 h-6 text-[#1746D2] group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="w-6 h-6 text-[#1746D2] group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
         </svg>
       )
@@ -74,7 +75,7 @@ export default function CommunityActivities() {
         "Financial (cap tables, valuation, term sheets)"
       ],
       icon: (
-        <svg className="w-6 h-6 text-[#00A86B] group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="w-6 h-6 text-[#00A86B] group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
         </svg>
       )
@@ -95,7 +96,7 @@ export default function CommunityActivities() {
         "Direct messaging and introductions"
       ],
       icon: (
-        <svg className="w-6 h-6 text-[#1746D2] group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="w-6 h-6 text-[#1746D2] group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
         </svg>
       )
@@ -138,28 +139,29 @@ export default function CommunityActivities() {
             <div 
               key={act.id}
               className={`p-8 rounded-3xl bg-white border border-slate-200/90 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group ${act.restShadow} ${act.hoverBg}`}
+              {...touchHoverProps}
             >
               <div>
                 <div className="w-12 h-12 rounded-2xl bg-slate-100 group-hover:bg-white/20 border border-slate-200 flex items-center justify-center mb-6 group-hover:scale-105 transition-all">
                   {act.icon}
                 </div>
 
-                <h3 className="text-xl font-bold text-slate-900 group-hover:text-white mb-3 transition-colors font-display">
+                <h3 onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="text-xl font-bold text-slate-900 group-hover:text-white mb-3 transition-colors font-display">
                   {act.title}
                 </h3>
 
-                <p className="text-slate-600 group-hover:text-white text-sm leading-relaxed mb-6 font-normal transition-colors text-justify md:text-left">
+                <p onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="text-slate-600 group-hover:text-white text-sm leading-relaxed mb-6 font-normal transition-colors text-justify md:text-left">
                   {act.desc}
                 </p>
 
-                <div className="space-y-3 pt-4 border-t border-slate-100 group-hover:border-white/20 transition-colors">
-                  <div className="text-xs font-mono font-bold text-[#1746D2] group-hover:text-white uppercase tracking-widest transition-colors">
+                <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="space-y-3 pt-4 border-t border-slate-100 group-hover:border-white/20 transition-colors">
+                  <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="text-xs font-mono font-bold text-[#1746D2] group-hover:text-white uppercase tracking-widest transition-colors">
                     {act.label}
                   </div>
-                  <ul className="space-y-2 text-xs md:text-sm text-slate-700 group-hover:text-white font-medium transition-colors">
+                  <ul onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="space-y-2 text-xs md:text-sm text-slate-700 group-hover:text-white font-medium transition-colors">
                     {act.items.map((it, iIdx) => (
                       <li key={iIdx} className="flex items-start gap-2.5 leading-relaxed">
-                        <span className="text-[#00A86B] group-hover:text-white font-bold text-xs mt-0.5 transition-colors">•</span>
+                        <span onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="text-[#00A86B] group-hover:text-white font-bold text-xs mt-0.5 transition-colors">•</span>
                         <span>{it}</span>
                       </li>
                     ))}

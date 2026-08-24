@@ -1,4 +1,5 @@
 import React from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function IntelligentIntroPrinciples() {
   const principles = [
@@ -39,7 +40,7 @@ export default function IntelligentIntroPrinciples() {
             </div>
             
             <h2 className="font-display text-[clamp(1.85rem,3.5vw,3rem)] leading-tight font-extrabold text-slate-900 mb-6 tracking-tight">
-              Converting AI Ambition Into Measurable Operating Advantage.
+              Converting AI Ambition Into Measurable Operating Advantage
             </h2>
 
             <p className="font-body text-slate-600 text-base md:text-lg leading-relaxed mb-6 font-medium">
@@ -87,27 +88,41 @@ export default function IntelligentIntroPrinciples() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {principles.map((pr, idx) => (
-              <div 
-                key={idx}
-                className="p-6 rounded-2xl border border-slate-200/80 bg-slate-50/40 hover:bg-white hover:border-emerald-500/50 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-300 flex flex-col justify-between group"
-              >
-                <div>
-                  {/* Corrected Alignment Circle: removed inline-block, kept clean flex center alignment, styled in Royal Blue & Embedded Green */}
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-50 text-blue-600 border border-blue-100 font-display text-sm font-extrabold mb-6 group-hover:bg-emerald-500 group-hover:text-white group-hover:border-emerald-500 transition-all duration-300">
-                    0{idx + 1}
+            {principles.map((pr, idx) => {
+              const accents = ['#1746D2', '#00A86B', '#1746D2', '#D4AF37'];
+              const accent = accents[idx % accents.length];
+
+              return (
+                <div 
+                  key={idx}
+                  className="group relative p-6.5 rounded-2xl border border-slate-200/80 bg-white shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col justify-between overflow-hidden cursor-pointer hover:-translate-y-2"
+                  {...touchHoverProps}
+                >
+                  {/* Background Color Hover Fill Overlay */}
+                  <div 
+                    className="absolute inset-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100 pointer-events-none z-0"
+                    style={{ backgroundColor: accent }}
+                  />
+
+                  <div className="relative z-10">
+                    {/* Number Tag */}
+                    <div 
+                      className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-50 text-[#1746D2] border border-blue-100 font-display text-sm font-extrabold mb-6 transition-all duration-300 group-hover:!bg-white group-hover:!text-slate-950 group-hover:!border-white group-hover:shadow-md"
+                    >
+                      0{idx + 1}
+                    </div>
+                    
+                    <h4 className="font-display text-base md:text-lg font-extrabold text-slate-900 mb-3 group-hover:text-white transition-colors duration-300 leading-snug">
+                      {pr.title}
+                    </h4>
+                    
+                    <p className="font-body text-xs md:text-sm text-slate-600 group-hover:text-white/95 leading-relaxed font-medium transition-colors duration-300">
+                      — {pr.desc}
+                    </p>
                   </div>
-                  
-                  <h4 className="font-display text-base font-bold text-slate-900 mb-2 group-hover:text-blue-900 transition-colors">
-                    {pr.title}
-                  </h4>
-                  
-                  <p className="font-body text-sm text-slate-600 leading-relaxed font-medium">
-                    — {pr.desc}
-                  </p>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 

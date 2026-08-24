@@ -1,4 +1,5 @@
 import React from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function SuccessOneConversation() {
   const opportunities = [
@@ -47,6 +48,7 @@ export default function SuccessOneConversation() {
             <div 
               key={idx}
               className={`px-7 py-4 rounded-2xl bg-white border border-slate-200/90 text-slate-900 text-sm md:text-base font-bold transition-all duration-300 group flex items-center gap-3 hover:-translate-y-1 ${opp.restShadow} ${opp.hoverBg}`}
+              {...touchHoverProps}
             >
               <span className="text-[#00A86B] group-hover:text-white font-bold text-lg transition-colors">•</span>
               <span className="group-hover:text-white transition-colors">{opp.title}</span>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { industriesImpactData } from '../../data/industriesImpactData';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 const industriesImages = import.meta.glob('../../assets/industries images/*.{avif,jpg,jpeg,png,webp}', { eager: true });
 
@@ -98,6 +99,7 @@ export default function IndustriesImpactContent() {
                 key={industry.id} 
                 onClick={() => navigate(`/industries/${industry.id}`)}
                 className="group flex flex-col lg:flex-row bg-white border border-slate-200 rounded-3xl overflow-hidden hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:border-blue-300 transition-all duration-500 cursor-pointer"
+                {...touchHoverProps}
                 style={{ animationDelay: `${idx * 50}ms` }}
               >
                 {/* Image (Left) */}
@@ -107,12 +109,13 @@ export default function IndustriesImpactContent() {
                       src={bgImage} 
                       alt={industry.title} 
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                      {...touchHoverProps}
                     />
                   ) : (
                     <>
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-100/50 to-emerald-50/50 group-hover:scale-105 transition-transform duration-700" />
+                      <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="absolute inset-0 bg-gradient-to-br from-blue-100/50 to-emerald-50/50 group-hover:scale-105 transition-transform duration-700" />
                       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-white/40 rounded-full blur-2xl" />
-                      <div className="relative z-10 flex flex-col items-center gap-4 text-slate-400 group-hover:text-blue-500 transition-colors duration-500">
+                      <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="relative z-10 flex flex-col items-center gap-4 text-slate-400 group-hover:text-blue-500 transition-colors duration-500">
                         <svg className="w-12 h-12 stroke-[1.5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
@@ -121,7 +124,7 @@ export default function IndustriesImpactContent() {
                     </>
                   )}
                   {/* Subtle dark overlay for better integration */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
                 
                 {/* Content (Right) */}
@@ -133,7 +136,7 @@ export default function IndustriesImpactContent() {
                     </span>
                   </div>
                   
-                  <h3 className="font-display text-2xl md:text-3xl font-extrabold text-slate-900 mb-4 group-hover:text-blue-700 transition-colors text-center sm:text-left">
+                  <h3 onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-display text-2xl md:text-3xl font-extrabold text-slate-900 mb-4 group-hover:text-blue-700 transition-colors text-center sm:text-left">
                     {industry.title}
                   </h3>
                   
@@ -155,7 +158,7 @@ export default function IndustriesImpactContent() {
                   
                   {/* Call to Action */}
                   <div className="mt-auto pt-6 border-t border-slate-100">
-                    <span className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 group-hover:gap-3 transition-all duration-300">
+                    <span onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 group-hover:gap-3 transition-all duration-300">
                       Explore Detailed Insights
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import heroBgVideo from '../../assets/background removed.mp4';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function AIAgentsHero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -62,6 +63,7 @@ export default function AIAgentsHero() {
               <a 
                 href="#consultation" 
                 className="group relative w-full sm:w-auto inline-flex justify-center items-center gap-3 rounded-full bg-white px-10 py-4 font-body text-base font-bold text-slate-950 transition-all hover:scale-[1.03] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]"
+                {...touchHoverProps}
               >
                 Schedule Consultation
                 <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -71,6 +73,7 @@ export default function AIAgentsHero() {
               <a 
                 href="#usecases" 
                 className="group relative w-full sm:w-auto inline-flex justify-center items-center gap-2 font-display text-sm font-bold tracking-widest uppercase text-white transition-all hover:text-cyan-400 border-b-2 border-transparent hover:border-cyan-400 pb-1"
+                {...touchHoverProps}
               >
                 Explore Use Cases
               </a>

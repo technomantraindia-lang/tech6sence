@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import heroBgVideo from '../../assets/deep-tech-product.mp4';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function DeepTechHero() {
   return (
@@ -61,6 +62,7 @@ export default function DeepTechHero() {
           <Link
             to="/lets-connect?inquiry=Launch%20Product%20Brand"
             className="group w-full sm:w-auto relative inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 px-9 py-4 font-body text-sm font-bold text-white shadow-[0_4px_25px_rgba(37,99,235,0.25)] transition-all hover:scale-[1.03] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]"
+            {...touchHoverProps}
           >
             Launch Your AI Product Brand
             <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -71,6 +73,7 @@ export default function DeepTechHero() {
           <a
             href="#portfolio"
             className="group w-full sm:w-auto relative inline-flex items-center justify-center gap-2 rounded-full border border-slate-700 bg-slate-900/80 backdrop-blur-md px-9 py-4 font-body text-sm font-bold text-slate-200 hover:border-emerald-500 hover:text-white transition-all shadow-sm"
+            {...touchHoverProps}
           >
             Explore Deep-Tech Innovations
           </a>

@@ -102,6 +102,8 @@ export default function FAQSection() {
                 }`}
                 onMouseEnter={() => setOpenIdx(idx)}
                 onMouseLeave={() => setOpenIdx(null)}
+                onTouchStart={() => setOpenIdx(idx)}
+                onTouchEnd={() => setOpenIdx(null)}
               >
                 <button
                   onClick={() => setOpenIdx(isOpen ? null : idx)}

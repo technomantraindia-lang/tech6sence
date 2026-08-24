@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function AboutFinalCTA() {
   const [isVisible, setIsVisible] = useState(false);
@@ -84,6 +85,7 @@ export default function AboutFinalCTA() {
           <Link 
             to="/lets-connect" 
             className="group relative w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] px-8 py-4 font-body text-sm font-bold text-white transition-all hover:scale-105 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]"
+            {...touchHoverProps}
           >
             <span>Schedule Consultation</span>
             <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center transition-transform group-hover:rotate-45">
@@ -97,10 +99,12 @@ export default function AboutFinalCTA() {
           <Link 
             to="/ai-agents" 
             className="group relative w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-white border border-slate-200 px-8 py-4 font-body text-sm font-bold text-slate-700 transition-all hover:border-[#1746D2]/40 hover:text-[#1746D2] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]"
+            {...touchHoverProps}
           >
             <span>Explore AI Solutions</span>
             <svg 
               className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" 
+              {...touchHoverProps}
               fill="none" 
               viewBox="0 0 24 24" 
               stroke="currentColor" 

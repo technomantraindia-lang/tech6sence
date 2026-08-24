@@ -408,13 +408,19 @@ export function TimelineOverview() {
           </h2>
         </div>
 
-        <div className="w-full mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-xl bg-white mb-8">
-          {/* Mobile View: Stacked Cards */}
-          <div className="block md:hidden divide-y divide-slate-100">
+        <div className="w-full mx-auto overflow-hidden rounded-3xl border border-slate-800 shadow-2xl bg-slate-950 mb-8">
+          {/* Mobile View: Stacked Cards with Solid Brand Colors */}
+          <div className="block md:hidden space-y-4 p-3 bg-slate-950">
             {timelineRows.map((row, idx) => (
-              <div key={idx} className="p-4 space-y-1 bg-white">
-                <div className="font-bold text-slate-900 text-xs sm:text-sm">{row.phase}</div>
-                <div className="text-xs text-[#1746D2] font-semibold font-mono">{row.duration}</div>
+              <div key={idx} className="border border-slate-800 rounded-2xl shadow-xl overflow-hidden divide-y divide-white/15">
+                <div className="p-4 bg-[#1746D2]">
+                  <span className="block text-[10px] font-extrabold text-blue-100 uppercase tracking-widest mb-1">PHASE</span>
+                  <p className="text-xs text-white font-bold">{row.phase}</p>
+                </div>
+                <div className="p-4 bg-[#00A86B]">
+                  <span className="block text-[10px] font-extrabold text-emerald-100 uppercase tracking-widest mb-1">TYPICAL DURATION</span>
+                  <p className="text-xs text-white font-bold leading-relaxed">{row.duration}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -422,16 +428,16 @@ export function TimelineOverview() {
           {/* Desktop View: Table */}
           <table className="hidden md:table w-full border-collapse text-left">
             <thead>
-              <tr className="bg-slate-950 text-white font-display text-sm font-extrabold uppercase tracking-wider">
-                <th className="p-5">Phase</th>
-                <th className="p-5">Typical Duration</th>
+              <tr className="bg-slate-950 text-white font-mono text-xs font-bold uppercase tracking-wider border-b border-slate-800">
+                <th className="p-5 w-1/2 border-r border-slate-800 text-white">PHASE</th>
+                <th className="p-5 w-1/2 text-white">TYPICAL DURATION</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 font-medium text-xs md:text-sm text-slate-700">
+            <tbody className="divide-y divide-white/15 font-medium text-xs md:text-sm text-white">
               {timelineRows.map((row, idx) => (
-                <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
-                  <td className="p-5 font-bold text-slate-900">{row.phase}</td>
-                  <td className="p-5 text-slate-600 font-semibold">{row.duration}</td>
+                <tr key={idx} className="transition-colors hover:brightness-110">
+                  <td className="p-5 bg-[#1746D2] text-white font-extrabold border-r border-white/15">{row.phase}</td>
+                  <td className="p-5 bg-[#00A86B] text-white font-bold leading-relaxed">{row.duration}</td>
                 </tr>
               ))}
             </tbody>
@@ -571,6 +577,15 @@ export function FounderSelectionCriteria() {
     { name: 'Execution Readiness', desc: 'Founder\'s ability to actively participate in building the business alongside the team' }
   ];
 
+  const timelineOverview = [
+    { phase: 'Application to Strategy Call', duration: '3–5 business days' },
+    { phase: 'Strategy Call to Signed Offer', duration: '2–7 days (founder-paced)' },
+    { phase: 'Onboarding Kickoff', duration: 'Within 5 business days of agreement' },
+    { phase: 'Legal + Brand + Website Foundation', duration: '3–5 weeks' },
+    { phase: 'Product/Technology Build', duration: '6–12 weeks (varies by scope)' },
+    { phase: 'Client Acquisition Support', duration: 'Ongoing until first clients secured' }
+  ];
+
   return (
     <section className="py-20 md:py-28 bg-slate-50 relative overflow-hidden border-b border-slate-200">
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
@@ -593,7 +608,7 @@ export function FounderSelectionCriteria() {
         </div>
 
         {/* Integrated Application Steps (First - max-w-[1400px]) */}
-        <div className="bg-white p-8 md:p-14 rounded-3xl border border-slate-200 shadow-xl max-w-[1400px] mx-auto mb-20">
+        <div className="bg-white p-4 sm:p-8 md:p-14 rounded-3xl border border-slate-200 shadow-xl max-w-[1400px] mx-auto mb-20">
           <div className="text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 font-display mb-3">
               Step-by-Step Selection & Onboarding Process
@@ -614,24 +629,27 @@ export function FounderSelectionCriteria() {
             </div>
 
             {/* Step 2 */}
-            <div className="flex gap-6 items-start">
-              <div className="w-12 h-12 rounded-full bg-[#1746D2] text-white flex items-center justify-center font-bold font-mono text-lg shrink-0 shadow-md">2</div>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#1746D2] text-white flex items-center justify-center font-bold font-mono text-base sm:text-lg shrink-0 shadow-md">2</div>
+                <h4 className="sm:hidden font-display font-bold text-slate-900 text-base">Step 2 — Application Review</h4>
+              </div>
               <div className="w-full">
-                <h4 className="font-display font-bold text-slate-900 text-base md:text-lg mb-2">Step 2 — Application Review</h4>
+                <h4 className="hidden sm:block font-display font-bold text-slate-900 text-base md:text-lg mb-2">Step 2 — Application Review</h4>
                 <p className="text-slate-600 text-xs md:text-sm leading-relaxed mb-4">Our team reviews every application against four criteria:</p>
-                <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm bg-slate-50 mt-4">
+                <div className="overflow-hidden rounded-2xl border border-slate-800 shadow-xl bg-slate-950 mt-4 w-full">
                   <table className="w-full border-collapse text-left text-xs md:text-sm">
                     <thead>
-                      <tr className="bg-slate-950 text-white font-mono text-[10px] md:text-xs font-bold uppercase tracking-wider">
-                        <th className="p-4 w-1/3">Criteria</th>
-                        <th className="p-4 w-2/3">What We Look For</th>
+                      <tr className="bg-slate-950 text-white font-mono text-[10px] md:text-xs font-bold uppercase tracking-wider border-b border-slate-800">
+                        <th className="p-2.5 sm:p-4 w-1/3 border-r border-slate-800 text-white">CRITERIA</th>
+                        <th className="p-2.5 sm:p-4 w-2/3 text-white">WHAT WE LOOK FOR</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-slate-200 font-medium text-slate-700">
+                    <tbody className="divide-y divide-white/15 font-medium text-white">
                       {evalCriteria.map((item, i) => (
-                        <tr key={i} className="hover:bg-white transition-colors">
-                          <td className="p-4 font-bold text-slate-900">{item.name}</td>
-                          <td className="p-4 text-slate-600 leading-relaxed">{item.desc}</td>
+                        <tr key={i} className="transition-colors hover:brightness-110">
+                          <td className="p-2.5 sm:p-4 bg-[#1746D2] text-white font-extrabold border-r border-white/15 text-[11px] sm:text-xs md:text-sm">{item.name}</td>
+                          <td className="p-2.5 sm:p-4 bg-[#00A86B] text-white font-medium leading-relaxed text-[11px] sm:text-xs md:text-sm">{item.desc}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -689,11 +707,50 @@ export function FounderSelectionCriteria() {
             </div>
 
             {/* Step 7 */}
-            <div className="flex gap-6 items-start">
-              <div className="w-12 h-12 rounded-full bg-[#1746D2] text-white flex items-center justify-center font-bold font-mono text-lg shrink-0 shadow-md">7</div>
-              <div>
-                <h4 className="font-display font-bold text-slate-900 text-base md:text-lg mb-2">Step 7 — Launch & Client Acquisition</h4>
-                <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-medium">Once your company, brand, and product are live, your Client Success Manager and acquisition training take over — supporting you through outreach, pitching, and closing your first clients.</p>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#1746D2] text-white flex items-center justify-center font-bold font-mono text-base sm:text-lg shrink-0 shadow-md">7</div>
+                <h4 className="sm:hidden font-display font-bold text-slate-900 text-base">Step 7 — Launch & Client Acquisition</h4>
+              </div>
+              <div className="w-full">
+                <h4 className="hidden sm:block font-display font-bold text-slate-900 text-base md:text-lg mb-2">Step 7 — Launch & Client Acquisition</h4>
+                <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-medium mb-6">
+                  Once your company, brand, and product are live, your Client Success Manager and acquisition training take over — supporting you through outreach, pitching, and closing your first clients, with continued support until that milestone is hit.
+                </p>
+
+                {/* TIMELINE OVERVIEW Table inside Step 7 */}
+                <div className="mt-8 pt-6 border-t border-slate-200 w-full">
+                  <div className="mb-4">
+                    <span className="font-mono text-xs font-extrabold text-[#1746D2] uppercase tracking-widest block mb-1">
+                      DELIVERY BENCHMARKS
+                    </span>
+                    <h5 className="text-xl md:text-2xl font-extrabold text-slate-900 font-display">
+                      TIMELINE OVERVIEW
+                    </h5>
+                  </div>
+
+                  <div className="overflow-hidden rounded-2xl border border-slate-800 shadow-xl bg-slate-950 w-full">
+                    <table className="w-full border-collapse text-left text-xs md:text-sm">
+                      <thead>
+                        <tr className="bg-slate-950 text-white font-mono text-[10px] md:text-xs font-bold uppercase tracking-wider border-b border-slate-800">
+                          <th className="p-2.5 sm:p-4 w-1/2 border-r border-slate-800 text-white">PHASE</th>
+                          <th className="p-2.5 sm:p-4 w-1/2 text-white">TYPICAL DURATION</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-white/15 font-medium text-white">
+                        {timelineOverview.map((item, i) => (
+                          <tr key={i} className="transition-colors hover:brightness-110">
+                            <td className="p-2.5 sm:p-4 bg-[#1746D2] text-white font-extrabold border-r border-white/15 text-[11px] sm:text-xs md:text-sm">{item.phase}</td>
+                            <td className="p-2.5 sm:p-4 bg-[#00A86B] text-white font-bold leading-relaxed text-[11px] sm:text-xs md:text-sm">{item.duration}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-[#D4AF37] font-semibold text-xs md:text-sm italic mt-3">
+                    Note: Timelines vary based on tier, industry complexity, and founder responsiveness during the build phase.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

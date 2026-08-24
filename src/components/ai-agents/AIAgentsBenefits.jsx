@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function AIAgentsBenefits() {
   const [isVisible, setIsVisible] = useState(false);
@@ -48,7 +49,7 @@ export default function AIAgentsBenefits() {
             
             <div className="pl-6 border-l-2 border-[#1746D2]/20">
               <h3 className="font-display text-2xl md:text-3xl font-bold text-slate-800 mb-4 leading-snug">
-                Move repetitive work from manual effort to intelligent execution.
+                Move repetitive work from manual effort to intelligent execution
               </h3>
               <p className="font-body text-slate-600 text-lg leading-relaxed">
                 AI automation helps teams save time, reduce dependency on repetitive manual work, and create more consistent business operations.
@@ -62,11 +63,12 @@ export default function AIAgentsBenefits() {
               <div 
                 key={i} 
                 className={`group p-8 bg-white border border-slate-200 rounded-2xl shadow-sm transition-all duration-500 ease-out hover:-translate-y-1.5 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:border-[#1746D2]/40 ${
+                {...touchHoverProps}
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                 }`}
                 style={{ transitionDelay: `${400 + (i * 150)}ms` }}
               >
-                <div className="w-12 h-12 rounded-full bg-[#1746D2]/10 flex items-center justify-center mb-6 border border-[#1746D2]/10 group-hover:bg-[#1746D2]/10 transition-colors">
+                <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="w-12 h-12 rounded-full bg-[#1746D2]/10 flex items-center justify-center mb-6 border border-[#1746D2]/10 group-hover:bg-[#1746D2]/10 transition-colors">
                   <svg className="w-5 h-5 text-[#1746D2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
                   </svg>

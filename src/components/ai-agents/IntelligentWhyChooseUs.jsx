@@ -1,4 +1,5 @@
 import React from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function IntelligentWhyChooseUs() {
   const reasons = [
@@ -34,40 +35,37 @@ export default function IntelligentWhyChooseUs() {
           </h2>
         </div>
 
-        {/* 10 Points Grid - Frameless cards styled with themed backgrounds, translation (no tilt) and slight solid box shadow on hover */}
+        {/* 10 Points Grid - Frameless cards styled with themed brand blue & green backgrounds on hover */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {reasons.map((res, idx) => {
             const numStr = idx + 1 < 10 ? `0${idx + 1}` : idx + 1;
             
-            // Alternating backgrounds and shadow styles
+            // Alternating default tints and hover brand colors (#1746D2 / #00A86B)
             const cardBg = res.isBlue 
-              ? "bg-blue-50/40 hover:bg-blue-50 shadow-[2px_2px_4px_rgba(15,23,42,0.015)]" 
-              : "bg-emerald-50/40 hover:bg-emerald-50 shadow-[2px_2px_4px_rgba(15,23,42,0.015)]";
+              ? "bg-blue-50/50 hover:bg-[#1746D2] border-slate-200/60 hover:border-[#1746D2]" 
+              : "bg-emerald-50/50 hover:bg-[#00A86B] border-slate-200/60 hover:border-[#00A86B]";
             
             const badgeBg = res.isBlue 
-              ? "bg-blue-100 text-blue-700 group-hover:bg-blue-600 group-hover:text-white" 
-              : "bg-emerald-100 text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white";
+              ? "bg-blue-100 text-[#1746D2] group-hover:bg-black/25 group-hover:text-[#FFD700]" 
+              : "bg-emerald-100 text-[#00A86B] group-hover:bg-black/25 group-hover:text-[#FFD700]";
 
-            const hoverText = res.isBlue 
-              ? "group-hover:text-blue-900" 
-              : "group-hover:text-emerald-950";
+            const hoverText = "group-hover:text-white";
 
-            // Frameless translate transform (no rotation/tilt)
             const hoverTransform = "hover:-translate-y-2 hover:scale-[1.03]";
 
-            // Slight solid offset box shadow on hover
             const hoverGlow = res.isBlue
-              ? "hover:shadow-[4px_4px_0px_0px_rgba(37,99,235,0.15)] hover:border-blue-200/50"
-              : "hover:shadow-[4px_4px_0px_0px_rgba(16,185,129,0.15)] hover:border-emerald-200/50";
+              ? "hover:shadow-[0_15px_30px_-10px_rgba(23,70,210,0.4)]"
+              : "hover:shadow-[0_15px_30px_-10px_rgba(0,168,107,0.4)]";
 
             return (
               <div 
                 key={idx}
-                className={`p-6 rounded-2xl transition-all duration-300 border border-transparent flex flex-col justify-between group cursor-default select-none ${cardBg} ${hoverTransform} ${hoverGlow}`}
+                className={`p-6 rounded-2xl transition-all duration-300 border flex flex-col justify-between group cursor-default select-none ${cardBg} ${hoverTransform} ${hoverGlow}`}
+                {...touchHoverProps}
               >
                 <div>
                   {/* Badge spins on hover */}
-                  <span className={`inline-flex items-center justify-center w-8 h-8 rounded-full font-display text-sm font-extrabold mb-4 transition-all duration-500 ease-out group-hover:rotate-[360deg] ${badgeBg}`}>
+                  <span onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className={`inline-flex items-center justify-center w-8 h-8 rounded-full font-display text-sm font-extrabold mb-4 transition-all duration-500 ease-out group-hover:rotate-[360deg] ${badgeBg}`}>
                     {numStr}
                   </span>
                   <h3 className={`font-display text-base font-extrabold text-slate-900 transition-colors duration-300 leading-snug ${hoverText}`}>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function DeepTechApplications() {
   const startupPoints = [
@@ -142,9 +143,9 @@ export default function DeepTechApplications() {
           {/* Minimalist Boxless Layout */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {nextGenTech.map((tech, idx) => (
-              <div key={idx} className="group relative flex items-center gap-3 py-2 cursor-default border-b border-slate-900 pb-3">
-                <span className={`w-1.5 h-1.5 rounded-full shrink-0 transition-transform duration-300 group-hover:scale-125 ${idx % 2 === 0 ? 'bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.6)]' : 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]'}`} />
-                <span className="font-body text-sm font-semibold text-slate-400 group-hover:text-white transition-colors duration-300 leading-relaxed">
+              <div key={idx} onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="group relative flex items-center gap-3 py-2 cursor-default border-b border-slate-900 pb-3">
+                <span onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className={`w-1.5 h-1.5 rounded-full shrink-0 transition-transform duration-300 group-hover:scale-125 ${idx % 2 === 0 ? 'bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.6)]' : 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]'}`} />
+                <span onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-body text-sm font-semibold text-slate-400 group-hover:text-white transition-colors duration-300 leading-relaxed">
                   {tech}
                 </span>
               </div>
@@ -256,29 +257,32 @@ export default function DeepTechApplications() {
             </h2>
           </div>
 
-          {/* Differentiators Grid - bouncy hovers, no tilts, solid shadows */}
+          {/* Differentiators Grid - styled with brand blue & green backgrounds on hover */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {differentiators.map((diff, idx) => {
-              const cardBg = idx % 2 === 0 
-                ? "bg-blue-50/40 hover:bg-blue-50 shadow-[2px_2px_4px_rgba(15,23,42,0.015)]" 
-                : "bg-emerald-50/40 hover:bg-emerald-50 shadow-[2px_2px_4px_rgba(15,23,42,0.015)]";
-              
-              const badgeBg = idx % 2 === 0 
-                ? "bg-blue-100 text-blue-700 group-hover:bg-blue-600 group-hover:text-white" 
-                : "bg-emerald-100 text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white";
+              const isBlue = idx % 2 === 0;
 
-              const hoverText = idx % 2 === 0 
-                ? "group-hover:text-blue-900" 
-                : "group-hover:text-emerald-950";
+              const cardBg = isBlue 
+                ? "bg-blue-50/50 hover:bg-[#1746D2] border-slate-200/60 hover:border-[#1746D2]" 
+                : "bg-emerald-50/50 hover:bg-[#00A86B] border-slate-200/60 hover:border-[#00A86B]";
+              
+              const badgeBg = isBlue 
+                ? "bg-blue-100 text-[#1746D2] group-hover:bg-black/25 group-hover:text-[#FFD700]" 
+                : "bg-emerald-100 text-[#00A86B] group-hover:bg-black/25 group-hover:text-[#FFD700]";
+
+              const hoverText = "group-hover:text-white";
+
+              const hoverTransform = "hover:-translate-y-2 hover:scale-[1.03]";
+
+              const hoverGlow = isBlue
+                ? "hover:shadow-[0_15px_30px_-10px_rgba(23,70,210,0.4)]"
+                : "hover:shadow-[0_15px_30px_-10px_rgba(0,168,107,0.4)]";
 
               return (
                 <div 
                   key={idx}
-                  className={`p-6 rounded-2xl transition-all duration-300 border border-transparent flex flex-col justify-between group cursor-default select-none hover:-translate-y-2 hover:scale-[1.03] ${cardBg} ${
-                    idx % 2 === 0 
-                      ? 'hover:shadow-[4px_4px_0px_0px_rgba(37,99,235,0.15)]' 
-                      : 'hover:shadow-[4px_4px_0px_0px_rgba(16,185,129,0.15)]'
-                  }`}
+                  className={`p-6 rounded-2xl transition-all duration-300 border flex flex-col justify-between group cursor-default select-none ${cardBg} ${hoverTransform} ${hoverGlow}`}
+                  {...touchHoverProps}
                 >
                   <div>
                     <span className={`inline-flex items-center justify-center w-8 h-8 rounded-full font-display text-sm font-extrabold mb-4 transition-all duration-500 ease-out group-hover:rotate-[360deg] ${badgeBg}`}>

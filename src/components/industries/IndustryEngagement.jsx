@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function IndustryEngagement() {
   const [isVisible, setIsVisible] = useState(false);
@@ -87,22 +88,23 @@ export default function IndustryEngagement() {
               <div 
                 key={i} 
                 className={`group relative flex flex-col items-start lg:items-center text-left lg:text-center transition-all duration-700 ${
+                {...touchHoverProps}
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                 }`}
                 style={{ transitionDelay: `${200 + (i * 200)}ms` }}
               >
                 
                 {/* Step Node */}
-                <div className="w-16 h-16 lg:w-24 lg:h-24 rounded-full bg-white border-2 border-slate-100 flex items-center justify-center mb-6 lg:mb-8 shadow-sm group-hover:border-[#1746D2]/40 group-hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-500 z-10 ml-0 lg:mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#1746D2]/10 to-fuchsia-50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <span className="relative z-10 font-display text-xl lg:text-2xl font-extrabold text-slate-900 group-hover:text-[#1746D2] transition-colors">
+                <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="w-16 h-16 lg:w-24 lg:h-24 rounded-full bg-white border-2 border-slate-100 flex items-center justify-center mb-6 lg:mb-8 shadow-sm group-hover:border-[#1746D2]/40 group-hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-500 z-10 ml-0 lg:mx-auto">
+                  <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="absolute inset-0 bg-gradient-to-br from-[#1746D2]/10 to-fuchsia-50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <span onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="relative z-10 font-display text-xl lg:text-2xl font-extrabold text-slate-900 group-hover:text-[#1746D2] transition-colors">
                     {step.num}
                   </span>
                 </div>
 
                 {/* Step Content */}
                 <div className="pl-20 lg:pl-0 w-full lg:w-auto -mt-16 lg:mt-0 pt-4 lg:pt-0">
-                  <h3 className="font-display text-lg lg:text-xl font-bold text-slate-900 mb-3 group-hover:text-[#1746D2] transition-colors">
+                  <h3 onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-display text-lg lg:text-xl font-bold text-slate-900 mb-3 group-hover:text-[#1746D2] transition-colors">
                     {step.title}
                   </h3>
                   <p className="font-body text-sm text-slate-600 leading-relaxed max-w-[280px] lg:mx-auto">
@@ -111,7 +113,7 @@ export default function IndustryEngagement() {
                 </div>
 
                 {/* Hover Underline Glow */}
-                <div className="hidden lg:block absolute -bottom-6 left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-[#1746D2] to-[#00A86B] group-hover:w-1/2 transition-all duration-500 rounded-full opacity-0 group-hover:opacity-100" />
+                <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="hidden lg:block absolute -bottom-6 left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-[#1746D2] to-[#00A86B] group-hover:w-1/2 transition-all duration-500 rounded-full opacity-0 group-hover:opacity-100" />
               </div>
             ))}
           </div>

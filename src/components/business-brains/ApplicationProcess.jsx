@@ -1,4 +1,5 @@
 import React from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function ApplicationProcess() {
   const stages = [
@@ -83,10 +84,10 @@ export default function ApplicationProcess() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
             {stages.map((stage, idx) => (
-              <div key={idx} className="flex flex-col items-center text-center group">
+              <div key={idx} onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="flex flex-col items-center text-center group">
                 
                 {/* Circular Node Icon */}
-                <div className="w-12 h-12 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center mb-6 group-hover:border-[#00A86B] group-hover:scale-110 transition-all duration-300 shadow-sm bg-white z-10">
+                <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="w-12 h-12 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center mb-6 group-hover:border-[#00A86B] group-hover:scale-110 transition-all duration-300 shadow-sm bg-white z-10">
                   {stage.icon}
                 </div>
 
@@ -96,7 +97,7 @@ export default function ApplicationProcess() {
                 </span>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-[#00A86B] transition-colors font-display">
+                <h3 onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="text-xl font-bold text-slate-900 mb-3 group-hover:text-[#00A86B] transition-colors font-display">
                   {stage.title}
                 </h3>
 

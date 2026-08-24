@@ -1,4 +1,5 @@
 import React from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function HowItWorks() {
   const steps = [
@@ -67,9 +68,9 @@ export default function HowItWorks() {
             <div className="absolute top-8 left-[1.35rem] bottom-8 w-px bg-slate-200" />
             
             {steps.map((step, idx) => (
-              <div key={idx} className="relative flex items-start gap-6 group">
+              <div key={idx} onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="relative flex items-start gap-6 group">
                 {/* Icon Circle */}
-                <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-slate-50 border-2 border-emerald-100 flex items-center justify-center group-hover:border-emerald-500 group-hover:bg-emerald-50 transition-colors duration-300">
+                <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-slate-50 border-2 border-emerald-100 flex items-center justify-center group-hover:border-emerald-500 group-hover:bg-emerald-50 transition-colors duration-300">
                   {step.icon}
                 </div>
                 

@@ -1,9 +1,20 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { sendFormEmail } from '../../utils/sendEmail';
 
 export default function ContactFormSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const sectionRef = useRef(null);
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    interest: '',
+    stage: '',
+    message: ''
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
@@ -17,9 +28,31 @@ export default function ContactFormSection() {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitted(true);
+    
+    const categoryTag = formData.interest && formData.interest.includes(']')
+      ? formData.interest.split(']')[0] + ']'
+      : '📩 [GENERAL INQUIRY]';
+
+    await sendFormEmail({
+      subjectTag: categoryTag,
+      formTitle: 'Consultation & Strategy Inquiry',
+      formData: {
+        fullName: formData.name,
+        email: formData.email,
+        phone: formData.phone || 'Not provided',
+        company: formData.company || 'Not provided',
+        interestCategory: formData.interest || 'General Discussion',
+        projectStage: formData.stage || 'Not specified',
+        projectDetails: formData.message || 'No additional details provided'
+      }
+    });
   };
 
   return (
@@ -64,8 +97,7 @@ export default function ContactFormSection() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Full Name */}
                   <div className="space-y-2">
                     <label htmlFor="name" className="block text-sm font-bold text-slate-700">Full Name</label>
@@ -73,6 +105,8 @@ export default function ContactFormSection() {
                       type="text" 
                       id="name" 
                       required
+                      value={formData.name}
+                      onChange={handleChange}
                       placeholder="Enter your full name" 
                       className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#1746D2]/60 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm"
                     />
@@ -84,6 +118,8 @@ export default function ContactFormSection() {
                       type="email" 
                       id="email" 
                       required
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder="Enter your email address" 
                       className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#1746D2]/60 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm"
                     />
@@ -97,6 +133,8 @@ export default function ContactFormSection() {
                     <input 
                       type="tel" 
                       id="phone" 
+                      value={formData.phone}
+                      onChange={handleChange}
                       placeholder="Enter your phone number" 
                       className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#1746D2]/60 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm"
                     />
@@ -107,6 +145,8 @@ export default function ContactFormSection() {
                     <input 
                       type="text" 
                       id="company" 
+                      value={formData.company}
+                      onChange={handleChange}
                       placeholder="Enter your company name" 
                       className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#1746D2]/60 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm"
                     />
@@ -119,6 +159,8 @@ export default function ContactFormSection() {
                     <label htmlFor="interest" className="block text-sm font-bold text-slate-700">Interest Type</label>
                     <select 
                       id="interest" 
+                      value={formData.interest}
+                      onChange={handleChange}
                       className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:border-[#1746D2]/60 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm appearance-none"
                       style={{ backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`, backgroundPosition: 'right 1rem center', backgroundRepeat: 'no-repeat', backgroundSize: '1.5em 1.5em' }}
                     >
@@ -156,6 +198,8 @@ export default function ContactFormSection() {
                     <label htmlFor="stage" className="block text-sm font-bold text-slate-700">Project Stage</label>
                     <select 
                       id="stage" 
+                      value={formData.stage || ''}
+                      onChange={handleChange}
                       className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:border-[#1746D2]/60 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm appearance-none"
                       style={{ backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`, backgroundPosition: 'right 1rem center', backgroundRepeat: 'no-repeat', backgroundSize: '1.5em 1.5em' }}
                     >
@@ -175,7 +219,9 @@ export default function ContactFormSection() {
                   <label htmlFor="message" className="block text-sm font-bold text-slate-700">Message</label>
                   <textarea 
                     id="message" 
-                    rows="4"
+                    rows={4}
+                    value={formData.message}
+                    onChange={handleChange}          rows="4"
                     required
                     placeholder="Tell us about your idea, requirement, or business challenge" 
                     className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#1746D2]/60 focus:ring-4 focus:ring-violet-400/10 transition-all font-body text-sm resize-none"

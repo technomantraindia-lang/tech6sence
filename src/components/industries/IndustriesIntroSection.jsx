@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function IndustriesIntroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -90,22 +91,22 @@ export default function IndustriesIntroSection() {
             </p>
           </div>
 
-          <div className="overflow-hidden bg-white rounded-3xl border border-slate-200 shadow-xl max-w-[1400px] mx-auto">
+          <div className="overflow-hidden bg-[#050B17] rounded-3xl border border-slate-800 shadow-2xl max-w-[1400px] mx-auto">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="text-white font-extrabold">
-                    <th className="py-5 px-6 font-display font-bold text-white uppercase tracking-wider text-sm whitespace-nowrap bg-slate-950">Business Objective</th>
-                    <th className="py-5 px-6 font-display font-bold text-white uppercase tracking-wider text-sm min-w-[280px] bg-[#1746D2]">TECH6SENSE AI Approach</th>
-                    <th className="py-5 px-6 font-display font-bold text-white uppercase tracking-wider text-sm whitespace-nowrap bg-[#00A86B]">Typical Business Impact</th>
+                  <tr className="bg-black text-white font-extrabold uppercase tracking-wider text-xs md:text-sm font-display border-b border-white/20">
+                    <th className="py-5 px-6 font-extrabold text-white whitespace-nowrap border-r border-white/10">Business Objective</th>
+                    <th className="py-5 px-6 font-extrabold text-white min-w-[280px] border-r border-white/20">TECH6SENSE AI Approach</th>
+                    <th className="py-5 px-6 font-extrabold text-white whitespace-nowrap">Typical Business Impact</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-200">
+                <tbody className="divide-y divide-white/15 text-sm md:text-base font-extrabold">
                   {businessImpacts.map((row, idx) => (
-                    <tr key={idx} className="transition-colors even:bg-slate-50/60 hover:bg-blue-50/50">
-                      <td className="py-5 px-6 font-bold text-slate-900">{row.objective}</td>
-                      <td className="py-5 px-6 text-slate-600 font-medium leading-relaxed">{row.approach}</td>
-                      <td className="py-5 px-6 font-extrabold text-[#00A86B]">{row.impact}</td>
+                    <tr key={idx} className="transition-colors hover:brightness-105">
+                      <td className="py-5 px-6 font-extrabold text-white bg-[#050B17] border-r border-white/10">{row.objective}</td>
+                      <td className="py-5 px-6 font-extrabold text-white leading-relaxed bg-[#1746D2] border-r border-white/20">{row.approach}</td>
+                      <td className="py-5 px-6 font-extrabold text-white bg-[#00A86B]">{row.impact}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -139,6 +140,7 @@ export default function IndustriesIntroSection() {
               <div 
                 key={idx} 
                 className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-[#1746D2] transition-all flex items-start gap-3.5 group"
+                {...touchHoverProps}
               >
                 <div className="w-2.5 h-2.5 mt-2 rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] shrink-0 group-hover:scale-125 transition-transform" />
                 <span className="font-body text-slate-800 font-semibold text-sm md:text-base leading-relaxed group-hover:text-[#1746D2] transition-colors">

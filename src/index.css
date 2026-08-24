@@ -511,3 +511,130 @@ html.lenis, html.lenis body {
 .max-w-\[85rem\].mx-auto {
   max-width: 1400px !important;
 }
+
+/* ====================================================================
+   MOBILE TOUCH-HOVER SYSTEM
+   On touch devices, pressing and holding a card triggers the same
+   visual state as desktop :hover. The .touch-active class is added
+   via onTouchStart and removed via onTouchEnd in React components.
+   ==================================================================== */
+
+/* When .touch-active is on a .group parent, trigger all group-hover children */
+@media (hover: none) {
+  /* Card scale / shadow lift */
+  .group.touch-active {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25) !important;
+  }
+
+  /* Background overlay fill (used in EngagementModels, Principles, etc.) */
+  .group.touch-active .group-hover\:opacity-100,
+  .group.touch-active .group-hover\:\!opacity-100 {
+    opacity: 1 !important;
+  }
+
+  .group.touch-active .group-hover\:opacity-0 {
+    opacity: 0 !important;
+  }
+
+  /* Text color transitions */
+  .group.touch-active .group-hover\:text-white,
+  .group.touch-active .group-hover\:\!text-white {
+    color: #fff !important;
+  }
+
+  .group.touch-active .group-hover\:text-slate-100 {
+    color: #f1f5f9 !important;
+  }
+
+  .group.touch-active .group-hover\:text-slate-200 {
+    color: #e2e8f0 !important;
+  }
+
+  .group.touch-active .group-hover\:text-slate-300 {
+    color: #cbd5e1 !important;
+  }
+
+  /* Background color transitions */
+  .group.touch-active .group-hover\:\!bg-white {
+    background-color: #fff !important;
+  }
+
+  .group.touch-active .group-hover\:\!text-slate-950 {
+    color: #020617 !important;
+  }
+
+  .group.touch-active .group-hover\:\!border-white {
+    border-color: #fff !important;
+  }
+
+  /* Scale effects */
+  .group.touch-active .group-hover\:scale-110 {
+    transform: scale(1.1) !important;
+  }
+
+  .group.touch-active .group-hover\:scale-105 {
+    transform: scale(1.05) !important;
+  }
+
+  /* Border color transitions */
+  .group.touch-active .group-hover\:border-blue-400\/40 {
+    border-color: rgba(96, 165, 250, 0.4) !important;
+  }
+
+  .group.touch-active .group-hover\:border-emerald-400\/40 {
+    border-color: rgba(52, 211, 153, 0.4) !important;
+  }
+
+  /* Translate effects */
+  .group.touch-active .group-hover\:translate-y-0 {
+    transform: translateY(0) !important;
+  }
+
+  .group.touch-active .group-hover\:-translate-y-1 {
+    transform: translateY(-0.25rem) !important;
+  }
+
+  /* Shadow effects */
+  .group.touch-active .group-hover\:shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .group.touch-active .group-hover\:shadow-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  }
+}
+
+/* ====================================================================
+   MOBILE SIDE PADDING OPTIMIZATION FOR CARDS & CONTAINERS
+   Maximizes readable text space on small screens by reducing outer 
+   margin & inner card padding on mobile devices (< 640px).
+   ==================================================================== */
+@media (max-width: 639px) {
+  /* Reduce outer container horizontal padding on mobile from 24px (px-6) to 12px (px-3) */
+  .max-w-\[1400px\].px-6,
+  .max-w-6xl.px-6,
+  .max-w-7xl.px-6,
+  .max-w-5xl.px-6,
+  .max-w-4xl.px-6,
+  .max-w-3xl.px-6,
+  .max-w-2xl.px-6 {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  /* Reduce heavy inner box/card paddings on mobile (p-8, p-10, p-12) to 16px/20px */
+  .rounded-3xl.p-8,
+  .rounded-2xl.p-8,
+  .rounded-\[2.5rem\].p-8,
+  .rounded-\[2rem\].p-8,
+  .rounded-3xl.p-10,
+  .rounded-2xl.p-10,
+  .rounded-\[2.5rem\].p-10,
+  .rounded-3xl.p-12,
+  .rounded-2xl.p-12,
+  .rounded-\[2.5rem\].p-12 {
+    padding: 1.25rem 1rem !important;
+  }
+}
+

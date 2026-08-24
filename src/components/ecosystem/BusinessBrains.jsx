@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function BusinessBrains() {
   const [isVisible, setIsVisible] = useState(false);
@@ -109,6 +110,7 @@ export default function BusinessBrains() {
             {focusAreas.map((area, i) => (
               <div 
                 key={i} 
+                {...touchHoverProps}
                 className={`group relative p-8 bg-white border border-slate-200 rounded-2xl transition-all duration-500 ease-out hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:border-[#1746D2]/40 lg:first:col-start-1 lg:last:col-start-3 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                 }`}

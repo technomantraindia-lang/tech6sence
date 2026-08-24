@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function ConsultationOptions() {
   const [isVisible, setIsVisible] = useState(false);
@@ -76,7 +77,8 @@ export default function ConsultationOptions() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 relative z-10">
           {options.map((opt, i) => (
             <div 
-              key={i} 
+              key={i}
+              {...touchHoverProps}
               className={`group relative bg-white border border-slate-200 p-8 rounded-3xl hover:border-[#1746D2]/40 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:-translate-y-1 transition-all duration-500 ease-out flex flex-col justify-between overflow-hidden md:col-span-1 ${opt.colSpan} ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}

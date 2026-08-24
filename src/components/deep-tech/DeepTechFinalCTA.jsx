@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function DeepTechFinalCTA() {
   return (
@@ -38,6 +39,7 @@ export default function DeepTechFinalCTA() {
           <Link
             to="/lets-connect?inquiry=Launch%20AI%20Product%20Company"
             className="group relative inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 px-9 py-4 font-body text-sm font-bold text-white shadow-[0_4px_25px_rgba(37,99,235,0.3)] transition-all hover:scale-[1.03] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]"
+            {...touchHoverProps}
           >
             Launch Your Own AI Product Company
             <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

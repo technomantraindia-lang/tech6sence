@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import heroBg from '../../assets/abouthero2.png';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function AboutHero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -41,13 +42,13 @@ export default function AboutHero() {
 
           {/* Buttons - Minimalist */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto">
-            <a href="#solutions" className="group relative inline-flex justify-center items-center gap-3 rounded-full bg-white px-8 py-3.5 font-body text-sm font-medium text-black transition-all hover:bg-slate-200">
+            <a href="#solutions" onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="group relative inline-flex justify-center items-center gap-3 rounded-full bg-white px-8 py-3.5 font-body text-sm font-medium text-black transition-all hover:bg-slate-200">
               Explore Solutions
-              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <svg onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </a>
-            <a href="#ecosystem" className="group relative inline-flex justify-center items-center gap-2 rounded-full border border-white/40 px-8 py-3.5 font-body text-sm font-medium text-white transition-all hover:border-white hover:bg-white/10">
+            <a href="#ecosystem" onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="group relative inline-flex justify-center items-center gap-2 rounded-full border border-white/40 px-8 py-3.5 font-body text-sm font-medium text-white transition-all hover:border-white hover:bg-white/10">
               Meet the Ecosystem
             </a>
           </div>

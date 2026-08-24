@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 // Engagement Models data integrating PDF table content directly into cards
 const MODELS = [
@@ -10,7 +11,6 @@ const MODELS = [
     structure: 'Fixed-scope engagement, executive deliverables',
     accentColor: '#D4AF37',
     badge: 'BOARD DIRECTION',
-    colSpan: 'lg:col-span-5',
     features: [
       'Fixed-scope advisory engagements with executive roadmap deliverables',
       'AI readiness assessments, risk governance, and regulatory alignment',
@@ -25,7 +25,6 @@ const MODELS = [
     structure: 'Milestone-based, outcome-defined',
     accentColor: '#1746D2',
     badge: 'TURNKEY ENGINEERING',
-    colSpan: 'lg:col-span-7',
     features: [
       'Milestone-based, outcome-defined delivery with full technical accountability',
       'End-to-end architecture, development, testing, and production deployment',
@@ -40,7 +39,6 @@ const MODELS = [
     structure: 'Dedicated pods, monthly retainer',
     accentColor: '#00A86B',
     badge: 'DEDICATED PODS',
-    colSpan: 'lg:col-span-7',
     features: [
       'Dedicated pods operating directly inside your existing team structure',
       'Pre-vetted, elite AI models engineers, data architects, and CTO oversight',
@@ -55,7 +53,6 @@ const MODELS = [
     structure: 'Long-horizon partnership, structured commercially per engagement',
     accentColor: '#1746D2',
     badge: 'VENTURE BUILDING',
-    colSpan: 'lg:col-span-5',
     features: [
       'Long-horizon venture partnership structured commercially per engagement',
       'Shared upside and co-creation of proprietary deep-tech products',
@@ -113,62 +110,69 @@ export default function EngagementModels() {
           <h2 className="font-display text-[clamp(2.2rem,4.5vw,3.6rem)] leading-[1.12] font-extrabold text-slate-900 tracking-tight mb-4">
             Four ways to start.{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1746D2] via-[#00A86B] to-[#1746D2]">
-              One standard of delivery.
+              One standard of delivery
             </span>
           </h2>
         </div>
 
-        {/* Detailed 4 Model Cards Grid (Integrating FOR and STRUCTURE text directly) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+        {/* Detailed 4 Model Cards Grid - Equal Size 2x2 Layout with Brand Hover Backgrounds */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           {MODELS.map((model, index) => (
             <div
               key={model.num}
-              className={`group relative rounded-[2.5rem] bg-white border border-slate-200/80 p-8 md:p-10 shadow-sm hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:border-[#1746D2]/40 transition-all duration-500 flex flex-col justify-between overflow-hidden ${model.colSpan}`}
+              className="group relative rounded-[2.5rem] bg-white border border-slate-200/80 p-8 md:p-10 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col justify-between overflow-hidden h-full cursor-pointer hover:-translate-y-2"
+              {...touchHoverProps}
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(40px)',
                 transitionDelay: `${200 + index * 150}ms`,
               }}
             >
-              <div>
+              {/* Background Color Hover Fill Overlay */}
+              <div 
+                className="absolute inset-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100 pointer-events-none z-0"
+                style={{ backgroundColor: model.accentColor }}
+              />
+
+              <div className="relative z-10">
                 {/* Header Row */}
                 <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
                   <span
-                    className="font-mono text-[0.7rem] font-extrabold tracking-widest px-3.5 py-1.5 rounded-full border shadow-sm"
+                    className="font-mono text-[0.7rem] font-extrabold tracking-widest px-3.5 py-1.5 rounded-full border shadow-sm transition-all duration-300 group-hover:!bg-white group-hover:!text-slate-950 group-hover:!border-white group-hover:shadow-md"
                     style={{ 
                       color: model.accentColor, 
-                      borderColor: model.accentColor + '40',
-                      backgroundColor: model.accentColor + '0D'
+                      borderColor: model.accentColor + '50',
+                      backgroundColor: model.accentColor + '15'
                     }}
                   >
                     {model.badge}
                   </span>
 
-                  <span className="font-mono text-3xl md:text-4xl font-extrabold text-slate-200 group-hover:text-[#1746D2]/30 transition-colors">
+                  <span className="font-mono text-3xl md:text-4xl font-extrabold text-slate-200 group-hover:text-white/40 transition-colors duration-300">
                     {model.num}
                   </span>
                 </div>
 
                 {/* Model Title */}
-                <h3 className="font-display text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight mb-4 group-hover:text-[#1746D2] transition-colors">
+                <h3 className="font-display text-2xl md:text-3xl font-extrabold text-slate-900 group-hover:text-white tracking-tight mb-4 transition-colors duration-300">
                   {model.model}
                 </h3>
 
                 {/* FOR & STRUCTURE Integrated Box */}
-                <div className="space-y-3 mb-6 bg-slate-50/80 rounded-2xl p-5 border border-slate-100">
+                <div className="space-y-3 mb-6 bg-slate-50/80 group-hover:bg-white/15 rounded-2xl p-5 border border-slate-100 group-hover:border-white/20 transition-all duration-300">
                   <div>
-                    <span className="font-mono text-[0.68rem] font-extrabold text-slate-400 uppercase tracking-wider block mb-1">
+                    <span className="font-mono text-[0.68rem] font-extrabold text-slate-400 group-hover:text-white/75 uppercase tracking-wider block mb-1 transition-colors">
                       FOR:
                     </span>
-                    <p className="font-body text-slate-900 text-sm md:text-base font-bold leading-snug">
+                    <p className="font-body text-slate-900 group-hover:text-white text-sm md:text-base font-bold leading-snug transition-colors">
                       {model.forWho}
                     </p>
                   </div>
-                  <div className="border-t border-slate-200/60 pt-3">
-                    <span className="font-mono text-[0.68rem] font-extrabold text-slate-400 uppercase tracking-wider block mb-1">
+                  <div className="border-t border-slate-200/60 group-hover:border-white/20 pt-3 transition-colors">
+                    <span className="font-mono text-[0.68rem] font-extrabold text-slate-400 group-hover:text-white/75 uppercase tracking-wider block mb-1 transition-colors">
                       STRUCTURE:
                     </span>
-                    <p className="font-body text-slate-700 text-sm font-semibold leading-relaxed">
+                    <p className="font-body text-slate-700 group-hover:text-white/95 text-sm font-semibold leading-relaxed transition-colors">
                       {model.structure}
                     </p>
                   </div>
@@ -181,7 +185,7 @@ export default function EngagementModels() {
                       <svg
                         viewBox="0 0 20 20"
                         fill="currentColor"
-                        className="w-4 h-4 mt-0.5 shrink-0"
+                        className="w-4 h-4 mt-0.5 shrink-0 transition-colors duration-300 text-current group-hover:text-white"
                         style={{ color: model.accentColor }}
                       >
                         <path
@@ -190,7 +194,7 @@ export default function EngagementModels() {
                           clipRule="evenodd"
                         />
                       </svg>
-                      <span className="font-body text-xs md:text-sm text-slate-600 font-medium leading-relaxed">
+                      <span className="font-body text-xs md:text-sm text-slate-600 group-hover:text-white/95 font-medium leading-relaxed transition-colors duration-300">
                         {feat}
                       </span>
                     </div>
@@ -199,10 +203,10 @@ export default function EngagementModels() {
               </div>
 
               {/* Action Button Link */}
-              <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
+              <div className="relative z-10 mt-8 pt-6 border-t border-slate-100 group-hover:border-white/20 flex items-center justify-between transition-colors duration-300">
                 <Link
                   to="/lets-connect"
-                  className="font-display text-xs md:text-sm font-extrabold tracking-wider uppercase flex items-center gap-2.5 group-hover:gap-4 transition-all"
+                  className="font-display text-xs md:text-sm font-extrabold tracking-wider uppercase flex items-center gap-2.5 group-hover:gap-4 transition-all duration-300 group-hover:text-white"
                   style={{ color: model.accentColor }}
                 >
                   <span>Discuss this engagement model</span>

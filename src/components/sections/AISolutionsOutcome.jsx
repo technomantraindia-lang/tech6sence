@@ -122,6 +122,7 @@ function AccordionItem({ solution, index, isOpen, onHover, onToggle, isVisible }
   return (
     <div
       onMouseEnter={() => onHover(index)}
+      onTouchStart={() => onToggle(index)}
       onClick={() => onToggle(index)}
       className="group relative transition-all duration-700 ease-out"
       style={{
@@ -286,7 +287,7 @@ export default function AISolutionsOutcome() {
             <h2 className="mb-6 font-display text-[clamp(2rem,4vw,3.2rem)] leading-[1.1] font-extrabold text-slate-900 tracking-[-0.02em]">
               One Ecosystem.{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1746D2] via-[#00A86B] to-[#1746D2]">
-                Every Layer of Intelligence.
+                Every Layer of Intelligence
               </span>
             </h2>
 

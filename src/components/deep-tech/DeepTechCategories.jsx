@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function DeepTechCategories() {
   const comparison = [
@@ -110,6 +111,7 @@ export default function DeepTechCategories() {
           <Link
             to="/lets-connect?inquiry=Start%20Tech%20Company"
             className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 px-8 py-3.5 font-body text-sm font-bold text-white shadow-md hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-transform hover:scale-[1.03]"
+            {...touchHoverProps}
           >
             Start Your Tech Company Today
             <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

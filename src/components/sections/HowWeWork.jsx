@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 const STEPS = [
   {
@@ -114,7 +115,7 @@ export default function HowWeWork() {
           <h3 className="font-display text-[clamp(2.2rem,4vw,3.5rem)] leading-[1.1] font-extrabold text-slate-900 tracking-tight mb-6">
             Five stages.{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1746D2] via-[#00A86B] to-[#D4AF37]">
-              No pilots that die in production.
+              No pilots that die in production
             </span>
           </h3>
 
@@ -141,6 +142,7 @@ export default function HowWeWork() {
                 key={step.id}
                 onClick={() => setActiveTab(step.id)}
                 style={activeBorderStyle}
+                {...touchHoverProps}
                 className={`group relative flex flex-col items-center justify-center p-4 md:p-5 rounded-2xl md:rounded-3xl border text-center transition-all duration-300 select-none cursor-pointer overflow-hidden ${
                   isActive
                     ? 'bg-white border-2 scale-[1.03] z-10'

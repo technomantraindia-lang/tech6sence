@@ -48,14 +48,14 @@ export default function HeroContent() {
       <div className="th-cta-group">
         <Link 
           to={primaryCta.href} 
-          className="th-btn th-btn-primary" 
+          className="th-btn th-btn-primary !bg-[#1746D2] hover:!bg-[#1233A0] !text-white !border-[#1746D2] shadow-[0_4px_20px_rgba(23,70,210,0.4)] hover:shadow-[0_6px_25px_rgba(23,70,210,0.6)] transition-all duration-300 font-extrabold" 
           id="hero-primary-cta"
         >
           {primaryCta.label}
         </Link>
         <Link 
           to={secondaryCta.href} 
-          className="th-btn th-btn-secondary" 
+          className="th-btn th-btn-secondary !bg-[#00A86B] hover:!bg-[#008f5b] !text-white !border-[#00A86B] shadow-[0_4px_20px_rgba(0,168,107,0.4)] hover:shadow-[0_6px_25px_rgba(0,168,107,0.6)] transition-all duration-300 font-extrabold" 
           id="hero-secondary-cta"
         >
           {secondaryCta.label}

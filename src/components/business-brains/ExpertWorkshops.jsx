@@ -1,4 +1,5 @@
 import React from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function ExpertWorkshops() {
   const blocks = [
@@ -29,9 +30,9 @@ export default function ExpertWorkshops() {
       <div className="max-w-[1400px] mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
         
         {blocks.map((block, idx) => (
-          <div key={idx} className="bg-slate-50 border border-slate-200 rounded-[2.5rem] p-10 md:p-14 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-shadow duration-300 group flex flex-col justify-between">
+          <div key={idx} onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="bg-slate-50 border border-slate-200 rounded-[2.5rem] p-10 md:p-14 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-shadow duration-300 group flex flex-col justify-between">
             <div>
-              <div className="w-16 h-16 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+              <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="w-16 h-16 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                 {block.icon}
               </div>
               <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-4">

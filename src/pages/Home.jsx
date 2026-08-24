@@ -716,7 +716,7 @@ function AboutSection() {
           <div className="flex flex-col justify-center">
             <h3 className="mb-8 font-display text-[clamp(2rem,3.5vw,3.2rem)] leading-[1.15] font-bold text-slate-800">
               Not Just an AI Vendor. Not an Agency. Not a Studio.{' '}
-              <span className="text-shimmer">An Intelligence Ecosystem.</span>
+              <span className="text-shimmer">An Intelligence Ecosystem</span>
             </h3>
             
             {/* Animated gradient border card */}

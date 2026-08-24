@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function EcosystemBenefits() {
   const [isVisible, setIsVisible] = useState(false);
@@ -91,6 +92,7 @@ export default function EcosystemBenefits() {
             {stages.map((stage, i) => (
               <div 
                 key={i} 
+                {...touchHoverProps}
                 className={`group relative flex flex-row lg:flex-col items-start lg:items-center text-left lg:text-center transition-all duration-700 ease-out ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                 }`}

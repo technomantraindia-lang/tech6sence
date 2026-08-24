@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 const ALL_POINTS = [
   {
@@ -179,6 +180,7 @@ export default function WhyChooseTech6Sense() {
                   ${i % 2 !== 0 ? 'md:mt-28' : 'md:mb-28'}
                   ${point.shadowHover}
                 `}
+                {...touchHoverProps}
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(40px)',

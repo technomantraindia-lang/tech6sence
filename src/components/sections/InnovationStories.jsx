@@ -317,7 +317,7 @@ export default function InnovationStories() {
         <h2 className="font-display text-[clamp(2.1rem,4.2vw,3.4rem)] leading-[1.12] font-extrabold text-slate-900 tracking-tight mb-16 text-center">
           Hear from those who are part of the{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1746D2] to-[#00A86B]">
-            Global Ecosystem.
+            Global Ecosystem
           </span>
         </h2>
 
@@ -424,23 +424,43 @@ export default function InnovationStories() {
         </div>
 
         {/* Navigation & Controls */}
-        <div className="flex items-center justify-center gap-8 mt-12">
+        <div className="flex items-center justify-center gap-6 mt-12">
+          <button 
+            onClick={handlePrev}
+            className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-slate-200/90 bg-white hover:bg-[#1746D2] text-slate-700 hover:text-white flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer group shrink-0"
+            aria-label="Previous testimonial"
+          >
+            <svg className="w-6 h-6 transform group-hover:-translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
           {/* Dots Indicator */}
-          <div className="flex items-center gap-2 max-w-[280px] overflow-hidden py-2 px-1">
+          <div className="flex items-center gap-2 max-w-[320px] overflow-hidden py-2 px-1">
             {STORIES.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
                 aria-label={`Go to slide ${idx + 1}`}
-                className={`h-1.5 rounded-full transition-all duration-500 cursor-pointer ${
+                className={`h-2 rounded-full transition-all duration-500 cursor-pointer ${
                   currentIndex === idx
-                    ? 'w-6'
-                    : 'w-2 bg-slate-300 hover:bg-slate-400'
+                    ? 'w-8'
+                    : 'w-2.5 bg-slate-300 hover:bg-slate-400'
                 }`}
                 style={{ backgroundColor: currentIndex === idx ? STORIES[currentIndex].accent : undefined }}
               />
             ))}
           </div>
+
+          <button 
+            onClick={handleNext}
+            className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-slate-200/90 bg-white hover:bg-[#1746D2] text-slate-700 hover:text-white flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer group shrink-0"
+            aria-label="Next testimonial"
+          >
+            <svg className="w-6 h-6 transform group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
 
       </div>

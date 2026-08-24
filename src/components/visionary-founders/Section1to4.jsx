@@ -1,4 +1,5 @@
 import React from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export function ProgramPromise() {
   return (
@@ -84,7 +85,7 @@ export function ProblemWeSolve() {
           
           {/* Left Column: Context Card */}
           <div className="lg:col-span-5 flex flex-col gap-6">
-            <div className="p-8 rounded-3xl bg-white border border-slate-200/80 shadow-md relative overflow-hidden space-y-4">
+            <div className="p-4 sm:p-8 rounded-3xl bg-white border border-slate-200/80 shadow-md relative overflow-hidden space-y-4">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#1746D2]/5 rounded-bl-full pointer-events-none" />
               
               <span className="font-mono text-xs font-bold text-[#D4AF37] uppercase tracking-wider block">
@@ -113,13 +114,14 @@ export function ProblemWeSolve() {
                 <div 
                   key={i} 
                   className="flex items-center gap-3.5 p-4.5 rounded-2xl border border-slate-200/80 bg-white shadow-xs hover:border-[#1746D2]/40 hover:shadow-md transition-all duration-300 group"
+                  {...touchHoverProps}
                 >
                   <div className="w-8 h-8 rounded-full bg-[#1746D2]/10 border border-[#1746D2]/20 flex items-center justify-center shrink-0 group-hover:bg-[#1746D2] transition-colors duration-300">
                     <svg className="w-4 h-4 text-[#1746D2] group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </div>
-                  <span className="text-slate-800 text-xs sm:text-sm font-extrabold font-display group-hover:text-[#1746D2] transition-colors">
+                  <span onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="text-slate-800 text-xs sm:text-sm font-extrabold font-display group-hover:text-[#1746D2] transition-colors">
                     {problem}
                   </span>
                 </div>
@@ -167,8 +169,8 @@ export function RealityVsSolution() {
     <section className="py-20 md:py-28 bg-slate-50 relative">
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
-          <div className="p-8 md:p-12 rounded-[2rem] bg-white border border-slate-200 shadow-sm relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full opacity-70 transition-transform group-hover:scale-110"></div>
+          <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="p-4 sm:p-8 md:p-12 rounded-[2rem] bg-white border border-slate-200 shadow-sm relative overflow-hidden group">
+            <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full opacity-70 transition-transform group-hover:scale-110"></div>
             <span className="font-display text-sm font-extrabold text-blue-600 uppercase tracking-widest mb-4 block">
               The Reality
             </span>
@@ -183,8 +185,8 @@ export function RealityVsSolution() {
             </p>
           </div>
 
-          <div className="p-8 md:p-12 rounded-[2rem] bg-gradient-to-br from-blue-700 to-indigo-900 text-white border border-blue-800 shadow-xl relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/30 rounded-bl-full blur-xl transition-transform group-hover:scale-125"></div>
+          <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="p-4 sm:p-8 md:p-12 rounded-[2rem] bg-gradient-to-br from-blue-700 to-indigo-900 text-white border border-blue-800 shadow-xl relative overflow-hidden group">
+            <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="absolute top-0 right-0 w-32 h-32 bg-blue-500/30 rounded-bl-full blur-xl transition-transform group-hover:scale-125"></div>
             <span className="font-display text-sm font-extrabold text-blue-200 uppercase tracking-widest mb-4 block">
               The Solution
             </span>

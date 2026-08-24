@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 const FOUNDERS_POINTS = [
   { text: 'Company formation, legal, and compliance', icon: 'M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21' },
@@ -19,10 +20,10 @@ const BRAINS_POINTS = [
 
 function EcoListItem({ point, index, color, textColor = 'text-slate-700' }) {
   return (
-    <div className={`group flex items-center gap-4 py-4 border-b border-white/10 hover:border-white/30 transition-colors`}>
-      <span className="font-display text-sm font-extrabold text-slate-400 group-hover:text-slate-300 transition-colors">0{index + 1}</span>
-      <span className={`font-body text-[0.95rem] ${textColor} font-medium flex-1 transition-transform duration-300 group-hover:translate-x-1`}>{point.text}</span>
-      <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 opacity-0 -translate-x-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0" style={{ stroke: color }} strokeWidth="2.5">
+    <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className={`group flex items-center gap-4 py-4 border-b border-white/10 hover:border-white/30 transition-colors`}>
+      <span onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-display text-sm font-extrabold text-slate-400 group-hover:text-slate-300 transition-colors">0{index + 1}</span>
+      <span onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className={`font-body text-[0.95rem] ${textColor} font-medium flex-1 transition-transform duration-300 group-hover:translate-x-1`}>{point.text}</span>
+      <svg viewBox="0 0 24 24" fill="none" onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="w-5 h-5 opacity-0 -translate-x-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0" style={{ stroke: color }} strokeWidth="2.5">
         <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
       </svg>
     </div>
@@ -53,7 +54,7 @@ export default function EcosystemSection() {
       id="ecosystem"
       className="relative w-full py-24 md:py-32 overflow-hidden bg-white"
     >
-      <div className="relative z-10 mx-auto max-w-[1400px] px-6">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-3 sm:px-6">
         
 
         <div className="space-y-4">
@@ -77,35 +78,36 @@ export default function EcosystemSection() {
 
           {/* VISIONARY FOUNDERS - Premium Full Width Block */}
           <div 
-            className="relative bg-[#0A1128] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-1000 ease-out group"
+            className="relative bg-[#0A1128] rounded-2xl sm:rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-1000 ease-out group"
+            {...touchHoverProps}
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(40px)' }}
           >
             {/* Background effects */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(23,70,210,0.15),transparent_60%)] pointer-events-none" />
             <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-[#00A86B]/10 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="relative z-10 grid lg:grid-cols-[1.2fr_1fr] gap-12 px-5 py-10 md:p-16 lg:p-20">
+            <div className="relative z-10 grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-12 px-4 py-7 sm:px-8 md:p-16 lg:p-20">
               
               {/* Left Content */}
               <div className="flex flex-col items-start text-white">
-                <span className="font-display text-sm font-extrabold text-blue-400 uppercase tracking-[0.2em] block px-4 py-2 rounded-full bg-blue-500/10 border border-blue-400/20 mb-8">
+                <span className="font-display text-xs sm:text-sm font-extrabold text-blue-400 uppercase tracking-[0.2em] block px-3.5 sm:px-4 py-2 rounded-full bg-blue-500/10 border border-blue-400/20 mb-6 sm:mb-8">
                   The Global AI Founder Ecosystem
                 </span>
 
-                <h3 className="font-display text-[clamp(2.5rem,3.5vw,3.5rem)] leading-[1.1] font-extrabold tracking-tight mb-8">
-                  Build Your AI Empire Powered by a Global Ecosystem.
+                <h3 className="font-display text-[clamp(1.8rem,3.5vw,3.5rem)] leading-[1.1] font-extrabold tracking-tight mb-6 sm:mb-8">
+                  Build Your AI Empire Powered by a Global Ecosystem
                 </h3>
                 
-                <p className="font-body text-slate-300 text-lg md:text-xl leading-relaxed mb-8 text-justify">
+                <p className="font-body text-slate-300 text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8 text-left sm:text-justify">
                   Visionary Founders is the world’s elite most comprehensive premier all-in-one AI Founder Ecosystem designed to transform ambitious entrepreneurs, professionals, start-up founders, consultants, and innovators into owners of globally competitive AI and technology companies and dominate the global markets.
                 </p>
 
-                <p className="font-body text-[#00A86B] text-lg md:text-xl font-semibold border-l-4 border-[#00A86B] pl-5 leading-relaxed mb-12 text-justify">
+                <p className="font-body text-[#00A86B] text-base sm:text-lg md:text-xl font-semibold border-l-4 border-[#00A86B] pl-4 sm:pl-5 leading-relaxed mb-8 sm:mb-12 text-left sm:text-justify">
                   "From Idea to International Clients —We don't just simply train founders. We build AI companies with them."
                 </p>
 
-                <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm text-slate-300 text-sm leading-relaxed mb-12 shadow-lg">
-                  <p className="font-semibold text-white text-base mb-4">
+                <div className="p-5 sm:p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm text-slate-300 text-sm leading-relaxed mb-8 sm:mb-12 shadow-lg">
+                  <p className="font-semibold text-white text-sm sm:text-base mb-4">
                     The ultimate shortcut from concept to cross-border enterprise. We supply the tech, the talent, the legal, and the capital pipelines. You bring the vision. We Building the Next Generation of Global AI Companies.
                   </p>
                   <div className="text-xs text-slate-400 border-t border-white/10 pt-4 font-mono">
@@ -153,14 +155,15 @@ export default function EcosystemSection() {
 
           {/* BUSINESS BRAINS - Premium Full Width Block */}
           <div 
-            className="relative bg-[#021A12] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-1000 delay-200 ease-out group"
+            className="relative bg-[#021A12] rounded-2xl sm:rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-1000 delay-200 ease-out group"
+            {...touchHoverProps}
             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(40px)' }}
           >
             {/* Background effects */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(0,168,107,0.15),transparent_60%)] pointer-events-none" />
             <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-[100px] pointer-events-none" />
             
-            <div className="relative z-10 grid lg:grid-cols-[1fr_1.2fr] gap-12 px-5 py-10 md:p-16 lg:p-20">
+            <div className="relative z-10 grid lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-12 px-4 py-7 sm:px-8 md:p-16 lg:p-20">
               
               {/* Left Content - Features */}
               <div className="flex flex-col justify-center h-full order-2 lg:order-1 pb-8 lg:pb-0 lg:pr-8 lg:border-r border-white/10">
@@ -180,22 +183,22 @@ export default function EcosystemSection() {
 
               {/* Right Content */}
               <div className="flex flex-col items-start text-white order-1 lg:order-2">
-                <span className="font-display text-sm font-extrabold text-[#00A86B] uppercase tracking-[0.2em] block px-4 py-2 rounded-full bg-[#00A86B]/10 border border-[#00A86B]/20 mb-8">
+                <span className="font-display text-xs sm:text-sm font-extrabold text-[#00A86B] uppercase tracking-[0.2em] block px-3.5 sm:px-4 py-2 rounded-full bg-[#00A86B]/10 border border-[#00A86B]/20 mb-6 sm:mb-8">
                   The Nexus of Global Capital and Technological Supremacy
                 </span>
 
-                <h3 className="font-display text-[clamp(2.2rem,3vw,3.2rem)] leading-[1.15] font-extrabold tracking-tight mb-6">
+                <h3 className="font-display text-[clamp(1.8rem,3vw,3.2rem)] leading-[1.15] font-extrabold tracking-tight mb-6">
                   The World's Most Exclusive Private Global Circle for{' '}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00A86B] to-emerald-400">
                     Elite Investors, Entrepreneurs &amp; Industry Leaders
                   </span>
                 </h3>
                 
-                <p className="font-display text-emerald-400 text-xl md:text-2xl font-bold mb-8 tracking-wide">
+                <p className="font-display text-emerald-400 text-lg sm:text-xl md:text-2xl font-bold mb-6 sm:mb-8 tracking-wide">
                   Stop Networking. <span className="text-white">Start Unlocking Millions.</span>
                 </p>
 
-                <div className="font-body text-slate-300 text-[1.05rem] leading-relaxed space-y-5 mb-8 text-justify">
+                <div className="font-body text-slate-300 text-base sm:text-[1.05rem] leading-relaxed space-y-5 mb-8 text-left sm:text-justify">
                   <p>
                     Welcome to Business Brains—an invitation-only global syndicate reserved for elite investors, visionary entrepreneurs, and titans of industry. We operate beyond the public eye, at the absolute pinnacle of global commerce, capital, and artificial intelligence.
                   </p>

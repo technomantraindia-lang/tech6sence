@@ -1,839 +1,774 @@
 export const successStoriesData = [
   {
-    id: "healthcare",
-    title: "Healthcare and Life Sciences",
+    id: "healthcare-lifesciences",
+    title: "Healthcare & Life Sciences",
     stories: [
       {
-        id: "hc-1",
-        title: "AI-Powered Radiology for Multi-Specialty Hospital Network",
+        id: "cs-1",
+        title: "Automating Patient Triage & Operational Workflows",
         clientProfile: {
-          organization: "Leading multi-specialty hospital chain in Western India",
-          size: "8 hospitals, 2,000+ beds, 150 radiologists",
-          volume: "500,000+ imaging studies annually",
-          challenge: "Radiologist shortage, 3-5 day diagnosis delays, inconsistent quality"
+          organization: "Regional Healthcare System",
+          location: "USA",
+          challenge: "Long wait times, manual intake, and delayed triage in emergency departments"
         },
-        challenge: "The hospital network faced a critical shortage of radiologists, leading to severe diagnostic delays. Emergency cases were prioritized, but routine screening and follow-up scans experienced 3-5 day turnaround times. Inconsistency across radiologists led to missed findings and patient safety concerns. Rural satellite facilities had no on-site specialists, relying on telemedicine with limited capacity.",
-        solution: "We implemented a comprehensive AI-powered medical imaging analysis platform across all facilities.",
+        challenge: "Emergency departments were struggling with long wait times, manual patient intake, and delayed triage, leading to operational bottlenecks and lower patient satisfaction.",
+        solution: "TECH6SENSE AI built a custom agentic AI workflow automation system integrated with Electronic Health Records (EHR) to automate patient triage, prioritize urgent cases, and streamline staff allocation.",
         implementation: [
-          "Deep learning models trained on 2 million annotated medical images",
-          "Integration with existing PACS (Picture Archiving and Communication System)",
-          "Multi-modality support: X-ray, CT, MRI, ultrasound",
-          "Priority flagging system for critical findings",
-          "Radiologist workstation integration with AI suggestions",
-          "Cloud-based deployment enabling access from any facility",
-          "Explainable AI showing heatmaps and reasoning",
-          "Continuous learning from radiologist feedback"
+          "Deep learning patient risk scoring algorithms",
+          "Real-time EHR data pipeline integration",
+          "Automated triage priority queuing",
+          "Staff allocation optimization dashboard"
         ],
         results: {
           operational: [
-            "70% reduction in average report turnaround time (from 4 days to 1.2 days)",
-            "3x increase in radiologist productivity (from 50 to 150 studies/day)",
-            "24/7 preliminary analysis availability",
-            "Rural facilities gained access to expert-level analysis"
-          ],
-          clinical: [
-            "15% improvement in early cancer detection rates",
-            "90% reduction in missed critical findings",
-            "Standardized reporting quality across all facilities",
-            "Reduced inter-radiologist variability by 60%"
-          ],
-          financial: [
-            "Annual cost savings: ₹3.2 crores from improved productivity",
-            "Revenue increase: ₹5.1 crores from higher patient volume capacity",
-            "Reduced malpractice risk and insurance premiums",
-            "ROI achieved in 14 months"
-          ],
-          patient: [
-            "Patient satisfaction scores increased from 72% to 91%",
-            "Emergency diagnosis time reduced from 2 hours to 20 minutes",
-            "8,000+ additional patients served annually",
-            "Improved outcomes through earlier intervention"
+            "40% reduction in patient wait times",
+            "25% increase in daily patient throughput",
+            "99.2% accuracy in automated triage prioritization"
           ]
-        },
-        testimonial: {
-          quote: "TECH6SENSE’s AI platform transformed our radiology department from a bottleneck into a competitive advantage. Our radiologists now focus on complex cases while AI handles routine screening, improving both speed and accuracy. The impact on patient care has been remarkable.",
-          author: "Dr. Rajesh Mehta, Chief Radiologist"
         }
       },
       {
-        id: "hc-2",
-        title: "Predictive Patient Monitoring in ICU",
+        id: "cs-10",
+        title: "Generative BioTech Molecule Screening & Enzyme Synthesis",
         clientProfile: {
-          organization: "500-bed tertiary care hospital in Mumbai",
-          size: "50 ICU beds, 12-15 average daily admissions",
-          challenge: "High mortality from late detection of patient deterioration"
+          organization: "Biopharmaceutical Pioneer",
+          location: "Boston, USA",
+          challenge: "Years spent in lab environments screening millions of molecular compounds"
         },
-        challenge: "ICU patients were monitored through standard vital sign tracking, but deterioration often went unnoticed until critical events occurred. Sepsis, cardiac events, and respiratory failure were detected reactively rather than proactively. Nurses were overwhelmed with alerts, many false positives, leading to alarm fatigue. The hospital’s ICU mortality rate was 18%, above the national average of 15%.",
-        solution: "Deployed an AI-powered predictive patient monitoring system integrating with existing ICU infrastructure.",
+        challenge: "Screening millions of molecular compounds for drug candidate selection was taking years in laboratory environments.",
+        solution: "Deployed a generative AI deep learning model trained on molecular structures to simulate compound stability and affinity in silico.",
         implementation: [
-          "Real-time analysis of vital signs, lab results, medication data",
-          "Integration with bedside monitors and electronic health records",
-          "ML models trained on 50,000 ICU patient records",
-          "Sepsis prediction algorithm (12-48 hours advance warning)",
-          "Cardiac event risk scoring",
-          "Respiratory failure prediction",
-          "Customizable alert thresholds per patient",
-          "Mobile app for physician notifications",
-          "Trend visualization and risk dashboards"
+          "Generative molecular structure neural networks",
+          "In silico binding affinity simulations",
+          "High-throughput virtual screening pipeline",
+          "Automated toxicity and stability scoring"
         ],
         results: {
-          clinical: [
-            "ICU mortality reduced from 18% to 12% (33% reduction)",
-            "Sepsis detected average 18 hours before clinical symptoms",
-            "65% of cardiac events predicted with 6+ hour warning",
-            "Code Blue events reduced by 40%"
-          ],
           operational: [
-            "False alarm rate reduced by 75%",
-            "Average ICU length of stay decreased from 6.2 to 4.8 days",
-            "Nurse satisfaction improved (reduced alarm fatigue)",
-            "Earlier discharge to step-down units"
-          ],
-          financial: [
-            "Annual cost savings: ₹2.8 crores (reduced length of stay, fewer complications)",
-            "Better bed utilization serving 15% more patients",
-            "Reduced litigation risk from adverse events",
-            "ROI: 18 months"
+            "10x acceleration in early-stage candidate screening",
+            "$5M saved in physical laboratory testing expenses",
+            "2 high-affinity compounds identified for clinical trials"
           ]
-        },
-        testimonial: {
-          quote: "The system predicted sepsis in a 45-year-old post-surgical patient 22 hours before clinical symptoms appeared. Early antibiotic intervention likely saved the patient’s life. The family credited the 'AI guardian angel' in their testimonial.",
-          author: "Hospital Administration"
-        }
-      }
-    ]
-  },
-  {
-    id: "financial-services",
-    title: "Financial Services",
-    stories: [
-      {
-        id: "fs-1",
-        title: "AI-Driven Credit Scoring for Neo-Bank",
-        clientProfile: {
-          organization: "Fast-growing digital neo-bank targeting millennials",
-          size: "2.5 million users, ₹1,200 crore loan portfolio",
-          challenge: "High default rates on micro-loans, low approval rates for thin-file customers"
-        },
-        challenge: "The neo-bank relied on traditional credit bureau scores to evaluate loan applications. However, their target demographic (young professionals and freelancers) often had \"thin\" credit files, resulting in a 65% rejection rate. Meanwhile, the default rate on approved loans was 8.2%, eroding profitability. The bank needed to expand its lending while simultaneously reducing risk.",
-        solution: "Implemented an alternative data credit scoring engine.",
-        implementation: [
-          "Ingestion of 200+ alternative data points (with user consent)",
-          "Analysis of transactional behavior, utility payments, and mobile data",
-          "Machine learning models (Gradient Boosting) for default prediction",
-          "Real-time decision engine (under 2 seconds API response)",
-          "Explainable AI to provide reasons for rejection",
-          "Continuous model retraining to adapt to economic shifts"
-        ],
-        results: {
-          businessImpact: [
-            "Loan approval rate increased from 35% to 58%",
-            "Default rate decreased from 8.2% to 3.1%",
-            "Loan origination volume increased 3.5x",
-            "Time-to-decision reduced from 2 hours to 2 seconds"
-          ],
-          financial: [
-            "Additional annual revenue: ₹45 crores",
-            "Reduction in non-performing assets (NPAs): ₹22 crores",
-            "Total financial benefit: ₹67 crores",
-            "ROI: 1,240%"
-          ]
-        },
-        testimonial: {
-          quote: "TECH6SENSE’s AI models allowed us to see the invisible—creditworthy customers that traditional banks ignore. We’ve grown our portfolio aggressively while actually lowering our risk profile. It’s the engine driving our growth.",
-          author: "Vikram Das, Chief Risk Officer"
         }
       },
       {
-        id: "fs-2",
-        title: "Fraud Detection for National Payment Gateway",
+        id: "cs-28",
+        title: "AI-Powered Synthetic Data Generation for Clinical Trials",
         clientProfile: {
-          organization: "Major payment gateway processing 15% of national e-commerce transactions",
-          volume: "10 million+ transactions daily",
-          challenge: "Rising chargeback rates, sophisticated fraud rings, false declines angering merchants"
+          organization: "Pharmaceutical Research Lab",
+          location: "Switzerland",
+          challenge: "Lack of diverse patient data delaying clinical trial modeling and drug testing"
         },
-        challenge: "As e-commerce volume surged, fraud evolved from simple stolen cards to complex account takeovers and synthetic identities. The existing rules-based fraud system was failing—chargebacks had increased 40% year-over-year. Worse, to stop the fraud, the system was aggressively blocking legitimate transactions (false declines), causing the gateway to lose major merchant clients to competitors.",
-        solution: "Deployed a behavioral AI fraud detection system processing transactions in real-time.",
+        challenge: "Lack of diverse patient data delayed clinical trial modeling and drug safety testing for rare medical conditions.",
+        solution: "TECH6SENSE AI created a privacy-compliant synthetic data engine that generates realistic, anonymized patient datasets for medical research.",
         implementation: [
-          "Graph neural networks to map relationships between devices, IP addresses, and accounts",
-          "Behavioral biometrics (typing speed, mouse movements, navigation patterns)",
-          "Sub-50ms latency scoring for every transaction",
-          "Unsupervised learning to detect new fraud patterns without historical data",
-          "Merchant-specific risk thresholds",
-          "Dashboard for risk analysts with link analysis visualization"
+          "Generative Adversarial Networks (GANs) for medical telemetry",
+          "100% HIPAA and GDPR differential privacy enforcement",
+          "Synthetic trial patient cohort simulation",
+          "Multi-center clinical trial data augmentation"
         ],
         results: {
           operational: [
-            "Fraud detection rate improved from 65% to 94%",
-            "False positive rate reduced by 82%",
-            "Manual review queue reduced by 75%",
-            "New fraud patterns detected 3 weeks faster than before"
-          ],
-          financial: [
-            "Fraud losses reduced by ₹120 crores annually",
-            "Merchant retention improved by 25%",
-            "Won 3 major enterprise clients due to superior authorization rates",
-            "ROI: 3,400%"
+            "Accelerated clinical trial modeling by 6 months",
+            "100% HIPAA and GDPR privacy compliance guaranteed",
+            "Synthetic datasets used across 8 international medical trials"
           ]
-        },
-        testimonial: {
-          quote: "The beauty of TECH6SENSE’s system isn’t just stopping the bad guys—it’s letting the good guys through. Our authorization rates are up, chargebacks are down, and our merchants are thrilled.",
-          author: "Priya Sharma, Head of Fraud Strategy"
         }
       }
     ]
   },
   {
-    id: "manufacturing",
-    title: "Manufacturing",
+    id: "financial-services-regtech",
+    title: "Financial Services, Banking & RegTech",
     stories: [
       {
-        id: "mfg-1",
-        title: "Predictive Maintenance for Automotive Parts Manufacturer",
+        id: "cs-2",
+        title: "AI-Driven Fraud Detection & Compliance Automation",
         clientProfile: {
-          organization: "Tier-1 automotive component supplier",
-          size: "12 manufacturing plants, 4,500 employees",
-          challenge: "Unplanned downtime costing ₹2.5 lakhs per hour per line"
+          organization: "Tier-2 Commercial Bank",
+          location: "United Kingdom",
+          challenge: "High false-positive fraud alerts and delayed regulatory compliance reporting"
         },
-        challenge: "The manufacturer relied on scheduled preventive maintenance, replacing parts whether they needed it or not. Despite this, unexpected machine failures still caused frequent line stoppages. A single CNC machine failure could halt the entire assembly line. Unplanned downtime averaged 14% across plants, severely impacting delivery schedules and profitability.",
-        solution: "Implemented an Industrial IoT and AI predictive maintenance solution.",
+        challenge: "Manual transaction monitoring caused high false-positive rates in fraud alerts and delayed regulatory compliance reporting.",
+        solution: "We implemented an enterprise machine learning and NLP framework that continuously analyzes transaction patterns and automates AML (Anti-Money Laundering) compliance reporting.",
         implementation: [
-          "Installed vibration, temperature, and acoustic sensors on 400+ critical machines",
-          "Edge computing gateways for real-time local processing",
-          "Cloud-based ML models predicting time-to-failure (RUL - Remaining Useful Life)",
-          "Integration with CMMS (Computerized Maintenance Management System)",
-          "Automated work order generation 1-3 weeks before predicted failure",
-          "Digital twin modeling for factory optimization"
+          "Graph neural network transaction monitoring",
+          "Real-time Anti-Money Laundering (AML) anomaly detection",
+          "Automated regulatory filing & audit trail generator",
+          "Low-latency risk scoring API layer"
         ],
         results: {
           operational: [
-            "Unplanned downtime reduced from 14% to 2.5% (82% reduction)",
-            "Maintenance costs decreased by 28% (stopped replacing healthy parts)",
-            "Overall Equipment Effectiveness (OEE) improved from 68% to 84%",
-            "Spare parts inventory reduced by 20%"
-          ],
-          financial: [
-            "Saved ₹18 crores annually in avoided downtime",
-            "Saved ₹4.5 crores in optimized maintenance labor and parts",
-            "Revenue capacity increased by 15% without adding new machines",
-            "ROI: 8 months"
+            "65% drop in false-positive fraud alerts",
+            "80% faster compliance audit preparation",
+            "$3.2M saved in annual operational overhead"
           ]
-        },
-        testimonial: {
-          quote: "We used to fix things when they broke. Now we fix them before they break. TECH6SENSE gave our machines a voice to tell us when they need help. It has fundamentally changed our operations.",
-          author: "Anil Kumar, VP of Manufacturing"
         }
       },
       {
-        id: "mfg-2",
-        title: "Computer Vision Quality Control for Electronics Assembler",
+        id: "cs-11",
+        title: "Sovereign Wealth Algorithmic Portfolio Rebalancing",
         clientProfile: {
-          organization: "Consumer electronics assembly plant",
-          volume: "Production of 50,000 smart home devices daily",
-          challenge: "High defect escape rate (1.2%), expensive manual inspection, brand damage"
+          organization: "Institutional Asset Manager",
+          location: "Dubai, UAE",
+          challenge: "Difficulty executing real-time multi-asset hedging in volatile macro markets"
         },
-        challenge: "Manual visual inspection of printed circuit boards (PCBs) and final assemblies was slow, inconsistent, and error-prone due to worker fatigue. Defects like missing screws, misaligned components, and scratch marks were reaching customers, causing a 1.2% return rate. The cost of returns and brand damage was significant, and adding more human inspectors was slowing down production.",
-        solution: "Deployed an edge-AI computer vision inspection system.",
+        challenge: "Portfolio managers struggled to execute real-time multi-asset hedging strategies across fluctuating global macro markets.",
+        solution: "Engineered an algorithmic AI portfolio management engine that monitors macro signals and automates risk-adjusted asset allocation.",
         implementation: [
-          "High-resolution industrial cameras installed at 8 critical inspection points",
-          "Custom Convolutional Neural Networks (CNNs) trained on 10,000+ defect images",
-          "Sub-100ms inference time at the edge on factory floor",
-          "Automated rejection mechanisms linked to PLCs",
-          "Root cause analysis dashboard showing defect heatmaps and trends",
-          "Continuous learning pipeline allowing engineers to retrain models"
+          "Real-time macro signal ingestion pipelines",
+          "Multi-asset risk-adjusted rebalancing algorithms",
+          "Automated hedging execution across global exchanges",
+          "Sub-millisecond trade execution infrastructure"
         ],
         results: {
-          quality: [
-            "Defect escape rate reduced from 1.2% to 0.05% (96% improvement)",
-            "False rejection rate reduced by 60% compared to previous automated optical inspection (AOI)",
-            "Inspection throughput increased by 35%"
-          ],
-          financial: [
-            "Warranty claims and return costs reduced by ₹8.5 crores annually",
-            "Labor reallocation saved ₹2.2 crores",
-            "Scrap reduction saved ₹3.1 crores",
-            "ROI: 5 months"
-          ]
-        },
-        testimonial: {
-          quote: "The AI system never blinks, never gets tired, and catches defects our best inspectors miss. Our quality metrics are the highest in company history, and our customer satisfaction scores reflect that.",
-          author: "Meera Reddy, Director of Quality Assurance"
-        }
-      }
-    ]
-  },
-  {
-    id: "retail-and-e-commerce",
-    title: "Retail and E-commerce",
-    stories: [
-      {
-        id: "retail-1",
-        title: "Dynamic Pricing Engine for Fashion Retailer",
-        clientProfile: {
-          organization: "Omnichannel fashion retailer with 150 stores and strong online presence",
-          volume: "12,000+ SKUs, ₹800 crore annual revenue",
-          challenge: "Excess inventory, heavy reliance on end-of-season sales, margin erosion"
-        },
-        challenge: "The retailer struggled with inventory management and pricing. Best-sellers sold out too quickly at full price, while slow-movers accumulated, forcing massive 50-70% discounts at the end of the season. Pricing decisions were manual, based on simple rules, and couldn't account for complex variables like localized demand, competitor pricing, weather, or fashion trends.",
-        solution: "Implemented an AI-driven dynamic pricing and markdown optimization engine.",
-        implementation: [
-          "Ingestion of historical sales, inventory, competitor pricing, and weather data",
-          "Reinforcement learning algorithms optimizing for maximum profit margin over the product lifecycle",
-          "Demand elasticity modeling per SKU per location",
-          "Automated daily price recommendations for online store",
-          "Optimized markdown schedules for physical stores",
-          "A/B testing framework to validate pricing strategies"
-        ],
-        results: {
-          financial: [
-            "Gross margin increased by 4.2 percentage points",
-            "Revenue increased by 11% (better availability of best-sellers, optimized pricing)",
-            "End-of-season dead stock reduced by 45%",
-            "Total annual profit increase: ₹35 crores"
-          ],
           operational: [
-            "Pricing team productivity increased 5x",
-            "Eliminated “gut feel” pricing in favor of data-driven decisions",
-            "Better alignment between online and offline pricing strategies"
+            "15% enhancement in risk-adjusted portfolio returns",
+            "99.99% system uptime during extreme market volatility",
+            "Automated hedging across 5 global asset classes"
           ]
-        },
-        testimonial: {
-          quote: "We were leaving millions on the table through sub-optimal pricing. TECH6SENSE’s AI doesn’t just discount; it finds the exact right price to maximize margin while clearing inventory. It’s a game-changer.",
-          author: "Siddharth Jain, Chief Merchandising Officer"
         }
       },
       {
-        id: "retail-2",
-        title: "Hyper-Personalized Recommendation Engine for E-commerce",
+        id: "cs-15",
+        title: "Cross-Chain Regulatory Compliance & RegTech Shield",
         clientProfile: {
-          organization: "Leading online beauty and personal care marketplace",
-          volume: "8 million monthly active users, 50,000+ products",
-          challenge: "Low conversion rate (1.8%), poor cross-selling, generic user experience"
+          organization: "Digital Asset Exchange",
+          location: "Switzerland",
+          challenge: "Manual auditing required for evolving global cross-border crypto and fiat compliance"
         },
-        challenge: "Users were overwhelmed by the massive product catalog. Search was keyword-based, and recommendations were generic (“Best Sellers” or “People also bought”). The conversion rate was stuck at 1.8%, and average order value (AOV) was stagnant. The company needed to replicate the experience of an expert beauty advisor for millions of users simultaneously.",
-        solution: "Deployed a deep learning personalization and recommendation platform.",
+        challenge: "Keeping pace with evolving global cross-border crypto and fiat compliance rules required manual transaction auditing.",
+        solution: "TECH6SENSE AI developed an automated RegTech compliance monitoring engine that tracks wallet transactions and auto-generates regulatory reports.",
         implementation: [
-          "Session-based recommendation models (RNNs) capturing real-time intent",
-          "Collaborative filtering combined with content-based image analysis",
-          "Personalized search ranking based on user affinity (brand, price, ingredients)",
-          "Dynamic homepage tailored to each user’s history and current context",
-          "Automated “Routine Builder” suggesting complementary products",
-          "Personalized push notifications and email campaigns"
+          "Multi-chain wallet risk scoring engines",
+          "Automated Travel Rule compliance verification",
+          "Real-time sanctions and PEP list screening",
+          "Automated regulatory reporting pipelines"
         ],
         results: {
-          engagement: [
-            "Click-through rate (CTR) on recommendations increased by 140%",
-            "Time spent on app increased by 35%",
-            "Bounce rate reduced by 22%"
-          ],
-          financial: [
-            "Conversion rate improved from 1.8% to 2.7% (50% increase)",
-            "Average Order Value (AOV) increased by 18% (better cross-selling)",
-            "Customer Lifetime Value (CLV) increased by 25%",
-            "Annual revenue impact: ₹180 crores"
+          operational: [
+            "99.9% compliance audit pass rate",
+            "85% reduction in compliance reporting time",
+            "Real-time transaction risk scoring across 15 blockchains"
           ]
+        }
+      },
+      {
+        id: "cs-25",
+        title: "AI-Powered Personalization Engine for Digital Banking",
+        clientProfile: {
+          organization: "Neobank Platform",
+          location: "Brazil",
+          challenge: "Low customer retention due to generic mobile app interfaces and recommendations"
         },
-        testimonial: {
-          quote: "TECH6SENSE turned our platform into a personalized boutique for every single user. The AI understands our customers better than they understand themselves, leading to unprecedented growth in conversion and cart size.",
-          author: "Neha Gupta, VP of Product"
+        challenge: "Low customer retention and engagement rates due to generic mobile app interfaces and irrelevant product recommendations.",
+        solution: "Built a real-time behavioral AI personalization engine that dynamically tailors app screens, financial tips, and product offers based on individual spending habits.",
+        implementation: [
+          "Real-time spending pattern recognition models",
+          "Dynamic UI component personalization",
+          "Contextual product cross-sell recommendation APIs",
+          "Automated financial health insight engine"
+        ],
+        results: {
+          operational: [
+            "45% increase in monthly active users (MAU)",
+            "3x higher adoption rate of financial products",
+            "28% improvement in customer retention after 6 months"
+          ]
+        }
+      },
+      {
+        id: "cs-27",
+        title: "Predictive Financial Risk Modeling & Credit Scoring",
+        clientProfile: {
+          organization: "Fintech Lending Platform",
+          location: "Mexico",
+          challenge: "Traditional credit scoring excluding underserved populations with thin credit files"
+        },
+        challenge: "Traditional credit scoring models excluded underserved populations with limited credit histories, limiting market expansion.",
+        solution: "Engineered an alternative data AI credit scoring model analyzing transaction behavior, utility payments, and mobile data usage to assess creditworthiness.",
+        implementation: [
+          "Alternative data point ingestion (utility, mobile, transactional)",
+          "Gradient boosted decision tree default prediction",
+          "Real-time API scoring engine (< 2 seconds)",
+          "Explainable AI rejection reasoning generator"
+        ],
+        results: {
+          operational: [
+            "50% expansion in loan approval volume",
+            "30% lower default rate compared to traditional scoring models",
+            "Processed 100,000+ credit applications monthly"
+          ]
         }
       }
     ]
   },
   {
-    id: "education",
-    title: "Education",
+    id: "media-marketing-edtech",
+    title: "Media, Marketing & EdTech",
     stories: [
       {
-        id: "edu-1",
-        title: "Personalized Learning Paths for K-12 School Network",
+        id: "cs-3",
+        title: "Generative AI Video Rendering & Visual Effects",
         clientProfile: {
-          organization: "Premium K-12 school network with 45 campuses",
-          size: "60,000+ students, 3,500 teachers",
-          challenge: "Varying student learning paces, high teacher workload, generic curriculum"
+          organization: "Independent Media & Animation Studio",
+          location: "Los Angeles, USA",
+          challenge: "Slow and costly VFX rendering creating severe production delays"
         },
-        challenge: "Teachers struggled to cater to the diverse learning paces within a single classroom of 30-40 students. High achievers were bored, while struggling students fell further behind. The “one-size-fits-all” curriculum delivery resulted in mediocre standardized test scores. Teachers spent 15+ hours weekly on grading and lesson planning, leaving little time for 1-on-1 mentoring.",
-        solution: "Implemented an AI-driven personalized learning platform.",
+        challenge: "Visual effects (VFX) rendering was slow, costly, and created severe production delays for high-budget digital animation projects.",
+        solution: "TECH6SENSE AI developed custom generative AI neural rendering pipelines to accelerate asset creation, background synthesis, and video post-processing.",
         implementation: [
-          "Knowledge space theory modeling to map student proficiency across concepts",
-          "Adaptive assessments that adjust difficulty based on student responses",
-          "AI content recommendation engine (videos, quizzes, exercises) based on learning gaps",
-          "Automated grading for objective and short-answer questions using NLP",
-          "Teacher dashboard highlighting students requiring immediate intervention",
-          "Predictive analytics for early warning on student drop-off or failure"
+          "Neural rendering pipeline acceleration",
+          "Generative background asset synthesis",
+          "AI frame interpolation & resolution upscaling",
+          "Cloud GPU cluster distribution manager"
         ],
         results: {
-          studentImpact: [
-            "Average test scores improved 28% across network",
-            "Students achieving grade-level proficiency increased from 62% to 84%",
-            "Learning pace accelerated by average 35%",
-            "Knowledge retention improved (measured 3 months post-learning)",
-            "Achievement gap between high and low performers reduced 45%"
-          ],
-          efficiency: [
-            "Teacher time spent on grading reduced by 70%",
-            "Lesson planning time reduced by 40%",
-            "1-on-1 mentoring time increased 3x"
-          ],
-          schoolPerformance: [
-            "Network-wide board exam scores improved 22%",
-            "Multiple schools achieved “Top School” status in regions",
-            "Student enrollment increased 18% due to reputation",
-            "Teacher recruitment improved (reputation for innovation)"
+          operational: [
+            "70% reduction in visual rendering turnaround time",
+            "45% savings in post-production software costs",
+            "Accelerated project delivery by 3 months"
           ]
+        }
+      },
+      {
+        id: "cs-13",
+        title: "Generative EdTech Adaptive Learning Platform",
+        clientProfile: {
+          organization: "Digital Education Provider",
+          location: "India",
+          challenge: "Low completion rates due to one-size-fits-all digital course structures"
         },
-        testimonial: {
-          quote: "TECH6SENSE transformed our schools from one-size-fits-all to truly personalized learning. Every student now has a custom learning path, and our teachers can focus on what they do best—inspiring and mentoring. Our outcomes speak for themselves.",
-          author: "Dr. Anita Kapoor, Network Academic Director"
+        challenge: "One-size-fits-all digital courses resulted in low student engagement and completion rates across regional language demographics.",
+        solution: "Built a generative AI hyper-personalized learning system that adapts course content, quizzes, and tutoring speed based on individual student performance.",
+        implementation: [
+          "Adaptive learning path generation algorithms",
+          "Multilingual generative AI tutoring agents",
+          "Real-time student comprehension analytics",
+          "Low-bandwidth mobile optimization framework"
+        ],
+        results: {
+          operational: [
+            "60% increase in course completion rates",
+            "3x improvement in student test scores",
+            "Scaled platform to 250,000 active learners across 5 languages"
+          ]
+        }
+      },
+      {
+        id: "cs-22",
+        title: "Generative Marketing Campaign & Content Engine",
+        clientProfile: {
+          organization: "Global Digital Marketing Agency",
+          location: "France",
+          challenge: "Creating localized ad copy and visual assets for global brands was slow"
+        },
+        challenge: "Creating localized, high-performing ad copy and visual creative assets for international brands was slow and resource-intensive.",
+        solution: "Developed a custom Generative AI Marketing Engine that automatically generates brand-compliant copy, image variations, and video ads tuned for specific target demographics.",
+        implementation: [
+          "Brand voice fine-tuned LLM copy generators",
+          "Multi-demographic visual variation pipelines",
+          "Automated ad performance feedback loops",
+          "Multi-platform format deployment APIs"
+        ],
+        results: {
+          operational: [
+            "5x increase in creative ad output",
+            "35% boost in ad click-through rates (CTR)",
+            "60% reduction in content production turnaround time"
+          ]
         }
       }
     ]
   },
   {
-    id: "telecommunications",
-    title: "Telecommunications",
+    id: "manufacturing-deeptech",
+    title: "Manufacturing, Automotive & Deep-Tech",
     stories: [
       {
-        id: "telecom-1",
-        title: "Churn Prediction and Retention for Telecom Operator",
+        id: "cs-4",
+        title: "Industrial Computer Vision for Predictive Quality Shielding",
         clientProfile: {
-          organization: "Major telecom operator with 45 million subscribers",
-          challenge: "3.5% monthly churn rate costing ₹500+ crores annually",
-          market: "Highly competitive with 4 major players",
-          customerAcquisitionCost: "₹2,400 per subscriber"
+          organization: "Automotive Parts Manufacturer",
+          location: "Germany",
+          challenge: "Defective components passing manual inspection leading to recalls and downtime"
         },
-        challenge: "Customer churn was bleeding the company at alarming rates. With 3.5% monthly churn (1.575 million lost customers monthly), and customer acquisition cost of ₹2,400 per subscriber, the financial impact was devastating. Traditional retention efforts had poor targeting—expensive offers went to customers who wouldn't have churned anyway, while at-risk customers received generic messaging. The company couldn't identify who would churn, why, or what offer would retain them.",
-        solution: "Implemented comprehensive churn prediction and intelligent retention platform.",
+        challenge: "Defective components were occasionally passing manual quality inspections, resulting in costly product recalls and factory downtime.",
+        solution: "Deployed an edge-computed computer vision system on assembly lines to inspect parts in real-time at micro-scale accuracy.",
         implementation: [
-          "Deep learning recommendation models analyzing browse and purchase behavior",
-          "Collaborative filtering enhanced with deep learning",
-          "Visual similarity engine for 'more like this' recommendations",
-          "Personalized search result ranking",
-          "Dynamic homepage customized per user",
-          "Personalized email and notification content",
-          "Real-time behavioral tracking and adaptation",
-          "Size and fit recommendations using ML",
-          "Price sensitivity analysis for personalized promotions",
-          "A/B testing framework for continuous optimization",
-          "Integration with inventory, pricing, and marketing systems"
+          "High-speed industrial camera integration",
+          "Edge-computed Convolutional Neural Networks (CNNs)",
+          "Sub-50ms defect identification at micro-scale",
+          "PLC automated component rejection mechanism"
         ],
         results: {
-          churnReduction: [
-            "Monthly churn reduced from 3.5% to 2.1% (40% reduction)",
-            "630,000 fewer lost customers monthly",
-            "Churn in targeted high-value segment reduced from 4.2% to 1.8%"
-          ],
-          retentionCampaignPerformance: [
-            "Prediction accuracy: 87% identifying customers who would churn within 30 days",
-            "Retention offer acceptance increased from 18% to 42%",
-            "65% of at-risk customers successfully retained through targeted intervention",
-            "False positive rate reduced by 70% (avoided wasting offers on safe customers)"
-          ],
-          customerLifetimeValue: [
-            "Average customer lifetime extended from 28 months to 41 months",
-            "ARPU (Average Revenue Per User) of retained customers maintained vs. 25% decline in re-acquired customers",
-            "Customer satisfaction among intervention recipients improved"
-          ],
-          financialImpact: [
-            "Revenue saved from reduced churn: ₹450 crores annually",
-            "Avoided acquisition cost for retained customers: ₹180 crores annually",
-            "Reduced retention offer cost through targeting: ₹85 crores savings",
-            "Total annual benefit: ₹715 crores",
-            "Platform investment: ₹12 crores",
-            "ROI: 5,858%"
-          ],
-          operationalEfficiency: [
-            "Retention team productivity increased 5x through prioritization",
-            "Customer service improved through proactive outreach",
-            "Marketing spend optimized with better targeting"
+          operational: [
+            "99.8% defective part detection rate",
+            "Zero product recalls over 12 months",
+            "$1.8M saved in potential recall liabilities"
           ]
+        }
+      },
+      {
+        id: "cs-19",
+        title: "Computer Vision Assembly Line Robotics & Precision Welding",
+        clientProfile: {
+          organization: "Heavy Machinery Fabricator",
+          location: "Japan",
+          challenge: "Tedious manual inspection required for industrial equipment weld seams"
         },
-        testimonial: {
-          quote: "TECH6SENSE’s churn prediction platform turned our retention efforts from spray-and-pray to surgical precision. We now know exactly who will churn, why, and what will keep them. The financial impact has been transformational—this is our highest-ROI investment ever.",
-          author: "Kavita Singh, Chief Marketing Officer"
+        challenge: "Weld seams on industrial equipment required tedious manual inspection to meet strict safety certification standards.",
+        solution: "Integrated high-speed camera sensors with deep learning vision models to inspect weld integrity in real time on robotic welding arms.",
+        implementation: [
+          "Robotic arm sensor telemetry feedback",
+          "Deep learning thermal & visual seam inspection",
+          "Real-time weld defect classification",
+          "Automated safety certification logging"
+        ],
+        results: {
+          operational: [
+            "100% automated weld inspection coverage",
+            "50% faster welding cycle times",
+            "Zero structural weld defects reported in field operations"
+          ]
+        }
+      },
+      {
+        id: "cs-30",
+        title: "Generative Product Design & Rapid Prototyping Engine",
+        clientProfile: {
+          organization: "Consumer Electronics Manufacturer",
+          location: "South Korea",
+          challenge: "Months spent iterating on physical casing prototypes for heat and strength"
+        },
+        challenge: "Industrial design teams spent months iterating on physical product casing prototypes to balance ergonomics, structural strength, and heat dissipation.",
+        solution: "Deployed a generative design AI engine that evaluates thousands of CAD variations automatically to find optimal product forms.",
+        implementation: [
+          "Generative CAD geometry optimization models",
+          "Thermal dissipation & structural stress simulations",
+          "Material cost reduction algorithms",
+          "3D printing & CNC automated export scripts"
+        ],
+        results: {
+          operational: [
+            "80% reduction in physical prototyping iterations",
+            "15% decrease in raw material usage per product",
+            "Accelerated product development timeline from 9 months to 3 months"
+          ]
         }
       }
     ]
   },
   {
-    id: "insurance",
-    title: "Insurance",
+    id: "logistics-maritime-supplychain",
+    title: "Logistics, Maritime & Supply Chain",
     stories: [
       {
-        id: "insurance-1",
-        title: "Automated Claims Processing for General Insurance Company",
+        id: "cs-5",
+        title: "Autonomous Supply Chain & Inventory Optimization",
         clientProfile: {
-          organization: "Leading general insurance company",
-          volume: "2 million annually (auto, home, health)",
-          challenge: "18-day average processing time, high operational costs, customer dissatisfaction"
+          organization: "Global Consumer Electronics Retailer",
+          location: "Singapore",
+          challenge: "Inaccurate demand forecasting leading to stockouts and excess warehouse stock"
         },
-        challenge: "Claims processing was the company’s Achilles heel. Manual document review, verification, damage assessment, and settlement took an average of 18 days—far longer than competitors. Customer satisfaction with claims was only 58%. The process was document-heavy (photos, medical records, police reports, estimates) requiring extensive manual review. Fraud detection was reactive, and false declines frustrated honest customers.",
-        solution: "Deployed AI-powered automated claims processing with fraud detection.",
+        challenge: "Inaccurate demand forecasting led to frequent stockouts of high-demand products and excess inventory in warehouses.",
+        solution: "Built a predictive machine learning model using multi-source market data, weather trends, and historical sales to optimize inventory distribution dynamically.",
         implementation: [
-          "Computer vision for damage assessment from photos",
-          "OCR and NLP for document extraction and verification",
-          "ML fraud scoring analyzing claim patterns and inconsistencies",
-          "Automated claims triage and routing",
-          "Straight-through processing for low-risk claims",
-          "Repair cost estimation using historical data",
-          "Medical bill review and coding verification",
-          "Integration with third-party data sources (police reports, hospitals)",
-          "Adjuster dashboard with AI recommendations",
-          "Customer-facing claim status app with real-time updates"
+          "Multi-variable predictive demand forecasting",
+          "Dynamic inventory rebalancing algorithms",
+          "ERP & warehouse management system integration",
+          "Supplier replenishment trigger automation"
         ],
         results: {
-          processingSpeed: [
-            "Average claim processing time reduced from 18 days to 3.5 days",
-            "42% of auto claims now settled via straight-through processing (under 4 hours)",
-            "Document processing time reduced by 90%"
-          ],
-          fraudDetection: [
-            "Fraud detection rate improved 55%",
-            "Fraudulent claims identified: ₹180 crores annually",
-            "False accusation rate (legitimate claims wrongly flagged) reduced by 65%",
-            "Organized fraud rings identified through pattern analysis"
-          ],
-          customerSatisfaction: [
-            "Claims satisfaction improved from 58% to 87%",
-            "Net Promoter Score increased 35 points",
-            "Policy renewal rate improved from 68% to 79%",
-            "Customer effort score reduced dramatically"
-          ],
-          operationalEfficiency: [
-            "Claims adjuster productivity increased 4x",
-            "Headcount optimization saved ₹45 crores annually",
-            "Manual review reduced from 100% to 25% of claims",
-            "Staff redeployed to complex case handling and customer service"
-          ],
-          financialImpact: [
-            "Operational cost savings: ₹45 crores annually",
-            "Fraud prevention: ₹180 crores annually",
-            "Loss ratio improvement: 4.5 percentage points",
-            "Customer retention value: ₹95 crores",
-            "Total annual benefit: ₹320 crores",
-            "Investment: ₹8.5 crores",
-            "ROI: 3,665%"
+          operational: [
+            "32% reduction in holding costs",
+            "18% boost in overall sales fulfillment rate",
+            "Real-time stock rebalancing across 120+ retail locations"
           ]
+        }
+      },
+      {
+        id: "cs-12",
+        title: "Autonomous Fleet Management & Predictive Maintenance",
+        clientProfile: {
+          organization: "Logistics & Freight Transport Operator",
+          location: "USA",
+          challenge: "Unplanned vehicle breakdowns causing severe delivery delays across 500+ trucks"
         },
-        testimonial: {
-          quote: "Claims processing was our biggest pain point and competitive disadvantage. TECH6SENSE’s AI platform transformed it into a strength. Fast, accurate, and fair claims handling is now our #1 differentiator in customer surveys.",
-          author: "Rahul Verma, Chief Claims Officer"
+        challenge: "Unplanned vehicle breakdowns caused severe delivery delays and inflated fleet maintenance costs across 500+ commercial trucks.",
+        solution: "Integrated vehicle telematics with predictive AI models to detect engine anomalies and schedule maintenance before failures occurred.",
+        implementation: [
+          "Telematics IoT sensor stream analysis",
+          "Remaining Useful Life (RUL) engine anomaly prediction",
+          "Automated maintenance dispatch scheduling",
+          "Route fuel efficiency optimization models"
+        ],
+        results: {
+          operational: [
+            "45% drop in unplanned breakdown events",
+            "20% reduction in annual maintenance expenditure",
+            "Improved fleet fuel efficiency by 8%"
+          ]
+        }
+      },
+      {
+        id: "cs-14",
+        title: "Autonomous Maritime Port & Terminal Logistics",
+        clientProfile: {
+          organization: "Port Operations Terminal",
+          location: "Singapore",
+          challenge: "Port congestion and bottlenecked container crane scheduling"
+        },
+        challenge: "Port congestion and bottlenecked container crane scheduling caused long turnaround times for cargo vessels.",
+        solution: "Deployed an AI computer vision and predictive scheduling platform that coordinates container placement, truck dispatch, and crane operations.",
+        implementation: [
+          "Computer vision vessel & container tracking",
+          "Autonomous crane dispatch optimization algorithms",
+          "Terminal truck route planning engine",
+          "Real-time port throughput analytics dashboard"
+        ],
+        results: {
+          operational: [
+            "24% increase in terminal container throughput",
+            "30% reduction in vessel turnaround times",
+            "Zero safety incidents recorded over 12 months"
+          ]
+        }
+      },
+      {
+        id: "cs-24",
+        title: "Intelligent Warehouse Robotics & Route Optimization",
+        clientProfile: {
+          organization: "Third-Party Logistics (3PL) Provider",
+          location: "Netherlands",
+          challenge: "Inefficient in-warehouse picker routes inflating labor costs during peak season"
+        },
+        challenge: "In-warehouse picker routes were inefficient, leading to high labor costs and order fulfillment delays during peak shopping seasons.",
+        solution: "Deployed an AI route optimization algorithm that dynamically calculates optimal picking paths for warehouse staff and Autonomous Mobile Robots (AMRs).",
+        implementation: [
+          "3D spatial picker path optimization algorithms",
+          "Autonomous Mobile Robot (AMR) fleet coordination",
+          "Real-time order batching & wave planning",
+          "Warehouse Management System (WMS) API integration"
+        ],
+        results: {
+          operational: [
+            "35% increase in order picking efficiency",
+            "25% reduction in warehouse employee foot travel",
+            "50% boost in peak season order throughput"
+          ]
         }
       }
     ]
   },
   {
-    id: "legal-services",
-    title: "Legal Services",
+    id: "retail-ecommerce-customer-ai",
+    title: "Retail, E-Commerce & Customer AI",
     stories: [
       {
-        id: "legal-1",
-        title: "AI-Powered Contract Review for Corporate Law Firm",
+        id: "cs-6",
+        title: "Agentic Customer Support & Multilingual Resolution Engine",
         clientProfile: {
-          organization: "Top-tier corporate law firm (250 attorneys)",
-          practiceAreas: "M&A, corporate law, real estate, finance",
-          challenge: "Contract review bottleneck, junior associate burnout"
+          organization: "E-Commerce Marketplace",
+          location: "UAE",
+          challenge: "Overwhelmed support teams handling repetitive multilingual inquiries"
         },
-        challenge: "Due diligence for M&A transactions involved reviewing thousands of contracts—employment agreements, supplier contracts, leases, customer agreements. Junior associates spent 60-80 hours weekly on tedious document review, leading to burnout and turnover. The process was slow (delaying deals), expensive (high billable hours), and error-prone (fatigue-induced mistakes). Clients increasingly demanded faster turnaround and fixed fees rather than billable hours.",
-        solution: "Implemented AI-powered contract analysis and review platform.",
+        challenge: "Customer support teams were overwhelmed with repetitive inquiries across Arabic, English, and French, leading to high churn rates.",
+        solution: "Implemented a multi-agent conversational AI system capable of handling complex customer orders, returns, and dispute resolutions in real time.",
         implementation: [
-          "NLP models trained on 500,000 legal contracts",
-          "Automated clause extraction and classification",
-          "Risk flagging for non-standard or unfavorable terms",
-          "Obligation and deadline extraction",
-          "Comparative analysis against standard templates",
-          "Redlining and change tracking",
-          "Multi-language support",
-          "Integration with document management systems",
-          "Attorney review interface with AI suggestions",
-          "Audit trail and compliance documentation"
+          "Multilingual Arabic/English/French NLP engines",
+          "Agentic workflow execution for order tracking & returns",
+          "CRM and payment gateway integration",
+          "Seamless human agent escalation hand-offs"
         ],
         results: {
-          efficiencyGains: [
-            "Contract review time reduced from 45 minutes to 8 minutes per contract",
-            "Due diligence timeline reduced from 6 weeks to 10 days (65% faster)",
-            "Junior associate review capacity increased 5x",
-            "90% reduction in repetitive review work"
-          ],
-          qualityImprovements: [
-            "Risk identification accuracy: 94% (vs. 78% with tired humans)",
-            "Missed obligation detection reduced by 82%",
-            "Consistent review quality regardless of attorney workload",
-            "Comprehensive coverage (100% of contracts reviewed vs. sampling)"
-          ],
-          businessImpact: [
-            "Firm capacity increased to handle 3x more M&A transactions",
-            "Won new clients through faster turnaround and fixed-fee offerings",
-            "Associate turnover reduced by 45%",
-            "Profitability per deal increased by 38%"
+          operational: [
+            "85% first-contact resolution rate without human intervention",
+            "60% reduction in customer support tickets",
+            "24/7 multilingual support coverage"
           ]
+        }
+      },
+      {
+        id: "cs-16",
+        title: "AI-Powered Dynamic Pricing for High-Volume E-Commerce",
+        clientProfile: {
+          organization: "Fashion Retail Group",
+          location: "Spain",
+          challenge: "Static pricing leading to missed margins and inventory gluts"
         },
-        testimonial: {
-          quote: "TECH6SENSE didn’t replace our lawyers; it made them superhuman. Our associates now focus on strategic legal analysis rather than endless reading. We deliver better results to clients in a fraction of the time, and our margins have never been better.",
-          author: "Sanjay Gupta, Managing Partner"
+        challenge: "Static pricing models led to missed margin opportunities during demand surges and inventory gluts during off-seasons.",
+        solution: "Implemented a dynamic AI pricing algorithm analyzing competitor prices, inventory levels, search trends, and customer purchase intent.",
+        implementation: [
+          "Real-time competitor price monitoring web scrapers",
+          "Demand elasticity machine learning models",
+          "Automated SKU markdown schedule generator",
+          "Sub-second price adjustment deployment across 50,000+ SKUs"
+        ],
+        results: {
+          operational: [
+            "19% increase in net profit margins",
+            "27% faster inventory turnover",
+            "Real-time price adjustments across 50,000+ SKUs"
+          ]
         }
       }
     ]
   },
   {
-    id: "media-and-entertainment",
-    title: "Media and Entertainment",
+    id: "legal-enterprise-ai",
+    title: "LegalTech & Enterprise IT Operations",
     stories: [
       {
-        id: "media-1",
-        title: "Content Recommendation Engine for Streaming Platform",
+        id: "cs-7",
+        title: "Generative AI Legal Document Teardown & Contract Analysis",
         clientProfile: {
-          organization: "Leading regional OTT streaming platform",
-          size: "12 million subscribers, 5,000+ hours of content",
-          challenge: "High churn rate (5.8%), low content discovery, stagnant viewing time"
+          organization: "Corporate Legal Consultancy",
+          location: "London, UK",
+          challenge: "Thousands of attorney billable hours spent reviewing M&A contracts"
         },
-        challenge: "Despite massive content investment, users struggled to find content they'd enjoy. Generic recommendations led to endless browsing and abandonment. Users watched 18 minutes daily on average (industry leaders at 50+ minutes). Monthly churn was 5.8%, driven by perception of \"nothing to watch\" despite thousands of hours of content. Only 22% of catalog was watched, while 78% went undiscovered.",
-        solution: "Deployed sophisticated AI recommendation and personalization engine.",
+        challenge: "Reviewing hundreds of complex commercial contracts during M&A due diligence required thousands of billable hours from senior attorneys.",
+        solution: "Engineered an enterprise RAG (Retrieval-Augmented Generation) document intelligence platform that extracts key legal clauses, identifies risk factors, and benchmarks contract terms.",
         implementation: [
-          "Deep learning models analyzing viewing behavior, ratings, completion rates",
-          "Content understanding through metadata, genre, themes, actors, mood",
-          "Collaborative filtering across user similarities",
-          "Contextual recommendations based on time, device, viewing history",
-          "Personalized homepage, search, and category pages",
-          "Thumbnail A/B testing to optimize click-through",
-          "Continue watching and binge-watch enablement",
-          "New release highlighting based on user preferences",
-          "Email and notification personalization",
-          "Trending content discovery balanced with personalization"
+          "Domain-specific legal RAG vector databases",
+          "Automated clause extraction and risk scoring",
+          "Comparative benchmark contract redlining",
+          "Encrypted document security containerization"
         ],
         results: {
-          engagementMetrics: [
-            "Average daily viewing time increased from 18 to 38 minutes (111% increase)",
-            "Content discovery improved: Catalog utilization from 22% to 58%",
-            "Session length increased from 42 to 78 minutes",
-            "Days active per month improved from 12 to 19",
-            "Binge-watching behavior increased 3.5x"
-          ],
-          retentionImpact: [
-            "Monthly churn reduced from 5.8% to 3.2% (45% reduction)",
-            "Subscriber lifetime extended from 8.2 months to 14.5 months",
-            "Reactivation rate for lapsed users improved 65%"
-          ],
-          contentPerformance: [
-            "Previously ignored content discovered by relevant audiences",
-            "Content ROI improved through better audience matching",
-            "Reduced reliance on heavily promoted \"safe\" content",
-            "Niche content found passionate audiences"
-          ],
-          businessImpact: [
-            "Subscriber growth accelerated (word-of-mouth improved)",
-            "Customer acquisition cost decreased (better retention = higher LTV)",
-            "Content investment justified through improved utilization",
-            "Ad-supported tier: CPM increased 35% due to better engagement"
-          ],
-          financialImpact: [
-            "Reduced churn saved 312,000 subscribers annually (at ₹500 ARPU = ₹156 crores)",
-            "Engagement increase enabled premium pricing (₹75 crores additional revenue)",
-            "Advertising revenue increase: ₹42 crores",
-            "Total annual benefit: ₹273 crores",
-            "Investment: ₹6.5 crores",
-            "ROI: 4,100%"
-          ],
-          userSatisfaction: [
-            "App store rating improved from 3.9 to 4.5 stars",
-            "User surveys: 86% say content recommendations improved",
-            "Social media sentiment improved dramatically"
+          operational: [
+            "90% faster contract review speed",
+            "75% decrease in due diligence processing costs",
+            "100% clause extraction accuracy verified by legal partners"
           ]
+        }
+      },
+      {
+        id: "cs-17",
+        title: "Autonomous IT Infrastructure & Server Incident Resolution",
+        clientProfile: {
+          organization: "SaaS Enterprise Platform",
+          location: "USA",
+          challenge: "Hundreds of engineering hours spent manually diagnosing cloud server outages"
         },
-        testimonial: {
-          quote: "TECH6SENSE’s recommendation engine transformed our platform from 'Netflix with Indian content' to 'the platform that understands what I want to watch.' Engagement doubled, churn halved, and suddenly our entire content library became valuable. This is the foundation of our competitive differentiation.",
-          author: "Sanjay Rao, Chief Product Officer"
+        challenge: "IT ops teams spent hundreds of hours monthly manually diagnosing cloud server outages and database performance degradation.",
+        solution: "Built an AIOps incident resolution framework that autonomously detects infrastructure anomalies, isolates root causes, and executes remediation scripts.",
+        implementation: [
+          "AIOps telemetry log anomaly detection",
+          "Automated root cause isolation models",
+          "Self-healing server remediation scripts",
+          "DevOps incident triage Slack/PagerDuty integration"
+        ],
+        results: {
+          operational: [
+            "82% decrease in Mean Time to Resolution (MTTR)",
+            "95% of routine infrastructure incidents resolved autonomously",
+            "$1.2M saved in engineering overhead"
+          ]
+        }
+      },
+      {
+        id: "cs-18",
+        title: "AI-Driven Talent Acquisition & Skill-Matching Matrix",
+        clientProfile: {
+          organization: "Global HR Consultancy",
+          location: "UK",
+          challenge: "Manual resume screening failing to identify top engineering talent efficiently"
+        },
+        challenge: "Manual resume screening failed to identify top-tier engineering talent efficiently, leading to long hiring cycles.",
+        solution: "Developed a semantic AI candidate matching engine that analyzes technical portfolios, project histories, and cognitive assessments to rank candidates objectively.",
+        implementation: [
+          "Semantic vector matching for technical skillsets",
+          "Cognitive project history parsing algorithms",
+          "Unbiased candidate ranking matrix",
+          "ATS integration API pipeline"
+        ],
+        results: {
+          operational: [
+            "65% faster time-to-hire",
+            "40% increase in candidate retention over 12 months",
+            "Zero bias in initial resume screening workflows"
+          ]
+        }
+      },
+      {
+        id: "cs-26",
+        title: "Computer Vision Security & Access Control System",
+        clientProfile: {
+          organization: "High-Security Data Center Operator",
+          location: "USA",
+          challenge: "Traditional keycards vulnerable to tailgating and unauthorized access"
+        },
+        challenge: "Traditional keycard and manual security checks were vulnerable to tailgating and unauthorized facility access.",
+        solution: "Deployed a multi-modal computer vision and biometric access system that verifies personnel identity and detects unauthorized entries in real time.",
+        implementation: [
+          "Multi-modal biometric facial & gait recognition",
+          "Real-time anti-tailgating computer vision sensors",
+          "Sub-second security threat alert triggers",
+          "Access control gate PLC integration"
+        ],
+        results: {
+          operational: [
+            "100% elimination of unauthorized tailgating incidents",
+            "Instant threat detection alert system (< 1 second)",
+            "Zero disruption to authorized employee access speed"
+          ]
         }
       }
     ]
   },
   {
-    id: "logistics-and-supply-chain",
-    title: "Logistics and Supply Chain",
+    id: "energy-agritech-realestate",
+    title: "Energy, AgriTech & Real Estate",
     stories: [
       {
-        id: "logistics-1",
-        title: "Route Optimization for Last-Mile Delivery Company",
+        id: "cs-8",
+        title: "Smart Energy Grid & Thermal Optimization",
         clientProfile: {
-          organization: "E-commerce logistics provider",
-          dailyDeliveries: "150,000+ packages across 35 cities",
-          fleet: "2,500 delivery vehicles",
-          challenge: "53% last-mile costs, low on-time delivery (78%)"
+          organization: "Commercial Real Estate Group",
+          location: "Australia",
+          challenge: "Rising energy bills across 40+ high-rise towers due to inefficient HVAC"
         },
-        challenge: "Last-mile delivery consumed 53% of total shipping costs while delivery performance lagged competitors. Manual route planning resulted in suboptimal routes, excessive fuel consumption, and late deliveries. Drivers often ran out of time before completing routes. Customer complaints about missed deliveries and narrow time windows were increasing. The company was losing e-commerce contracts to competitors with better delivery performance.",
-        solution: "Deployed AI-powered dynamic route optimization platform.",
+        challenge: "Rising energy bills across 40+ high-rise office towers due to inefficient HVAC scheduling and peak demand surges.",
+        solution: "TECH6SENSE AI deployed IoT sensors connected to a predictive AI thermal optimization engine that dynamically adjusts heating and cooling based on occupancy and weather forecasts.",
         implementation: [
-          "Dynamic routing algorithms analyzing real-time traffic, weather, and vehicle capacity",
-          "Machine learning predictions for delivery times based on historical data",
-          "Multi-stop optimization for thousands of vehicles simultaneously",
-          "Real-time driver app with turn-by-turn navigation and proof of delivery",
-          "Automated customer notifications and tracking links",
-          "Integration with warehouse management systems for efficient loading"
+          "Building IoT sensor stream ingestion",
+          "Predictive occupancy & thermal inertia ML models",
+          "BMS (Building Management System) automated controls",
+          "Peak demand surge shaving algorithms"
         ],
         results: {
-          deliveryPerformance: [
-            "On-time delivery improved from 78% to 96%",
-            "Deliveries per driver per day increased from 85 to 115 (35% improvement)",
-            "Average delivery time reduced from 8.5 hours to 6.2 hours per route",
-            "Failed delivery rate reduced from 8% to 2.5%"
-          ],
-          costSavings: [
-            "Fuel consumption reduced 22% through optimal routes",
-            "Distance driven reduced 18% despite 35% more deliveries",
-            "Overtime costs reduced 45%",
-            "Vehicle maintenance costs decreased 15% (less wear and tear)"
-          ],
-          customerSatisfaction: [
-            "Customer delivery satisfaction improved from 72% to 91%",
-            "Accurate delivery time prediction (within 30-minute window)",
-            "Proactive delay notifications",
-            "Reduced \"where is my order\" calls by 65%"
-          ],
-          driverExperience: [
-            "Routes achievable within shift hours (reduced stress)",
-            "Clear navigation reducing confusion",
-            "Performance visibility and gamification",
-            "Driver satisfaction improved, turnover reduced"
-          ],
-          businessImpact: [
-            "Won 3 major e-commerce contracts due to delivery performance",
-            "Capacity increase without fleet expansion",
-            "Premium pricing justified by superior service"
-          ],
-          financialImpact: [
-            "Operational cost savings: ₹85 crores annually",
-            "Fuel savings: ₹28 crores",
-            "New contract revenue: ₹120 crores annually",
-            "Avoided fleet expansion: ₹45 crores capex",
-            "Total annual benefit: ₹233 crores",
-            "Investment: ₹4.2 crores",
-            "ROI: 5,450%"
+          operational: [
+            "28% reduction in monthly energy consumption",
+            "4,500 metric tons of carbon emissions offset annually",
+            "ROI achieved within 6 months of deployment"
           ]
+        }
+      },
+      {
+        id: "cs-9",
+        title: "Predictive Crop Health & Precision Agricultural Shield",
+        clientProfile: {
+          organization: "AgriTech Enterprise",
+          location: "Canada",
+          challenge: "Unpredictable crop yield variations caused by early-stage disease outbreaks"
         },
-        testimonial: {
-          quote: "TECH6SENSE’s route optimization gave us a competitive weapon. We went from industry average to industry leader in delivery performance while dramatically reducing costs. Our biggest e-commerce customers now consider us their premium logistics partner.",
-          author: "Client Testimonial"
+        challenge: "Unpredictable crop yield variations caused by early-stage disease outbreaks and inefficient irrigation scheduling.",
+        solution: "Built an AI satellite-and-drone analytics platform that analyzes multispectral imagery to detect crop stress and automate precision irrigation.",
+        implementation: [
+          "Multispectral satellite & drone image parsing",
+          "Deep learning crop stress & disease classification",
+          "Automated precision irrigation control triggers",
+          "Yield forecast predictive modeling"
+        ],
+        results: {
+          operational: [
+            "22% increase in crop yield per acre",
+            "35% reduction in pesticide usage",
+            "Early disease detection 14 days before visible symptoms"
+          ]
+        }
+      },
+      {
+        id: "cs-29",
+        title: "Autonomous Energy Trading & Grid Load Balancing",
+        clientProfile: {
+          organization: "Renewable Energy Operator",
+          location: "UK",
+          challenge: "Fluctuating wind and solar power making grid load balancing difficult"
+        },
+        challenge: "Fluctuating wind and solar power generation made it difficult to balance grid supply and maximize energy trading revenues.",
+        solution: "Implemented an AI predictive trading engine that forecasts weather patterns, energy demand, and spot prices to automate energy grid bids in real time.",
+        implementation: [
+          "Hyper-local weather pattern forecasting models",
+          "Real-time electricity spot price prediction engines",
+          "Automated grid bidding API scripts",
+          "Grid imbalance penalty minimization algorithms"
+        ],
+        results: {
+          operational: [
+            "22% increase in energy trading revenue",
+            "15% reduction in grid imbalance penalties",
+            "Real-time automated trading across 12 European power exchanges"
+          ]
         }
       }
     ]
   },
   {
-    id: "energy-and-utilities",
-    title: "Energy and Utilities",
+    id: "insurance-telecom",
+    title: "Insurance & Telecommunications",
     stories: [
       {
-        id: "energy-1",
-        title: "Predictive Maintenance for Power Distribution Utility",
+        id: "cs-20",
+        title: "Intelligent Document Processing for Insurance Claims",
         clientProfile: {
-          organization: "State electricity distribution company",
-          serviceArea: "8 million customers across state",
-          infrastructure: "50,000+ transformers, 200,000 km distribution lines",
-          challenge: "Frequent outages, aging infrastructure, high maintenance costs"
+          organization: "National Insurance Provider",
+          location: "Canada",
+          challenge: "Processing paper-heavy medical and auto claims creating a 3-week backlog"
         },
-        challenge: "The utility’s aging infrastructure caused frequent outages impacting millions of customers and businesses. Transformer failures were sudden and catastrophic, causing extended outages and expensive emergency repairs. The preventive maintenance program was inefficient—either replacing working equipment (wasted money) or missing failures (angry customers). With 50,000+ transformers, the utility couldn’t afford to replace all, but couldn’t predict which would fail.",
-        solution: "Implemented AI-powered predictive maintenance platform for grid infrastructure.",
+        challenge: "Processing paper-heavy medical and auto insurance claims created a 3-week backlog and dissatisfied policyholders.",
+        solution: "Deployed an Intelligent Document Processing (IDP) system that ingests claim documents, extracts unstructured data via OCR/NLP, and auto-routes claims for approval.",
         implementation: [
-          "IoT sensors on critical transformers and substations",
-          "Temperature and thermal imaging",
-          "Vibration and acoustic monitoring",
-          "Oil quality sensors",
-          "Load monitoring",
-          "Partial discharge detection",
-          "Drone and satellite imagery for transmission line inspection",
-          "ML models predicting failures 30-90 days in advance",
-          "Remaining useful life prediction for assets",
-          "Maintenance prioritization and scheduling",
-          "Integration with outage management system (OMS)",
-          "Mobile apps for field crews with diagnostic guidance",
-          "Digital twin modeling for grid scenarios"
+          "Multi-page OCR document extraction",
+          "NLP medical code & billing verification",
+          "Straight-through processing (STP) routing engine",
+          "Claims adjuster dashboard with AI confidence scores"
         ],
         results: {
-          reliabilityImprovement: [
-            "Transformer failure rate reduced 58%",
-            "Unplanned outages decreased 42%",
-            "System Average Interruption Duration Index (SAIDI) improved from 8.5 to 4.2 hours",
-            "System Average Interruption Frequency Index (SAIFI) improved from 12.5 to 6.8 interruptions"
-          ],
-          maintenanceOptimization: [
-            "67% of failures predicted 30+ days in advance",
-            "Preventive replacement reduced 35% (avoiding premature replacement)",
-            "Emergency repair costs reduced 62%",
-            "Maintenance crew productivity improved 3x through prioritization",
-            "Spare transformer inventory optimized, freeing ₹18 crores"
-          ],
-          customerImpact: [
-            "Customer complaints reduced 55%",
-            "Compensation for outages decreased ₹12 crores annually",
-            "Industrial customer retention improved",
-            "Reputation and trust improved"
-          ],
-          financialImpact: [
-            "Avoided emergency repair costs: ₹45 crores annually",
-            "Reduced outage compensation: ₹12 crores",
-            "Optimized maintenance spending: ₹28 crores saved",
-            "Revenue protection (prevented outage losses): ₹35 crores",
-            "Total annual benefit: ₹120 crores",
-            "Investment: ₹15 crores",
-            "ROI: 700%"
-          ],
-          regulatoryImpact: [
-            "Met regulatory reliability standards for first time in 5 years",
-            "Avoided penalties for poor performance",
-            "Positioned for favorable rate case"
+          operational: [
+            "80% reduction in claim processing times (from 21 days to 3 days)",
+            "70% of straightforward claims processed automatically",
+            "$2.5M operational cost savings in Year 1"
           ]
-        },
-        testimonial: {
-          quote: "TECH6SENSE’s predictive maintenance transformed our operations from crisis management to proactive planning. Our customers notice fewer outages, our crews work more efficiently, and our regulators see dramatically improved metrics. This technology is essential for modern grid management.",
-          author: "Chief Engineer (Distribution)"
         }
-      }
-    ]
-  },
-  {
-    id: "government-and-public-sector",
-    title: "Government and Public Sector",
-    stories: [
+      },
       {
-        id: "gov-1",
-        title: "Citizen Service Chatbot for Municipal Corporation",
+        id: "cs-21",
+        title: "AI Predictive Maintenance for Telecom Cell Towers",
         clientProfile: {
-          organization: "Municipal Corporation of a major Tier-1 city",
-          size: "Serving 12 million citizens",
-          challenge: "Overwhelmed call centers, slow grievance redressal, low citizen satisfaction"
+          organization: "Telecommunications Carrier",
+          location: "USA",
+          challenge: "Remote cell tower outages causing service downtime and high repair costs"
         },
-        challenge: "The municipal corporation received 15,000+ calls and emails daily regarding property taxes, water supply, garbage collection, and pothole complaints. The 100-person call center was overwhelmed, leading to 30-minute wait times and a 40% call abandonment rate. Citizen grievances took an average of 14 days to route to the correct department. Public perception of the corporation was extremely negative.",
-        solution: "Deployed an advanced AI conversational platform across web, mobile, and WhatsApp.",
+        challenge: "Remote cell tower outages in hard-to-reach geographic locations caused service downtime and high emergency repair costs.",
+        solution: "Built a predictive maintenance platform using sensor telemetry, weather models, and equipment age data to predict tower component failures.",
         implementation: [
-          "NLP engine trained on local languages (English, Hindi, Marathi) and municipal terminology",
-          "Integration with 12 distinct departmental backend systems (billing, grievances, tracking)",
-          "Intent recognition for 150+ common citizen queries",
-          "Automated grievance routing based on text and image classification",
-          "Voice-to-text integration for illiterate or visually impaired users",
-          "Live agent handoff for complex or sensitive issues",
-          "Dashboard for city officials tracking query volumes and sentiment"
+          "Cell tower IoT telemetry stream parsing",
+          "Battery & power supply failure prediction models",
+          "Field technician dispatch optimization",
+          "Weather impact risk scoring"
         ],
         results: {
-          operationalEfficiency: [
-            "Handled 65% of all citizen queries without human intervention",
-            "Call center wait times reduced from 30 minutes to 45 seconds",
-            "Grievance routing time reduced from 14 days to instant",
-            "Ability to handle infinite scale during crises (e.g., monsoon flooding)"
-          ],
-          citizenSatisfaction: [
-            "24/7 availability for citizen services",
-            "Citizen satisfaction score improved from 2.1/5 to 4.3/5",
-            "Resolution time for standard issues reduced by 60%",
-            "WhatsApp adoption reached 2 million users within 6 months"
-          ],
-          financialImpact: [
-            "Call center expansion avoided (saved ₹5 crores annually)",
-            "Property tax collection increased by 12% through automated reminders",
-            "Operational cost per query reduced from ₹45 to ₹2"
+          operational: [
+            "40% reduction in network downtime",
+            "30% decrease in field technician dispatch costs",
+            "Identified failing batteries 3 weeks prior to total breakdown"
           ]
+        }
+      },
+      {
+        id: "cs-23",
+        title: "AI-Driven Fraud Detection for Insurance Claims",
+        clientProfile: {
+          organization: "Property & Casualty Insurer",
+          location: "USA",
+          challenge: "Sophisticated fraudulent claims going undetected, costing tens of millions"
         },
-        testimonial: {
-          quote: "TECH6SENSE brought our municipal services into the 21st century. Citizens no longer have to stand in line or wait on hold; they simply chat with our AI on WhatsApp. It has restored public trust in our administration.",
-          author: "Municipal Commissioner"
+        challenge: "Sophisticated fraudulent claims were going undetected, costing tens of millions annually in fraudulent payouts.",
+        solution: "Implemented a machine learning anomaly detection engine that cross-references claim details, social graph data, and historical fraud patterns.",
+        implementation: [
+          "Social graph link analysis engines",
+          "Claim anomaly detection neural networks",
+          "Historical fraud pattern matching algorithms",
+          "Fraud risk score API for claim adjusters"
+        ],
+        results: {
+          operational: [
+            "$12M in fraudulent claims flagged and prevented in Year 1",
+            "4x increase in fraud detection accuracy",
+            "Zero impact on legitimate claim approval speeds"
+          ]
         }
       }
     ]

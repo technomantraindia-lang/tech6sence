@@ -1,4 +1,5 @@
 import React from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function WhyEliteJoin() {
   const pillars = [
@@ -76,41 +77,56 @@ export default function WhyEliteJoin() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {pillars.map((pillar, idx) => (
-            <div 
-              key={idx}
-              className="p-8 md:p-10 rounded-3xl bg-white border border-slate-200 hover:border-emerald-500/40 transition-all duration-500 hover:-translate-y-1 shadow-[0_2px_8px_rgba(15,23,42,0.02)] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] flex flex-col justify-between group"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-8">
-                  <div className="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    {pillar.icon}
+          {pillars.map((pillar, idx) => {
+            const isBlue = idx === 1; // Pillar II is TECH6SENSE AI (Blue), Pillar I & III are Green
+
+            const cardBg = isBlue 
+              ? "bg-white hover:bg-[#1746D2] border-slate-200 hover:border-[#1746D2]" 
+              : "bg-white hover:bg-[#00A86B] border-slate-200 hover:border-[#00A86B]";
+
+            const hoverGlow = isBlue
+              ? "hover:shadow-[0_20px_40px_-10px_rgba(23,70,210,0.4)]"
+              : "hover:shadow-[0_20px_40px_-10px_rgba(0,168,107,0.4)]";
+
+            return (
+              <div 
+                key={idx}
+                className={`p-8 md:p-10 rounded-3xl border transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between group ${cardBg} ${hoverGlow}`}
+                {...touchHoverProps}
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-8">
+                    <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="w-14 h-14 rounded-2xl bg-emerald-50 group-hover:bg-white/20 border border-emerald-100 group-hover:border-white/30 flex items-center justify-center group-hover:scale-110 transition-all">
+                      {React.cloneElement(pillar.icon, {
+                        className: "w-7 h-7 text-emerald-600 group-hover:text-white transition-colors"
+                      })}
+                    </div>
+                    <span onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-mono text-2xl font-bold text-slate-300 group-hover:text-white transition-colors">
+                      {pillar.number}
+                    </span>
                   </div>
-                  <span className="font-mono text-2xl font-bold text-slate-300 group-hover:text-emerald-600 transition-colors">
-                    {pillar.number}
-                  </span>
+
+                  <h3 onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="text-xl md:text-2xl font-bold text-slate-900 group-hover:text-white transition-colors font-display mb-4">
+                    {pillar.title}
+                  </h3>
+
+                  <p onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="text-slate-600 group-hover:text-white/95 text-sm leading-relaxed mb-8 font-normal transition-colors text-justify md:text-left">
+                    {pillar.desc}
+                  </p>
+
+                  {/* Key points */}
+                  <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="space-y-2 pt-4 border-t border-slate-100 group-hover:border-white/20 transition-colors">
+                    {pillar.points.map((pt, i) => (
+                      <div key={i} onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="flex items-center gap-2 text-xs font-semibold text-slate-700 group-hover:text-white transition-colors">
+                        <span onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="text-[#00A86B] group-hover:text-white font-bold">•</span>
+                        <span>{pt}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-
-                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 group-hover:text-emerald-600 transition-colors font-display">
-                  {pillar.title}
-                </h3>
-
-                <p className="text-slate-600 text-sm leading-relaxed mb-8 font-normal text-justify md:text-left">
-                  {pillar.desc}
-                </p>
               </div>
-
-              <div className="pt-6 border-t border-slate-100 space-y-3">
-                {pillar.points.map((pt, i) => (
-                  <div key={i} className="flex items-center gap-3 text-xs text-slate-700 font-semibold">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                    <span>{pt}</span>
-                  </div>
-                ))}
-              </div>
-
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>

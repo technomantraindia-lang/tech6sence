@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function IndustryOverview() {
   const [isVisible, setIsVisible] = useState(false);
@@ -73,13 +74,14 @@ export default function IndustryOverview() {
             <div 
               key={i} 
               className={`group relative p-8 bg-white border border-slate-200 rounded-2xl transition-all duration-500 ease-out hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:border-[#1746D2]/40 overflow-hidden ${
+              {...touchHoverProps}
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
               style={{ transitionDelay: `${200 + (i * 150)}ms` }}
             >
-              <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               
-              <div className="w-12 h-12 rounded-full bg-[#1746D2]/10 flex items-center justify-center mb-6 group-hover:bg-[#1746D2]/10 transition-colors">
+              <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="w-12 h-12 rounded-full bg-[#1746D2]/10 flex items-center justify-center mb-6 group-hover:bg-[#1746D2]/10 transition-colors">
                 {point.icon}
               </div>
               <h3 className="font-display text-lg font-bold text-slate-900 mb-3">

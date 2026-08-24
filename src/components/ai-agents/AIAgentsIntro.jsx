@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function AIAgentsIntro() {
   const [isVisible, setIsVisible] = useState(false);
@@ -84,6 +85,7 @@ export default function AIAgentsIntro() {
             <div 
               key={i} 
               className={`group relative p-8 bg-white border border-slate-200 rounded-3xl shadow-[0_4px_20px_rgba(15,23,42,0.02)] transition-all duration-700 ease-out hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:border-[#1746D2]/40 ${
+              {...touchHoverProps}
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`} 
               style={{ transitionDelay: `${200 + i * 150}ms` }}
@@ -102,7 +104,7 @@ export default function AIAgentsIntro() {
               
               {/* Soft Hover Underline Effect */}
               <div className="absolute bottom-0 left-0 w-full h-[3px] rounded-b-3xl overflow-hidden">
-                <div className="h-full w-0 bg-gradient-to-r from-[#1746D2] to-[#00A86B] transition-all duration-500 ease-out group-hover:w-full" />
+                <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="h-full w-0 bg-gradient-to-r from-[#1746D2] to-[#00A86B] transition-all duration-500 ease-out group-hover:w-full" />
               </div>
             </div>
           ))}

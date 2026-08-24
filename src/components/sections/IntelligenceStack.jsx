@@ -66,12 +66,12 @@ const ECOSYSTEM_CARDS = [
     title: 'SENSE TRANSFORMATION',
     short: 'Integrating Intelligence across the Enterprise',
     full: 'Seamless Technology Deployment',
-    textColor: 'text-emerald-600',
-    dotBg: 'bg-emerald-600',
+    textColor: 'text-amber-600',
+    dotBg: 'bg-amber-500',
     alignOffset: 'translate-x-6 xl:translate-x-10',
-    cardBg: 'bg-emerald-50/35 hover:bg-emerald-50/70',
-    shadowStyle: 'hover:shadow-[4px_4px_0px_0px_rgba(0,168,107,0.35)]',
-    glowColor: 'rgba(0, 168, 107, 0.09)',
+    cardBg: 'bg-amber-50/35 hover:bg-amber-50/70',
+    shadowStyle: 'hover:shadow-[4px_4px_0px_0px_rgba(212,175,55,0.35)]',
+    glowColor: 'rgba(212, 175, 55, 0.09)',
     href: '/enterprise-ai'
   },
   {
@@ -110,6 +110,9 @@ function CardComponent({ card, activeCard, setActiveCard }) {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setActiveCard(card)}
       onMouseLeave={() => setActiveCard(null)}
+      onTouchStart={() => setActiveCard(card)}
+      onTouchEnd={() => setActiveCard(null)}
+      onTouchCancel={() => setActiveCard(null)}
       className={`group relative p-6 md:p-7 rounded-3xl transition-all duration-500 border flex flex-col justify-between shadow-sm cursor-pointer z-20 overflow-hidden block ${
         card.cardBg
       } ${card.shadowStyle} ${card.alignOffset || ''} ${
@@ -219,12 +222,13 @@ export default function IntelligenceStack() {
             {/* SVG Lines & Diagram Geometry */}
             <svg viewBox="0 0 400 450" className="w-full h-full absolute inset-0 overflow-visible pointer-events-none">
               
-              {/* Static Flat-top Hexagon Base Outline */}
+              {/* Golden Hexagon Base Outline */}
               <polygon 
                 points="130,80 270,80 360,225 270,370 130,370 40,225" 
                 fill="none" 
-                stroke="#e2e8f0" 
+                stroke="#D4AF37" 
                 strokeWidth="2.5"
+                className="opacity-90"
               />
 
               {/* ── Stepped Connector Lines to Cards ── */}
@@ -276,7 +280,7 @@ export default function IntelligenceStack() {
               <path 
                 d="M 130,370 L 95,402 L 30,402" 
                 fill="none" 
-                stroke={activeCard?.id === 5 ? '#059669' : '#05966960'} 
+                stroke={activeCard?.id === 5 ? '#d97706' : '#d9770660'} 
                 strokeWidth={activeCard?.id === 5 ? '3.5' : '2'} 
                 strokeLinecap="round" 
                 strokeLinejoin="round" 
@@ -301,7 +305,7 @@ export default function IntelligenceStack() {
               <circle cx="270" cy="80" r="7.5" fill="#059669" />
               <circle cx="360" cy="225" r="7.5" fill="#2563eb" />
               <circle cx="270" cy="370" r="7.5" fill="#d97706" />
-              <circle cx="130" cy="370" r="7.5" fill="#059669" />
+              <circle cx="130" cy="370" r="7.5" fill="#d97706" />
               <circle cx="40" cy="225" r="7.5" fill="#2563eb" />
             </svg>
 
@@ -436,7 +440,7 @@ export default function IntelligenceStack() {
       {/* Closing Line */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 mt-16 md:mt-24 text-center pb-8">
         <p className="font-display text-[1.1rem] md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600 tracking-wide">
-          TECH6SENSE AI -The Sixth Sense of Intelligent Innovation.
+          TECH6SENSE AI -The Sixth Sense of Intelligent Innovation
         </p>
       </div>
 

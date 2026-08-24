@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function IndustrySectors() {
   const [isVisible, setIsVisible] = useState(false);
@@ -57,19 +58,20 @@ export default function IndustrySectors() {
             <div 
               key={i} 
               className={`group relative p-8 bg-white border border-slate-200 rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:border-[#1746D2]/40 md:col-span-1 ${sector.span} ${
+              {...touchHoverProps}
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
               style={{ transitionDelay: `${200 + (i * 50)}ms` }}
             >
               {/* Hover Accent */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#1746D2]/10 to-fuchsia-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-full pointer-events-none" />
+              <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#1746D2]/10 to-fuchsia-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-full pointer-events-none" />
               
               <div className="relative z-10 flex flex-col h-full">
-                <div className="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center mb-6 group-hover:bg-[#1746D2]/10 transition-colors">
-                  <div className="w-3 h-3 rounded-full bg-[#1746D2] group-hover:scale-125 transition-transform" />
+                <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center mb-6 group-hover:bg-[#1746D2]/10 transition-colors">
+                  <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="w-3 h-3 rounded-full bg-[#1746D2] group-hover:scale-125 transition-transform" />
                 </div>
                 
-                <h3 className="font-display text-lg font-bold text-slate-900 mb-3 group-hover:text-[#1746D2] transition-colors">
+                <h3 onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-display text-lg font-bold text-slate-900 mb-3 group-hover:text-[#1746D2] transition-colors">
                   {sector.title}
                 </h3>
                 

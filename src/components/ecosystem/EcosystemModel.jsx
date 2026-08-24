@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function EcosystemModel() {
   const [isVisible, setIsVisible] = useState(false);
@@ -106,6 +107,7 @@ export default function EcosystemModel() {
               return (
                 <div 
                   key={i} 
+                  {...touchHoverProps}
                   className={`bg-white p-6 rounded-2xl border border-slate-200 shadow-sm lg:w-[280px] w-full group hover:border-[#1746D2]/40 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-500 ease-out ${positions[i]} ${
                     isVisible ? 'opacity-100 translate-y-0 lg:translate-y-0' : 'opacity-0 translate-y-12 lg:translate-y-8'
                   }`}

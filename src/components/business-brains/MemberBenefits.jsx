@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function MemberBenefits() {
   const [activeTab, setActiveTab] = useState('FOR INVESTORS');
@@ -167,6 +168,7 @@ export default function MemberBenefits() {
             <div 
               key={idx}
               className="p-8 rounded-3xl bg-slate-50 border border-slate-200 hover:border-emerald-500/40 transition-all duration-300 shadow-[0_2px_8px_rgba(15,23,42,0.02)] hover:shadow-md group hover:-translate-y-1 flex flex-col justify-between"
+              {...touchHoverProps}
             >
               <div>
                 <div className="flex items-center gap-3 mb-4">
@@ -178,6 +180,7 @@ export default function MemberBenefits() {
 
                 <h3 
                   className="text-xl font-bold text-slate-900 mb-4 group-hover:text-emerald-600 transition-colors"
+                  {...touchHoverProps}
                 >
                   {card.title}
                 </h3>

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useMemo } from 'react';
+import { useState, useRef, useEffect, useMemo, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
 // Product image imports
@@ -24,9 +24,7 @@ const PRODUCTS = [
     categoryGroup: 'Wearables & Audio',
     description: 'Heads-up AI assistance built into everyday eyewear — real-time information overlay, visual recognition, and hands-free interaction designed for both consumer and enterprise field use.',
     image: imgGlasses,
-    accent: '#A855F7',
-    glow: 'rgba(168, 85, 247, 0.25)',
-    bgGradient: 'from-[#1e1035] via-[#2d164d] to-[#120824]',
+    accent: '#1746D2',
     tag: 'AR HUD & Vision AI'
   },
   {
@@ -36,9 +34,7 @@ const PRODUCTS = [
     categoryGroup: 'Robotics & Enterprise IoT',
     description: 'Wearable support structures engineered for industrial, mobility, and rehabilitation applications — augmenting human strength and endurance with AI-assisted motion control.',
     image: imgExoskeleton,
-    accent: '#F59E0B',
-    glow: 'rgba(245, 158, 11, 0.25)',
-    bgGradient: 'from-[#2b1f09] via-[#3d2c0e] to-[#171004]',
+    accent: '#00A86B',
     tag: 'Motion AI & Robotics'
   },
   {
@@ -48,9 +44,7 @@ const PRODUCTS = [
     categoryGroup: 'Wearables & Audio',
     description: 'Intelligent audio devices combining real-time translation, contextual assistance, and adaptive sound — built for professionals who move between languages, meetings, and markets.',
     image: imgEarphones,
-    accent: '#38BDF8',
-    glow: 'rgba(56, 189, 248, 0.25)',
-    bgGradient: 'from-[#0a1b38] via-[#112d5e] to-[#050e20]',
+    accent: '#D4AF37',
     tag: 'Adaptive Audio & NLP'
   },
   {
@@ -60,9 +54,7 @@ const PRODUCTS = [
     categoryGroup: 'Wearables & Audio',
     description: 'AI-driven wearables for health tracking, productivity, and connected notifications — engineered as a natural extension of the SIXSENSE ecosystem rather than a standalone device.',
     image: imgSmartwatch,
-    accent: '#10B981',
-    glow: 'rgba(16, 185, 129, 0.25)',
-    bgGradient: 'from-[#06241a] via-[#0d3d2c] to-[#03140e]',
+    accent: '#1746D2',
     tag: 'Biometric Telemetry'
   },
   {
@@ -72,9 +64,7 @@ const PRODUCTS = [
     categoryGroup: 'Health & Medical',
     description: 'Continuous activity and biometric tracking built for everyday performance monitoring, with AI-driven insights designed to support — not replace — professional health guidance.',
     image: imgFitnessBand,
-    accent: '#F43F5E',
-    glow: 'rgba(244, 63, 94, 0.25)',
-    bgGradient: 'from-[#2d0a14] via-[#4a1022] to-[#170409]',
+    accent: '#00A86B',
     tag: 'Continuous Health AI'
   },
   {
@@ -84,9 +74,7 @@ const PRODUCTS = [
     categoryGroup: 'Wearables & Audio',
     description: 'A discreet, always-available AI companion device — contextual reminders, voice assistance, and proactive support built for daily professional and personal use.',
     image: imgAssistant,
-    accent: '#6366F1',
-    glow: 'rgba(99, 102, 241, 0.25)',
-    bgGradient: 'from-[#10183b] via-[#1a265e] to-[#080d21]',
+    accent: '#8B5CF6',
     tag: 'Proactive Voice Companion'
   },
   {
@@ -96,9 +84,7 @@ const PRODUCTS = [
     categoryGroup: 'Wearables & Audio',
     description: 'Minimalist biometric and activity tracking in ring form — engineered for users who want continuous intelligence without a visible device.',
     image: imgSmartRing,
-    accent: '#CBD5E1',
-    glow: 'rgba(203, 213, 225, 0.25)',
-    bgGradient: 'from-[#161c2b] via-[#232d42] to-[#0d111a]',
+    accent: '#1746D2',
     tag: 'Invisible Intelligence'
   },
   {
@@ -108,9 +94,7 @@ const PRODUCTS = [
     categoryGroup: 'Health & Medical',
     description: 'Consumer wellness devices designed to support everyday health awareness — built within our wellness product lane, distinct from regulated medical hardware.',
     image: imgHealthDevice,
-    accent: '#EC4899',
-    glow: 'rgba(236, 72, 153, 0.25)',
-    bgGradient: 'from-[#2b0821] via-[#470d37] to-[#170311]',
+    accent: '#00A86B',
     tag: 'Wellness & Diagnostics'
   },
   {
@@ -120,9 +104,7 @@ const PRODUCTS = [
     categoryGroup: 'Health & Medical',
     description: 'Purpose-built devices for clinical and healthcare environments, developed within our regulated product lane — engineered to meet the compliance and certification standards required for medical use.',
     image: imgMedical,
-    accent: '#14B8A6',
-    glow: 'rgba(20, 184, 166, 0.25)',
-    bgGradient: 'from-[#052426] via-[#0a3d40] to-[#021415]',
+    accent: '#D4AF37',
     tag: 'Clinical Grade IoMT'
   },
   {
@@ -132,9 +114,7 @@ const PRODUCTS = [
     categoryGroup: 'Robotics & Enterprise IoT',
     description: 'Connected sensors and infrastructure devices for smart facilities, industrial monitoring, and enterprise IoT deployments at scale.',
     image: imgIoT,
-    accent: '#3B82F6',
-    glow: 'rgba(59, 130, 246, 0.25)',
-    bgGradient: 'from-[#0a1e3d] via-[#123061] to-[#040e1f]',
+    accent: '#1746D2',
     tag: 'Industrial Facility IoT'
   },
   {
@@ -144,79 +124,25 @@ const PRODUCTS = [
     categoryGroup: 'Robotics & Enterprise IoT',
     description: 'An AI-native writing and note-capture device — transcription, summarization, and intelligent organization built directly into the hardware.',
     image: imgNotepad,
-    accent: '#059669',
-    glow: 'rgba(5, 150, 105, 0.25)',
-    bgGradient: 'from-[#07241b] via-[#0d3b2c] to-[#03130e]',
+    accent: '#00A86B',
     tag: 'Smart Ink OCR Engine'
   }
 ];
-
-function ProductCard({ product }) {
-  return (
-    <Link
-      to={`/deep-tech-products/${product.id}`}
-      className="group relative rounded-[2rem] overflow-hidden bg-slate-950 p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-500 hover:-translate-y-1 border border-white/10 hover:border-white/25 min-h-[460px] md:min-h-[500px]"
-    >
-      {/* Full-Bleed Product Background Image */}
-      <div className="absolute inset-0 z-0 overflow-hidden bg-slate-950">
-        <img 
-          src={product.image} 
-          alt={product.name} 
-          className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 opacity-60 group-hover:opacity-75"
-        />
-        {/* Dark Scrim Gradients for text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/80" />
-      </div>
-
-      {/* Top Details */}
-      <div className="relative z-20">
-        <div className="flex items-center justify-between gap-3 mb-5">
-          <span 
-            className="font-display text-sm font-extrabold tracking-[0.2em] uppercase px-3 py-1 rounded-full bg-white/10 border border-white/15 text-white backdrop-blur-md"
-          >
-            {product.category}
-          </span>
-          <span 
-            className="w-2 h-2 rounded-full transition-transform duration-300 group-hover:scale-150"
-            style={{ backgroundColor: product.accent }}
-          />
-        </div>
-
-        <h3 className="font-display text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-[1.15] mb-2 group-hover:text-white transition-colors duration-300">
-          {product.name}
-        </h3>
-      </div>
-
-      {/* Spacer */}
-      <div className="relative z-20 flex-1 min-h-[80px]" />
-
-      {/* Bottom Content & Action Strip */}
-      <div className="relative z-20">
-        <p className="font-body text-slate-200 text-xs md:text-sm leading-relaxed mb-6 line-clamp-3">
-          {product.description}
-        </p>
-
-        <div className="flex items-center justify-between pt-3.5 border-t border-white/15">
-          <span className="font-mono text-[0.75rem] font-semibold text-slate-300 group-hover:text-white transition-colors duration-300">
-            {product.tag}
-          </span>
-
-          {/* Circular Arrow Button (Mercury style) */}
-          <div className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/90 group-hover:bg-white text-slate-950 border border-white flex items-center justify-center transition-all duration-300 shadow-md group-hover:scale-110">
-            <svg viewBox="0 0 20 20" fill="none" className="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" stroke="currentColor" strokeWidth="2.5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.5l11-11m0 0h-8m8 0v8" />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </Link>
-  );
-}
 
 export default function DeepTechProducts() {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [activeCategory, setActiveCategory] = useState('All Products');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -237,52 +163,72 @@ export default function DeepTechProducts() {
     return PRODUCTS.filter((p) => p.categoryGroup === activeCategory);
   }, [activeCategory]);
 
+  const handleNext = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % filteredProducts.length);
+  }, [filteredProducts.length]);
+
+  const handlePrev = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + filteredProducts.length) % filteredProducts.length);
+  }, [filteredProducts.length]);
+
+  // Autoplay timer
+  useEffect(() => {
+    if (isPaused || filteredProducts.length <= 1) return;
+    const interval = setInterval(() => {
+      handleNext();
+    }, 4500);
+    return () => clearInterval(interval);
+  }, [isPaused, handleNext, filteredProducts.length]);
+
   return (
     <section
       ref={sectionRef}
       id="deep-tech-products"
-      className="relative w-full bg-[#FAFBFF] pt-24 pb-12 overflow-hidden border-t border-slate-100"
+      className="relative w-full bg-[#FAFBFF] text-slate-900 pt-24 pb-20 overflow-hidden border-t border-slate-200/80"
     >
-      {/* Background Ambience */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-100/30 rounded-full blur-[120px] pointer-events-none -z-10" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-100/30 rounded-full blur-[120px] pointer-events-none -z-10" />
+      {/* Light Theme Background Ambience */}
+      <div className="absolute top-1/4 left-1/4 w-[650px] h-[650px] bg-[#1746D2]/5 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute bottom-1/4 right-1/4 w-[650px] h-[650px] bg-[#00A86B]/5 rounded-full blur-[140px] pointer-events-none -z-10" />
 
-      <div className="w-full px-3 sm:px-6 md:px-8 lg:px-10 relative z-10">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 relative z-10 space-y-12">
         
-        {/* Section Header (Using Exact PDF Copy) */}
+        {/* Section Header */}
         <div 
-          className="mb-12 md:mb-14 text-center max-w-4xl mx-auto transition-all duration-1000 ease-out"
+          className="text-center max-w-4xl mx-auto space-y-4 transition-all duration-1000 ease-out"
           style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)' }}
         >
-          <div className="flex justify-center items-center gap-3 mb-5">
-            <span className="h-[2px] w-8 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full" />
-            <h2 className="text-blue-600 font-mono font-bold tracking-[0.2em] uppercase text-xs md:text-sm">
+          <div className="flex justify-center items-center gap-3">
+            <span className="h-[2px] w-8 bg-[#1746D2] rounded-full" />
+            <h2 className="text-[#1746D2] font-mono font-bold tracking-[0.25em] uppercase text-xs md:text-sm">
               INTELLIGENCE, WORN AND DEPLOYED
             </h2>
-            <span className="h-[2px] w-8 bg-gradient-to-l from-blue-500 to-emerald-500 rounded-full" />
+            <span className="h-[2px] w-8 bg-[#00A86B] rounded-full" />
           </div>
 
-          <h3 className="font-display text-[clamp(2.3rem,3.8vw,3.5rem)] leading-[1.1] font-extrabold text-slate-900 tracking-tight mb-5">
+          <h3 className="font-display text-[clamp(2.3rem,4vw,3.6rem)] leading-[1.1] font-extrabold text-slate-900 tracking-tight">
             The Hardware Layer of the{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1746D2] to-[#00A86B]">
               Sixth Sense
             </span>
           </h3>
 
-          <p className="font-body text-base md:text-lg leading-[1.7] text-slate-600 font-medium max-w-3xl mx-auto">
+          <p className="font-body text-slate-600 text-base md:text-lg leading-[1.7] font-medium max-w-3xl mx-auto">
             Software and strategy are only half the picture. TECH6SENSE AI's deep-tech division designs and engineers the physical devices that carry intelligence into the real world — unified under one proprietary platform layer.
           </p>
 
           {/* Category Filter Pills */}
-          <div className="flex flex-wrap justify-center items-center gap-2 md:gap-3 mt-8">
+          <div className="flex flex-wrap justify-center items-center gap-2 md:gap-3 pt-4">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-2 rounded-full text-xs md:text-sm font-display font-bold transition-all duration-300 cursor-pointer ${
+                onClick={() => {
+                  setActiveCategory(cat);
+                  setCurrentIndex(0);
+                }}
+                className={`px-5 py-2 rounded-full text-xs md:text-sm font-display font-extrabold transition-all duration-300 cursor-pointer ${
                   activeCategory === cat
-                    ? 'bg-slate-900 text-white shadow-md shadow-slate-900/20 scale-105'
-                    : 'bg-white text-slate-600 hover:text-slate-900 border border-slate-200/80 hover:border-slate-300 shadow-sm'
+                    ? 'bg-[#1746D2] text-white shadow-lg shadow-blue-600/25 scale-105 border border-[#1746D2]'
+                    : 'bg-white text-slate-700 hover:text-[#1746D2] border border-slate-200 hover:border-[#1746D2]/40 shadow-xs'
                 }`}
               >
                 {cat} {cat === 'All Products' && `(${PRODUCTS.length})`}
@@ -291,17 +237,162 @@ export default function DeepTechProducts() {
           </div>
         </div>
 
-        {/* Mercury-Inspired Tight Showcase Grid */}
+        {/* 3D COVERFLOW STAGE CAROUSEL */}
         <div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 transition-all duration-1000 ease-out"
-          style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(30px)' }}
+          className="relative w-full min-h-[460px] md:min-h-[500px] flex items-center justify-center py-4 perspective-1000 overflow-hidden"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
         >
-          {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+          {/* Card Container Stage */}
+          <div className="relative w-full max-w-[340px] sm:max-w-[420px] md:max-w-[460px] h-[440px] md:h-[480px] mx-auto transform-style-3d">
+            {filteredProducts.map((product, index) => {
+              let offset = index - currentIndex;
+              const total = filteredProducts.length;
+
+              if (offset > total / 2) offset -= total;
+              if (offset < -total / 2) offset += total;
+
+              const isActive = offset === 0;
+              const isVisibleCard = Math.abs(offset) <= 3;
+
+              if (!isVisibleCard) return null;
+
+              let cardTransform, cardOpacity;
+              if (isMobile) {
+                const translateX = offset * 105;
+                const scale = isActive ? 1 : 0.82;
+                cardOpacity = isActive ? 1 : 0.35;
+                cardTransform = `translateX(${translateX}px) scale(${scale})`;
+              } else {
+                const translateX = offset * 175; 
+                const translateY = Math.abs(offset) * 20; 
+                const translateZ = Math.abs(offset) * -80; 
+                const rotateY = offset * -16; 
+                const rotateZ = offset * 1.5; 
+                const scale = isActive ? 1 : 0.9 - Math.abs(offset) * 0.07;
+                cardOpacity = isActive ? 1 : Math.max(0.35, 0.75 - Math.abs(offset) * 0.13);
+                cardTransform = `translate3d(${translateX}px, ${translateY}px, ${translateZ}px) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg) scale(${scale})`;
+              }
+              const zIndex = 30 - Math.abs(offset) * 5;
+
+              return (
+                <div
+                  key={product.id}
+                  onClick={() => {
+                    if (!isActive) setCurrentIndex(index);
+                  }}
+                  className="absolute top-0 left-0 w-full h-full rounded-3xl p-7 md:p-9 transition-all duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)] cursor-pointer select-none overflow-hidden flex flex-col justify-between text-white"
+                  style={{
+                    backgroundColor: product.accent,
+                    transform: cardTransform,
+                    opacity: cardOpacity,
+                    zIndex: zIndex,
+                    transformOrigin: 'center center',
+                    boxShadow: isActive 
+                      ? `0 20px 45px -10px ${product.accent}80` 
+                      : `0 10px 25px -10px rgba(0,0,0,0.15)`,
+                  }}
+                >
+                  {/* Background Overlay */}
+                  <div className="absolute inset-0 z-0 overflow-hidden opacity-30">
+                    <img 
+                      src={product.image} 
+                      alt={product.name} 
+                      className="w-full h-full object-cover object-center"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  </div>
+
+                  {/* Top Details Header */}
+                  <div className="relative z-20">
+                    <div className="flex items-center justify-between gap-3 mb-4">
+                      <span className="font-mono text-[10px] md:text-xs font-extrabold tracking-widest uppercase px-3 py-1 rounded-full bg-white/20 text-white backdrop-blur-md border border-white/30">
+                        {product.category}
+                      </span>
+                      <span className="w-2.5 h-2.5 rounded-full bg-white/80" />
+                    </div>
+
+                    <h3 className="font-display text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-tight">
+                      {product.name}
+                    </h3>
+                  </div>
+
+                  {/* Spacer */}
+                  <div className="relative z-20 flex-1 min-h-[40px]" />
+
+                  {/* Bottom Content & Action */}
+                  <div className="relative z-20 space-y-4">
+                    <p className="font-body text-white/95 text-xs md:text-sm leading-relaxed line-clamp-3 font-medium">
+                      "{product.description}"
+                    </p>
+
+                    <div className="flex items-center justify-between pt-3.5 border-t border-white/20">
+                      <span className="font-mono text-xs font-extrabold text-white/90">
+                        {product.tag}
+                      </span>
+
+                      <Link
+                        to={`/deep-tech-products/${product.id}`}
+                        onClick={(e) => e.stopPropagation()}
+                        className="px-4 py-2 rounded-xl text-xs font-extrabold transition-all duration-300 flex items-center gap-2 text-slate-900 bg-white hover:bg-slate-100 shadow-md hover:scale-105"
+                      >
+                        <span>Explore Product</span>
+                        <span className="text-sm">→</span>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* NAVIGATION CONTROLS & PAGINATION DOTS */}
+        <div className="flex items-center justify-center gap-6 pt-4">
+          <button 
+            onClick={handlePrev}
+            className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-slate-200 bg-white hover:bg-[#1746D2] hover:border-[#1746D2] text-slate-800 hover:text-white flex items-center justify-center shadow-md transition-all duration-300 cursor-pointer group shrink-0"
+            aria-label="Previous Product"
+          >
+            <svg className="w-6 h-6 transform group-hover:-translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Pagination Dots */}
+          <div className="flex items-center gap-2 max-w-[300px] overflow-x-auto scrollbar-none py-2 px-1">
+            {filteredProducts.map((p, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+                className={`h-2.5 rounded-full transition-all duration-500 cursor-pointer shrink-0 ${
+                  currentIndex === idx 
+                    ? 'w-8 bg-[#1746D2] shadow-md shadow-blue-500/30' 
+                    : 'w-2.5 bg-slate-300 hover:bg-slate-400'
+                }`}
+                style={{ backgroundColor: currentIndex === idx ? p.accent : undefined }}
+              />
+            ))}
+          </div>
+
+          <button 
+            onClick={handleNext}
+            className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-slate-200 bg-white hover:bg-[#1746D2] hover:border-[#1746D2] text-slate-800 hover:text-white flex items-center justify-center shadow-md transition-all duration-300 cursor-pointer group shrink-0"
+            aria-label="Next Product"
+          >
+            <svg className="w-6 h-6 transform group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
 
       </div>
+
+      <style dangerouslySetInnerHTML={{__html: `
+        .scrollbar-none::-webkit-scrollbar { display: none; }
+        .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+      `}} />
     </section>
   );
 }

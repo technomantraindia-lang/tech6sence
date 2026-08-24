@@ -106,30 +106,25 @@ export default function Footer() {
         </div>
 
         {/* Massive Center Brand Logo Showcase */}
-        <div className="my-12 md:my-20 flex justify-center items-center w-full px-4">
-          <Link to="/" className="w-full max-w-4xl md:max-w-6xl flex justify-center group">
+        <div className="my-12 md:my-20 flex flex-col justify-center items-center w-full px-4 text-center">
+          <Link to="/" className="w-full max-w-4xl md:max-w-6xl flex justify-center group mb-4">
             <img
               src={companyLogo}
               alt="TECH6SENSE AI"
               className="w-full h-auto max-h-36 md:max-h-52 object-contain filter drop-shadow-[0_0_40px_rgba(23,70,210,0.35)] transition-transform duration-500 group-hover:scale-[1.02]"
             />
           </Link>
+          <p className="font-display text-xs sm:text-sm md:text-base font-extrabold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-[#00A86B] to-blue-400 mt-2">
+            ENGINEERING THE SIXTH SENSE OF ARTIFICIAL INTELLIGENCE
+          </p>
         </div>
 
         {/* Bottom Footer Bar: Copyright Left, Social Icons Right */}
         <div className="pt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs md:text-sm text-slate-400">
           
-          {/* Copyright & Developed By Left */}
+          {/* Copyright Left */}
           <div>
-            <span>© 2026 TECH6SENSE AI. All rights reserved. | Designed & Developed by </span>
-            <a 
-              href="https://technomantra.in/" 
-              target="_blank" 
-              rel="noreferrer" 
-              className="text-[#00A86B] font-bold hover:text-white transition-colors underline underline-offset-4 decoration-[#00A86B]/40"
-            >
-              TechnoMantra India
-            </a>
+            <span>© 2026 TECH6SENSE AI. All rights reserved.</span>
           </div>
 
           {/* Social Icon Buttons Right */}

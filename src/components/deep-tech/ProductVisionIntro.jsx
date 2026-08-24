@@ -1,4 +1,5 @@
 import React from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function ProductVisionIntro() {
   const pillars = [
@@ -93,6 +94,7 @@ export default function ProductVisionIntro() {
               return (
                 <div 
                   key={idx}
+                  {...touchHoverProps}
                   className={`rounded-3xl p-6 transition-all duration-[750ms] custom-ease cursor-pointer flex flex-col justify-between border-0 overflow-hidden group flex-1 lg:hover:flex-[3.5] min-w-0 ${cardBg} ${
                     pillar.isBlue 
                       ? 'hover:shadow-[4px_4px_0px_0px_rgba(37,99,235,0.12)]' 

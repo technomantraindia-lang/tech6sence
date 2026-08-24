@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 const INDUSTRIES_DATA = [
   {
@@ -89,7 +90,7 @@ export default function IndustriesTransform() {
           <h2 className="font-display text-[clamp(2.2rem,4.5vw,3.5rem)] leading-[1.12] font-extrabold text-slate-900 tracking-tight">
             We work where the stakes{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1746D2] via-[#00A86B] to-[#1746D2]">
-              justify the engineering.
+              justify the engineering
             </span>
           </h2>
         </div>
@@ -104,6 +105,7 @@ export default function IndustriesTransform() {
             <div 
               key={idx} 
               className="group flex gap-6 pb-6 border-b border-slate-100 hover:border-slate-200 transition-colors duration-300"
+              {...touchHoverProps}
             >
               {/* Monospace Index Number */}
               <span className="font-display text-sm font-extrabold text-[#1746D2] tracking-wider pt-1 shrink-0 select-none">

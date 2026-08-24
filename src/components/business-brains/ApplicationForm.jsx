@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { sendFormEmail } from '../../utils/sendEmail';
 
 export default function ApplicationForm() {
   const [formData, setFormData] = useState({
@@ -24,33 +25,21 @@ export default function ApplicationForm() {
     setLoading(true);
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/info@tech6senseai.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          _subject: `New Business Brains Application from ${formData.name} - TECH6SENSE AI`,
-          _captcha: 'false',
-          _template: 'table',
-          "Full Name": formData.name,
-          "Email Address": formData.email,
-          "Phone Number": formData.phone || 'Not provided',
-          "LinkedIn Profile": formData.linkedin || 'Not provided',
-          "Company": formData.company || 'Not provided',
-          "Role": formData.role || 'Not provided',
-          "Membership Tier": formData.tier,
-          "Primary Goals": formData.goals || 'Not provided'
-        })
+      await sendFormEmail({
+        subjectTag: '🧠 [BUSINESS BRAINS]',
+        formTitle: 'Network Member Application',
+        formData: {
+          fullName: formData.name,
+          email: formData.email,
+          phone: formData.phone || 'Not provided',
+          linkedIn: formData.linkedin || 'Not provided',
+          company: formData.company || 'Not provided',
+          role: formData.role || 'Not provided',
+          membershipTier: formData.tier,
+          primaryGoals: formData.goals || 'Not provided'
+        }
       });
-
-      const data = await response.json();
-      if (response.ok || data.success === 'true') {
-        setSubmitted(true);
-      } else {
-        throw new Error(data.message || 'Submission failed');
-      }
+      setSubmitted(true);
     } catch (err) {
       console.error('Business Brains Submission Error:', err);
       setSubmitted(true);

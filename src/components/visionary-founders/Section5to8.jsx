@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export function IntroducingProgram() {
   const functionList = [
@@ -39,7 +40,7 @@ export function IntroducingProgram() {
         </div>
 
         {/* Intro Copy */}
-        <div className="max-w-4xl mx-auto space-y-6 text-slate-700 text-base md:text-lg leading-relaxed font-medium text-center mb-14 bg-slate-50 p-8 rounded-3xl border border-slate-200/80 shadow-sm">
+        <div className="max-w-4xl mx-auto space-y-6 text-slate-700 text-base md:text-lg leading-relaxed font-medium text-center mb-14 bg-slate-50 p-4 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm">
           <p className="font-semibold text-slate-900 text-lg md:text-xl">
             Visionary Founders isn't a course. It isn't a mentorship group. It isn't an incubator that gives you advice and wishes you luck.
           </p>
@@ -49,47 +50,48 @@ export function IntroducingProgram() {
         </div>
 
         {/* Business Infrastructure Table Section */}
-        <div className="w-full mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-2xl bg-white">
-          {/* Restored Original Dark Background for Header Banner */}
-          <div className="p-5 md:p-6 bg-slate-900 text-white font-display font-bold text-base md:text-lg text-center leading-snug flex items-center justify-center gap-3">
+        <div className="w-full mx-auto overflow-hidden rounded-3xl border border-slate-800 shadow-2xl bg-slate-950">
+          {/* Header Banner */}
+          <div className="p-5 md:p-6 bg-slate-900 border-b border-slate-800 text-white font-display font-bold text-base md:text-lg text-center leading-snug flex items-center justify-center gap-3">
             <span className="w-2 h-2 rounded-full bg-[#00A86B] animate-pulse" />
             <span>When you join, you don't get a course. You get a working business infrastructure:</span>
           </div>
 
-          {/* Mobile View: Clean Stacked Cards */}
-          <div className="block md:hidden divide-y divide-slate-100">
+          {/* Mobile View: Clean Stacked Cards with Solid Brand Colors */}
+          <div className="block md:hidden space-y-4 p-3 bg-slate-950">
             {functionList.map((item, i) => (
-              <div key={i} className="p-5 space-y-2 bg-white">
-                <div className="font-bold text-[#1746D2] text-sm flex items-start gap-2">
-                  <span className="text-[#00A86B] font-extrabold text-sm shrink-0 mt-0.5">✓</span>
-                  <span>{item.fn}</span>
+              <div key={i} className="border border-slate-800 rounded-2xl shadow-xl overflow-hidden divide-y divide-white/15">
+                <div className="p-4 bg-[#1746D2]">
+                  <span className="block text-[10px] font-extrabold text-blue-100 uppercase tracking-widest mb-1">FUNCTION</span>
+                  <p className="text-xs text-white font-bold">{item.fn}</p>
                 </div>
-                <p className="text-xs text-slate-800 leading-relaxed font-semibold pl-5">
-                  {item.get}
-                </p>
+                <div className="p-4 bg-[#00A86B]">
+                  <span className="block text-[10px] font-extrabold text-emerald-100 uppercase tracking-widest mb-1">WHAT YOU GET</span>
+                  <p className="text-xs text-white font-medium leading-relaxed">{item.get}</p>
+                </div>
               </div>
             ))}
           </div>
 
-          {/* Desktop View: Styled Table with Royal Blue & Emerald Green Columns */}
+          {/* Desktop View: Styled Table with Solid Royal Blue & Emerald Green Columns */}
           <table className="hidden md:table w-full text-left border-collapse">
             <thead>
-              <tr className="font-display text-sm font-extrabold uppercase tracking-wider border-b border-slate-200">
-                <th className="p-5 md:p-6 w-1/3 border-r border-slate-200 bg-[#1746D2]/10 text-[#1746D2]">
-                  Function
+              <tr className="bg-slate-900 text-white font-mono text-xs font-bold uppercase tracking-wider border-b border-slate-800">
+                <th className="p-5 md:p-6 w-1/3 border-r border-slate-800 text-white">
+                  FUNCTION
                 </th>
-                <th className="p-5 md:p-6 w-2/3 bg-[#00A86B]/10 text-[#00A86B]">
-                  What You Get
+                <th className="p-5 md:p-6 w-2/3 text-white">
+                  WHAT YOU GET
                 </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-200 text-sm font-medium text-slate-800">
+            <tbody className="divide-y divide-white/15 font-medium text-sm text-white">
               {functionList.map((item, i) => (
-                <tr key={i} className="transition-colors group">
-                  <td className="p-5 md:p-6 font-extrabold text-[#1746D2] border-r border-slate-200 bg-[#1746D2]/5 group-hover:bg-[#1746D2]/10 transition-colors">
+                <tr key={i} className="transition-colors hover:brightness-110" {...touchHoverProps}>
+                  <td className="p-5 md:p-6 bg-[#1746D2] text-white font-extrabold border-r border-white/15">
                     {item.fn}
                   </td>
-                  <td className="p-5 md:p-6 leading-relaxed font-semibold text-slate-800 bg-[#00A86B]/5 group-hover:bg-[#00A86B]/10 transition-colors">
+                  <td className="p-5 md:p-6 bg-[#00A86B] text-white font-semibold leading-relaxed">
                     {item.get}
                   </td>
                 </tr>
@@ -340,13 +342,17 @@ export function EcosystemComponents() {
 
   const renderHorizontalCard = (comp, idx, activeIdx, setActiveFn) => {
     const isActive = activeIdx === idx;
+    const isRow1 = parseInt(comp.num, 10) <= 5;
+    
     return (
       <div
         key={idx}
         onMouseEnter={() => setActiveFn(idx)}
         className={`relative transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer overflow-hidden rounded-2xl ${
           isActive 
-            ? 'flex-1 min-w-[500px] bg-white border-2 border-[#1746D2] shadow-2xl p-6' 
+            ? isRow1
+              ? 'flex-1 min-w-[500px] bg-[#00A86B] text-white border-2 border-[#00A86B] shadow-2xl p-6'
+              : 'flex-1 min-w-[500px] bg-[#1746D2] text-white border-2 border-[#1746D2] shadow-2xl p-6'
             : 'w-20 shrink-0 bg-white border border-slate-200/90 shadow-xs hover:border-[#1746D2]/60 hover:bg-blue-50/30 p-5'
         }`}
       >
@@ -356,35 +362,35 @@ export function EcosystemComponents() {
         }`}>
           <div className="flex flex-col h-full justify-between space-y-3 overflow-y-auto pr-1">
             <div>
-              <div className="flex items-center justify-between gap-3 mb-2 border-b border-slate-100 pb-3">
+              <div className="flex items-center justify-between gap-3 mb-2 border-b border-white/20 pb-3">
                 <div className="flex items-center gap-3">
-                  <span className="px-2.5 py-1 rounded-xl text-xs font-mono font-extrabold bg-[#1746D2] text-white shadow-xs">
+                  <span className="px-2.5 py-1 rounded-xl text-xs font-mono font-extrabold bg-slate-900 text-white shadow-xs">
                     {comp.num}
                   </span>
                   <div>
-                    <h3 className="font-display text-lg font-extrabold text-slate-900 leading-snug">
+                    <h3 className="font-display text-lg font-extrabold text-white leading-snug">
                       {comp.title}
                     </h3>
-                    <p className="text-[11px] font-extrabold text-[#00A86B] uppercase tracking-wider">
+                    <p className="text-[11px] font-extrabold text-[#FFD700] uppercase tracking-wider">
                       {comp.subtitle}
                     </p>
                   </div>
                 </div>
               </div>
 
-              <p className="text-slate-700 text-xs font-medium leading-relaxed mb-3">
+              <p className="text-white/95 text-xs font-medium leading-relaxed mb-3">
                 {comp.desc}
               </p>
 
               {comp.services ? (
                 <div className="space-y-1.5">
-                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#1746D2] block">
+                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#FFD700] block">
                     Deliverables:
                   </span>
                   <div className="grid grid-cols-2 gap-1.5">
                     {comp.services.map((service, i) => (
-                      <div key={i} className="flex items-start gap-1.5 text-xs font-semibold text-slate-800 bg-slate-50 p-2 rounded-xl border border-slate-200/80">
-                        <span className="text-[#00A86B] font-extrabold shrink-0">✓</span>
+                      <div key={i} className="flex items-start gap-1.5 text-xs font-semibold text-white bg-white/15 backdrop-blur-sm p-2 rounded-xl border border-white/20">
+                        <span className="text-white font-extrabold shrink-0">✓</span>
                         <span>{service}</span>
                       </div>
                     ))}
@@ -394,13 +400,13 @@ export function EcosystemComponents() {
                 <div className="space-y-2">
                   {comp.sections.map((sect, i) => (
                     <div key={i} className="space-y-1">
-                      <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#1746D2] block">
+                      <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#FFD700] block">
                         {sect.heading}
                       </span>
                       <div className="grid grid-cols-2 gap-1.5">
                         {sect.items.map((item, j) => (
-                          <div key={j} className="flex items-start gap-1.5 text-xs font-semibold text-slate-800 bg-slate-50 p-2 rounded-xl border border-slate-200/80">
-                            <span className="text-[#00A86B] font-extrabold shrink-0">✓</span>
+                          <div key={j} className="flex items-start gap-1.5 text-xs font-semibold text-white bg-white/15 backdrop-blur-sm p-2 rounded-xl border border-white/20">
+                            <span className="text-white font-extrabold shrink-0">✓</span>
                             <span>{item}</span>
                           </div>
                         ))}
@@ -411,11 +417,11 @@ export function EcosystemComponents() {
               )}
             </div>
 
-            <div className="p-3 rounded-xl bg-[#00A86B]/10 border border-[#00A86B]/25 mt-2">
-              <div className="inline-block px-2 py-0.5 rounded bg-[#00A86B] text-white text-[9px] font-extrabold uppercase tracking-widest mb-0.5">
+            <div className="p-3 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white mt-2">
+              <div className="inline-block px-2 py-0.5 rounded bg-slate-900 text-[#00A86B] text-[9px] font-extrabold uppercase tracking-widest mb-0.5">
                 Your Benefit
               </div>
-              <p className="text-slate-900 font-bold text-xs leading-relaxed">
+              <p className="text-white font-bold text-xs leading-relaxed">
                 {comp.benefit}
               </p>
             </div>
@@ -426,7 +432,9 @@ export function EcosystemComponents() {
         <div className={`transition-all duration-300 ease-out h-full flex flex-col items-center justify-between ${
           !isActive ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4 pointer-events-none absolute inset-0 p-5'
         }`}>
-          <span className="px-2 py-1 rounded-lg text-xs font-mono font-extrabold bg-[#1746D2]/10 text-[#1746D2]">
+          <span className={`px-2 py-1 rounded-lg text-xs font-mono font-extrabold ${
+            isRow1 ? 'bg-[#00A86B]/10 text-[#00A86B]' : 'bg-[#1746D2]/10 text-[#1746D2]'
+          }`}>
             {comp.num}
           </span>
           
@@ -436,7 +444,9 @@ export function EcosystemComponents() {
             </span>
           </div>
 
-          <span className="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center text-[#1746D2] font-bold text-xs">
+          <span className={`w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center font-bold text-xs ${
+            isRow1 ? 'text-[#00A86B]' : 'text-[#1746D2]'
+          }`}>
             +
           </span>
         </div>
@@ -446,7 +456,7 @@ export function EcosystemComponents() {
 
   return (
     <section className="py-20 md:py-32 bg-[#FAF9FF] relative overflow-hidden border-b border-slate-200/80">
-      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-3 sm:px-6 relative z-10">
         
         {/* Section Header */}
         <div className="mb-12 text-center max-w-3xl mx-auto space-y-4">
@@ -488,12 +498,17 @@ export function EcosystemComponents() {
         <div className="block lg:hidden grid grid-cols-1 md:grid-cols-2 gap-4">
           {components.map((comp, idx) => {
             const isActive = row1Active === idx;
+            const isRow1 = parseInt(comp.num, 10) <= 5;
             return (
               <div
                 key={idx}
                 onMouseEnter={() => setRow1Active(idx)}
-                className={`rounded-3xl bg-white transition-all duration-300 border overflow-hidden ${
-                  isActive ? 'border-2 border-[#1746D2] shadow-xl' : 'border-slate-200/90 shadow-xs'
+                className={`rounded-3xl transition-all duration-300 border overflow-hidden ${
+                  isActive 
+                    ? isRow1 
+                      ? 'bg-[#00A86B] text-white border-2 border-[#00A86B] shadow-xl' 
+                      : 'bg-[#1746D2] text-white border-2 border-[#1746D2] shadow-xl' 
+                    : 'bg-white border-slate-200/90 shadow-xs'
                 }`}
               >
                 <button
@@ -501,34 +516,36 @@ export function EcosystemComponents() {
                   className="w-full text-left p-6 flex items-start justify-between gap-4 cursor-pointer"
                 >
                   <div className="flex items-start gap-3">
-                    <span className="px-2.5 py-1 rounded-xl text-xs font-mono font-extrabold bg-[#1746D2] text-white shrink-0">
+                    <span className="px-2.5 py-1 rounded-xl text-xs font-mono font-extrabold bg-slate-900 text-white shrink-0">
                       {comp.num}
                     </span>
                     <div>
-                      <h3 className="font-display text-base font-extrabold text-slate-900 leading-snug">
+                      <h3 className={`font-display text-base font-extrabold leading-snug ${isActive ? 'text-white' : 'text-slate-900'}`}>
                         {comp.title}
                       </h3>
-                      <p className="text-xs font-bold text-[#00A86B] uppercase tracking-wider mt-0.5">
+                      <p className={`text-xs font-bold uppercase tracking-wider mt-0.5 ${isActive ? 'text-[#FFD700]' : 'text-[#00A86B]'}`}>
                         {comp.subtitle}
                       </p>
                     </div>
                   </div>
-                  <span className="text-xs font-bold text-[#1746D2] shrink-0">
+                  <span className={`text-xs font-bold shrink-0 ${isActive ? 'text-white' : 'text-[#1746D2]'}`}>
                     {isActive ? '−' : '+'}
                   </span>
                 </button>
 
                 {isActive && (
-                  <div className="px-6 pb-6 pt-2 border-t border-slate-100 bg-slate-50/50 space-y-4">
-                    <p className="text-slate-700 text-xs font-medium leading-relaxed">
+                  <div className={`px-6 pb-6 pt-2 border-t border-white/20 space-y-4 ${
+                    isRow1 ? 'bg-[#00A86B]' : 'bg-[#1746D2]'
+                  }`}>
+                    <p className="text-white/95 text-xs font-medium leading-relaxed">
                       {comp.desc}
                     </p>
 
                     {comp.services ? (
                       <div className="space-y-1.5">
                         {comp.services.map((service, i) => (
-                          <div key={i} className="flex items-start gap-2 text-xs font-semibold text-slate-800 bg-white p-2 rounded-lg border border-slate-200/70">
-                            <span className="text-[#00A86B] font-bold">✓</span>
+                          <div key={i} className="flex items-start gap-2 text-xs font-semibold text-white bg-white/15 backdrop-blur-sm p-2 rounded-lg border border-white/20">
+                            <span className="text-white font-bold">✓</span>
                             <span>{service}</span>
                           </div>
                         ))}
@@ -537,12 +554,12 @@ export function EcosystemComponents() {
                       <div className="space-y-3">
                         {comp.sections.map((sect, i) => (
                           <div key={i} className="space-y-1">
-                            <span className="text-[10px] font-extrabold uppercase text-[#1746D2]">
+                            <span className="text-[10px] font-extrabold uppercase text-[#FFD700]">
                               {sect.heading}
                             </span>
                             {sect.items.map((item, j) => (
-                              <div key={j} className="flex items-start gap-2 text-xs font-semibold text-slate-800 bg-white p-2 rounded-lg border border-slate-200/70">
-                                <span className="text-[#00A86B] font-bold">✓</span>
+                              <div key={j} className="flex items-start gap-2 text-xs font-semibold text-white bg-white/15 backdrop-blur-sm p-2 rounded-lg border border-white/20">
+                                <span className="text-white font-bold">✓</span>
                                 <span>{item}</span>
                               </div>
                             ))}
@@ -551,9 +568,9 @@ export function EcosystemComponents() {
                       </div>
                     )}
 
-                    <div className="p-3 rounded-xl bg-[#00A86B]/10 border border-[#00A86B]/20">
-                      <span className="text-[9px] font-extrabold uppercase text-[#00A86B] block">Your Benefit</span>
-                      <p className="text-slate-900 font-bold text-xs mt-0.5">{comp.benefit}</p>
+                    <div className="p-3 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white">
+                      <span className="text-[9px] font-extrabold uppercase text-[#FFD700] block">Your Benefit</span>
+                      <p className="text-white font-bold text-xs mt-0.5">{comp.benefit}</p>
                     </div>
                   </div>
                 )}
@@ -597,14 +614,29 @@ export function WhoIsThisFor() {
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left max-w-6xl mx-auto">
-          {profiles.map((profile, i) => (
-            <div key={i} className="p-6 rounded-2xl border border-slate-200 bg-slate-50 hover:bg-white hover:shadow-md transition-all flex flex-col justify-between">
-              <div>
-                <h4 className="font-display text-lg font-bold text-slate-900 mb-3">{profile.title}</h4>
-                <p className="text-slate-600 font-medium text-xs md:text-sm leading-relaxed">{profile.desc}</p>
+          {profiles.map((profile, i) => {
+            const isBlue = i % 2 === 0;
+            return (
+              <div 
+                key={i} 
+                {...touchHoverProps}
+                className={`group p-6 rounded-2xl border border-slate-200 bg-slate-50 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 ${
+                  isBlue
+                    ? 'hover:bg-[#1746D2] hover:border-[#1746D2] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]'
+                    : 'hover:bg-[#00A86B] hover:border-[#00A86B] hover:shadow-[4px_4px_0px_0px_rgba(0,168,107,0.35)]'
+                }`}
+              >
+                <div>
+                  <h4 className="font-display text-lg font-bold text-slate-900 group-hover:text-white transition-colors mb-3">
+                    {profile.title}
+                  </h4>
+                  <p className="text-slate-600 font-medium text-xs md:text-sm leading-relaxed group-hover:text-white/95 transition-colors">
+                    {profile.desc}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

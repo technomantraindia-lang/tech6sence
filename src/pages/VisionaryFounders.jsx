@@ -62,7 +62,7 @@ export default function VisionaryFounders() {
                 <h1 className="font-display text-[clamp(2.25rem,4.5vw,4rem)] leading-[1.08] font-extrabold tracking-tight text-white max-w-[1400px] text-center">
                   Build Your AI Empire Powered by a{' '}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1746D2] via-[#00A86B] to-[#D4AF37]">
-                    Global Ecosystem.
+                    Global Ecosystem
                   </span>
                 </h1>
 

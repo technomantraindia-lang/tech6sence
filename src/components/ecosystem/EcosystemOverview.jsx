@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function EcosystemOverview() {
   const [isVisible, setIsVisible] = useState(false);
@@ -89,7 +90,8 @@ export default function EcosystemOverview() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 relative z-10">
             {overviewPoints.map((point, i) => (
               <div 
-                key={i} 
+                key={i}
+                {...touchHoverProps}
                 className={`group relative p-8 bg-white border border-slate-200 rounded-2xl transition-all duration-500 ease-out hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:-translate-y-1 hover:border-[#1746D2]/40 overflow-hidden ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                 }`}

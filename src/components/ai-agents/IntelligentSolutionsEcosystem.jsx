@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 const categories = [
   {
@@ -483,6 +484,7 @@ function ServiceCard({ srv, accent, accentRgb }) {
       onMouseMove={handleMouseMove}
       id={srv.id}
       className="group relative p-7 rounded-2xl border border-slate-200/80 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300 hover:border-transparent flex flex-col justify-between"
+      {...touchHoverProps}
       style={{
         boxShadow: 'var(--hover-shadow, 0 1px 2px 0 rgba(0, 0, 0, 0.05))'
       }}
@@ -495,28 +497,29 @@ function ServiceCard({ srv, accent, accentRgb }) {
     >
       <div 
         className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 rounded-2xl"
+        {...touchHoverProps}
         style={{ backgroundColor: accent }}
       />
 
       <div className="relative z-10 flex flex-col flex-grow">
-        <span className="inline-block font-display text-xs font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 mb-3 group-hover:bg-white/20 group-hover:text-white transition-colors duration-300 self-start">
+        <span onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="inline-block font-display text-xs sm:text-sm font-black uppercase tracking-wider px-3.5 py-1.5 rounded-lg bg-amber-500/10 border border-[#D4AF37]/40 text-[#B48A1D] mb-3.5 group-hover:bg-black/40 group-hover:border-[#FFD700] group-hover:text-[#FFD700] transition-all duration-300 self-start shadow-sm">
           {srv.title}
         </span>
         
-        <h4 className="font-display text-lg font-extrabold text-slate-900 mb-3 leading-snug group-hover:text-white transition-colors duration-300">
+        <h4 onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-display text-lg sm:text-xl font-extrabold text-slate-900 mb-3.5 leading-snug group-hover:text-white transition-colors duration-300">
           {srv.h1}
         </h4>
         
-        <p className="font-body text-sm text-slate-600 leading-relaxed font-medium mb-5 group-hover:text-white/90 transition-colors duration-300">
+        <p onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-body text-sm text-slate-600 leading-relaxed font-medium mb-5 group-hover:text-white/90 transition-colors duration-300">
           {srv.desc}
         </p>
 
         {srv.coreCapabilities && srv.coreCapabilities.length > 0 && (
           <div className="mb-5">
-            <h5 className="font-display text-xs font-bold text-slate-800 uppercase tracking-widest mb-2 group-hover:text-white/80 transition-colors">Core Capabilities</h5>
+            <h5 onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-display text-xs font-bold text-slate-800 uppercase tracking-widest mb-2 group-hover:text-white/80 transition-colors">Core Capabilities</h5>
             <ul className="space-y-1">
               {srv.coreCapabilities.map((cap, idx) => (
-                <li key={idx} className="font-body text-xs text-slate-600 flex items-start gap-2 group-hover:text-white/90 transition-colors">
+                <li key={idx} onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-body text-xs text-slate-600 flex items-start gap-2 group-hover:text-white/90 transition-colors">
                   <span className="shrink-0 font-bold" style={{ color: accent }}>•</span>
                   <span>{cap}</span>
                 </li>
@@ -526,18 +529,18 @@ function ServiceCard({ srv, accent, accentRgb }) {
         )}
 
         {srv.businessImpact && (
-          <div className="mt-auto mb-6 p-4 rounded-lg bg-slate-50 border border-slate-100 group-hover:bg-black/10 group-hover:border-white/10 transition-colors duration-300">
-             <h5 className="font-display text-xs font-bold text-slate-800 uppercase tracking-widest mb-1 group-hover:text-white/80">Business Impact</h5>
-             <p className="font-body text-xs text-slate-600 font-medium leading-relaxed group-hover:text-white/90">{srv.businessImpact}</p>
+          <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="mt-auto mb-6 p-4 rounded-lg bg-slate-50 border border-slate-100 group-hover:bg-black/10 group-hover:border-white/10 transition-colors duration-300">
+             <h5 onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-display text-xs font-bold text-slate-800 uppercase tracking-widest mb-1 group-hover:text-white/80">Business Impact</h5>
+             <p onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-body text-xs text-slate-600 font-medium leading-relaxed group-hover:text-white/90">{srv.businessImpact}</p>
           </div>
         )}
       </div>
 
-      <Link to={srv.href} className="relative z-10 pt-4 border-t border-slate-100 group-hover:border-white/20 flex items-center justify-between transition-colors duration-300">
-        <span className="font-display text-xs font-bold transition-all group-hover:translate-x-1 group-hover:!text-white" style={{ color: accent }}>
+      <Link to={srv.href} onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="relative z-10 pt-4 border-t border-slate-100 group-hover:border-white/20 flex items-center justify-between transition-colors duration-300">
+        <span onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-display text-xs font-bold transition-all group-hover:translate-x-1 group-hover:!text-white" style={{ color: accent }}>
           {srv.cta}
         </span>
-        <svg className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:!text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5" style={{ color: accent }}>
+        <svg onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:!text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5" style={{ color: accent }}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
         </svg>
       </Link>
@@ -685,7 +688,10 @@ export default function IntelligentSolutionsEcosystem() {
                         className="p-4 rounded-xl border border-slate-100 bg-slate-50 flex flex-col justify-between"
                       >
                         <div>
-                          <h4 className="font-display text-sm font-bold text-slate-900 mb-1">{srv.h1}</h4>
+                          <span className="inline-block font-display text-xs font-black uppercase tracking-wider px-2.5 py-1 rounded-md bg-amber-500/10 border border-[#D4AF37]/40 text-[#B48A1D] mb-2">
+                            {srv.title}
+                          </span>
+                          <h4 className="font-display text-base font-extrabold text-slate-900 mb-2 leading-snug">{srv.h1}</h4>
                           <p className="font-body text-xs text-slate-600 mb-3">{srv.desc}</p>
                         </div>
                         <span className="font-display text-xs font-bold text-[#1746D2] flex items-center gap-1">

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function ProductInnovationShowcase() {
   const [flippedCard, setFlippedCard] = useState(null);
@@ -123,6 +124,7 @@ export default function ProductInnovationShowcase() {
                 key={idx}
                 onClick={() => setFlippedCard(isFlipped ? null : idx)}
                 className="group w-full h-[260px] [perspective:1000px] cursor-pointer"
+                {...touchHoverProps}
               >
                 <div className={`relative w-full h-full duration-700 [transform-style:preserve-3d] transition-transform ${
                   isFlipped ? '[transform:rotateY(180deg)]' : 'group-hover:[transform:rotateY(180deg)]'
@@ -131,7 +133,7 @@ export default function ProductInnovationShowcase() {
                   {/* Card Front Face */}
                   <div className={`absolute inset-0 w-full h-full [backface-visibility:hidden] p-8 rounded-3xl border-0 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03] ${cardBg} ${hoverGlow}`}>
                     <div>
-                      <span className={`inline-flex items-center justify-center w-8 h-8 rounded-full font-display text-sm font-extrabold mb-6 transition-all duration-500 ease-out group-hover:rotate-[360deg] ${badgeBg}`}>
+                      <span onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className={`inline-flex items-center justify-center w-8 h-8 rounded-full font-display text-sm font-extrabold mb-6 transition-all duration-500 ease-out group-hover:rotate-[360deg] ${badgeBg}`}>
                         {item.num}
                       </span>
 
@@ -162,11 +164,13 @@ export default function ProductInnovationShowcase() {
                   </div>
 
                   {/* Card Back Face (Shown on hover/tap) */}
-                  <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] p-8 rounded-3xl bg-slate-950 text-white flex flex-col justify-center">
-                    <span className={`block font-display text-sm font-extrabold uppercase tracking-widest mb-3 ${accentText}`}>
+                  <div className={`absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] p-8 rounded-3xl text-white flex flex-col justify-center shadow-xl transition-all duration-300 ${
+                    item.isBlue ? 'bg-[#1746D2]' : 'bg-[#00A86B]'
+                  }`}>
+                    <span className="inline-block font-display text-xs sm:text-sm font-black uppercase tracking-wider px-3 py-1 rounded-lg bg-black/25 border border-[#FFD700]/50 text-[#FFD700] mb-3 self-start shadow-sm">
                       PRODUCT SPECIFICATION
                     </span>
-                    <p className="font-body text-xs md:text-sm text-slate-300 leading-relaxed font-semibold">
+                    <p className="font-body text-xs md:text-sm text-white/95 leading-relaxed font-medium">
                       {item.desc}
                     </p>
                     <div className="mt-6 flex flex-col gap-2">
@@ -176,16 +180,6 @@ export default function ProductInnovationShowcase() {
                         className="inline-flex items-center gap-1.5 font-display text-sm font-extrabold uppercase tracking-wider hover:underline text-white"
                       >
                         View Details
-                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                        </svg>
-                      </Link>
-                      <Link
-                        to={`/lets-connect?inquiry=${encodeURIComponent(item.title)}`}
-                        onClick={(e) => e.stopPropagation()}
-                        className={`inline-flex items-center gap-1.5 font-display text-sm font-extrabold uppercase tracking-wider hover:underline ${accentText}`}
-                      >
-                        Inquire Brand
                         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                         </svg>

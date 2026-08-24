@@ -1,5 +1,6 @@
 import React from 'react';
 import founderImg from '../../assets/founder.png';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function FounderLetter() {
   return (
@@ -32,11 +33,12 @@ export default function FounderLetter() {
           <div className="lg:col-span-4 flex flex-col items-center text-center border-b lg:border-b-0 lg:border-r border-white/10 pb-8 lg:pb-0 lg:pr-8">
             
             {/* Founder Avatar Image */}
-            <div className="w-36 h-36 md:w-44 md:h-44 rounded-full bg-slate-900 border-2 border-emerald-500/50 flex flex-col items-center justify-center mb-6 relative overflow-hidden group shadow-[0_0_35px_rgba(0, 168, 107,0.3)]">
+            <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="w-36 h-36 md:w-44 md:h-44 rounded-full bg-slate-900 border-2 border-emerald-500/50 flex flex-col items-center justify-center mb-6 relative overflow-hidden group shadow-[0_0_35px_rgba(0, 168, 107,0.3)]">
               <img 
                 src={founderImg} 
                 alt="Chintan - Founder of TECH6SENSE AI" 
                 className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" 
+                {...touchHoverProps}
               />
             </div>
 

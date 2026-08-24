@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { sendFormEmail } from '../../utils/sendEmail';
 
 export default function FinalCTA() {
   const containerRef = useRef(null);
@@ -20,17 +21,30 @@ export default function FinalCTA() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({ name: '', email: '', company: '', category: '', message: '' });
-    }, 1500);
+    const categoryTag = formData.category && formData.category.includes(']')
+      ? formData.category.split(']')[0] + ']'
+      : '📩 [GENERAL INQUIRY]';
+
+    await sendFormEmail({
+      subjectTag: categoryTag,
+      formTitle: 'Homepage Quick Consultation Inquiry',
+      formData: {
+        fullName: formData.name,
+        email: formData.email,
+        company: formData.company || 'Not provided',
+        category: formData.category || 'General Consultation',
+        message: formData.message
+      }
+    });
+
+    setIsSubmitting(false);
+    setSubmitSuccess(true);
+    setFormData({ name: '', email: '', company: '', category: '', message: '' });
   };
 
   useEffect(() => {
@@ -52,7 +66,7 @@ export default function FinalCTA() {
   return (
     <section 
       ref={containerRef}
-      className="relative w-full py-16 md:py-24 px-4 sm:px-6 md:px-8 overflow-hidden bg-[#FAFAFA] border-t border-slate-200/80 text-slate-900"
+      className="relative w-full py-16 md:py-24 px-2.5 sm:px-6 md:px-8 overflow-hidden bg-[#FAFAFA] border-t border-slate-200/80 text-slate-900"
     >
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes cta-glow-drift {
@@ -94,7 +108,7 @@ export default function FinalCTA() {
 
       {/* Main Container */}
       <div 
-        className={`relative max-w-[1400px] mx-auto rounded-[2.5rem] border border-slate-200/80 bg-white/90 backdrop-blur-md overflow-hidden py-14 px-6 sm:px-12 md:py-20 md:px-16 shadow-[0_10px_40px_rgba(15,23,42,0.04)] transition-all duration-1000 ease-out ${
+        className={`relative max-w-[1400px] mx-auto rounded-2xl sm:rounded-[2.5rem] border border-slate-200/80 bg-white/90 backdrop-blur-md overflow-hidden py-10 px-4 sm:px-10 md:py-20 md:px-16 shadow-[0_10px_40px_rgba(15,23,42,0.04)] transition-all duration-1000 ease-out ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
         }`}
       >
@@ -155,7 +169,7 @@ export default function FinalCTA() {
               transitionDelay: '350ms'
             }}
           >
-            <div className="bg-white rounded-3xl border border-slate-200/60 p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] relative overflow-hidden">
+            <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/60 p-5 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] relative overflow-hidden">
               
               {submitSuccess ? (
                 <div className="flex flex-col items-center justify-center py-10 text-center">

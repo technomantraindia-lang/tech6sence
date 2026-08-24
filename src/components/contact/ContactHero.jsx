@@ -1,159 +1,151 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import heroBgImage from '../../assets/contact-hero-bg.jpg';
 
 export default function ContactHero() {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => setIsVisible(true), []);
 
   return (
-    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white">
-      {/* Light background accents */}
-      <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-[#1746D2]/10 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/3 opacity-50 pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-fuchsia-50 rounded-full blur-3xl translate-y-1/3 translate-x-1/4 opacity-50 pointer-events-none" />
+    <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-36 overflow-hidden bg-[#050112] text-white">
       
-      <div className="relative mx-auto max-w-[1400px] px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
+      {/* Generated AI Neural Network Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-45 mix-blend-screen scale-105 pointer-events-none transition-transform duration-1000"
+        style={{ backgroundImage: `url(${heroBgImage})` }}
+      />
+      
+      {/* Dark Ambient Gradient Overlays for High Contrast */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#050112] via-[#050112]/85 to-transparent z-0 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#050112] via-transparent to-[#050112]/90 z-0 pointer-events-none" />
+
+      {/* Ambient Neon Glow Orbs */}
+      <div className="absolute top-1/4 left-10 w-[500px] h-[500px] bg-[#1746D2]/20 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[600px] h-[600px] bg-[#00A86B]/20 rounded-full blur-[180px] pointer-events-none" />
+
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
           
-          {/* Left Content */}
+          {/* Left Content Column */}
           <div className={`transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-            <div className="inline-flex items-center gap-3 mb-6">
-              <span className="w-8 h-[2px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] rounded-full" />
-              <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-slate-500">
+            
+            {/* Tag Badge */}
+            <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#1746D2]/25 via-slate-900/80 to-[#00A86B]/25 border border-emerald-500/30 backdrop-blur-md mb-8 shadow-lg">
+              <span className="w-2 h-2 rounded-full bg-[#00A86B] animate-pulse" />
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-emerald-300">
                 LET'S CONNECT
               </span>
             </div>
             
-            <h1 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.1] font-extrabold text-slate-900 mb-6 tracking-tight">
-              Let’s Build Your Next AI Advantage Together
+            {/* Main Headline */}
+            <h1 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.08] font-extrabold text-white mb-6 tracking-tight">
+              Let’s Build Your Next <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-emerald-300 to-[#00A86B]">AI Advantage</span> Together
             </h1>
             
-            <p className="font-body text-slate-600 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
+            {/* Body Description */}
+            <p className="font-body text-slate-300 text-lg md:text-xl leading-relaxed mb-10 max-w-xl font-normal">
               Whether you want to develop an AI product, automate business workflows, explore deep-tech innovation, or connect with the TECH6SENSE AI ecosystem, our team is ready to understand your vision and guide the next step.
             </p>
             
+            {/* CTA Action Buttons */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-12">
-              <Link to="#form" className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] px-8 py-3.5 font-body text-sm font-bold text-white shadow-[0_4px_15px_rgba(124,58,237,0.3)] transition-all hover:scale-[1.02] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]">
+              <a 
+                href="#form" 
+                className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-[#1746D2] via-[#00A86B] to-[#1746D2] px-8 py-4 font-body text-sm font-bold text-white shadow-[0_4px_25px_rgba(0,168,107,0.4)] transition-all hover:scale-[1.03] hover:shadow-[0_8px_35px_rgba(23,70,210,0.5)]"
+              >
                 <span className="relative z-10 flex items-center gap-2">
                   Start a Conversation
-                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
                 </span>
-              </Link>
-              <Link to="/ai-agents" className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full border-2 border-slate-200 font-body text-sm font-bold text-slate-700 hover:border-[#1746D2]/40 hover:bg-[#1746D2]/10 hover:text-[#1746D2] transition-all">
+              </a>
+
+              <Link 
+                to="/ai-agents" 
+                className="group inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur-md font-body text-sm font-bold text-slate-200 hover:border-[#00A86B] hover:bg-white/10 hover:text-white transition-all shadow-md"
+              >
                 Explore Intelligent Solutions
               </Link>
             </div>
             
+            {/* Sub-Brand Metadata Badges */}
             <div className="flex flex-wrap items-center gap-3 text-xs font-mono font-medium text-slate-400">
-              <span className="text-[#1746D2]">AI solutions</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-slate-200" />
-              <span>Deep-tech products</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-slate-200" />
-              <span>Founder ecosystem</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-slate-200" />
-              <span>Global innovation</span>
+              <span className="text-emerald-400 font-bold">✦ AI Solutions</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-slate-700" />
+              <span>Deep-Tech Products</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-slate-700" />
+              <span>Founder Ecosystem</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-slate-700" />
+              <span>Global Innovation</span>
             </div>
           </div>
 
-          {/* Right Visual: Abstract Contact UI */}
-          <div className={`relative h-[450px] lg:h-[600px] w-full flex items-center justify-center transition-all duration-1000 delay-300 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
+          {/* Right Visual: Glassmorphic 3D HUD & AI Network Showcase */}
+          <div className={`relative h-[480px] lg:h-[580px] w-full flex items-center justify-center transition-all duration-1000 delay-300 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
             
-            <div className="relative w-full max-w-[500px] aspect-square animate-float">
+            <div className="relative w-full max-w-[540px] aspect-square rounded-3xl p-4 bg-slate-950/70 border border-white/15 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.8)] overflow-hidden group">
               
-              {/* Light Grid Background */}
-              <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+CjxyZWN0IHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0ibm9uZSIvPgo8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxIiBmaWxsPSIjY2JkNWUxIiBmaWxsLW9wYWNpdHk9IjAuNiIvPgo8L3N2Zz4=')] opacity-60 rounded-full [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_70%)]" />
+              {/* Image Preview inside Glassmorphic HUD Card */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center rounded-3xl opacity-80 group-hover:scale-105 transition-transform duration-700"
+                style={{ backgroundImage: `url(${heroBgImage})` }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050112] via-slate-950/40 to-transparent pointer-events-none" />
 
-              {/* Connected Dots Network */}
-              <svg className="absolute inset-0 w-full h-full text-slate-200" viewBox="0 0 500 500">
-                <path d="M250,250 L120,120" stroke="url(#contact-line-grad)" strokeWidth="1.5" strokeDasharray="4 4" className="animate-[pulse_3s_infinite]" />
-                <path d="M250,250 L380,100" stroke="url(#contact-line-grad)" strokeWidth="1.5" strokeDasharray="4 4" className="animate-[pulse_4s_infinite]" />
-                <path d="M250,250 L80,300" stroke="url(#contact-line-grad)" strokeWidth="1.5" strokeDasharray="4 4" className="animate-[pulse_2s_infinite]" />
-                <path d="M250,250 L400,350" stroke="url(#contact-line-grad)" strokeWidth="1.5" strokeDasharray="4 4" className="animate-[pulse_5s_infinite]" />
-                <path d="M250,250 L200,420" stroke="url(#contact-line-grad)" strokeWidth="1.5" strokeDasharray="4 4" className="animate-[pulse_3.5s_infinite]" />
-                <defs>
-                  <linearGradient id="contact-line-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.8" />
-                    <stop offset="100%" stopColor="#d946ef" stopOpacity="0.2" />
-                  </linearGradient>
-                </defs>
-              </svg>
-
-              {/* Central Hub */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white rounded-2xl shadow-[0_20px_50px_rgba(15,23,42,0.1)] border border-slate-100 flex items-center justify-center z-20 rotate-3">
-                <div className="absolute inset-0 bg-[#1746D2] rounded-2xl blur-xl opacity-20 animate-pulse" />
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-tr from-[#1746D2] to-[#00A86B] flex items-center justify-center relative shadow-inner">
-                  <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              {/* Central Glowing Hub Icon */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-slate-950/90 rounded-2xl border border-emerald-500/40 flex items-center justify-center z-20 shadow-[0_0_40px_rgba(0,168,107,0.5)]">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#1746D2] to-[#00A86B] flex items-center justify-center relative shadow-inner">
+                  <svg className="w-6 h-6 text-white animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                   </svg>
                 </div>
               </div>
 
-              {/* Floating Message Cards */}
-              <div className="absolute top-[15%] left-[5%] bg-white p-3 rounded-2xl border border-slate-200 shadow-sm z-30 flex items-center gap-3 animate-float -rotate-6" style={{ animationDelay: '0.2s' }}>
-                <div className="w-8 h-8 rounded-full bg-[#1746D2]/10 flex items-center justify-center">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#1746D2]" />
-                </div>
-                <div>
-                  <div className="w-16 h-1.5 bg-slate-200 rounded-full mb-1.5" />
-                  <div className="w-10 h-1.5 bg-slate-100 rounded-full" />
-                </div>
+              {/* Floating Topic Pills */}
+              <div className="absolute top-[12%] left-[8%] bg-slate-950/90 backdrop-blur-md px-4 py-2 rounded-2xl border border-emerald-500/40 shadow-xl z-30 flex items-center gap-2.5 animate-float">
+                <span className="w-2 h-2 rounded-full bg-[#00A86B] animate-ping" />
+                <span className="font-mono text-xs font-bold text-emerald-300 uppercase tracking-wider">AI Consultation</span>
               </div>
 
-              <div className="absolute top-[20%] right-[5%] bg-white p-3 rounded-2xl border border-slate-200 shadow-sm z-30 flex items-center gap-3 animate-float rotate-3" style={{ animationDelay: '1.5s' }}>
-                <div className="w-8 h-8 rounded-full bg-fuchsia-100 flex items-center justify-center">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#00A86B]" />
+              <div className="absolute top-[18%] right-[8%] bg-slate-950/90 backdrop-blur-md px-4 py-2 rounded-2xl border border-blue-500/40 shadow-xl z-30 flex items-center gap-2.5 animate-float" style={{ animationDelay: '1.2s' }}>
+                <span className="w-2 h-2 rounded-full bg-[#1746D2] animate-ping" />
+                <span className="font-mono text-xs font-bold text-blue-300 uppercase tracking-wider">Product Discussion</span>
+              </div>
+
+              <div className="absolute bottom-[28%] left-[8%] bg-slate-950/90 backdrop-blur-md px-4 py-2 rounded-2xl border border-emerald-500/40 shadow-xl z-30 flex items-center gap-2.5 animate-float" style={{ animationDelay: '2.4s' }}>
+                <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                <span className="font-mono text-xs font-bold text-emerald-300 uppercase tracking-wider">Founder Support</span>
+              </div>
+
+              <div className="absolute bottom-[14%] right-[10%] bg-slate-950/90 backdrop-blur-md px-4 py-2 rounded-2xl border border-blue-500/40 shadow-xl z-30 flex items-center gap-2.5 animate-float" style={{ animationDelay: '1.8s' }}>
+                <span className="w-2 h-2 rounded-full bg-blue-400" />
+                <span className="font-mono text-xs font-bold text-blue-300 uppercase tracking-wider">Business Automation</span>
+              </div>
+
+              {/* Bottom Card Bar */}
+              <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-slate-950/90 border border-white/10 backdrop-blur-md flex items-center justify-between z-30">
+                <div className="flex items-center gap-3">
+                  <div className="w-3 h-3 rounded-full bg-[#00A86B] animate-pulse" />
+                  <span className="text-xs font-mono font-bold text-white uppercase tracking-wider">TECH6SENSE AI Hub</span>
                 </div>
-                <div>
-                  <div className="w-20 h-1.5 bg-slate-200 rounded-full mb-1.5" />
-                  <div className="w-12 h-1.5 bg-slate-100 rounded-full" />
-                </div>
+                <span className="text-xs font-mono text-emerald-400 font-bold">24/7 Response Guaranteed →</span>
               </div>
 
-              <div className="absolute bottom-[25%] left-[10%] bg-white p-3 rounded-2xl border border-slate-200 shadow-sm z-30 flex items-center gap-3 animate-float rotate-6" style={{ animationDelay: '0.8s' }}>
-                <div className="w-8 h-8 rounded-full bg-[#1746D2]/10 flex items-center justify-center">
-                  <svg className="w-4 h-4 text-[#1746D2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="w-14 h-1.5 bg-slate-200 rounded-full mb-1.5" />
-                  <div className="w-8 h-1.5 bg-slate-100 rounded-full" />
-                </div>
-              </div>
-
-              {/* Floating Labels */}
-              <div className="absolute top-[8%] left-[45%] bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm z-30 flex items-center gap-2 animate-float" style={{ animationDelay: '1.2s' }}>
-                <span className="font-mono text-[0.65rem] font-bold text-slate-700 uppercase tracking-wider hidden sm:block">AI Consultation</span>
-              </div>
-              
-              <div className="absolute top-[45%] right-[-5%] bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm z-30 flex items-center gap-2 animate-float" style={{ animationDelay: '2.1s' }}>
-                <span className="font-mono text-[0.65rem] font-bold text-slate-700 uppercase tracking-wider hidden sm:block">Product Discussion</span>
-              </div>
-
-              <div className="absolute bottom-[10%] right-[20%] bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm z-30 flex items-center gap-2 animate-float" style={{ animationDelay: '0.5s' }}>
-                <span className="font-mono text-[0.65rem] font-bold text-slate-700 uppercase tracking-wider hidden sm:block">Business Automation</span>
-              </div>
-
-              <div className="absolute top-[60%] left-[-2%] bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm z-30 flex items-center gap-2 animate-float" style={{ animationDelay: '1.8s' }}>
-                <span className="font-mono text-[0.65rem] font-bold text-slate-700 uppercase tracking-wider hidden sm:block">Founder Support</span>
-              </div>
-
-              <div className="absolute bottom-[2%] left-[40%] bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm z-30 flex items-center gap-2 animate-float" style={{ animationDelay: '2.6s' }}>
-                <span className="font-mono text-[0.65rem] font-bold text-slate-700 uppercase tracking-wider hidden sm:block">Partnership</span>
-              </div>
-              
             </div>
+
           </div>
+
         </div>
       </div>
+
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes float {
           0% { transform: translateY(0px); }
-          50% { transform: translateY(-12px); }
+          50% { transform: translateY(-10px); }
           100% { transform: translateY(0px); }
         }
-        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-float { animation: float 5s ease-in-out infinite; }
       `}} />
     </section>
   );

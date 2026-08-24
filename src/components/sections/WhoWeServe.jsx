@@ -79,6 +79,9 @@ export default function WhoWeServe() {
                 to={item.href} 
                 onMouseEnter={() => setHoveredIdx(index)}
                 onMouseLeave={() => setHoveredIdx(null)}
+                onTouchStart={() => setHoveredIdx(index)}
+                onTouchEnd={() => setHoveredIdx(null)}
+                onTouchCancel={() => setHoveredIdx(null)}
                 className="group relative rounded-2xl p-8 border transition-all duration-500 ease-out hover:-translate-y-1 block"
                 style={{ 
                   backgroundColor: `${item.color}${bgOpacity}`,

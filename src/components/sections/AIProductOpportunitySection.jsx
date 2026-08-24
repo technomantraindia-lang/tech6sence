@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function AIProductOpportunitySection() {
   const [hoveredIdx, setHoveredIdx] = useState(null);
@@ -61,6 +62,7 @@ export default function AIProductOpportunitySection() {
             <div
               key={idx}
               className="group relative p-5 rounded-2xl bg-white border border-slate-200 hover:border-[#00A86B]/60 transition-all duration-300 shadow-sm flex flex-col justify-between overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_10px_30px_rgba(0,168,107,0.15)]"
+              {...touchHoverProps}
             >
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xl">{item.icon}</span>
@@ -68,7 +70,7 @@ export default function AIProductOpportunitySection() {
                   {item.tag}
                 </span>
               </div>
-              <h4 className="font-display text-sm font-bold text-slate-800 group-hover:text-[#00A86B] transition-colors leading-snug">
+              <h4 onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-display text-sm font-bold text-slate-800 group-hover:text-[#00A86B] transition-colors leading-snug">
                 {item.title}
               </h4>
             </div>
@@ -110,12 +112,13 @@ export default function AIProductOpportunitySection() {
                     onMouseEnter={() => setHoveredIdx(idx)}
                     onMouseLeave={() => setHoveredIdx(null)}
                     className="group flex items-start gap-4 p-3.5 rounded-2xl bg-slate-50 border border-slate-100 hover:border-[#00A86B]/40 hover:bg-[#00A86B]/5 transition-all duration-300"
+                    {...touchHoverProps}
                   >
                     <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-xl bg-[#00A86B]/10 text-[#00A86B] border border-[#00A86B]/30 font-bold text-xs mt-0.5 group-hover:scale-110 transition-transform shadow-sm">
                       ✓
                     </div>
                     <div className="min-w-0 flex-1">
-                      <h5 className="font-display text-sm sm:text-base font-bold text-slate-800 group-hover:text-[#00A86B] transition-colors leading-tight">
+                      <h5 onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-display text-sm sm:text-base font-bold text-slate-800 group-hover:text-[#00A86B] transition-colors leading-tight">
                         {item.title}
                       </h5>
                       <p className="font-body text-xs text-slate-500 mt-1 leading-normal font-medium">
@@ -172,12 +175,13 @@ export default function AIProductOpportunitySection() {
                   <div
                     key={idx}
                     className="group p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-[#D4AF37]/50 hover:bg-[#D4AF37]/5 transition-all duration-300 flex items-start gap-4"
+                    {...touchHoverProps}
                   >
                     <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-xl bg-[#D4AF37]/20 text-[#D4AF37] border border-[#D4AF37]/40 font-bold text-xs mt-0.5 group-hover:scale-110 transition-transform shadow-sm">
                       ✓
                     </div>
                     <div>
-                      <h5 className="font-display text-sm font-bold text-slate-800 group-hover:text-[#D4AF37] transition-colors leading-snug">
+                      <h5 onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-display text-sm font-bold text-slate-800 group-hover:text-[#D4AF37] transition-colors leading-snug">
                         {item.label}
                       </h5>
                       <p className="font-body text-xs text-slate-500 mt-1 leading-relaxed font-medium">
@@ -215,12 +219,14 @@ export default function AIProductOpportunitySection() {
           <Link
             to="/deep-tech-products"
             className="group relative inline-flex items-center gap-3 px-9 py-4.5 rounded-full bg-white text-slate-900 font-display font-bold text-sm sm:text-base tracking-wider shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer overflow-hidden z-10"
+            {...touchHoverProps}
           >
             <span className="relative z-10">Explore AI Product Business Opportunity</span>
             <svg 
               viewBox="0 0 24 24" 
               fill="none" 
               className="w-5 h-5 relative z-10 transition-transform group-hover:translate-x-1.5" 
+              {...touchHoverProps}
               stroke="currentColor" 
               strokeWidth="2.5"
             >

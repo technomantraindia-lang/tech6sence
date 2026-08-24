@@ -145,7 +145,7 @@
   color: var(--th-text-soft);
   margin: 0 0 32px 0;
   max-width: 720px;
-  text-align: justify;
+  text-align: center;
 }
 
 .th-cta-group {
@@ -188,28 +188,32 @@
 }
 
 .th-btn-primary {
-  background: linear-gradient(135deg, var(--th-accent-violet) 0%, #1233A0 100%);
-  color: var(--th-text-white);
-  border: 1px solid rgba(23, 70, 210, 0.5);
-  box-shadow: 0 4px 20px rgba(23, 70, 210, 0.25);
+  background: #1746D2;
+  color: #ffffff;
+  border: 1px solid #1746D2;
+  box-shadow: 0 4px 20px rgba(23, 70, 210, 0.4);
+  font-weight: 700;
 }
 
 .th-btn-primary:hover {
+  background: #1233A0;
+  border-color: #1233A0;
+  box-shadow: 0 6px 25px rgba(23, 70, 210, 0.6);
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(23, 70, 210, 0.4), 0 0 15px rgba(0, 168, 107, 0.2);
-  border-color: var(--th-accent-cyan);
 }
 
 .th-btn-secondary {
-  background: rgba(255, 255, 255, 0.03);
-  color: var(--th-text-white);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
+  background: #00A86B;
+  color: #ffffff;
+  border: 1px solid #00A86B;
+  box-shadow: 0 4px 20px rgba(0, 168, 107, 0.4);
+  font-weight: 700;
 }
 
 .th-btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: #008f5b;
+  border-color: #008f5b;
+  box-shadow: 0 6px 25px rgba(0, 168, 107, 0.6);
   transform: translateY(-2px);
 }
 

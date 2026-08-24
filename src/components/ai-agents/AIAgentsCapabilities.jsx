@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function AIAgentsCapabilities() {
   const [isVisible, setIsVisible] = useState(false);
@@ -69,17 +70,18 @@ export default function AIAgentsCapabilities() {
             <div 
               key={i} 
               className={`group relative p-8 md:p-10 border-r border-b border-slate-200 bg-white transition-all duration-500 hover:bg-[#1746D2]/10/30 overflow-hidden ${
+              {...touchHoverProps}
                 isVisible ? 'opacity-100' : 'opacity-0'
               }`}
               style={{ transitionDelay: `${300 + (i * 100)}ms` }}
             >
               {/* Top Accent Line on Hover */}
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] -translate-x-full transition-transform duration-500 group-hover:translate-x-0" />
+              <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] -translate-x-full transition-transform duration-500 group-hover:translate-x-0" />
               
               <div className="text-[#1746D2]/80 font-mono text-sm font-bold mb-6">
                 {(i + 1).toString().padStart(2, '0')}
               </div>
-              <h3 className="font-display text-xl font-bold text-slate-900 mb-4 group-hover:text-slate-900 transition-colors">
+              <h3 onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-display text-xl font-bold text-slate-900 mb-4 group-hover:text-slate-900 transition-colors">
                 {cap.title}
               </h3>
               <p className="font-body text-sm text-slate-600 leading-relaxed">
@@ -87,7 +89,7 @@ export default function AIAgentsCapabilities() {
               </p>
               
               {/* Subtle Arrow */}
-              <div className="mt-8 flex items-center justify-start opacity-0 -translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0">
+              <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="mt-8 flex items-center justify-start opacity-0 -translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0">
                 <svg className="w-5 h-5 text-[#1746D2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>

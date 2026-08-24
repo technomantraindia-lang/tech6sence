@@ -59,18 +59,18 @@ export default function InfluenceWithoutBorders() {
       
       {/* Dynamic Keyframe Style for Flowing Laser Beams */}
       <style>{`
-        @keyframes flowLaseremerald {
+        @keyframes flowLaserBlue {
           0% { stroke-dashoffset: 60; }
           100% { stroke-dashoffset: 0; }
         }
-        @keyframes flowLaserPurple {
+        @keyframes flowLaserGreen {
           0% { stroke-dashoffset: 60; }
           100% { stroke-dashoffset: 0; }
         }
       `}</style>
 
       {/* Subtle Gridlines */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(124,58,237,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(23,70,210,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,168,107,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
       <div className="max-w-[88rem] mx-auto px-6 relative z-10">
         
@@ -107,28 +107,28 @@ export default function InfluenceWithoutBorders() {
             preserveAspectRatio="none"
           >
             <defs>
-              <linearGradient id="laserGlowemerald" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.9" />
-                <stop offset="50%" stopColor="#38bdf8" stopOpacity="0.8" />
-                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.2" />
+              <linearGradient id="laserGlowBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#1746D2" stopOpacity="1.0" />
+                <stop offset="50%" stopColor="#3B82F6" stopOpacity="0.9" />
+                <stop offset="100%" stopColor="#60A5FA" stopOpacity="0.6" />
               </linearGradient>
 
-              <linearGradient id="laserGlowPurple" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#a855f7" stopOpacity="0.9" />
-                <stop offset="50%" stopColor="#c084fc" stopOpacity="0.8" />
-                <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.2" />
+              <linearGradient id="laserGlowGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#00A86B" stopOpacity="1.0" />
+                <stop offset="50%" stopColor="#10B981" stopOpacity="0.9" />
+                <stop offset="100%" stopColor="#34D399" stopOpacity="0.6" />
               </linearGradient>
 
               {/* High-intensity Glow Filters */}
-              <filter id="glowemeraldFilter" x="-30%" y="-30%" width="160%" height="160%">
-                <feGaussianBlur stdDeviation="4" result="blur" />
+              <filter id="glowBlueFilter" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="5" result="blur" />
                 <feMerge>
                   <feMergeNode in="blur" />
                   <feMergeNode in="SourceGraphic" />
                 </feMerge>
               </filter>
-              <filter id="glowPurpleFilter" x="-30%" y="-30%" width="160%" height="160%">
-                <feGaussianBlur stdDeviation="4" result="blur" />
+              <filter id="glowGreenFilter" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="5" result="blur" />
                 <feMerge>
                   <feMergeNode in="blur" />
                   <feMergeNode in="SourceGraphic" />
@@ -136,51 +136,51 @@ export default function InfluenceWithoutBorders() {
               </filter>
             </defs>
 
-            {/* Path 0: Americas -> Flowing emerald Laser Beam */}
+            {/* Path 0: Americas -> Flowing Brand Blue Laser Beam */}
             <path 
               d={paths[0]}
               fill="none" 
-              stroke="url(#laserGlowemerald)" 
-              strokeWidth={hoveredCard === 0 ? "4" : "2.5"}
+              stroke="url(#laserGlowBlue)" 
+              strokeWidth={hoveredCard === 0 ? "4.5" : "3"}
               strokeDasharray="24 12"
-              filter="url(#glowemeraldFilter)"
-              style={{ animation: 'flowLaseremerald 2s linear infinite' }}
+              filter="url(#glowBlueFilter)"
+              style={{ animation: 'flowLaserBlue 2s linear infinite' }}
               className="transition-all duration-300"
             />
 
-            {/* Path 1: Europe & UK -> Flowing emerald Laser Beam */}
+            {/* Path 1: Europe & UK -> Flowing Brand Green Laser Beam */}
             <path 
               d={paths[1]}
               fill="none" 
-              stroke="url(#laserGlowemerald)" 
-              strokeWidth={hoveredCard === 1 ? "4" : "2.5"}
+              stroke="url(#laserGlowGreen)" 
+              strokeWidth={hoveredCard === 1 ? "4.5" : "3"}
               strokeDasharray="24 12"
-              filter="url(#glowemeraldFilter)"
-              style={{ animation: 'flowLaseremerald 2.2s linear infinite' }}
+              filter="url(#glowGreenFilter)"
+              style={{ animation: 'flowLaserGreen 2.2s linear infinite' }}
               className="transition-all duration-300"
             />
 
-            {/* Path 2: Asia-Pacific -> Flowing Purple Laser Beam */}
+            {/* Path 2: Asia-Pacific -> Flowing Brand Blue Laser Beam */}
             <path 
               d={paths[2]}
               fill="none" 
-              stroke="url(#laserGlowPurple)" 
-              strokeWidth={hoveredCard === 2 ? "4" : "2.5"}
+              stroke="url(#laserGlowBlue)" 
+              strokeWidth={hoveredCard === 2 ? "4.5" : "3"}
               strokeDasharray="24 12"
-              filter="url(#glowPurpleFilter)"
-              style={{ animation: 'flowLaserPurple 2s linear infinite' }}
+              filter="url(#glowBlueFilter)"
+              style={{ animation: 'flowLaserBlue 2s linear infinite' }}
               className="transition-all duration-300"
             />
 
-            {/* Path 3: Middle East -> Flowing Purple Laser Beam */}
+            {/* Path 3: Middle East -> Flowing Brand Green Laser Beam */}
             <path 
               d={paths[3]}
               fill="none" 
-              stroke="url(#laserGlowPurple)" 
-              strokeWidth={hoveredCard === 3 ? "4" : "2.5"}
+              stroke="url(#laserGlowGreen)" 
+              strokeWidth={hoveredCard === 3 ? "4.5" : "3"}
               strokeDasharray="24 12"
-              filter="url(#glowPurpleFilter)"
-              style={{ animation: 'flowLaserPurple 2.2s linear infinite' }}
+              filter="url(#glowGreenFilter)"
+              style={{ animation: 'flowLaserGreen 2.2s linear infinite' }}
               className="transition-all duration-300"
             />
           </svg>
@@ -191,44 +191,69 @@ export default function InfluenceWithoutBorders() {
             {/* LEFT COLUMN: AMERICAS & EUROPE */}
             <div className="lg:col-span-3 space-y-10 flex flex-col justify-center z-30">
               {[regions[0], regions[1]].map((reg, idx) => {
-                const globalIdx = idx;
+                const globalIdx = idx; // 0 (Americas - Blue), 1 (Europe - Green)
                 const isHovered = hoveredCard === globalIdx;
+                const isBlue = globalIdx % 2 === 0;
+
+                const hoverBg = isBlue
+                  ? 'bg-[#1746D2] border-[#1746D2] shadow-[0_15px_35px_-5px_rgba(23,70,210,0.5)] -translate-y-1.5'
+                  : 'bg-[#00A86B] border-[#00A86B] shadow-[0_15px_35px_-5px_rgba(0,168,107,0.5)] -translate-y-1.5';
+
+                const defaultBg = isBlue
+                  ? 'bg-slate-900/80 border-slate-800 hover:border-[#1746D2]/60'
+                  : 'bg-slate-900/80 border-slate-800 hover:border-[#00A86B]/60';
+
                 return (
                   <div 
                     key={reg.id}
                     onMouseEnter={() => setHoveredCard(globalIdx)}
                     onMouseLeave={() => setHoveredCard(null)}
-                    className={`p-5 rounded-2xl backdrop-blur-md transition-all duration-300 border flex flex-col justify-between group cursor-pointer ${
-                      isHovered 
-                        ? 'bg-emerald-950/70 border-emerald-400 shadow-[0_0_30px_rgba(0, 168, 107,0.35)] -translate-y-1' 
-                        : 'bg-white/[0.03] border-white/10 hover:border-emerald-500/40'
+                    className={`p-6 rounded-2xl transition-all duration-300 border flex flex-col justify-between group cursor-pointer ${
+                      isHovered ? hoverBg : defaultBg
                     }`}
                   >
                     <div>
                       <div className="flex items-center justify-between mb-2">
-                        <span className="font-mono text-[11px] font-bold text-emerald-400 uppercase tracking-wider">
+                        <span className={`font-mono text-[11px] font-extrabold uppercase tracking-wider transition-colors ${
+                          isHovered ? 'text-[#FFD700]' : (isBlue ? 'text-blue-400' : 'text-emerald-400')
+                        }`}>
                           {reg.zone}
                         </span>
-                        <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[10px] font-mono text-emerald-300 font-bold">
+                        <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono font-extrabold transition-colors ${
+                          isHovered 
+                            ? 'bg-black/25 border border-white/20 text-white' 
+                            : (isBlue ? 'bg-blue-500/10 border border-blue-500/20 text-blue-300' : 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-300')
+                        }`}>
                           Active Node
                         </span>
                       </div>
 
-                      <h3 
-                        className="text-xl font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors"
-                      >
+                      <h3 className="text-xl font-extrabold text-white mb-1 transition-colors">
                         {reg.name}
                       </h3>
 
-                      <p className="text-[11px] font-mono text-slate-400 mb-3">
+                      <p className={`text-[11px] font-mono mb-3.5 transition-colors ${
+                        isHovered ? 'text-white/90 font-medium' : 'text-slate-400'
+                      }`}>
                         {reg.hubName}
                       </p>
 
-                      <div className="space-y-1.5 pt-2.5 border-t border-white/10">
+                      <div className={`space-y-1.5 pt-3 border-t transition-colors ${
+                        isHovered ? 'border-white/20' : 'border-white/10'
+                      }`}>
                         {reg.countries.map((c, cIdx) => (
-                          <div key={cIdx} className="flex items-center justify-between text-xs py-1 px-2.5 rounded-lg bg-white/[0.02] border border-white/5">
-                            <span className="font-semibold text-slate-200">{c.name}</span>
-                            <span className="text-[10px] font-mono text-emerald-400">📍 {c.city}</span>
+                          <div 
+                            key={cIdx} 
+                            className={`flex items-center justify-between text-xs py-1.5 px-3 rounded-lg transition-colors ${
+                              isHovered 
+                                ? 'bg-white/15 border border-white/25 text-white' 
+                                : 'bg-white/[0.03] border border-white/5 text-slate-200'
+                            }`}
+                          >
+                            <span className="font-bold">{c.name}</span>
+                            <span className={`text-[10px] font-mono transition-colors ${
+                              isHovered ? 'text-[#FFD700] font-bold' : (isBlue ? 'text-blue-400' : 'text-emerald-400')
+                            }`}>📍 {c.city}</span>
                           </div>
                         ))}
                       </div>
@@ -244,7 +269,7 @@ export default function InfluenceWithoutBorders() {
               <div className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[420px] md:h-[420px] rounded-full flex items-center justify-center">
                 
                 {/* Natural Atmospheric Light Emanating from Behind the Earth */}
-                <div className="absolute inset-3 rounded-full bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.4)_0%,rgba(139,92,246,0.25)_45%,transparent_75%)] blur-2xl pointer-events-none animate-pulse" />
+                <div className="absolute inset-3 rounded-full bg-[radial-gradient(circle_at_center,rgba(23,70,210,0.45)_0%,rgba(0,168,107,0.35)_45%,transparent_75%)] blur-2xl pointer-events-none animate-pulse" />
 
                 <div className="relative w-full h-full rounded-full overflow-hidden flex items-center justify-center">
                   <RealisticGlobeCanvas disableRiseEffect={true} />
@@ -265,44 +290,69 @@ export default function InfluenceWithoutBorders() {
             {/* RIGHT COLUMN: ASIA-PACIFIC & MIDDLE EAST */}
             <div className="lg:col-span-3 space-y-10 flex flex-col justify-center z-30">
               {[regions[2], regions[3]].map((reg, idx) => {
-                const globalIdx = idx + 2;
+                const globalIdx = idx + 2; // 2 (APAC - Blue), 3 (Middle East - Green)
                 const isHovered = hoveredCard === globalIdx;
+                const isBlue = globalIdx % 2 === 0;
+
+                const hoverBg = isBlue
+                  ? 'bg-[#1746D2] border-[#1746D2] shadow-[0_15px_35px_-5px_rgba(23,70,210,0.5)] -translate-y-1.5'
+                  : 'bg-[#00A86B] border-[#00A86B] shadow-[0_15px_35px_-5px_rgba(0,168,107,0.5)] -translate-y-1.5';
+
+                const defaultBg = isBlue
+                  ? 'bg-slate-900/80 border-slate-800 hover:border-[#1746D2]/60'
+                  : 'bg-slate-900/80 border-slate-800 hover:border-[#00A86B]/60';
+
                 return (
                   <div 
                     key={reg.id}
                     onMouseEnter={() => setHoveredCard(globalIdx)}
                     onMouseLeave={() => setHoveredCard(null)}
-                    className={`p-5 rounded-2xl backdrop-blur-md transition-all duration-300 border flex flex-col justify-between group cursor-pointer ${
-                      isHovered 
-                        ? 'bg-[#040916]/70 border-[#1746D2]/60 shadow-[0_0_30px_rgba(139,92,246,0.35)] -translate-y-1' 
-                        : 'bg-white/[0.03] border-white/10 hover:border-[#1746D2]/40'
+                    className={`p-6 rounded-2xl transition-all duration-300 border flex flex-col justify-between group cursor-pointer ${
+                      isHovered ? hoverBg : defaultBg
                     }`}
                   >
                     <div>
                       <div className="flex items-center justify-between mb-2">
-                        <span className="font-mono text-[11px] font-bold text-[#1746D2] uppercase tracking-wider">
+                        <span className={`font-mono text-[11px] font-extrabold uppercase tracking-wider transition-colors ${
+                          isHovered ? 'text-[#FFD700]' : (isBlue ? 'text-blue-400' : 'text-emerald-400')
+                        }`}>
                           {reg.zone}
                         </span>
-                        <span className="px-2.5 py-0.5 rounded-full bg-[#1746D2]/10 border border-[#1746D2]/20 text-[10px] font-mono text-[#1746D2]/80 font-bold">
+                        <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono font-extrabold transition-colors ${
+                          isHovered 
+                            ? 'bg-black/25 border border-white/20 text-white' 
+                            : (isBlue ? 'bg-blue-500/10 border border-blue-500/20 text-blue-300' : 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-300')
+                        }`}>
                           Active Node
                         </span>
                       </div>
 
-                      <h3 
-                        className="text-xl font-bold text-white mb-1 group-hover:text-[#1746D2]/80 transition-colors"
-                      >
+                      <h3 className="text-xl font-extrabold text-white mb-1 transition-colors">
                         {reg.name}
                       </h3>
 
-                      <p className="text-[11px] font-mono text-slate-400 mb-3">
+                      <p className={`text-[11px] font-mono mb-3.5 transition-colors ${
+                        isHovered ? 'text-white/90 font-medium' : 'text-slate-400'
+                      }`}>
                         {reg.hubName}
                       </p>
 
-                      <div className="space-y-1.5 pt-2.5 border-t border-white/10">
+                      <div className={`space-y-1.5 pt-3 border-t transition-colors ${
+                        isHovered ? 'border-white/20' : 'border-white/10'
+                      }`}>
                         {reg.countries.map((c, cIdx) => (
-                          <div key={cIdx} className="flex items-center justify-between text-xs py-1 px-2.5 rounded-lg bg-white/[0.02] border border-white/5">
-                            <span className="font-semibold text-slate-200">{c.name}</span>
-                            <span className="text-[10px] font-mono text-[#1746D2]">📍 {c.city}</span>
+                          <div 
+                            key={cIdx} 
+                            className={`flex items-center justify-between text-xs py-1.5 px-3 rounded-lg transition-colors ${
+                              isHovered 
+                                ? 'bg-white/15 border border-white/25 text-white' 
+                                : 'bg-white/[0.03] border border-white/5 text-slate-200'
+                            }`}
+                          >
+                            <span className="font-bold">{c.name}</span>
+                            <span className={`text-[10px] font-mono transition-colors ${
+                              isHovered ? 'text-[#FFD700] font-bold' : (isBlue ? 'text-blue-400' : 'text-emerald-400')
+                            }`}>📍 {c.city}</span>
                           </div>
                         ))}
                       </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function FlagshipEvent() {
   const features = [
@@ -51,12 +52,14 @@ export default function FlagshipEvent() {
               <div 
                 key={idx}
                 className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-emerald-400/50 backdrop-blur-md transition-all duration-300 flex flex-col items-center justify-center text-center group hover:-translate-y-0.5"
+                {...touchHoverProps}
               >
                 <div className="text-2xl mb-2 group-hover:scale-110 transition-transform">
                   {feat.icon}
                 </div>
                 <div 
                   className="text-xs md:text-sm font-bold text-white group-hover:text-emerald-300 transition-colors"
+                  {...touchHoverProps}
                 >
                   {feat.title}
                 </div>

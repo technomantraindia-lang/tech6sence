@@ -1,4 +1,5 @@
 import React from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function IntelligentDeliverValue() {
   const steps = [
@@ -6,36 +7,36 @@ export default function IntelligentDeliverValue() {
       num: "01",
       title: "Discovery & Strategy",
       desc: "We align AI capabilities with your core business objectives.",
-      badgeBg: "bg-blue-100 text-blue-700",
-      cardBg: "bg-blue-50/40 hover:bg-blue-50/70"
+      badgeBg: "bg-blue-100 text-[#1746D2] group-hover:bg-black/25 group-hover:text-[#FFD700]",
+      cardBg: "bg-blue-50/50 hover:bg-[#1746D2] border-slate-200/60 hover:border-[#1746D2]"
     },
     {
       num: "02",
       title: "Data Architecture",
       desc: "Structuring pipelines to feed clean, structured data into advanced models.",
-      badgeBg: "bg-emerald-100 text-emerald-700",
-      cardBg: "bg-emerald-50/40 hover:bg-emerald-50/70"
+      badgeBg: "bg-emerald-100 text-[#00A86B] group-hover:bg-black/25 group-hover:text-[#FFD700]",
+      cardBg: "bg-emerald-50/50 hover:bg-[#00A86B] border-slate-200/60 hover:border-[#00A86B]"
     },
     {
       num: "03",
       title: "Engineering & Training",
       desc: "Building Custom AI Models and Agentic workflows with rigorous testing.",
-      badgeBg: "bg-blue-100 text-blue-700",
-      cardBg: "bg-blue-50/40 hover:bg-blue-50/70"
+      badgeBg: "bg-blue-100 text-[#1746D2] group-hover:bg-black/25 group-hover:text-[#FFD700]",
+      cardBg: "bg-blue-50/50 hover:bg-[#1746D2] border-slate-200/60 hover:border-[#1746D2]"
     },
     {
       num: "04",
       title: "Deployment & MLOps",
       desc: "Ensuring zero-downtime integration and continuous model optimization.",
-      badgeBg: "bg-emerald-100 text-emerald-700",
-      cardBg: "bg-emerald-50/40 hover:bg-emerald-50/70"
+      badgeBg: "bg-emerald-100 text-[#00A86B] group-hover:bg-black/25 group-hover:text-[#FFD700]",
+      cardBg: "bg-emerald-50/50 hover:bg-[#00A86B] border-slate-200/60 hover:border-[#00A86B]"
     },
     {
       num: "05",
       title: "Governance & Security",
       desc: "Shielding your IP and ensuring compliance with global regulatory standards.",
-      badgeBg: "bg-blue-100 text-blue-700",
-      cardBg: "bg-blue-50/40 hover:bg-blue-50/70"
+      badgeBg: "bg-blue-100 text-[#1746D2] group-hover:bg-black/25 group-hover:text-[#FFD700]",
+      cardBg: "bg-blue-50/50 hover:bg-[#1746D2] border-slate-200/60 hover:border-[#1746D2]"
     }
   ];
 
@@ -62,21 +63,22 @@ export default function IntelligentDeliverValue() {
           </p>
         </div>
 
-        {/* 5-Step Process Timeline - Frameless cards styled with themed Royal Blue and Embedded Green background tints */}
+        {/* 5-Step Process Timeline - Frameless cards styled with brand blue & green backgrounds on hover */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
           {steps.map((st, i) => (
             <div 
               key={i} 
-              className={`p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 relative flex flex-col justify-between border-0 ${st.cardBg}`}
+              className={`p-6 rounded-2xl border transition-all duration-300 relative flex flex-col justify-between group hover:-translate-y-2 hover:scale-[1.03] hover:shadow-xl ${st.cardBg}`}
+              {...touchHoverProps}
             >
               <div>
-                <span className={`font-mono text-xs font-extrabold px-3 py-1 rounded-full inline-block mb-4 ${st.badgeBg}`}>
+                <span className={`font-mono text-xs font-extrabold px-3 py-1 rounded-full inline-block mb-4 transition-all duration-300 ${st.badgeBg}`}>
                   STEP {st.num}
                 </span>
-                <h3 className="font-display text-lg font-extrabold text-slate-900 mb-3">
+                <h3 onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-display text-lg font-extrabold text-slate-900 group-hover:text-white transition-colors duration-300 mb-3">
                   {st.title}
                 </h3>
-                <p className="font-body text-xs md:text-sm text-slate-600 leading-relaxed font-medium">
+                <p onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-body text-xs md:text-sm text-slate-600 group-hover:text-white/95 transition-colors duration-300 leading-relaxed font-medium">
                   {st.desc}
                 </p>
               </div>

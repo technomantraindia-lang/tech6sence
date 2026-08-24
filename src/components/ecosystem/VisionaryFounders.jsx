@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function VisionaryFounders() {
   const [isVisible, setIsVisible] = useState(false);
@@ -91,18 +92,18 @@ export default function VisionaryFounders() {
 
             <div className="flex flex-col gap-10">
               {steps.map((step, i) => (
-                <div key={i} className="group relative flex gap-6 md:gap-8 items-start">
+                <div key={i} onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="group relative flex gap-6 md:gap-8 items-start">
                   
                   {/* Step Node */}
-                  <div className="relative z-10 w-14 h-14 shrink-0 rounded-full bg-white border-2 border-slate-100 flex items-center justify-center shadow-sm group-hover:border-[#1746D2]/80 group-hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-500">
-                    <span className="font-display text-lg font-bold text-slate-400 group-hover:text-[#1746D2] transition-colors">
+                  <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="relative z-10 w-14 h-14 shrink-0 rounded-full bg-white border-2 border-slate-100 flex items-center justify-center shadow-sm group-hover:border-[#1746D2]/80 group-hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all duration-500">
+                    <span onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-display text-lg font-bold text-slate-400 group-hover:text-[#1746D2] transition-colors">
                       {step.num}
                     </span>
                   </div>
 
                   {/* Step Content */}
                   <div className="pt-2">
-                    <h4 className="font-display text-xl font-bold text-slate-900 mb-2 group-hover:text-[#1233A0] transition-colors">
+                    <h4 onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-display text-xl font-bold text-slate-900 mb-2 group-hover:text-[#1233A0] transition-colors">
                       {step.title}
                     </h4>
                     <p className="font-body text-slate-600 text-sm leading-relaxed max-w-md">

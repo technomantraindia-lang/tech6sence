@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
+import { sendFormEmail } from '../../utils/sendEmail';
 
 export default function ApplicationAndNomination() {
   const [activePath, setActivePath] = useState(null); // null | 'direct' | 'nominate'
@@ -76,14 +78,24 @@ export default function ApplicationAndNomination() {
     }));
   };
 
-  const handleDirectSubmit = (e) => {
+  const handleDirectSubmit = async (e) => {
     e.preventDefault();
     setDirectSubmitted(true);
+    await sendFormEmail({
+      subjectTag: '🧠 [BUSINESS BRAINS]',
+      formTitle: `Direct Membership Application - ${directForm.profileCategory}`,
+      formData: directForm
+    });
   };
 
-  const handleNomSubmit = (e) => {
+  const handleNomSubmit = async (e) => {
     e.preventDefault();
     setNomSubmitted(true);
+    await sendFormEmail({
+      subjectTag: '🧠 [BUSINESS BRAINS]',
+      formTitle: 'Peer Nomination',
+      formData: nomForm
+    });
   };
 
   const countryList = [
@@ -128,6 +140,7 @@ export default function ApplicationAndNomination() {
           {/* Card 1: Apply Directly */}
           <div 
             onClick={() => { setActivePath('direct'); setDirectSubmitted(false); }}
+            {...touchHoverProps}
             className={`p-8 rounded-3xl cursor-pointer transition-all duration-300 flex flex-col justify-between group ${
               activePath === 'direct' 
                 ? 'bg-[#1746D2] text-white shadow-xl shadow-blue-600/20' 
@@ -168,6 +181,7 @@ export default function ApplicationAndNomination() {
           {/* Card 2: Nominate Someone */}
           <div 
             onClick={() => { setActivePath('nominate'); setNomSubmitted(false); }}
+            {...touchHoverProps}
             className={`p-8 rounded-3xl cursor-pointer transition-all duration-300 flex flex-col justify-between group ${
               activePath === 'nominate' 
                 ? 'bg-[#00A86B] text-white shadow-xl shadow-emerald-600/20' 

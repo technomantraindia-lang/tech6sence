@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function WhoOccupiesRoom() {
   const [activeTab, setActiveTab] = useState('investors');
@@ -67,7 +68,7 @@ export default function WhoOccupiesRoom() {
       ]
     },
     entrepreneurs: {
-      title: "For Startup Entrepreneurs",
+      title: "For Entrepreneurs",
       sections: [
         {
           heading: "Capital Access",
@@ -260,26 +261,39 @@ export default function WhoOccupiesRoom() {
 
           {/* Active Tab Content Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-            {communityBenefits[activeTab].sections.map((sec, idx) => (
-              <div 
-                key={idx} 
-                className="p-6 rounded-2xl bg-slate-950 border border-slate-800 hover:border-emerald-500/30 transition-all duration-300 flex flex-col justify-between group shadow-lg"
-              >
-                <div className="space-y-4">
-                  <div className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest border-b border-slate-800 pb-2">
-                    {sec.heading}
+            {communityBenefits[activeTab].sections.map((sec, idx) => {
+              const isBlue = idx % 2 === 0;
+
+              const cardBg = isBlue 
+                ? "bg-slate-950 hover:bg-[#1746D2] border-slate-800 hover:border-[#1746D2]" 
+                : "bg-slate-950 hover:bg-[#00A86B] border-slate-800 hover:border-[#00A86B]";
+
+              const hoverGlow = isBlue
+                ? "hover:shadow-[0_20px_40px_-10px_rgba(23,70,210,0.4)]"
+                : "hover:shadow-[0_20px_40px_-10px_rgba(0,168,107,0.4)]";
+
+              return (
+                <div 
+                  key={idx} 
+                  className={`p-6 rounded-2xl border transition-all duration-300 flex flex-col justify-between group shadow-lg hover:-translate-y-1.5 ${cardBg} ${hoverGlow}`}
+                  {...touchHoverProps}
+                >
+                  <div className="space-y-4">
+                    <div className="text-xs font-mono font-bold text-emerald-400 group-hover:text-white uppercase tracking-widest border-b border-slate-800 group-hover:border-white/20 pb-2 transition-colors">
+                      {sec.heading}
+                    </div>
+                    <ul onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="space-y-2.5 text-xs md:text-sm text-slate-300 group-hover:text-white font-medium transition-colors">
+                      {sec.items.map((item, itemIdx) => (
+                        <li key={itemIdx} className="flex items-start gap-2.5 leading-relaxed">
+                          <span onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="text-emerald-400 group-hover:text-white font-bold text-xs mt-0.5 transition-colors">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="space-y-2.5 text-xs md:text-sm text-slate-300 font-medium">
-                    {sec.items.map((item, itemIdx) => (
-                      <li key={itemIdx} className="flex items-start gap-2.5 leading-relaxed">
-                        <span className="text-emerald-400 font-bold text-xs mt-0.5">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
         </div>

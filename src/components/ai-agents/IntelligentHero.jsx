@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import heroBgVideo from '../../assets/background removed.mp4';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function IntelligentHero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -43,7 +44,7 @@ export default function IntelligentHero() {
           <h1 className="font-display text-[clamp(2rem,4.5vw,5rem)] leading-[1.1] font-black tracking-tight text-white mb-6 break-words max-w-full">
             Architecting the Future of{' '}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#1746D2] via-[#00A86B] to-[#D4AF37]">
-              Enterprise Intelligence.
+              Enterprise Intelligence
             </span>
           </h1>
 
@@ -68,6 +69,7 @@ export default function IntelligentHero() {
             <a 
               href="/lets-connect?inquiry=AI%20Strategy" 
               className="group relative inline-flex justify-center items-center gap-3 rounded-full bg-gradient-to-r from-[#1746D2] to-[#00A86B] px-9 py-4 font-body text-sm font-bold text-white shadow-[0_4px_25px_rgba(23,70,210,0.35)] transition-all hover:scale-[1.03] hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)]"
+              {...touchHoverProps}
             >
               Talk to Our AI Strategy Team
               <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -77,6 +79,7 @@ export default function IntelligentHero() {
             <a 
               href="#ecosystem" 
               className="group relative inline-flex justify-center items-center gap-2 rounded-full border border-slate-700 bg-slate-900/60 backdrop-blur-md px-9 py-4 font-body text-sm font-bold text-slate-200 hover:border-[#1746D2] hover:text-white transition-all shadow-sm"
+              {...touchHoverProps}
             >
               Explore Our Capabilities
             </a>
@@ -84,7 +87,7 @@ export default function IntelligentHero() {
 
           {/* Trust Statement */}
           <div className="pt-6 border-t border-slate-800/80">
-            <p className="font-body text-sm font-medium text-slate-400 italic">
+            <p className="font-body text-sm font-medium text-[#D4AF37] italic">
               "Trusted by startups, enterprises, government organizations, and innovators worldwide to engineer intelligent digital transformation."
             </p>
           </div>

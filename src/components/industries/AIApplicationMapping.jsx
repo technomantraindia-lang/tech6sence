@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
 
 export default function AIApplicationMapping() {
   const [isVisible, setIsVisible] = useState(false);
@@ -97,9 +98,9 @@ export default function AIApplicationMapping() {
               {/* Data Rows */}
               <div className="divide-y divide-slate-100">
                 {rows.map((row, i) => (
-                  <div key={i} className="grid grid-cols-7 group hover:bg-slate-50/80 transition-colors">
+                  <div key={i} onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="grid grid-cols-7 group hover:bg-slate-50/80 transition-colors">
                     {/* Capability Name */}
-                    <div className="col-span-1 p-6 flex items-center font-display font-bold text-slate-900 text-sm group-hover:text-[#1746D2] transition-colors border-r border-slate-100/50">
+                    <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="col-span-1 p-6 flex items-center font-display font-bold text-slate-900 text-sm group-hover:text-[#1746D2] transition-colors border-r border-slate-100/50">
                       {row.capability}
                     </div>
                     
@@ -109,7 +110,7 @@ export default function AIApplicationMapping() {
                       return (
                         <div key={j} className="col-span-1 p-6 flex items-center justify-center border-r border-slate-100/50 last:border-r-0">
                           {isActive ? (
-                            <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-[#1746D2]/10 group-hover:bg-[#1746D2]/10 transition-colors">
+                            <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="relative flex items-center justify-center w-8 h-8 rounded-full bg-[#1746D2]/10 group-hover:bg-[#1746D2]/10 transition-colors">
                               <div className="absolute inset-0 bg-[#1746D2] rounded-full blur opacity-20" />
                               <div className="w-2.5 h-2.5 bg-[#1746D2] rounded-full relative z-10" />
                             </div>
