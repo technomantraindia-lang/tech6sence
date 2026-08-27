@@ -41,13 +41,13 @@ export default function Footer() {
         loop 
         muted 
         playsInline
-        className="absolute inset-0 w-full h-full object-cover object-[center_75%] z-0 opacity-30 pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover object-[center_75%] z-0 opacity-45 pointer-events-none"
       >
         <source src={footerVideo} type="video/mp4" />
       </video>
 
-      {/* Ambient Gradient Glow overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#050112] via-[#050112]/90 to-[#050112]/80 z-0 pointer-events-none" />
+      {/* Ambient Gradient Glow overlay (reduced overlay opacity) */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#050112] via-[#050112]/50 to-[#050112]/30 z-0 pointer-events-none" />
 
       {/* Top Border with Center Star/Sparkle Symbol */}
       <div className="relative z-10 w-full max-w-[1400px] mx-auto pt-8 px-6">
