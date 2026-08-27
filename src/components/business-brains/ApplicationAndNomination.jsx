@@ -105,7 +105,9 @@ export default function ApplicationAndNomination() {
   ];
 
   return (
-    <section id="application-entry" className="relative bg-slate-50 text-slate-900 py-20 md:py-28 border-b border-slate-200 overflow-hidden">
+    <section id="nomination-form" className="relative bg-slate-50 text-slate-900 py-20 md:py-28 border-b border-slate-200 overflow-hidden scroll-mt-32">
+      <span id="application-entry" className="absolute top-0 left-0 scroll-mt-32" />
+      <span id="business-brain-commu" className="absolute top-0 left-0 scroll-mt-32" />
       
       {/* Light Gridlines */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(23,70,210,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(23,70,210,0.015)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />

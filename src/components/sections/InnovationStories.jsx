@@ -11,7 +11,7 @@ import flagUsa from '../../assets/flags/usa.webp';
 const STORIES = [
   {
     id: 1,
-    suit: '♠',
+    suit: 'â™ ',
     suitColor: 'text-[#1746D2]',
     tagline: 'USA | Healthcare & Life Sciences',
     flag: flagUsa,
@@ -19,25 +19,25 @@ const STORIES = [
     client: 'Dr. Michael Anderson',
     role: 'Chief Medical Officer',
     location: 'USA',
-    quote: 'TECH6SENSE AI successfully delivered our AI-powered clinical intelligence platform that streamlined patient data analysis and automated medical documentation. Their team’s expertise in Generative AI and healthcare workflows helped us significantly improve operational efficiency while maintaining enterprise-grade security. They are a trusted long-term technology partner.',
+    quote: 'TECH6SENSE AI successfully delivered our AI-powered clinical intelligence platform that streamlined patient data analysis and automated medical documentation. Their teamâ€™s expertise in Generative AI and healthcare workflows helped us significantly improve operational efficiency while maintaining enterprise-grade security. They are a trusted long-term technology partner.',
     accent: '#1746D2',
   },
   {
     id: 2,
-    suit: '♥',
+    suit: 'â™¥',
     suitColor: 'text-[#00A86B]',
     tagline: 'USA | Banking & Financial Services',
     flag: flagUsa,
     title: 'AI Banking Copilot & Compliance Automation',
     client: 'Jennifer Collins',
-    role: 'VP – Digital Transformation',
+    role: 'VP â€“ Digital Transformation',
     location: 'USA',
     quote: 'The AI Banking Copilot developed by TECH6SENSE AI transformed our customer service, automated compliance workflows, and accelerated financial document processing. Their technical excellence and project management exceeded every expectation.',
     accent: '#00A86B',
   },
   {
     id: 3,
-    suit: '♦',
+    suit: 'â™¦',
     suitColor: 'text-[#D4AF37]',
     tagline: 'United Kingdom | Manufacturing',
     flag: flagUk,
@@ -50,7 +50,7 @@ const STORIES = [
   },
   {
     id: 4,
-    suit: '♣',
+    suit: 'â™£',
     suitColor: 'text-[#1746D2]',
     tagline: 'Canada | Retail & E-Commerce',
     flag: flagCan,
@@ -63,7 +63,7 @@ const STORIES = [
   },
   {
     id: 5,
-    suit: '♠',
+    suit: 'â™ ',
     suitColor: 'text-[#00A86B]',
     tagline: 'Australia | Logistics & Supply Chain',
     flag: flagAus,
@@ -76,7 +76,7 @@ const STORIES = [
   },
   {
     id: 6,
-    suit: '♥',
+    suit: 'â™¥',
     suitColor: 'text-[#D4AF37]',
     tagline: 'India | Education & EdTech',
     flag: flagInd,
@@ -89,7 +89,7 @@ const STORIES = [
   },
   {
     id: 7,
-    suit: '♦',
+    suit: 'â™¦',
     suitColor: 'text-[#1746D2]',
     tagline: 'USA | Insurance',
     flag: flagUsa,
@@ -102,7 +102,7 @@ const STORIES = [
   },
   {
     id: 8,
-    suit: '♣',
+    suit: 'â™£',
     suitColor: 'text-[#00A86B]',
     tagline: 'UAE | Real Estate & Construction',
     flag: flagUae,
@@ -113,22 +113,10 @@ const STORIES = [
     quote: 'The intelligent property management solution modernized our operations through AI-driven analytics and automation. TECH6SENSE AI delivered a world-class enterprise platform tailored to our business.',
     accent: '#00A86B',
   },
-  {
-    id: 9,
-    suit: '♠',
-    suitColor: 'text-[#D4AF37]',
-    tagline: 'India | Agriculture',
-    flag: flagInd,
-    title: 'AI Agriculture & Crop Monitoring Platform',
-    client: 'Parag Sharma',
-    role: 'Director',
-    location: 'India',
-    quote: 'The AI agriculture platform provided actionable insights for crop monitoring, irrigation planning, and predictive analytics. TECH6SENSE AI delivered an innovative solution that exceeded our expectations.',
-    accent: '#D4AF37',
-  },
+
   {
     id: 10,
-    suit: '♥',
+    suit: 'â™¥',
     suitColor: 'text-[#1746D2]',
     tagline: 'Australia | Energy & Utilities',
     flag: flagAus,
@@ -141,7 +129,7 @@ const STORIES = [
   },
   {
     id: 11,
-    suit: '♦',
+    suit: 'â™¦',
     suitColor: 'text-[#00A86B]',
     tagline: 'Hong Kong | Telecommunications',
     flag: null,
@@ -154,7 +142,7 @@ const STORIES = [
   },
   {
     id: 12,
-    suit: '♣',
+    suit: 'â™£',
     suitColor: 'text-[#D4AF37]',
     tagline: 'European Union | Automotive & Mobility',
     flag: flagEu,
@@ -167,7 +155,7 @@ const STORIES = [
   },
   {
     id: 13,
-    suit: '♠',
+    suit: 'â™ ',
     suitColor: 'text-[#1746D2]',
     tagline: 'Singapore | Pharmaceuticals & Biotechnology',
     flag: flagSgp,
@@ -180,7 +168,7 @@ const STORIES = [
   },
   {
     id: 14,
-    suit: '♥',
+    suit: 'â™¥',
     suitColor: 'text-[#00A86B]',
     tagline: 'UAE | Travel, Tourism & Hospitality',
     flag: flagUae,
@@ -193,7 +181,7 @@ const STORIES = [
   },
   {
     id: 15,
-    suit: '♦',
+    suit: 'â™¦',
     suitColor: 'text-[#D4AF37]',
     tagline: 'United Kingdom | Media, Entertainment & Marketing',
     flag: flagUk,
@@ -206,7 +194,7 @@ const STORIES = [
   },
   {
     id: 16,
-    suit: '♣',
+    suit: 'â™£',
     suitColor: 'text-[#1746D2]',
     tagline: 'Canada | Legal Services',
     flag: flagCan,
@@ -219,7 +207,7 @@ const STORIES = [
   },
   {
     id: 17,
-    suit: '♠',
+    suit: 'â™ ',
     suitColor: 'text-[#00A86B]',
     tagline: 'Singapore | Human Resources & Talent Management',
     flag: flagSgp,
@@ -232,7 +220,7 @@ const STORIES = [
   },
   {
     id: 18,
-    suit: '♥',
+    suit: 'â™¥',
     suitColor: 'text-[#D4AF37]',
     tagline: 'USA | Cybersecurity',
     flag: flagUsa,
@@ -294,7 +282,7 @@ export default function InnovationStories() {
     <section
       ref={sectionRef}
       id="testimonials"
-      className="relative w-full py-20 md:py-28 overflow-hidden bg-[#FAFAFA] border-t border-slate-200/80"
+      className="relative w-full py-12 md:py-16 overflow-hidden bg-[#FAFAFA] border-t border-slate-200/80"
     >
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-tr from-blue-100/50 via-emerald-100/30 to-transparent blur-[120px] pointer-events-none" />

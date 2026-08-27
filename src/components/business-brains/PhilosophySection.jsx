@@ -10,7 +10,7 @@ export default function PhilosophySection() {
   ];
 
   return (
-    <section id="philosophy" className="relative bg-slate-50 text-slate-900 py-20 md:py-28 border-b border-slate-200 overflow-hidden">
+    <section id="philosophy" className="relative bg-slate-50 text-slate-900 py-20 md:py-28 border-b border-slate-200 overflow-hidden scroll-mt-32">
       {/* Light Gridlines */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(23,70,210,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(23,70,210,0.015)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
       

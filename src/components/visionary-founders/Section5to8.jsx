@@ -469,12 +469,8 @@ export function EcosystemComponents() {
           </div>
           
           <h2 className="font-display text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
-            Everything You Need to Scale Your AI Company
+            Everything you need to launch, grow, and scale your AI Company— all in one integrated ecosystem
           </h2>
-          
-          <p className="font-body text-base md:text-lg leading-relaxed text-slate-600 font-medium">
-            10 integrated operating pillars arranged across 2 rows. Hover over any vertical tab to expand its deliverables.
-          </p>
         </div>
 
         {/* Desktop View: 2 Rows of Horizontal Accordions */}

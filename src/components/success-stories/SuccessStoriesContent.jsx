@@ -79,9 +79,7 @@ export default function SuccessStoriesContent() {
               <h2 className="font-display text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
                 Enterprise Success Stories
               </h2>
-              <p className="text-slate-500 text-sm font-medium mt-1">
-                Displaying <span className="text-[#1746D2] font-bold">{filteredStories.length}</span> of {successStoriesData.length} verified global client engagements
-              </p>
+
             </div>
 
             {/* Search Input */}
@@ -193,8 +191,7 @@ export default function SuccessStoriesContent() {
                       </div>
                     </div>
 
-                    {/* Title */}
-                    <h3 className="font-display text-2xl md:text-4xl font-extrabold text-white leading-tight mb-4 relative z-10 tracking-tight">
+                    <h3 className="font-display text-2xl md:text-4xl font-extrabold text-white leading-tight mb-4 relative z-10 tracking-tight select-none">
                       {story.title}
                     </h3>
 

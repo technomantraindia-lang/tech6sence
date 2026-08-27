@@ -1,26 +1,62 @@
 import React from 'react';
-import heroVideo from '../../assets/Abstract_digital_network_nodes_c…_202607141034.mp4';
+import heroVideo from '../../assets/business-hero.mp4';
 
 export default function HeroTrustStrip() {
+  const handleNavClick = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       {/* 1. BUSINESS BRAINS HEADER NAVIGATION BAR */}
       <div className="w-full bg-[#000110]/90 border-b border-white/10 backdrop-blur-md sticky top-20 z-40">
         <div className="max-w-[1400px] mx-auto px-6 py-3.5 flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-3 font-display font-bold text-xs md:text-sm tracking-wider uppercase">
+          <div 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="flex items-center gap-3 font-display font-bold text-xs md:text-sm tracking-wider uppercase cursor-pointer"
+          >
             <span className="text-emerald-400 font-extrabold">BUSINESS BRAINS</span>
             <span className="text-slate-500">|</span>
             <span className="text-slate-300 font-medium">THE GLOBAL CIRCLE</span>
           </div>
 
           <div className="flex items-center gap-6 text-xs font-semibold text-slate-300 overflow-x-auto py-1">
-            <a href="#syndicate" className="hover:text-emerald-400 transition-colors whitespace-nowrap">The Syndicate</a>
-            <a href="#triad" className="hover:text-emerald-400 transition-colors whitespace-nowrap">The Triad</a>
-            <a href="#reach" className="hover:text-emerald-400 transition-colors whitespace-nowrap">Global Reach</a>
-            <a href="#privilege" className="hover:text-emerald-400 transition-colors whitespace-nowrap">The Privilege</a>
+            <a 
+              href="#syndicate" 
+              onClick={(e) => handleNavClick(e, 'syndicate')}
+              className="hover:text-emerald-400 transition-colors whitespace-nowrap cursor-pointer"
+            >
+              The Syndicate
+            </a>
+            <a 
+              href="#triad" 
+              onClick={(e) => handleNavClick(e, 'triad')}
+              className="hover:text-emerald-400 transition-colors whitespace-nowrap cursor-pointer"
+            >
+              The Triad
+            </a>
+            <a 
+              href="#reach" 
+              onClick={(e) => handleNavClick(e, 'reach')}
+              className="hover:text-emerald-400 transition-colors whitespace-nowrap cursor-pointer"
+            >
+              Global Reach
+            </a>
+            <a 
+              href="#privilege" 
+              onClick={(e) => handleNavClick(e, 'privilege')}
+              className="hover:text-emerald-400 transition-colors whitespace-nowrap cursor-pointer"
+            >
+              The Privilege
+            </a>
             <a 
               href="#nomination-form" 
-              className="px-4 py-1.5 bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-400 hover:to-blue-500 text-white font-mono font-bold rounded-lg tracking-wider transition-all whitespace-nowrap shadow-sm"
+              onClick={(e) => handleNavClick(e, 'nomination-form')}
+              className="px-4 py-1.5 bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-400 hover:to-blue-500 text-white font-mono font-bold rounded-lg tracking-wider transition-all whitespace-nowrap shadow-sm cursor-pointer"
             >
               [INITIATE BOARD REVIEW]
             </a>
@@ -43,7 +79,7 @@ export default function HeroTrustStrip() {
         </video>
 
         {/* Dark Ambient Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#000110]/90 via-[#000110]/75 to-[#000110] pointer-events-none z-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#000110]/60 via-[#000110]/40 to-[#000110]/70 pointer-events-none z-0" />
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-900/15 rounded-full blur-[200px] pointer-events-none z-0" />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,168,107,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,168,107,0.03)_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none z-0" />
 
@@ -100,6 +136,7 @@ export default function HeroTrustStrip() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto pt-2">
             <a 
               href="#nomination-form"
+              onClick={(e) => handleNavClick(e, 'nomination-form')}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-9 py-4 bg-gradient-to-r from-emerald-500 via-teal-500 to-[#1746D2] hover:from-emerald-400 hover:to-blue-600 text-white rounded-full font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-[0_0_30px_rgba(0,168,107,0.35)] hover:-translate-y-0.5 cursor-pointer"
             >
               <span>Request a Global Invitation</span>
@@ -107,6 +144,7 @@ export default function HeroTrustStrip() {
             </a>
             <a 
               href="#philosophy"
+              onClick={(e) => handleNavClick(e, 'philosophy')}
               className="w-full sm:w-auto inline-flex items-center justify-center px-9 py-4 bg-white/5 hover:bg-white/10 text-white border border-white/20 hover:border-white/40 rounded-full font-bold text-sm uppercase tracking-wider backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
             >
               Enter the World of Business Brains

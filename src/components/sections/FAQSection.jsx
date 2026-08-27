@@ -76,34 +76,34 @@ tolerance rather than engineering preference.`,
     q: `Can TECH6SENSE AI help if we don't have data?`,
     a: `Yes! Lack of historical data is a common challenge. We have strategies:
 Data Synthesis:
-•
+â€¢
 Generate synthetic data for training
-•
+â€¢
 Use simulation and modeling
-•
+â€¢
 Transfer learning from similar domains
 Rapid Data Collection:
-•
+â€¢
 Design efficient data collection systems
-•
+â€¢
 Implement automated data capture
-•
+â€¢
 Structure for future AI use
 Alternative Approaches:
-•
+â€¢
 Start with rule-based systems while collecting data
-•
+â€¢
 Use pre-trained models and fine-tune
-•
+â€¢
 Leverage publicly available datasets
-•
+â€¢
 Partner with data providers
 Phased Approach:
-•
+â€¢
 Phase 1: Data collection and infrastructure
-•
+â€¢
 Phase 2: Initial AI models with limited data
-•
+â€¢
 Phase 3: Advanced AI with rich datasets
 We conduct a data readiness assessment to identify the best path forward for your specific
 situation.`,
@@ -127,30 +127,30 @@ advanced technology solutions.`,
     q: `Can I start my own AI product business with TECH6SENSE AI?`,
     a: `Absolutely! This is a core part of our mission. We provide the complete business ecosystem:
 What You Get:
-•
+â€¢
 Proven Products: Access to our AI hardware designs and technology
-•
+â€¢
 Manufacturing: We produce devices with your branding
-•
+â€¢
 Software Platform: Mobile apps, cloud infrastructure, AI algorithms
-•
+â€¢
 Business Setup: Company formation, legal, compliance
-•
+â€¢
 Marketing Support: Branding, website, social media, marketing materials
-•
+â€¢
 Distribution: Help with channels, partnerships, e-commerce
-•
+â€¢
 Sales Training: How to sell AI products effectively
-•
+â€¢
 Technical Support: Customer service infrastructure
 Your Role:
-•
+â€¢
 Brand building and positioning
-•
+â€¢
 Sales and customer relationships
-•
+â€¢
 Market-specific customization
-•
+â€¢
 Business development
 This model allows entrepreneurs to enter the lucrative AI hardware market without
 manufacturing expertise or massive capital.`,
@@ -209,7 +209,7 @@ human oversight points appropriate to each workload's risk class.`,
     cat: 'Capabilities & AI',
     q: `What happens if the project fails to deliver the expected outcome?`,
     a: `Success criteria are agreed in writing before build begins, and progress is reviewed against
-them at every milestone — which means divergence surfaces early enough to correct rather
+them at every milestone â€” which means divergence surfaces early enough to correct rather
 than at final delivery. Where a stated outcome proves technically unachievable, the honest
 recommendation is made rather than the budget consumed.`,
   },
@@ -229,9 +229,9 @@ obligations.`,
   {
     cat: 'Governance & IP',
     q: `How does TECH6SENSE AI approach AI governance?`,
-    a: `Governance is engineered into every system as a delivery phase — documented evaluation,
+    a: `Governance is engineered into every system as a delivery phase â€” documented evaluation,
 decision traceability, defined human oversight points, and a risk register your board can read
-— rather than retrofitted after an audit request.`,
+â€” rather than retrofitted after an audit request.`,
   },
   {
     cat: 'Capabilities & AI',
@@ -248,7 +248,7 @@ improvements, security updates, and long-term technology support.`,
   {
     cat: 'Capabilities & AI',
     q: `Will you train our internal team?`,
-    a: `Yes. Knowledge transfer and enablement are standard scope — the objective is that your
+    a: `Yes. Knowledge transfer and enablement are standard scope â€” the objective is that your
 team can operate, understand and extend the system rather than remain dependent on the
 vendor.`,
   },
@@ -261,7 +261,7 @@ demand, new features, and international growth.`,
   {
     cat: 'About TECH6SENSE',
     q: `Why should we choose TECH6SENSE AI?`,
-    a: `Because we believe technology should create lasting business value—not just deliver
+    a: `Because we believe technology should create lasting business valueâ€”not just deliver
 software.
 Our multidisciplinary ecosystem combines Artificial Intelligence, enterprise engineering,
 deep-tech innovation, strategic consulting, and long-term partnership to help organizations
@@ -272,38 +272,38 @@ build the future with confidence.`,
     q: `What should I prepare before our first meeting?`,
     a: `A: To maximize our initial consultation:
 Business Context:
-•
+â€¢
 Brief company overview
-•
+â€¢
 Key challenges or opportunities
-•
+â€¢
 Current technology landscape
-•
+â€¢
 Budget range (if known)
-•
+â€¢
 Timeline expectations
 Technical Information (if available):
-•
+â€¢
 Existing systems and databases
-•
+â€¢
 Data availability and quality
-•
+â€¢
 IT infrastructure
-•
+â€¢
 Security/compliance requirements
 Stakeholders:
-•
+â€¢
 Include decision-makers in initial calls
-•
+â€¢
 Technical leads (CTO, IT head)
-•
+â€¢
 Business owners (relevant VPs)
 Questions:
-•
+â€¢
 List your concerns and questions
-•
+â€¢
 Success criteria
-•
+â€¢
 Risk concerns
 Don't Worry If You Don't Have Everything: We're here to help guide you through the
 process. Even a general discussion of challenges can lead to valuable insights.
@@ -315,9 +315,9 @@ Whether you're an enterprise accelerating AI adoption, a government modernizing 
 infrastructure, a startup building the next breakthrough platform, or a visionary founder creating the
 future, TECH6SENSE AI provides the intelligence, engineering, and strategic partnership to transform
 ambition into global impact.
-Button: Talk to TECH6SENSE AI →
+Button: Talk to TECH6SENSE AI â†’
 Brand signature (footer close):
-TECH6SENSE AI — Sense Beyond Technology. Build Beyond Imagination.`,
+TECH6SENSE AI â€” Sense Beyond Technology. Build Beyond Imagination.`,
   },
 ];
 
@@ -349,7 +349,7 @@ export default function FAQSection() {
     <section
       ref={sectionRef}
       id="faq"
-      className="relative w-full py-20 md:py-32 overflow-hidden bg-[#FAF9FF]"
+      className="relative w-full py-12 md:py-16 overflow-hidden bg-[#FAF9FF]"
     >
       <div className="relative z-10 mx-auto max-w-[1400px] px-6">
         {/* Header */}

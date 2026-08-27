@@ -84,7 +84,7 @@ export default function EngagementModels() {
     <section
       ref={sectionRef}
       id="engagement-models"
-      className="relative w-full py-20 md:py-32 overflow-hidden bg-[#FAFAFA] border-t border-slate-200/80"
+      className="relative w-full py-12 md:py-16 overflow-hidden bg-[#FAFAFA] border-t border-slate-200/80"
     >
       {/* Background ambient lighting */}
       <div className="absolute top-1/4 right-[-5%] w-[550px] h-[550px] rounded-full bg-gradient-to-bl from-blue-100/50 to-transparent blur-[140px] pointer-events-none z-0" />
@@ -206,7 +206,7 @@ export default function EngagementModels() {
               <div className="relative z-10 mt-8 pt-6 border-t border-slate-100 group-hover:border-white/20 flex items-center justify-between transition-colors duration-300">
                 <Link
                   to="/lets-connect"
-                  className="font-display text-xs md:text-sm font-extrabold tracking-wider uppercase flex items-center gap-2.5 group-hover:gap-4 transition-all duration-300 group-hover:text-white"
+                  className="font-display text-xs md:text-sm font-extrabold tracking-wider uppercase flex items-center gap-2.5 group-hover:gap-4 transition-all duration-300 group-hover:!text-white"
                   style={{ color: model.accentColor }}
                 >
                   <span>Discuss this engagement model</span>

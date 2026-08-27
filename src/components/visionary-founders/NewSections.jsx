@@ -170,9 +170,6 @@ export function EliteAdvantage() {
             </span>
             <span className="w-8 h-[2px] bg-[#00A86B] rounded-full" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display mb-4">
-            Comparison Framework
-          </h2>
         </div>
 
         {/* Desktop View: 3 Columns Dark Table Comparison */}
@@ -481,7 +478,7 @@ export function NationalVsGlobalComparison() {
           <div className="inline-flex items-center gap-3 mb-4">
             <span className="w-8 h-[2px] bg-[#1746D2] rounded-full" />
             <span className="font-display text-sm font-extrabold tracking-[0.25em] uppercase text-[#1746D2]">
-              ECOSYSTEM STRUCTURE & YOUR INVESTMENT
+              ECOSYSTEM STRUCTURE & Your Investment in Your Future
             </span>
             <span className="w-8 h-[2px] bg-[#00A86B] rounded-full" />
           </div>
@@ -788,8 +785,8 @@ export function FounderSelectionCriteria() {
           >
             Start Your Application
           </button>
-          <div className="text-xs text-slate-500 font-mono mt-4">
-            Or email us at <a href="mailto:visionaryfounders@tech6senseai.com" className="text-[#1746D2] font-bold hover:underline">visionaryfounders@tech6senseai.com</a>
+          <div className="text-base md:text-lg text-slate-700 font-bold mt-4">
+            Or email us at <a href="mailto:visionaryfounders@tech6senseai.com" className="text-[#1746D2] hover:underline">visionaryfounders@tech6senseai.com</a>
           </div>
         </div>
 

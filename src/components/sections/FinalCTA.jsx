@@ -28,7 +28,7 @@ export default function FinalCTA() {
     
     const categoryTag = formData.category && formData.category.includes(']')
       ? formData.category.split(']')[0] + ']'
-      : '📩 [GENERAL INQUIRY]';
+      : 'ðŸ“© [GENERAL INQUIRY]';
 
     await sendFormEmail({
       subjectTag: categoryTag,
@@ -66,7 +66,7 @@ export default function FinalCTA() {
   return (
     <section 
       ref={containerRef}
-      className="relative w-full py-16 md:py-24 px-2.5 sm:px-6 md:px-8 overflow-hidden bg-[#FAFAFA] border-t border-slate-200/80 text-slate-900"
+      className="relative w-full py-10 md:py-12 px-2.5 sm:px-6 md:px-8 overflow-hidden bg-[#FAFAFA] border-t border-slate-200/80 text-slate-900"
     >
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes cta-glow-drift {
@@ -154,7 +154,7 @@ export default function FinalCTA() {
             >
               <p className="font-display text-xs sm:text-sm font-bold text-slate-800 tracking-wide">
                 <span className="text-[#1746D2] uppercase tracking-wider font-extrabold">TECH6SENSE AI</span>{' '}
-                <span className="text-slate-400 font-light mx-1">—</span>{' '}
+                <span className="text-slate-400 font-light mx-1">â€”</span>{' '}
                 <span className="text-slate-600 font-semibold">Sense Beyond Technology. Build Beyond Imagination.</span>
               </p>
             </div>
@@ -239,20 +239,20 @@ export default function FinalCTA() {
                       style={{ backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`, backgroundPosition: 'right 1rem center', backgroundRepeat: 'no-repeat', backgroundSize: '1.5em 1.5em' }}
                     >
                       <option value="">Select Team Category (Optional)</option>
-                      <optgroup label="⚡ INTELLIGENT SOLUTIONS">
+                      <optgroup label="âš¡ INTELLIGENT SOLUTIONS">
                         <option value="[INTELLIGENT SOLUTIONS] AI Product & Model Development">AI Product & Model Development</option>
                         <option value="[INTELLIGENT SOLUTIONS] Intelligent Automation & Agent Systems">Intelligent Automation & Agent Systems</option>
                         <option value="[INTELLIGENT SOLUTIONS] Generative & Applied AI">Generative & Applied AI</option>
                       </optgroup>
-                      <optgroup label="🧬 DEEP-TECH PRODUCTS">
+                      <optgroup label="ðŸ§¬ DEEP-TECH PRODUCTS">
                         <option value="[DEEP-TECH PRODUCTS] Deep-Tech Hardware & Embedded Systems">Deep-Tech Hardware & Embedded Systems</option>
                         <option value="[DEEP-TECH PRODUCTS] AI IoT & Smart Sensors">AI IoT & Smart Sensors</option>
                       </optgroup>
-                      <optgroup label="🚀 VISIONARY FOUNDERS">
+                      <optgroup label="ðŸš€ VISIONARY FOUNDERS">
                         <option value="[VISIONARY FOUNDERS] AI Venture Studio & Co-Founder Bench">AI Venture Studio & Co-Founder Bench</option>
                         <option value="[VISIONARY FOUNDERS] Startup Infrastructure & Turnkey Tech">Startup Infrastructure & Turnkey Tech</option>
                       </optgroup>
-                      <optgroup label="🧠 BUSINESS BRAINS">
+                      <optgroup label="ðŸ§  BUSINESS BRAINS">
                         <option value="[BUSINESS BRAINS] Executive Advisory & Member Network">Executive Advisory & Member Network</option>
                         <option value="[BUSINESS BRAINS] Investor & Family Office Track">Investor & Family Office Track</option>
                       </optgroup>
@@ -279,7 +279,7 @@ export default function FinalCTA() {
                   >
                     <span className="cta-btn-shine-effect" />
                     <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
-                    {!isSubmitting && <span className="transition-transform duration-300 group-hover:translate-x-0.5 font-extrabold">→</span>}
+                    {!isSubmitting && <span className="transition-transform duration-300 group-hover:translate-x-0.5 font-extrabold">â†’</span>}
                   </button>
                 </form>
               )}

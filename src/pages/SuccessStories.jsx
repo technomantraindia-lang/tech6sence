@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/sections/Footer';
 import SuccessStoriesHero from '../components/success-stories/SuccessStoriesHero';
 import SuccessStoriesContent from '../components/success-stories/SuccessStoriesContent';
-import IndustriesFinalCTA from '../components/industries/IndustriesFinalCTA';
+import SuccessStoriesFinalCTA from '../components/success-stories/SuccessStoriesFinalCTA';
 
 export default function SuccessStories() {
   
@@ -18,7 +18,7 @@ export default function SuccessStories() {
       <main className="flex-grow">
         <SuccessStoriesHero />
         <SuccessStoriesContent />
-        <IndustriesFinalCTA />
+        <SuccessStoriesFinalCTA />
       </main>
       
       <Footer />

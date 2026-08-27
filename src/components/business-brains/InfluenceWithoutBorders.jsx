@@ -55,7 +55,7 @@ export default function InfluenceWithoutBorders() {
   ];
 
   return (
-    <section className="relative bg-[#000110] text-white py-24 md:py-36 border-b border-slate-800/80 overflow-hidden">
+    <section id="reach" className="relative bg-[#000110] text-white py-24 md:py-36 border-b border-slate-800/80 overflow-hidden scroll-mt-32">
       
       {/* Dynamic Keyframe Style for Flowing Laser Beams */}
       <style>{`

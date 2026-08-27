@@ -80,14 +80,7 @@
                         },
         "location":  "USA",
         "metrics":  [
-                        {
-                            "value":  "60%",
-                            "label":  ""
-                        },
-                        {
-                            "value":  "Faster medical documentation",
-                            "label":  ""
-                        },
+                        { "value": "60%", "label": "Faster medical documentation" },
                         {
                             "value":  "40%",
                             "label":  "Less administrative workload"
@@ -173,14 +166,7 @@
                         },
         "location":  "USA",
         "metrics":  [
-                        {
-                            "value":  "55%",
-                            "label":  ""
-                        },
-                        {
-                            "value":  "Faster document processing",
-                            "label":  ""
-                        },
+                        { "value": "55%", "label": "Faster document processing" },
                         {
                             "value":  "35%",
                             "label":  "Lower compliance workload"
@@ -272,14 +258,7 @@
                             "value":  "30%",
                             "label":  "Lower maintenance costs"
                         },
-                        {
-                            "value":  "25%",
-                            "label":  ""
-                        },
-                        {
-                            "value":  "Higher production efficiency",
-                            "label":  ""
-                        }
+                        { "value": "25%", "label": "Higher production efficiency" }
                     ],
         "title":  "AI Predictive Maintenance & Quality Inspection Platform"
     },
@@ -353,14 +332,7 @@
                         },
         "location":  "Canada",
         "metrics":  [
-                        {
-                            "value":  "28%",
-                            "label":  ""
-                        },
-                        {
-                            "value":  "Higher customer engagement",
-                            "label":  ""
-                        },
+                        { "value": "28%", "label": "Higher customer engagement" },
                         {
                             "value":  "22%",
                             "label":  "Increase in online sales"
@@ -552,14 +524,7 @@
                             "value":  "40%",
                             "label":  "Increase in student engagement"
                         },
-                        {
-                            "value":  "50%",
-                            "label":  ""
-                        },
-                        {
-                            "value":  "Faster content creation",
-                            "label":  ""
-                        },
+                        { "value": "50%", "label": "Faster content creation" },
                         {
                             "value":  "35%",
                             "label":  "Improvement in learning efficiency"
@@ -643,14 +608,7 @@
                         },
         "location":  "USA",
         "metrics":  [
-                        {
-                            "value":  "58%",
-                            "label":  ""
-                        },
-                        {
-                            "value":  "Faster claims processing",
-                            "label":  ""
-                        },
+                        { "value": "58%", "label": "Faster claims processing" },
                         {
                             "value":  "35%",
                             "label":  "Reduction in manual processing"
@@ -739,14 +697,7 @@
                         },
         "location":  "UAE",
         "metrics":  [
-                        {
-                            "value":  "42%",
-                            "label":  ""
-                        },
-                        {
-                            "value":  "Faster maintenance coordination",
-                            "label":  ""
-                        },
+                        { "value": "42%", "label": "Faster maintenance coordination" },
                         {
                             "value":  "30%",
                             "label":  "Improvement in operational visibility"
@@ -931,14 +882,7 @@
                         },
         "location":  "Hong Kong",
         "metrics":  [
-                        {
-                            "value":  "45%",
-                            "label":  ""
-                        },
-                        {
-                            "value":  "Faster issue detection",
-                            "label":  ""
-                        },
+                        { "value": "45%", "label": "Faster issue detection" },
                         {
                             "value":  "31%",
                             "label":  "Reduction in incident response time"
@@ -1210,14 +1154,7 @@
                         },
         "location":  "UAE",
         "metrics":  [
-                        {
-                            "value":  "43%",
-                            "label":  ""
-                        },
-                        {
-                            "value":  "Faster guest response times",
-                            "label":  ""
-                        },
+                        { "value": "43%", "label": "Faster guest response times" },
                         {
                             "value":  "35%",
                             "label":  "Reduction in concierge workload"
@@ -1304,14 +1241,7 @@
                         },
         "location":  "United Kingdom",
         "metrics":  [
-                        {
-                            "value":  "60%",
-                            "label":  ""
-                        },
-                        {
-                            "value":  "Faster content production",
-                            "label":  ""
-                        },
+                        { "value": "60%", "label": "Faster content production" },
                         {
                             "value":  "40%",
                             "label":  "Increase in creative productivity"
@@ -1488,14 +1418,7 @@
                         },
         "location":  "Singapore",
         "metrics":  [
-                        {
-                            "value":  "46%",
-                            "label":  ""
-                        },
-                        {
-                            "value":  "Faster hiring cycles",
-                            "label":  ""
-                        },
+                        { "value": "46%", "label": "Faster hiring cycles" },
                         {
                             "value":  "39%",
                             "label":  "Improvement in candidate matching"
@@ -1582,26 +1505,12 @@
                         },
         "location":  "USA",
         "metrics":  [
-                        {
-                            "value":  "57%",
-                            "label":  ""
-                        },
-                        {
-                            "value":  "Faster threat detection",
-                            "label":  ""
-                        },
+                        { "value": "57%", "label": "Faster threat detection" },
                         {
                             "value":  "42%",
                             "label":  "Reduction in incident response time"
                         },
-                        {
-                            "value":  "Enterprise",
-                            "label":  ""
-                        },
-                        {
-                            "value":  "24/7 AI-powered security intelligence",
-                            "label":  ""
-                        }
+                        { "value": "Enterprise", "label": "24/7 AI-powered security intelligence" }
                     ],
         "title":  "AI-Powered Threat Detection & Security Operations Platform"
     }

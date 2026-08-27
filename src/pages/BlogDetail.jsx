@@ -73,7 +73,6 @@ export default function BlogDetail() {
               </div>
               <div>
                 <p className="text-sm font-bold text-slate-900 leading-tight">{blog.author}</p>
-                <p className="text-xs font-mono text-slate-500">{blog.date}</p>
               </div>
             </div>
 
@@ -96,20 +95,78 @@ export default function BlogDetail() {
 
         {/* ARTICLE BODY */}
         <article className="max-w-3xl mx-auto px-6 font-body text-slate-700 text-lg leading-relaxed space-y-6">
-          {blog.content.map((paragraph, index) => {
+          {blog.content.map((paragraph, index, arr) => {
             const trimmed = paragraph.trim();
 
             // Ignore duplicate main title line if repeated at start
             if (index === 0 && trimmed === blog.title) return null;
 
-            // Check if paragraph is a Heading
-            const isHeading = (
-              trimmed.length < 90 && 
-              !trimmed.endsWith('.') && 
-              !trimmed.endsWith(':') &&
-              !trimmed.startsWith('https://') &&
-              !trimmed.startsWith('Link:')
+            // Check for links/URLs
+            if (trimmed.startsWith('Link:') || trimmed.startsWith('https://')) {
+              return null; // Suppress raw document links
+            }
+
+            const getIsShort = (str) => {
+              if (!str) return false;
+              const t = str.trim();
+              return (
+                t.length < 90 && 
+                !t.endsWith('.') && 
+                !t.startsWith('https://') &&
+                !t.startsWith('Link:') &&
+                !t.startsWith('•') &&
+                !t.startsWith('-')
+              );
+            };
+
+            // Lines ending in a colon are sub-headers / lead-ins
+            if (trimmed.endsWith(':')) {
+              return (
+                <p key={index} className="font-bold text-slate-900 text-lg pt-4 pb-1">
+                  {trimmed}
+                </p>
+              );
+            }
+
+            let isExplicitListItem = (
+              trimmed.startsWith('•') || 
+              trimmed.startsWith('-')
             );
+
+            let isBulletlessList = false;
+            let isHeading = false;
+
+            if (isExplicitListItem) {
+              isBulletlessList = true;
+            } else if (getIsShort(trimmed)) {
+              const prevStr = index > 0 ? arr[index - 1].trim() : '';
+              const nextStr = index < arr.length - 1 ? arr[index + 1].trim() : '';
+              
+              const followsColon = prevStr.endsWith(':');
+              const nextIsLong = nextStr !== '' && !getIsShort(nextStr);
+              const prevIsLong = prevStr !== '' && !getIsShort(prevStr);
+
+              if (followsColon) {
+                isBulletlessList = true;
+              } else if (nextIsLong) {
+                isHeading = true;
+              } else {
+                if (prevIsLong) {
+                  isHeading = true; // Start of list
+                } else {
+                  isBulletlessList = true; // Middle of list
+                }
+              }
+            }
+
+            if (isBulletlessList) {
+              return (
+                <div key={index} className="flex items-start gap-3 pl-2 py-1">
+                  <span className="w-2 h-2 rounded-full bg-[#1746D2] mt-2.5 shrink-0" />
+                  <p className="text-slate-800 font-medium text-base md:text-lg leading-relaxed">{trimmed.replace(/^[•\-\d+\.]\s*/, '')}</p>
+                </div>
+              );
+            }
 
             if (isHeading) {
               return (
@@ -120,27 +177,6 @@ export default function BlogDetail() {
                   {trimmed}
                 </h2>
               );
-            }
-
-            // Check if paragraph is a list item or bullet point
-            const isListItem = (
-              trimmed.startsWith('•') || 
-              trimmed.startsWith('-') || 
-              /^\d+\./.test(trimmed)
-            );
-
-            if (isListItem) {
-              return (
-                <div key={index} className="flex items-start gap-3 pl-2 py-1">
-                  <span className="w-2 h-2 rounded-full bg-[#1746D2] mt-2.5 shrink-0" />
-                  <p className="text-slate-800 font-medium text-base md:text-lg leading-relaxed">{trimmed.replace(/^[•\-\d+\.]\s*/, '')}</p>
-                </div>
-              );
-            }
-
-            // Check for links/URLs
-            if (trimmed.startsWith('Link:') || trimmed.startsWith('https://')) {
-              return null; // Suppress raw document links
             }
 
             // Standard Paragraph
@@ -194,7 +230,6 @@ export default function BlogDetail() {
                   </span>
                 </div>
                 <div className="p-6 flex flex-col flex-1">
-                  <span className="text-xs font-mono text-slate-400 mb-2">{rel.date}</span>
                   <h4 className="font-display text-base font-bold text-slate-900 mb-3 group-hover:text-[#1746D2] transition-colors leading-snug">
                     {rel.title}
                   </h4>

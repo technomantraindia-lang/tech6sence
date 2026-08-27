@@ -4,8 +4,6 @@ import Footer from '../components/sections/Footer';
 import ContactHero from '../components/contact/ContactHero';
 import ContactFormSection from '../components/contact/ContactFormSection';
 import ContactInfo from '../components/contact/ContactInfo';
-import ConsultationOptions from '../components/contact/ConsultationOptions';
-import GiftCityPresence from '../components/contact/GiftCityPresence';
 import ContactFinalCTA from '../components/contact/ContactFinalCTA';
 
 export default function LetsConnect() {
@@ -22,8 +20,6 @@ export default function LetsConnect() {
         <ContactHero />
         <ContactFormSection />
         <ContactInfo />
-        <ConsultationOptions />
-        <GiftCityPresence />
         <ContactFinalCTA />
       </main>
       

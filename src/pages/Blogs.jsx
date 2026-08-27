@@ -72,8 +72,6 @@ export default function Blogs() {
                 {/* Content Container */}
                 <div className="flex flex-col flex-1 p-8">
                   <div className="flex items-center gap-4 text-xs font-mono text-slate-500 mb-4">
-                    <span>{blog.date}</span>
-                    <span className="w-1 h-1 rounded-full bg-slate-300" />
                     <span className="font-semibold text-slate-700">{blog.readTime}</span>
                   </div>
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function SimpleTextSection() {
   return (
-    <section id="future-focus" className="relative w-full min-h-[100svh] lg:min-h-screen py-24 md:py-32 overflow-hidden bg-black flex items-center">
+    <section id="future-focus" className="relative w-full min-h-[100svh] lg:min-h-screen py-12 md:py-16 overflow-hidden bg-black flex items-center">
       {/* Subtle decorative grid overlay for dark mode */}
       <div className="pointer-events-none absolute inset-0 z-0 opacity-20 [background-image:linear-gradient(rgba(239,68,68,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.06)_1px,transparent_1px)] [background-size:64px_64px]" />
       

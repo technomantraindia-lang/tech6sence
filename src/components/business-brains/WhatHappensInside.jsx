@@ -93,14 +93,7 @@ export default function WhatHappensInside() {
         }`}>
           <div className="flex flex-col h-full justify-between space-y-4">
             <div>
-              <div className="flex items-center justify-between gap-3 mb-3 border-b border-white/20 pb-3">
-                <div className="flex items-center gap-3">
-                  <span className="px-2.5 py-1 rounded-xl text-xs font-mono font-extrabold bg-slate-900 text-white shadow-xs">
-                    ACTIVITY {item.num}
-                  </span>
-                  <span className="text-xl">{item.icon}</span>
-                </div>
-              </div>
+
 
               <h3 className="font-display text-lg sm:text-xl font-extrabold text-white leading-snug mb-3">
                 {item.title}
@@ -203,7 +196,6 @@ export default function WhatHappensInside() {
                     }`}>
                       {item.num}
                     </span>
-                    <span className="text-xl">{item.icon}</span>
                     <h3 className={`font-display text-sm font-extrabold ${isActive ? 'text-white' : 'text-slate-900'}`}>
                       {item.title}
                     </h3>

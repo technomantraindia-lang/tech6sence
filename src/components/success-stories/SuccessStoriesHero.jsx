@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SuccessStoriesHero() {
   return (
-    <section className="relative min-h-[75vh] flex items-center justify-center pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-slate-950 font-body">
+    <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-slate-950 font-body">
       {/* Background Image Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-65 pointer-events-none"
@@ -22,24 +22,29 @@ export default function SuccessStoriesHero() {
           {/* Line-Flanked Title Badge */}
           <div className="inline-flex items-center justify-center gap-3 mb-6">
             <div className="w-8 md:w-12 h-[2px] bg-[#00A86B]" />
-            <span className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-[#00A86B]">
-              — REAL-WORLD CLIENT IMPACT —
+            <span className="text-xs md:text-sm font-bold uppercase tracking-[0.1em] text-[#00A86B]">
+              TECH6SENSE AI – Global Clients Success Stories
             </span>
             <div className="w-8 md:w-12 h-[2px] bg-[#00A86B]" />
           </div>
           
           {/* Main Hero Headline */}
-          <h1 className="font-display text-[clamp(2.4rem,4.8vw,4.5rem)] font-extrabold text-white leading-[1.12] mb-6 tracking-tight max-w-5xl mx-auto">
-            Transforming Strategic Visions <br className="hidden md:block" />
+          <h1 className="font-display text-[clamp(2.2rem,4.5vw,4rem)] font-extrabold text-white leading-[1.15] mb-8 tracking-tight max-w-5xl mx-auto">
+            Transforming Businesses Worldwide <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1746D2] via-blue-400 to-[#00A86B]">
-              Into Enterprise Reality
+              Through Enterprise AI Innovation
             </span>
           </h1>
           
-          {/* Description Paragraph */}
-          <p className="font-body text-slate-300 text-lg md:text-xl leading-relaxed mb-12 max-w-3xl mx-auto font-normal">
-            Explore how TECH6SENSE AI solutions have driven measurable impact, solved critical operational challenges, and created unprecedented value across global industries.
-          </p>
+          {/* Description Paragraphs */}
+          <div className="font-body text-slate-300 text-lg md:text-xl leading-relaxed mb-12 max-w-4xl mx-auto font-normal space-y-6">
+            <p>
+              At TECH6SENSE AI, we partner with organizations across healthcare, banking, manufacturing, retail, logistics, education, government, and emerging technology sectors to build intelligent AI solutions that solve real-world business challenges.
+            </p>
+            <p>
+              Every project begins with understanding business objectives—not just implementing technology. From Generative AI and AI Agents to predictive analytics and enterprise automation, our solutions help organizations reduce costs, increase productivity, improve customer experiences, and accelerate digital transformation.
+            </p>
+          </div>
 
 
 

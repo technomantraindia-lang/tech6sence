@@ -11,11 +11,11 @@ const FOUNDERS_POINTS = [
 ];
 
 const BRAINS_POINTS = [
-  { text: 'The Syndicate — elite investor-founder matchmaking', icon: 'M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5' },
-  { text: 'The Triad — AI business co-creation and partnerships', icon: 'M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.018-.39.035-.586.053m0 0c-.25.023-.501.045-.752.066' },
-  { text: 'Global Reach — connections across 9 markets', icon: 'M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418' },
-  { text: 'The Privilege — exclusive events and deal flow', icon: 'M10.05 4.575a1.575 1.575 0 10-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 013.15 0v1.5m-3.15 0l.075 5.925m3.075-5.925a1.575 1.575 0 013.15 0v1.5c0 .12-.014.238-.04.352M13.2 7.075v3.382a1.575 1.575 0 003.1.26V5.574c0-.047-.002-.093-.006-.14a1.576 1.576 0 013.156.104v2.962c0 3.07-1.7 5.9-4.45 7.313a1.054 1.054 0 01-1 0c-2.75-1.413-4.45-4.243-4.45-7.313V6.075a1.575 1.575 0 013.15 0v1' },
-  { text: 'By invitation only — access is earned, not granted', icon: 'M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z' },
+  { text: 'The Syndicate â€” elite investor-founder matchmaking', icon: 'M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5' },
+  { text: 'The Triad â€” AI business co-creation and partnerships', icon: 'M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.018-.39.035-.586.053m0 0c-.25.023-.501.045-.752.066' },
+  { text: 'Global Reach â€” connections across 9 markets', icon: 'M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418' },
+  { text: 'The Privilege â€” exclusive events and deal flow', icon: 'M10.05 4.575a1.575 1.575 0 10-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 013.15 0v1.5m-3.15 0l.075 5.925m3.075-5.925a1.575 1.575 0 013.15 0v1.5c0 .12-.014.238-.04.352M13.2 7.075v3.382a1.575 1.575 0 003.1.26V5.574c0-.047-.002-.093-.006-.14a1.576 1.576 0 013.156.104v2.962c0 3.07-1.7 5.9-4.45 7.313a1.054 1.054 0 01-1 0c-2.75-1.413-4.45-4.243-4.45-7.313V6.075a1.575 1.575 0 013.15 0v1' },
+  { text: 'By invitation only â€” access is earned, not granted', icon: 'M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z' },
 ];
 
 function EcoListItem({ point, index, color, textColor = 'text-slate-700' }) {
@@ -52,7 +52,7 @@ export default function EcosystemSection() {
     <section
       ref={sectionRef}
       id="ecosystem"
-      className="relative w-full py-24 md:py-32 overflow-hidden bg-white"
+      className="relative w-full py-12 md:py-16 overflow-hidden bg-white"
     >
       <div className="relative z-10 mx-auto max-w-[1400px] px-3 sm:px-6">
         
@@ -99,11 +99,11 @@ export default function EcosystemSection() {
                 </h3>
                 
                 <p className="font-body text-slate-300 text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8 text-left sm:text-justify">
-                  Visionary Founders is the world’s elite most comprehensive premier all-in-one AI Founder Ecosystem designed to transform ambitious entrepreneurs, professionals, start-up founders, consultants, and innovators into owners of globally competitive AI and technology companies and dominate the global markets.
+                  Visionary Founders is the worldâ€™s elite most comprehensive premier all-in-one AI Founder Ecosystem designed to transform ambitious entrepreneurs, professionals, start-up founders, consultants, and innovators into owners of globally competitive AI and technology companies and dominate the global markets.
                 </p>
 
                 <p className="font-body text-[#00A86B] text-base sm:text-lg md:text-xl font-semibold border-l-4 border-[#00A86B] pl-4 sm:pl-5 leading-relaxed mb-8 sm:mb-12 text-left sm:text-justify">
-                  "From Idea to International Clients —We don't just simply train founders. We build AI companies with them."
+                  "From Idea to International Clients â€”We don't just simply train founders. We build AI companies with them."
                 </p>
 
                 <div className="p-5 sm:p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm text-slate-300 text-sm leading-relaxed mb-8 sm:mb-12 shadow-lg">
@@ -197,7 +197,7 @@ export default function EcosystemSection() {
 
                 <div className="font-body text-slate-300 text-base sm:text-[1.05rem] leading-relaxed space-y-5 mb-8 text-left sm:text-justify">
                   <p>
-                    Welcome to Business Brains—an invitation-only global syndicate reserved for elite investors, visionary entrepreneurs, and titans of industry. We operate beyond the public eye, at the absolute pinnacle of global commerce, capital, and artificial intelligence.
+                    Welcome to Business Brainsâ€”an invitation-only global syndicate reserved for elite investors, visionary entrepreneurs, and titans of industry. We operate beyond the public eye, at the absolute pinnacle of global commerce, capital, and artificial intelligence.
                   </p>
                   <p>
                     Operating at the intersection of limitless capital and bleeding-edge technology, this is the private room where next-level business paradigms are engineered and million-dollar opportunities are unlocked daily.
@@ -209,7 +209,7 @@ export default function EcosystemSection() {
 
                 <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm text-slate-300 text-sm leading-relaxed mb-12 shadow-lg">
                   <p className="font-body font-semibold text-white text-base mb-4">
-                    Not a community. Not a platform. A Circle — and very few are Admitted.
+                    Not a community. Not a platform. A Circle â€” and very few are Admitted.
                   </p>
                   <div className="text-xs text-[#00A86B] border-t border-white/10 pt-4 font-mono tracking-widest uppercase">
                     Access is Not Granted. It is Earned.

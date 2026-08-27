@@ -51,7 +51,7 @@ const ECOSYSTEM_CARDS = [
     num: '3',
     title: 'SENSE GROWTH',
     short: 'Visionary Founders Business Ecosystem',
-    full: 'The Global AI Founder Ecosystem — Build Your AI Empire Globally',
+    full: 'The Global AI Founder Ecosystem â€” Build Your AI Empire Globally',
     textColor: 'text-blue-600',
     dotBg: 'bg-blue-600',
     alignOffset: 'translate-x-4 xl:translate-x-6',
@@ -66,10 +66,10 @@ const ECOSYSTEM_CARDS = [
     title: 'SENSE TRANSFORMATION',
     short: 'Integrating Intelligence across the Enterprise',
     full: 'Seamless Technology Deployment',
-    textColor: 'text-amber-600',
-    dotBg: 'bg-amber-500',
+    textColor: 'text-[#D4AF37]',
+    dotBg: 'bg-[#D4AF37]',
     alignOffset: 'translate-x-6 xl:translate-x-10',
-    cardBg: 'bg-amber-50/35 hover:bg-amber-50/70',
+    cardBg: 'bg-[#D4AF37]/10 hover:bg-[#D4AF37]/20',
     shadowStyle: 'hover:shadow-[4px_4px_0px_0px_rgba(212,175,55,0.35)]',
     glowColor: 'rgba(212, 175, 55, 0.09)',
     href: '/enterprise-ai'
@@ -80,10 +80,10 @@ const ECOSYSTEM_CARDS = [
     title: 'SENSE FUTURE',
     short: 'Creating What the World Will Need Next',
     full: 'Continuous Research & Evolution',
-    textColor: 'text-amber-600',
-    dotBg: 'bg-amber-500',
+    textColor: 'text-[#D4AF37]',
+    dotBg: 'bg-[#D4AF37]',
     alignOffset: '-translate-x-6 xl:-translate-x-10',
-    cardBg: 'bg-amber-50/35 hover:bg-amber-50/70',
+    cardBg: 'bg-[#D4AF37]/10 hover:bg-[#D4AF37]/20',
     shadowStyle: 'hover:shadow-[4px_4px_0px_0px_rgba(212,175,55,0.35)]',
     glowColor: 'rgba(212, 175, 55, 0.09)',
     href: '/about'
@@ -179,7 +179,7 @@ export default function IntelligenceStack() {
   const card6 = ECOSYSTEM_CARDS.find(c => c.id === 6);
 
   return (
-    <section className="relative w-full bg-[#FFFFFF] overflow-hidden py-16 md:py-24 z-20 font-body">
+    <section className="relative w-full bg-[#FFFFFF] overflow-hidden py-10 md:py-12 z-20 font-body">
       {/* Dynamic Background Glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none -z-10" />
       <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-emerald-500/5 rounded-full blur-[100px] pointer-events-none -z-10" />
@@ -206,7 +206,7 @@ export default function IntelligenceStack() {
           </h2>
         </div>
 
-        {/* ── Desktop Diagram Layout ── */}
+        {/* â”€â”€ Desktop Diagram Layout â”€â”€ */}
         <div className="hidden lg:grid grid-cols-12 gap-8 items-center relative">
           
           {/* Left Column (Cards 1, 4, 5) */}
@@ -231,7 +231,7 @@ export default function IntelligenceStack() {
                 className="opacity-90"
               />
 
-              {/* ── Stepped Connector Lines to Cards ── */}
+              {/* â”€â”€ Stepped Connector Lines to Cards â”€â”€ */}
               {/* Top-Left: Center -> Card 1 */}
               <path 
                 d="M 130,80 L 95,48 L 30,48" 
@@ -300,7 +300,7 @@ export default function IntelligenceStack() {
                 className="transition-all duration-300 animate-[dash_3s_linear_infinite]"
               />
 
-              {/* ── 6 Node Dots Exactly on the 6 Hexagon Vertices ── */}
+              {/* â”€â”€ 6 Node Dots Exactly on the 6 Hexagon Vertices â”€â”€ */}
               <circle cx="130" cy="80" r="7.5" fill="#059669" />
               <circle cx="270" cy="80" r="7.5" fill="#059669" />
               <circle cx="360" cy="225" r="7.5" fill="#2563eb" />
@@ -334,7 +334,7 @@ export default function IntelligenceStack() {
 
         </div>
 
-        {/* ── Mobile Layout ── */}
+        {/* â”€â”€ Mobile Layout â”€â”€ */}
         <div className="lg:hidden flex flex-col gap-6">
           {/* Logo Center Node */}
           <div className="flex flex-col items-center justify-center p-6 bg-white rounded-3xl shadow-sm border border-slate-100 mb-2 relative overflow-hidden">

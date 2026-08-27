@@ -215,8 +215,8 @@ export default function Header() {
                           <div className="absolute top-0 right-0 w-32 h-32 bg-[#1746D2]/10/50 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
                           <h4 className="relative z-10 font-display font-bold text-slate-900 mb-2">Need a Custom AI Solution?</h4>
                           <p className="relative z-10 text-xs text-slate-600 leading-relaxed mb-6">Explore end-to-end AI strategy, development, integration, and optimization.</p>
-                          <Link to="/ai-agents" className="relative z-10 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#1746D2] to-[#00A86B] text-white font-bold text-xs px-4 py-2.5 rounded-full hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all hover:scale-[1.02]">
-                            View Intelligent Solutions
+                          <Link to="/lets-connect" className="relative z-10 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#1746D2] to-[#00A86B] text-white font-bold text-xs px-4 py-2.5 rounded-full hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] transition-all hover:scale-[1.02] text-center">
+                            Connect WITH TECH6SENSE AI
                           </Link>
                         </div>
                       </div>

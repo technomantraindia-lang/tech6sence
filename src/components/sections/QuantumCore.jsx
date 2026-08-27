@@ -251,7 +251,7 @@ export default function QuantumCore() {
   }, [threeLoaded])
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center py-24 md:py-32 overflow-hidden bg-[#05040a] text-white">
+    <section className="relative w-full min-h-screen flex items-center justify-center py-12 md:py-16 overflow-hidden bg-[#05040a] text-white">
       {/* Dynamic scan line background */}
       <div 
         className="absolute inset-0 z-0 opacity-20 pointer-events-none"
@@ -314,7 +314,7 @@ export default function QuantumCore() {
 
               <div>
                 <span className="block font-mono text-[0.55rem] tracking-wider text-slate-500 uppercase">Core Temperature</span>
-                <span className="font-display text-xl font-bold text-emerald-400 tracking-wider">28.4°C // NOMINAL</span>
+                <span className="font-display text-xl font-bold text-emerald-400 tracking-wider">28.4Â°C // NOMINAL</span>
               </div>
 
               <div>

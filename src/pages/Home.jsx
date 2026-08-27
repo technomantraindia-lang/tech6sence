@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, memo, Suspense, lazy } from 'react'
+import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import TechHero from '../components/hero/TechHero'
 
@@ -749,12 +750,12 @@ function AboutSection() {
             </div>
 
             <div className="mt-8">
-              <a href="/about" className="group inline-flex items-center gap-2 font-display text-sm font-bold text-[#1746D2] hover:text-[#1233A0] transition-colors">
+              <Link to="/about" className="group inline-flex items-center gap-2 font-display text-sm font-bold text-[#1746D2] hover:text-[#1233A0] transition-colors">
                 Learn about us
                 <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 transition-transform group-hover:translate-x-1" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

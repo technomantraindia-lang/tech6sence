@@ -67,7 +67,7 @@ export default function IndustriesTransform() {
     <section
       ref={sectionRef}
       id="industries"
-      className="relative w-full py-20 md:py-28 overflow-hidden bg-white border-t border-slate-100"
+      className="relative w-full py-12 md:py-16 overflow-hidden bg-white border-t border-slate-100"
     >
       {/* Background Subtle Ambience */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[350px] bg-gradient-to-r from-blue-500/5 to-emerald-500/5 rounded-full blur-[140px] pointer-events-none -z-10" />

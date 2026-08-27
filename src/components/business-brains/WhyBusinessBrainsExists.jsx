@@ -13,7 +13,7 @@ export default function WhyBusinessBrainsExists() {
   ];
 
   return (
-    <section id="triad" className="relative bg-[#000110] text-white py-20 md:py-28 border-b border-slate-800/80 overflow-hidden">
+    <section id="triad" className="relative bg-[#000110] text-white py-20 md:py-28 border-b border-slate-800/80 overflow-hidden scroll-mt-32">
       
       {/* Glow Effects */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-emerald-900/15 rounded-full blur-[200px] pointer-events-none" />

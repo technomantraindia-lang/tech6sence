@@ -1,6 +1,6 @@
 [
     {
-        "image":  "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+        "image":  "/images/blogs/blog-1.jpg",
         "slug":  "what-is-an-ai-development-company",
         "id":  1,
         "excerpt":  "Artificial Intelligence is no longer a futuristic technology reserved for global tech giants. Today, businesses of every size—from startups to multinational enterprises—are adopting AI to automate operations, improve customer experiences, enhance decision-maki...",
@@ -379,7 +379,7 @@
         "title":  "What Is an AI Development Company -- And How Do You Choose the Right One?"
     },
     {
-        "image":  "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=1200&q=80",
+        "image": "/images/blogs/blog-2.jpg",
         "slug":  "intelligent-solutions-future-of-ai",
         "id":  2,
         "excerpt":  "The Intelligence Revolution Has Begun Every major technological revolution has reshaped the way businesses operate. The internet connected the world. Cloud computing made technology infinitely scalable. Mobile devices transformed customer engagement.",
