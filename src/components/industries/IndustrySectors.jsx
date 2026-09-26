@@ -1,0 +1,89 @@
+import React, { useEffect, useState, useRef } from 'react';
+import { touchHoverProps } from '../../hooks/useTouchHover';
+
+export default function IndustrySectors() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.1 });
+    
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const sectors = [
+    { title: "Healthcare & Life Sciences", tagline: "AI for smarter care, monitoring, and clinical workflows.", span: "lg:col-span-3" },
+    { title: "Manufacturing", tagline: "Intelligence for operations, quality, and predictive maintenance.", span: "lg:col-span-3" },
+    { title: "Banking & Financial Services", tagline: "Risk intelligence, automation, fraud insights, and decision support.", span: "lg:col-span-3" },
+    { title: "Retail & E-Commerce", tagline: "Personalization, demand forecasting, and customer intelligence.", span: "lg:col-span-3" },
+    { title: "Education & EdTech", tagline: "AI tutors, learning analytics, and personalized education systems.", span: "lg:col-span-4" },
+    { title: "Government, Smart Cities & Public Infrastructure", tagline: "Connected infrastructure, monitoring systems, and urban intelligence.", span: "lg:col-span-4" },
+    { title: "Logistics & Supply Chain", tagline: "Predictive movement, routing, tracking, and operational visibility.", span: "lg:col-span-4" },
+    { title: "Cybersecurity", tagline: "Threat detection, autonomous response, and digital perimeter defense.", span: "lg:col-span-4" },
+    { title: "Telecommunications", tagline: "Network optimization, predictive maintenance, and intelligent routing.", span: "lg:col-span-4" },
+    { title: "Energy & Utilities", tagline: "Smart grid management, consumption forecasting, and resource optimization.", span: "lg:col-span-4" }
+  ];
+
+  return (
+    <section ref={sectionRef} className="py-20 lg:py-32 bg-slate-50 border-t border-slate-100">
+      <div className="mx-auto max-w-[1400px] px-6">
+        
+        {/* Header */}
+        <div className={`max-w-3xl mb-16 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="inline-flex items-center gap-3 mb-6">
+            <span className="w-8 h-[2px] bg-gradient-to-r from-[#1746D2] to-[#00A86B] rounded-full" />
+            <span className="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-slate-500">
+              INDUSTRY SECTORS
+            </span>
+          </div>
+          
+          <h2 className="font-display text-[clamp(1.75rem,3.5vw,3rem)] leading-tight font-extrabold text-slate-900 mb-6 tracking-tight">
+            Industries We Transform with AI
+          </h2>
+          
+          <p className="font-body text-slate-600 text-lg leading-relaxed max-w-2xl">
+            TECH6SENSE AI works across industries where automation, prediction, visual intelligence, and connected systems can create practical business value.
+          </p>
+        </div>
+
+        {/* Directory Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-6">
+          {sectors.map((sector, i) => (
+            <div 
+              key={i} 
+              className={`group relative p-8 bg-white border border-slate-200 rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-[4px_4px_0px_0px_rgba(23,70,210,0.35)] hover:border-[#1746D2]/40 md:col-span-1 ${sector.span} ${
+              {...touchHoverProps}
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+              }`}
+              style={{ transitionDelay: `${200 + (i * 50)}ms` }}
+            >
+              {/* Hover Accent */}
+              <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#1746D2]/10 to-fuchsia-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-full pointer-events-none" />
+              
+              <div className="relative z-10 flex flex-col h-full">
+                <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center mb-6 group-hover:bg-[#1746D2]/10 transition-colors">
+                  <div onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="w-3 h-3 rounded-full bg-[#1746D2] group-hover:scale-125 transition-transform" />
+                </div>
+                
+                <h3 onTouchStart={(e) => e.currentTarget.classList.add('touch-active')} onTouchEnd={(e) => e.currentTarget.classList.remove('touch-active')} onTouchCancel={(e) => e.currentTarget.classList.remove('touch-active')} className="font-display text-lg font-bold text-slate-900 mb-3 group-hover:text-[#1746D2] transition-colors">
+                  {sector.title}
+                </h3>
+                
+                <p className="font-body text-sm text-slate-600 leading-relaxed mt-auto">
+                  {sector.tagline}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
